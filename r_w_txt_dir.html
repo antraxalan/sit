@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FileReader Example</title>
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+   // file write stuff
+
+   // Codigo para crear un archivo 
+    function writeFile()
+    {
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);        
+    }
+
+    function gotFS(fileSystem) {
+        fileSystem.root.getDirectory("data_sitrans", {create: true, exclusive: false}, gotDir,failDir);
+        
+    }
+
+    function gotDir(dirEntry) {
+        dirEntry.getFile("readme.txt", {create: true, exclusive: false}, gotFileEntry, fail);
+    }
+
+    function gotFileEntry(fileEntry) {
+        fileEntry.createWriter(gotFileWriter, fail);
+    }
+
+    function gotFileWriter(writer) {
+        console.log("success");
+        var element = document.getElementById('fileWritten');
+        element.innerHTML = "file written successfully";
+    
+        /*writer.onwriteend = function(evt) {
+            console.log("contents of file now 'some sample text'");
+            writer.truncate(11);
+            writer.onwriteend = function(evt) {
+                console.log("contents of file now 'some sample'");
+                writer.seek(4);
+                writer.write(" different text");
+                writer.onwriteend = function(evt){
+                    console.log("contents of file now 'some different text'");
+                }
+            };
+        };*/
+        var d = new Date();
+        var n = d.toString();
+        writer.write("jph was here!" + n + "<br>");
+    }
+
+    function fail(error) {
+        console.log(error.code);
+        var element = document.getElementById('fileWritten');
+        element.innerHTML = "file write FAILED";
+        
+    }
+    // read file
+    function readFile()
+    {
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSRead, failRead);
+    }
+    
+    function gotFSRead(fileSystem) {
+        fileSystem.root.getDirectory("data_sitrans", {create: true, exclusive: false}, gotDirRead,failDirRead);
+
+    }
+
+    function gotDirRead(dirEntry) {
+        dirEntry.getFile("readme.txt", null, gotFileEntryRead, failRead);
+    }
+
+    function gotFileEntryRead(fileEntry) {
+        //alert("read success");
+        var element = document.getElementById('fileRead');
+        element.innerHTML = "file read successfully";
+        fileEntry.file(gotFileRead, failRead);
+    }
+
+    function gotFileRead(file){
+        readAsText(file);
+        //readDataUrl(file);
+    }
+
+    function readDataUrl(file) {
+        var reader = new FileReader();
+        reader.onloadend = function(evt) {
+            console.log("Read as data URL");
+            console.log(evt.target.result);
+        };
+        reader.readAsDataURL(file);
+    }
+
+    function readAsText(file) {
+        var reader = new FileReader();
+        reader.onloadend = function(evt) {
+            console.log("Read as text");
+            console.log(evt.target.result);
+            //alert(evt.target.result);
+            var element = document.getElementById('fileRead');
+            element.innerHTML += "<br>" + evt.target.result;
+        };
+        reader.readAsText(file);
+    }
+
+
+
+    function fail(error) {
+        console.log("error code = " + error.code);
+        alert("failed, error code = " + error.code);
+    }
+    function failDir(error) {
+        console.log("error code = " + error.code);
+        alert("failed dir, error code = " + error.code);
+    }
+    function failRead(error) {
+        console.log("error code = " + error.code);
+        alert("read failed, error code = " + error.code);
+    }
+    function failDirRead(error) {
+        console.log("error code = " + error.code);
+        alert("read folder failed, error code = " + error.code);
+    }
+
+</script>
+</head>
+<body>
+  FILE
+  <br>
+  <button onclick="writeFile();">write file</button><br>
+  <p id="fileWritten"></p>
+  <button onclick="readFile();">read file</button><br>
+  <p id="fileRead"></p>
+</body>
+</html>

@@ -1,0 +1,66 @@
+.banner,.map{
+    width:100%;
+}
+
+.ui-selectmenu.ui-popup .ui-input-search {
+    margin-left: .5em;
+    margin-right: .5em;
+}
+.ui-selectmenu.ui-dialog .ui-content {
+    padding-top: 0;
+}
+.ui-selectmenu.ui-dialog .ui-selectmenu-list {
+    margin-top: 0;
+}
+.ui-selectmenu.ui-popup .ui-selectmenu-list li.ui-first-child .ui-btn {
+    border-top-width: 1px;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+.ui-selectmenu.ui-dialog .ui-header {
+    border-bottom-width: 1px;
+}
+
+
+.big_button {
+    height: 100px; 
+    /*height: 5em; */
+
+    font-size: 25px !important;
+    vertical-align: text-bottom; 
+}
+.price {
+    /*color: #3388CC;*/
+    color: #63A01B;
+}
+.deuda {
+   color: #FF0000;
+}
+/*.ui-loader-background {
+    width:100%;
+    height:100%;
+    top:0;
+    padding: 0;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display:none;
+    position: fixed;
+    z-index:100;
+}
+
+.ui-loading .ui-loader-background {
+    display:block;
+}
+#dimScreen
+{
+    position:fixed;
+    padding:0;
+    margin:0;
+
+    top:0;
+    left:0;
+
+    width: 100%;
+    height: 100%;
+    background:rgba(255,255,255,0.5);
+}*/

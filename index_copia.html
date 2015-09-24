@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License. 
+-->
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile.css" />
+    <!-- <link type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.min.css" rel="stylesheet" />   -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <!-- <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" /> -->
+    <title>SITRANS</title>
+</head>
+<body>
+    <div class="app">
+
+        <div data-role="page" id="home" >
+            <header data-role="header" data-position="fixed">
+                <h1>CBN</h1>
+            </header> 
+
+            <div data-role="content">
+                <nav data-role="navbar">
+                    <ul>
+                        <li><a href="#home" class="ui-btn-active">Venta</a></li>
+                        <li><a href="#about">Cobranza</a></li>
+                        <li><a href="#contact">Deuda Envases</a></li>
+                    </ul>
+                </nav>
+                <h3>BIENVENIDO A SITRANS APP</h3>
+                <!-- <img class="banner" src="img/logo.png">
+                this is the content
+                <a href="#contact" class="ui-shadow ui-btn ui-corner-all">Contactanos</a> -->
+
+
+
+                <div class="ui-content" role="main">
+
+                    <form class="ui-mini">
+                        <div data-role="fieldcontain" class="ui-field-contain">
+
+                            <div class="ui-field-contain">
+                                <!-- <label for="submit-1">Send form:</label> -->
+                                <input type="submit" id="submit-1" class="ui-btn ui-corner-all " value="Detalles">
+                            </div>
+
+
+                            <label for="select-choice-4" class="select">Deposito:</label>
+                            <select name="select-choice-4" id="deposito" data-native-menu="false">
+                                <option></option>
+                                <option value="1">Central</option>
+                                <option value="2">Deposito 1</option>
+                                <option value="3">Deposito 2</option>
+                                <option value="4">Deposito 3</option>
+                            </select>
+                        </div>   
+                        <div data-role="fieldcontain" class="ui-field-contain"data-demo-html="true">               
+
+                            <label for="date">Fecha:</label>
+                            <input name="mydate" id="fecha" type="date" data-role="datebox" data-options='{"mode": "datebox", "useNewStyle":true}'/>
+                        </div>                
+                        <div data-role="fieldcontain" class="ui-field-contain">
+                            <label for="select-custom-20">Cliente:</label>
+                            <select name="select-custom-20" id="cliente" data-native-menu="false" class="filterable-select">
+
+                               <option value="100">100 - EVELIN  MARIA CARDENAS TROCHE</option>
+                               <option value="101">101 - ALVAREZ MORALES FELIX</option>
+                               <option value="102">102 - LOPEZ ERNESTO</option>
+                               <option value="103">103 - RENE REMIGIO ESCOBAR CALLISAYA</option>
+                               <option value="104">104 - ALACOMA JUSTINA</option>
+                               <option value="105">105 - RUTH GALVEZ IBAÐEZ</option>
+                               <option value="106">106 - ESCALANTE VICTOR</option>
+                               <option value="107">107 - CUBA CONSUELO</option>
+                               <option value="108">108 - FELIX FERNANDEZ</option>
+                               <option value="109">109 - JIMENEZ JAQUELIN</option>
+                               <option value="110">110 - JACINTA MAMANI DE VARGAS</option>
+                               <option value="111">111 - MIRANDA ALCIRA</option>
+                               <option value="112">112 - ARUQUIPA BEATRIS</option>
+                               <option value="113">113 - PASTRANA MARIA</option>
+                               <option value="114">114 - VILLAROEL SENOVIA</option>
+                               <option value="115">115 - ROMERO CINDY</option>
+                               <option value="116">116 - MARIANELA FERNANDEZ</option>
+                               <option value="117">117 - LARA ALDO</option>
+                               <option value="118">118 - QUISPE FLORA</option>
+                               <option value="119">119 - JAIME REQUENA</option>
+                               <option value="120">120 - BEATRIS HUANCA</option>
+                               <option value="121">121 - LUNA CARLOS</option>
+                               <option value="122">122 - MIRIAM LOPEZ</option>
+                               <option value="123">123 - LOURDES CABALLERO LLUSCO</option>
+                               <option value="124">124 - WANG LUQUING</option>
+                               <option value="125">125 - RAMOS LUCY</option>
+                               <option value="126">126 - CALLE TOMAS</option>
+                               <option value="127">127 - GREGORIA GUTIERREZ</option>
+                               <option value="128">128 - JUANA RAMIREZ</option>
+                               <option value="129">129 - RAMIRO ARUQUIPA</option>
+                               <option value="130">130 - PATRICIA ABENDAÐO</option>
+                               <option value="131">131 - LUCILA ALVAREZ</option>
+                               <option value="132">132 - NINA WILSON</option>
+                               <option value="133">133 - HUANCA TEODORA</option>
+                               <option value="134">134 - QUISPE LIDIA</option>
+                               <option value="135">135 - ROJAS ANTONIA</option>
+                               <option value="136">136 - LUNA CANDIA NELSON</option>
+                               <option value="137">137 - FLORES BASILIO</option>
+                               <option value="138">138 - ALANOCA DONATA</option>
+                               <option value="139">139 - LINCON ROBERTA</option>
+                               <option value="140">140 - JOSE LUIZ ACEBEDO</option>
+                               <option value="141">141 - LOPEZ NORA</option>
+                               <option value="142">142 - PEREZ MARIA</option>
+                               <option value="143">143 - VENTA DEPOSITO</option>
+                               <option value="144">144 - SANTANDER FLORA</option>
+                               <option value="145">145 - LICORERIA LAS VEGAS</option>
+                               <option value="146">146 - LEON GERMAN</option>
+                               <option value="147">147 - VALLE FERNANDO</option>
+                               <option value="149">149 - BUSTAMANTE RENATO</option>
+                               <option value="150">150 - CHUQUIMIA ELIZABETH</option>
+                               <option value="151">151 - MURILLO MARTHA</option>
+                               <option value="152">152 - TIENDA ANTUKITA</option>
+                               <option value="153">153 - SANTANDER GENARA</option>
+                               <option value="154">154 - ALMACEN JERSINIA</option>
+                               <option value="155">155 - QUISPE RAMIRO</option>
+                               <option value="156">156 - MENDEZ ESPERANZA</option>
+                               <option value="157">157 - VERA VIRGINIA</option>
+                               <option value="158">158 - MENDEZ MARCOS</option>
+                               <option value="159">159 - CASO ELEODORO</option>
+                               <option value="160">160 - VARGAS DORA</option>
+                               <option value="161">161 - LOCAL GARIBALDI</option>
+                               <option value="162">162 - LOPEZ MARIA</option>
+                               <option value="163">163 - ALMACEN LA PACEÑA</option>
+                               <option value="164">164 - FUESTES SILVIA</option>
+                               <option value="165">165 - PINTO MARCELA</option>
+                               <option value="166">166 - PATON MARIA</option>
+                               <option value="167">167 - CUTIPA IGNACIA</option>
+                               <option value="168">168 - AGUILAR HUAYHUA MIGUEL JOSE</option>
+                               <option value="169">169 - QUISBERT ORTENCIA</option>
+                               <option value="170">170 - TIENDA MIKY</option>
+                               <option value="171">171 - VALLE</option>
+                               <option value="172">172 - ROXANA SANCHES Y SESAR SONCO</option>
+                               <option value="173">173 - CALLISAYA FELIPA</option>
+                               <option value="174">174 - DESTROCK</option>
+                               <option value="175">175 - CASILLA MERCEDES</option>
+                               <option value="176">176 - TATIANA MIRANDA</option>
+                               <option value="177">177 - JHONNY TREBOL</option>
+                               <option value="178">178 - EL GALEON</option>
+                               <option value="179">179 - SORIA VICTOR</option>
+                               <option value="180">180 - MERCADO DEYSI</option>
+                               <option value="181">181 - AVALOS LUCAS</option>
+                               <option value="182">182 - VEGA YOLA</option>
+                               <option value="183">183 - USNAYO FRANCISCA</option>
+                               <option value="184">184 - SAN MILAN EDDA</option>
+                               <option value="185">185 - ESPEJO TEREZA</option>
+                               <option value="186">186 - SEGALES LUCY</option>
+                               <option value="187">187 - SULLCATA MARIA</option>
+                               <option value="188">188 - JORGE JULIAN</option>
+                               <option value="189">189 - AVILA GABRIELA</option>
+                               <option value="190">190 - FERNANDEZ RAMIRO</option>
+                               <option value="191">191 - ALCAZAR JUSTINA</option>
+                               <option value="192">192 - MORON CEFERINA</option>
+                               <option value="193">193 - VARGAS ADALIT</option>
+                               <option value="194">194 - JUANA DE ARANA</option>
+                               <option value="195">195 - CHAVEZ MARCELO</option>
+                               <option value="196">196 - ZUAREZ ELIZABET</option>
+                               <option value="197">197 - FLORES MARIA</option>
+                               <option value="198">198 - TOLEDO WENDY</option>
+                               <option value="199">199 - PAUCARA RICARDO</option>
+                               <option value="200">200 - ALMACEN SUSET</option>
+                               <option value="201">201 - ALMACEN ALIANZA</option>
+                               <option value="202">202 - TOLA ANGELICA</option>
+                               <option value="203">203 - GONZALES MIKAEL</option>
+                               <option value="204">204 - RIVERO GUIDO MOISES</option>
+                               <option value="205">205 - ALMACEN GOSALVEZ</option>
+                               <option value="206">206 - CHOQUE ANGELA</option>
+                               <option value="207">207 - HOTEL AERONAUTICO</option>
+                               <option value="208">208 - SARSURI MAX</option>
+                               <option value="209">209 - FERNANDEZ NELLY</option>
+                               <option value="210">210 - BENITEZ JUANA</option>
+                               <option value="211">211 - ROJAS JUANA</option>
+                               <option value="213">213 - NINA ELIO</option>
+                               <option value="214">214 - CANDIA NELSON</option>
+                               <option value="215">215 - ZAR GALDON</option>
+                               <option value="216">216 - LICORERIA STOP</option>
+                               <option value="217">217 - RESTAURANTE LUIS DIEGO</option>
+                               <option value="218">218 - MIRANDA JUAN CARLOS</option>
+                               <option value="219">219 - BLANCO ROSA</option>
+                               <option value="220">220 - AIDE HUANCA</option>
+                               <option value="221">221 - JORGE SADU</option>
+                               <option value="222">222 - RUBIN DE SELIS</option>
+                               <option value="223">223 - JORGE RIVERO</option>
+                               <option value="224">224 - ALIAGA OLGA</option>
+                               <option value="225">225 - CHUMA LLAJTA</option>
+                               <option value="226">226 - SARAI</option>
+                               <option value="227">227 - ALMACEN ROCKY</option>
+                               <option value="228">228 - CRUZ VARGAS COSME</option>
+                               <option value="229">229 - GUTIERREZ ROSALIA</option>
+                               <option value="230">230 - URQUIOLA ROSA</option>
+                               <option value="231">231 - ALCON MARTHA</option>
+                               <option value="232">232 - TIENDA AUTENTICA</option>
+                               <option value="233">233 - LEMA LURDES</option>
+                               <option value="234">234 - VARGAS ANA</option>
+                               <option value="235">235 - SALAZAR VICTORINA</option>
+                               <option value="236">236 - RAMOS ROCIO</option>
+                               <option value="237">237 - QUINTANA RAMIRO</option>
+                               <option value="238">238 - IRA CRISTOVAL</option>
+                               <option value="239">239 - MARIA PAULA</option>
+                               <option value="240">240 - CHAMBI VALERIO</option>
+                               <option value="241">241 - ACADEMICO</option>
+                               <option value="242">242 - AGUILAR MIRNA</option>
+                               <option value="243">243 - DIETER MARIN</option>
+                               <option value="244">244 - HOTEL MADRE TIERRA</option>
+                               <option value="245">245 - ANDRADE ROSALIA</option>
+                               <option value="246">246 - SALON COCO`S</option>
+                               <option value="247">247 - ALAJA MARTA</option>
+                               <option value="248">248 - LA RIEL</option>
+                               <option value="249">249 - GALVEZ WALTER</option>
+                               <option value="250">250 - CUTILI ANTONIA</option>
+                               <option value="251">251 - ARANDA BLANCO</option>
+                               <option value="252">252 - LUCIA DE QUISPE</option>
+                               <option value="253">253 - NORCA DE CHAVES</option>
+                               <option value="254">254 - MAMANI ROXANA</option>
+                               <option value="255">255 - GERMACHEA CUENTAS RICARDA</option>
+                               <option value="256">256 - CALLEJAS MARTHA</option>
+                               <option value="257">257 - ARAMAYO ANDREA</option>
+                               <option value="258">258 - VARGAS JUAN</option>
+                               <option value="259">259 - ALARCON KATIA</option>
+                               <option value="260">260 - PADRE JUAN PABLO</option>
+                               <option value="261">261 - SANMILLAN EDDA</option>
+                               <option value="262">262 - ORTUÑO ILSEN</option>
+                               <option value="263">263 - CARRION JAQUELINE</option>
+                               <option value="264">264 - Banco Sol</option>
+                               <option value="265">265 - Col.Gregorio Reynold</option>
+                               <option value="266">266 - BARRENECHEA MIKAELA</option>
+                               <option value="267">267 - VERA LEONARDO</option>
+                               <option value="270">270 - ANTONIA MENDOZA</option>
+                               <option value="271">271 - LICORERIA LOS AMIGOS</option>
+                               <option value="272">272 - ASUNTA CHOQUE</option>
+                               <option value="273">273 - LA CASA DEL LOBO</option>
+                               <option value="274">274 - BLUE HOUSE (Cardozo</option>
+                               <option value="275">275 - LICORERIA MIRAFLORES</option>
+                               <option value="276">276 - LOCAL LIBERTAD</option>
+                               <option value="277">277 - MERCEDES BERNAL</option>
+                               <option value="278">278 - RESTAURANTE RICO PEZ</option>
+                               <option value="279">279 - GOZALVEZ (Susana Paz )</option>
+                               <option value="280">280 - GUIDO LUCANA</option>
+                               <option value="281">281 - HUAYHUA MAYDA</option>
+                               <option value="282">282 - ROJAS JUAN CARLOS</option>
+                               <option value="283">283 - MARIA LUIZA (cancha San Luis</option>
+                               <option value="284">284 - JHONNY SOSA</option>
+                               <option value="285">285 - TITO JHANET(marcelo chaves</option>
+                               <option value="286">286 - ASCARUN SEVERO</option>
+                               <option value="287">287 - VALENCIA CRAMER</option>
+                               <option value="288">288 - FLORES TERESA</option>
+                               <option value="289">289 - GARCIA ELMER</option>
+                               <option value="290">290 - RAMOS ALCON PATRICIO</option>
+                               <option value="291">291 - ORMACHEA REGINA</option>
+                               <option value="292">292 - QUISPE ELIZABET</option>
+                               <option value="293">293 - ALMACEN CHELITA</option>
+                               <option value="294">294 - SARMIENTO NOEMI</option>
+                               <option value="295">295 - ANTEZANA TERRAZAS</option>
+                               <option value="296">296 - ESPEJO TITO</option>
+                               <option value="297">297 - ARTEAGA JULIA</option>
+                               <option value="298">298 - MACHICADO SABINA</option>
+                               <option value="299">299 - AGUILAR JOSE LUIS</option>
+                               <option value="300">300 - USNAYO EDUARDA</option>
+                               <option value="301">301 - COSTANO TEREZA</option>
+                               <option value="302">302 - CONTRERAS ALBERTO</option>
+                               <option value="303">303 - EQUINOCCIO</option>
+                               <option value="304">304 - TORREZ ESTHER</option>
+                               <option value="305">305 - TEREZA CENTENO</option>
+                               <option value="306">306 - JUAN CARLOS AGUILAR</option>
+                               <option value="307">307 - CHOUE JHIMENA</option>
+                               <option value="308">308 - RAMIRO QUISPE</option>
+                               <option value="309">309 - VICTOR ALMIRANTE</option>
+                               <option value="310">310 - MIRIAN ALBORTA</option>
+                               <option value="311">311 - MIUSIC</option>
+
+                           </select>
+                       </div>
+                       <div data-role="fieldcontain" class="ui-field-contain">
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <legend>Tipo:</legend>
+                            <label for="cont">Contado</label>
+                            <input type="radio" name="tipo" id="cont" checked>
+                            <label for="cred">Credito</label>
+                            <input type="radio" name="tipo" id="cred">
+                        </fieldset>
+                    </div>
+                    <div data-role="fieldcontain" class="ui-field-contain">               
+                        <label for="date">Fecha Vto:</label>
+                        <input name="mydate" id="fecha2" type="date" data-role="datebox" data-options='{"mode": "datebox", "useNewStyle":true}'/>
+                    </div>    
+                    <div data-role="fieldcontain" class="ui-field-contain">
+                        <label for="textarea">Obs:</label>
+                        <textarea cols="40" rows="8" name="textarea" id="obs"></textarea>
+                    </div>
+                    <div class="ui-field-contain">
+                        <!-- <label for="submit-1">Send form:</label> -->
+                        <input type="submit" id="submit-1" class="ui-btn ui-corner-all " value="Detalles">
+                    </div>
+
+
+
+                </form>
+            </div>
+                        <!-- <fieldset data-role="controlgroup" data-type="horizontal">
+                    <legend>Theme:</legend>
+                    <label for="a">A</label>
+                    <input type="radio" name="theme" id="a" checked>
+                    <label for="b">B</label>
+                    <input type="radio" name="theme" id="b">
+                </fieldset> -->
+
+                        <!-- <div class="ui-field-contain" id="opt-navbars">
+                            <fieldset data-role="controlgroup" data-type="horizontal">
+                                <legend>Navbars:</legend>
+                                <label for="show">Show</label>
+                                <input type="radio" name="navbars" id="show" checked>
+                                <label for="hide">Hide</label>
+                                <input type="radio" name="navbars" id="hide">
+                            </fieldset>
+                        </div>
+                        <div class="ui-field-contain" id="opt-shadow">
+                            <fieldset data-role="controlgroup" data-type="horizontal">
+                                <legend>Shadow:<br><small>Off: set the widget option shadow to false (data-shadow="false")</small></legend>
+                                <label for="on">On</label>
+                                <input type="radio" name="shadow" id="on" checked>
+                                <label for="off">Off</label>
+                                <input type="radio" name="shadow" id="off">
+                            </fieldset>
+                        </div> -->
+
+                        <div id="ui-body-test" class="ui-body ui-body-a ui-corner-all" style="margin-bottom:1em;">
+                            <p>I am a div with classes ui-body, ui-body-<span class="theme">a</span> and ui-corner-all.</p>
+                            <p><a href="#">I am a link</a></p>
+                            <h4>Panels</h4>
+                            <a href="#panel-reveal" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-mini">Reveal</a>
+                            <a href="#panel-overlay" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-mini">Overlay</a>
+                            <a href="#panel-push" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-mini">Push</a>
+                        </div>
+
+                        <div id="ui-bar-test" class="ui-bar ui-bar-a ui-corner-all" style="margin-bottom:1em;">
+                            <p>I am a div with classes ui-bar, ui-bar-<span class="theme">a</span> and ui-corner-all. <a href="#">I am a link</a></p>
+                        </div>
+
+                        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-caret-r ui-btn-icon-right">We</a>
+                        <button class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-caret-r ui-btn-icon-right">are</button>
+                        <input type="button" value="buttons" data-inline="true" data-icon="caret-r" data-iconpos="right">
+
+                        <ul data-role="listview" data-inset="true">
+                            <li>I</li>
+                            <li data-role="list-divider">Divider<span class="ui-li-count">3</span></li>
+                            <li>am</li>
+                            <li>static<span class="ui-li-count">6</span></li>
+                        </ul>
+
+                        <ul data-role="listview" data-inset="true">
+                            <li><a href="#">We</a></li>
+                            <li data-role="list-divider">Divider</li>
+                            <li><a href="#">have<span class="ui-li-count">4</span></a></li>
+                            <li><a href="#">links</a></li>
+                        </ul>
+
+                        <ul data-role="listview" data-split-icon="gear" data-inset="true">
+                            <li><a href="#">
+                                <img src="../_assets/img/album-bb.jpg">
+                                <h2>Broken Bells</h2>
+                                <p>Broken Bells</p></a>
+                                <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                            </li>
+                            <li><a href="#">
+                                <img src="../_assets/img/album-hc.jpg">
+                                <h2>Warning</h2>
+                                <p>Hot Chip</p></a>
+                                <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                            </li>
+                            <li><a href="#">
+                                <img src="../_assets/img/album-bb.jpg">
+                                <h2>Wolfgang Amadeus Phoenix</h2>
+                                <p>Phoenix</p></a>
+                                <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                            </li>
+                        </ul>
+
+                        <form>
+                            <div class="ui-field-contain">
+                                <label for="name2">Text Input:</label>
+                                <input type="text" name="name2" id="name2" value="" data-clear-btn="true">
+                            </div>
+                            <div class="ui-field-contain">
+                                <label for="textarea2">Textarea:</label>
+                                <textarea cols="40" rows="8" name="textarea2" id="textarea2"></textarea>
+                            </div>
+                            <div class="ui-field-contain">
+                                <label for="flip2">Flip switch:</label>
+                                <select name="flip2" id="flip2" data-role="flipswitch">
+                                    <option value="off">Off</option>
+                                    <option value="on">On</option>
+                                </select>
+                            </div>
+                            <div class="ui-field-contain">
+                                <label for="slider2">Slider:</label>
+                                <input type="range" name="slider2" id="slider2" value="0" min="0" max="100" data-highlight="true">
+                            </div>
+                            <div class="ui-field-contain">
+                                <fieldset data-role="controlgroup">
+                                    <legend>Checkbox:</legend>
+                                    <input type="checkbox" name="checkbox-v-1a" id="checkbox-v-1a">
+                                    <label for="checkbox-v-1a">One</label>
+                                    <input type="checkbox" name="checkbox-v-1b" id="checkbox-v-1b">
+                                    <label for="checkbox-v-1b">Two</label>
+                                    <input type="checkbox" name="checkbox-v-1c" id="checkbox-v-1c">
+                                    <label for="checkbox-v-1c">Three</label>
+                                </fieldset>
+                            </div>
+                            <div class="ui-field-contain">
+                                <fieldset data-role="controlgroup">
+                                    <legend>Radio:</legend>
+                                    <input type="radio" name="radio-v-1" id="radio-v-1a" checked>
+                                    <label for="radio-v-1a">One</label>
+                                    <input type="radio" name="radio-v-1" id="radio-v-1b">
+                                    <label for="radio-v-1b">Two</label>
+                                    <input type="radio" name="radio-v-1" id="radio-v-1c">
+                                    <label for="radio-v-1c">Three</label>
+                                </fieldset>
+                            </div>
+                            <div class="ui-field-contain">
+                                <fieldset data-role="controlgroup" data-type="horizontal">
+                                    <legend>Controlgroup:</legend>
+                                    <button class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-right">One</button>
+                                    <input type="button" data-icon="back" data-iconpos="right" value="Two">
+                                    <a href="#" class="ui-btn ui-corner-all ui-shadow ui-icon-grid ui-btn-icon-right">Three</a>
+                                </fieldset>
+                            </div>
+                            <div class="ui-field-contain">
+                                <label for="select-choice-1" class="select">Custom select:</label>
+                                <select name="select-choice-1" id="select-choice-1" data-native-menu="false" multiple="multiple">
+                                    <option value="standard">Standard: 7 day</option>
+                                    <option value="rush">Rush: 3 days</option>
+                                    <option value="express">Express: next day</option>
+                                    <option value="overnight">Overnight</option>
+                                </select>
+                            </div>
+                            <div class="ui-field-contain">
+                                <label for="submit-1">Send form:</label>
+                                <input type="submit" id="submit-1" value="Send">
+                            </div>
+                        </form>
+
+                        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-icon-gear ui-btn-icon-left ui-btn-active">Active button</a>
+
+                        <p>Form inside static list:</p>
+
+                        <form>
+                            <ul data-role="listview" data-inset="true">
+                                <li class="ui-field-contain">
+                                    <label for="name3">Text Input:</label>
+                                    <input type="text" name="name3" id="name3" value="" data-clear-btn="true">
+                                </li>
+                                <li class="ui-field-contain">
+                                    <label for="flip3">Slider flip switch:</label>
+                                    <select name="flip3" id="flip3" data-role="slider">
+                                        <option value="off">Off</option>
+                                        <option value="on">On</option>
+                                    </select>
+                                </li>
+                                <li class="ui-field-contain">
+                                    <label for="slider3">Slider:</label>
+                                    <input type="range" name="slider3" id="slider3" value="0" min="0" max="100" data-highlight="true">
+                                </li>
+                            </ul>
+                        </form>
+
+                        <div id="ui-bar-form" class="ui-bar ui-bar-a">
+                            <p>ui-bar-<span class="theme">a</span></p>
+                            <div class="ui-field-contain">
+                                <label for="name4">Text Input:</label>
+                                <input type="text" name="name4" id="name4" value="" data-clear-btn="true">
+                            </div>
+                            <div class="ui-field-contain">
+                                <label for="flip4">Flip switch:</label>
+                                <select name="flip4" id="flip4" data-role="slider">
+                                    <option value="off">Off</option>
+                                    <option value="on">On</option>
+                                </select>
+                            </div>
+                            <div class="ui-field-contain">
+                                <label for="slider4">Slider:</label>
+                                <input type="range" name="slider4" id="slider4" value="0" min="0" max="100" data-highlight="true">
+                            </div>
+                        </div>
+
+                        <div data-role="collapsible" data-content-theme="a">
+                            <h4>Heading</h4>
+                            <p>I'm the collapsible content with a themed content block set to "<span class="theme">a</span>".</p>
+                        </div>
+
+                        <div data-role="collapsibleset" data-content-theme="a">
+                            <div data-role="collapsible">
+                                <h3>Section 1</h3>
+                                <p>I'm the collapsible content for section 1</p>
+                            </div>
+                            <div data-role="collapsible">
+                                <h3>Section 2</h3>
+                                <p>I'm the collapsible content for section 2</p>
+                            </div>
+                            <div data-role="collapsible">
+                                <h3>Section 3</h3>
+                                <p>I'm the collapsible content for section 3</p>
+                            </div>
+                        </div>
+
+                    </div><!-- /content -->
+
+   <!--  <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#">Menu item 1</a></li>
+                <li><a href="#" class="ui-btn-active ui-state-persist">Menu item 2</a></li>
+                <li><a href="#">Menu item 3</a></li>
+            </ul>
+        </div>
+        <h4 style="display:none;">Footer</h4>
+    </div> -->
+
+    <div data-role="panel" id="panel-reveal">
+        <ul data-role="listview">
+            <li data-icon="delete"><a href="#" data-rel="close">Close</a></li>
+            <li><a href="#">List item</a></li>
+            <li><a href="#">List item</a></li>
+            <li><a href="#">List item</a></li>
+        </ul>
+        <br><br>
+        <button class="ui-btn ui-corner-all ui-shadow">Button</button>
+    </div>
+
+    <div data-role="panel" id="panel-overlay" data-display="overlay">
+        <ul data-role="listview">
+            <li data-icon="delete"><a href="#" data-rel="close">Close</a></li>
+            <li><a href="#">List item</a></li>
+            <li><a href="#">List item</a></li>
+            <li><a href="#">List item</a></li>
+        </ul>
+        <br><br>
+        <button class="ui-btn ui-corner-all ui-shadow">Button</button>
+    </div>
+
+    <div data-role="panel" id="panel-push" data-display="push">
+        <ul data-role="listview">
+            <li data-icon="delete"><a href="#" data-rel="close">Close</a></li>
+            <li><a href="#">List item</a></li>
+            <li><a href="#">List item</a></li>
+            <li><a href="#">List item</a></li>
+        </ul>
+        <br><br>
+        <button class="ui-btn ui-corner-all ui-shadow">Button</button>
+    </div>
+
+
+</div>
+<footer data-role="footer" data-position="fixed">
+    <h3>Copyright &copy; 2015</h3>
+</footer>
+</div>
+
+
+<div data-role="page" id="about">
+    <header data-role="header">
+        <h1>ABOUT</h1>
+    </header> 
+
+    <div data-role="content">
+        <nav data-role="navbar">
+            <ul>
+                <li><a href="#home" >Home </a></li>
+                <li><a href="#about" class="ui-btn-active">About</a></li>
+                <li><a href="#contact" >Contact</a></li>
+            </ul>
+        </nav>
+        this is the about content
+    </div>
+    <footer data-role="footer">
+        <h3>Copyright &copy; 2015</h3>
+    </footer>
+</div>
+
+
+<div data-role="page" id="contact">
+    <header data-role="header">
+        <h1>CONTACT</h1>
+    </header> 
+
+    <div data-role="content">
+        <nav data-role="navbar">
+            <ul>
+                <li><a href="#home" >Home </a></li>
+                <li><a href="#about" >About</a></li>
+                <li><a href="#contact" class="ui-btn-active">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="map">
+            <!-- <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3125.4523358535844!2d-68.14294433774853!3d-16.489658756884424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915edff57f147269%3A0xd2de8a52fb810f22!2sCBN!5e0!3m2!1ses!2sbo!4v1438353911523" height="300" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+        </div>
+        this is the contact content
+    </div>
+    <footer data-role="footer">
+        <h3>Copyright &copy; 2015</h3>
+    </footer>
+</div>
+
+
+</div>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.mobile.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script>
+    jQuery(document).ready(function() {
+        var d = new Date();
+
+        var month = d.getMonth()+1;
+        var day = d.getDate();
+        var output =((''+day).length<2 ? '0' : '') + day + '/' +
+        ((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
+        // alert(output);
+        $("#fecha").val("01/01/2015");
+        // alert($("#fecha").val());
+
+    });
+</script>
+</body>
+</html>
