@@ -35,7 +35,7 @@
 
 
     <!-- <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" /> -->
-    <script type="text/javascript" src="cordova.js"></script>
+
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery.mobile.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
@@ -191,29 +191,27 @@
       $( "#panel-overlay" ).panel( "open" );
       $("#cod_usuario").focus();
     }else{
-      subir_db_articulos();
-
-      var var1= $(".var1").val();
-      var direccion= $(".direccion").val();
       $.mobile.loading("show", {
         theme: 'a'
       });
-
-      $.ajax({
-        type: 'POST',
-        dataType: 'json',
-        url: "http://"+direccion+"/sitrans_server/sitrans.php",
-        data: "var1=" + var1,
-        success: function (resp) {
-          $.mobile.loading("hide");
-          alert(resp);
-        },
-        error: function (e) {
-          $.mobile.loading("hide");
-          alert("No se encuentra conectado a su red.");
-        }
-      });
-
+      alert("comienza carga");
+      subir_db_articulos();
+      var var1= $(".var1").val();
+      var direccion= $(".direccion").val();
+      // $.ajax({
+      //   type: 'POST',
+      //   dataType: 'json',
+      //   url: "http://"+direccion+"/sitrans_server/sitrans.php",
+      //   data: "var1=" + var1,
+      //   success: function (resp) {
+      //     $.mobile.loading("hide");
+      //     alert(resp);
+      //   },
+      //   error: function (e) {
+      //     $.mobile.loading("hide");
+      //     alert("No se encuentra conectado a su red.");
+      //   }
+      // });
     }
   });
 
