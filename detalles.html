@@ -29,7 +29,6 @@
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <!-- <link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme.css" /> -->
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile.css" />
-    <link rel="stylesheet" href="css/hexdots.css" type="text/css">
 
 
     <!-- <link rel="stylesheet" type="text/css" href="css/theme-classic.css"/> -->
@@ -42,7 +41,7 @@
     <!-- <script src="js/loader.js"></script> -->
 
     <!-- <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" /> -->
-    <script type="text/javascript" src="cordova.js"></script>
+
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery.mobile.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
@@ -862,6 +861,10 @@
         ((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
 
         $("#fecha").val(output);
+        $( "#fecha2" ).datepicker({
+          dateFormat: "dd-mm-yyyy"
+        });
+        // $( "#fecha2" ).datepicker( "option", "dateFormat", "yy-mm-dd" );
         $('.mensaje').hide();
         $(".articulo").hide();
         $(".vencimiento").hide();
@@ -875,7 +878,7 @@
        });
 
         $('.guardar_venta').click(function() {
-         
+
 
 
          $(".articulo").hide(300);
