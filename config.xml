@@ -14,7 +14,7 @@
     <preference name="permissions" value="none" />
     <preference name="orientation" value="default" />
     <preference name="target-device" value="universal" />
-    <preference name="fullscreen" value="false" />
+    <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="true" />
     <preference name="prerendered-icon" value="true" />
     <preference name="stay-in-webview" value="false" />
@@ -40,7 +40,6 @@
     <gap:plugin name="org.apache.cordova.device-orientation" source="npm"/>
     <gap:plugin name="org.apache.cordova.dialogs" source="npm"/>
     <gap:plugin name="org.apache.cordova.file" source="npm"/>
-    <!-- <gap:plugin name="com.chanthu.evri.gcs-file-transfer" source="npm"/> -->
     <gap:plugin name="org.apache.cordova.file-transfer" source="npm"/>
     <gap:plugin name="org.apache.cordova.geolocation" source="npm"/>
     <gap:plugin name="org.apache.cordova.globalization" source="npm"/>
