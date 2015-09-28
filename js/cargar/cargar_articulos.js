@@ -20,7 +20,7 @@ function subir_db_articulos() {
     },
     error: function (e) {
       $.mobile.loading("hide");
-      alert("No se encuentra conectado a su red: "+e.message+" err code: "+e.code);
+      alert("No se encuentra conectado a su red: "+e.message+" err code: "+e.code+ "e:"+e);
   }
 });
   // codigo_usuario=user;
