@@ -152,10 +152,10 @@
       if(cod!='' && pass!=''){
         guardar_datos(cod,pass);
         $( "#panel-overlay" ).panel( "close" )
+        location.reload();
       }else{
         alert("Complete ambos campos.");
       }
-      location.reload();
       // $( "#myCollapsibleSet" ).children().trigger( "collapse" );
     });
     $('.cerrar_cod_usuario').click(function() {
@@ -212,8 +212,8 @@
       //     alert("No se encuentra conectado a su red.");
       //   }
       // });
-    }
-  });
+  }
+});
 
     $('.finalizar').click(function() {
      if(localStorage.g_existe==0){
@@ -242,6 +242,6 @@
     // $('.read').click(function() {
     //   window.location.href = "r_w_txt_dir.html";
     // });
-  </script>
+</script>
 </body>
 </html>
