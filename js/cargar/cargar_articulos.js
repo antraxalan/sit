@@ -18,9 +18,12 @@ function subir_db_articulos() {
         call_insert_db_articulos(resp);
         $.mobile.loading("hide");
     },
-    error: function (e) {
+    error: function (xhr, ajaxOptions, thrownError) {
       $.mobile.loading("hide");
-      alert("No se encuentra conectado a su red: "+e.message+" err code: "+e.code+ "e:"+e);
+      // alert("No se encuentra conectado a su red: "+e.message+" err code: "+e.code+ "e:"+e);
+      alert("1: "+xhr.status);
+      alert("2: "+thrownError);
+
   }
 });
   // codigo_usuario=user;
