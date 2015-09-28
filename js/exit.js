@@ -1,9 +1,9 @@
 function carga_exit() {
-    alert("load exit");
+    // alert("load exit");
     document.addEventListener("deviceready", start_exit, false);
 }
 function start_exit(){
-    alert("Device Ready is called by exit");
+    // alert("Device Ready is called by exit");
 
         // console.log('Device Readyasdasd');
      //Se ejecuta al cargar cualquier pagina del directorio
@@ -18,13 +18,13 @@ function start_exit(){
 
 
 document.addEventListener("backbutton", function(e){
-    alert("back");
+    // alert("back");
     if ( $('.paginaprincipal').attr('id') == 'mainpage') {
-        alert("pag princ");
+        // alert("pag princ");
             //window.location = "#exitDialog";
             exitAppPopup();
         }else{
-            alert("history back");
+            // alert("history back");
             history.back();
         };
     });

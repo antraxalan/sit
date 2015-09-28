@@ -1,12 +1,12 @@
 var g_username;
 var g_password;
 function carga_db_crear() {
-	alert("load db");
+	// alert("load db");
 	document.addEventListener("deviceready", onDeviceReady, false);
 }
 // document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
-	alert("Device Ready is called by bd crear");
+	// alert("Device Ready is called by bd crear");
 	var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
 	db.transaction(populateDB, errorCB);
 	inicio_page();
