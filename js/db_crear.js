@@ -32,7 +32,7 @@ function almacenar_user(tx, results) {
 		localStorage.removeItem("g_username");
 		localStorage.removeItem("g_password");
 		$( "#panel-overlay" ).panel( "open" );
-		$('.cerrar_cod_usuario').hide();
+		// $('.cerrar_cod_usuario').hide();
 
 	}else{
 		localStorage.g_existe = results.rows.length;
@@ -41,7 +41,7 @@ function almacenar_user(tx, results) {
 		// alert("user"+g_username+"pass"+g_password);
 		localStorage.g_username = g_username;
 		localStorage.g_password = g_password;
-		$('.cerrar_cod_usuario').show();
+		// $('.cerrar_cod_usuario').show();
 	}
 
 }
