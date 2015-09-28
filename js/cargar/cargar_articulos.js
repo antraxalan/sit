@@ -6,11 +6,13 @@ function subir_db_articulos() {
 
   var direccion= $(".direccion").val();
   var var1= $(".var1").val();
+  var d_completa="http://"+direccion+"/sitrans_server/sitrans.php";
   // alert("in subir_db_articulos."+direccion+"---"+var1);
+  alert("Direccion: "+d_completa);
   $.ajax({
     type: 'POST',
     dataType: 'json',
-    url: "http://"+direccion+"/sitrans_server/sitrans.php",
+    url: d_completa,
     data: "var1=" + var1,
     success: function (resp) {
         alert("success:"+resp);
