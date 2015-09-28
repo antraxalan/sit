@@ -2,6 +2,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 var g_username;
 var g_password;
 function onDeviceReady() {
+	alert("Device Ready is called by exit");
 	var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
 	db.transaction(populateDB, errorCB);
 	inicio_page();
