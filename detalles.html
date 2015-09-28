@@ -44,6 +44,7 @@
 
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery.mobile.js"></script>
+
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/exit.js"></script>
     <title>SITRANS</title>
@@ -367,7 +368,7 @@
         </div>
         <div data-role="fieldcontain" class="ui-field-contain vencimiento">               
           <label for="date">Fecha Vto:</label>
-          <input name="mydate" id="fecha2" type="text" data-role="date" data-date-format="yyyy-mm-dd"/>
+          <input name="mydate" id="fecha2" type="date" data-role="date" data-date-format="dd-mm-yyyy"/>
         </div>    
         <div data-role="fieldcontain" class="ui-field-contain">
           <label for="textarea">Obs:</label>
@@ -859,7 +860,9 @@
         var day = d.getDate();
         var output =((''+day).length<2 ? '0' : '') + day + '/' +
         ((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
-
+        // $('#fecha2').datepicker({
+        //   format: "dd/mm/yyyy"
+        // });
         $("#fecha").val(output);
         $('.mensaje').hide();
         $(".articulo").hide();
