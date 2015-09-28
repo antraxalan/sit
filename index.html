@@ -204,9 +204,9 @@
         theme: 'a'
       });
       alert("comienza carga");
-      subir_db_articulos();
-      // var var1= $(".var1").val();
-      // var direccion= $(".direccion").val();
+      // subir_db_articulos();
+      var var1= $(".var1").val();
+      var direccion= $(".direccion").val();
       // $.ajax({
       //   type: 'POST',
       //   dataType: 'json',
@@ -221,32 +221,55 @@
       //     alert("No se encuentra conectado a su red.");
       //   }
       // });
+    $.ajax({
+      type: 'POST',
+      dataType: 'json',
+      url: "http://"+direccion+"/sitrans_server/sitrans.php",
+      data: "var1=" + var1,
+      success: function (resp) {
+        alert("success:"+resp);
+        // db.transaction(populateDB_articulos, errorCB);
+        // call_insert_db_articulos(resp);
+        $.mobile.loading("hide");
+      },
+      error: function (xhr, ajaxOptions, thrownError) {
+        $.mobile.loading("hide");
+      // alert("No se encuentra conectado a su red: "+e.message+" err code: "+e.code+ "e:"+e);
+      alert("1: "+xhr.status);
+      alert("2: "+thrownError);
+
+    }
+  });
+
+
+
+    
   }
 });
 
-    $('.finalizar').click(function() {
-     if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
-      $( "#panel-overlay" ).panel( "open" );
-      $("#cod_usuario").focus();
-    }else{
-      window.location.href = "db.html";
-    }
+$('.finalizar').click(function() {
+ if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
+  $( "#panel-overlay" ).panel( "open" );
+  $("#cod_usuario").focus();
+}else{
+  window.location.href = "db.html";
+}
 
-  });
+});
 
-    $('.info').click(function() {
-     if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
-      $("#panel-overlay").panel("open");
-      $("#cod_usuario").focus();
-    }else{
-
-
-
-    }
-  });
+$('.info').click(function() {
+ if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
+  $("#panel-overlay").panel("open");
+  $("#cod_usuario").focus();
+}else{
 
 
-  });
+
+}
+});
+
+
+});
 
     // $('.read').click(function() {
     //   window.location.href = "r_w_txt_dir.html";
