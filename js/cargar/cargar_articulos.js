@@ -11,10 +11,10 @@ function subir_db_articulos() {
     type: 'POST',
     dataType: 'json',
     url: "http://"+direccion+"/sitrans_server/sitrans.php",
-    data: "var1=" + id_transp,
+    data: "var1=" + var1,
     success: function (resp) {
-        alert("success:"resp);
-        db.transaction(populateDB, errorCB);
+        alert("success:"+resp);
+        db.transaction(populateDB_articulos, errorCB);
         call_insert_db_articulos(resp);
         $.mobile.loading("hide");
     },
@@ -23,14 +23,13 @@ function subir_db_articulos() {
       alert("No se encuentra conectado a su red.");
   }
 });
-
-  codigo_usuario=user;
-  password_usuario=pass;
+  // codigo_usuario=user;
+  // password_usuario=pass;
   // var dbShell = window.openDatabase(database_name, database_version, database_displayname, database_size);
-  db.transaction(insertDB, errorCB);
+  // db.transaction(insertDB, errorCB);
 };
 
-function populateDB(tx) {
+function populateDB_articulos(tx) {
     alert("popul");
     tx.executeSql('DROP TABLE IF EXISTS ARTICULO');
     tx.executeSql('CREATE TABLE IF NOT EXISTS ARTICULO (IdArticulo INTEGER PRIMARY KEY AUTOINCREMENT,CodMarca,DesMarca,CodArt,DesArt,DesArtReducido,Calibre,TipoArticulo,CantxEmpaque,PrecioCompra,PrecioVtaMin,PrecioVtaMax,CodBotella,DesBotella,PVtaMinBot,CodCaja,DesCaja,PVtaMinCaja,PVtaMaxCaja,Estado)');
