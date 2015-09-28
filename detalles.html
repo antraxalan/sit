@@ -367,7 +367,7 @@
         </div>
         <div data-role="fieldcontain" class="ui-field-contain vencimiento">               
           <label for="date">Fecha Vto:</label>
-          <input name="mydate" id="fecha2" type="date" data-role="datebox" data-options='{"mode": "datebox", "useNewStyle":true}'/>
+          <input name="mydate" id="fecha2" type="date" data-role="datebox" data-date-format="dd-mm-yyyy" data-options='{"mode": "datebox", "useNewStyle":true}'/>
         </div>    
         <div data-role="fieldcontain" class="ui-field-contain">
           <label for="textarea">Obs:</label>
@@ -861,10 +861,6 @@
         ((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
 
         $("#fecha").val(output);
-        $( "#fecha2" ).datepicker({
-          dateFormat: "dd-mm-yyyy"
-        });
-        // $( "#fecha2" ).datepicker( "option", "dateFormat", "yy-mm-dd" );
         $('.mensaje').hide();
         $(".articulo").hide();
         $(".vencimiento").hide();
