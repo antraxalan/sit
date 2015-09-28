@@ -1,6 +1,6 @@
 var g_username;
 var g_password;
-function onLoad() {
+function carga_db_crear() {
 	alert("load db");
 	document.addEventListener("deviceready", onDeviceReady, false);
 }

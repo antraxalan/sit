@@ -1,4 +1,4 @@
-function onLoad() {
+function carga_exit() {
     alert("load exit");
     document.addEventListener("deviceready", start_exit, false);
 }

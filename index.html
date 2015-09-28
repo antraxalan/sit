@@ -47,7 +47,7 @@
 
     <title>SITRANS</title>
   </head>
-  <body onload="onLoad()">
+  <body>
     <div class="app paginaprincipal" id="mainpage">
 
       <div data-role="page" id="home" >
@@ -138,7 +138,8 @@
 // $(document).on("pagecreate","#home",function(){
 
   $(document).on("pageinit",function(){
-
+    carga_db_crear();
+    carga_exit();
     $("#cod_usuario").val(localStorage.g_username);
     if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
       // alert('oculta:'+localStorage.g_existe);
