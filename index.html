@@ -140,7 +140,7 @@
   $(document).on("pageinit",function(){
 
     $("#cod_usuario").val(localStorage.g_username);
-    if(!(localStorage.g_existe)){
+    if(localStorage.g_existe=='0'||localStorage.g_existe=='undefined'){
       alert('oculta:'+localStorage.g_existe);
       // debe_completar();
       $('.cerrar_cod_usuario').hide();
