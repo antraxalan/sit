@@ -1,11 +1,11 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 var g_username;
 var g_password;
-localStorage.g_existe = 0;
 function onDeviceReady() {
 	var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
 	db.transaction(populateDB, errorCB);
 	inicio_page();
+	localStorage.g_existe = 0;
 }
 function populateDB(tx) {
 	tx.executeSql('CREATE TABLE IF NOT EXISTS USUARIO (id INTEGER PRIMARY KEY,codigo,pass)');
@@ -32,6 +32,7 @@ function almacenar_user(tx, results) {
 		localStorage.removeItem("g_username");
 		localStorage.removeItem("g_password");
 		$( "#panel-overlay" ).panel( "open" );
+		$('.cerrar_cod_usuario').hide();
 
 	}else{
 		localStorage.g_existe = results.rows.length;
@@ -40,6 +41,7 @@ function almacenar_user(tx, results) {
 		// alert("user"+g_username+"pass"+g_password);
 		localStorage.g_username = g_username;
 		localStorage.g_password = g_password;
+		$('.cerrar_cod_usuario').show();
 	}
 
 }
