@@ -3,7 +3,7 @@ document.addEventListener("deviceready", deviceisready, false);
 function deviceisready(){
     // alert("Device Ready is called");
 
-        console.log('Device Ready');
+        console.log('Device Readyasdasd');
      //Se ejecuta al cargar cualquier pagina del directorio
 
     // LOADER
