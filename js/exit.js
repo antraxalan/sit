@@ -1,9 +1,9 @@
-document.addEventListener("deviceready", deviceisready, false);
+document.addEventListener("deviceready", start_exit, false);
 
-function deviceisready(){
-    // alert("Device Ready is called");
+function start_exit(){
+    alert("Device Ready is called by exit");
 
-        console.log('Device Readyasdasd');
+        // console.log('Device Readyasdasd');
      //Se ejecuta al cargar cualquier pagina del directorio
 
     // LOADER

@@ -39,8 +39,8 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery.mobile.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript" src="js/exit.js"></script>
 
+    <script type="text/javascript" src="js/exit.js"></script>
     <script type="text/javascript" src="js/db_crear.js"></script>
     <script type="text/javascript" src="js/usuario/guardar_datos.js"></script>
     <script type="text/javascript" src="js/usuario/borrar_sesion.js"></script>
@@ -141,11 +141,11 @@
 
     $("#cod_usuario").val(localStorage.g_username);
     if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
-      alert('oculta:'+localStorage.g_existe);
+      // alert('oculta:'+localStorage.g_existe);
       // debe_completar();
       $('.cerrar_cod_usuario').hide();
     }else{
-      alert('muestra:'+localStorage.g_existe);
+      // alert('muestra:'+localStorage.g_existe);
     }
 
     $('.guardar_cod_usuario').click(function() {
@@ -165,12 +165,12 @@
     $('.cerrar_cod_usuario').click(function() {
       var existe=localStorage.g_existe;
       
-      if(existe){
+      if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
+        alert("No existe ningun regitro de usuario.");
+      }else{
         borrar_datos();
         alert("Datos Eliminados");
         location.reload();
-      }else{
-        alert("No existe ningun regitro de usuario.");
       }
       
     });
@@ -183,7 +183,7 @@
 
     $('.registrar').click(function() {
 
-      if(localStorage.g_existe==0){
+      if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
         $( "#panel-overlay" ).panel( "open" );
         $("#cod_usuario").focus();
       }else{
@@ -192,7 +192,7 @@
     });
 
     $('.cargar').click(function() {
-     if(localStorage.g_existe==0){
+     if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
       $( "#panel-overlay" ).panel( "open" );
       $("#cod_usuario").focus();
     }else{
@@ -221,7 +221,7 @@
 });
 
     $('.finalizar').click(function() {
-     if(localStorage.g_existe==0){
+     if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
       $( "#panel-overlay" ).panel( "open" );
       $("#cod_usuario").focus();
     }else{
@@ -231,7 +231,7 @@
   });
 
     $('.info').click(function() {
-     if(localStorage.g_existe==0){
+     if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
       $("#panel-overlay").panel("open");
       $("#cod_usuario").focus();
     }else{
