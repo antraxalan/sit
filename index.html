@@ -140,9 +140,12 @@
   $(document).on("pageinit",function(){
 
     $("#cod_usuario").val(localStorage.g_username);
-    if(localStorage.g_existe==0){
+    if(!(localStorage.g_existe)){
+      alert('oculta:'+localStorage.g_existe);
       // debe_completar();
       $('.cerrar_cod_usuario').hide();
+    }else{
+      alert('muestra:'+localStorage.g_existe);
     }
 
     $('.guardar_cod_usuario').click(function() {
@@ -151,7 +154,8 @@
       // alert(cod+pass);
       if(cod!='' && pass!=''){
         guardar_datos(cod,pass);
-        $( "#panel-overlay" ).panel( "close" )
+        $( "#panel-overlay" ).panel( "close" );
+        alert("Datos Guardados");
         location.reload();
       }else{
         alert("Complete ambos campos.");
@@ -163,11 +167,12 @@
       
       if(existe){
         borrar_datos();
+        alert("Datos Eliminados");
+        location.reload();
       }else{
         alert("No existe ningun regitro de usuario.");
       }
-      var existe=localStorage.g_existe;
-      location.reload();
+      
     });
 
 
