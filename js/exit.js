@@ -1,5 +1,7 @@
-document.addEventListener("deviceready", start_exit, false);
-
+function onLoad() {
+    alert("load exit");
+    document.addEventListener("deviceready", start_exit, false);
+}
 function start_exit(){
     alert("Device Ready is called by exit");
 
@@ -13,12 +15,12 @@ function start_exit(){
     //     theme: 'a',
     //     html: "sadasdasd"
     // });
-     
 
-    document.addEventListener("backbutton", function(e){
-        alert("back");
-        if ( $('.paginaprincipal').attr('id') == 'mainpage') {
-            alert("pag princ");
+
+document.addEventListener("backbutton", function(e){
+    alert("back");
+    if ( $('.paginaprincipal').attr('id') == 'mainpage') {
+        alert("pag princ");
             //window.location = "#exitDialog";
             exitAppPopup();
         }else{
@@ -36,7 +38,7 @@ function exitAppPopup() {
         }, 
         "Confirmación", 
         "Si,No"
-    ); 
+        ); 
     // alert("Outside Notification"); 
     //return false;
 };
@@ -50,3 +52,5 @@ function ConfirmExit(stat){
         return;
     };
 };
+
+
