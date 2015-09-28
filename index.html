@@ -207,6 +207,7 @@
       // subir_db_articulos();
       var var1= $(".var1").val();
       var direccion= $(".direccion").val();
+      var d_completa="http://"+direccion+"/sitrans_server/sitrans.php";
       // $.ajax({
       //   type: 'POST',
       //   dataType: 'json',
@@ -224,7 +225,7 @@
     $.ajax({
       type: 'POST',
       dataType: 'json',
-      url: "http://"+direccion+"/sitrans_server/sitrans.php",
+      url: d_completa,
       data: "var1=" + var1,
       success: function (resp) {
         alert("success:"+resp);
@@ -243,7 +244,7 @@
 
 
 
-    
+
   }
 });
 
