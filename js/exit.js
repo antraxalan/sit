@@ -46,7 +46,7 @@ function exitAppPopup() {
 function ConfirmExit(stat){
     // alert("Inside ConfirmExit");
     if(stat == "1"){
-        alert("exit app fn");
+        // alert("exit app fn");
         navigator.app.exitApp();
     }else{
         return;
