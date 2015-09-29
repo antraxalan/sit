@@ -196,26 +196,33 @@
     });
 
     $('.cargar').click(function() {
-     var var1= $(".var1").val();
-     var direccion= $(".direccion").val();
-     $.mobile.loading("show", {
-      theme: 'a'
-    });
-     $.ajax({
-      type: 'POST',
-      dataType: 'json',
-      url: "http://"+direccion+"/sitrans_server/sitrans.php",
-      data: "var1=" + var1,
-      success: function (resp) {
-        $.mobile.loading("hide");
-        alert(resp);
-      },
-      error: function (e) {
-        $.mobile.loading("hide");
-        alert("error");
-      }
-    });
-   });
+     if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
+      $( "#panel-overlay" ).panel( "open" );
+      $("#cod_usuario").focus();
+    }else{
+      $.mobile.loading("show", {
+        theme: 'a'
+      });
+      alert("comienza carga");
+      subir_db_articulos();
+      // var var1= $(".var1").val();
+      // var direccion= $(".direccion").val();
+      // $.ajax({
+      //   type: 'POST',
+      //   dataType: 'json',
+      //   url: "http://"+direccion+"/sitrans_server/sitrans.php",
+      //   data: "var1=" + var1,
+      //   success: function (resp) {
+      //     $.mobile.loading("hide");
+      //     alert(resp);
+      //   },
+      //   error: function (e) {
+      //     $.mobile.loading("hide");
+      //     alert("No se encuentra conectado a su red.");
+      //   }
+      // });
+  }
+});
 
     $('.finalizar').click(function() {
      if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){

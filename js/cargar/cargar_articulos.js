@@ -13,17 +13,14 @@ function subir_db_articulos() {
     url: "http://"+direccion+"/sitrans_server/sitrans.php",
     data: "var1=" + var1,
     success: function (resp) {
-        // db.transaction(populateDB_articulos, errorCB);
-        // call_insert_db_articulos(resp);
-        $.mobile.loading("hide");
         alert("success:"+resp);
+        db.transaction(populateDB_articulos, errorCB);
+        call_insert_db_articulos(resp);
+        $.mobile.loading("hide");
     },
-    error: function (xhr, ajaxOptions, thrownError) {
+    error: function (e) {
       $.mobile.loading("hide");
       alert("No se encuentra conectado a su red: "+e.message+" err code: "+e.code+ "e:"+e);
-      alert("1:"xhr.status);
-      alert("2:"thrownError);
-
   }
 });
   // codigo_usuario=user;
