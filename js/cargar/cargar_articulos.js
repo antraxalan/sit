@@ -6,25 +6,23 @@ function subir_db_articulos() {
 
   var direccion= $(".direccion").val();
   var var1= $(".var1").val();
-  var d_completa="http://"+direccion+"/sitrans_server/sitrans.php";
   // alert("in subir_db_articulos."+direccion+"---"+var1);
-  alert("Direccion: "+d_completa);
   $.ajax({
     type: 'POST',
     dataType: 'json',
-    url: d_completa,
+    url: "http://"+direccion+"/sitrans_server/sitrans.php",
     data: "var1=" + var1,
     success: function (resp) {
-        alert("success:"+resp);
-        db.transaction(populateDB_articulos, errorCB);
-        call_insert_db_articulos(resp);
+        // db.transaction(populateDB_articulos, errorCB);
+        // call_insert_db_articulos(resp);
         $.mobile.loading("hide");
+        alert("success:"+resp);
     },
     error: function (xhr, ajaxOptions, thrownError) {
       $.mobile.loading("hide");
-      // alert("No se encuentra conectado a su red: "+e.message+" err code: "+e.code+ "e:"+e);
-      alert("1: "+xhr.status);
-      alert("2: "+thrownError);
+      alert("No se encuentra conectado a su red: "+e.message+" err code: "+e.code+ "e:"+e);
+      alert("1:"xhr.status);
+      alert("2:"thrownError);
 
   }
 });
