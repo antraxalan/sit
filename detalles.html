@@ -73,12 +73,12 @@
       
       <div data-role="fieldcontain">
            <label for="number">Number:</label>
-           <input type="number" name="number" id="number" value="" />
+           <input type="text" name="number" id="number" value="" />
       </div>
       
       <div data-role="fieldcontain">
            <label for="number-pattern">Number + pattern:</label>
-           <input type="number" name="number" pattern="[0-9]*" id="number-pattern" value="" placeholder="Pattern attribute [0-9]* for a numeric keypad" />
+           <input type="text" name="number" pattern="[0-9]*" id="number-pattern" value="" placeholder="Pattern attribute [0-9]* for a numeric keypad" />
       </div>
       
       <div data-role="fieldcontain">
@@ -448,6 +448,7 @@
         <li><a href="#deuda">DEUDA ENVASES</a></li>
       </ul>
     </nav>
+     <h2>Venta</h2>
     <br><br>
     <!-- agregar -->
     <h4 class="mensaje" align="center"></h4>
@@ -605,13 +606,13 @@
               <div class="ui-block-a">
                 <div class="ui-field-contain">
                   <label for="textarea">Cajas:</label>
-                  <input type="number" name="precio" id="cajas_s" disabled="disabled" value="35" />
+                  <input type="text" name="precio" id="cajas_s" disabled="disabled" value="35" />
                 </div>
               </div>
               <div class="ui-block-b">
                 <div class="ui-field-contain">
                   <label for="textarea">Unidades:</label>
-                  <input type="number" name="precio" id="unidades_s" disabled="disabled" value="312" />
+                  <input type="text" name="precio" id="unidades_s" disabled="disabled" value="312" />
                 </div>
               </div>
             </div>
@@ -621,22 +622,33 @@
             Pedido:
             <div class="ui-field-contain">
               <label for="textarea">Precio por Caja:</label>
-              <input type="number" name="precio" id="precio_p"  value="" data-clear-btn="true"/>
+              <input type="text" name="precio" id="precio_p"  value="" data-clear-btn="true"/>
             </div>
             <div class="ui-grid-a">
               <div class="ui-block-a">
                 <div class="ui-field-contain">
                   <label for="textarea">Cajas:</label>
-                  <input type="number" name="precio" id="cajas_p"  value="" data-clear-btn="true"/>
+                  <input type="text" name="precio" id="cajas_p"  value="" data-clear-btn="true"/>
                 </div>
               </div>
               <div class="ui-block-b">
                 <div class="ui-field-contain">
                   <label for="textarea">Unidades:</label>
-                  <input type="number" name="precio" id="unidades_p" value="" data-clear-btn="true"/>
+                  <input type="text" name="precio" id="unidades_p" value="" data-clear-btn="true"/>
                 </div>
               </div>
             </div>
+
+            <div data-role="fieldcontain" class="ui-field-contain">
+              <fieldset data-role="controlgroup" data-type="horizontal">
+                <legend>Envases</legend>
+                <label for="canje">Canje</label>
+                <input type="radio" name="deuda_envase" id="canje" value="canje" checked="checked">
+                <label for="prestamo">Prestamo</label>
+                <input type="radio" name="deuda_envase" id="prestamo" value="prestamo">
+              </fieldset>
+            </div>
+
           </div>
 
 
@@ -644,7 +656,7 @@
 
           <div class="ui-field-contain">
             <br>
-            <button type="button" class="ui-btn ui-icon-minus ui-btn-icon-right ui-shadow ui-btn-a ui-corner-all cancelar cancelar_venta">Cancelar</button>
+            <button type="button" class="ui-btn ui-icon-minus ui-btn-icon-right ui-shadow ui-btn-a ui-corner-all cancelar_venta">Cancelar</button>
             <br>
             <button type="button" class="ui-btn ui-icon-shop ui-btn-icon-right ui-shadow ui-btn-b ui-corner-all guardar_venta">Guardar</button>
             <br>
@@ -673,7 +685,7 @@
           <div class="ui-grid-b">
             <div class="ui-block-a"><p>6 cajas</p></div>
             <div class="ui-block-b"><p>2 unidades</p></div>
-            <div class="ui-block-c price"><p><strong>50.5 Bs</strong></p></div>
+            <div class="ui-block-c price"><strong>50.5 Bs</strong></div>
           </div>
         </a>
         <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
@@ -685,7 +697,7 @@
           <div class="ui-grid-b">
             <div class="ui-block-a"><p>6 cajas</p></div>
             <div class="ui-block-b"><p>2 unidades</p></div>
-            <div class="ui-block-c price"><p><strong>50.5 Bs</strong></p></div>
+            <div class="ui-block-c price"><strong>50.5 Bs</strong></div>
           </div>
         </a>
         <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
@@ -697,7 +709,7 @@
           <div class="ui-grid-b">
             <div class="ui-block-a"><p>6 cajas</p></div>
             <div class="ui-block-b"><p>2 unidades</p></div>
-            <div class="ui-block-c price"><p><strong>50.5 Bs</strong></p></div>
+            <div class="ui-block-c price"><strong>50.5 Bs</strong></div>
           </div>
         </a>
         <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
@@ -709,7 +721,7 @@
           <div class="ui-grid-b">
             <div class="ui-block-a"><p>6 cajas</p></div>
             <div class="ui-block-b"><p>2 unidades</p></div>
-            <div class="ui-block-c price"><p><strong>50.5 Bs</strong></p></div>
+            <div class="ui-block-c price"><strong>50.5 Bs</strong></div>
           </div>
         </a>
         <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
@@ -721,7 +733,7 @@
           <div class="ui-grid-b">
             <div class="ui-block-a"><p>6 cajas</p></div>
             <div class="ui-block-b"><p>2 unidades</p></div>
-            <div class="ui-block-c price"><p><strong>50.5 Bs</strong></p></div>
+            <div class="ui-block-c price"><strong>50.5 Bs</strong></div>
           </div>
         </a>
         <a href="#editar_venta" class="editar_venta_class"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
@@ -789,18 +801,167 @@
         <li><a href="#deuda">DEUDA ENVASES</a></li>
       </ul>
     </nav>
-    Cobranzas
+    
+    <h2>Cobranza</h2>
+
+    <h4 class="mensaje_cobranza" align="center"></h4>
+    <div class="articulo_cobranza">
+
+      <div class="ui-content" role="main">
+
+        <form class="ui">
+
+
+          <div data-role="fieldcontain" class="ui-field-contain ui-body ui-bar-a ui-corner-all">
+            Ingreso:
+            <div data-role="fieldcontain" class="ui-field-contain"data-demo-html="true">               
+
+              <label for="date">Fecha:</label>
+              <input name="mydate" id="fecha_cobranza" disabled="disabled"/>
+            </div> 
+            <div class="ui-field-contain">
+              <label for="textarea">Numero de factura:</label>
+              <input type="text" name="precio" id="nro_factura" value="" data-clear-btn="true"/>
+            </div>
+
+            <div data-role="fieldcontain" class="ui-field-contain">
+              <fieldset data-role="controlgroup" data-type="horizontal">
+                <legend>Cobrar </legend>
+                <label for="parcial_cobranza">Parcial</label>
+                <input type="radio" name="cobranza_monto" id="parcial_cobranza" value="parcial_cobranza" checked="checked">
+                <label for="total_cobranza">Total</label>
+                <input type="radio" name="cobranza_monto" id="total_cobranza" value="total_cobranza">
+              </fieldset>
+            </div>
+
+            <div class="ui-grid-a">
+              <div class="ui-block-a">
+                <div class="ui-field-contain">
+                  <label for="textarea">Saldo:</label>
+                  <input type="text" name="Ingreso" id="saldo_cobranza"  value="590" data-clear-btn="true" disabled="disabled"/>
+                </div>
+              </div>
+              <div class="ui-block-b">
+                <div class="ui-field-contain">
+                  <label for="textarea">A Cobrar:</label>
+                  <input type="text" name="Ingreso" id="a_cobrar_cobranza" value="" data-clear-btn="true"/>
+                </div>
+              </div>
+            </div>
+
+            
+
+          </div>
 
 
 
 
+          <div class="ui-field-contain">
+            <br>
+            <button type="button" class="ui-btn ui-icon-minus ui-btn-icon-right ui-shadow ui-btn-a ui-corner-all cancelar_cobranza">Cancelar</button>
+            <br>
+            <button type="button" class="ui-btn ui-icon-shop ui-btn-icon-right ui-shadow ui-btn-b ui-corner-all guardar_cobranza">Confirmar Cobranza</button>
+            <br>
+            <hr>
+          </div>
+        </form>
+      </div>
 
+    </div>
+    <!-- Finaliza agregar -->
 
+    <div class="ui-grid-b">
+     <div class="ui-block-a"> </div>
+     <div class="ui-block-b"><img src="img/bol.jpg" height="100" width="100"/></div>
+     <div class="ui-block-c"><button type="button" class="show_cobranza big_button" data-icon="plus">Agregar</button></div>
+   </div>
 
+   <div class="lista_cobranza">
+     <ul data-role="listview" data-split-icon="edit" data-inset="true">
+
+      <li>
+        <a>
+          <img src="img/info.png">
+          <h2>NUMERO DE FACTURA</h2>
+          <div class="ui-grid-b">
+            <div class="ui-block-a"><p><strong>FECHA</strong></p></div>
+            <div class="ui-block-b"><p><strong>VENCIMIENTO</strong></p></div>
+            <div class="ui-block-c"><p><strong>MONTO</strong></p></div>
+          </div>
+        </a>
+        <a data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="img/bol.jpg">
+          <h2>5136</h2>
+          <div class="ui-grid-b">
+            <div class="ui-block-a"><p>17/02/2015</p></div>
+            <div class="ui-block-b"><p>17/02/2015</p></div>
+            <div class="ui-block-c red"><strong>50.5 Bs</strong></div>
+          </div>
+        </a>
+        <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="img/bol.jpg">
+          <h2>5137</h2>
+          <div class="ui-grid-b">
+            <div class="ui-block-a"><p>17/07/2015</p></div>
+            <div class="ui-block-b"><p>28/09/2015</p></div>
+            <div class="ui-block-c green"><strong>-50.5 Bs</strong></div>
+          </div>
+        </a>
+        <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="img/bol.jpg">
+          <h2>5138</h2>
+          <div class="ui-grid-b">
+            <div class="ui-block-a"><p>17/07/2015</p></div>
+            <div class="ui-block-b"><p>28/09/2015</p></div>
+            <div class="ui-block-c red"><strong>50.5 Bs</strong></div>
+          </div>
+        </a>
+        <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="img/bol.jpg">
+          <h2>5139</h2>
+          <div class="ui-grid-b">
+            <div class="ui-block-a"><p>17/07/2015</p></div>
+            <div class="ui-block-b"><p>28/09/2015</p></div>
+            <div class="ui-block-c red"><strong>50.5 Bs</strong></div>
+          </div>
+        </a>
+        <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="img/bol.jpg">
+          <h2>5140</h2>
+          <div class="ui-grid-b">
+            <div class="ui-block-a"><p>17/07/2015</p></div>
+            <div class="ui-block-b"><p>28/09/2015</p></div>
+            <div class="ui-block-c red"><strong>50.5 Bs</strong></div>
+          </div>
+        </a>
+        <a href="#editar_venta" class="editar_venta_class"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
+      </li>
+    </ul>
   </div>
-  <footer data-role="footer" data-position="fixed">
-    <h3>Copyright &copy; 2015</h3>
-  </footer>
+
+
+
+
+
+</div>
+<footer data-role="footer" data-position="fixed">
+  <h3>Copyright &copy; 2015</h3>
+</footer>
 </div>
 
 
@@ -828,12 +989,180 @@
     <div class="map">
 
     </div>
-    Deudas
-    <button class="ui-btn-active prueba1">DEUDA ENVASES</button></li>
+    <!-- Deudas -->
+    <!-- <button class="ui-btn-active prueba1">DEUDA ENVASES</button></li> -->
+
+    <h2>Deuda</h2>
+
+    <h4 class="mensaje_deuda" align="center"></h4>
+    <div class="articulo_deuda">
+
+      <div class="ui-content" role="main">
+
+        <form class="ui">
+
+
+          <div data-role="fieldcontain" class="ui-field-contain ui-body ui-bar-a ui-corner-all">
+            Ingreso:
+            <div data-role="fieldcontain" class="ui-field-contain"data-demo-html="true">               
+
+              <label for="date">Fecha:</label>
+              <input name="mydate" id="fecha_deuda" disabled="disabled"/>
+            </div> 
+            <div class="ui-field-contain">
+              <label for="textarea">Codigo Envase:</label>
+              <input type="text" name="precio" id="cod_env" value="" data-clear-btn="true"/>
+            </div>
+            <div class="ui-field-contain">
+              <label for="textarea">Descripcion:</label>
+              <input type="text" name="precio" id="descripcion_deuda" value="" data-clear-btn="true"/>
+            </div>
+
+            <!-- <div data-role="fieldcontain" class="ui-field-contain">
+              <fieldset data-role="controlgroup" data-type="horizontal">
+                <legend>Cobrar </legend>
+                <label for="parcial_deuda">Parcial</label>
+                <input type="radio" name="deuda_monto" id="parcial_deuda" value="parcial_deuda" checked="checked">
+                <label for="total_deuda">Total</label>
+                <input type="radio" name="deuda_monto" id="total_deuda" value="total_deuda">
+              </fieldset>
+            </div> -->
+            
+            <div class="ui-grid-a">
+              <div class="ui-block-a">
+                <div class="ui-field-contain">
+                  <label for="textarea">Cajas:</label>
+                  <input type="text" name="Ingreso" id="saldo_deuda"  value="20" data-clear-btn="true" disabled="disabled"/>
+                </div>
+              </div>
+              <div class="ui-block-b">
+                <div class="ui-field-contain">
+                  <label for="textarea">A Cobrar:</label>
+                  <input type="text" name="Ingreso" id="a_cobrar_deuda" value="" data-clear-btn="true"/>
+                </div>
+              </div>
+            </div>
+            <div class="ui-grid-a">
+              <div class="ui-block-a">
+                <div class="ui-field-contain">
+                  <label for="textarea">Botellas:</label>
+                  <input type="text" name="Ingreso" id="saldo_deuda"  value="2" data-clear-btn="true" disabled="disabled"/>
+                </div>
+              </div>
+              <div class="ui-block-b">
+                <div class="ui-field-contain">
+                  <label for="textarea">A Cobrar:</label>
+                  <input type="text" name="Ingreso" id="a_cobrar_deuda" value="" data-clear-btn="true"/>
+                </div>
+              </div>
+            </div>
+
+            
+
+          </div>
 
 
 
 
+          <div class="ui-field-contain">
+            <br>
+            <button type="button" class="ui-btn ui-icon-minus ui-btn-icon-right ui-shadow ui-btn-a ui-corner-all cancelar_deuda">Cancelar</button>
+            <br>
+            <button type="button" class="ui-btn ui-icon-shop ui-btn-icon-right ui-shadow ui-btn-b ui-corner-all guardar_deuda">Confirmar Deuda</button>
+            <br>
+            <hr>
+          </div>
+        </form>
+      </div>
+
+    </div>
+    <!-- Finaliza agregar -->
+
+    <div class="ui-grid-b">
+     <div class="ui-block-a"> </div>
+     <div class="ui-block-b"><img src="img/caja.jpg" height="100" width="100"/></div>
+     <div class="ui-block-c"><button type="button" class="show_deuda big_button" data-icon="plus">Agregar</button></div>
+   </div>
+
+   <div class="lista_deuda">
+     <ul data-role="listview" data-split-icon="edit" data-inset="true">
+
+      <li>
+        <a>
+          <img src="img/info.png">
+          <h2>NUMERO DE FACTURA</h2>
+          <div class="ui-grid-b">
+            <div class="ui-block-a"><p><strong>FECHA</strong></p></div>
+            <div class="ui-block-b"><p><strong>VENCIMIENTO</strong></p></div>
+            <div class="ui-block-c"><p><strong>MONTO</strong></p></div>
+          </div>
+        </a>
+        <a data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="img/caja.jpg">
+          <h2>5136</h2>
+          <div class="ui-grid-b">
+            <div class="ui-block-a"><p>17/02/2015</p></div>
+            <div class="ui-block-b"><p>17/02/2015</p></div>
+            <div class="ui-block-c red"><strong>50.5 Bs</strong></div>
+          </div>
+        </a>
+        <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="img/caja.jpg">
+          <h2>5137</h2>
+          <div class="ui-grid-b">
+            <div class="ui-block-a"><p>17/07/2015</p></div>
+            <div class="ui-block-b"><p>28/09/2015</p></div>
+            <div class="ui-block-c green"><strong>-50.5 Bs</strong></div>
+          </div>
+        </a>
+        <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="img/caja.jpg">
+          <h2>5138</h2>
+          <div class="ui-grid-b">
+            <div class="ui-block-a"><p>17/07/2015</p></div>
+            <div class="ui-block-b"><p>28/09/2015</p></div>
+            <div class="ui-block-c red"><strong>50.5 Bs</strong></div>
+          </div>
+        </a>
+        <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="img/caja.jpg">
+          <h2>5139</h2>
+          <div class="ui-grid-b">
+            <div class="ui-block-a"><p>17/07/2015</p></div>
+            <div class="ui-block-b"><p>28/09/2015</p></div>
+            <div class="ui-block-c red"><strong>50.5 Bs</strong></div>
+          </div>
+        </a>
+        <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="img/caja.jpg">
+          <h2>5140</h2>
+          <div class="ui-grid-b">
+            <div class="ui-block-a"><p>17/07/2015</p></div>
+            <div class="ui-block-b"><p>28/09/2015</p></div>
+            <div class="ui-block-c red"><strong>50.5 Bs</strong></div>
+          </div>
+        </a>
+        <a href="#editar_venta" class="editar_venta_class"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
+      </li>
+    </ul>
+  </div>
+
+  
 
 
 
@@ -860,38 +1189,70 @@
 
         var month = d.getMonth()+1;
         var day = d.getDate();
-        var output =((''+day).length<2 ? '0' : '') + day + '/' +
+        var fecha_actual =((''+day).length<2 ? '0' : '') + day + '/' +
         ((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
         // $('#fecha2').datepicker({
         //   format: "dd/mm/yyyy"
         // });
-        $("#fecha").val(output);
-        $('.mensaje').hide();
-        $(".articulo").hide();
-        $(".vencimiento").hide();
+$("#fecha").val(fecha_actual);
+$("#fecha_cobranza").val(fecha_actual);
+$("#fecha_deuda").val(fecha_actual);
+$('.mensaje').hide();
+$(".articulo").hide();
+$(".articulo_cobranza").hide();
+$(".articulo_deuda").hide();
+$(".vencimiento").hide();
 
-        $('.inicio').click(function() {
-         window.location.href = "index.html";
-       });
-
-        $('.show').click(function() {
-         $(".articulo").show(300);
-       });
-
-        $('.guardar_venta').click(function() {
+$('.inicio').click(function() {
+ window.location.href = "index.html";
+});
 
 
+$('.show').click(function() {
+ $(".articulo").show(300);
+});
+$('.show_cobranza').click(function() {
+ $(".articulo_cobranza").show(300);
+});
+$('.show_deuda').click(function() {
+ $(".articulo_deuda").show(300);
+});
 
-         $(".articulo").hide(300);
-         $('.mensaje').html("<div style='color:green;'>GUARDADO</div>");
-         $('.mensaje').show(300);
-         setTimeout(function(){ $('.mensaje').hide(300); $('.mensaje').html(""); }, 3000);
-       });  
 
-        $('.cancelar_venta').click(function() {
-         $(".articulo").hide(300);
-       }); 
-        $(".editar_venta_class").on('click', function(event) {
+$('.guardar_venta').click(function() {
+
+ $(".articulo").hide(300);
+ $('.mensaje').html("<div style='color:green;'>GUARDADO</div>");
+ $('.mensaje').show(300);
+ setTimeout(function(){ $('.mensaje').hide(300); $('.mensaje').html(""); }, 3000);
+}); 
+
+$('.guardar_cobranza').click(function() {
+
+ $(".articulo_cobranza").hide(300);
+ $('.mensaje_cobranza').html("<div style='color:green;'>COBRADO</div>");
+ $('.mensaje_cobranza').show(300);
+ setTimeout(function(){ $('.mensaje_cobranza').hide(300); $('.mensaje_cobranza').html(""); }, 3000);
+});  
+$('.guardar_deuda').click(function() {
+
+ $(".articulo_deuda").hide(300);
+ $('.mensaje_deuda').html("<div style='color:green;'>COBRADO</div>");
+ $('.mensaje_deuda').show(300);
+ setTimeout(function(){ $('.mensaje_deuda').hide(300); $('.mensaje_deuda').html(""); }, 3000);
+});  
+
+$('.cancelar_venta').click(function() {
+ $(".articulo").hide(300);
+}); 
+$('.cancelar_cobranza').click(function() {
+ $(".articulo_cobranza").hide(300);
+}); 
+$('.cancelar_deuda').click(function() {
+ $(".articulo_deuda").hide(300);
+}); 
+
+$(".editar_venta_class").on('click', function(event) {
           // $(this).attr('codigo-producto');
           $(".articulo").hide();
           var text = $(this).parent().find('h2').text()
@@ -903,7 +1264,7 @@
           // $( "#alerta_eliminado_venta" ).popup( "close" );
           // $(".id_venta").val('0');
         });
-        $('.eliminar_popup').click(function() {
+$('.eliminar_popup').click(function() {
           // $('#titulo_popup').html($(this).val());
           // alert("asd");
           
@@ -912,14 +1273,14 @@
           setTimeout(function(){ $('.mensaje').hide(300); $('.mensaje').html(""); }, 3000);
 
         }); 
-        $('.editar_popup').click(function() {
-         $(".articulo").show(300);
-       }); 
+$('.editar_popup').click(function() {
+ $(".articulo").show(300);
+}); 
 
 
-        $('.prueba1').click(function() {
-         window.location.href = "detalles.html";
-       });
+$('.prueba1').click(function() {
+ window.location.href = "detalles.html";
+});
 
     // $('input[type=radio][name=tipo]').on('change', function(){
     //   switch($(this).val()){
@@ -956,6 +1317,28 @@ $("input[name=tipo]:radio").bind( "change", function(event, ui) {
     $(".vencimiento").show(200);
   }else{
     $(".vencimiento").hide(200);
+  }
+    //  $('#selected_lang').html('Language Selected: '+$(this).val());
+  });
+
+$("input[name=cobranza_monto]:radio").bind( "change", function(event, ui) {
+  // console.log('Lang: '+$(this).val());
+  // alert($(this).val());
+  if($(this).val()=='total_cobranza'){
+    $("#a_cobrar_cobranza").val($("#saldo_cobranza").val()); 
+  }else{
+    $("#a_cobrar_cobranza").val("");
+  }
+    //  $('#selected_lang').html('Language Selected: '+$(this).val());
+  });
+
+$("input[name=deuda_monto]:radio").bind( "change", function(event, ui) {
+  // console.log('Lang: '+$(this).val());
+  // alert($(this).val());
+  if($(this).val()=='total_deuda'){
+    $("#a_cobrar_deuda").val($("#saldo_deuda").val()); 
+  }else{
+    $("#a_cobrar_deuda").val("");
   }
     //  $('#selected_lang').html('Language Selected: '+$(this).val());
   });
