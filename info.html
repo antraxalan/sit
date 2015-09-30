@@ -69,27 +69,50 @@
           <button class="cargar_info">Cargar info</button>
           <div id="tabla_info"></div>
 
+------------------------------------------------------------------------------------------
+<!--           <form>
+            <input id="filterTable-input" data-type="search">
+          </form>
+          <table data-role="table" id="movie-table" data-mode="columntoggle" data-filter="true" data-input="#filterTable-input" class="ui-responsive">
+            <thead>
+              <tr>
+                <th data-priority="1">IdArticulo</th>
+                <th data-priority="persist">CodMarca</th>
+                <th data-priority="2">DesMarca</th>
+                <th data-priority="3">CodArt</th>
+                <th data-priority="4">DesArt</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr><td> 
+                asd</td><td>
+                asd</td><td>
+                asd</td><td>
+                asd</td><td>
+                asd</td></tr>
+              </tbody></table> -->
 
 
 
 
-        </div><!-- /content -->
-        <footer data-role="footer" data-position="fixed">
-          <h3>Copyright &copy; 2015</h3>
-        </footer>
-      </div><!-- /Page Home -->
 
-    </div>
+            </div><!-- /content -->
+            <footer data-role="footer" data-position="fixed">
+              <h3>Copyright &copy; 2015</h3>
+            </footer>
+          </div><!-- /Page Home -->
 
-    <script type="text/javascript" charset="utf-8">
+        </div>
+
+        <script type="text/javascript" charset="utf-8">
 
 // jQuery(document).ready(function() {
 // $(document).on("pagecreate","#home",function(){
 
   $(document).on("pageinit",function(){
 
-    $('.cargar_info').click(function() {
-      alert('cargando');
+    $('.cargar_info').on("click", function() {
+      // alert('cargando');
       cargar_info();
     });
 

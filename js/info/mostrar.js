@@ -51,6 +51,9 @@
         	}
         	tblContent+="</tbody></table>";
         	document.getElementById("tabla_info").innerHTML =tblContent;
+        	// $('#tabla_info').html(tblContent);
+        	 // $('#tabla_info').append(tblContent);
+        	$("#tabla_info").trigger("create");
         }
 
         
@@ -64,7 +67,7 @@
         // Transaction success callback
         //
         function successCB_info() {
-        	alert("successCB_info");
+        	// alert("successCB_info");
         	// var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
         	db.transaction(queryDB_info, errorCB_info);
         }
@@ -72,7 +75,7 @@
          // Cordova is ready
         //
         function cargar_info() {
-        	alert("cargar_info");
+        	// alert("cargar_info");
         	
         	db.transaction(populateDB_info, errorCB_info, successCB_info);
         }
