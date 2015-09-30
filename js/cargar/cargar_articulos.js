@@ -6,21 +6,21 @@ function subir_db_articulos() {
 
   var direccion= $(".direccion").val();
   var var1= $(".var1").val();
-  alert("in subir_db_articulos."+direccion+"---"+var1);
+  //----- alert("in subir_db_articulos."+direccion+"---"+var1);
   $.ajax({
     type: 'POST',
     dataType: 'json',
     url: "http://"+direccion+"/sitrans_server/sitrans.php",
     data: "var1=" + var1,
     success: function (resp) {
-        alert("success:"+resp);
+        //----- alert("success:"+resp);
         db.transaction(populateDB_articulos, errorCB_art);
         call_insert_db_articulos(resp);
         $.mobile.loading("hide");
     },
     error: function (e) {
       $.mobile.loading("hide");
-      alert("No se encuentra conectado a su red: "+e.message+" err code: "+e.code+ "e:"+e);
+      //----- alert("No se encuentra conectado a su red: "+e.message+" err code: "+e.code+ "e:"+e);
   }
 });
   // codigo_usuario=user;
@@ -30,7 +30,7 @@ function subir_db_articulos() {
 };
 
 function populateDB_articulos(tx) {
-    alert("popul");
+    //----- alert("popul");
     tx.executeSql('DROP TABLE IF EXISTS ARTICULO');
     tx.executeSql('CREATE TABLE IF NOT EXISTS ARTICULO (IdArticulo INTEGER PRIMARY KEY AUTOINCREMENT,CodMarca,DesMarca,CodArt,DesArt,DesArtReducido,Calibre,TipoArticulo,CantxEmpaque,PrecioCompra,PrecioVtaMin,PrecioVtaMax,CodBotella,DesBotella,PVtaMinBot,CodCaja,DesCaja,PVtaMinCaja,PVtaMaxCaja,Estado)');
 }
@@ -38,7 +38,7 @@ function populateDB_articulos(tx) {
 
 function call_insert_db_articulos(data) {
     data_db_articulos=data;
-    alert("call_insert_db_articulos");
+    //----- alert("call_insert_db_articulos");
     // codigo_usuario=user;
     // password_usuario=pass;
     // var dbShell = window.openDatabase(database_name, database_version, database_displayname, database_size);
@@ -47,23 +47,23 @@ function call_insert_db_articulos(data) {
 
 function insertDB_articulos(tx) {
     var d1=data_db_articulos;
-    alert("insertando: "+d1);
+    //----- alert("insertando: "+d1);
 
-    alert("-longitud1: "+d1[0].length);
-    alert("-longitud2: "+d1[1].length);
-    alert("-longitud3: "+d1.length);
-    alert("-longitud4: "+d1[0][0].length);
-    alert("-longitud5: "+d1[0][1].length);
+    //----- alert("-longitud1: "+d1[0].length);
+    //----- alert("-longitud2: "+d1[1].length);
+    //----- alert("-longitud3: "+d1.length);
+    //----- alert("-longitud4: "+d1[0][0].length);
+    //----- alert("-longitud5: "+d1[0][1].length);
     
-    alert("-0 reg: "+d1[0][0]+","+d1[0][1]+","+d1[0][2]+","+d1[0][3]+","+d1[0][4]+","+d1[0][5]+","+d1[0][6]+","+d1[0][7]+","+d1[0][8]+","+d1[0][9]+","+d1[0][10]+","+d1[0][11]+","+d1[0][12]+","+d1[0][13]+","+d1[0][14]+","+d1[0][15]+","+d1[0][16]+","+d1[0][17]+","+d1[0][18]);
-    alert("-1 reg: "+d1[1][0]+","+d1[1][1]+","+d1[1][2]+","+d1[1][3]+","+d1[1][4]+","+d1[1][5]+","+d1[1][6]+","+d1[1][7]+","+d1[1][8]+","+d1[1][9]+","+d1[1][10]+","+d1[1][11]+","+d1[1][12]+","+d1[1][13]+","+d1[1][14]+","+d1[1][15]+","+d1[1][16]+","+d1[1][17]+","+d1[1][18]);
-    alert("-2 reg: "+d1[2][0]+","+d1[2][1]+","+d1[2][2]+","+d1[2][3]+","+d1[2][4]+","+d1[2][5]+","+d1[2][6]+","+d1[2][7]+","+d1[2][8]+","+d1[2][9]+","+d1[2][10]+","+d1[2][11]+","+d1[2][12]+","+d1[2][13]+","+d1[2][14]+","+d1[2][15]+","+d1[2][16]+","+d1[2][17]+","+d1[2][18]);
+    //----- alert("-0 reg: "+d1[0][0]+","+d1[0][1]+","+d1[0][2]+","+d1[0][3]+","+d1[0][4]+","+d1[0][5]+","+d1[0][6]+","+d1[0][7]+","+d1[0][8]+","+d1[0][9]+","+d1[0][10]+","+d1[0][11]+","+d1[0][12]+","+d1[0][13]+","+d1[0][14]+","+d1[0][15]+","+d1[0][16]+","+d1[0][17]+","+d1[0][18]);
+    //----- alert("-1 reg: "+d1[1][0]+","+d1[1][1]+","+d1[1][2]+","+d1[1][3]+","+d1[1][4]+","+d1[1][5]+","+d1[1][6]+","+d1[1][7]+","+d1[1][8]+","+d1[1][9]+","+d1[1][10]+","+d1[1][11]+","+d1[1][12]+","+d1[1][13]+","+d1[1][14]+","+d1[1][15]+","+d1[1][16]+","+d1[1][17]+","+d1[1][18]);
+    //----- alert("-2 reg: "+d1[2][0]+","+d1[2][1]+","+d1[2][2]+","+d1[2][3]+","+d1[2][4]+","+d1[2][5]+","+d1[2][6]+","+d1[2][7]+","+d1[2][8]+","+d1[2][9]+","+d1[2][10]+","+d1[2][11]+","+d1[2][12]+","+d1[2][13]+","+d1[2][14]+","+d1[2][15]+","+d1[2][16]+","+d1[2][17]+","+d1[2][18]);
     
     for (var i = 0; i < d1.length; i++) {
 
         tx.executeSql('INSERT INTO ARTICULO (CodMarca,DesMarca,CodArt,DesArt,DesArtReducido,Calibre,TipoArticulo,CantxEmpaque,PrecioCompra,PrecioVtaMin,PrecioVtaMax,CodBotella,DesBotella,PVtaMinBot,CodCaja,DesCaja,PVtaMinCaja,PVtaMaxCaja,Estado) VALUES ("'+d1[i][0]+'","'+d1[i][1]+'","'+d1[i][2]+'","'+d1[i][3]+'","'+d1[i][4]+'","'+d1[i][5]+'","'+d1[i][6]+'","'+d1[i][7]+'","'+d1[i][8]+'","'+d1[i][9]+'","'+d1[i][10]+'","'+d1[i][11]+'","'+d1[i][12]+'","'+d1[i][13]+'","'+d1[i][14]+'","'+d1[i][15]+'","'+d1[i][16]+'","'+d1[i][17]+'","'+d1[i][18]+'")');
     };
-    alert("realizado");
+    //----- alert("realizado");
     // localStorage.g_username = codigo_usuario;
     // localStorage.g_password = password_usuario;
     // localStorage.g_existe = 1;
@@ -73,8 +73,8 @@ function insertDB_articulos(tx) {
 
 
 function errorCB_art(err) {
-    alert("errorCB_art: "+err.message);
+    //----- alert("errorCB_art: "+err.message);
 }
 function errorCB1_art(err) {
-    alert("errorCB1_art: "+err.message);
+    //----- alert("errorCB1_art: "+err.message);
 }
