@@ -64,328 +64,277 @@
         <div data-role="content">
           <h3>BIENVENIDO A SITRANS APP</h3>
 
-<!-- 
 
-<div data-role="fieldcontain">
-           <label for="password">Password:</label>
-           <input type="password" name="password" id="password" value="" />
-      </div>
-      
-      <div data-role="fieldcontain">
-           <label for="number">Number:</label>
-           <input type="text" name="number" id="number" value="" />
-      </div>
-      
-      <div data-role="fieldcontain">
-           <label for="number-pattern">Number + pattern:</label>
-           <input type="text" name="number" pattern="[0-9]*" id="number-pattern" value="" placeholder="Pattern attribute [0-9]* for a numeric keypad" />
-      </div>
-      
-      <div data-role="fieldcontain">
-           <label for="email">Email:</label>
-           <input type="email" name="email" id="email" value="" />
-      </div>
-      
-      <div data-role="fieldcontain">
-           <label for="url">Url:</label>
-           <input type="url" name="url" id="url" value="" />
-      </div>
-      
-      <div data-role="fieldcontain">
-           <label for="tel">Tel:</label>
-           <input type="tel" name="tel" id="tel" value="" />
-      </div>
-      
-      <div data-role="fieldcontain">
-           <label for="time">Time:</label>
-           <input type="time" name="time" id="time" value="" />
-      </div>
-      
-      <div data-role="fieldcontain">
-           <label for="date">Date:</label>
-           <input type="date" name="date" id="date" value="" />
-      </div>
-      
-      <div data-role="fieldcontain">
-           <label for="month">Month:</label>
-           <input type="month" name="month" id="month" value="" />
-      </div>
-      
-      <div data-role="fieldcontain">
-           <label for="week">Week:</label>
-           <input type="week" name="week" id="week" value="" />
-      </div>
-      
-      <div data-role="fieldcontain">
-           <label for="datetime">Datetime:</label>
-           <input type="datetime" name="datetime" id="datetime" value="" />
-      </div>
-      
-      <div data-role="fieldcontain">
-           <label for="datetime-l">Datetime local:</label>
-           <input type="datetime-local" name="datetime-l" id="datetime-l" value="" />
-      </div>
-      
-      <div data-role="fieldcontain">
-           <label for="color">Color:</label>
-           <input type="color" name="color" id="color" value="" />
-      </div>
+          <div class="ui-content" role="main">
 
-    -->
+            <form class="ui">
 
-    <div class="ui-content" role="main">
+              <div data-role="fieldcontain" class="ui-field-contain"data-demo-html="true">               
 
-      <form class="ui">
+                <label for="date">Fecha:</label>
+                <input name="mydate" id="fecha" disabled="disabled"/>
+              </div>                
+              <div data-role="fieldcontain" class="ui-field-contain">
+                <label for="select-custom-20">Cliente:</label>
+                <select name="select-custom-20" id="cliente" data-native-menu="false" class="filterable-select">
 
-        <div data-role="fieldcontain" class="ui-field-contain"data-demo-html="true">               
-
-          <label for="date">Fecha:</label>
-          <input name="mydate" id="fecha" disabled="disabled"/>
-        </div>                
-        <div data-role="fieldcontain" class="ui-field-contain">
-          <label for="select-custom-20">Cliente:</label>
-          <select name="select-custom-20" id="cliente" data-native-menu="false" class="filterable-select">
-
-            <option value="-">Seleccione un cliente.</option>
-            <option value="100">100 - EVELIN  MARIA CARDENAS TROCHE</option>
-            <option value="101">101 - ALVAREZ MORALES FELIX</option>
-            <option value="102">102 - LOPEZ ERNESTO</option>
-            <option value="103">103 - RENE REMIGIO ESCOBAR CALLISAYA</option>
-            <option value="104">104 - ALACOMA JUSTINA</option>
-            <option value="105">105 - RUTH GALVEZ IBAÑEZ</option>
-            <option value="106">106 - ESCALANT  E VICTOR</option>
-            <option value="107">107 - CUBA CONSUELO</option>
-            <option value="108">108 - FELIX FERNANDEZ</option>
-            <option value="109">109 - JIMENEZ JAQUELIN</option>
-            <option value="110">110 - JACINTA MAMANI DE VARGAS</option>
-            <option value="111">111 - MIRANDA ALCIRA</option>
-            <option value="112">112 - ARUQUIPA BEATRIS</option>
-            <option value="113">113 - PASTRANA MARIA</option>
-            <option value="114">114 - VILLAROEL SENOVIA</option>
-            <option value="115">115 - ROMERO CINDY</option>
-            <option value="116">116 - MARIANELA FERNANDEZ</option>
-            <option value="117">117 - LARA ALDO</option>
-            <option value="118">118 - QUISPE FLORA</option>
-            <option value="119">119 - JAIME REQUENA</option>
-            <option value="120">120 - BEATRIS HUANCA</option>
-            <option value="121">121 - LUNA CARLOS</option>
-            <option value="122">122 - MIRIAM LOPEZ</option>
-            <option value="123">123 - LOURDES CABALLERO LLUSCO</option>
-            <option value="124">124 - WANG LUQUING</option>
-            <option value="125">125 - RAMOS LUCY</option>
-            <option value="126">126 - CALLE TOMAS</option>
-            <option value="127">127 - GREGORIA GUTIERREZ</option>
-            <option value="128">128 - JUANA RAMIREZ</option>
-            <option value="129">129 - RAMIRO ARUQUIPA</option>
-            <option value="130">130 - PATRICIA ABENDAÐO</option>
-            <option value="131">131 - LUCILA ALVAREZ</option>
-            <option value="132">132 - NINA WILSON</option>
-            <option value="133">133 - HUANCA TEODORA</option>
-            <option value="134">134 - QUISPE LIDIA</option>
-            <option value="135">135 - ROJAS ANTONIA</option>
-            <option value="136">136 - LUNA CANDIA NELSON</option>
-            <option value="137">137 - FLORES BASILIO</option>
-            <option value="138">138 - ALANOCA DONATA</option>
-            <option value="139">139 - LINCON ROBERTA</option>
-            <option value="140">140 - JOSE LUIZ ACEBEDO</option>
-            <option value="141">141 - LOPEZ NORA</option>
-            <option value="142">142 - PEREZ MARIA</option>
-            <option value="143">143 - VENTA DEPOSITO</option>
-            <option value="144">144 - SANTANDER FLORA</option>
-            <option value="145">145 - LICORERIA LAS VEGAS</option>
-            <option value="146">146 - LEON GERMAN</option>
-            <option value="147">147 - VALLE FERNANDO</option>
-            <option value="149">149 - BUSTAMANTE RENATO</option>
-            <option value="150">150 - CHUQUIMIA ELIZABETH</option>
-            <option value="151">151 - MURILLO MARTHA</option>
-            <option value="152">152 - TIENDA ANTUKITA</option>
-            <option value="153">153 - SANTANDER GENARA</option>
-            <option value="154">154 - ALMACEN JERSINIA</option>
-            <option value="155">155 - QUISPE RAMIRO</option>
-            <option value="156">156 - MENDEZ ESPERANZA</option>
-            <option value="157">157 - VERA VIRGINIA</option>
-            <option value="158">158 - MENDEZ MARCOS</option>
-            <option value="159">159 - CASO ELEODORO</option>
-            <option value="160">160 - VARGAS DORA</option>
-            <option value="161">161 - LOCAL GARIBALDI</option>
-            <option value="162">162 - LOPEZ MARIA</option>
-            <option value="163">163 - ALMACEN LA PACEÑA</option>
-            <option value="164">164 - FUESTES SILVIA</option>
-            <option value="165">165 - PINTO MARCELA</option>
-            <option value="166">166 - PATON MARIA</option>
-            <option value="167">167 - CUTIPA IGNACIA</option>
-            <option value="168">168 - AGUILAR HUAYHUA MIGUEL JOSE</option>
-            <option value="169">169 - QUISBERT ORTENCIA</option>
-            <option value="170">170 - TIENDA MIKY</option>
-            <option value="171">171 - VALLE</option>
-            <option value="172">172 - ROXANA SANCHES Y SESAR SONCO</option>
-            <option value="173">173 - CALLISAYA FELIPA</option>
-            <option value="174">174 - DESTROCK</option>
-            <option value="175">175 - CASILLA MERCEDES</option>
-            <option value="176">176 - TATIANA MIRANDA</option>
-            <option value="177">177 - JHONNY TREBOL</option>
-            <option value="178">178 - EL GALEON</option>
-            <option value="179">179 - SORIA VICTOR</option>
-            <option value="180">180 - MERCADO DEYSI</option>
-            <option value="181">181 - AVALOS LUCAS</option>
-            <option value="182">182 - VEGA YOLA</option>
-            <option value="183">183 - USNAYO FRANCISCA</option>
-            <option value="184">184 - SAN MILAN EDDA</option>
-            <option value="185">185 - ESPEJO TEREZA</option>
-            <option value="186">186 - SEGALES LUCY</option>
-            <option value="187">187 - SULLCATA MARIA</option>
-            <option value="188">188 - JORGE JULIAN</option>
-            <option value="189">189 - AVILA GABRIELA</option>
-            <option value="190">190 - FERNANDEZ RAMIRO</option>
-            <option value="191">191 - ALCAZAR JUSTINA</option>
-            <option value="192">192 - MORON CEFERINA</option>
-            <option value="193">193 - VARGAS ADALIT</option>
-            <option value="194">194 - JUANA DE ARANA</option>
-            <option value="195">195 - CHAVEZ MARCELO</option>
-            <option value="196">196 - ZUAREZ ELIZABET</option>
-            <option value="197">197 - FLORES MARIA</option>
-            <option value="198">198 - TOLEDO WENDY</option>
-            <option value="199">199 - PAUCARA RICARDO</option>
-            <option value="200">200 - ALMACEN SUSET</option>
-            <option value="201">201 - ALMACEN ALIANZA</option>
-            <option value="202">202 - TOLA ANGELICA</option>
-            <option value="203">203 - GONZALES MIKAEL</option>
-            <option value="204">204 - RIVERO GUIDO MOISES</option>
-            <option value="205">205 - ALMACEN GOSALVEZ</option>
-            <option value="206">206 - CHOQUE ANGELA</option>
-            <option value="207">207 - HOTEL AERONAUTICO</option>
-            <option value="208">208 - SARSURI MAX</option>
-            <option value="209">209 - FERNANDEZ NELLY</option>
-            <option value="210">210 - BENITEZ JUANA</option>
-            <option value="211">211 - ROJAS JUANA</option>
-            <option value="213">213 - NINA ELIO</option>
-            <option value="214">214 - CANDIA NELSON</option>
-            <option value="215">215 - ZAR GALDON</option>
-            <option value="216">216 - LICORERIA STOP</option>
-            <option value="217">217 - RESTAURANTE LUIS DIEGO</option>
-            <option value="218">218 - MIRANDA JUAN CARLOS</option>
-            <option value="219">219 - BLANCO ROSA</option>
-            <option value="220">220 - AIDE HUANCA</option>
-            <option value="221">221 - JORGE SADU</option>
-            <option value="222">222 - RUBIN DE SELIS</option>
-            <option value="223">223 - JORGE RIVERO</option>
-            <option value="224">224 - ALIAGA OLGA</option>
-            <option value="225">225 - CHUMA LLAJTA</option>
-            <option value="226">226 - SARAI</option>
-            <option value="227">227 - ALMACEN ROCKY</option>
-            <option value="228">228 - CRUZ VARGAS COSME</option>
-            <option value="229">229 - GUTIERREZ ROSALIA</option>
-            <option value="230">230 - URQUIOLA ROSA</option>
-            <option value="231">231 - ALCON MARTHA</option>
-            <option value="232">232 - TIENDA AUTENTICA</option>
-            <option value="233">233 - LEMA LURDES</option>
-            <option value="234">234 - VARGAS ANA</option>
-            <option value="235">235 - SALAZAR VICTORINA</option>
-            <option value="236">236 - RAMOS ROCIO</option>
-            <option value="237">237 - QUINTANA RAMIRO</option>
-            <option value="238">238 - IRA CRISTOVAL</option>
-            <option value="239">239 - MARIA PAULA</option>
-            <option value="240">240 - CHAMBI VALERIO</option>
-            <option value="241">241 - ACADEMICO</option>
-            <option value="242">242 - AGUILAR MIRNA</option>
-            <option value="243">243 - DIETER MARIN</option>
-            <option value="244">244 - HOTEL MADRE TIERRA</option>
-            <option value="245">245 - ANDRADE ROSALIA</option>
-            <option value="246">246 - SALON COCO`S</option>
-            <option value="247">247 - ALAJA MARTA</option>
-            <option value="248">248 - LA RIEL</option>
-            <option value="249">249 - GALVEZ WALTER</option>
-            <option value="250">250 - CUTILI ANTONIA</option>
-            <option value="251">251 - ARANDA BLANCO</option>
-            <option value="252">252 - LUCIA DE QUISPE</option>
-            <option value="253">253 - NORCA DE CHAVES</option>
-            <option value="254">254 - MAMANI ROXANA</option>
-            <option value="255">255 - GERMACHEA CUENTAS RICARDA</option>
-            <option value="256">256 - CALLEJAS MARTHA</option>
-            <option value="257">257 - ARAMAYO ANDREA</option>
-            <option value="258">258 - VARGAS JUAN</option>
-            <option value="259">259 - ALARCON KATIA</option>
-            <option value="260">260 - PADRE JUAN PABLO</option>
-            <option value="261">261 - SANMILLAN EDDA</option>
-            <option value="262">262 - ORTUÑO ILSEN</option>
-            <option value="263">263 - CARRION JAQUELINE</option>
-            <option value="264">264 - Banco Sol</option>
-            <option value="265">265 - Col.Gregorio Reynold</option>
-            <option value="266">266 - BARRENECHEA MIKAELA</option>
-            <option value="267">267 - VERA LEONARDO</option>
-            <option value="270">270 - ANTONIA MENDOZA</option>
-            <option value="271">271 - LICORERIA LOS AMIGOS</option>
-            <option value="272">272 - ASUNTA CHOQUE</option>
-            <option value="273">273 - LA CASA DEL LOBO</option>
-            <option value="274">274 - BLUE HOUSE (Cardozo</option>
-            <option value="275">275 - LICORERIA MIRAFLORES</option>
-            <option value="276">276 - LOCAL LIBERTAD</option>
-            <option value="277">277 - MERCEDES BERNAL</option>
-            <option value="278">278 - RESTAURANTE RICO PEZ</option>
-            <option value="279">279 - GOZALVEZ (Susana Paz )</option>
-            <option value="280">280 - GUIDO LUCANA</option>
-            <option value="281">281 - HUAYHUA MAYDA</option>
-            <option value="282">282 - ROJAS JUAN CARLOS</option>
-            <option value="283">283 - MARIA LUIZA (cancha San Luis</option>
-            <option value="284">284 - JHONNY SOSA</option>
-            <option value="285">285 - TITO JHANET(marcelo chaves</option>
-            <option value="286">286 - ASCARUN SEVERO</option>
-            <option value="287">287 - VALENCIA CRAMER</option>
-            <option value="288">288 - FLORES TERESA</option>
-            <option value="289">289 - GARCIA ELMER</option>
-            <option value="290">290 - RAMOS ALCON PATRICIO</option>
-            <option value="291">291 - ORMACHEA REGINA</option>
-            <option value="292">292 - QUISPE ELIZABET</option>
-            <option value="293">293 - ALMACEN CHELITA</option>
-            <option value="294">294 - SARMIENTO NOEMI</option>
-            <option value="295">295 - ANTEZANA TERRAZAS</option>
-            <option value="296">296 - ESPEJO TITO</option>
-            <option value="297">297 - ARTEAGA JULIA</option>
-            <option value="298">298 - MACHICADO SABINA</option>
-            <option value="299">299 - AGUILAR JOSE LUIS</option>
-            <option value="300">300 - USNAYO EDUARDA</option>
-            <option value="301">301 - COSTANO TEREZA</option>
-            <option value="302">302 - CONTRERAS ALBERTO</option>
-            <option value="303">303 - EQUINOCCIO</option>
-            <option value="304">304 - TORREZ ESTHER</option>
-            <option value="305">305 - TEREZA CENTENO</option>
-            <option value="306">306 - JUAN CARLOS AGUILAR</option>
-            <option value="307">307 - CHOUE JHIMENA</option>
-            <option value="308">308 - RAMIRO QUISPE</option>
-            <option value="309">309 - VICTOR ALMIRANTE</option>
-            <option value="310">310 - MIRIAN ALBORTA</option>
-            <option value="311">311 - MIUSIC</option>
+                  <option value="-">Seleccione un cliente.</option>
+                  <option value="100">100 - EVELIN  MARIA CARDENAS TROCHE</option>
+                  <option value="101">101 - ALVAREZ MORALES FELIX</option>
+                  <option value="102">102 - LOPEZ ERNESTO</option>
+                  <option value="103">103 - RENE REMIGIO ESCOBAR CALLISAYA</option>
+                  <option value="104">104 - ALACOMA JUSTINA</option>
+                  <option value="105">105 - RUTH GALVEZ IBAÑEZ</option>
+                  <option value="106">106 - ESCALANT  E VICTOR</option>
+                  <option value="107">107 - CUBA CONSUELO</option>
+                  <option value="108">108 - FELIX FERNANDEZ</option>
+                  <option value="109">109 - JIMENEZ JAQUELIN</option>
+                  <option value="110">110 - JACINTA MAMANI DE VARGAS</option>
+                  <option value="111">111 - MIRANDA ALCIRA</option>
+                  <option value="112">112 - ARUQUIPA BEATRIS</option>
+                  <option value="113">113 - PASTRANA MARIA</option>
+                  <option value="114">114 - VILLAROEL SENOVIA</option>
+                  <option value="115">115 - ROMERO CINDY</option>
+                  <option value="116">116 - MARIANELA FERNANDEZ</option>
+                  <option value="117">117 - LARA ALDO</option>
+                  <option value="118">118 - QUISPE FLORA</option>
+                  <option value="119">119 - JAIME REQUENA</option>
+                  <option value="120">120 - BEATRIS HUANCA</option>
+                  <option value="121">121 - LUNA CARLOS</option>
+                  <option value="122">122 - MIRIAM LOPEZ</option>
+                  <option value="123">123 - LOURDES CABALLERO LLUSCO</option>
+                  <option value="124">124 - WANG LUQUING</option>
+                  <option value="125">125 - RAMOS LUCY</option>
+                  <option value="126">126 - CALLE TOMAS</option>
+                  <option value="127">127 - GREGORIA GUTIERREZ</option>
+                  <option value="128">128 - JUANA RAMIREZ</option>
+                  <option value="129">129 - RAMIRO ARUQUIPA</option>
+                  <option value="130">130 - PATRICIA ABENDAÐO</option>
+                  <option value="131">131 - LUCILA ALVAREZ</option>
+                  <option value="132">132 - NINA WILSON</option>
+                  <option value="133">133 - HUANCA TEODORA</option>
+                  <option value="134">134 - QUISPE LIDIA</option>
+                  <option value="135">135 - ROJAS ANTONIA</option>
+                  <option value="136">136 - LUNA CANDIA NELSON</option>
+                  <option value="137">137 - FLORES BASILIO</option>
+                  <option value="138">138 - ALANOCA DONATA</option>
+                  <option value="139">139 - LINCON ROBERTA</option>
+                  <option value="140">140 - JOSE LUIZ ACEBEDO</option>
+                  <option value="141">141 - LOPEZ NORA</option>
+                  <option value="142">142 - PEREZ MARIA</option>
+                  <option value="143">143 - VENTA DEPOSITO</option>
+                  <option value="144">144 - SANTANDER FLORA</option>
+                  <option value="145">145 - LICORERIA LAS VEGAS</option>
+                  <option value="146">146 - LEON GERMAN</option>
+                  <option value="147">147 - VALLE FERNANDO</option>
+                  <option value="149">149 - BUSTAMANTE RENATO</option>
+                  <option value="150">150 - CHUQUIMIA ELIZABETH</option>
+                  <option value="151">151 - MURILLO MARTHA</option>
+                  <option value="152">152 - TIENDA ANTUKITA</option>
+                  <option value="153">153 - SANTANDER GENARA</option>
+                  <option value="154">154 - ALMACEN JERSINIA</option>
+                  <option value="155">155 - QUISPE RAMIRO</option>
+                  <option value="156">156 - MENDEZ ESPERANZA</option>
+                  <option value="157">157 - VERA VIRGINIA</option>
+                  <option value="158">158 - MENDEZ MARCOS</option>
+                  <option value="159">159 - CASO ELEODORO</option>
+                  <option value="160">160 - VARGAS DORA</option>
+                  <option value="161">161 - LOCAL GARIBALDI</option>
+                  <option value="162">162 - LOPEZ MARIA</option>
+                  <option value="163">163 - ALMACEN LA PACEÑA</option>
+                  <option value="164">164 - FUESTES SILVIA</option>
+                  <option value="165">165 - PINTO MARCELA</option>
+                  <option value="166">166 - PATON MARIA</option>
+                  <option value="167">167 - CUTIPA IGNACIA</option>
+                  <option value="168">168 - AGUILAR HUAYHUA MIGUEL JOSE</option>
+                  <option value="169">169 - QUISBERT ORTENCIA</option>
+                  <option value="170">170 - TIENDA MIKY</option>
+                  <option value="171">171 - VALLE</option>
+                  <option value="172">172 - ROXANA SANCHES Y SESAR SONCO</option>
+                  <option value="173">173 - CALLISAYA FELIPA</option>
+                  <option value="174">174 - DESTROCK</option>
+                  <option value="175">175 - CASILLA MERCEDES</option>
+                  <option value="176">176 - TATIANA MIRANDA</option>
+                  <option value="177">177 - JHONNY TREBOL</option>
+                  <option value="178">178 - EL GALEON</option>
+                  <option value="179">179 - SORIA VICTOR</option>
+                  <option value="180">180 - MERCADO DEYSI</option>
+                  <option value="181">181 - AVALOS LUCAS</option>
+                  <option value="182">182 - VEGA YOLA</option>
+                  <option value="183">183 - USNAYO FRANCISCA</option>
+                  <option value="184">184 - SAN MILAN EDDA</option>
+                  <option value="185">185 - ESPEJO TEREZA</option>
+                  <option value="186">186 - SEGALES LUCY</option>
+                  <option value="187">187 - SULLCATA MARIA</option>
+                  <option value="188">188 - JORGE JULIAN</option>
+                  <option value="189">189 - AVILA GABRIELA</option>
+                  <option value="190">190 - FERNANDEZ RAMIRO</option>
+                  <option value="191">191 - ALCAZAR JUSTINA</option>
+                  <option value="192">192 - MORON CEFERINA</option>
+                  <option value="193">193 - VARGAS ADALIT</option>
+                  <option value="194">194 - JUANA DE ARANA</option>
+                  <option value="195">195 - CHAVEZ MARCELO</option>
+                  <option value="196">196 - ZUAREZ ELIZABET</option>
+                  <option value="197">197 - FLORES MARIA</option>
+                  <option value="198">198 - TOLEDO WENDY</option>
+                  <option value="199">199 - PAUCARA RICARDO</option>
+                  <option value="200">200 - ALMACEN SUSET</option>
+                  <option value="201">201 - ALMACEN ALIANZA</option>
+                  <option value="202">202 - TOLA ANGELICA</option>
+                  <option value="203">203 - GONZALES MIKAEL</option>
+                  <option value="204">204 - RIVERO GUIDO MOISES</option>
+                  <option value="205">205 - ALMACEN GOSALVEZ</option>
+                  <option value="206">206 - CHOQUE ANGELA</option>
+                  <option value="207">207 - HOTEL AERONAUTICO</option>
+                  <option value="208">208 - SARSURI MAX</option>
+                  <option value="209">209 - FERNANDEZ NELLY</option>
+                  <option value="210">210 - BENITEZ JUANA</option>
+                  <option value="211">211 - ROJAS JUANA</option>
+                  <option value="213">213 - NINA ELIO</option>
+                  <option value="214">214 - CANDIA NELSON</option>
+                  <option value="215">215 - ZAR GALDON</option>
+                  <option value="216">216 - LICORERIA STOP</option>
+                  <option value="217">217 - RESTAURANTE LUIS DIEGO</option>
+                  <option value="218">218 - MIRANDA JUAN CARLOS</option>
+                  <option value="219">219 - BLANCO ROSA</option>
+                  <option value="220">220 - AIDE HUANCA</option>
+                  <option value="221">221 - JORGE SADU</option>
+                  <option value="222">222 - RUBIN DE SELIS</option>
+                  <option value="223">223 - JORGE RIVERO</option>
+                  <option value="224">224 - ALIAGA OLGA</option>
+                  <option value="225">225 - CHUMA LLAJTA</option>
+                  <option value="226">226 - SARAI</option>
+                  <option value="227">227 - ALMACEN ROCKY</option>
+                  <option value="228">228 - CRUZ VARGAS COSME</option>
+                  <option value="229">229 - GUTIERREZ ROSALIA</option>
+                  <option value="230">230 - URQUIOLA ROSA</option>
+                  <option value="231">231 - ALCON MARTHA</option>
+                  <option value="232">232 - TIENDA AUTENTICA</option>
+                  <option value="233">233 - LEMA LURDES</option>
+                  <option value="234">234 - VARGAS ANA</option>
+                  <option value="235">235 - SALAZAR VICTORINA</option>
+                  <option value="236">236 - RAMOS ROCIO</option>
+                  <option value="237">237 - QUINTANA RAMIRO</option>
+                  <option value="238">238 - IRA CRISTOVAL</option>
+                  <option value="239">239 - MARIA PAULA</option>
+                  <option value="240">240 - CHAMBI VALERIO</option>
+                  <option value="241">241 - ACADEMICO</option>
+                  <option value="242">242 - AGUILAR MIRNA</option>
+                  <option value="243">243 - DIETER MARIN</option>
+                  <option value="244">244 - HOTEL MADRE TIERRA</option>
+                  <option value="245">245 - ANDRADE ROSALIA</option>
+                  <option value="246">246 - SALON COCO`S</option>
+                  <option value="247">247 - ALAJA MARTA</option>
+                  <option value="248">248 - LA RIEL</option>
+                  <option value="249">249 - GALVEZ WALTER</option>
+                  <option value="250">250 - CUTILI ANTONIA</option>
+                  <option value="251">251 - ARANDA BLANCO</option>
+                  <option value="252">252 - LUCIA DE QUISPE</option>
+                  <option value="253">253 - NORCA DE CHAVES</option>
+                  <option value="254">254 - MAMANI ROXANA</option>
+                  <option value="255">255 - GERMACHEA CUENTAS RICARDA</option>
+                  <option value="256">256 - CALLEJAS MARTHA</option>
+                  <option value="257">257 - ARAMAYO ANDREA</option>
+                  <option value="258">258 - VARGAS JUAN</option>
+                  <option value="259">259 - ALARCON KATIA</option>
+                  <option value="260">260 - PADRE JUAN PABLO</option>
+                  <option value="261">261 - SANMILLAN EDDA</option>
+                  <option value="262">262 - ORTUÑO ILSEN</option>
+                  <option value="263">263 - CARRION JAQUELINE</option>
+                  <option value="264">264 - Banco Sol</option>
+                  <option value="265">265 - Col.Gregorio Reynold</option>
+                  <option value="266">266 - BARRENECHEA MIKAELA</option>
+                  <option value="267">267 - VERA LEONARDO</option>
+                  <option value="270">270 - ANTONIA MENDOZA</option>
+                  <option value="271">271 - LICORERIA LOS AMIGOS</option>
+                  <option value="272">272 - ASUNTA CHOQUE</option>
+                  <option value="273">273 - LA CASA DEL LOBO</option>
+                  <option value="274">274 - BLUE HOUSE (Cardozo</option>
+                  <option value="275">275 - LICORERIA MIRAFLORES</option>
+                  <option value="276">276 - LOCAL LIBERTAD</option>
+                  <option value="277">277 - MERCEDES BERNAL</option>
+                  <option value="278">278 - RESTAURANTE RICO PEZ</option>
+                  <option value="279">279 - GOZALVEZ (Susana Paz )</option>
+                  <option value="280">280 - GUIDO LUCANA</option>
+                  <option value="281">281 - HUAYHUA MAYDA</option>
+                  <option value="282">282 - ROJAS JUAN CARLOS</option>
+                  <option value="283">283 - MARIA LUIZA (cancha San Luis</option>
+                  <option value="284">284 - JHONNY SOSA</option>
+                  <option value="285">285 - TITO JHANET(marcelo chaves</option>
+                  <option value="286">286 - ASCARUN SEVERO</option>
+                  <option value="287">287 - VALENCIA CRAMER</option>
+                  <option value="288">288 - FLORES TERESA</option>
+                  <option value="289">289 - GARCIA ELMER</option>
+                  <option value="290">290 - RAMOS ALCON PATRICIO</option>
+                  <option value="291">291 - ORMACHEA REGINA</option>
+                  <option value="292">292 - QUISPE ELIZABET</option>
+                  <option value="293">293 - ALMACEN CHELITA</option>
+                  <option value="294">294 - SARMIENTO NOEMI</option>
+                  <option value="295">295 - ANTEZANA TERRAZAS</option>
+                  <option value="296">296 - ESPEJO TITO</option>
+                  <option value="297">297 - ARTEAGA JULIA</option>
+                  <option value="298">298 - MACHICADO SABINA</option>
+                  <option value="299">299 - AGUILAR JOSE LUIS</option>
+                  <option value="300">300 - USNAYO EDUARDA</option>
+                  <option value="301">301 - COSTANO TEREZA</option>
+                  <option value="302">302 - CONTRERAS ALBERTO</option>
+                  <option value="303">303 - EQUINOCCIO</option>
+                  <option value="304">304 - TORREZ ESTHER</option>
+                  <option value="305">305 - TEREZA CENTENO</option>
+                  <option value="306">306 - JUAN CARLOS AGUILAR</option>
+                  <option value="307">307 - CHOUE JHIMENA</option>
+                  <option value="308">308 - RAMIRO QUISPE</option>
+                  <option value="309">309 - VICTOR ALMIRANTE</option>
+                  <option value="310">310 - MIRIAN ALBORTA</option>
+                  <option value="311">311 - MIUSIC</option>
 
 
-          </select>
-        </div>
-        <div data-role="fieldcontain" class="ui-field-contain">
-          <fieldset data-role="controlgroup" data-type="horizontal">
-            <legend>Tipo:</legend>
-            <label for="cont">Contado</label>
-            <input type="radio" name="tipo" id="cont" value="cont" checked="checked">
-            <label for="cred">Credito</label>
-            <input type="radio" name="tipo" id="cred" value="cred">
-          </fieldset>
-        </div>
-        <div data-role="fieldcontain" class="ui-field-contain vencimiento">               
-          <label for="date">Fecha Vto:</label>
-          <input name="mydate" id="fecha2" type="date" data-role="date" data-date-format="dd-mm-yyyy"/>
-        </div>    
-        <div data-role="fieldcontain" class="ui-field-contain">
-          <label for="textarea">Obs:</label>
-          <textarea cols="40" rows="8" name="textarea" id="obs"></textarea>
-        </div>
-        <div class="ui-field-contain">
-          <!-- <input type="submit" id="submit-1" class="ui-btn ui-corner-all " value="Detalles"> -->
+                </select>
+              </div>
+              <div data-role="fieldcontain" class="ui-field-contain">
+                <fieldset data-role="controlgroup" data-type="horizontal">
+                  <legend>Tipo:</legend>
+                  <label for="cont">Contado</label>
+                  <input type="radio" name="tipo" id="cont" value="cont" checked="checked">
+                  <label for="cred">Credito</label>
+                  <input type="radio" name="tipo" id="cred" value="cred">
+                </fieldset>
+              </div>
+              <div data-role="fieldcontain" class="ui-field-contain vencimiento">               
+                <label for="date">Fecha Vto:</label>
+                <input name="mydate" id="fecha2" type="date" data-role="date" data-date-format="dd-mm-yyyy"/>
+              </div>    
+              <div data-role="fieldcontain" class="ui-field-contain">
+                <label for="textarea">Obs:</label>
+                <textarea cols="40" rows="8" name="textarea" id="obs"></textarea>
+              </div>
+        <!-- <div class="ui-field-contain">
+          <input type="submit" id="submit-1" class="ui-btn ui-corner-all " value="Detalles">
           <a href="#venta" data-role="button">Detalles</a>
-        </div>
+        </div> -->
 
         <ul data-role="listview" data-inset="true">
           <li class="cobranza_btn" style="display: none---;">
+            <a href="#venta">
+              <img src="img/cart.png">
+              <h2 class="green">Agregar Productos</h2>
+              <div class="ui-grid-b">
+                <div class="ui-block-a"><p>  </p></div>
+                <div class="ui-block-b"><p>  </p></div>
+                <div class="ui-block-c"><p>Ir a Venta</p></div>
+              </div>
+              <!-- <div class="ui-grid-b">
+                <div class="ui-block-a"><p>6 cajas</p></div>
+                <div class="ui-block-b"><p>2 unidades</p></div>
+                <div class="ui-block-c price"><p><strong>50.5 Bs</strong></p></div>
+              </div> -->
+            </a>
+            <!-- <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a> -->
+          </li>
+          <li class="cobranza_btn" style="display: none---;">
             <a href="#cobranza">
-              <!-- <img src="img/cart.png"> -->
-              <h2 class="deuda">El cliente tiene deuda económica </h2>
+              <img src="img/bol.jpg">
+              <h2 class="red">El cliente tiene deuda económica </h2>
               <div class="ui-grid-b">
                 <div class="ui-block-a"><p>  </p></div>
                 <div class="ui-block-b"><p>  </p></div>
@@ -401,8 +350,8 @@
           </li>
           <li class="deuda_btn" style="display: none---;">
             <a href="#deuda">
-              <!-- <img src="img/cart.png"> -->
-              <h2 class="deuda">El cliente tiene deuda de envases</h2>
+              <img src="img/caja.jpg">
+              <h2 class="red">El cliente tiene deuda de envases</h2>
               <!-- <p> Ir a Deuda Envases </p> -->
               <div class="ui-grid-b">
                 <div class="ui-block-a"><p>  </p></div>
@@ -448,8 +397,8 @@
         <li><a href="#deuda">DEUDA ENVASES</a></li>
       </ul>
     </nav>
-     <h2>Venta</h2>
-    <br><br>
+    <h2>Venta</h2>
+    
     <!-- agregar -->
     <h4 class="mensaje" align="center"></h4>
     <div class="articulo">
@@ -768,10 +717,6 @@
   </div>
 
 
-
-
-
-
 </div>
 <footer data-role="footer" data-position="fixed">
   <h3>Copyright &copy; 2015</h3>
@@ -826,7 +771,7 @@
 
             <div data-role="fieldcontain" class="ui-field-contain">
               <fieldset data-role="controlgroup" data-type="horizontal">
-                <legend>Cobrar </legend>
+                <legend>Cobro:</legend>
                 <label for="parcial_cobranza">Parcial</label>
                 <input type="radio" name="cobranza_monto" id="parcial_cobranza" value="parcial_cobranza" checked="checked">
                 <label for="total_cobranza">Total</label>
@@ -849,12 +794,7 @@
               </div>
             </div>
 
-            
-
           </div>
-
-
-
 
           <div class="ui-field-contain">
             <br>
@@ -954,10 +894,6 @@
     </ul>
   </div>
 
-
-
-
-
 </div>
 <footer data-role="footer" data-position="fixed">
   <h3>Copyright &copy; 2015</h3>
@@ -986,11 +922,9 @@
         <li><a href="#deuda" class="ui-btn-active">DEUDA ENVASES</a></li>
       </ul>
     </nav>
-    <div class="map">
 
-    </div>
     <!-- Deudas -->
-    <!-- <button class="ui-btn-active prueba1">DEUDA ENVASES</button></li> -->
+    <!-- <button class="ui-btn-active prueba1">DEUDA ENVASES</button> -->
 
     <h2>Deuda</h2>
 
@@ -1018,16 +952,6 @@
               <input type="text" name="precio" id="descripcion_deuda" value="" data-clear-btn="true"/>
             </div>
 
-            <!-- <div data-role="fieldcontain" class="ui-field-contain">
-              <fieldset data-role="controlgroup" data-type="horizontal">
-                <legend>Cobrar </legend>
-                <label for="parcial_deuda">Parcial</label>
-                <input type="radio" name="deuda_monto" id="parcial_deuda" value="parcial_deuda" checked="checked">
-                <label for="total_deuda">Total</label>
-                <input type="radio" name="deuda_monto" id="total_deuda" value="total_deuda">
-              </fieldset>
-            </div> -->
-            
             <div class="ui-grid-a">
               <div class="ui-block-a">
                 <div class="ui-field-contain">
@@ -1090,11 +1014,11 @@
       <li>
         <a>
           <img src="img/info.png">
-          <h2>NUMERO DE FACTURA</h2>
+          <h2>NUMERO DE VENTA</h2>
           <div class="ui-grid-b">
-            <div class="ui-block-a"><p><strong>FECHA</strong></p></div>
-            <div class="ui-block-b"><p><strong>VENCIMIENTO</strong></p></div>
-            <div class="ui-block-c"><p><strong>MONTO</strong></p></div>
+            <div class="ui-block-a"><p><strong>CAJAS</strong></p></div>
+            <div class="ui-block-b"><p><strong>BOTELLAS</strong></p></div>
+            <div class="ui-block-c"><p><strong> </strong></p></div>
           </div>
         </a>
         <a data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
@@ -1104,9 +1028,9 @@
           <img src="img/caja.jpg">
           <h2>5136</h2>
           <div class="ui-grid-b">
-            <div class="ui-block-a"><p>17/02/2015</p></div>
-            <div class="ui-block-b"><p>17/02/2015</p></div>
-            <div class="ui-block-c red"><strong>50.5 Bs</strong></div>
+            <div class="ui-block-a">5</div>
+            <div class="ui-block-b"><p>0</p></div>
+            <div class="ui-block-c red"><strong> </strong></div>
           </div>
         </a>
         <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
@@ -1116,9 +1040,9 @@
           <img src="img/caja.jpg">
           <h2>5137</h2>
           <div class="ui-grid-b">
-            <div class="ui-block-a"><p>17/07/2015</p></div>
-            <div class="ui-block-b"><p>28/09/2015</p></div>
-            <div class="ui-block-c green"><strong>-50.5 Bs</strong></div>
+            <div class="ui-block-a"><p>0</p></div>
+            <div class="ui-block-b"><p>2</p></div>
+            <div class="ui-block-c green"><strong> </strong></div>
           </div>
         </a>
         <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
@@ -1128,9 +1052,9 @@
           <img src="img/caja.jpg">
           <h2>5138</h2>
           <div class="ui-grid-b">
-            <div class="ui-block-a"><p>17/07/2015</p></div>
-            <div class="ui-block-b"><p>28/09/2015</p></div>
-            <div class="ui-block-c red"><strong>50.5 Bs</strong></div>
+            <div class="ui-block-a"><p>5</p></div>
+            <div class="ui-block-b"><p>0</p></div>
+            <div class="ui-block-c red"><strong> </strong></div>
           </div>
         </a>
         <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
@@ -1140,9 +1064,9 @@
           <img src="img/caja.jpg">
           <h2>5139</h2>
           <div class="ui-grid-b">
-            <div class="ui-block-a"><p>17/07/2015</p></div>
-            <div class="ui-block-b"><p>28/09/2015</p></div>
-            <div class="ui-block-c red"><strong>50.5 Bs</strong></div>
+            <div class="ui-block-a"><p>0</p></div>
+            <div class="ui-block-b"><p>2</p></div>
+            <div class="ui-block-c red"><strong> </strong></div>
           </div>
         </a>
         <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
@@ -1152,9 +1076,9 @@
           <img src="img/caja.jpg">
           <h2>5140</h2>
           <div class="ui-grid-b">
-            <div class="ui-block-a"><p>17/07/2015</p></div>
-            <div class="ui-block-b"><p>28/09/2015</p></div>
-            <div class="ui-block-c red"><strong>50.5 Bs</strong></div>
+            <div class="ui-block-a"><p>10</p></div>
+            <div class="ui-block-b"><p>1</p></div>
+            <div class="ui-block-c red"><strong> </strong></div>
           </div>
         </a>
         <a href="#editar_venta" class="editar_venta_class"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
@@ -1162,17 +1086,11 @@
     </ul>
   </div>
 
-  
 
-
-
-
-
-
-  </div>
-  <footer data-role="footer" data-position="fixed">
-    <h3>Copyright &copy; 2015</h3>
-  </footer>
+</div>
+<footer data-role="footer" data-position="fixed">
+  <h3>Copyright &copy; 2015</h3>
+</footer>
 </div>
 
 </div>
@@ -1180,79 +1098,77 @@
 
 
 <script>
-  // jQuery(document).ready(function() {
-    // $(document).on("pagecreate","#home",function(){
-      $(document).on("pageinit",function(){
+// jQuery(document).ready(function() {
+// $(document).on("pagecreate","#home",function(){
+  $(document).on("pageinit",function(){
 
 
-        var d = new Date();
+    var d = new Date();
 
-        var month = d.getMonth()+1;
-        var day = d.getDate();
-        var fecha_actual =((''+day).length<2 ? '0' : '') + day + '/' +
-        ((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
-        // $('#fecha2').datepicker({
-        //   format: "dd/mm/yyyy"
-        // });
-$("#fecha").val(fecha_actual);
-$("#fecha_cobranza").val(fecha_actual);
-$("#fecha_deuda").val(fecha_actual);
-$('.mensaje').hide();
-$(".articulo").hide();
-$(".articulo_cobranza").hide();
-$(".articulo_deuda").hide();
-$(".vencimiento").hide();
+    var month = d.getMonth()+1;
+    var day = d.getDate();
+    var fecha_actual =((''+day).length<2 ? '0' : '') + day + '/' +
+    ((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
 
-$('.inicio').click(function() {
- window.location.href = "index.html";
-});
+    $("#fecha").val(fecha_actual);
+    $("#fecha_cobranza").val(fecha_actual);
+    $("#fecha_deuda").val(fecha_actual);
+    $('.mensaje').hide();
+    $(".articulo").hide();
+    $(".articulo_cobranza").hide();
+    $(".articulo_deuda").hide();
+    $(".vencimiento").hide();
+
+    $('.inicio').click(function() {
+     window.location.href = "index.html";
+   });
 
 
-$('.show').click(function() {
- $(".articulo").show(300);
-});
-$('.show_cobranza').click(function() {
- $(".articulo_cobranza").show(300);
-});
-$('.show_deuda').click(function() {
- $(".articulo_deuda").show(300);
-});
+    $('.show').click(function() {
+     $(".articulo").show(300);
+   });
+    $('.show_cobranza').click(function() {
+     $(".articulo_cobranza").show(300);
+   });
+    $('.show_deuda').click(function() {
+     $(".articulo_deuda").show(300);
+   });
 
 
-$('.guardar_venta').click(function() {
+    $('.guardar_venta').click(function() {
 
- $(".articulo").hide(300);
- $('.mensaje').html("<div style='color:green;'>GUARDADO</div>");
- $('.mensaje').show(300);
- setTimeout(function(){ $('.mensaje').hide(300); $('.mensaje').html(""); }, 3000);
-}); 
+     $(".articulo").hide(300);
+     $('.mensaje').html("<div style='color:green;'>GUARDADO</div>");
+     $('.mensaje').show(300);
+     setTimeout(function(){ $('.mensaje').hide(300); $('.mensaje').html(""); }, 3000);
+   }); 
 
-$('.guardar_cobranza').click(function() {
+    $('.guardar_cobranza').click(function() {
 
- $(".articulo_cobranza").hide(300);
- $('.mensaje_cobranza').html("<div style='color:green;'>COBRADO</div>");
- $('.mensaje_cobranza').show(300);
- setTimeout(function(){ $('.mensaje_cobranza').hide(300); $('.mensaje_cobranza').html(""); }, 3000);
-});  
-$('.guardar_deuda').click(function() {
+     $(".articulo_cobranza").hide(300);
+     $('.mensaje_cobranza').html("<div style='color:green;'>COBRADO</div>");
+     $('.mensaje_cobranza').show(300);
+     setTimeout(function(){ $('.mensaje_cobranza').hide(300); $('.mensaje_cobranza').html(""); }, 3000);
+   });  
+    $('.guardar_deuda').click(function() {
 
- $(".articulo_deuda").hide(300);
- $('.mensaje_deuda').html("<div style='color:green;'>COBRADO</div>");
- $('.mensaje_deuda').show(300);
- setTimeout(function(){ $('.mensaje_deuda').hide(300); $('.mensaje_deuda').html(""); }, 3000);
-});  
+     $(".articulo_deuda").hide(300);
+     $('.mensaje_deuda').html("<div style='color:green;'>COBRADO</div>");
+     $('.mensaje_deuda').show(300);
+     setTimeout(function(){ $('.mensaje_deuda').hide(300); $('.mensaje_deuda').html(""); }, 3000);
+   });  
 
-$('.cancelar_venta').click(function() {
- $(".articulo").hide(300);
-}); 
-$('.cancelar_cobranza').click(function() {
- $(".articulo_cobranza").hide(300);
-}); 
-$('.cancelar_deuda').click(function() {
- $(".articulo_deuda").hide(300);
-}); 
+    $('.cancelar_venta').click(function() {
+     $(".articulo").hide(300);
+   }); 
+    $('.cancelar_cobranza').click(function() {
+     $(".articulo_cobranza").hide(300);
+   }); 
+    $('.cancelar_deuda').click(function() {
+     $(".articulo_deuda").hide(300);
+   }); 
 
-$(".editar_venta_class").on('click', function(event) {
+    $(".editar_venta_class").on('click', function(event) {
           // $(this).attr('codigo-producto');
           $(".articulo").hide();
           var text = $(this).parent().find('h2').text()
@@ -1264,7 +1180,7 @@ $(".editar_venta_class").on('click', function(event) {
           // $( "#alerta_eliminado_venta" ).popup( "close" );
           // $(".id_venta").val('0');
         });
-$('.eliminar_popup').click(function() {
+    $('.eliminar_popup').click(function() {
           // $('#titulo_popup').html($(this).val());
           // alert("asd");
           
@@ -1273,14 +1189,14 @@ $('.eliminar_popup').click(function() {
           setTimeout(function(){ $('.mensaje').hide(300); $('.mensaje').html(""); }, 3000);
 
         }); 
-$('.editar_popup').click(function() {
- $(".articulo").show(300);
-}); 
+    $('.editar_popup').click(function() {
+     $(".articulo").show(300);
+   }); 
 
 
-$('.prueba1').click(function() {
- window.location.href = "detalles.html";
-});
+    $('.prueba1').click(function() {
+     window.location.href = "detalles.html";
+   });
 
     // $('input[type=radio][name=tipo]').on('change', function(){
     //   switch($(this).val()){

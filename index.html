@@ -44,7 +44,7 @@
 
     <script type="text/javascript" src="js/db_crear.js"></script>
     <script type="text/javascript" src="js/exit.js"></script>
-    <!-- <script type="text/javascript" src="js/cargar/cargar_articulos.js"></script> -->
+    <script type="text/javascript" src="js/cargar/cargar_articulos.js"></script>
     <script type="text/javascript" src="js/usuario/guardar_datos.js"></script>
     <script type="text/javascript" src="js/usuario/borrar_sesion.js"></script>
 
@@ -91,8 +91,8 @@
               </div>
             </form>
           </div>
-          <input class="var1" value="aruquipa" placeholder="var1"/>    
-          <input class="direccion" value="192.168.0.112" placeholder="direccion"/>
+          <input class="var1" value="aruquipa" placeholder="var1" type="hidden"/>    
+          <input class="direccion" value="192.168.0.112" placeholder="direccion" type="hidden" />
 
 
 
@@ -203,24 +203,26 @@
       $.mobile.loading("show", {
         theme: 'a'
       });
-      alert("comienza carga");
-      // subir_db_articulos();
-      var var1= $(".var1").val();
-      var direccion= $(".direccion").val();
-      $.ajax({
-        type: 'POST',
-        dataType: 'json',
-        url: "http://"+direccion+"/sitrans_server/sitrans.php",
-        data: "var1=" + var1,
-        success: function (resp) {
-          $.mobile.loading("hide");
-          alert(resp);
-        },
-        error: function (e) {
-          $.mobile.loading("hide");
-          alert("No se encuentra conectado a su red.");
-        }
-      });
+      // alert("comienza carga");
+      
+      subir_db_articulos();
+
+      // var var1= $(".var1").val();
+      // var direccion= $(".direccion").val();
+      // $.ajax({
+      //   type: 'POST',
+      //   dataType: 'json',
+      //   url: "http://"+direccion+"/sitrans_server/sitrans.php",
+      //   data: "var1=" + var1,
+      //   success: function (resp) {
+      //     $.mobile.loading("hide");
+      //     alert(resp);
+      //   },
+      //   error: function (e) {
+      //     $.mobile.loading("hide");
+      //     alert("No se encuentra conectado a su red.");
+      //   }
+      // });
   }
 });
 
