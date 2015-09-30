@@ -25,7 +25,8 @@ document.addEventListener("backbutton", function(e){
             exitAppPopup();
         }else{
             // alert("history back");
-            history.back();
+            // history.back();
+            window.history.back();
         };
     });
 };
