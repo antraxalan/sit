@@ -26,7 +26,7 @@ document.addEventListener("backbutton", function(e){
         }else{
             // alert("history back");
             // history.back();
-            window.history.back();
+           history.back();
         };
     });
 };
