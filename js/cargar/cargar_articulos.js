@@ -6,7 +6,7 @@ function subir_db_articulos() {
 
   var direccion= $(".direccion").val();
   var var1= $(".var1").val();
-  // alert("in subir_db_articulos."+direccion+"---"+var1);
+  alert("in subir_db_articulos."+direccion+"---"+var1);
   $.ajax({
     type: 'POST',
     dataType: 'json',
