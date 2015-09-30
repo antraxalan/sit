@@ -54,9 +54,14 @@ function insertDB_articulos(tx) {
     alert("-longitud3: "+d1.length);
     alert("-longitud4: "+d1[0][0].length);
     alert("-longitud5: "+d1[0][1].length);
+    
+    alert("-0 reg: "+d1[0][0]+","+d1[0][1]+","+d1[0][2]+","+d1[0][3]+","+d1[0][4]+","+d1[0][5]+","+d1[0][6]+","+d1[0][7]+","+d1[0][8]+","+d1[0][9]+","+d1[0][10]+","+d1[0][11]+","+d1[0][12]+","+d1[0][13]+","+d1[0][14]+","+d1[0][15]+","+d1[0][16]+","+d1[0][17]+","+d1[0][18]);
+    alert("-1 reg: "+d1[1][0]+","+d1[1][1]+","+d1[1][2]+","+d1[1][3]+","+d1[1][4]+","+d1[1][5]+","+d1[1][6]+","+d1[1][7]+","+d1[1][8]+","+d1[1][9]+","+d1[1][10]+","+d1[1][11]+","+d1[1][12]+","+d1[1][13]+","+d1[1][14]+","+d1[1][15]+","+d1[1][16]+","+d1[1][17]+","+d1[1][18]);
+    alert("-2 reg: "+d1[2][0]+","+d1[2][1]+","+d1[2][2]+","+d1[2][3]+","+d1[2][4]+","+d1[2][5]+","+d1[2][6]+","+d1[2][7]+","+d1[2][8]+","+d1[2][9]+","+d1[2][10]+","+d1[2][11]+","+d1[2][12]+","+d1[2][13]+","+d1[2][14]+","+d1[2][15]+","+d1[2][16]+","+d1[2][17]+","+d1[2][18]);
+    
+    for (var i = 0; i < d1.length; i++) {
 
-    for (var i = 0; i < d1[0].length; i++) {
-        tx.executeSql('INSERT INTO ARTICULO (CodMarca,DesMarca,CodArt,DesArt,DesArtReducido,Calibre,TipoArticulo,CantxEmpaque,PrecioCompra,PrecioVtaMin,PrecioVtaMax,CodBotella,DesBotella,PVtaMinBot,CodCaja,DesCaja,PVtaMinCaja,PVtaMaxCaja,Estado) VALUES ("'+d1[i][0]+'","'+d1[i][1]+'","'+d1[i][2]+'","'+d1[i][3]+'","'+d1[i][4]+'","'+d1[i][5]+'","'+d1[i][6]+'","'+d1[i][7]+'","'+d1[i][8]+'","'+d1[i][9]+'","'+d1[i][10]+'","'+d1[i][11]+'","'+d1[i][12]+'","'+d1[i][13]+'","'+d1[i][14]+'","'+d1[i][15]+'","'+d1[i][16]+'","'+d1[i][16]+'")');
+        tx.executeSql('INSERT INTO ARTICULO (CodMarca,DesMarca,CodArt,DesArt,DesArtReducido,Calibre,TipoArticulo,CantxEmpaque,PrecioCompra,PrecioVtaMin,PrecioVtaMax,CodBotella,DesBotella,PVtaMinBot,CodCaja,DesCaja,PVtaMinCaja,PVtaMaxCaja,Estado) VALUES ("'+d1[i][0]+'","'+d1[i][1]+'","'+d1[i][2]+'","'+d1[i][3]+'","'+d1[i][4]+'","'+d1[i][5]+'","'+d1[i][6]+'","'+d1[i][7]+'","'+d1[i][8]+'","'+d1[i][9]+'","'+d1[i][10]+'","'+d1[i][11]+'","'+d1[i][12]+'","'+d1[i][13]+'","'+d1[i][14]+'","'+d1[i][15]+'","'+d1[i][16]+'","'+d1[i][17]+'","'+d1[i][18]+'")');
     };
     alert("realizado");
     // localStorage.g_username = codigo_usuario;
