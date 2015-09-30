@@ -14,7 +14,7 @@ function subir_db_articulos() {
     data: "var1=" + var1,
     success: function (resp) {
         alert("success:"+resp);
-        db.transaction(populateDB_articulos, errorCB);
+        db.transaction(populateDB_articulos, errorCB_art);
         call_insert_db_articulos(resp);
         $.mobile.loading("hide");
     },
@@ -42,7 +42,7 @@ function call_insert_db_articulos(data) {
     // codigo_usuario=user;
     // password_usuario=pass;
     // var dbShell = window.openDatabase(database_name, database_version, database_displayname, database_size);
-    db.transaction(insertDB_articulos, errorCB1);
+    db.transaction(insertDB_articulos, errorCB1_art);
 };
 
 function insertDB_articulos(tx) {
@@ -72,6 +72,9 @@ function insertDB_articulos(tx) {
 };
 
 
-function errorCB(err) {
-    // alert("Error processing SQL: "+err.message);
+function errorCB_art(err) {
+    alert("errorCB_art: "+err.message);
+}
+function errorCB1_art(err) {
+    alert("errorCB1_art: "+err.message);
 }
