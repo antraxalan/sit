@@ -95,7 +95,7 @@ function verificar_usuario() {
   var codigo      =localStorage.g_username;
   var password    =localStorage.g_password;
 
-  var info='articulo';
+  var info='verificar';
   //----- alert("in subir_db_articulos."+direccion+"---"+var1);
   $.ajax({
     type: 'POST',
