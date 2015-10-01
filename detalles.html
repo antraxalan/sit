@@ -76,7 +76,7 @@
               </div>                
               <div data-role="fieldcontain" class="ui-field-contain">
                 <label for="select-custom-20">Cliente:</label>
-                <select name="select-custom-20" id="cliente" data-native-menu="false" class="filterable-select">
+                <select name="select-custom-20" id="cliente" class="filterable-select" data-native-menu="false">
 
                   <option value="-">Seleccione un cliente.</option>
                   <option value="100">100 - EVELIN  MARIA CARDENAS TROCHE</option>
@@ -387,6 +387,7 @@
 <div data-role="page" id="venta">
   <header data-role="header" data-position="fixed">
     <h1>CBN</h1>
+    <button data-icon="user" class="ui-btn-right cliente">Otro Cliente</button>
   </header> 
 
   <div data-role="content">
@@ -408,8 +409,8 @@
         <form class="ui">
 
           <div data-role="fieldcontain" class="ui-field-contain">
-            <label for="select-custom-20">Producto:</label>
-            <select name="select-custom-20" id="producto" data-native-menu="false" class="filterable-select">
+            <label for="select-custom-producto">Producto:</label>
+            <select name="select-custom-producto" id="producto" class="filterable-select" data-native-menu="false">
 
               <option value="-">Seleccione un producto.</option>
 
@@ -1099,8 +1100,8 @@
 
 <script>
 // jQuery(document).ready(function() {
-// $(document).on("pagecreate","#home",function(){
-  $(document).on("pageinit",function(){
+  $(document).on("pagecreate","#home",function(){
+  // $(document).on("pageinit",function(){
     carga_exit();
 
     var d = new Date();
@@ -1115,13 +1116,16 @@
     $("#fecha_deuda").val(fecha_actual);
     $('.mensaje').hide();
     $(".articulo").hide();
-    alert('inicia');
+    // alert('inicia');
     $(".articulo_cobranza").hide();
     $(".articulo_deuda").hide();
     $(".vencimiento").hide();
 
     $('.inicio').click(function() {
      window.location.href = "index.html";
+   }); 
+    $('.cliente').click(function() {
+     window.location.href = "detalles.html";
    });
 
 
@@ -1266,27 +1270,6 @@ $("#cliente").bind( "change", function(event, ui) {
   
     //  $('#selected_lang').html('Language Selected: '+$(this).val());
   });
-
-function goSearch() {
-  var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
-  db.transaction(searchQueryDB, errorCB);
-}
-function searchQueryDB(tx) {
-  tx.executeSql("SELECT * FROM DEMO where name like ('%"+ document.getElementById("txtName").value + "%')",
-    [], querySuccess, errorCB);
-}
-function querySuccess(tx, results) {
-  var tblText='<table id="t01"><tr><th>ID</th> <th>Name</th> <th>Number</th></tr>';
-  var len = results.rows.length;
-  for (var i = 0; i < len; i++) {
-    var tmpArgs=results.rows.item(i).id + ",'" + results.rows.item(i).name
-    + "','" + results.rows.item(i).number+"'";
-    tblText +='<tr onclick="goPopup('+ tmpArgs + ');"><td>' + results.rows.item(i).id +'</td><td>'
-    + results.rows.item(i).name +'</td><td>' + results.rows.item(i).number +'</td></tr>';
-  }
-  tblText +="</table>";
-  document.getElementById("tblDiv").innerHTML =tblText;
-}
 
 
 });

@@ -92,7 +92,7 @@
             </form>
           </div>
           <input class="var1" value="aruquipa" placeholder="var1" type="hidden"/>    
-          <input class="direccion" value="192.168.0.112" placeholder="direccion" type="hidden" />
+          <input class="direccion" value="192.168.0.114" placeholder="direccion" type="hidden" />
 
 
 
@@ -129,7 +129,8 @@
 
         </div><!-- /content -->
         <footer data-role="footer" data-position="fixed">
-          <h3>Copyright &copy; 2015</h3>
+          <h3>Copyright &copy; 2015sss</h3>
+          <button data-icon="power" class="ui-btn-right salir">Salir</button>
         </footer>
       </div><!-- /Page Home -->
 
@@ -138,9 +139,9 @@
     <script type="text/javascript" charset="utf-8">
 
 // jQuery(document).ready(function() {
-// $(document).on("pagecreate","#home",function(){
+$(document).on("pagecreate","#home",function(){
 
-  $(document).on("pageinit",function(){
+  // $(document).on("pageinit",function(){
     carga_db_crear();
     carga_exit();
     $("#cod_usuario").val(localStorage.g_username);
@@ -247,12 +248,13 @@
     }
   });
 
+$('.salir').click(function() {
+     exitAppPopup();
+   });
+
 
   });
 
-    // $('.read').click(function() {
-    //   window.location.href = "r_w_txt_dir.html";
-    // });
 </script>
 </body>
 </html>
