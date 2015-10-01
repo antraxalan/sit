@@ -6,13 +6,13 @@ function subir_db_articulos() {
 
   var direccion= $(".direccion").val();
   // var var1= $(".var1").val();
-  var tipo='1';
+
   // var codigo= $("#cod_usuario").val();
   // var password= $("#pass_usuario").val();
   var codigo      =localStorage.g_username;
   var password    =localStorage.g_password;
-  var info='articulos';
-  //----- alert("in subir_db_articulos."+direccion+"---"+var1);
+  var info='articulo';
+ // alert("in subir_db_articulos."+direccion+"---"+var1);
   $.ajax({
     type: 'POST',
     dataType: 'json',
@@ -107,6 +107,7 @@ function verificar_usuario() {
             subir_db_articulos();
             $.mobile.loading("hide");
         }else{
+            $.mobile.loading("hide");
             alert("Por favor verifique su Codigo y Contraseña.");
         }
     },
