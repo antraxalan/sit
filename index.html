@@ -91,7 +91,7 @@
               </div>
             </form>
           </div>
-          <input class="var1" value="aruquipa" placeholder="var1" type="hidden"/>    
+ 
           <input class="direccion" value="192.168.0.114" placeholder="direccion" type="hidden" />
 
 
@@ -200,8 +200,9 @@
         theme: 'a'
       });
       // alert("comienza carga");
-
+      if(verificar_usuario()){
       subir_db_articulos();
+      }
 
       // var var1= $(".var1").val();
       // var direccion= $(".direccion").val();

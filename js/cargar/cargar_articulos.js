@@ -5,13 +5,19 @@ var id_transp=localStorage.g_username;
 function subir_db_articulos() {
 
   var direccion= $(".direccion").val();
-  var var1= $(".var1").val();
+  // var var1= $(".var1").val();
+  var tipo='1';
+  // var codigo= $("#cod_usuario").val();
+  // var password= $("#pass_usuario").val();
+  var codigo      =localStorage.g_username;
+  var password    =localStorage.g_password;
+  var info='articulos';
   //----- alert("in subir_db_articulos."+direccion+"---"+var1);
   $.ajax({
     type: 'POST',
     dataType: 'json',
     url: "http://"+direccion+"/sitrans_server/sitrans.php",
-    data: "var1=" + var1,
+    data: "codigo=" + codigo + "&password=" + password + "&info=" + info,
     success: function (resp) {
         //----- alert("success:"+resp);
         db.transaction(populateDB_articulos, errorCB_art);
@@ -78,3 +84,37 @@ function errorCB_art(err) {
 function errorCB1_art(err) {
     //----- alert("errorCB1_art: "+err.message);
 }
+
+
+function verificar_usuario() {
+
+  var direccion= $(".direccion").val();
+  // var var1= $(".var1").val();
+  // var codigo= $("#cod_usuario").val();
+  // var password= $("#pass_usuario").val();
+  var codigo      =localStorage.g_username;
+  var password    =localStorage.g_password;
+
+  var info='articulo';
+  //----- alert("in subir_db_articulos."+direccion+"---"+var1);
+  $.ajax({
+    type: 'POST',
+    dataType: 'json',
+    url: "http://"+direccion+"/sitrans_server/sitrans.php",
+    data: "codigo=" + codigo + "&password=" + password + "&info=" + info,
+    success: function (resp) {
+        //----- alert("success:"+resp);
+        db.transaction(populateDB_articulos, errorCB_art);
+        call_insert_db_articulos(resp);
+        $.mobile.loading("hide");
+    },
+    error: function (e) {
+      $.mobile.loading("hide");
+      //----- alert("No se encuentra conectado a su red: "+e.message+" err code: "+e.code+ "e:"+e);
+  }
+});
+  // codigo_usuario=user;
+  // password_usuario=pass;
+  // var dbShell = window.openDatabase(database_name, database_version, database_displayname, database_size);
+  // db.transaction(insertDB, errorCB);
+};
