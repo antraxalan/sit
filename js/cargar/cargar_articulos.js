@@ -22,7 +22,7 @@ function subir_db_articulos() {
         //----- alert("success:"+resp);
         db.transaction(populateDB_articulos, errorCB_art);
         call_insert_db_articulos(resp);
-        $.mobile.loading("hide");
+        // $.mobile.loading("hide");
     },
     error: function (e) {
       $.mobile.loading("hide");
@@ -103,13 +103,16 @@ function verificar_usuario() {
     url: "http://"+direccion+"/sitrans_server/sitrans.php",
     data: "codigo=" + codigo + "&password=" + password + "&info=" + info,
     success: function (resp) {
-        //----- alert("success:"+resp);
-        db.transaction(populateDB_articulos, errorCB_art);
-        call_insert_db_articulos(resp);
-        $.mobile.loading("hide");
+        if(resp=='1'){
+            subir_db_articulos();
+            $.mobile.loading("hide");
+        }else{
+            alert("Por favor verifique su Codigo y Contraseña.");
+        }
     },
     error: function (e) {
-      $.mobile.loading("hide");
+        $.mobile.loading("hide");
+        alert("Verifique su red.");
       //----- alert("No se encuentra conectado a su red: "+e.message+" err code: "+e.code+ "e:"+e);
   }
 });
