@@ -49,6 +49,7 @@
     
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/exit.js"></script>
+    <script type="text/javascript" src="js/select_plus_filter.js"></script>
     <title>SITRANS</title>
   </head>
   <body>
@@ -393,7 +394,7 @@
   <div data-role="content">
     <nav data-role="navbar">
       <ul>
-        <li><a href="#venta" class="ui-btn-active">VENTA</a></li>
+        <li><a href="#venta" class="ui-btn-active ui-state-persist">VENTA</a></li>
         <li><a href="#cobranza">COBRANZA</a></li>
         <li><a href="#deuda">DEUDA ENVASES</a></li>
       </ul>
@@ -737,13 +738,14 @@
 <div data-role="page" id="cobranza">
   <header data-role="header" data-position="fixed"> 
     <h1>CBN</h1>
+    <button data-icon="user" class="ui-btn-right cliente">Otro Cliente</button>
   </header> 
 
   <div data-role="content">
     <nav data-role="navbar">
       <ul>
         <li><a href="#venta">VENTA</a></li>
-        <li><a href="#cobranza" class="ui-btn-active">COBRANZA</a></li>
+        <li><a href="#cobranza" class="ui-btn-active ui-state-persist">COBRANZA</a></li>
         <li><a href="#deuda">DEUDA ENVASES</a></li>
       </ul>
     </nav>
@@ -913,6 +915,7 @@
 <div data-role="page" id="deuda">
   <header data-role="header" data-position="fixed">
     <h1>CBN</h1>
+    <button data-icon="user" class="ui-btn-right cliente">Otro Cliente</button>
   </header> 
 
   <div data-role="content">
@@ -920,12 +923,12 @@
       <ul>
         <li><a href="#venta">VENTA</a></li>
         <li><a href="#cobranza">COBRANZA</a></li>
-        <li><a href="#deuda" class="ui-btn-active">DEUDA ENVASES</a></li>
+        <li><a href="#deuda" class="ui-btn-active ui-state-persist">DEUDA ENVASES</a></li>
       </ul>
     </nav>
 
     <!-- Deudas -->
-    <!-- <button class="ui-btn-active prueba1">DEUDA ENVASES</button> -->
+    <!-- <button class="ui-btn-active ui-state-persist prueba1">DEUDA ENVASES</button> -->
 
     <h2>Deuda</h2>
 
@@ -1273,6 +1276,22 @@ $("#cliente").bind( "change", function(event, ui) {
 
 
 });
+
+
+//fires the 1st time it is showed
+$( document ).on( "pagecreate", "#venta", function( event ) {
+  // alert( "venta" );
+});
+
+$( document ).on( "pagecreate", "#cobranza", function( event ) {
+  // alert( "cobranza" );
+});
+
+$( document ).on( "pagecreate", "#deuda", function( event ) {
+  // alert( "deuda" );
+
+});
+
 </script>
 
 </body>
