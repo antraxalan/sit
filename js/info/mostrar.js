@@ -151,17 +151,17 @@
         // Transaction success callback
         //
         function successCB_info_articulo() {
-        	// alert("successCB_info_articulo");
+        	alert("successCB_info_articulo");
         	// var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
         	db.transaction(queryDB_info_articulo, errorCB_info);
         }
         function successCB_info_cliente() {
-        	// alert("successCB_info_articulo");
+        	alert("successCB_info_cliente");
         	// var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
         	db.transaction(queryDB_info_cliente, errorCB_info);
         }
-        function successCB_info_cliente() {
-        	// alert("successCB_info_articulo");
+        function successCB_info_detalle() {
+        	alert("successCB_info_detalle");
         	// var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
         	db.transaction(queryDB_info_detalle, errorCB_info);
         }
@@ -169,15 +169,15 @@
          // Cordova is ready
         //
         function cargar_info_articulo() {
-        	// alert("cargar_info");
+        	alert("cargar_info_articulo");
         	db.transaction(populateDB_info_articulo, errorCB_info, successCB_info_articulo);
         }
         function cargar_info_cliente() {
-        	// alert("cargar_info");
+        	alert("cargar_info_cliente");
         	db.transaction(populateDB_info_cliente, errorCB_info, successCB_info_cliente);
         }
         function cargar_info_detalle() {
-        	// alert("cargar_info");
+        	alert("cargar_info_detalle");
         	db.transaction(populateDB_info_detalle, errorCB_info, successCB_info_detalle);
         }
 

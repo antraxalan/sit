@@ -155,10 +155,10 @@ function insertDB_detalle(tx) {
 
 
 function errorCB_cargar(err) {
-    //----- alert("errorCB_cargar: "+err.message);
+    ----- alert("errorCB_cargar: "+err.message);
 }
 function errorCB1_carg2(err) {
-    //----- alert("errorCB1_carg2: "+err.message);
+    ----- alert("errorCB1_carg2: "+err.message);
 }
 
 
@@ -181,8 +181,11 @@ function verificar_usuario() {
     success: function (resp) {
         if(resp=='1'){
             subir_db_articulo();
+            alert("subir_db_articulo realizado");
             subir_db_cliente();
+            alert("subir_db_cliente realizado");
             subir_db_detalle();
+            alert("subir_db_detalle realizado");
             $.mobile.loading("hide");
         }else{
             $.mobile.loading("hide");
