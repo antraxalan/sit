@@ -2,7 +2,7 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
 var data_db_articulos;
 var id_transp=localStorage.g_username;
 
-function subir_db_articulos() {
+function subir_db_articulo() {
 
   var direccion= $(".direccion").val();
   // var var1= $(".var1").val();
@@ -12,7 +12,7 @@ function subir_db_articulos() {
   var codigo      =localStorage.g_username;
   var password    =localStorage.g_password;
   var info='articulo';
- // alert("in subir_db_articulos."+direccion+"---"+var1);
+ // alert("in subir_db_articulo."+direccion+"---"+var1);
   $.ajax({
     type: 'POST',
     dataType: 'json',
@@ -38,7 +38,7 @@ function subir_db_articulos() {
 function populateDB_articulos(tx) {
     //----- alert("popul");
     tx.executeSql('DROP TABLE IF EXISTS ARTICULO');
-    tx.executeSql('CREATE TABLE IF NOT EXISTS ARTICULO (IdArticulo INTEGER PRIMARY KEY AUTOINCREMENT,CodMarca,DesMarca,CodArt,DesArt,DesArtReducido,Calibre,TipoArticulo,CantxEmpaque,PrecioCompra,PrecioVtaMin,PrecioVtaMax,CodBotella,DesBotella,PVtaMinBot,CodCaja,DesCaja,PVtaMinCaja,PVtaMaxCaja,Estado)');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS ARTICULO (CodMarca,DesMarca,CodArt,DesArt,DesArtReducido,Calibre,TipoArticulo,CantxEmpaque,PrecioCompra,PrecioVtaMin,PrecioVtaMax,CodBotella,DesBotella,PVtaMinBot,CodCaja,DesCaja,PVtaMinCaja,PVtaMaxCaja,Estado)');
 }
 
 
@@ -96,7 +96,7 @@ function verificar_usuario() {
   var password    =localStorage.g_password;
 
   var info='verificar';
-  //----- alert("in subir_db_articulos."+direccion+"---"+var1);
+  //----- alert("in subir_db_articulo."+direccion+"---"+var1);
   $.ajax({
     type: 'POST',
     dataType: 'json',
@@ -104,7 +104,8 @@ function verificar_usuario() {
     data: "codigo=" + codigo + "&password=" + password + "&info=" + info,
     success: function (resp) {
         if(resp=='1'){
-            subir_db_articulos();
+            subir_db_articulo();
+            // subir_db_articulo();
             $.mobile.loading("hide");
         }else{
             $.mobile.loading("hide");

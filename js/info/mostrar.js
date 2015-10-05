@@ -5,7 +5,7 @@
         // Populate the database
         //
         function populateDB_info(tx) {
-        	tx.executeSql('CREATE TABLE IF NOT EXISTS ARTICULO (IdArticulo INTEGER PRIMARY KEY AUTOINCREMENT,CodMarca,DesMarca,CodArt,DesArt,DesArtReducido,Calibre,TipoArticulo,CantxEmpaque,PrecioCompra,PrecioVtaMin,PrecioVtaMax,CodBotella,DesBotella,PVtaMinBot,CodCaja,DesCaja,PVtaMinCaja,PVtaMaxCaja,Estado)');
+        	tx.executeSql('CREATE TABLE IF NOT EXISTS ARTICULO (CodMarca,DesMarca,CodArt,DesArt,DesArtReducido,Calibre,TipoArticulo,CantxEmpaque,PrecioCompra,PrecioVtaMin,PrecioVtaMax,CodBotella,DesBotella,PVtaMinBot,CodCaja,DesCaja,PVtaMinCaja,PVtaMaxCaja,Estado)');
         }
 
         // Query the database
@@ -29,11 +29,11 @@
 			tblContent+='<table data-role="table" id="movie-table" data-mode="columntoggle" data-filter="true" data-input="#filterTable-input" class="ui-responsive">';
 			tblContent+='<thead>';
 			tblContent+='<tr>';
-			tblContent+='<th data-priority="1">IdArticulo</th>';
+
 			tblContent+='<th data-priority="persist">CodMarca</th>';
 			tblContent+='<th data-priority="2">DesMarca</th>';
 			tblContent+='<th data-priority="3">CodArt</th>';
-			tblContent+='<th data-priority="4">DesArt</th>';
+			tblContent+='<th data-priority="1">DesArt</th>';
 			tblContent+='</tr>';
 			tblContent+='</thead>';
 			tblContent+='<tbody>';
@@ -43,7 +43,7 @@
         	for (var i = 0; i < len; i++) {
 
         		tblContent +='<tr><td>'; 
-        		tblContent+=results.rows.item(i).IdArticulo	+'</td><td>'
+
         		tblContent+=results.rows.item(i).CodMarca	+'</td><td>'
         		tblContent+=results.rows.item(i).DesMarca	+'</td><td>'
         		tblContent+=results.rows.item(i).CodArt	 	+'</td><td>'
