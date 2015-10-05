@@ -38,7 +38,7 @@
         	var tblContent='<form>';
         	tblContent+='<input id="filterTable-input" data-type="search">';
         	tblContent+='</form>';
-        	tblContent+='<table data-role="table" id="movie-table" data-mode="columntoggle" data-filter="true" data-input="#filterTable-input" class="ui-responsive">';
+        	tblContent+='<table data-role="table" id="movie-table1" data-mode="columntoggle" data-filter="true" data-input="#filterTable-input" class="ui-responsive selector_tabla">';
         	tblContent+='<thead>';
         	tblContent+='<tr>';
 
@@ -73,7 +73,7 @@
         	var tblContent='<form>';
         	tblContent+='<input id="filterTable-input" data-type="search">';
         	tblContent+='</form>';
-        	tblContent+='<table data-role="table" id="movie-table" data-mode="columntoggle" data-filter="true" data-input="#filterTable-input" class="ui-responsive">';
+        	tblContent+='<table data-role="table" id="movie-table2" data-mode="columntoggle" data-filter="true" data-input="#filterTable-input" class="ui-responsive selector_tabla">';
         	tblContent+='<thead>';
         	tblContent+='<tr>';
 
@@ -108,7 +108,7 @@
         	var tblContent='<form>';
         	tblContent+='<input id="filterTable-input" data-type="search">';
         	tblContent+='</form>';
-        	tblContent+='<table data-role="table" id="movie-table" data-mode="columntoggle" data-filter="true" data-input="#filterTable-input" class="ui-responsive">';
+        	tblContent+='<table data-role="table" id="movie-table3" data-mode="columntoggle" data-filter="true" data-input="#filterTable-input" class="ui-responsive selector_tabla">';
         	tblContent+='<thead>';
         	tblContent+='<tr>';
 
@@ -151,17 +151,17 @@
         // Transaction success callback
         //
         function successCB_info_articulo() {
-        	alert("successCB_info_articulo");
+        	// alert("successCB_info_articulo");
         	// var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
         	db.transaction(queryDB_info_articulo, errorCB_info);
         }
         function successCB_info_cliente() {
-        	alert("successCB_info_cliente");
+        	// alert("successCB_info_cliente");
         	// var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
         	db.transaction(queryDB_info_cliente, errorCB_info);
         }
         function successCB_info_detalle() {
-        	alert("successCB_info_detalle");
+        	// alert("successCB_info_detalle");
         	// var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
         	db.transaction(queryDB_info_detalle, errorCB_info);
         }
@@ -169,15 +169,15 @@
          // Cordova is ready
         //
         function cargar_info_articulo() {
-        	alert("cargar_info_articulo");
+        	// alert("cargar_info_articulo");
         	db.transaction(populateDB_info_articulo, errorCB_info, successCB_info_articulo);
         }
         function cargar_info_cliente() {
-        	alert("cargar_info_cliente");
+        	// alert("cargar_info_cliente");
         	db.transaction(populateDB_info_cliente, errorCB_info, successCB_info_cliente);
         }
         function cargar_info_detalle() {
-        	alert("cargar_info_detalle");
+        	// alert("cargar_info_detalle");
         	db.transaction(populateDB_info_detalle, errorCB_info, successCB_info_detalle);
         }
 
