@@ -66,7 +66,9 @@
 
 
         <div class="ui-content" role="main">
-          <button class="cargar_info">Cargar info</button>
+          <button class="cargar_info_articulo">Cargar info articulo</button>
+          <button class="cargar_info_cliente">Cargar info cliente</button>
+          <button class="cargar_info_detalle">Cargar info detalle</button>
           <div id="tabla_info"></div>
 
           
@@ -111,10 +113,22 @@
 
   // $(document).on("pageinit",function(){
     carga_exit();
-    $('.cargar_info').on("click", function() {
+    $('.cargar_info_articulo').on("click", function() {
       // alert('cargando');
-      cargar_info();
+      cargar_info_articulo();
     });
+    $('.cargar_info_cliente').on("click", function() {
+      // alert('cargando');
+      cargar_info_cliente();
+    });
+    $('.cargar_info_detalle').on("click", function() {
+      // alert('cargando');
+      cargar_info_detalle();
+    });
+
+    $('.inicio').click(function() {
+     window.location.href = "index.html";
+   }); 
 
   });
 
