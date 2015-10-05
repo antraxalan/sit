@@ -120,7 +120,7 @@ function insertDB_articulo(tx) {
 
         tx.executeSql('INSERT INTO ARTICULO (CodMarca,DesMarca,CodArt,DesArt,DesArtReducido,Calibre,TipoArticulo,CantxEmpaque,PrecioCompra,PrecioVtaMin,PrecioVtaMax,CodBotella,DesBotella,PVtaMinBot,CodCaja,DesCaja,PVtaMinCaja,PVtaMaxCaja,Estado) VALUES ("'+d1[i][0]+'","'+d1[i][1]+'","'+d1[i][2]+'","'+d1[i][3]+'","'+d1[i][4]+'","'+d1[i][5]+'","'+d1[i][6]+'","'+d1[i][7]+'","'+d1[i][8]+'","'+d1[i][9]+'","'+d1[i][10]+'","'+d1[i][11]+'","'+d1[i][12]+'","'+d1[i][13]+'","'+d1[i][14]+'","'+d1[i][15]+'","'+d1[i][16]+'","'+d1[i][17]+'","'+d1[i][18]+'")');
     };
-    alert("carga articulo finalizada");
+    // alert("carga articulo finalizada");
     // localStorage.g_username = codigo_usuario;
     // localStorage.g_password = password_usuario;
     // localStorage.g_existe = 1;
@@ -186,7 +186,7 @@ function verificar_usuario() {
             // alert("subir_db_cliente realizado");
             subir_db_detalle();
             // alert("subir_db_detalle realizado");
-            alert("realizado");
+            // alert("realizado");
             $.mobile.loading("hide");
         }else{
             $.mobile.loading("hide");

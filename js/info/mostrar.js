@@ -38,7 +38,7 @@
         	var tblContent='<form>';
         	tblContent+='<input id="filterTable-input" data-type="search">';
         	tblContent+='</form>';
-        	tblContent+='<table data-role="table" id="movie-table1" data-mode="columntoggle" data-filter="true" data-input="#filterTable-input" class="ui-responsive selector_tabla">';
+        	tblContent+='<table data-role="table"  data-mode="columntoggle" data-filter="true" data-input="#filterTable-input" class="ui-responsive selector_tabla">';
         	tblContent+='<thead>';
         	tblContent+='<tr>';
 
@@ -66,6 +66,7 @@
         	$('#tabla_info').html(tblContent);
         	 // $('#tabla_info').append(tblContent);
         	 $("#tabla_info").trigger("create");
+
         	}
 
         	function querySuccess_info_cliente(tx, results) {
@@ -73,7 +74,7 @@
         	var tblContent='<form>';
         	tblContent+='<input id="filterTable-input" data-type="search">';
         	tblContent+='</form>';
-        	tblContent+='<table data-role="table" id="movie-table2" data-mode="columntoggle" data-filter="true" data-input="#filterTable-input" class="ui-responsive selector_tabla">';
+        	tblContent+='<table data-role="table"  data-mode="columntoggle" data-filter="true" data-input="#filterTable-input" class="ui-responsive selector_tabla">';
         	tblContent+='<thead>';
         	tblContent+='<tr>';
 
@@ -108,7 +109,7 @@
         	var tblContent='<form>';
         	tblContent+='<input id="filterTable-input" data-type="search">';
         	tblContent+='</form>';
-        	tblContent+='<table data-role="table" id="movie-table3" data-mode="columntoggle" data-filter="true" data-input="#filterTable-input" class="ui-responsive selector_tabla">';
+        	tblContent+='<table data-role="table"  data-mode="columntoggle" data-filter="true" data-input="#filterTable-input" class="ui-responsive selector_tabla">';
         	tblContent+='<thead>';
         	tblContent+='<tr>';
 
@@ -136,6 +137,7 @@
         	$('#tabla_info').html(tblContent);
         	 // $('#tabla_info').append(tblContent);
         	 $("#tabla_info").trigger("create");
+
         	}
 
 
