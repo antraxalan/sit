@@ -155,10 +155,10 @@ function insertDB_detalle(tx) {
 
 
 function errorCB_cargar(err) {
-    ----- alert("errorCB_cargar: "+err.message);
+     alert("errorCB_cargar: "+err.message);
 }
 function errorCB1_carg2(err) {
-    ----- alert("errorCB1_carg2: "+err.message);
+     alert("errorCB1_carg2: "+err.message);
 }
 
 
