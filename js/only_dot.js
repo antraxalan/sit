@@ -3,8 +3,8 @@ function carga_only_dot() {
     document.addEventListener("deviceready", start_dot, false);
 }
 
-function start_dot2(){
-var el = $('input[name="numeric"]');
+function start_dot(){
+    var el = $('input[name="numeric"]');
 el.prop("autocomplete",false); // remove autocomplete (optional)
 el.on('keydown',function(e){
     var allowedKeyCodesArr = [96,97,98,99,100,101,102,103,104,105,48,49,50,51,52,53,54,55,56,57,8,37,39,109,189,46,110,190];  // allowed keys
@@ -28,9 +28,8 @@ el.on('keydown',function(e){
 
 };
 
-function start_dot(){
-    start_dot2();
-    $('.only_dot').keypress(function(event) {
+
+$('.only_dot').keypress(function(event) {
         // alert(event.which);
         $('#precio_prueba3').val(event.which);
         if(event.which < 46
@@ -43,6 +42,14 @@ function start_dot(){
         event.preventDefault();
     } // prevent if already dot
 });
-};
+
+
+$("#precio_prueba3").bind( "change", function(event, ui) {
+  // console.log('Lang: '+$(this).val());
+  alert("1111");
+  // alert($(this).val());
+  
+    //  $('#selected_lang').html('Language Selected: '+$(this).val());
+});
 
 

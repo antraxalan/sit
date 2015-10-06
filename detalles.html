@@ -576,7 +576,7 @@
               <label for="textarea">Precio por Caja:</label>
               <input type="text" name="numeric" id="precio_prueba1"  value="" data-clear-btn="true" title="dsad"/>
               <input type="text" name="precio" id="precio_prueba2"  value="" data-clear-btn="true" title="dsad" class="only_dot"/>
-              <input type="text" name="precio" id="precio_prueba3"  value="" data-clear-btn="true" title="dsad" class="only_dot"/>
+              <input type="text" name="precio" id="precio_prueba3"  value="" data-clear-btn="true" title="dsad" class="only_dots"/>
             </div>
             <div class="ui-grid-a">
               <div class="ui-block-a">
@@ -1109,7 +1109,7 @@
   $(document).on("pagecreate","#home",function(){
   // $(document).on("pageinit",function(){
     carga_exit();
-    carga_only_dot();
+    // carga_only_dot();
 
     var d = new Date();
 
@@ -1277,6 +1277,17 @@ $("#cliente").bind( "change", function(event, ui) {
   
     //  $('#selected_lang').html('Language Selected: '+$(this).val());
   });
+$('.only_dot').keypress(function(event) {
+
+  $('#precio_prueba3').val(event.which);
+  if(event.which < 46 || event.which > 59) {
+    event.preventDefault();
+  } 
+  if(event.which == 46 && $(this).val().indexOf('.') != -1) {
+    event.preventDefault();
+  } 
+});
+
 
 
 });
