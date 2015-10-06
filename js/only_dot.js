@@ -3,7 +3,7 @@ function carga_only_dot() {
     document.addEventListener("deviceready", start_dot, false);
 }
 
-function start_dot(){
+function start_dot2(){
 var el = $('input[name="numeric"]');
 el.prop("autocomplete",false); // remove autocomplete (optional)
 el.on('keydown',function(e){
@@ -28,18 +28,21 @@ el.on('keydown',function(e){
 
 };
 
-// function start_dot(){
-//     $('.only_dot').keypress(function(event) {
-//         if(event.which < 46
-//             || event.which > 59) {
-//             event.preventDefault();
-//     } // prevent if not number/dot
+function start_dot(){
+    start_dot2();
+    $('.only_dot').keypress(function(event) {
+        // alert(event.which);
+        $('#precio_prueba3').val(event.which);
+        if(event.which < 46
+            || event.which > 59) {
+            event.preventDefault();
+    } // prevent if not number/dot
 
-//     if(event.which == 46
-//         && $(this).val().indexOf('.') != -1) {
-//         event.preventDefault();
-//     } // prevent if already dot
-// });
-// };
+    if(event.which == 46
+        && $(this).val().indexOf('.') != -1) {
+        event.preventDefault();
+    } // prevent if already dot
+});
+};
 
 
