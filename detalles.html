@@ -49,6 +49,7 @@
     
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/exit.js"></script>
+    <script type="text/javascript" src="js/only_dot.js"></script>
     <script type="text/javascript" src="js/select_plus_filter.js"></script>
     <title>SITRANS</title>
   </head>
@@ -572,8 +573,8 @@
           <div data-role="fieldcontain" class="ui-field-contain ui-body ui-bar-a ui-corner-all">
             Pedido:
             <div class="ui-field-contain">
-              <label for="textarea">Precio por Caja:</label>
-              <input type="text" name="precio" id="precio_p"  value="" data-clear-btn="true"/>
+              <label for="textarea">Precio por Cajas:</label>
+              <input type="text" name="precio" id="precio_p"  value="" data-clear-btn="true" title="dsad" class="only_dot"/>
             </div>
             <div class="ui-grid-a">
               <div class="ui-block-a">
@@ -1106,6 +1107,7 @@
   $(document).on("pagecreate","#home",function(){
   // $(document).on("pageinit",function(){
     carga_exit();
+    carga_only_dot();
 
     var d = new Date();
 

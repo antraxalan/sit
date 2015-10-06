@@ -125,7 +125,7 @@
         	var len = results.rows.length;
         	for (var i = 0; i < len; i++) {
 
-        		tblContent +='<tr><td>'; 
+        		tblContent+='<tr><td>'; 
 
         		tblContent+=results.rows.item(i).TipoDcto		+'</td><td>'
         		tblContent+=results.rows.item(i).Apu			+'</td><td>'
