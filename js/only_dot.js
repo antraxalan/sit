@@ -29,7 +29,7 @@ el.on('keydown',function(e){
 };
 
 
-$('.only_dot').keypress(function(event) {
+$('.only_dotss').keypress(function(event) {
         // alert(event.which);
         $('#precio_prueba3').val(event.which);
         if(event.which < 46
@@ -44,7 +44,7 @@ $('.only_dot').keypress(function(event) {
 });
 
 
-$("#precio_prueba3").bind( "change", function(event, ui) {
+$("#precio_prueba3s").bind( "change", function(event, ui) {
   // console.log('Lang: '+$(this).val());
   alert("1111");
   // alert($(this).val());

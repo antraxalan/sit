@@ -1299,9 +1299,18 @@ $('.only_dotss').keypress(function(event) {
 //   });
 
 // });
-$('#precio_prueba3').on('keyup', function (event) {
-  alert("presionada");
-  alert(event.keyCode);
+$('#precio_prueba2').on('keyup', function (event) {
+  alert("up presionada");
+  alert("up keyCode:"+event.keyCode);
+  alert("up which:"+event.which);
+  alert("up charCode:"+event.charCode );
+    // $('div').text('key up ' + ++counter);
+});
+$('#precio_prueba3').on('keydown', function (event) {
+  alert("up presionada");
+  alert("up keyCode:"+event.keyCode);
+  alert("up which:"+event.which);
+  alert("up charCode:"+event.charCode );
     // $('div').text('key up ' + ++counter);
 });
 
