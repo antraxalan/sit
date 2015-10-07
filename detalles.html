@@ -1300,19 +1300,20 @@ $('.only_dotss').keypress(function(event) {
 
 // });
 $('#precio_prueba2').on('keyup', function (event) {
+
   alert("up presionada");
   alert("up keyCode:"+event.keyCode);
   alert("up which:"+event.which);
   alert("up charCode:"+event.charCode );
     // $('div').text('key up ' + ++counter);
 });
-$('#precio_prueba3').on('keydown', function (event) {
-  alert("up presionada");
-  alert("up keyCode:"+event.keyCode);
-  alert("up which:"+event.which);
-  alert("up charCode:"+event.charCode );
-    // $('div').text('key up ' + ++counter);
-});
+// $('#precio_prueba3').on('keydown', function (event) {
+//   alert("up presionada");
+//   alert("up keyCode:"+event.keyCode);
+//   alert("up which:"+event.which);
+//   alert("up charCode:"+event.charCode );
+//     // $('div').text('key up ' + ++counter);
+// });
 
 
 
@@ -1334,6 +1335,19 @@ $( document ).on( "pagecreate", "#deuda", function( event ) {
 });
 
 </script>
+<script>
+document.getElementById('precio_prueba3').onkeypress = function(event) {
+  // var charecter = getChar(event || window.event);
+  // alert(charecter);
+  // if (!char) return // special key
+  // this.value = char.toUpperCase();
+  // return false
+  alert("js keyCode:"+event.keyCode);
+  alert("js which:"+event.which);
+  alert("js charCode:"+event.charCode );
+}
+</script>
+
 
 </body>
 </html>
