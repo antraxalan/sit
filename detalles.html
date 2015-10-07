@@ -1122,7 +1122,7 @@
     $("#fecha_cobranza").val(fecha_actual);
     $("#fecha_deuda").val(fecha_actual);
     $('.mensaje').hide();
-    $(".articulo").hide();
+    $('.articulo').hide();
     // alert('inicia');
     $(".articulo_cobranza").hide();
     $(".articulo_deuda").hide();
@@ -1277,8 +1277,9 @@ $("#cliente").bind( "change", function(event, ui) {
   
     //  $('#selected_lang').html('Language Selected: '+$(this).val());
   });
-$('.only_dot').keypress(function(event) {
-
+$('.only_dotss').keypress(function(event) {
+ query = $(this).val();
+    alert(query);
   $('#precio_prueba3').val(event.which);
   if(event.which < 46 || event.which > 59) {
     event.preventDefault();
@@ -1286,6 +1287,22 @@ $('.only_dot').keypress(function(event) {
   if(event.which == 46 && $(this).val().indexOf('.') != -1) {
     event.preventDefault();
   } 
+
+});
+
+
+// $("#precio_prueba3").bind( "keypress", function(event, ui) {
+//   // console.log('Lang: '+$(this).val());
+//   alert($(this).val());
+  
+//     //  $('#selected_lang').html('Language Selected: '+$(this).val());
+//   });
+
+// });
+$('#precio_prueba3').on('keyup', function (event) {
+  alert("presionada");
+  alert(event.keyCode);
+    // $('div').text('key up ' + ++counter);
 });
 
 
