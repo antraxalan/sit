@@ -1323,9 +1323,10 @@ $('#precio_prueba2').on('keyup', function (event) {
 //fires the 1st time it is showed
 $( document ).on( "pagecreate", "#venta", function( event ) {
   // alert( "venta" );
-  $( "#precio_prueba3" ).keypress(function(event ) {
-    alert("p_p:"+event.which);
+  $('#precio_prueba3').on('input', function() {
+    this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
   });
+
 });
 
 $( document ).on( "pagecreate", "#cobranza", function( event ) {
