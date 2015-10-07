@@ -576,7 +576,7 @@
               <label for="textarea">Precio por Caja:</label>
               <input type="text" name="numeric" id="precio_prueba1"  value="" data-clear-btn="true" title="dsad"/>
               <input type="text" name="precio" id="precio_prueba2"  value="" data-clear-btn="true" title="dsad" class="only_dot"/>
-              <input type="text" name="precio" id="precio_prueba3"  data-clear-btn="true" data-toggle="tooltip" data-placement="top" title="Hooray!"/>
+              <input type="text" name="precio" id="precio_prueba3"  data-clear-btn="true" data-toggle="tooltip" data-placement="top" title="Hooray!" alt="12345" />
             </div>
             <div class="ui-grid-a">
               <div class="ui-block-a">
@@ -1108,7 +1108,7 @@
 // jQuery(document).ready(function() {
   $(document).on("pagecreate","#home",function(){
   // $(document).on("pageinit",function(){
-    $('[data-toggle="tooltip"]').tooltip(); 
+    // $('[data-toggle="tooltip"]').tooltip(); 
     carga_exit();
     // carga_only_dot();
 
@@ -1323,7 +1323,7 @@ $('#precio_prueba2').on('keyup', function (event) {
 
 //fires the 1st time it is showed
 $( document ).on( "pagecreate", "#venta", function( event ) {
-  
+
   // alert( "venta" );
   $('#precio_prueba3').on('input', function() {
     // var aux;
@@ -1334,7 +1334,9 @@ $( document ).on( "pagecreate", "#venta", function( event ) {
     // alert(this.value);
   });
   $('#precio_prueba3').on('blur', function() {
-    this.value = (parseFloat(this.value)).toFixed(2);
+    if(this.value!=''){
+      this.value = (parseFloat(this.value)).toFixed(2);
+    }
     // alert(this.value);
   });
 
