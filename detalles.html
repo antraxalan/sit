@@ -1279,14 +1279,14 @@ $("#cliente").bind( "change", function(event, ui) {
   });
 $('.only_dotss').keypress(function(event) {
  query = $(this).val();
-    alert(query);
-  $('#precio_prueba3').val(event.which);
-  if(event.which < 46 || event.which > 59) {
-    event.preventDefault();
-  } 
-  if(event.which == 46 && $(this).val().indexOf('.') != -1) {
-    event.preventDefault();
-  } 
+ alert(query);
+ $('#precio_prueba3').val(event.which);
+ if(event.which < 46 || event.which > 59) {
+  event.preventDefault();
+} 
+if(event.which == 46 && $(this).val().indexOf('.') != -1) {
+  event.preventDefault();
+} 
 
 });
 
@@ -1294,7 +1294,7 @@ $('.only_dotss').keypress(function(event) {
 // $("#precio_prueba3").bind( "keypress", function(event, ui) {
 //   // console.log('Lang: '+$(this).val());
 //   alert($(this).val());
-  
+
 //     //  $('#selected_lang').html('Language Selected: '+$(this).val());
 //   });
 
@@ -1306,7 +1306,7 @@ $('#precio_prueba2').on('keyup', function (event) {
   alert("up which:"+event.which);
   alert("up charCode:"+event.charCode );
     // $('div').text('key up ' + ++counter);
-});
+  });
 // $('#precio_prueba3').on('keydown', function (event) {
 //   alert("up presionada");
 //   alert("up keyCode:"+event.keyCode);
@@ -1323,6 +1323,9 @@ $('#precio_prueba2').on('keyup', function (event) {
 //fires the 1st time it is showed
 $( document ).on( "pagecreate", "#venta", function( event ) {
   // alert( "venta" );
+  $( "#precio_prueba3" ).keypress(function(event ) {
+    alert("p_p:"+event.which);
+  });
 });
 
 $( document ).on( "pagecreate", "#cobranza", function( event ) {
@@ -1335,19 +1338,5 @@ $( document ).on( "pagecreate", "#deuda", function( event ) {
 });
 
 </script>
-<script>
-document.getElementById('precio_prueba3').onkeypress = function(event) {
-  // var charecter = getChar(event || window.event);
-  // alert(charecter);
-  // if (!char) return // special key
-  // this.value = char.toUpperCase();
-  // return false
-  alert("js keyCode:"+event.keyCode);
-  alert("js which:"+event.which);
-  alert("js charCode:"+event.charCode );
-}
-</script>
-
-
 </body>
 </html>
