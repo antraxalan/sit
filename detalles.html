@@ -50,6 +50,7 @@
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/exit.js"></script>
     <script type="text/javascript" src="js/only_dot.js"></script>
+    
     <script type="text/javascript" src="js/select_plus_filter.js"></script>
     <title>SITRANS</title>
   </head>
@@ -78,9 +79,9 @@
               </div>                
               <div data-role="fieldcontain" class="ui-field-contain">
                 <label for="select-custom-20">Cliente:</label>
-                <select name="select-custom-20" id="cliente" class="filterable-select" data-native-menu="false">
+                <select name="select-custom-20" id="cliente" class="filterable-select " data-native-menu="false">
 
-                  <option value="-">Seleccione un cliente.</option>
+                 <!--  <option value="-">Seleccione un cliente.</option>
                   <option value="100">100 - EVELIN  MARIA CARDENAS TROCHE</option>
                   <option value="101">101 - ALVAREZ MORALES FELIX</option>
                   <option value="102">102 - LOPEZ ERNESTO</option>
@@ -289,27 +290,27 @@
                   <option value="309">309 - VICTOR ALMIRANTE</option>
                   <option value="310">310 - MIRIAN ALBORTA</option>
                   <option value="311">311 - MIUSIC</option>
+                -->
 
-
-                </select>
-              </div>
-              <div data-role="fieldcontain" class="ui-field-contain">
-                <fieldset data-role="controlgroup" data-type="horizontal">
-                  <legend>Tipo:</legend>
-                  <label for="cont">Contado</label>
-                  <input type="radio" name="tipo" id="cont" value="cont" checked="checked">
-                  <label for="cred">Credito</label>
-                  <input type="radio" name="tipo" id="cred" value="cred">
-                </fieldset>
-              </div>
-              <div data-role="fieldcontain" class="ui-field-contain vencimiento">               
-                <label for="date">Fecha Vto:</label>
-                <input name="mydate" id="fecha2" type="date" data-role="date" data-date-format="dd-mm-yyyy"/>
-              </div>    
-              <div data-role="fieldcontain" class="ui-field-contain">
-                <label for="textarea">Obs:</label>
-                <textarea cols="40" rows="8" name="textarea" id="obs"></textarea>
-              </div>
+              </select>
+            </div>
+            <div data-role="fieldcontain" class="ui-field-contain">
+              <fieldset data-role="controlgroup" data-type="horizontal">
+                <legend>Tipo:</legend>
+                <label for="cont">Contado</label>
+                <input type="radio" name="tipo" id="cont" value="cont" checked="checked">
+                <label for="cred">Credito</label>
+                <input type="radio" name="tipo" id="cred" value="cred">
+              </fieldset>
+            </div>
+            <div data-role="fieldcontain" class="ui-field-contain vencimiento">               
+              <label for="date">Fecha Vto:</label>
+              <input name="mydate" id="fecha2" type="date" data-role="date" data-date-format="dd-mm-yyyy"/>
+            </div>    
+            <div data-role="fieldcontain" class="ui-field-contain">
+              <label for="textarea">Obs:</label>
+              <textarea cols="40" rows="8" name="textarea" id="obs"></textarea>
+            </div>
         <!-- <div class="ui-field-contain">
           <input type="submit" id="submit-1" class="ui-btn ui-corner-all " value="Detalles">
           <a href="#venta" data-role="button">Detalles</a>
@@ -417,7 +418,7 @@
               <option value="-">Seleccione un producto.</option>
 
 
-              <option value="25">25  DUCAL 620 H                             </option>
+              <!-- <option value="25">25  DUCAL 620 H                             </option>
               <option value="26">26  DUCAL 620 H PROVINCIAS                  </option>
               <option value="27">27  DUCAL 250 bot ow                        </option>
               <option value="30">30  DUCAL DORADA 350 bot ow                 </option>
@@ -549,7 +550,7 @@
               <option value="590">590 PILSENER BARRIL 30 litros               </option>
               <option value="595">595 PILSENER BARRIL 50 litros               </option>
               <option value="596">596 TROP. EXTRA BARRIL 50 litros EXP. LPZ   </option>
-              <option value="597">597 BARRIL BOCK 50 LTR.                     </option>
+              <option value="597">597 BARRIL BOCK 50 LTR.                     </option> -->
             </select>
           </div>
           <div data-role="fieldcontain" class="ui-field-contain ui-bar ui-bar-a ui-corner-all">
@@ -1103,13 +1104,16 @@
 </div>
 
 
-
+<script type="text/javascript" src="js/cargar/select_cli_mar.js"></script>
 <script>
 // jQuery(document).ready(function() {
   $(document).on("pagecreate","#home",function(){
   // $(document).on("pageinit",function(){
-    // $('[data-toggle="tooltip"]').tooltip(); 
-    carga_exit();
+  // $('[data-toggle="tooltip"]').tooltip(); 
+  carga_exit();
+  cargar_select_cliente();
+  cargar_select_marca();
+
     // carga_only_dot();
 
     var d = new Date();
