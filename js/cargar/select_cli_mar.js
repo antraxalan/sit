@@ -36,6 +36,7 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
          }
 
          function querySuccess_select_cliente(tx, results) {
+          var tblContent='';
           // var tblText='<table id="t01"><tr><th>ID</th> <th>Name</th> <th>Number</th></tr>';
           // var tblContent='<select name="select-custom-cliente" id="cliente" class="filterable-select " data-native-menu="false">';
           // tblContent +='<option value="-">Seleccione un cliente.</option>';
