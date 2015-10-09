@@ -29,9 +29,9 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
           alert("art:"+i);
 
           // document.getElementById("tabla_select").innerHTML =tblContent;
-          $('#cliente').html(tblContent);
+          $('#producto').html(tblContent);
            // $('#tabla_select').append(tblContent);
-           $("#cliente").trigger("create");
+           $("#producto").trigger("create");
 
          }
 
@@ -45,9 +45,9 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
           alert("cli:"+i);
 
           // document.getElementById("tabla_select").innerHTML =tblContent;
-          $('#producto').html(tblContent);
+          $('#cliente').html(tblContent);
           // $('#tabla_select').append(tblContent);
-          $("#producto").trigger("create");
+          $("#cliente").trigger("create");
 
         }
 
