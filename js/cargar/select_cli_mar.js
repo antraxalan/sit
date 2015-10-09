@@ -26,6 +26,7 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
           for (var i = 0; i < len; i++) {
             tblContent +='<option value="'+results.rows.item(i).CodArt+'">'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArtReducido+'</option>'; 
           }
+          alert("art:"+i);
 
           // document.getElementById("tabla_select").innerHTML =tblContent;
           $('#cliente').html(tblContent);
@@ -41,6 +42,7 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
           for (var i = 0; i < len; i++) {
             tblContent +='<option value="'+results.rows.item(i).CodCliente+'">'+results.rows.item(i).CodCliente+' - '+results.rows.item(i).Nombre+'</option>'; 
           }
+          alert("cli:"+i);
 
           // document.getElementById("tabla_select").innerHTML =tblContent;
           $('#producto').html(tblContent);

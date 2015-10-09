@@ -188,6 +188,7 @@ function verificar_usuario() {
             // alert("subir_db_detalle realizado");
             // alert("realizado");
             $.mobile.loading("hide");
+            alert("Carga exitosa.");
         }else{
             $.mobile.loading("hide");
             alert("Por favor verifique su Codigo y Contraseña.");
