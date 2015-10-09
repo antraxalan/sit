@@ -65,12 +65,12 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
         function cargar_select_marca() {
           // alert("successCB_select_articulo");
           // var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
-          // db.transaction(queryDB_select_articulo, errorCB_select);
+          db.transaction(queryDB_select_articulo, errorCB_select);
         }
         function cargar_select_cliente() {
           // alert("successCB_select_cliente");
           // var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
-          // db.transaction(queryDB_select_cliente, errorCB_select);
+          db.transaction(queryDB_select_cliente, errorCB_select);
         }
         
 
