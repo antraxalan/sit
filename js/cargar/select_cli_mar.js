@@ -36,19 +36,20 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
          }
 
          function querySuccess_select_cliente(tx, results) {
-          var tblContent='';
+          // var tblContent='';
           // var tblText='<table id="t01"><tr><th>ID</th> <th>Name</th> <th>Number</th></tr>';
-          // var tblContent='<select name="select-custom-cliente" id="cliente" class="filterable-select " data-native-menu="false">';
-          // tblContent +='<option value="-">Seleccione un cliente.</option>';
+          var tblContent='<select name="select-custom-cliente" id="cliente" class="filterable-select " data-native-menu="false">';
+          tblContent +='<option value="-">Seleccione un cliente.</option>';
           var len = results.rows.length;
           for (var i = 0; i < len; i++) {
             tblContent +='<option value="'+results.rows.item(i).CodCliente+'">'+results.rows.item(i).CodCliente+' - '+results.rows.item(i).Nombre+'</option>'; 
           }
-           // tblContent +='</select>'; 
+           tblContent +='</select>'; 
           alert("cli:"+i);
 
           // document.getElementById("tabla_select").innerHTML =tblContent;
-          $('#cliente_div_id').append(tblContent);
+          // $('#cliente').html(tblContent);
+          $('#cliente_div_id').html(tblContent);
           // $('#tabla_select').append(tblContent);
           $("#cliente_div_id").trigger("create");
 

@@ -73,19 +73,19 @@
             <form class="ui">
 
               <div data-role="fieldcontain" class="ui-field-contain"data-demo-html="true">               
-<!--                 <button class="d_cliente">div prueba</button>
-                <button class="s_cliente">select prueba</button> -->
-                <label for="date">Fecha:</label>
-                <input name="mydate" id="fecha" disabled="disabled"/>
-              </div>
+            <!--     <button class="d_cliente">div prueba</button>
+  <button class="s_cliente">select prueba</button> -->
+  <label for="date">Fecha:</label>
+  <input name="mydate" id="fecha" disabled="disabled"/>
+</div>
 
-              <div data-role="fieldcontain" class="ui-field-contain">
-                <label for="select-custom-20">Cliente:</label>
-                <div id="cliente_div_id">
-                <select name="select-custom-cliente" id="cliente" class="filterable-select " data-native-menu="false">
+<div data-role="fieldcontain" class="ui-field-contain">
+  <label for="select-custom-20">Cliente:</label>
+  <div id="cliente_div_id">
+  <!-- <select name="select-custom-cliente" id="cliente" class="filterable-select " data-native-menu="false"> -->
 
 
-                   <option value="-">Seleccione un cliente.</option>
+   <!-- <option value="-">Seleccione un cliente.</option> -->
                  <!-- <option value="100">100 - EVELIN  MARIA CARDENAS TROCHE</option>
                   <option value="101">101 - ALVAREZ MORALES FELIX</option>
                   <option value="102">102 - LOPEZ ERNESTO</option>
@@ -296,7 +296,7 @@
                   <option value="311">311 - MIUSIC</option>
                 -->
 
-              </select>
+              <!-- </select> -->
               </div>
             </div>
             <div data-role="fieldcontain" class="ui-field-contain">
@@ -1111,19 +1111,24 @@
 
 <script type="text/javascript" src="js/cargar/select_cli_mar.js"></script>
 <script>
-// jQuery(document).ready(function() {
+jQuery(document).ready(function() {
+  
+});
+  // $( document ).on( "pagecreate", "#venta", function( event ) {
+  //   cargar_select_cliente();
+  //   cargar_select_marca();
+  // });
   $(document).on("pagecreate","#home",function(){
   // $(document).on("pageinit",function(){
   // $('[data-toggle="tooltip"]').tooltip(); 
   carga_exit();
-  cargar_select_cliente();
-  cargar_select_marca();
-
+cargar_select_cliente();
+    cargar_select_marca();
   $('.d_cliente').click(function() {
-    $(".select_cli_class").trigger("create");
+
   });
   $('.s_cliente').click(function() {
-    $("#cliente").trigger("create");
+    // $("#cliente").trigger("create");
   });
 
     // carga_only_dot();
@@ -1288,7 +1293,7 @@ $("input[name=deuda_monto]:radio").bind( "change", function(event, ui) {
     //  $('#selected_lang').html('Language Selected: '+$(this).val());
   });
 
-$("#cliente").bind( "change", function(event, ui) {
+$("#cliente").on( "change", function(event, ui) {
   // console.log('Lang: '+$(this).val());
   alert($(this).val());
   
