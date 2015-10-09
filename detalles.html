@@ -73,13 +73,15 @@
             <form class="ui">
 
               <div data-role="fieldcontain" class="ui-field-contain"data-demo-html="true">               
-
+                <button class="d_cliente">div prueba</button>
+                <button class="s_cliente">select prueba</button>
                 <label for="date">Fecha:</label>
                 <input name="mydate" id="fecha" disabled="disabled"/>
               </div>                
               <div data-role="fieldcontain" class="ui-field-contain">
                 <label for="select-custom-20">Cliente:</label>
-                <select name="select-custom-20" id="cliente" class="filterable-select " data-native-menu="false">
+                <div class="select_cli_class">
+                  <select name="select-custom-20" id="cliente" class="filterable-select " data-native-menu="false">
 
                  <!--  <option value="-">Seleccione un cliente.</option>
                   <option value="100">100 - EVELIN  MARIA CARDENAS TROCHE</option>
@@ -294,23 +296,24 @@
 
               </select>
             </div>
-            <div data-role="fieldcontain" class="ui-field-contain">
-              <fieldset data-role="controlgroup" data-type="horizontal">
-                <legend>Tipo:</legend>
-                <label for="cont">Contado</label>
-                <input type="radio" name="tipo" id="cont" value="cont" checked="checked">
-                <label for="cred">Credito</label>
-                <input type="radio" name="tipo" id="cred" value="cred">
-              </fieldset>
-            </div>
-            <div data-role="fieldcontain" class="ui-field-contain vencimiento">               
-              <label for="date">Fecha Vto:</label>
-              <input name="mydate" id="fecha2" type="date" data-role="date" data-date-format="dd-mm-yyyy"/>
-            </div>    
-            <div data-role="fieldcontain" class="ui-field-contain">
-              <label for="textarea">Obs:</label>
-              <textarea cols="40" rows="8" name="textarea" id="obs"></textarea>
-            </div>
+          </div>
+          <div data-role="fieldcontain" class="ui-field-contain">
+            <fieldset data-role="controlgroup" data-type="horizontal">
+              <legend>Tipo:</legend>
+              <label for="cont">Contado</label>
+              <input type="radio" name="tipo" id="cont" value="cont" checked="checked">
+              <label for="cred">Credito</label>
+              <input type="radio" name="tipo" id="cred" value="cred">
+            </fieldset>
+          </div>
+          <div data-role="fieldcontain" class="ui-field-contain vencimiento">               
+            <label for="date">Fecha Vto:</label>
+            <input name="mydate" id="fecha2" type="date" data-role="date" data-date-format="dd-mm-yyyy"/>
+          </div>    
+          <div data-role="fieldcontain" class="ui-field-contain">
+            <label for="textarea">Obs:</label>
+            <textarea cols="40" rows="8" name="textarea" id="obs"></textarea>
+          </div>
         <!-- <div class="ui-field-contain">
           <input type="submit" id="submit-1" class="ui-btn ui-corner-all " value="Detalles">
           <a href="#venta" data-role="button">Detalles</a>
@@ -1113,6 +1116,13 @@
   carga_exit();
   cargar_select_cliente();
   cargar_select_marca();
+
+  $('.d_cliente').click(function() {
+    $(".select_cli_class").trigger("create");
+  });
+  $('.s_cliente').click(function() {
+    $("#cliente").trigger("create");
+  });
 
     // carga_only_dot();
 
