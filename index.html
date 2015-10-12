@@ -163,7 +163,7 @@
             <form class="ui">
 
               <div data-role="fieldcontain" class="ui-field-contain"data-demo-html="true">               
-                <!-- <button class="d_cliente">div prueba</button> -->
+                <button class="pruebita_select">pruebita</button>
                 <!-- <button class="s_cliente">select prueba</button> -->
                 <label for="date">Fecha:</label>
                 <input name="mydate" id="fecha" disabled="disabled"/>
@@ -1535,6 +1535,14 @@ $("input[name=deuda_monto]:radio").bind( "change", function(event, ui) {
 
 
 
+$(".pruebita_select").on( "click", function(event, ui) {
+// $(document).bind("change", "#cliente", function(){
+  // console.log('Lang: '+$(this).val());
+  // alert($(this).val()+":1::");
+  $('#cliente option[value="-"]');
+  
+    //  $('#selected_lang').html('Language Selected: '+$(this).val());
+  });
 $("#cliente").on( "change", function(event, ui) {
 // $(document).bind("change", "#cliente", function(){
   // console.log('Lang: '+$(this).val());
