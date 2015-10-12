@@ -59,7 +59,7 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
 
           // $('#cliente_div_id').html(tblContent2);
           // $('#tabla_select').append(tblContent2);
-          // $("#cliente").trigger("create");
+          $("#cliente").trigger("create");
 
         }
 

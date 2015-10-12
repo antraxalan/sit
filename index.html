@@ -27,33 +27,46 @@
     <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme.css" /> -->
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile.css" />
-    <!-- <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" /> -->
+
+
     <!-- <link rel="stylesheet" type="text/css" href="css/theme-classic.css"/> -->
     <!-- <link type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.min.css" rel="stylesheet" />   -->
+    <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"> -->
 
+
+    <!-- <script src="js/jquery.js"></script> -->
+    <!-- <script src="js/jquery.js"></script> -->
+    <!-- <script src="js/loader.js"></script> -->
 
     <!-- <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" /> -->
 
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery.mobile.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    
     <script type="text/javascript" src="js/db_crear.js"></script>
-    <script type="text/javascript" src="js/exit.js"></script>
+
+
     <script type="text/javascript" src="js/cargar/cargar_articulos.js"></script>
     <script type="text/javascript" src="js/usuario/guardar_datos.js"></script>
     <script type="text/javascript" src="js/usuario/borrar_sesion.js"></script>
 
+
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/exit.js"></script>
+    <script type="text/javascript" src="js/only_dot.js"></script>
+    <script type="text/javascript" src="js/cargar/select_cli_mar.js"></script>
+    <script type="text/javascript" src="js/select_plus_filter.js"></script>
     <title>SITRANS</title>
   </head>
   <body>
-    <div class="app paginaprincipal" id="mainpage">
 
-      <div data-role="page" id="home" >
+    <div class="app" >
+
+      <div data-role="page" class="paginaprincipal" id="home" >
         <header data-role="header" data-position="fixed">
           <h1>CBN</h1>
           <!-- <a href="#panel-overlay" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-gear">Opciones</a> -->
@@ -78,7 +91,7 @@
 
 
               <div class="ui-grid-solo" >
-                <div class="ui-block-a"><button type="button" class="big_button registrar blue_btn">Datos Cliente</button></div>
+                <div class="ui-block-a"><a href="#registrar"><button type="button" class="big_button  blue_btn">Datos Cliente</button></a></div>
                 <!-- <div class="ui-block-a"><button type="button" class="big_button read">read_txt2</button></div> -->
               </div>
               <div class="ui-grid-a" >
@@ -91,7 +104,7 @@
               </div>
             </form>
           </div>
- 
+          
           <input class="direccion" value="192.168.0.114" placeholder="direccion" type="hidden" />
 
 
@@ -134,9 +147,1060 @@
         </footer>
       </div><!-- /Page Home -->
 
+
+      <div data-role="page" id="registrar" class="ui-page-theme-a" >
+        <header data-role="header" data-position="fixed">
+          <h1>CBN</h1>
+          <a data-icon="home" class="ui-btn-right " href="#home">Inicio</a>
+        </header> 
+
+        <div data-role="content">
+          <h3>BIENVENIDO A SITRANS APP</h3>
+
+
+          <div class="ui-content" role="main">
+
+            <form class="ui">
+
+              <div data-role="fieldcontain" class="ui-field-contain"data-demo-html="true">               
+                <!-- <button class="d_cliente">div prueba</button> -->
+                <!-- <button class="s_cliente">select prueba</button> -->
+                <label for="date">Fecha:</label>
+                <input name="mydate" id="fecha" disabled="disabled"/>
+              </div>
+
+              <div data-role="fieldcontain" class="ui-field-contain">
+                <label for="select-custom-20">Cliente:</label>
+                <!-- <div id="cliente_div_id"> -->
+                <!-- <div class="mensaje123">sads</div> -->
+                <select name="select-custom-cliente" id="cliente" class="filterable-select " data-native-menu="false">
+
+
+               <!-- <option value="-">Seleccione un cliente.</option>
+               <option value="100">100 - EEEVELIN  MARIA CARDENAS TROCHE</option>
+               <option value="101">101 - ALVAREZ MORALES FELIX</option>
+               <option value="102">102 - LOPEZ ERNESTO</option>
+               <option value="103">103 - RENE REMIGIO ESCOBAR CALLISAYA</option>
+               <option value="104">104 - ALACOMA JUSTINA</option>
+               <option value="105">105 - RUTH GALVEZ IBAÑEZ</option>
+               <option value="106">106 - ESCALANT  E VICTOR</option>
+               <option value="107">107 - CUBA CONSUELO</option>
+               <option value="108">108 - FELIX FERNANDEZ</option>
+               <option value="109">109 - JIMENEZ JAQUELIN</option>
+               <option value="110">110 - JACINTA MAMANI DE VARGAS</option>
+               <option value="111">111 - MIRANDA ALCIRA</option>
+               <option value="112">112 - ARUQUIPA BEATRIS</option>
+               <option value="113">113 - PASTRANA MARIA</option>
+               <option value="114">114 - VILLAROEL SENOVIA</option>
+               <option value="115">115 - ROMERO CINDY</option>
+               <option value="116">116 - MARIANELA FERNANDEZ</option>
+               <option value="117">117 - LARA ALDO</option>
+               <option value="118">118 - QUISPE FLORA</option>
+               <option value="119">119 - JAIME REQUENA</option>
+               <option value="120">120 - BEATRIS HUANCA</option>
+               <option value="121">121 - LUNA CARLOS</option>
+               <option value="122">122 - MIRIAM LOPEZ</option>
+               <option value="123">123 - LOURDES CABALLERO LLUSCO</option>
+               <option value="124">124 - WANG LUQUING</option>
+               <option value="125">125 - RAMOS LUCY</option>
+               <option value="126">126 - CALLE TOMAS</option>
+               <option value="127">127 - GREGORIA GUTIERREZ</option>
+               <option value="128">128 - JUANA RAMIREZ</option>
+               <option value="129">129 - RAMIRO ARUQUIPA</option>
+               <option value="130">130 - PATRICIA ABENDAÐO</option>
+               <option value="131">131 - LUCILA ALVAREZ</option>
+               <option value="132">132 - NINA WILSON</option>
+               <option value="133">133 - HUANCA TEODORA</option>
+               <option value="134">134 - QUISPE LIDIA</option>
+               <option value="135">135 - ROJAS ANTONIA</option>
+               <option value="136">136 - LUNA CANDIA NELSON</option>
+               <option value="137">137 - FLORES BASILIO</option>
+               <option value="138">138 - ALANOCA DONATA</option>
+               <option value="139">139 - LINCON ROBERTA</option>
+               <option value="140">140 - JOSE LUIZ ACEBEDO</option>
+               <option value="141">141 - LOPEZ NORA</option>
+               <option value="142">142 - PEREZ MARIA</option>
+               <option value="143">143 - VENTA DEPOSITO</option>
+               <option value="144">144 - SANTANDER FLORA</option>
+               <option value="145">145 - LICORERIA LAS VEGAS</option>
+               <option value="146">146 - LEON GERMAN</option>
+               <option value="147">147 - VALLE FERNANDO</option>
+               <option value="149">149 - BUSTAMANTE RENATO</option>
+               <option value="150">150 - CHUQUIMIA ELIZABETH</option>
+               <option value="151">151 - MURILLO MARTHA</option>
+               <option value="152">152 - TIENDA ANTUKITA</option>
+               <option value="153">153 - SANTANDER GENARA</option>
+               <option value="154">154 - ALMACEN JERSINIA</option>
+               <option value="155">155 - QUISPE RAMIRO</option>
+               <option value="156">156 - MENDEZ ESPERANZA</option>
+               <option value="157">157 - VERA VIRGINIA</option>
+               <option value="158">158 - MENDEZ MARCOS</option>
+               <option value="159">159 - CASO ELEODORO</option>
+               <option value="160">160 - VARGAS DORA</option>
+               <option value="161">161 - LOCAL GARIBALDI</option>
+               <option value="162">162 - LOPEZ MARIA</option>
+               <option value="163">163 - ALMACEN LA PACEÑA</option>
+               <option value="164">164 - FUESTES SILVIA</option>
+               <option value="165">165 - PINTO MARCELA</option>
+               <option value="166">166 - PATON MARIA</option>
+               <option value="167">167 - CUTIPA IGNACIA</option>
+               <option value="168">168 - AGUILAR HUAYHUA MIGUEL JOSE</option>
+               <option value="169">169 - QUISBERT ORTENCIA</option>
+               <option value="170">170 - TIENDA MIKY</option>
+               <option value="171">171 - VALLE</option>
+               <option value="172">172 - ROXANA SANCHES Y SESAR SONCO</option>
+               <option value="173">173 - CALLISAYA FELIPA</option>
+               <option value="174">174 - DESTROCK</option>
+               <option value="175">175 - CASILLA MERCEDES</option>
+               <option value="176">176 - TATIANA MIRANDA</option>
+               <option value="177">177 - JHONNY TREBOL</option>
+               <option value="178">178 - EL GALEON</option>
+               <option value="179">179 - SORIA VICTOR</option>
+               <option value="180">180 - MERCADO DEYSI</option>
+               <option value="181">181 - AVALOS LUCAS</option>
+               <option value="182">182 - VEGA YOLA</option>
+               <option value="183">183 - USNAYO FRANCISCA</option>
+               <option value="184">184 - SAN MILAN EDDA</option>
+               <option value="185">185 - ESPEJO TEREZA</option>
+               <option value="186">186 - SEGALES LUCY</option>
+               <option value="187">187 - SULLCATA MARIA</option>
+               <option value="188">188 - JORGE JULIAN</option>
+               <option value="189">189 - AVILA GABRIELA</option>
+               <option value="190">190 - FERNANDEZ RAMIRO</option>
+               <option value="191">191 - ALCAZAR JUSTINA</option>
+               <option value="192">192 - MORON CEFERINA</option>
+               <option value="193">193 - VARGAS ADALIT</option>
+               <option value="194">194 - JUANA DE ARANA</option>
+               <option value="195">195 - CHAVEZ MARCELO</option>
+               <option value="196">196 - ZUAREZ ELIZABET</option>
+               <option value="197">197 - FLORES MARIA</option>
+               <option value="198">198 - TOLEDO WENDY</option>
+               <option value="199">199 - PAUCARA RICARDO</option>
+               <option value="200">200 - ALMACEN SUSET</option>
+               <option value="201">201 - ALMACEN ALIANZA</option>
+               <option value="202">202 - TOLA ANGELICA</option>
+               <option value="203">203 - GONZALES MIKAEL</option>
+               <option value="204">204 - RIVERO GUIDO MOISES</option>
+               <option value="205">205 - ALMACEN GOSALVEZ</option>
+               <option value="206">206 - CHOQUE ANGELA</option>
+               <option value="207">207 - HOTEL AERONAUTICO</option>
+               <option value="208">208 - SARSURI MAX</option>
+               <option value="209">209 - FERNANDEZ NELLY</option>
+               <option value="210">210 - BENITEZ JUANA</option>
+               <option value="211">211 - ROJAS JUANA</option>
+               <option value="213">213 - NINA ELIO</option>
+               <option value="214">214 - CANDIA NELSON</option>
+               <option value="215">215 - ZAR GALDON</option>
+               <option value="216">216 - LICORERIA STOP</option>
+               <option value="217">217 - RESTAURANTE LUIS DIEGO</option>
+               <option value="218">218 - MIRANDA JUAN CARLOS</option>
+               <option value="219">219 - BLANCO ROSA</option>
+               <option value="220">220 - AIDE HUANCA</option>
+               <option value="221">221 - JORGE SADU</option>
+               <option value="222">222 - RUBIN DE SELIS</option>
+               <option value="223">223 - JORGE RIVERO</option>
+               <option value="224">224 - ALIAGA OLGA</option>
+               <option value="225">225 - CHUMA LLAJTA</option>
+               <option value="226">226 - SARAI</option>
+               <option value="227">227 - ALMACEN ROCKY</option>
+               <option value="228">228 - CRUZ VARGAS COSME</option>
+               <option value="229">229 - GUTIERREZ ROSALIA</option>
+               <option value="230">230 - URQUIOLA ROSA</option>
+               <option value="231">231 - ALCON MARTHA</option>
+               <option value="232">232 - TIENDA AUTENTICA</option>
+               <option value="233">233 - LEMA LURDES</option>
+               <option value="234">234 - VARGAS ANA</option>
+               <option value="235">235 - SALAZAR VICTORINA</option>
+               <option value="236">236 - RAMOS ROCIO</option>
+               <option value="237">237 - QUINTANA RAMIRO</option>
+               <option value="238">238 - IRA CRISTOVAL</option>
+               <option value="239">239 - MARIA PAULA</option>
+               <option value="240">240 - CHAMBI VALERIO</option>
+               <option value="241">241 - ACADEMICO</option>
+               <option value="242">242 - AGUILAR MIRNA</option>
+               <option value="243">243 - DIETER MARIN</option>
+               <option value="244">244 - HOTEL MADRE TIERRA</option>
+               <option value="245">245 - ANDRADE ROSALIA</option>
+               <option value="246">246 - SALON COCO`S</option>
+               <option value="247">247 - ALAJA MARTA</option>
+               <option value="248">248 - LA RIEL</option>
+               <option value="249">249 - GALVEZ WALTER</option>
+               <option value="250">250 - CUTILI ANTONIA</option>
+               <option value="251">251 - ARANDA BLANCO</option>
+               <option value="252">252 - LUCIA DE QUISPE</option>
+               <option value="253">253 - NORCA DE CHAVES</option>
+               <option value="254">254 - MAMANI ROXANA</option>
+               <option value="255">255 - GERMACHEA CUENTAS RICARDA</option>
+               <option value="256">256 - CALLEJAS MARTHA</option>
+               <option value="257">257 - ARAMAYO ANDREA</option>
+               <option value="258">258 - VARGAS JUAN</option>
+               <option value="259">259 - ALARCON KATIA</option>
+               <option value="260">260 - PADRE JUAN PABLO</option>
+               <option value="261">261 - SANMILLAN EDDA</option>
+               <option value="262">262 - ORTUÑO ILSEN</option>
+               <option value="263">263 - CARRION JAQUELINE</option>
+               <option value="264">264 - Banco Sol</option>
+               <option value="265">265 - Col.Gregorio Reynold</option>
+               <option value="266">266 - BARRENECHEA MIKAELA</option>
+               <option value="267">267 - VERA LEONARDO</option>
+               <option value="270">270 - ANTONIA MENDOZA</option>
+               <option value="271">271 - LICORERIA LOS AMIGOS</option>
+               <option value="272">272 - ASUNTA CHOQUE</option>
+               <option value="273">273 - LA CASA DEL LOBO</option>
+               <option value="274">274 - BLUE HOUSE (Cardozo</option>
+               <option value="275">275 - LICORERIA MIRAFLORES</option>
+               <option value="276">276 - LOCAL LIBERTAD</option>
+               <option value="277">277 - MERCEDES BERNAL</option>
+               <option value="278">278 - RESTAURANTE RICO PEZ</option>
+               <option value="279">279 - GOZALVEZ (Susana Paz )</option>
+               <option value="280">280 - GUIDO LUCANA</option>
+               <option value="281">281 - HUAYHUA MAYDA</option>
+               <option value="282">282 - ROJAS JUAN CARLOS</option>
+               <option value="283">283 - MARIA LUIZA (cancha San Luis</option>
+               <option value="284">284 - JHONNY SOSA</option>
+               <option value="285">285 - TITO JHANET(marcelo chaves</option>
+               <option value="286">286 - ASCARUN SEVERO</option>
+               <option value="287">287 - VALENCIA CRAMER</option>
+               <option value="288">288 - FLORES TERESA</option>
+               <option value="289">289 - GARCIA ELMER</option>
+               <option value="290">290 - RAMOS ALCON PATRICIO</option>
+               <option value="291">291 - ORMACHEA REGINA</option>
+               <option value="292">292 - QUISPE ELIZABET</option>
+               <option value="293">293 - ALMACEN CHELITA</option>
+               <option value="294">294 - SARMIENTO NOEMI</option>
+               <option value="295">295 - ANTEZANA TERRAZAS</option>
+               <option value="296">296 - ESPEJO TITO</option>
+               <option value="297">297 - ARTEAGA JULIA</option>
+               <option value="298">298 - MACHICADO SABINA</option>
+               <option value="299">299 - AGUILAR JOSE LUIS</option>
+               <option value="300">300 - USNAYO EDUARDA</option>
+               <option value="301">301 - COSTANO TEREZA</option>
+               <option value="302">302 - CONTRERAS ALBERTO</option>
+               <option value="303">303 - EQUINOCCIO</option>
+               <option value="304">304 - TORREZ ESTHER</option>
+               <option value="305">305 - TEREZA CENTENO</option>
+               <option value="306">306 - JUAN CARLOS AGUILAR</option>
+               <option value="307">307 - CHOUE JHIMENA</option>
+               <option value="308">308 - RAMIRO QUISPE</option>
+               <option value="309">309 - VICTOR ALMIRANTE</option>
+               <option value="310">310 - MIRIAN ALBORTA</option>
+               <option value="311">311 - MIUSIC</option> -->
+               
+
+             </select>
+             <!-- </div> -->
+           </div>
+           <div data-role="fieldcontain" class="ui-field-contain">
+            <fieldset data-role="controlgroup" data-type="horizontal">
+              <legend>Tipo:</legend>
+              <label for="cont">Contado</label>
+              <input type="radio" name="tipo" id="cont" value="cont" checked="checked">
+              <label for="cred">Credito</label>
+              <input type="radio" name="tipo" id="cred" value="cred">
+            </fieldset>
+          </div>
+          <div data-role="fieldcontain" class="ui-field-contain vencimiento">               
+            <label for="date">Fecha Vto:</label>
+            <input name="mydate" id="fecha2" type="date" data-role="date" data-date-format="dd-mm-yyyy"/>
+          </div>    
+          <div data-role="fieldcontain" class="ui-field-contain">
+            <label for="textarea">Obs:</label>
+            <textarea cols="40" rows="8" name="textarea" id="obs"></textarea>
+          </div>
+        <!-- <div class="ui-field-contain">
+          <input type="submit" id="submit-1" class="ui-btn ui-corner-all " value="Detalles">
+          <a href="#venta" data-role="button">Detalles</a>
+        </div> -->
+
+        <ul data-role="listview" data-inset="true">
+          <li class="cobranza_btn" style="display: none---;">
+            <a href="#venta">
+              <img src="img/cart.png">
+              <h2 class="green">Agregar Productos</h2>
+              <div class="ui-grid-b">
+                <div class="ui-block-a"><p>  </p></div>
+                <div class="ui-block-b"><p>  </p></div>
+                <div class="ui-block-c"><p>Ir a Venta</p></div>
+              </div>
+              <!-- <div class="ui-grid-b">
+                <div class="ui-block-a"><p>6 cajas</p></div>
+                <div class="ui-block-b"><p>2 unidades</p></div>
+                <div class="ui-block-c price"><p><strong>50.5 Bs</strong></p></div>
+              </div> -->
+            </a>
+            <!-- <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a> -->
+          </li>
+          <li class="cobranza_btn" style="display: none---;">
+            <a href="#cobranza">
+              <img src="img/bol.jpg">
+              <h2 class="red">El cliente tiene deuda económica </h2>
+              <div class="ui-grid-b">
+                <div class="ui-block-a"><p>  </p></div>
+                <div class="ui-block-b"><p>  </p></div>
+                <div class="ui-block-c"><p>Ir a Cobranza</p></div>
+              </div>
+              <!-- <div class="ui-grid-b">
+                <div class="ui-block-a"><p>6 cajas</p></div>
+                <div class="ui-block-b"><p>2 unidades</p></div>
+                <div class="ui-block-c price"><p><strong>50.5 Bs</strong></p></div>
+              </div> -->
+            </a>
+            <!-- <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a> -->
+          </li>
+          <li class="deuda_btn" style="display: none---;">
+            <a href="#deuda">
+              <img src="img/caja.jpg">
+              <h2 class="red">El cliente tiene deuda de envases</h2>
+              <!-- <p> Ir a Deuda Envases </p> -->
+              <div class="ui-grid-b">
+                <div class="ui-block-a"><p>  </p></div>
+                <div class="ui-block-b"><p>  </p></div>
+                <div class="ui-block-c"><p>Ir a Deuda Envases</p></div>
+              </div>
+            </a>
+            <!-- <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a> -->
+          </li>
+        </ul>
+
+      </form>
     </div>
 
-    <script type="text/javascript" charset="utf-8">
+
+  </div><!-- /content -->
+  <footer data-role="footer" data-position="fixed">
+    <h3>Copyright &copy; 2015</h3>
+  </footer>
+</div><!-- /Page Home -->
+
+
+
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+<div data-role="page" id="venta">
+  <header data-role="header" data-position="fixed">
+    <h1>CBN</h1>
+    <button data-icon="user" class="ui-btn-right otro_cliente">Otro Cliente</button>
+  </header> 
+
+  <div data-role="content">
+    <nav data-role="navbar">
+      <ul>
+        <li><a href="#venta" class="ui-btn-active ui-state-persist">VENTA</a></li>
+        <li><a href="#cobranza">COBRANZA</a></li>
+        <li><a href="#deuda">DEUDA ENVASES</a></li>
+      </ul>
+    </nav>
+    <h2>Venta</h2>
+    
+    <!-- agregar -->
+    <h4 class="mensaje" align="center"></h4>
+    <div class="articulo">
+
+      <div class="ui-content" role="main">
+
+        <form class="ui">
+
+          <div data-role="fieldcontain" class="ui-field-contain">
+            <label for="select-custom-producto">Producto:</label>
+            <select name="select-custom-producto" id="producto" class="filterable-select" data-native-menu="false">
+
+              <!-- <option value="-">Seleccione un producto.</option> -->
+
+
+              <!-- <option value="25">25  DUCAL 620 H                             </option>
+              <option value="26">26  DUCAL 620 H PROVINCIAS                  </option>
+              <option value="27">27  DUCAL 250 bot ow                        </option>
+              <option value="30">30  DUCAL DORADA 350 bot ow                 </option>
+              <option value="40">40  DUCAL 350 lata                          </option>
+              <option value="52">52  DUCAL 300 bot ow                        </option>
+              <option value="60">60  DUCAL BARRIL 50 litros                  </option>
+              <option value="61">61  DUCAL EXPORTACION 355 CC X24            </option>
+              <option value="62">62  BRAHMA EXPORTACION LATA 355CC X24       </option>
+              <option value="110">110 TAQUIÑA EXPORT 1000CC.                  </option>
+              <option value="120">120 TAQUIÑA EXPORT 620.                     </option>
+              <option value="125">125 TAQUINA EXPORT 620 H                    </option>
+              <option value="126">126 TAQUINA HISTORICA 620 CC. SIX PACK      </option>
+              <option value="127">127 GIFT PACK TAQUINA HISTORICA 620 CC.     </option>
+              <option value="128">128 TAQUIÑA 115 AÑOS 620CC X 6              </option>
+              <option value="130">130 TAQUINA EXPORT 350 bot ow               </option>
+              <option value="132">132 TAQUINA EXPORT 250 bot ow               </option>
+              <option value="133">133 TAQUINA EXPORT AZUL 250 bot ow          </option>
+              <option value="134">134 TAQUINA EXPORT 250 bot ow EXPORTACION   </option>
+              <option value="135">135 TAQUINA EXPORT 350 bot ow EXPORTACION   </option>
+              <option value="139">139 TAQUIÑA LT 473CC X24                    </option>
+              <option value="140">140 TAQUINA EXPORT 350 lata                 </option>
+              <option value="143">143 TAQUINA EXPORT 350 lata CC. x 1         </option>
+              <option value="144">144 TAQUINA EXPORT 350 lata EXPORTACION     </option>
+              <option value="146">146 TAQUINA ALUMINIO 330 bot ow             </option>
+              <option value="147">147 TAQUINA SLEEVES 250 bot ow              </option>
+              <option value="152">152 TAQUINA EXPORT 300 bot ow               </option>
+              <option value="160">160 TAQUINA BARRIL 50 litros                </option>
+              <option value="163">163 VASO CHOPP TAQUINA EXPORT 500 CC.       </option>
+              <option value="165">165 BARRIL IMPERIAL 50 litros               </option>
+              <option value="170">170 IMPERIAL 620CC.                         </option>
+              <option value="175">175 IMPERIAL 1000                           </option>
+              <option value="177">177 IMPERIAL 1100                           </option>
+              <option value="190">190 IMPERIAL LATA 350 CC.                   </option>
+              <option value="191">191 IMPERIAL EXPORTACION LATA 355CC x24     </option>
+              <option value="195">195 IMPERIAL 330 lata                       </option>
+              <option value="196">196 TAQUINA ICE 300 CC.                     </option>
+              <option value="197">197 TAQUINA ICE 300 CC. X 2 SIX PACK        </option>
+              <option value="198">198 TAQUINA ICE 300 CC. SIX PACK            </option>
+              <option value="199">199 TAQUINA ICE 300 CC. X 24                </option>
+              <option value="201">201 TAQUINA ICE 300. X 4 SIX PACK           </option>
+              <option value="203">203 TAQUIÑA ICE 300 CC X 1                  </option>
+              <option value="204">204 ICE PACK TAQUIÑA 350 CC. X 12           </option>
+              <option value="205">205 BOTELLA TAQUINA PILSENER VERDE          </option>
+              <option value="260">260 QUILMES CRISTAL 330 CC                  </option>
+              <option value="265">265 ANDES 354 lata                          </option>
+              <option value="266">266 STELLA ARTOIS 335 CC.                   </option>
+              <option value="267">267 STELLA ARTOISSP                         </option>
+              <option value="268">268 GIFT PACK STELLA ARTOIS 355 CC.         </option>
+              <option value="269">269 STELLA ARTOIS XMAS PACK 750CC X6        </option>
+              <option value="270">270 BAVIERA 330 bot                         </option>
+              <option value="280">280 BALTICA 350 lata EXPORTACION            </option>
+              <option value="285">285 BALTICA LATA 350 cc                     </option>
+              <option value="286">286 BALTICA F LATA 350 CC.                  </option>
+              <option value="287">287 BALTICA EXPORT PERU LATA 355CC x24      </option>
+              <option value="290">290 TAQUINA AMBER LAGER 300 CC.             </option>
+              <option value="291">291 TAQUINA AMBER LAGER 620 CC              </option>
+              <option value="293">293 TAQUINA AMBER LAGER 300 CC. X 4 SIX PACK</option>
+              <option value="363">363 TAQUINA STOUT NEGRA 620                 </option>
+              <option value="365">365 TAQUINA STOUT NEGRA 300 bot ow          </option>
+              <option value="367">367 TAQUIÑA STOUT NEGRA 300 CC X 1          </option>
+              <option value="370">370 MALTIN 620                              </option>
+              <option value="375">375 MALTIN 330 LATA                         </option>
+              <option value="376">376 MALTIN SABORIZ                          </option>
+              <option value="378">378 MALTIN 330 CC. SABOR ORIGINAL           </option>
+              <option value="380">380 MALTIN 350 BOT OW                       </option>
+              <option value="381">381 PONY MALT 350 bot ow                    </option>
+              <option value="390">390 TAQUINA EXPORT 350 bot ret              </option>
+              <option value="420">420 MALTIN 620                              </option>
+              <option value="430">430 MALTIN 350 bot ow                       </option>
+              <option value="500">500 PILSENER PACEÑA 620 CC.                 </option>
+              <option value="501">501 PILSENER 620CC (T.M.)                   </option>
+              <option value="502">502 PILSENER 620                            </option>
+              <option value="503">503 VASO 500 CC. DE PILSENER 620            </option>
+              <option value="504">504 VASO CHOPP PACENA 330 CC.               </option>
+              <option value="505">505 HUARI 620 CC.                           </option>
+              <option value="506">506 HUARI 330 BOT OW                        </option>
+              <option value="507">507 HUARI 4 SIX PACKS 330 bot ow            </option>
+              <option value="508">508 GIFT PACK HUARI 330 CC.                 </option>
+              <option value="509">509 SIX PACK HUARI 330CC. CARNAVAL          </option>
+              <option value="510">510 PILSENER T.O. 300 CC.                   </option>
+              <option value="511">511 PILSENER TWIST OFF 300 O.W. PROMOCION   </option>
+              <option value="512">512 PACENA PILSENER 330 bot ow              </option>
+              <option value="513">513 PACENA SLEEVES 350 bot ow               </option>
+              <option value="514">514 PACENA SLEEVES C/CJS.MAD.350 CC.        </option>
+              <option value="515">515 TROPICAL EXTRA 620                      </option>
+              <option value="516">516 LT CRUCEÑA 350cc x 24                   </option>
+              <option value="517">517 PILSENER TO 300CC TERMOSENSIBLE         </option>
+              <option value="530">530 CENTENARIO LATA 355CC.                  </option>
+              <option value="531">531 CENTENARIO 355 lata  EXPORT.            </option>
+              <option value="532">532 CENTENARIO 355 lata EXPORTACION CAJA    </option>
+              <option value="533">533 CENTENARIO 355 lata CC. X 1             </option>
+              <option value="534">534 CENTENARIO 355 lata UNIDAD              </option>
+              <option value="535">535 PACENA COOL2GO 473 CC.                  </option>
+              <option value="536">536 CENTENARIO 355 LATA ND                  </option>
+              <option value="537">537 ICE PACK PACEÑA                         </option>
+              <option value="539">539 LT PACEÑA 473 24                        </option>
+              <option value="540">540 CENTENARIO 355 bot ow                   </option>
+              <option value="543">543 CENTENARIO 350 BOT OW                   </option>
+              <option value="544">544 CENTENARIO 350 bot ow EXPORT.           </option>
+              <option value="545">545 BICERVECINA 620                         </option>
+              <option value="547">547 CENTENARIO OW EMBAND EXP 350 CC         </option>
+              <option value="548">548 PACEÑA SIX PACK x4 PICO ORO             </option>
+              <option value="550">550 BICERVECINA 310 bot ow                  </option>
+              <option value="551">551 BICERVECINA EL INCA 350CC.              </option>
+              <option value="552">552 LATA PACEÑA 350CC PARLANTE X24          </option>
+              <option value="553">553 PACEÑA LATA TERMOSENSIBLE 355 X24       </option>
+              <option value="554">554 PACEÑA LATA CARNAVAL 2012 355CCX24      </option>
+              <option value="564">564 BOCK LATA 350CC 4X6                     </option>
+              <option value="565">565 BICERVECINA 355 bot ow                  </option>
+              <option value="566">566 BICERVECINA 355 bot ow EXPORT           </option>
+              <option value="567">567 BICERVECINA 355 bot ow EXPORT SIX PACK  </option>
+              <option value="568">568 BICERVECINA O.W. 330 CC.                </option>
+              <option value="569">569 BICERVECINA INCA 330 (12) bot ow        </option>
+              <option value="570">570 BICERVECINA 355 bot ow  HUARI 355 CC.   </option>
+              <option value="571">571 BOTELLA CONTOUR CLIP BLUE NIGHT 300 CC. </option>
+              <option value="572">572 BOCK 300 bot ow                         </option>
+              <option value="573">573 BOCK 350 LATA                           </option>
+              <option value="574">574 LATA BOCK BLUE NIGHT 350 CC.            </option>
+              <option value="576">576 BOCK 330 bot ow                         </option>
+              <option value="577">577 BOCK 620                                </option>
+              <option value="578">578 BOCK 300 CONTOUR                        </option>
+              <option value="579">579 BOTELLA CONTOUR BLUE NIGHT 300 CC.      </option>
+              <option value="580">580 MILENIO 355                             </option>
+              <option value="581">581 PACEÑA PORTER 300 CC.                   </option>
+              <option value="582">582 PACENA PORTER x 4 SIX PACK 300 CC.      </option>
+              <option value="583">583 PACENA PORTER 620 CC.                   </option>
+              <option value="587">587 PACENA RED LAGER 300 CC. SIX PACK       </option>
+              <option value="588">588 BOCK CONTOUR NUEVO COLLARIN 300 CC.     </option>
+              <option value="590">590 PILSENER BARRIL 30 litros               </option>
+              <option value="595">595 PILSENER BARRIL 50 litros               </option>
+              <option value="596">596 TROP. EXTRA BARRIL 50 litros EXP. LPZ   </option>
+              <option value="597">597 BARRIL BOCK 50 LTR.                     </option> -->
+            </select>
+          </div>
+          <div data-role="fieldcontain" class="ui-field-contain ui-bar ui-bar-a ui-corner-all">
+            Saldo:
+            <div class="ui-grid-a">
+              <div class="ui-block-a">
+                <div class="ui-field-contain">
+                  <label for="textarea">Cajas:</label>
+                  <input type="text" name="precio" id="cajas_s" disabled="disabled" value="35" />
+                </div>
+              </div>
+              <div class="ui-block-b">
+                <div class="ui-field-contain">
+                  <label for="textarea">Unidades:</label>
+                  <input type="text" name="precio" id="unidades_s" disabled="disabled" value="312" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div data-role="fieldcontain" class="ui-field-contain ui-body ui-bar-a ui-corner-all">
+            Pedido:
+            <div class="ui-field-contain">
+              <label for="textarea">Precio por Caja:</label>
+              <input type="text" name="numeric" id="precio_prueba1"  value="" data-clear-btn="true" title="dsad"/>
+              <input type="text" name="precio" id="precio_prueba2"  value="" data-clear-btn="true" title="dsad" class="only_dot"/>
+              <input type="text" name="precio" id="precio_prueba3"  data-clear-btn="true" data-toggle="tooltip" data-placement="top" title="Hooray!" alt="12345" />
+            </div>
+            <div class="ui-grid-a">
+              <div class="ui-block-a">
+                <div class="ui-field-contain">
+                  <label for="textarea">Cajas:</label>
+                  <input type="text" name="precio" id="cajas_p"  value="" data-clear-btn="true"/>
+                </div>
+              </div>
+              <div class="ui-block-b">
+                <div class="ui-field-contain">
+                  <label for="textarea">Unidades:</label>
+                  <input type="text" name="precio" id="unidades_p" value="" data-clear-btn="true"/>
+                </div>
+              </div>
+            </div>
+
+            <div data-role="fieldcontain" class="ui-field-contain">
+              <fieldset data-role="controlgroup" data-type="horizontal">
+                <legend>Envases</legend>
+                <label for="canje">Canje</label>
+                <input type="radio" name="deuda_envase" id="canje" value="canje" checked="checked">
+                <label for="prestamo">Prestamo</label>
+                <input type="radio" name="deuda_envase" id="prestamo" value="prestamo">
+              </fieldset>
+            </div>
+
+          </div>
+
+
+
+
+          <div class="ui-field-contain">
+            <br>
+            <button type="button" class="ui-btn ui-icon-minus ui-btn-icon-right ui-shadow ui-btn-a ui-corner-all cancelar_venta">Cancelar</button>
+            <br>
+            <button type="button" class="ui-btn ui-icon-shop ui-btn-icon-right ui-shadow ui-btn-b ui-corner-all guardar_venta">Guardar</button>
+            <br>
+            <hr>
+          </div>
+
+
+
+        </form>
+      </div>
+
+    </div>
+    <!-- Finaliza agregar -->
+
+    <div class="ui-grid-b">
+     <div class="ui-block-a"> </div>
+     <div class="ui-block-b"><img src="img/cart.png" height="100" width="100"/></div>
+     <div class="ui-block-c"><button type="button" class="show big_button" data-icon="plus">Agregar</button></div>
+   </div>
+   <div class="lista_carrito">
+     <ul data-role="listview" data-split-icon="edit" data-inset="true">
+      <li>
+        <a href="#">
+          <img src="img/cart.png">
+          <h2>DUCAL 300 bot ow</h2>
+          <div class="ui-grid-b">
+            <div class="ui-block-a"><p>6 cajas</p></div>
+            <div class="ui-block-b"><p>2 unidades</p></div>
+            <div class="ui-block-c price"><strong>50.5 Bs</strong></div>
+          </div>
+        </a>
+        <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="img/cart.png">
+          <h2>175 IMPERIAL 1000</h2>
+          <div class="ui-grid-b">
+            <div class="ui-block-a"><p>6 cajas</p></div>
+            <div class="ui-block-b"><p>2 unidades</p></div>
+            <div class="ui-block-c price"><strong>50.5 Bs</strong></div>
+          </div>
+        </a>
+        <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="img/cart.png">
+          <h2>203 TAQUIÑA ICE 300 CC X 1</h2>
+          <div class="ui-grid-b">
+            <div class="ui-block-a"><p>6 cajas</p></div>
+            <div class="ui-block-b"><p>2 unidades</p></div>
+            <div class="ui-block-c price"><strong>50.5 Bs</strong></div>
+          </div>
+        </a>
+        <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="img/cart.png">
+          <h2>378 MALTIN 330 CC. SABOR ORIGINAL</h2>
+          <div class="ui-grid-b">
+            <div class="ui-block-a"><p>6 cajas</p></div>
+            <div class="ui-block-b"><p>2 unidades</p></div>
+            <div class="ui-block-c price"><strong>50.5 Bs</strong></div>
+          </div>
+        </a>
+        <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="img/cart.png">
+          <h2>511 PILSENER TWIST OFF 300 O.W. PROMOCION</h2>
+          <div class="ui-grid-b">
+            <div class="ui-block-a"><p>6 cajas</p></div>
+            <div class="ui-block-b"><p>2 unidades</p></div>
+            <div class="ui-block-c price"><strong>50.5 Bs</strong></div>
+          </div>
+        </a>
+        <a href="#editar_venta" class="editar_venta_class"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
+      </li>
+    </ul>
+  </div>
+  <!-- .lista_carrito -->
+
+  <div data-role="popup" id="editar_venta" data-overlay-theme="a" data-theme="a"  style="max-width:400px;">
+    <div data-role="header" data-theme="a">
+      <h1>Producto</h1>
+    </div>
+    <div role="main" class="ui-content">
+      <p id="titulo_popup">...</p>
+      <input class="id_venta" type="hidden---" value="9999">
+      <p>__________________________________________</p>
+      <div class="ui-grid-a">
+        <div class="ui-block-a">
+          <a href="#" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a eliminar_popup" data-rel="back" data-transition="flow">Eliminar</a>
+        </div>
+        <div class="ui-block-b"><a href="#" class="ui-btn ui-icon-edit ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b editar_popup" data-rel="back">Editar</a></div>
+
+      </div>
+    </div>
+  </div>
+
+  <div data-role="popup" id="alerta_eliminado_venta">
+    <h3>Registro eliminado.</h3>
+  </div>
+  <div data-role="popup" id="alerta_guardado_venta">
+    <h3>Registro guardado.</h3>
+  </div>
+
+
+</div>
+<footer data-role="footer" data-position="fixed">
+  <h3>Copyright &copy; 2015</h3>
+</footer>
+</div>  
+
+
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+<div data-role="page" id="cobranza">
+  <header data-role="header" data-position="fixed"> 
+    <h1>CBN</h1>
+    <button data-icon="user" class="ui-btn-right otro_cliente">Otro Cliente</button>
+  </header> 
+
+  <div data-role="content">
+    <nav data-role="navbar">
+      <ul>
+        <li><a href="#venta">VENTA</a></li>
+        <li><a href="#cobranza" class="ui-btn-active ui-state-persist">COBRANZA</a></li>
+        <li><a href="#deuda">DEUDA ENVASES</a></li>
+      </ul>
+    </nav>
+    
+    <h2>Cobranza</h2>
+
+    <h4 class="mensaje_cobranza" align="center"></h4>
+    <div class="articulo_cobranza">
+
+      <div class="ui-content" role="main">
+
+        <form class="ui">
+
+
+          <div data-role="fieldcontain" class="ui-field-contain ui-body ui-bar-a ui-corner-all">
+            Ingreso:
+            <div data-role="fieldcontain" class="ui-field-contain"data-demo-html="true">               
+
+              <label for="date">Fecha:</label>
+              <input name="mydate" id="fecha_cobranza" disabled="disabled"/>
+            </div> 
+            <div class="ui-field-contain">
+              <label for="textarea">Numero de factura:</label>
+              <input type="text" name="precio" id="nro_factura" value="" data-clear-btn="true"/>
+            </div>
+
+            <div data-role="fieldcontain" class="ui-field-contain">
+              <fieldset data-role="controlgroup" data-type="horizontal">
+                <legend>Cobro:</legend>
+                <label for="parcial_cobranza">Parcial</label>
+                <input type="radio" name="cobranza_monto" id="parcial_cobranza" value="parcial_cobranza" checked="checked">
+                <label for="total_cobranza">Total</label>
+                <input type="radio" name="cobranza_monto" id="total_cobranza" value="total_cobranza">
+              </fieldset>
+            </div>
+
+            <div class="ui-grid-a">
+              <div class="ui-block-a">
+                <div class="ui-field-contain">
+                  <label for="textarea">Saldo:</label>
+                  <input type="text" name="Ingreso" id="saldo_cobranza"  value="590" data-clear-btn="true" disabled="disabled"/>
+                </div>
+              </div>
+              <div class="ui-block-b">
+                <div class="ui-field-contain">
+                  <label for="textarea">A Cobrar:</label>
+                  <input type="text" name="Ingreso" id="a_cobrar_cobranza" value="" data-clear-btn="true"/>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="ui-field-contain">
+            <br>
+            <button type="button" class="ui-btn ui-icon-minus ui-btn-icon-right ui-shadow ui-btn-a ui-corner-all cancelar_cobranza">Cancelar</button>
+            <br>
+            <button type="button" class="ui-btn ui-icon-shop ui-btn-icon-right ui-shadow ui-btn-b ui-corner-all guardar_cobranza">Confirmar Cobranza</button>
+            <br>
+            <hr>
+          </div>
+        </form>
+      </div>
+
+    </div>
+    <!-- Finaliza agregar -->
+
+    <div class="ui-grid-b">
+     <div class="ui-block-a"> </div>
+     <div class="ui-block-b"><img src="img/bol.jpg" height="100" width="100"/></div>
+     <div class="ui-block-c"><button type="button" class="show_cobranza big_button" data-icon="plus">Agregar</button></div>
+   </div>
+
+   <div class="lista_cobranza">
+     <ul data-role="listview" data-split-icon="edit" data-inset="true">
+
+      <li>
+        <a>
+          <img src="img/info.png">
+          <h2>NUMERO DE FACTURA</h2>
+          <div class="ui-grid-b">
+            <div class="ui-block-a"><p><strong>FECHA</strong></p></div>
+            <div class="ui-block-b"><p><strong>VENCIMIENTO</strong></p></div>
+            <div class="ui-block-c"><p><strong>MONTO</strong></p></div>
+          </div>
+        </a>
+        <a data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="img/bol.jpg">
+          <h2>5136</h2>
+          <div class="ui-grid-b">
+            <div class="ui-block-a"><p>17/02/2015</p></div>
+            <div class="ui-block-b"><p>17/02/2015</p></div>
+            <div class="ui-block-c red"><strong>50.5 Bs</strong></div>
+          </div>
+        </a>
+        <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="img/bol.jpg">
+          <h2>5137</h2>
+          <div class="ui-grid-b">
+            <div class="ui-block-a"><p>17/07/2015</p></div>
+            <div class="ui-block-b"><p>28/09/2015</p></div>
+            <div class="ui-block-c green"><strong>-50.5 Bs</strong></div>
+          </div>
+        </a>
+        <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="img/bol.jpg">
+          <h2>5138</h2>
+          <div class="ui-grid-b">
+            <div class="ui-block-a"><p>17/07/2015</p></div>
+            <div class="ui-block-b"><p>28/09/2015</p></div>
+            <div class="ui-block-c red"><strong>50.5 Bs</strong></div>
+          </div>
+        </a>
+        <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="img/bol.jpg">
+          <h2>5139</h2>
+          <div class="ui-grid-b">
+            <div class="ui-block-a"><p>17/07/2015</p></div>
+            <div class="ui-block-b"><p>28/09/2015</p></div>
+            <div class="ui-block-c red"><strong>50.5 Bs</strong></div>
+          </div>
+        </a>
+        <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="img/bol.jpg">
+          <h2>5140</h2>
+          <div class="ui-grid-b">
+            <div class="ui-block-a"><p>17/07/2015</p></div>
+            <div class="ui-block-b"><p>28/09/2015</p></div>
+            <div class="ui-block-c red"><strong>50.5 Bs</strong></div>
+          </div>
+        </a>
+        <a href="#editar_venta" class="editar_venta_class"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
+      </li>
+    </ul>
+  </div>
+
+</div>
+<footer data-role="footer" data-position="fixed">
+  <h3>Copyright &copy; 2015</h3>
+</footer>
+</div>
+
+
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+<div data-role="page" id="deuda">
+  <header data-role="header" data-position="fixed">
+    <h1>CBN</h1>
+    <button data-icon="user" class="ui-btn-right otro_cliente">Otro Cliente</button>
+  </header> 
+
+  <div data-role="content">
+    <nav data-role="navbar">
+      <ul>
+        <li><a href="#venta">VENTA</a></li>
+        <li><a href="#cobranza">COBRANZA</a></li>
+        <li><a href="#deuda" class="ui-btn-active ui-state-persist">DEUDA ENVASES</a></li>
+      </ul>
+    </nav>
+
+    <!-- Deudas -->
+    <!-- <button class="ui-btn-active ui-state-persist prueba1">DEUDA ENVASES</button> -->
+
+    <h2>Deuda</h2>
+
+    <h4 class="mensaje_deuda" align="center"></h4>
+    <div class="articulo_deuda">
+
+      <div class="ui-content" role="main">
+
+        <form class="ui">
+
+
+          <div data-role="fieldcontain" class="ui-field-contain ui-body ui-bar-a ui-corner-all">
+            Ingreso:
+            <div data-role="fieldcontain" class="ui-field-contain"data-demo-html="true">               
+
+              <label for="date">Fecha:</label>
+              <input name="mydate" id="fecha_deuda" disabled="disabled"/>
+            </div> 
+            <div class="ui-field-contain">
+              <label for="textarea">Codigo Envase:</label>
+              <input type="text" name="precio" id="cod_env" value="" data-clear-btn="true"/>
+            </div>
+            <div class="ui-field-contain">
+              <label for="textarea">Descripcion:</label>
+              <input type="text" name="precio" id="descripcion_deuda" value="" data-clear-btn="true"/>
+            </div>
+
+            <div class="ui-grid-a">
+              <div class="ui-block-a">
+                <div class="ui-field-contain">
+                  <label for="textarea">Cajas:</label>
+                  <input type="text" name="Ingreso" id="saldo_deuda"  value="20" data-clear-btn="true" disabled="disabled"/>
+                </div>
+              </div>
+              <div class="ui-block-b">
+                <div class="ui-field-contain">
+                  <label for="textarea">A Cobrar:</label>
+                  <input type="text" name="Ingreso" id="a_cobrar_deuda" value="" data-clear-btn="true"/>
+                </div>
+              </div>
+            </div>
+            <div class="ui-grid-a">
+              <div class="ui-block-a">
+                <div class="ui-field-contain">
+                  <label for="textarea">Botellas:</label>
+                  <input type="text" name="Ingreso" id="saldo_deuda"  value="2" data-clear-btn="true" disabled="disabled"/>
+                </div>
+              </div>
+              <div class="ui-block-b">
+                <div class="ui-field-contain">
+                  <label for="textarea">A Cobrar:</label>
+                  <input type="text" name="Ingreso" id="a_cobrar_deuda" value="" data-clear-btn="true"/>
+                </div>
+              </div>
+            </div>
+
+            
+
+          </div>
+
+
+
+
+          <div class="ui-field-contain">
+            <br>
+            <button type="button" class="ui-btn ui-icon-minus ui-btn-icon-right ui-shadow ui-btn-a ui-corner-all cancelar_deuda">Cancelar</button>
+            <br>
+            <button type="button" class="ui-btn ui-icon-shop ui-btn-icon-right ui-shadow ui-btn-b ui-corner-all guardar_deuda">Confirmar Deuda</button>
+            <br>
+            <hr>
+          </div>
+        </form>
+      </div>
+
+    </div>
+    <!-- Finaliza agregar -->
+
+    <div class="ui-grid-b">
+     <div class="ui-block-a"> </div>
+     <div class="ui-block-b"><img src="img/caja.jpg" height="100" width="100"/></div>
+     <div class="ui-block-c"><button type="button" class="show_deuda big_button" data-icon="plus">Agregar</button></div>
+   </div>
+
+   <div class="lista_deuda">
+     <ul data-role="listview" data-split-icon="edit" data-inset="true">
+
+      <li>
+        <a>
+          <img src="img/info.png">
+          <h2>NUMERO DE VENTA</h2>
+          <div class="ui-grid-b">
+            <div class="ui-block-a"><p><strong>CAJAS</strong></p></div>
+            <div class="ui-block-b"><p><strong>BOTELLAS</strong></p></div>
+            <div class="ui-block-c"><p><strong> </strong></p></div>
+          </div>
+        </a>
+        <a data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="img/caja.jpg">
+          <h2>5136</h2>
+          <div class="ui-grid-b">
+            <div class="ui-block-a">5</div>
+            <div class="ui-block-b"><p>0</p></div>
+            <div class="ui-block-c red"><strong> </strong></div>
+          </div>
+        </a>
+        <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="img/caja.jpg">
+          <h2>5137</h2>
+          <div class="ui-grid-b">
+            <div class="ui-block-a"><p>0</p></div>
+            <div class="ui-block-b"><p>2</p></div>
+            <div class="ui-block-c green"><strong> </strong></div>
+          </div>
+        </a>
+        <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="img/caja.jpg">
+          <h2>5138</h2>
+          <div class="ui-grid-b">
+            <div class="ui-block-a"><p>5</p></div>
+            <div class="ui-block-b"><p>0</p></div>
+            <div class="ui-block-c red"><strong> </strong></div>
+          </div>
+        </a>
+        <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="img/caja.jpg">
+          <h2>5139</h2>
+          <div class="ui-grid-b">
+            <div class="ui-block-a"><p>0</p></div>
+            <div class="ui-block-b"><p>2</p></div>
+            <div class="ui-block-c red"><strong> </strong></div>
+          </div>
+        </a>
+        <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="img/caja.jpg">
+          <h2>5140</h2>
+          <div class="ui-grid-b">
+            <div class="ui-block-a"><p>10</p></div>
+            <div class="ui-block-b"><p>1</p></div>
+            <div class="ui-block-c red"><strong> </strong></div>
+          </div>
+        </a>
+        <a href="#editar_venta" class="editar_venta_class"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
+      </li>
+    </ul>
+  </div>
+
+
+</div>
+<footer data-role="footer" data-position="fixed">
+  <h3>Copyright &copy; 2015</h3>
+</footer>
+</div>
+
+</div>
+
+
+<script type="text/javascript" charset="utf-8">
 
 // jQuery(document).ready(function() {
   $(document).on("pagecreate","#home",function(){
@@ -144,6 +1208,9 @@
   // $(document).on("pageinit",function(){
     carga_db_crear();
     carga_exit();
+    // carga_exit();
+    cargar_select_cliente();
+    cargar_select_marca();
     $("#cod_usuario").val(localStorage.g_username);
     if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
       // alert('oculta:'+localStorage.g_existe);
@@ -187,7 +1254,7 @@
         $( "#panel-overlay" ).panel( "open" );
         $("#cod_usuario").focus();
       }else{
-        window.location.href = "detalles.html";
+        window.location.href = "index.html#registrar";
       }
     });
 
@@ -248,6 +1315,313 @@
 
 
   });
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+  // $( document ).on( "pagecreate", "#venta", function( event ) {
+  //   cargar_select_cliente();
+  //   cargar_select_marca();
+  // });
+$(document).on("pagecreate","#registrar",function(event){
+  // $(document).on("pageinit",function(){
+  // $('[data-toggle="tooltip"]').tooltip(); 
+
+
+  // setTimeout(function(){ window.location.href = "index.html#ventas"; }, 3000);
+
+  $('.d_cliente').click(function() {
+    alert("3");
+// window.location.href = "index.html#ventas";
+// window.location.hash="#ventas";
+$.mobile.navigate( "index.html#ventas" );
+});
+  $('.s_cliente').click(function() {
+    // $("#cliente").trigger("create");
+  });
+
+    // carga_only_dot();
+
+    var d = new Date();
+
+    var month = d.getMonth()+1;
+    var day = d.getDate();
+    var fecha_actual =((''+day).length<2 ? '0' : '') + day + '/' +
+    ((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
+
+    $("#fecha").val(fecha_actual);
+    $("#fecha_cobranza").val(fecha_actual);
+    $("#fecha_deuda").val(fecha_actual);
+    $('.mensaje').hide();
+    $('.articulo').hide();
+    // alert('inicia');
+    $(".articulo_cobranza").hide();
+    $(".articulo_deuda").hide();
+    $(".vencimiento").hide();
+
+    $('.inicio').click(function() {
+     window.location.href = "index.html";
+   }); 
+    $('.otro_cliente').click(function() {
+     window.location.href = "index.html#registrar";
+   });
+
+
+    $('.show').click(function() {
+     $(".articulo").show(300);
+   });
+    $('.show_cobranza').click(function() {
+     $(".articulo_cobranza").show(300);
+   });
+    $('.show_deuda').click(function() {
+     $(".articulo_deuda").show(300);
+   });
+
+
+    $('.guardar_venta').click(function() {
+
+     $(".articulo").hide(300);
+     $('.mensaje').html("<div style='color:green;'>GUARDADO</div>");
+     $('.mensaje').show(300);
+     setTimeout(function(){ $('.mensaje').hide(300); $('.mensaje').html(""); }, 3000);
+   }); 
+
+    $('.guardar_cobranza').click(function() {
+
+     $(".articulo_cobranza").hide(300);
+     $('.mensaje_cobranza').html("<div style='color:green;'>COBRADO</div>");
+     $('.mensaje_cobranza').show(300);
+     setTimeout(function(){ $('.mensaje_cobranza').hide(300); $('.mensaje_cobranza').html(""); }, 3000);
+   });  
+    $('.guardar_deuda').click(function() {
+
+     $(".articulo_deuda").hide(300);
+     $('.mensaje_deuda').html("<div style='color:green;'>COBRADO</div>");
+     $('.mensaje_deuda').show(300);
+     setTimeout(function(){ $('.mensaje_deuda').hide(300); $('.mensaje_deuda').html(""); }, 3000);
+   });  
+
+    $('.cancelar_venta').click(function() {
+     $(".articulo").hide(300);
+   }); 
+    $('.cancelar_cobranza').click(function() {
+     $(".articulo_cobranza").hide(300);
+   }); 
+    $('.cancelar_deuda').click(function() {
+     $(".articulo_deuda").hide(300);
+   }); 
+
+    $(".editar_venta_class").on('click', function(event) {
+          // $(this).attr('codigo-producto');
+          $(".articulo").hide();
+          var text = $(this).parent().find('h2').text()
+          $('#titulo_popup').html(text);
+          // alert($(this).attr('codigo-venta'));
+          $(".id_venta").val($(this).attr('codigo-venta'));
+
+          // alert("hola");
+          // $( "#alerta_eliminado_venta" ).popup( "close" );
+          // $(".id_venta").val('0');
+        });
+    $('.eliminar_popup').click(function() {
+          // $('#titulo_popup').html($(this).val());
+          // alert("asd");
+          
+          $('.mensaje').html("<div style='color:red;'>ELIMINADO</div>");
+          $('.mensaje').show(300);
+          setTimeout(function(){ $('.mensaje').hide(300); $('.mensaje').html(""); }, 3000);
+
+        }); 
+    $('.editar_popup').click(function() {
+     $(".articulo").show(300);
+   }); 
+
+
+    $('.prueba1').click(function() {
+     window.location.href = "detalles.html";
+   });
+
+    // $('input[type=radio][name=tipo]').on('change', function(){
+    //   switch($(this).val()){
+    //     case 'cont' :
+    //     alert("contado");
+    //     $(".vencimiento").hide(200);
+    //     break;
+    //     case 'cred' :
+    //     alert("credito");
+    //     $(".vencimiento").show(200);
+    //     break;
+    //   }            
+    // });​
+
+
+    // $(".c_tipo").bind( "change", function(event, ui) {
+    //   alert('changed');
+    //   switch(){
+    //     case 'cont' :
+    //     alert("contado");
+    //     // $(".vencimiento").hide(200);
+    //     break;
+    //     case 'cred' :
+    //     alert("credito");
+    //     // $(".vencimiento").show(200);
+    //     break;
+    //   }            
+    // });​
+
+$("input[name=tipo]:radio").bind( "change", function(event, ui) {
+  // console.log('Lang: '+$(this).val());
+  // alert($(this).val());
+  if($(this).val()=='cred'){
+    $(".vencimiento").show(200);
+  }else{
+    $(".vencimiento").hide(200);
+  }
+    //  $('#selected_lang').html('Language Selected: '+$(this).val());
+  });
+
+$("input[name=cobranza_monto]:radio").bind( "change", function(event, ui) {
+  // console.log('Lang: '+$(this).val());
+  // alert($(this).val());
+  if($(this).val()=='total_cobranza'){
+    $("#a_cobrar_cobranza").val($("#saldo_cobranza").val()); 
+  }else{
+    $("#a_cobrar_cobranza").val("");
+  }
+    //  $('#selected_lang').html('Language Selected: '+$(this).val());
+  });
+
+$("input[name=deuda_monto]:radio").bind( "change", function(event, ui) {
+  // console.log('Lang: '+$(this).val());
+  // alert($(this).val());
+  if($(this).val()=='total_deuda'){
+    $("#a_cobrar_deuda").val($("#saldo_deuda").val()); 
+  }else{
+    $("#a_cobrar_deuda").val("");
+  }
+    //  $('#selected_lang').html('Language Selected: '+$(this).val());
+  });
+
+// $("#cliente").on( "change", function(event, ui) {
+//   // console.log('Lang: '+$(this).val());
+//   alert($(this).val());
+
+//     //  $('#selected_lang').html('Language Selected: '+$(this).val());
+//   });
+
+
+
+
+
+
+
+
+
+// $( ":mobile-pagecontainer" ).pagecontainer( "load", pageUrl, { showLoadMsg: false } );
+
+
+
+$("#cliente").on( "change", function(event, ui) {
+// $(document).bind("change", "#cliente", function(){
+  // console.log('Lang: '+$(this).val());
+  alert($(this).val()+":1::");
+  
+    //  $('#selected_lang').html('Language Selected: '+$(this).val());
+  });
+$("#producto").bind("change", function(){
+  // console.log('Lang: '+$(this).val());
+  alert($(this).val()+":2::");
+  
+    //  $('#selected_lang').html('Language Selected: '+$(this).val());
+  });
+
+
+$('.only_dotss').keypress(function(event) {
+ query = $(this).val();
+ alert(query);
+ $('#precio_prueba3').val(event.which);
+ if(event.which < 46 || event.which > 59) {
+  event.preventDefault();
+} 
+if(event.which == 46 && $(this).val().indexOf('.') != -1) {
+  event.preventDefault();
+} 
+
+});
+
+
+// $("#precio_prueba3").bind( "keypress", function(event, ui) {
+//   // console.log('Lang: '+$(this).val());
+//   alert($(this).val());
+
+//     //  $('#selected_lang').html('Language Selected: '+$(this).val());
+//   });
+
+// });
+$('#precio_prueba2').on('keyup', function (event) {
+
+  alert("up presionada");
+  alert("up keyCode:"+event.keyCode);
+  alert("up which:"+event.which);
+  alert("up charCode:"+event.charCode );
+    // $('div').text('key up ' + ++counter);
+  });
+// $('#precio_prueba3').on('keydown', function (event) {
+//   alert("up presionada");
+//   alert("up keyCode:"+event.keyCode);
+//   alert("up which:"+event.which);
+//   alert("up charCode:"+event.charCode );
+//     // $('div').text('key up ' + ++counter);
+// });
+
+
+
+});
+
+
+//fires the 1st time it is showed
+$( document ).on( "pagecreate", "#venta", function( event ) {
+
+  // alert( "venta" );
+  $('#precio_prueba3').on('input', function() {
+    // var aux;
+    this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+    // alert(this.value);
+    // aux = this.value;
+    // this.value = (parseFloat(aux)).toFixed(2);
+    // alert(this.value);
+  });
+  $('#precio_prueba3').on('blur', function() {
+    if(this.value!=''){
+      this.value = (parseFloat(this.value)).toFixed(2);
+    }
+    // alert(this.value);
+  });
+
+});
+
+$( document ).on( "pagecreate", "#cobranza", function( event ) {
+  // alert( "cobranza" );
+});
+
+$( document ).on( "pagecreate", "#deuda", function( event ) {
+  // alert( "deuda" );
+
+});
 
 </script>
 </body>

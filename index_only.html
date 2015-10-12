@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+  -->
+  <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/theme-classic.css"/> -->
+    <!-- <link type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.min.css" rel="stylesheet" />   -->
+
+
+    <!-- <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" /> -->
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+
+    <script type="text/javascript" src="js/db_crear.js"></script>
+    <script type="text/javascript" src="js/exit.js"></script>
+    <script type="text/javascript" src="js/cargar/cargar_articulos.js"></script>
+    <script type="text/javascript" src="js/usuario/guardar_datos.js"></script>
+    <script type="text/javascript" src="js/usuario/borrar_sesion.js"></script>
+
+    <title>SITRANS</title>
+  </head>
+  <body>
+    <div class="app paginaprincipal" id="mainpage">
+
+      <div data-role="page" id="home" >
+        <header data-role="header" data-position="fixed">
+          <h1>CBN</h1>
+          <!-- <a href="#panel-overlay" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-gear">Opciones</a> -->
+          <!-- <a href="#" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-grid"></a> -->
+          <a href="#panel-overlay" class="ui-btn-left ui-btn ui-icon-grid ui-btn-icon-notext ui-corner-all">Configuracion</a>
+
+        </header> 
+
+        <div data-role="content">
+          <h3></h3>
+
+
+
+
+          <div class="ui-content" role="main">
+
+            <form class="ui">
+
+
+              <img src="img/logo_s.jpg" alt="image" style="width:100%; margin-top: 10px; margin-bottom: 10px; ">
+
+
+
+              <div class="ui-grid-solo" >
+                <div class="ui-block-a"><button type="button" class="big_button registrar blue_btn">Datos Cliente</button></div>
+                <!-- <div class="ui-block-a"><button type="button" class="big_button read">read_txt2</button></div> -->
+              </div>
+              <div class="ui-grid-a" >
+                <div class="ui-block-a"><button type="button" class="big_button cargar">Cargar Datos del Camion</button></div>
+                <div class="ui-block-b"><button type="button" class="big_button finalizar">Finalizar</button></div>     
+              </div>
+              
+              <div class="ui-grid-solo" >
+                <div class="ui-block-a"><button type="button" class="big_button info blue_btn">Informacion General</button></div>
+              </div>
+            </form>
+          </div>
+ 
+          <input class="direccion" value="192.168.0.114" placeholder="direccion" type="hidden" />
+
+
+
+
+          <div data-role="panel" id="panel-overlay" data-display="overlay">
+
+            <div data-role="collapsibleset" data-content-theme="a">
+
+              <div data-role="collapsible" data-collapsed="false">
+                <h3>Usuario</h3>
+                <label for="textinput-f"><strong>Complete los siguientes campos:</strong></label>
+                <label for="textinput-f">Código de usuario:</label>
+                <input id="cod_usuario" placeholder="Código"/>
+                <label for="textinput-f">Contraseña de usuario:</label>
+                <input id="pass_usuario" type="password" placeholder="Contraseña"/>
+                <button class="ui-btn ui-corner-all ui-shadow guardar_cod_usuario">Guardar</button>
+                <button class="ui-btn ui-btn-b ui-corner-all ui-shadow cerrar_cod_usuario">Cerrar Sesion</button>
+
+                <!-- <button class="ui-btn ui-corner-all ui-shadow pru_cod_usuario">pru cod usuario</button> -->
+                <!-- <input class="auxiliar" > -->
+              </div>
+              <!-- <div data-role="collapsible">
+                <h3>Section 2</h3>
+                <p>I'm the collapsible content for section 2</p>
+              </div> -->
+            </div>
+
+            <br><br>
+            <!-- <button class="ui-btn ui-corner-all ui-shadow">Button</button> -->
+          </div>
+
+
+
+
+        </div><!-- /content -->
+        <footer data-role="footer" data-position="fixed">
+          <h3>Copyright &copy; 2015</h3>
+          <button data-icon="power" class="ui-btn-right salir">Salir</button>
+        </footer>
+      </div><!-- /Page Home -->
+
+    </div>
+
+    <script type="text/javascript" charset="utf-8">
+
+// jQuery(document).ready(function() {
+  $(document).on("pagecreate","#home",function(){
+
+  // $(document).on("pageinit",function(){
+    carga_db_crear();
+    carga_exit();
+    $("#cod_usuario").val(localStorage.g_username);
+    if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
+      // alert('oculta:'+localStorage.g_existe);
+      // debe_completar();
+      $('.cerrar_cod_usuario').hide();
+    }else{
+      // alert('muestra:'+localStorage.g_existe);
+    }
+
+    $('.guardar_cod_usuario').click(function() {
+      var cod = $("#cod_usuario").val();
+      var pass = $("#pass_usuario").val();
+      // alert(cod+pass);
+      if(cod!='' && pass!=''){
+        guardar_datos(cod,pass);
+        $( "#panel-overlay" ).panel( "close" );
+        alert("Datos Guardados");
+        location.reload();
+      }else{
+        alert("Complete ambos campos.");
+      }
+      // $( "#myCollapsibleSet" ).children().trigger( "collapse" );
+    });
+    $('.cerrar_cod_usuario').click(function() {
+      var existe=localStorage.g_existe;
+      
+      if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
+        alert("No existe ningun regitro de usuario.");
+      }else{
+        borrar_datos();
+        alert("Datos Eliminados");
+        location.reload();
+      }
+      
+    });
+
+
+    $('.registrar').click(function() {
+
+      if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
+        $( "#panel-overlay" ).panel( "open" );
+        $("#cod_usuario").focus();
+      }else{
+        window.location.href = "detalles.html";
+      }
+    });
+
+    $('.cargar').click(function() {
+     if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
+      $( "#panel-overlay" ).panel( "open" );
+      $("#cod_usuario").focus();
+    }else{
+      $.mobile.loading("show", {
+        theme: 'a'
+      });
+      // alert("comienza carga");
+      verificar_usuario()
+
+      // var var1= $(".var1").val();
+      // var direccion= $(".direccion").val();
+      // $.ajax({
+      //   type: 'POST',
+      //   dataType: 'json',
+      //   url: "http://"+direccion+"/sitrans_server/sitrans.php",
+      //   data: "var1=" + var1,
+      //   success: function (resp) {
+      //     $.mobile.loading("hide");
+      //     alert(resp);
+      //   },
+      //   error: function (e) {
+      //     $.mobile.loading("hide");
+      //     alert("No se encuentra conectado a su red.");
+      //   }
+      // });
+  }
+});
+
+    $('.finalizar').click(function() {
+     if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
+      $( "#panel-overlay" ).panel( "open" );
+      $("#cod_usuario").focus();
+    }else{
+      window.location.href = "db.html";
+    }
+
+  });
+
+    $('.info').click(function() {
+     if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
+      $("#panel-overlay").panel("open");
+      $("#cod_usuario").focus();
+    }else{
+      window.location.href = "info.html";
+
+
+    }
+  });
+
+    $('.salir').click(function() {
+     exitAppPopup();
+   });
+
+
+  });
+
+</script>
+</body>
+</html>
