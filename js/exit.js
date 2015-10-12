@@ -19,7 +19,7 @@ function start_exit(){
 
 document.addEventListener("backbutton", function(e){
     // alert("back");
-    if ( $('.paginaprincipal').attr('id') == 'mainpage') {
+    if ( $('.paginaprincipal').attr('id') == 'home') {
         // alert("pag princ");
             //window.location = "#exitDialog";
             exitAppPopup();
