@@ -50,7 +50,7 @@
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/exit.js"></script>
     <script type="text/javascript" src="js/only_dot.js"></script>
-    
+    <script type="text/javascript" src="js/cargar/select_cli_mar.js"></script>
     <script type="text/javascript" src="js/select_plus_filter.js"></script>
     <title>SITRANS</title>
   </head>
@@ -1110,7 +1110,7 @@
 </div>
 
 
-<script type="text/javascript" src="js/cargar/select_cli_mar.js"></script>
+
 <script>
   jQuery(document).ready(function() {
 
@@ -1314,12 +1314,20 @@ $("input[name=deuda_monto]:radio").bind( "change", function(event, ui) {
 
 
 
-$(document).on("change", "select#cliente", function(){
+$("#home").on("change", "#cliente", function(){
   // console.log('Lang: '+$(this).val());
   alert($(this).val()+":::");
   
     //  $('#selected_lang').html('Language Selected: '+$(this).val());
   });
+$(document).on("change", "#producto", function(){
+  // console.log('Lang: '+$(this).val());
+  alert($(this).val()+":::");
+  
+    //  $('#selected_lang').html('Language Selected: '+$(this).val());
+  });
+
+
 $('.only_dotss').keypress(function(event) {
  query = $(this).val();
  alert(query);
