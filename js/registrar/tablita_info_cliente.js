@@ -31,34 +31,11 @@ function cargar_info_cliente_html( id_cli ) {
 function queryDB_info_tablita(tx) {
     alert("preparando query");
     // tx.executeSql('SELECT * FROM CLIENTE', [], querySuccess_tablita, errorCB_tablita);
-    tx.executeSql(
-        "select codcliente,nombre, sum(SaldoBs) SaldoBs,sum(CajaPac) CajaPac,sum(CajaHuari) CajaHuari,sum(cajaLitro) CajaLitro"+
-        "from"+
-        "(select a.codcliente codcliente,Nombre, sum(debe-haber) SaldoBs, 0 CajaPac,0 CajaHuari, 0 CajaLitro"+
-            "from detalle a inner join cliente b on a.codcliente=b.codcliente"+
-            "where codconcepto=1400 and a.codcliente=?"+
-            "group by a.codcliente,nombre"+
-            "UNION"+
-            "select a.codcliente codcliente,Nombre, 0 SaldoBs, sum(dcajas-hcajas) CajaPac,0 CajaHuari, 0 CajaLitro"+
-            "from detalle a inner join cliente b on a.codcliente=b.codcliente"+
-            "where codconcepto=1600 and codart in (4020,4029)"+
-            "and a.codcliente=?"+
-            "group by a.codcliente,nombre"+
-            "UNION"+
-            "select a.codcliente codcliente,Nombre, 0 SaldoBs, 0 CajaPac,sum(dcajas-hcajas) CajaHuari, 0 CajaLitro"+
-            "from detalle a inner join cliente b on a.codcliente=b.codcliente"+
-            "where codconcepto=1600 and codart in (4079)"+
-            "and a.codcliente=?"+
-            "group by a.codcliente,nombre"+
-            "UNION"+
-            "select a.codcliente codcliente,Nombre, 0 SaldoBs, 0 CajaPac,0 CajaHuari, sum(dcajas-hcajas) CajaLitro"+
-            "from detalle a inner join cliente b on a.codcliente=b.codcliente"+
-            "where codconcepto=1600 and codart in (4010,4011)"+
-            "and a.codcliente=?"+
-            "group by a.codcliente,nombre"+
-            ") Temp"+
-"group by codcliente,nombre",
-[id_cliente_tablita, id_cliente_tablita,id_cliente_tablita,id_cliente_tablita], querySuccess_tablita, errorCB_tablita);
+    tx.executeSql('SELECT a.codcliente codcliente,Nombre, sum(debe-haber) SaldoBs, 0 CajaPac,0 CajaHuari, 0 CajaLitro'+
+        'from detalle a inner join cliente b on a.codcliente=b.codcliente'+
+        'where codconcepto=1400 and a.codcliente=?'+
+        'group by a.codcliente,nombre',
+        [id_cliente_tablita], querySuccess_tablita, errorCB_tablita);
 }
 
 
@@ -67,16 +44,20 @@ function querySuccess_tablita(tx, results) {
     // var tblText='<table id="t01"><tr><th>ID</th> <th>Name</th> <th>Number</th></tr>';
     alert("query ejeutada");
     var len = results.rows.length;
+    var SaldoBs     =0;
+    var CajaPac     =0;
+    var CajaHuari   =0;
+    var CajaLitro   =0;
     for (var i = 0; i < len; i++) {
         SaldoBs     =results.rows.item(i).SaldoBs;
         CajaPac     =results.rows.item(i).CajaPac;
         CajaHuari   =results.rows.item(i).CajaHuari;
         CajaLitro   =results.rows.item(i).CajaLitro;
     }
-alert(SaldoBs);
-alert(CajaPac);
-alert(CajaHuari);
-alert(CajaLitro);
+    alert(SaldoBs);
+    alert(CajaPac);
+    alert(CajaHuari);
+    alert(CajaLitro);
 
 
     // var tblContent='<form>';
