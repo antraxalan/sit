@@ -56,9 +56,9 @@
 
         		tblContent +='<tr><td>'; 
 
-        		tblContent+=results.rows.item(i).CodMarca	+'</td><td>'
-        		tblContent+=results.rows.item(i).DesMarca	+'</td><td>'
-        		tblContent+=results.rows.item(i).CodArt	 	+'</td><td>'
+        		tblContent+=results.rows.item(i).CodMarca	+'</td><td>';
+        		tblContent+=results.rows.item(i).DesMarca	+'</td><td>';
+        		tblContent+=results.rows.item(i).CodArt	 	+'</td><td>';
         		tblContent+=results.rows.item(i).DesArt	 	+'</td></tr>';
         	}
         	tblContent+="</tbody></table>";
@@ -92,9 +92,9 @@
 
         		tblContent +='<tr><td>'; 
 
-        		tblContent+=results.rows.item(i).CodCliente		+'</td><td>'
-        		tblContent+=results.rows.item(i).Nombre			+'</td><td>'
-        		tblContent+=results.rows.item(i).RazonSocial	+'</td><td>'
+        		tblContent+=results.rows.item(i).CodCliente		+'</td><td>';
+        		tblContent+=results.rows.item(i).Nombre			+'</td><td>';
+        		tblContent+=results.rows.item(i).RazonSocial	+'</td><td>';
         		tblContent+=results.rows.item(i).Direccion	 	+'</td></tr>';
         	}
         	tblContent+="</tbody></table>";
@@ -127,9 +127,9 @@
 
         		tblContent+='<tr><td>'; 
 
-        		tblContent+=results.rows.item(i).TipoDcto		+'</td><td>'
-        		tblContent+=results.rows.item(i).Apu			+'</td><td>'
-        		tblContent+=results.rows.item(i).Fecha			+'</td><td>'
+        		tblContent+=results.rows.item(i).TipoDcto		+'</td><td>';
+        		tblContent+=results.rows.item(i).Apu			+'</td><td>';
+        		tblContent+=results.rows.item(i).Fecha			+'</td><td>';
         		tblContent+=results.rows.item(i).FechaVto	 	+'</td></tr>';
         	}
         	tblContent+="</tbody></table>";
