@@ -680,8 +680,6 @@
             Pedido:
             <div class="ui-field-contain">
               <label for="textarea">Precio por Caja:</label>
-              <input type="text" name="numeric" id="precio_prueba1"  value="" data-clear-btn="true" title="dsad"/>
-              <input type="text" name="precio" id="precio_prueba2"  value="" data-clear-btn="true" title="dsad" class="only_dot"/>
               <input type="text" name="precio" id="precio_prueba3"  data-clear-btn="true" data-toggle="tooltip" data-placement="top" title="Hooray!" alt="12345" />
             </div>
             <div class="ui-grid-a">
@@ -1385,8 +1383,10 @@ $.mobile.navigate( "index.html#venta" );
      window.location.href = "index.html";
    }); 
     $('.otro_cliente').click(function() {
-      location.reload();
-      window.location.href = "index.html#registrar";
+       $("#cliente option:eq(0)").prop("selected",true);
+      $('#cliente') .selectmenu("refresh");
+      $("#producto option:eq(0)").prop("selected",true);
+      $('#producto') .selectmenu("refresh");
       // window.location.href = "index.html#registrar";
     });
 
@@ -1556,8 +1556,9 @@ $(".pruebita_select").on( "click", function(event, ui) {
   // $('select>option:eq("Seleccione un cliente.")').prop('selected', true);
   // $('#cliente_prueba>option:eq(0)').prop('selected', true);
     //  $('#selected_lang').html('Language Selected: '+$(this).val());
-    location.reload();
-    window.location.href = "index.html#registrar";
+ $("#cliente_prueba option:eq(0)").prop("selected",true);
+ $('#cliente_prueba') .selectmenu("refresh");
+
   });
 $("#cliente").on( "change", function(event, ui) {
 // $(document).bind("change", "#cliente", function(){
