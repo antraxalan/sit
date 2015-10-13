@@ -57,7 +57,6 @@
 
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/exit.js"></script>
-    <script type="text/javascript" src="js/only_dot.js"></script>
     <script type="text/javascript" src="js/cargar/select_cli_mar.js"></script>
     <script type="text/javascript" src="js/select_plus_filter.js"></script>
     <title>SITRANS</title>
@@ -163,14 +162,14 @@
             <form class="ui">
 
               <div data-role="fieldcontain" class="ui-field-contain"data-demo-html="true">               
-                <button type="button" class="pruebita_select">pruebita</button>
+                <!-- <button type="button" class="pruebita_select">pruebita</button>
                 <select name="select-custom-cliente" id="cliente_prueba" class="filterable-select " data-native-menu="false">
 
 
                  <option value="-">Seleccione un cliente.</option>
                  <option value="100">100 - EEEVELIN  MARIA CARDENAS TROCHE</option>
                  <option value="101">101 - ALVAREZ MORALES FELIX</option>
-               </select>
+               </select> -->
 
 
                <!-- <button type="button" class="s_cliente">select prueba</button> -->
@@ -399,7 +398,7 @@
              </select>
              <!-- </div> -->
            </div>
-           <div data-role="fieldcontain" class="ui-field-contain">
+          <!--  <div data-role="fieldcontain" class="ui-field-contain">
             <fieldset data-role="controlgroup" data-type="horizontal">
               <legend>Tipo:</legend>
               <label for="cont">Contado</label>
@@ -411,7 +410,7 @@
           <div data-role="fieldcontain" class="ui-field-contain vencimiento">               
             <label for="date">Fecha Vto:</label>
             <input name="mydate" id="fecha2" type="date" data-role="date" data-date-format="dd-mm-yyyy"/>
-          </div>    
+          </div>    --> 
           <div data-role="fieldcontain" class="ui-field-contain">
             <label for="textarea">Obs:</label>
             <textarea cols="40" rows="8" name="textarea" id="obs"></textarea>
@@ -678,10 +677,7 @@
 
           <div data-role="fieldcontain" class="ui-field-contain ui-body ui-bar-a ui-corner-all">
             Pedido:
-            <div class="ui-field-contain">
-              <label for="textarea">Precio por Caja:</label>
-              <input type="text" name="precio" id="precio_prueba3"  data-clear-btn="true" data-toggle="tooltip" data-placement="top" title="Hooray!" alt="12345" />
-            </div>
+
             <div class="ui-grid-a">
               <div class="ui-block-a">
                 <div class="ui-field-contain">
@@ -706,6 +702,26 @@
                 <input type="radio" name="deuda_envase" id="prestamo" value="prestamo">
               </fieldset>
             </div>
+
+            <div class="ui-field-contain">
+              <label for="textarea">Precio por Caja:</label>
+              <input type="text" name="precio" id="precio_in"  data-clear-btn="true" data-toggle="tooltip" data-placement="top" title="Hooray!" alt="12345" />
+            </div>
+
+            
+            <div data-role="fieldcontain" class="ui-field-contain">
+              <fieldset data-role="controlgroup" data-type="horizontal">
+                <legend>Tipo:</legend>
+                <label for="cont">Contado</label>
+                <input type="radio" name="tipo" id="cont" value="cont" checked="checked">
+                <label for="cred">Credito</label>
+                <input type="radio" name="tipo" id="cred" value="cred">
+              </fieldset>
+            </div>
+            <div data-role="fieldcontain" class="ui-field-contain vencimiento">               
+              <label for="date">Fecha Vto:</label>
+              <input name="mydate" id="fecha2" type="date" data-role="date" data-date-format="dd-mm-yyyy"/>
+            </div>   
 
           </div>
 
@@ -810,9 +826,9 @@
       <p>__________________________________________</p>
       <div class="ui-grid-a">
         <div class="ui-block-a">
-          <a href="#" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a eliminar_popup" data-rel="back" data-transition="flow">Eliminar</a>
+          <a href="#" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a eliminar_popup_venta" data-rel="back" data-transition="flow">Eliminar</a>
         </div>
-        <div class="ui-block-b"><a href="#" class="ui-btn ui-icon-edit ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b editar_popup" data-rel="back">Editar</a></div>
+        <div class="ui-block-b"><a href="#" class="ui-btn ui-icon-edit ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b editar_popup_venta" data-rel="back">Editar</a></div>
 
       </div>
     </div>
@@ -1360,20 +1376,18 @@ $.mobile.navigate( "index.html#venta" );
     // $("#cliente").trigger("create");
   });
 
-    // carga_only_dot();
+  var d = new Date();
 
-    var d = new Date();
+  var month = d.getMonth()+1;
+  var day = d.getDate();
+  var fecha_actual =((''+day).length<2 ? '0' : '') + day + '/' +
+  ((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
 
-    var month = d.getMonth()+1;
-    var day = d.getDate();
-    var fecha_actual =((''+day).length<2 ? '0' : '') + day + '/' +
-    ((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
-
-    $("#fecha").val(fecha_actual);
-    $("#fecha_cobranza").val(fecha_actual);
-    $("#fecha_deuda").val(fecha_actual);
-    $('.mensaje').hide();
-    $('.articulo').hide();
+  $("#fecha").val(fecha_actual);
+  $("#fecha_cobranza").val(fecha_actual);
+  $("#fecha_deuda").val(fecha_actual);
+  $('.mensaje').hide();
+  $('.articulo').hide();
     // alert('inicia');
     $(".articulo_cobranza").hide();
     $(".articulo_deuda").hide();
@@ -1383,12 +1397,12 @@ $.mobile.navigate( "index.html#venta" );
      window.location.href = "index.html";
    }); 
     $('.otro_cliente').click(function() {
-       $("#cliente option:eq(0)").prop("selected",true);
-      $('#cliente') .selectmenu("refresh");
-      $("#producto option:eq(0)").prop("selected",true);
-      $('#producto') .selectmenu("refresh");
-      window.location.href = "index.html#registrar";
-    });
+     $("#cliente option:eq(0)").prop("selected",true);
+     $('#cliente') .selectmenu("refresh");
+     $("#producto option:eq(0)").prop("selected",true);
+     $('#producto') .selectmenu("refresh");
+     window.location.href = "index.html#registrar";
+   });
 
 
     $('.show').click(function() {
@@ -1436,201 +1450,79 @@ $.mobile.navigate( "index.html#venta" );
    }); 
 
     $(".editar_venta_class").on('click', function(event) {
-          // $(this).attr('codigo-producto');
-          $(".articulo").hide();
-          var text = $(this).parent().find('h2').text()
-          $('#titulo_popup').html(text);
-          // alert($(this).attr('codigo-venta'));
-          $(".id_venta").val($(this).attr('codigo-venta'));
 
-          // alert("hola");
-          // $( "#alerta_eliminado_venta" ).popup( "close" );
-          // $(".id_venta").val('0');
-        });
-    $('.eliminar_popup').click(function() {
-          // $('#titulo_popup').html($(this).val());
-          // alert("asd");
-          
-          $('.mensaje').html("<div style='color:red;'>ELIMINADO</div>");
-          $('.mensaje').show(300);
-          setTimeout(function(){ $('.mensaje').hide(300); $('.mensaje').html(""); }, 3000);
+      $(".articulo").hide();
+      var text = $(this).parent().find('h2').text()
+      $('#titulo_popup').html(text);
+      $(".id_venta").val($(this).attr('codigo-venta'));
+      // $( "#alerta_eliminado_venta" ).popup( "close" );
+    });
+    $('.eliminar_popup_venta').click(function() {
+      $('.mensaje').html("<div style='color:red;'>ELIMINADO</div>");
+      $('.mensaje').show(300);
+      setTimeout(function(){ $('.mensaje').hide(300); $('.mensaje').html(""); }, 3000);
 
-        }); 
-    $('.editar_popup').click(function() {
+    }); 
+    $('.editar_popup_venta').click(function() {
      $(".articulo").show(300);
    }); 
 
 
-    $('.prueba1').click(function() {
-     window.location.href = "detalles.html";
-   });
+    $("input[name=tipo]:radio").bind( "change", function(event, ui) {
+      if($(this).val()=='cred'){
+        $(".vencimiento").show(200);
+      }else{
+        $(".vencimiento").hide(200);
+      }
 
-    // $('input[type=radio][name=tipo]').on('change', function(){
-    //   switch($(this).val()){
-    //     case 'cont' :
-    //     alert("contado");
-    //     $(".vencimiento").hide(200);
-    //     break;
-    //     case 'cred' :
-    //     alert("credito");
-    //     $(".vencimiento").show(200);
-    //     break;
-    //   }            
-    // });​
+    });
 
+    $("input[name=cobranza_monto]:radio").bind( "change", function(event, ui) {
 
-    // $(".c_tipo").bind( "change", function(event, ui) {
-    //   alert('changed');
-    //   switch(){
-    //     case 'cont' :
-    //     alert("contado");
-    //     // $(".vencimiento").hide(200);
-    //     break;
-    //     case 'cred' :
-    //     alert("credito");
-    //     // $(".vencimiento").show(200);
-    //     break;
-    //   }            
-    // });​
+      if($(this).val()=='total_cobranza'){
+        $("#a_cobrar_cobranza").val($("#saldo_cobranza").val()); 
+      }else{
+        $("#a_cobrar_cobranza").val("");
+      }
 
-$("input[name=tipo]:radio").bind( "change", function(event, ui) {
-  // console.log('Lang: '+$(this).val());
-  // alert($(this).val());
-  if($(this).val()=='cred'){
-    $(".vencimiento").show(200);
-  }else{
-    $(".vencimiento").hide(200);
-  }
-    //  $('#selected_lang').html('Language Selected: '+$(this).val());
-  });
+    });
 
-$("input[name=cobranza_monto]:radio").bind( "change", function(event, ui) {
-  // console.log('Lang: '+$(this).val());
-  // alert($(this).val());
-  if($(this).val()=='total_cobranza'){
-    $("#a_cobrar_cobranza").val($("#saldo_cobranza").val()); 
-  }else{
-    $("#a_cobrar_cobranza").val("");
-  }
-    //  $('#selected_lang').html('Language Selected: '+$(this).val());
-  });
-
-$("input[name=deuda_monto]:radio").bind( "change", function(event, ui) {
-  // console.log('Lang: '+$(this).val());
-  // alert($(this).val());
-  if($(this).val()=='total_deuda'){
-    $("#a_cobrar_deuda").val($("#saldo_deuda").val()); 
-  }else{
-    $("#a_cobrar_deuda").val("");
-  }
-    //  $('#selected_lang').html('Language Selected: '+$(this).val());
-  });
-
-// $("#cliente").on( "change", function(event, ui) {
-//   // console.log('Lang: '+$(this).val());
-//   alert($(this).val());
-
-//     //  $('#selected_lang').html('Language Selected: '+$(this).val());
-//   });
+    $("input[name=deuda_monto]:radio").bind( "change", function(event, ui) {
+      if($(this).val()=='total_deuda'){
+        $("#a_cobrar_deuda").val($("#saldo_deuda").val()); 
+      }else{
+        $("#a_cobrar_deuda").val("");
+      }
+    });
 
 
+    $("#cliente").on( "change", function(event, ui) {
+      alert($(this).val()+":1::");
 
+    });
+    $("#producto").bind("change", function(){
+      alert($(this).val()+":2::");
 
-
-
-
-
-
-// $( ":mobile-pagecontainer" ).pagecontainer( "load", pageUrl, { showLoadMsg: false } );
-
-
-
-$(".pruebita_select").on( "click", function(event, ui) {
-// $(document).bind("change", "#cliente", function(){
-  // console.log('Lang: '+$(this).val());
-  // alert($(this).val()+":1::");
-  // $('#cliente_prueba option[value="-"]');
-  // alert("2");
-  // $( "#cliente_prueba" ).val("-");
-  // alert($( "#cliente_prueba" ).val());
-  // $('select>option:eq("Seleccione un cliente.")').prop('selected', true);
-  // $('#cliente_prueba>option:eq(0)').prop('selected', true);
-    //  $('#selected_lang').html('Language Selected: '+$(this).val());
- $("#cliente_prueba option:eq(0)").prop("selected",true);
- $('#cliente_prueba') .selectmenu("refresh");
+    });
 
   });
-$("#cliente").on( "change", function(event, ui) {
-// $(document).bind("change", "#cliente", function(){
-  // console.log('Lang: '+$(this).val());
-  alert($(this).val()+":1::");
-  
-    //  $('#selected_lang').html('Language Selected: '+$(this).val());
-  });
-$("#producto").bind("change", function(){
-  // console.log('Lang: '+$(this).val());
-  alert($(this).val()+":2::");
-  
-    //  $('#selected_lang').html('Language Selected: '+$(this).val());
-  });
-
-
-$('.only_dotss').keypress(function(event) {
- query = $(this).val();
- alert(query);
- $('#precio_prueba3').val(event.which);
- if(event.which < 46 || event.which > 59) {
-  event.preventDefault();
-} 
-if(event.which == 46 && $(this).val().indexOf('.') != -1) {
-  event.preventDefault();
-} 
-
-});
-
-
-// $("#precio_prueba3").bind( "keypress", function(event, ui) {
-//   // console.log('Lang: '+$(this).val());
-//   alert($(this).val());
-
-//     //  $('#selected_lang').html('Language Selected: '+$(this).val());
-//   });
-
-// });
-$('#precio_prueba2').on('keyup', function (event) {
-
-  alert("up presionada");
-  alert("up keyCode:"+event.keyCode);
-  alert("up which:"+event.which);
-  alert("up charCode:"+event.charCode );
-    // $('div').text('key up ' + ++counter);
-  });
-// $('#precio_prueba3').on('keydown', function (event) {
-//   alert("up presionada");
-//   alert("up keyCode:"+event.keyCode);
-//   alert("up which:"+event.which);
-//   alert("up charCode:"+event.charCode );
-//     // $('div').text('key up ' + ++counter);
-// });
 
 
 
-});
+
+
+
+
 
 
 //fires the 1st time it is showed
 $( document ).on( "pagecreate", "#venta", function( event ) {
 
   // alert( "venta" );
-  $('#precio_prueba3').on('input', function() {
-    // var aux;
+  $('#precio_in').on('input', function() {
     this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
-    // alert(this.value);
-    // aux = this.value;
-    // this.value = (parseFloat(aux)).toFixed(2);
-    // alert(this.value);
   });
-  $('#precio_prueba3').on('blur', function() {
+  $('#precio_in').on('blur', function() {
     if(this.value!=''){
       this.value = (parseFloat(this.value)).toFixed(2);
     }
