@@ -163,17 +163,26 @@
             <form class="ui">
 
               <div data-role="fieldcontain" class="ui-field-contain"data-demo-html="true">               
-                <button class="pruebita_select">pruebita</button>
-                <!-- <button class="s_cliente">select prueba</button> -->
-                <label for="date">Fecha:</label>
-                <input name="mydate" id="fecha" disabled="disabled"/>
-              </div>
+                <button type="button" class="pruebita_select">pruebita</button>
+                <select name="select-custom-cliente" id="cliente_prueba" class="filterable-select " data-native-menu="false">
 
-              <div data-role="fieldcontain" class="ui-field-contain">
-                <label for="select-custom-20">Cliente:</label>
-                <!-- <div id="cliente_div_id"> -->
-                <!-- <div class="mensaje123">sads</div> -->
-                <select name="select-custom-cliente" id="cliente" class="filterable-select " data-native-menu="false">
+
+                 <option value="-">Seleccione un cliente.</option>
+                 <option value="100">100 - EEEVELIN  MARIA CARDENAS TROCHE</option>
+                 <option value="101">101 - ALVAREZ MORALES FELIX</option>
+               </select>
+
+
+               <!-- <button class="s_cliente">select prueba</button> -->
+               <label for="date">Fecha:</label>
+               <input name="mydate" id="fecha" disabled="disabled"/>
+             </div>
+
+             <div data-role="fieldcontain" class="ui-field-contain">
+              <label for="select-custom-20">Cliente:</label>
+              <!-- <div id="cliente_div_id"> -->
+              <!-- <div class="mensaje123">sads</div> -->
+              <select name="select-custom-cliente" id="cliente" class="filterable-select " data-native-menu="false">
 
 
                <!-- <option value="-">Seleccione un cliente.</option>
@@ -1342,13 +1351,12 @@ $(document).on("pagecreate","#registrar",function(event){
   // $('[data-toggle="tooltip"]').tooltip(); 
 
 
-  // setTimeout(function(){ window.location.href = "index.html#ventas"; }, 3000);
+  // setTimeout(function(){ window.location.href = "index.html#venta"; }, 3000);
 
   $('.d_cliente').click(function() {
-    alert("3");
-// window.location.href = "index.html#ventas";
+// window.location.href = "index.html#venta";
 // window.location.hash="#ventas";
-$.mobile.navigate( "index.html#ventas" );
+$.mobile.navigate( "index.html#venta" );
 });
   $('.s_cliente').click(function() {
     // $("#cliente").trigger("create");
@@ -1377,8 +1385,10 @@ $.mobile.navigate( "index.html#ventas" );
      window.location.href = "index.html";
    }); 
     $('.otro_cliente').click(function() {
-     window.location.href = "index.html#registrar";
-   });
+      location.reload();
+      window.location.href = "index.html#registrar";
+      // window.location.href = "index.html#registrar";
+    });
 
 
     $('.show').click(function() {
@@ -1539,9 +1549,16 @@ $(".pruebita_select").on( "click", function(event, ui) {
 // $(document).bind("change", "#cliente", function(){
   // console.log('Lang: '+$(this).val());
   // alert($(this).val()+":1::");
-  $('#cliente option[value="-"]');
-  
+  // $('#cliente_prueba option[value="-"]');
+  // alert("2");
+  // $( "#cliente_prueba" ).val("-");
+  // alert($( "#cliente_prueba" ).val());
+  // $('select>option:eq("Seleccione un cliente.")').prop('selected', true);
+  // $('#cliente_prueba>option:eq(0)').prop('selected', true);
     //  $('#selected_lang').html('Language Selected: '+$(this).val());
+    location.reload();
+    window.location.href = "index.html#registrar";
+    lo
   });
 $("#cliente").on( "change", function(event, ui) {
 // $(document).bind("change", "#cliente", function(){
