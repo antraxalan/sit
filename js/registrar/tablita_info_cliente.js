@@ -79,13 +79,17 @@ function querySuccess_tablita(tx, results) {
     var debe=0;
     var haber=0;
     for (var i = 0; i < len; i++) {
+        alert("debe_db:"+results.rows.item(i).debe);
+        alert("haber_db:"+results.rows.item(i).haber);
         debe     =results.rows.item(i).debe+debe;
         haber    =results.rows.item(i).haber+haber;
+
     }
+    // alert(results.rows.item(0));
     SaldoBs=debe-haber;
-    // alert(SaldoBs);
-    // alert(debe);
-    // alert(haber);
+    alert(SaldoBs);
+    alert(debe);
+    alert(haber);
 
 
     // var tblContent='<form>';
