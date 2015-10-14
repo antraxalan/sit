@@ -29,7 +29,6 @@
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <!-- <link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme.css" /> -->
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile.css" />
-    <link rel="stylesheet" type="text/css" href="css/tablesaw.css" />
 
 
     <!-- <link rel="stylesheet" type="text/css" href="css/theme-classic.css"/> -->
@@ -45,37 +44,26 @@
 
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery.mobile.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     
     <script type="text/javascript" src="js/db_crear.js"></script>
+
 
     <script type="text/javascript" src="js/cargar/cargar_articulos.js"></script>
     <script type="text/javascript" src="js/usuario/guardar_datos.js"></script>
     <script type="text/javascript" src="js/usuario/borrar_sesion.js"></script>
 
 
+    <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/exit.js"></script>
     <script type="text/javascript" src="js/cargar/select_cli_mar.js"></script>
     <script type="text/javascript" src="js/select_plus_filter.js"></script>
-    <script type="text/javascript" src="js/registrar/tablita_info_cliente.js"></script>
     <title>SITRANS</title>
   </head>
   <body>
 
     <div class="app" >
-
-      <input class="direccion" value="192.168.0.114" placeholder="direccion" type="hidden" />
-
-
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-
-
-
 
       <div data-role="page" class="paginaprincipal" id="home" >
         <header data-role="header" data-position="fixed">
@@ -89,9 +77,18 @@
         <div data-role="content">
           <h3></h3>
 
+
+
+
           <div class="ui-content" role="main">
+
             <form class="ui">
+
+
               <img src="img/logo_s.jpg" alt="image" style="width:100%; margin-top: 10px; margin-bottom: 10px; ">
+
+
+
               <div class="ui-grid-solo" >
                 <div class="ui-block-a"><a href="#registrar"><button type="button" class="big_button  blue_btn">Datos Cliente</button></a></div>
                 <!-- <div class="ui-block-a"><button type="button" class="big_button read">read_txt2</button></div> -->
@@ -100,15 +97,22 @@
                 <div class="ui-block-a"><button type="button" class="big_button cargar">Cargar Datos del Camion</button></div>
                 <div class="ui-block-b"><button type="button" class="big_button finalizar">Finalizar</button></div>     
               </div>
+              
               <div class="ui-grid-solo" >
                 <div class="ui-block-a"><button type="button" class="big_button info blue_btn">Informacion General</button></div>
               </div>
             </form>
           </div>
           
-          
+          <input class="direccion" value="192.168.0.114" placeholder="direccion" type="hidden" />
+
+
+
+
           <div data-role="panel" id="panel-overlay" data-display="overlay">
+
             <div data-role="collapsibleset" data-content-theme="a">
+
               <div data-role="collapsible" data-collapsed="false">
                 <h3>Usuario</h3>
                 <label for="textinput-f"><strong>Complete los siguientes campos:</strong></label>
@@ -119,8 +123,15 @@
                 <button type="button" class="ui-btn ui-corner-all ui-shadow guardar_cod_usuario">Guardar</button>
                 <button type="button" class="ui-btn ui-btn-b ui-corner-all ui-shadow cerrar_cod_usuario">Cerrar Sesion</button>
 
+                <!-- <button type="button" class="ui-btn ui-corner-all ui-shadow pru_cod_usuario">pru cod usuario</button> -->
+                <!-- <input class="auxiliar" > -->
               </div>
+              <!-- <div data-role="collapsible">
+                <h3>Section 2</h3>
+                <p>I'm the collapsible content for section 2</p>
+              </div> -->
             </div>
+
             <br><br>
             <!-- <button type="button" class="ui-btn ui-corner-all ui-shadow">Button</button> -->
           </div>
@@ -136,17 +147,6 @@
       </div><!-- /Page Home -->
 
 
-
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-
-
-
-
       <div data-role="page" id="registrar" class="ui-page-theme-a" >
         <header data-role="header" data-position="fixed">
           <h1>CBN</h1>
@@ -155,15 +155,23 @@
 
         <div data-role="content">
           <h3>BIENVENIDO A SITRANS APP</h3>
+
+
           <div class="ui-content" role="main">
+
             <form class="ui">
-             <div data-role="fieldcontain" class="ui-field-contain"data-demo-html="true">               
+
+              <div data-role="fieldcontain" class="ui-field-contain"data-demo-html="true">               
                 <!-- <button type="button" class="pruebita_select">pruebita</button>
                 <select name="select-custom-cliente" id="cliente_prueba" class="filterable-select " data-native-menu="false">
+
+
                  <option value="-">Seleccione un cliente.</option>
                  <option value="100">100 - EEEVELIN  MARIA CARDENAS TROCHE</option>
                  <option value="101">101 - ALVAREZ MORALES FELIX</option>
                </select> -->
+
+
                <!-- <button type="button" class="s_cliente">select prueba</button> -->
                <label for="date">Fecha:</label>
                <input name="mydate" id="fecha" disabled="disabled"/>
@@ -171,8 +179,10 @@
 
              <div data-role="fieldcontain" class="ui-field-contain">
               <label for="select-custom-20">Cliente:</label>
-
+              <!-- <div id="cliente_div_id"> -->
+              <!-- <div class="mensaje123">sads</div> -->
               <select name="select-custom-cliente" id="cliente" class="filterable-select " data-native-menu="false">
+
 
                <!-- <option value="-">Seleccione un cliente.</option>
                <option value="100">100 - EEEVELIN  MARIA CARDENAS TROCHE</option>
@@ -402,16 +412,8 @@
             <input name="mydate" id="fecha2" type="date" data-role="date" data-date-format="dd-mm-yyyy"/>
           </div>    --> 
           <div data-role="fieldcontain" class="ui-field-contain">
-            <label for="textarea">query:</label>
-            <textarea cols="40" rows="8" name="textarea" id="query">select a.codcliente,b.Nombre, a.debe, a.haber from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto="1400" and a.codcliente=?</textarea>
-          </div>
-          <div data-role="fieldcontain" class="ui-field-contain">
             <label for="textarea">Obs:</label>
             <textarea cols="40" rows="8" name="textarea" id="obs"></textarea>
-          </div>
-
-           <div  class=" tablita_info_cliente">
-           
           </div>
         <!-- <div class="ui-field-contain">
           <input type="submit" id="submit-1" class="ui-btn ui-corner-all " value="Detalles">
@@ -706,6 +708,7 @@
               <input type="text" name="precio" id="precio_in"  data-clear-btn="true" data-toggle="tooltip" data-placement="top" title="Hooray!" alt="12345" />
             </div>
 
+            
             <div data-role="fieldcontain" class="ui-field-contain">
               <fieldset data-role="controlgroup" data-type="horizontal">
                 <legend>Tipo:</legend>
@@ -1494,10 +1497,9 @@ $.mobile.navigate( "index.html#venta" );
 
 
     $("#cliente").on( "change", function(event, ui) {
-      // alert($(this).val()+":1::");
-      cargar_info_cliente_html($(this).val());
-    });
+      alert($(this).val()+":1::");
 
+    });
     $("#producto").bind("change", function(){
       alert($(this).val()+":2::");
 

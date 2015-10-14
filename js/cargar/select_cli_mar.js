@@ -46,7 +46,6 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
           // alert("asd");
           // var tblContent2='<select name="select-custom-cliente" id="cliente" class="filterable-select " data-native-menu="false">';
           tblContent2 +='<option value="-">Seleccione un cliente.</option>';
-          tblContent2 +='<option value="3">Alan Aruquipa</option>';
           var len = results.rows.length;
           for (var i = 0; i < len; i++) {
             tblContent2 +='<option value="'+results.rows.item(i).CodCliente+'">'+results.rows.item(i).CodCliente+' - '+results.rows.item(i).Nombre+'</option>'; 
