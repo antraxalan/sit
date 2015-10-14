@@ -15,7 +15,7 @@ function populateDB_cliente(tx) {
 }
 function populateDB_detalle(tx) {
     //----- alert("18");
-    tx.executeSql('CREATE TABLE IF NOT EXISTS DETALLE (TipoDcto INTEGER,NroDcto INTEGER,Apu INTEGER,Fecha NUMERIC,FechaVto NUMERIC,TipoDctoM NUMERIC,NroDctoM NUMERIC,Precio REAL,Tc REAL,CodConcepto NUMERIC,CodCliente NUMERIC,Debe REAL,Haber REAL,CodArt NUMERIC,Dcajas REAL,Hcajas REAL,Dunidades REAL,Hunidades REAL)');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS DETALLE (TipoDcto INTEGER,NroDcto INTEGER,Apu INTEGER,Fecha DATE,FechaVto DATE,TipoDctoM INTEGER,NroDctoM INTEGER,Precio REAL,Tc REAL,CodConcepto INTEGER,CodCliente INTEGER,Debe REAL,Haber REAL,CodArt INTEGER,Dcajas REAL,Hcajas REAL,Dunidades REAL,Hunidades REAL)');
 }
         // Query the database
         //

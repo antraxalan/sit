@@ -88,7 +88,7 @@ function populateDB_cliente(tx) {
 function populateDB_detalle(tx) {
     //----- alert("18");
     tx.executeSql('DROP TABLE IF EXISTS DETALLE');
-    tx.executeSql('CREATE TABLE IF NOT EXISTS DETALLE (TipoDcto INTEGER,NroDcto INTEGER,Apu INTEGER,Fecha NUMERIC,FechaVto NUMERIC,TipoDctoM NUMERIC,NroDctoM NUMERIC,Precio REAL,Tc REAL,CodConcepto NUMERIC,CodCliente NUMERIC,Debe REAL,Haber REAL,CodArt NUMERIC,Dcajas REAL,Hcajas REAL,Dunidades REAL,Hunidades REAL)');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS DETALLE (TipoDcto INTEGER,NroDcto INTEGER,Apu INTEGER,Fecha DATE,FechaVto DATE,TipoDctoM INTEGER,NroDctoM INTEGER,Precio REAL,Tc REAL,CodConcepto INTEGER,CodCliente INTEGER,Debe REAL,Haber REAL,CodArt INTEGER,Dcajas REAL,Hcajas REAL,Dunidades REAL,Hunidades REAL)');
 }
 
 
@@ -116,7 +116,7 @@ function insertDB_articulo(tx) {
     
     for (var i = 0; i < d1.length; i++) {
 
-        tx.executeSql('INSERT INTO ARTICULO (CodMarca,DesMarca,CodArt,DesArt,DesArtReducido,Calibre,TipoArticulo,CantxEmpaque,PrecioCompra,PrecioVtaMin,PrecioVtaMax,CodBotella,DesBotella,PVtaMinBot,CodCaja,DesCaja,PVtaMinCaja,PVtaMaxCaja,Estado) VALUES ("'+d1[i][0]+'","'+d1[i][1]+'","'+d1[i][2]+'","'+d1[i][3]+'","'+d1[i][4]+'","'+d1[i][5]+'","'+d1[i][6]+'","'+d1[i][7]+'","'+d1[i][8]+'","'+d1[i][9]+'","'+d1[i][10]+'","'+d1[i][11]+'","'+d1[i][12]+'","'+d1[i][13]+'","'+d1[i][14]+'","'+d1[i][15]+'","'+d1[i][16]+'","'+d1[i][17]+'","'+d1[i][18]+'")');
+        tx.executeSql('INSERT INTO ARTICULO (CodMarca,DesMarca,CodArt,DesArt,DesArtReducido,Calibre,TipoArticulo,CantxEmpaque,PrecioCompra,PrecioVtaMin,PrecioVtaMax,CodBotella,DesBotella,PVtaMinBot,CodCaja,DesCaja,PVtaMinCaja,PVtaMaxCaja,Estado) VALUES ('+d1[i][0]+',"'+d1[i][1]+'",'+d1[i][2]+',"'+d1[i][3]+'","'+d1[i][4]+'",'+d1[i][5]+',"'+d1[i][6]+'",'+d1[i][7]+','+d1[i][8]+','+d1[i][9]+','+d1[i][10]+','+d1[i][11]+',"'+d1[i][12]+'",'+d1[i][13]+','+d1[i][14]+',"'+d1[i][15]+'",'+d1[i][16]+','+d1[i][17]+',"'+d1[i][18]+'")');
     };
   
     // alert("carga articulo finalizada");
@@ -135,7 +135,8 @@ function call_insert_db_cliente(data) {
 function insertDB_cliente(tx) {
     var d1=data_db_cliente;
     for (var i = 0; i < d1.length; i++) {
-        tx.executeSql('INSERT INTO CLIENTE (CodCliente,Nombre,RazonSocial,Direccion,Nit,NroTelefono1,NroTelefono2,CodZona,DesZona,CodPersonal,DesPersonal,CodRuta,DesRuta) VALUES ("'+d1[i][0]+'","'+d1[i][1]+'","'+d1[i][2]+'","'+d1[i][3]+'","'+d1[i][4]+'","'+d1[i][5]+'","'+d1[i][6]+'","'+d1[i][7]+'","'+d1[i][8]+'","'+d1[i][9]+'","'+d1[i][10]+'","'+d1[i][11]+'","'+d1[i][12]+'")');
+
+        tx.executeSql('INSERT INTO CLIENTE (CodCliente,Nombre,RazonSocial,Direccion,Nit,NroTelefono1,NroTelefono2,CodZona,DesZona,CodPersonal,DesPersonal,CodRuta,DesRuta) VALUES ('+d1[i][0]+',"'+d1[i][1]+'","'+d1[i][2]+'","'+d1[i][3]+'","'+d1[i][4]+'",'+d1[i][5]+','+d1[i][6]+','+d1[i][7]+',"'+d1[i][8]+'",'+d1[i][9]+',"'+d1[i][10]+'","'+d1[i][11]+'","'+d1[i][12]+'")');
     };
 
         // alert("carga cliente finalizada");
@@ -148,7 +149,8 @@ function call_insert_db_detalle(data) {
 function insertDB_detalle(tx) {
     var d1=data_db_detalle;
     for (var i = 0; i < d1.length; i++) {
-        tx.executeSql('INSERT INTO DETALLE (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades) VALUES ("'+d1[i][0]+'","'+d1[i][1]+'","'+d1[i][2]+'","'+d1[i][3]+'","'+d1[i][4]+'","'+d1[i][5]+'","'+d1[i][6]+'","'+d1[i][7]+'","'+d1[i][8]+'","'+d1[i][9]+'","'+d1[i][10]+'","'+d1[i][11]+'","'+d1[i][12]+'","'+d1[i][13]+'","'+d1[i][14]+'","'+d1[i][15]+'","'+d1[i][16]+'","'+d1[i][17]+'")');
+
+        tx.executeSql('INSERT INTO DETALLE (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades) VALUES ('+d1[i][0]+','+d1[i][1]+','+d1[i][2]+',"'+d1[i][3]+'","'+d1[i][4]+'",'+d1[i][5]+','+d1[i][6]+','+d1[i][7]+','+d1[i][8]+','+d1[i][9]+','+d1[i][10]+','+d1[i][11]+','+d1[i][12]+','+d1[i][13]+','+d1[i][14]+','+d1[i][15]+','+d1[i][16]+','+d1[i][17]+')');
     };
   
     // alert("carga detalle finalizada");
