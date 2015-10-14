@@ -41,7 +41,8 @@ function queryDB_info_tablita(tx) {
  // tx.transaction('SELECT a.codcliente codcliente,Nombre, sum(debe-haber) SaldoBs, 0 CajaPac,0 CajaHuari, 0 CajaLitro from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1400 and a.codcliente=? group by a.codcliente,nombre', [id_cliente_tablita], querySuccess_tablita, errorCB_tablita);
 
     
-tx.transaction('select a.codcliente,Nombre, sum(debe-haber) SaldoBs from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1400 and a.codcliente=? group by a.codcliente,nombre',[id_cliente_tablita], querySuccess_tablita, errorCB_tablita);
+// tx.transaction('select a.codcliente,Nombre, sum(debe-haber) SaldoBs from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1400 and a.codcliente=? group by a.codcliente,nombre',[id_cliente_tablita], querySuccess_tablita, errorCB_tablita);
+tx.transaction('select a.codcliente,Nombre, debe, haber from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1400 and a.codcliente=100',[], querySuccess_tablita, errorCB_tablita);
 
 }
 
@@ -102,8 +103,12 @@ function querySuccess_tablita(tx, results) {
 
 
 function errorCB_tablita(err) {
-    alert("Error tabla: "+err.message);
+    alert("Error #"+err.code+" mensaje: "+err.message);
 }
+// function errorCB_tablita(xhr, ajaxOptions, thrownError) {
+//     alert("1: "+xhr.status);
+//     alert("2: "+thrownError);
+// }
 
 // for (var i = 0; i < testResults.length; i++){
 //     (function(i){
