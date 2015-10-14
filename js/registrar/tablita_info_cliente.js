@@ -57,7 +57,8 @@ function queryDB_tablita(tx) {
 
     
 // tx.transaction('select a.codcliente,Nombre, sum(debe-haber) SaldoBs from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1400 and a.codcliente=? group by a.codcliente,nombre',[id_cliente_tablita], querySuccess_tablita, errorCB_tablita);
-tx.executeSql('select a.codcliente,b.Nombre, a.debe, a.haber from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1400 and a.codcliente=?',[id_cliente_tablita], querySuccess_tablita, errorCB_tablita);
+var query=$("#query").val();
+tx.executeSql(query,[id_cliente_tablita], querySuccess_tablita, errorCB_tablita);
 
 // tx.executeSql('select * from DETALLE',[], querySuccess_tablita, errorCB_tablita);
 
