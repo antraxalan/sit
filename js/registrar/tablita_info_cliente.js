@@ -3,7 +3,10 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
 var id_cliente_tablita;
 function cargar_info_cliente_html( id_cli ) {
     id_cliente_tablita=id_cli;
-
+    var SaldoBs     =0;
+    var CajaPac     =0;
+    var CajaHuari   =0;
+    var CajaLitro   =0;
 
 
     // db.transaction(populateDB_art_cli_det, errorCB_tablita, queryDB_info_tablita);
@@ -65,21 +68,23 @@ tx.executeSql('select a.codcliente,Nombre, debe, haber from detalle a inner join
 function querySuccess_tablita(tx, results) {
     // var tblText='<table id="t01"><tr><th>ID</th> <th>Name</th> <th>Number</th></tr>';
     alert("query ejeutada");
+    alert("lenght: "+results.rows.length);
+
     var len = results.rows.length;
-    var SaldoBs     =0;
-    var CajaPac     =0;
-    var CajaHuari   =0;
-    var CajaLitro   =0;
+    // var SaldoBs     =0;
+    // var CajaPac     =0;
+    // var CajaHuari   =0;
+    // var CajaLitro   =0;
+    var debe=0;
+    var haber=0;
     for (var i = 0; i < len; i++) {
-        SaldoBs     =results.rows.item(i).SaldoBs;
-        CajaPac     =results.rows.item(i).CajaPac;
-        CajaHuari   =results.rows.item(i).CajaHuari;
-        CajaLitro   =results.rows.item(i).CajaLitro;
+        debe     =results.rows.item(i).debe+debe;
+        haber    =results.rows.item(i).haber+haber;
     }
+    SaldoBs=debe-haber;
     alert(SaldoBs);
-    alert(CajaPac);
-    alert(CajaHuari);
-    alert(CajaLitro);
+    alert(debe);
+    alert(haber);
 
 
     // var tblContent='<form>';
