@@ -15,7 +15,7 @@ function cargar_info_cliente_html( id_cli ) {
     // db.transaction(insertDB_detalle, errorCB_tablita);
 
 queryDB_info_tablita();
-    alert("id cliente: "+id_cli);
+    // alert("id cliente: "+id_cli);
 
     // var num=16;
     // var mydata = [
@@ -44,7 +44,7 @@ db.transaction(queryDB_tablita, errorCB_tablita2);
 
 }
 function queryDB_tablita(tx) {
-    alert("preparando query");
+    // alert("preparando query");
     // tx.executeSql('SELECT * FROM CLIENTE', [], querySuccess_tablita, errorCB_tablita);
 
     // tx.transaction('SELECT a.codcliente codcliente,Nombre, sum(debe-haber) SaldoBs, 0 CajaPac,0 CajaHuari, 0 CajaLitro'+
@@ -57,7 +57,7 @@ function queryDB_tablita(tx) {
 
     
 // tx.transaction('select a.codcliente,Nombre, sum(debe-haber) SaldoBs from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1400 and a.codcliente=? group by a.codcliente,nombre',[id_cliente_tablita], querySuccess_tablita, errorCB_tablita);
-tx.executeSql('select a.codcliente,Nombre, debe, haber from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1400 and a.codcliente=100',[], querySuccess_tablita, errorCB_tablita);
+tx.executeSql('select a.codcliente,b.Nombre, a.debe, a.haber from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1400 and a.codcliente=?',[id_cliente_tablita], querySuccess_tablita, errorCB_tablita);
 
 // tx.executeSql('select * from DETALLE',[], querySuccess_tablita, errorCB_tablita);
 
@@ -67,8 +67,8 @@ tx.executeSql('select a.codcliente,Nombre, debe, haber from detalle a inner join
 
 function querySuccess_tablita(tx, results) {
     // var tblText='<table id="t01"><tr><th>ID</th> <th>Name</th> <th>Number</th></tr>';
-    alert("query ejeutada");
-    alert("lenght: "+results.rows.length);
+    // alert("query ejeutada");
+    alert("del usuario:"+id_cliente_tablita+" query_lenght: "+results.rows.length);
 
     var len = results.rows.length;
     // var SaldoBs     =0;
@@ -82,9 +82,9 @@ function querySuccess_tablita(tx, results) {
         haber    =results.rows.item(i).haber+haber;
     }
     SaldoBs=debe-haber;
-    alert(SaldoBs);
-    alert(debe);
-    alert(haber);
+    // alert(SaldoBs);
+    // alert(debe);
+    // alert(haber);
 
 
     // var tblContent='<form>';
