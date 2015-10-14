@@ -79,17 +79,17 @@ function subir_db_detalle() {
 function populateDB_articulo(tx) {
     //----- alert("19");
     tx.executeSql('DROP TABLE IF EXISTS ARTICULO');
-    tx.executeSql('CREATE TABLE IF NOT EXISTS ARTICULO (CodMarca,DesMarca,CodArt,DesArt,DesArtReducido,Calibre,TipoArticulo,CantxEmpaque,PrecioCompra,PrecioVtaMin,PrecioVtaMax,CodBotella,DesBotella,PVtaMinBot,CodCaja,DesCaja,PVtaMinCaja,PVtaMaxCaja,Estado)');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS ARTICULO (CodMarca INTEGER,DesMarca TEXT,CodArt INTEGER,DesArt TEXT,DesArtReducido TEXT,Calibre REAL,TipoArticulo TEXT,CantxEmpaque INTEGER,PrecioCompra REAL,PrecioVtaMin REAL,PrecioVtaMax REAL,CodBotella INTEGER,DesBotella TEXT,PVtaMinBot REAL,CodCaja INTEGER,DesCaja TEXT,PVtaMinCaja REAL,PVtaMaxCaja REAL,Estado TEXT)');
 }
 function populateDB_cliente(tx) {
     //----- alert("13");
     tx.executeSql('DROP TABLE IF EXISTS CLIENTE');
-    tx.executeSql('CREATE TABLE IF NOT EXISTS CLIENTE (CodCliente,Nombre,RazonSocial,Direccion,Nit,NroTelefono1,NroTelefono2,CodZona,DesZona,CodPersonal,DesPersonal,CodRuta,DesRuta)');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS CLIENTE (CodCliente INTEGER,Nombre TEXT,RazonSocial TEXT,Direccion TEXT,Nit TEXT,NroTelefono1 INTEGER,NroTelefono2 INTEGER,CodZona INTEGER,DesZona TEXT,CodPersonal INTEGER,DesPersonal TEXT,CodRuta TEXT,DesRuta TEXT)');
 }
 function populateDB_detalle(tx) {
     //----- alert("18");
     tx.executeSql('DROP TABLE IF EXISTS DETALLE');
-    tx.executeSql('CREATE TABLE IF NOT EXISTS DETALLE (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades)');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS DETALLE (TipoDcto INTEGER,NroDcto INTEGER,Apu INTEGER,Fecha NUMERIC,FechaVto NUMERIC,TipoDctoM NUMERIC,NroDctoM NUMERIC,Precio REAL,Tc REAL,CodConcepto NUMERIC,CodCliente NUMERIC,Debe REAL,Haber REAL,CodArt NUMERIC,Dcajas REAL,Hcajas REAL,Dunidades REAL,Hunidades REAL)');
 }
 
 
