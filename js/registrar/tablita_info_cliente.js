@@ -78,10 +78,15 @@ function querySuccess_tablita(tx, results) {
     // var CajaLitro   =0;
     var debe=0;
     var haber=0;
-    alert(JSON.stringify(results.rows.item, null, 2)); 
+    alert("item:"+results.rows.item); 
+    alert("iten(1):"+results.rows.item(0)); 
     for (var i = 0; i < len; i++) {
         // alert("debe_db:"+results.rows.item(i).debe);
         // alert("haber_db:"+results.rows.item(i).haber);
+        alert(result.rows.item(i).codcliente);
+        alert(result.rows.item(i).Nombre);
+        alert(result.rows.item(i).debe);
+        alert(result.rows.item(i).haber );
         debe     =results.rows.item(i).debe+debe;
         haber    =results.rows.item(i).haber+haber;
 
