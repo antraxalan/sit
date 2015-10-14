@@ -78,15 +78,15 @@ function querySuccess_tablita(tx, results) {
     // var CajaLitro   =0;
     var debe=0;
     var haber=0;
-    alert("item:"+results.rows.item); 
-    alert("iten(1):"+results.rows.item(0)); 
+    // alert("item:"+results.rows.item); 
+    // alert("iten(1):"+results.rows.item(0)); 
     for (var i = 0; i < len; i++) {
         // alert("debe_db:"+results.rows.item(i).debe);
         // alert("haber_db:"+results.rows.item(i).haber);
-        alert(result.rows.item(i).codcliente);
-        alert(result.rows.item(i).Nombre);
-        alert(result.rows.item(i).debe);
-        alert(result.rows.item(i).haber );
+        // alert(result.rows.item(i).codcliente);
+        // alert(result.rows.item(i).Nombre);
+        // alert(result.rows.item(i).debe);
+        // alert(result.rows.item(i).haber );
         debe     =results.rows.item(i).debe+debe;
         haber    =results.rows.item(i).haber+haber;
 
@@ -94,9 +94,9 @@ function querySuccess_tablita(tx, results) {
 
     // alert(results.rows.item(0));
     SaldoBs=debe-haber;
-    alert(SaldoBs);
-    alert(debe);
-    alert(haber);
+    // alert(SaldoBs);
+    // alert(debe);
+    // alert(haber);
 
 
     // var tblContent='<form>';
@@ -183,13 +183,13 @@ function errorCB_tablita2(err) {
 // }
 
 
-function populateDB_art_cli_det(tx) {
-    //----- alert("19");
-    tx.executeSql('CREATE TABLE IF NOT EXISTS ARTICULO (CodMarca,DesMarca,CodArt,DesArt,DesArtReducido,Calibre,TipoArticulo,CantxEmpaque,PrecioCompra,PrecioVtaMin,PrecioVtaMax,CodBotella,DesBotella,PVtaMinBot,CodCaja,DesCaja,PVtaMinCaja,PVtaMaxCaja,Estado)');
-    tx.executeSql('CREATE TABLE IF NOT EXISTS ARTICULO (CodMarca,DesMarca,CodArt,DesArt,DesArtReducido,Calibre,TipoArticulo,CantxEmpaque,PrecioCompra,PrecioVtaMin,PrecioVtaMax,CodBotella,DesBotella,PVtaMinBot,CodCaja,DesCaja,PVtaMinCaja,PVtaMaxCaja,Estado)');
-    tx.executeSql('CREATE TABLE IF NOT EXISTS DETALLE (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades)');
+// function populateDB_art_cli_det(tx) {
+//     //----- alert("19");
+//     tx.executeSql('CREATE TABLE IF NOT EXISTS ARTICULO (CodMarca,DesMarca,CodArt,DesArt,DesArtReducido,Calibre,TipoArticulo,CantxEmpaque,PrecioCompra,PrecioVtaMin,PrecioVtaMax,CodBotella,DesBotella,PVtaMinBot,CodCaja,DesCaja,PVtaMinCaja,PVtaMaxCaja,Estado)');
+//     tx.executeSql('CREATE TABLE IF NOT EXISTS ARTICULO (CodMarca,DesMarca,CodArt,DesArt,DesArtReducido,Calibre,TipoArticulo,CantxEmpaque,PrecioCompra,PrecioVtaMin,PrecioVtaMax,CodBotella,DesBotella,PVtaMinBot,CodCaja,DesCaja,PVtaMinCaja,PVtaMaxCaja,Estado)');
+//     tx.executeSql('CREATE TABLE IF NOT EXISTS DETALLE (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades)');
 
-}
+// }
 
 
 
@@ -220,26 +220,26 @@ function populateDB_art_cli_det(tx) {
 //     call_insert_db_detalle(resp);
 // }
 
-function insertDB_articulo(tx) {
-    var d1=1;
-    for (var i = 0; i < d1.length; i++) {
-        tx.executeSql('INSERT INTO ARTICULO (CodMarca,DesMarca,CodArt,DesArt,DesArtReducido,Calibre,TipoArticulo,CantxEmpaque,PrecioCompra,PrecioVtaMin,PrecioVtaMax,CodBotella,DesBotella,PVtaMinBot,CodCaja,DesCaja,PVtaMinCaja,PVtaMaxCaja,Estado) VALUES ("15","IMPERIAL","170","IMPERIAL 620CC.","IMPERIAL 620CC.","0.62","P","12","82.29","88.5","88.5","3020","BOTELLA 620 CC.","24","4020","CAJA PLAST.TAQ.12 BOT.","30","33","A")');
-    };
-};                               
+// function insertDB_articulo(tx) {
+//     var d1=1;
+//     for (var i = 0; i < d1.length; i++) {
+//         tx.executeSql('INSERT INTO ARTICULO (CodMarca,DesMarca,CodArt,DesArt,DesArtReducido,Calibre,TipoArticulo,CantxEmpaque,PrecioCompra,PrecioVtaMin,PrecioVtaMax,CodBotella,DesBotella,PVtaMinBot,CodCaja,DesCaja,PVtaMinCaja,PVtaMaxCaja,Estado) VALUES ("15","IMPERIAL","170","IMPERIAL 620CC.","IMPERIAL 620CC.","0.62","P","12","82.29","88.5","88.5","3020","BOTELLA 620 CC.","24","4020","CAJA PLAST.TAQ.12 BOT.","30","33","A")');
+//     };
+// };                               
 
 
-function insertDB_cliente(tx) {
-    var d1=1;
-    for (var i = 0; i < d1.length; i++) {
-        tx.executeSql('INSERT INTO CLIENTE (CodCliente","Nombre,RazonSocial,Direccion,Nit,NroTelefono1,NroTelefono2,CodZona,DesZona,CodPersonal,DesPersonal,CodRuta,DesRuta) VALUES ("100","EVELIN  MARIA CARDENAS TROCHE","Restaurant Rincon Chume±o","Av. Jaime Zuda±es # 1310 Zona alto sopoc","2234836017","73007643","201","SOPOCACHI","1","CENTRAL","1","SOPOCACHI")');
-    };
-};
-function insertDB_detalle(tx) {
-    var d1=1;
-    for (var i = 0; i < d1.length; i++) {
-        tx.executeSql('INSERT INTO DETALLE (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades) VALUES ("0","0","0","04/08/2010 00:00","04/08/2010 00:00","2","1086","0","0","1400","214","165","0","0","0.0000","0","0","0")');
-    };
-};
+// function insertDB_cliente(tx) {
+//     var d1=1;
+//     for (var i = 0; i < d1.length; i++) {
+//         tx.executeSql('INSERT INTO CLIENTE (CodCliente","Nombre,RazonSocial,Direccion,Nit,NroTelefono1,NroTelefono2,CodZona,DesZona,CodPersonal,DesPersonal,CodRuta,DesRuta) VALUES ("100","EVELIN  MARIA CARDENAS TROCHE","Restaurant Rincon Chume±o","Av. Jaime Zuda±es # 1310 Zona alto sopoc","2234836017","73007643","201","SOPOCACHI","1","CENTRAL","1","SOPOCACHI")');
+//     };
+// };
+// function insertDB_detalle(tx) {
+//     var d1=1;
+//     for (var i = 0; i < d1.length; i++) {
+//         tx.executeSql('INSERT INTO DETALLE (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades) VALUES ("0","0","0","04/08/2010 00:00","04/08/2010 00:00","2","1086","0","0","1400","214","165","0","0","0.0000","0","0","0")');
+//     };
+// };
 
 
 
