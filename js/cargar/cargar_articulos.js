@@ -206,9 +206,9 @@ function verificar_usuario() {
         if(resp=='1'){
             subir_db_articulo();
             // alert("subir_db_articulo realizado");
-            subir_db_cliente();
+            // subir_db_cliente();
             // alert("subir_db_cliente realizado");
-            subir_db_detalle();
+            // subir_db_detalle();
             // alert("subir_db_detalle realizado");
             // alert("realizado");
             $.mobile.loading("hide");
