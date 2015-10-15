@@ -98,7 +98,7 @@ function call_insert_db_articulo(data) {
     // codigo_usuario=user;
     // password_usuario=pass;
     // var dbShell = window.openDatabase(database_name, database_version, database_displayname, database_size);
-    db.transaction(insertDB_articulo, errorCB1_carg2);
+    db.transaction(insertDB_articulo, errorCB1_carg1);
 };
 function insertDB_articulo(tx) {
     var d1=data_db_articulo;
@@ -143,7 +143,7 @@ function insertDB_cliente(tx) {
 };
 function call_insert_db_detalle(data) {
     data_db_detalle=data;
-    db.transaction(insertDB_detalle, errorCB1_carg2);
+    db.transaction(insertDB_detalle, errorCB1_carg3);
 };
 
 function insertDB_detalle(tx) {
@@ -160,8 +160,14 @@ function insertDB_detalle(tx) {
 function errorCB_cargar(err) {
      alert("errorCB_cargar: "+err.message);
 }
+function errorCB1_carg1(err) {
+     alert("errorCB1_carg1: "+err.message);
+}
 function errorCB1_carg2(err) {
      alert("errorCB1_carg2: "+err.message);
+}
+function errorCB1_carg3(err) {
+     alert("errorCB1_carg3: "+err.message);
 }
 
 
