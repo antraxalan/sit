@@ -170,7 +170,7 @@ function insertDB_cliente(tx) {
 };
 function call_insert_db_detalle(data) {
     data_db_detalle=data;
-    db.transaction(insertDB_detalle, errorCB1_carg3);
+    db.transaction(insertDB_detalle, errorCB1_carg3,success_reload);
 };
 
 function insertDB_detalle(tx) {
@@ -180,7 +180,7 @@ function insertDB_detalle(tx) {
         tx.executeSql('INSERT INTO DETALLE (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades) VALUES ('+d1[i][0]+','+d1[i][1]+','+d1[i][2]+',"'+d1[i][3]+'","'+d1[i][4]+'",'+d1[i][5]+','+d1[i][6]+','+d1[i][7]+','+d1[i][8]+','+d1[i][9]+','+d1[i][10]+','+d1[i][11]+','+d1[i][12]+','+d1[i][13]+','+d1[i][14]+','+d1[i][15]+','+d1[i][16]+','+d1[i][17]+')');
     };
     // alert("detalle i:"+i+" lenght:"+d1.length);
-    location.reload();
+    // location.reload();
     // alert("carga detalle finalizada");
 };
 
@@ -198,8 +198,8 @@ function errorCB1_carg3(err) {
      alert("errorCB1_carg3--: "+err.message);
 }
 
-function onsuccess() {
-     alert("cargo 2 ");
+function success_reload() {
+    location.reload();
 }
 
 
