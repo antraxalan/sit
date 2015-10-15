@@ -3,6 +3,7 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
 var id_cliente_tablita;
 function cargar_info_cliente_html( id_cli ) {
     id_cliente_tablita=id_cli;
+    alert("cargar_info_cliente_html");
     var SaldoBs     =0;
     var CajaPac     =0;
     var CajaHuari   =0;
@@ -40,10 +41,12 @@ queryDB_info_tablita();
     // $('#tablita_registrar').trigger('create');
 }
 function queryDB_info_tablita() {
+    alert("queryDB_info_tablita");
 db.transaction(queryDB_tablita, errorCB_tablita2);
 
 }
 function queryDB_tablita(tx) {
+    alert("queryDB_tablita");
     // alert("preparando query");
     // tx.executeSql('SELECT * FROM CLIENTE', [], querySuccess_tablita, errorCB_tablita);
 
@@ -94,6 +97,9 @@ function querySuccess_tablita(tx, results) {
 
     // alert(results.rows.item(0));
     SaldoBs=debe-haber;
+    alert(SaldoBs);
+    alert(debe);
+    alert(haber);
     // alert(SaldoBs);
     // alert(debe);
     // alert(haber);
