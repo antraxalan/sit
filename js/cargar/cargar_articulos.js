@@ -135,8 +135,21 @@ function call_insert_db_cliente(data) {
 function insertDB_cliente(tx) {
     var d1=data_db_cliente;
     for (var i = 0; i < d1.length; i++) {
+        alert(d1[i][0]);
+        alert(d1[i][1]);
+        alert(d1[i][2]);
+        alert(d1[i][3]);
+        alert(d1[i][4]);
+        alert(d1[i][5]);
+        alert(d1[i][6]);
+        alert(d1[i][7]);
+        alert(d1[i][8]);
+        alert(d1[i][9]);
+        alert(d1[i][10]);
+        alert(d1[i][11]);
+        alert(d1[i][12]);
         // tx.executeSql('INSERT INTO CLIENTE (CodCliente,Nombre,RazonSocial,Direccion,Nit,NroTelefono1,NroTelefono2,CodZona,DesZona,CodPersonal,DesPersonal,CodRuta,DesRuta) VALUES ('+d1[i][0]+',"'+d1[i][1]+'","'+d1[i][2]+'","'+d1[i][3]+'","'+d1[i][4]+'",'+d1[i][5]+','+d1[i][6]+','+d1[i][7]+',"'+d1[i][8]+'",'+d1[i][9]+',"'+d1[i][10]+'","'+d1[i][11]+'","'+d1[i][12]+'")');
-        tx.executeSql('INSERT INTO CLIENTE (CodCliente,Nombre,RazonSocial,Direccion,Nit,NroTelefono1,NroTelefono2,CodZona,DesZona,CodPersonal,DesPersonal,CodRuta,DesRuta) VALUES (?,"?","?","?","?",?,?,?,"?",?,"?","?","?")',[d1[i][0],d1[i][1],d1[i][2],d1[i][3],d1[i][4],d1[i][5],d1[i][6],d1[i][7],d1[i][8],d1[i][9],d1[i][10],d1[i][11],d1[i][12]]);
+        tx.executeSql('INSERT INTO CLIENTE (CodCliente,Nombre,RazonSocial,Direccion,Nit,NroTelefono1,NroTelefono2,CodZona,DesZona,CodPersonal,DesPersonal,CodRuta,DesRuta) VALUES (?,"?","?","?","?",?,?,?,"?",?,"?","?","?")',[d1[i].[0],d1[i].[1],d1[i].[2],d1[i].[3],d1[i].[4],d1[i].[5],d1[i].[6],d1[i].[7],d1[i].[8],d1[i].[9],d1[i].[10],d1[i].[11],d1[i].[12]]);
     };
 
         // alert("carga cliente finalizada");
