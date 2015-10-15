@@ -135,7 +135,6 @@ function call_insert_db_cliente(data) {
 function insertDB_cliente(tx) {
     var d1=data_db_cliente;
     for (var i = 0; i < d1.length; i++) {
-
         tx.executeSql('INSERT INTO CLIENTE (CodCliente,Nombre,RazonSocial,Direccion,Nit,NroTelefono1,NroTelefono2,CodZona,DesZona,CodPersonal,DesPersonal,CodRuta,DesRuta) VALUES ('+d1[i][0]+',"'+d1[i][1]+'","'+d1[i][2]+'","'+d1[i][3]+'","'+d1[i][4]+'",'+d1[i][5]+','+d1[i][6]+','+d1[i][7]+',"'+d1[i][8]+'",'+d1[i][9]+',"'+d1[i][10]+'","'+d1[i][11]+'","'+d1[i][12]+'")');
     };
 
@@ -161,13 +160,13 @@ function errorCB_cargar(err) {
      alert("errorCB_cargar: "+err.message);
 }
 function errorCB1_carg1(err) {
-     alert("errorCB1_carg1: "+err.message);
+     alert("errorCB1_carg1--: "+err.message);
 }
 function errorCB1_carg2(err) {
-     alert("errorCB1_carg2: "+err.message);
+     alert("errorCB1_carg2--: "+err.message);
 }
 function errorCB1_carg3(err) {
-     alert("errorCB1_carg3: "+err.message);
+     alert("errorCB1_carg3--: "+err.message);
 }
 
 
