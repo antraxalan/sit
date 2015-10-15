@@ -150,8 +150,10 @@ function insertDB_cliente(tx) {
         // alert(d1[i][11]);
         // alert(d1[i][12]);
         // tx.executeSql('INSERT INTO CLIENTE (CodCliente,Nombre,RazonSocial,Direccion,Nit,NroTelefono1,NroTelefono2,CodZona,DesZona,CodPersonal,DesPersonal,CodRuta,DesRuta) VALUES ('+d1[i][0]+',"'+d1[i][1]+'","'+d1[i][2]+'","'+d1[i][3]+'","'+d1[i][4]+'",'+d1[i][5]+','+d1[i][6]+','+d1[i][7]+',"'+d1[i][8]+'",'+d1[i][9]+',"'+d1[i][10]+'","'+d1[i][11]+'","'+d1[i][12]+'")');
-        var auxiliar=$("#query2").val();
-        tx.executeSql(auxiliar,[d1[i][0]]);
+        tx.executeSql('INSERT INTO CLIENTE (CodCliente,Nombre,RazonSocial,Direccion,Nit,NroTelefono1,NroTelefono2,CodZona,DesZona,CodPersonal,DesPersonal,CodRuta,DesRuta) VALUES ('+d1[i][0]+',"'+d1[i][1]+'".,"'+d1[i][2]+'","'+d1[i][3]+'","'+d1[i][4]+'",'+d1[i][5]+','+d1[i][6]+','+d1[i][7]+',"'+d1[i][8]+'",'+d1[i][9]+',"'+d1[i][10]+'","'+d1[i][11]+'","'+d1[i][12]+'")');
+        // var auxiliar=$("#query2").val();
+        // tx.executeSql(auxiliar,[d1[i][0]]);
+        // CodCliente INTEGER,Nombre TEXT,RazonSocial TEXT,Direccion TEXT,Nit TEXT,NroTelefono1 INTEGER,NroTelefono2 INTEGER,CodZona INTEGER,DesZona TEXT,CodPersonal INTEGER,DesPersonal TEXT,CodRuta TEXT,DesRuta TEXT)
     };
 
         // alert("carga cliente finalizada");
@@ -206,9 +208,9 @@ function verificar_usuario() {
         if(resp=='1'){
             subir_db_articulo();
             // alert("subir_db_articulo realizado");
-            // subir_db_cliente();
+            subir_db_cliente();
             // alert("subir_db_cliente realizado");
-            // subir_db_detalle();
+            subir_db_detalle();
             // alert("subir_db_detalle realizado");
             // alert("realizado");
             $.mobile.loading("hide");
