@@ -118,7 +118,7 @@ function insertDB_articulo(tx) {
 
         tx.executeSql('INSERT INTO ARTICULO (CodMarca,DesMarca,CodArt,DesArt,DesArtReducido,Calibre,TipoArticulo,CantxEmpaque,PrecioCompra,PrecioVtaMin,PrecioVtaMax,CodBotella,DesBotella,PVtaMinBot,CodCaja,DesCaja,PVtaMinCaja,PVtaMaxCaja,Estado) VALUES ('+d1[i][0]+',"'+d1[i][1]+'",'+d1[i][2]+',"'+d1[i][3]+'","'+d1[i][4]+'",'+d1[i][5]+',"'+d1[i][6]+'",'+d1[i][7]+','+d1[i][8]+','+d1[i][9]+','+d1[i][10]+','+d1[i][11]+',"'+d1[i][12]+'",'+d1[i][13]+','+d1[i][14]+',"'+d1[i][15]+'",'+d1[i][16]+','+d1[i][17]+',"'+d1[i][18]+'")');
     };
-  
+  alert("i:"+i+" lenght:"+d1.length);
     // alert("carga articulo finalizada");
     // localStorage.g_username = codigo_usuario;
     // localStorage.g_password = password_usuario;
@@ -135,8 +135,9 @@ function call_insert_db_cliente(data) {
 
 function insertDB_cliente(tx) {
     var d1=data_db_cliente;
-    for (var i = 0; i < d1.length; i++) {
-        alert(d1[i][0]);
+  alert("lenght:"+d1.length);
+    for (var j = 0; j < d1.length-1; j++) {
+        // alert(d1[j][0]);
         // alert(d1[i][1]);
         // alert(d1[i][2]);
         // alert(d1[i][3]);
@@ -150,7 +151,7 @@ function insertDB_cliente(tx) {
         // alert(d1[i][11]);
         // alert(d1[i][12]);
         // tx.executeSql('INSERT INTO CLIENTE (CodCliente,Nombre,RazonSocial,Direccion,Nit,NroTelefono1,NroTelefono2,CodZona,DesZona,CodPersonal,DesPersonal,CodRuta,DesRuta) VALUES ('+d1[i][0]+',"'+d1[i][1]+'","'+d1[i][2]+'","'+d1[i][3]+'","'+d1[i][4]+'",'+d1[i][5]+','+d1[i][6]+','+d1[i][7]+',"'+d1[i][8]+'",'+d1[i][9]+',"'+d1[i][10]+'","'+d1[i][11]+'","'+d1[i][12]+'")');
-        tx.executeSql('INSERT INTO CLIENTE (CodCliente,Nombre,RazonSocial,Direccion,Nit,NroTelefono1,NroTelefono2,CodZona,DesZona,CodPersonal,DesPersonal,CodRuta,DesRuta) VALUES ('+d1[i][0]+',"'+d1[i][1]+'".,"'+d1[i][2]+'","'+d1[i][3]+'","'+d1[i][4]+'",'+d1[i][5]+','+d1[i][6]+','+d1[i][7]+',"'+d1[i][8]+'",'+d1[i][9]+',"'+d1[i][10]+'","'+d1[i][11]+'","'+d1[i][12]+'")');
+        tx.executeSql('INSERT INTO CLIENTE (CodCliente,Nombre,RazonSocial,Direccion,Nit,NroTelefono1,NroTelefono2,CodZona,DesZona,CodPersonal,DesPersonal,CodRuta,DesRuta) VALUES ('+d1[j][0]+',"'+d1[j][1]+'".,"'+d1[j][2]+'","'+d1[j][3]+'","'+d1[j][4]+'",'+d1[j][5]+','+d1[j][6]+','+d1[j][7]+',"'+d1[j][8]+'",'+d1[j][9]+',"'+d1[j][10]+'","'+d1[j][11]+'","'+d1[j][12]+'")');
         // var auxiliar=$("#query2").val();
         // tx.executeSql(auxiliar,[d1[i][0]]);
         // CodCliente INTEGER,Nombre TEXT,RazonSocial TEXT,Direccion TEXT,Nit TEXT,NroTelefono1 INTEGER,NroTelefono2 INTEGER,CodZona INTEGER,DesZona TEXT,CodPersonal INTEGER,DesPersonal TEXT,CodRuta TEXT,DesRuta TEXT)
