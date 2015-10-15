@@ -92,10 +92,10 @@ function querySuccess_tablita(tx, results) {
         var_CajaLitro=results.rows.item(i).CajaLitro;
 
 
-        // alert("SaldoBs"+var_SaldoBs);
-        // alert("CajaPac"+var_CajaPac);
-        // alert("CajaHuari"+var_CajaHuari);
-        // alert("CajaLitro"+var_CajaLitro);
+        alert("SaldoBs"+var_SaldoBs);
+        alert("CajaPac"+var_CajaPac);
+        alert("CajaHuari"+var_CajaHuari);
+        alert("CajaLitro"+var_CajaLitro);
 
         // alert("debe_db:"+results.rows.item(i).debe);
         // alert("haber_db:"+results.rows.item(i).haber);
@@ -111,7 +111,7 @@ function querySuccess_tablita(tx, results) {
     // var num=16;
     // alert("llenando a div los valores SaldoBs:"+ var_SaldoBs+" CajaPac:"+var_CajaPac+" CajaHuari:"+var_CajaHuari+" CajaLitro:"+var_CajaLitro); 
     var mydata = [
-    {"Saldo":SaldoBs, "Pac":CajaPac, "Huari":CajaHuari, "Litro":CajaLitro}
+    {"Saldo":var_SaldoBs, "Pac":var_CajaPac, "Huari":var_CajaHuari, "Litro":var_CajaLitro}
     ];
 
     $( '.tablita_info_cliente' ).html( "<table class='tablesaw' data-tablesaw-mode='swipe' id='tablita_registrar'><thead><tr><th scope='col'>Saldo</th><th scope='col'>Pac</th><th scope='col'>Huari</th><th scope='col'>Litro</th></tr></thead><tbody></tbody></table>" );
