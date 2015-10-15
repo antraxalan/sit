@@ -72,10 +72,10 @@ function querySuccess_tablita(tx, results) {
     // alert("item:"+results.rows.item); 
     // alert("iten(1):"+results.rows.item(0));
     alert("succes query"); 
-    var SaldoBs;
-    var CajaPac;
-    var CajaHuari;
-    var CajaLitro;
+    var var_SaldoBs;
+    var var_CajaPac;
+    var var_CajaHuari;
+    var var_CajaLitro;
     for (var i = 0; i < len; i++) {
         // alert("SaldoBs:"+results.rows.item(i).SaldoBs);
         // alert("CajaPac:"+results.rows.item(i).CajaPac);
@@ -85,16 +85,16 @@ function querySuccess_tablita(tx, results) {
         // alert("Nombre:"+results.rows.item(i).CajaLitro);
 
     alert("guardando "+i); 
-        SaldoBs=results.rows.item(i).SaldoBs);
-        CajaPac=results.rows.item(i).CajaPac);
-        CajaHuari=results.rows.item(i).CajaHuari);
-        CajaLitro=results.rows.item(i).CajaLitro);
+        var_SaldoBs=results.rows.item(i).SaldoBs);
+        var_CajaPac=results.rows.item(i).CajaPac);
+        var_CajaHuari=results.rows.item(i).CajaHuari);
+        var_CajaLitro=results.rows.item(i).CajaLitro);
 
 
-alert("SaldoBs"+SaldoBs);
-alert("CajaPac"+CajaPac);
-alert("CajaHuari"+CajaHuari);
-alert("CajaLitro"+CajaLitro);
+alert("SaldoBs"+var_SaldoBs);
+alert("CajaPac"+var_CajaPac);
+alert("CajaHuari"+var_CajaHuari);
+alert("CajaLitro"+var_CajaLitro);
 
         // alert("debe_db:"+results.rows.item(i).debe);
         // alert("haber_db:"+results.rows.item(i).haber);
@@ -108,7 +108,7 @@ alert("CajaLitro"+CajaLitro);
     }
 
     // var num=16;
-    // alert("llenando a div los valores SaldoBs:"+ SaldoBs+" CajaPac:"+CajaPac+" CajaHuari:"+CajaHuari+" CajaLitro:"+CajaLitro); 
+    alert("llenando a div los valores SaldoBs:"+ var_SaldoBs+" CajaPac:"+var_CajaPac+" CajaHuari:"+var_CajaHuari+" CajaLitro:"+var_CajaLitro); 
     // var mydata = [
     // {"Saldo":SaldoBs, "Pac":CajaPac, "Huari":CajaHuari, "Litro":CajaLitro}
     // ];
