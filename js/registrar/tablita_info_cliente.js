@@ -60,7 +60,7 @@ function queryDB_tablita(tx) {
 function querySuccess_tablita(tx, results) {
     // var tblText='<table id="t01"><tr><th>ID</th> <th>Name</th> <th>Number</th></tr>';
     // alert("query ejeutada");
-    alert("del usuario:"+id_cliente_tablita+" query_lenght: "+results.rows.length);
+    // alert("del usuario:"+id_cliente_tablita+" query_lenght: "+results.rows.length);
 
     var len = results.rows.length;
     // var SaldoBs     =0;
@@ -72,12 +72,18 @@ function querySuccess_tablita(tx, results) {
     // alert("item:"+results.rows.item); 
     // alert("iten(1):"+results.rows.item(0)); 
     for (var i = 0; i < len; i++) {
-        alert("SaldoBs:"+results.rows.item(i).SaldoBs);
-        alert("CajaPac:"+results.rows.item(i).CajaPac);
-        alert("Haber:"+results.rows.item(i).SaldoBs);
-        alert("CodCliente:"+results.rows.item(i).CajaPac);
-        alert("Nombre:"+results.rows.item(i).CajaHuari);
-        alert("Nombre:"+results.rows.item(i).CajaLitro);
+        // alert("SaldoBs:"+results.rows.item(i).SaldoBs);
+        // alert("CajaPac:"+results.rows.item(i).CajaPac);
+        // alert("Haber:"+results.rows.item(i).SaldoBs);
+        // alert("CodCliente:"+results.rows.item(i).CajaPac);
+        // alert("Nombre:"+results.rows.item(i).CajaHuari);
+        // alert("Nombre:"+results.rows.item(i).CajaLitro);
+
+        var SaldoBs=results.rows.item(i).SaldoBs);
+        var CajaPac=results.rows.item(i).CajaPac);
+        var CajaHuari=results.rows.item(i).CajaHuari);
+        var CajaLitro=results.rows.item(i).CajaLitro);
+
         // alert("debe_db:"+results.rows.item(i).debe);
         // alert("haber_db:"+results.rows.item(i).haber);
         // alert(result.rows.item(i).codcliente);
@@ -89,8 +95,38 @@ function querySuccess_tablita(tx, results) {
 
     }
 
+    // var num=16;
+    var mydata = [
+    {"Saldo":SaldoBs, "Pac":CajaPac, "Huari":CajaHuari, "Litro":CajaLitro}
+    ];
+
+    $( '.tablita_info_cliente' ).html( "<table class='tablesaw' data-tablesaw-mode='swipe' id='tablita_registrar'><thead><tr><th scope='col'>Saldo</th><th scope='col'>Pac</th><th scope='col'>Huari</th><th scope='col'>Litro</th></tr></thead><tbody></tbody></table>" );
+
+    var tbody = $( '#tablita_registrar tbody' ), props = ["Saldo","Pac","Huari","Litro"];
+
+    $.each( mydata, function(i, value){
+        var tr = $('<tr>');
+
+        $.each(props, function(i, prop){
+            $('<td>').html(value[prop]).appendTo(tr); 
+        });
+
+        tbody.append(tr);
+    });
+
+    // $('#tablita_registrar').table().data( "table" ).refresh();
+    $('#tablita_registrar').trigger('create');
+
+
+
+
+
+
+
     // alert(results.rows.item(0));
-    SaldoBs=debe-haber;
+    
+    // SaldoBs=debe-haber;
+
     // alert(SaldoBs);
     // alert(debe);
     // alert(haber);
