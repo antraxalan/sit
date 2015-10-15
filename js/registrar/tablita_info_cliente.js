@@ -3,7 +3,7 @@ db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
 var id_cliente_tablita;
 function cargar_info_cliente_html( id_cli ) {
     id_cliente_tablita=id_cli;
-    alert("cargar_info_cliente_html");
+    // alert("cargar_info_cliente_html");
     var SaldoBs     =0;
     var CajaPac     =0;
     var CajaHuari   =0;
@@ -41,12 +41,12 @@ function cargar_info_cliente_html( id_cli ) {
     // $('#tablita_registrar').trigger('create');
 }
 function queryDB_info_tablita() {
-    alert("queryDB_info_tablita");
+    // alert("queryDB_info_tablita");
     db.transaction(queryDB_tablita);
 
 }
 function queryDB_tablita(tx) {
-    alert("queryDB_tablita");
+    // alert("queryDB_tablita");
     var query;
     // var query=$("#query").val();
     // query='select a.codcliente,b.Nombre, a.debe, a.haber from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1400 and a.codcliente=?';
@@ -92,10 +92,10 @@ function querySuccess_tablita(tx, results) {
         var_CajaLitro=results.rows.item(i).CajaLitro;
 
 
-        alert("SaldoBs"+var_SaldoBs);
-        alert("CajaPac"+var_CajaPac);
-        alert("CajaHuari"+var_CajaHuari);
-        alert("CajaLitro"+var_CajaLitro);
+        // alert("SaldoBs"+var_SaldoBs);
+        // alert("CajaPac"+var_CajaPac);
+        // alert("CajaHuari"+var_CajaHuari);
+        // alert("CajaLitro"+var_CajaLitro);
 
         // alert("debe_db:"+results.rows.item(i).debe);
         // alert("haber_db:"+results.rows.item(i).haber);
@@ -130,9 +130,9 @@ function querySuccess_tablita(tx, results) {
 
     // $('#tablita_registrar').table().data( "table" ).refresh();
 
-    alert("trigger tablita_registrar");
+    // alert("trigger tablita_registrar");
     $('#tablita_registrar').trigger('create');
-    alert("trigger tablita_info_cliente");
+    // alert("trigger tablita_info_cliente");
     $('.tablita_info_cliente').trigger('create');
 
 
@@ -184,7 +184,6 @@ function querySuccess_tablita(tx, results) {
     // $('#tabla_info').html(tblContent);
     // // $('#tabla_info').append(tblContent);
     // $("#tabla_info").trigger("create");
-    return false;
 }
 
 
