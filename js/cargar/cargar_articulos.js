@@ -149,7 +149,8 @@ function insertDB_cliente(tx) {
         alert(d1[i][11]);
         alert(d1[i][12]);
         // tx.executeSql('INSERT INTO CLIENTE (CodCliente,Nombre,RazonSocial,Direccion,Nit,NroTelefono1,NroTelefono2,CodZona,DesZona,CodPersonal,DesPersonal,CodRuta,DesRuta) VALUES ('+d1[i][0]+',"'+d1[i][1]+'","'+d1[i][2]+'","'+d1[i][3]+'","'+d1[i][4]+'",'+d1[i][5]+','+d1[i][6]+','+d1[i][7]+',"'+d1[i][8]+'",'+d1[i][9]+',"'+d1[i][10]+'","'+d1[i][11]+'","'+d1[i][12]+'")');
-        tx.executeSql('INSERT INTO CLIENTE (CodCliente,Nombre,RazonSocial,Direccion,Nit,NroTelefono1,NroTelefono2,CodZona,DesZona,CodPersonal,DesPersonal,CodRuta,DesRuta) VALUES (?,"?","?","?","?",?,?,?,"?",?,"?","?","?")',[d1[i].[0],d1[i].[1],d1[i].[2],d1[i].[3],d1[i].[4],d1[i].[5],d1[i].[6],d1[i].[7],d1[i].[8],d1[i].[9],d1[i].[10],d1[i].[11],d1[i].[12]]);
+        CodCliente INTEGER,Nombre TEXT,RazonSocial TEXT,Direccion TEXT,Nit TEXT,NroTelefono1 INTEGER,NroTelefono2 INTEGER,CodZona INTEGER,DesZona TEXT,CodPersonal INTEGER,DesPersonal TEXT,CodRuta TEXT,DesRuta TEXT
+        tx.executeSql('INSERT INTO CLIENTE (CodCliente,Nombre,RazonSocial,Direccion,Nit,NroTelefono1,NroTelefono2,CodZona,DesZona,CodPersonal,DesPersonal,CodRuta,DesRuta) VALUES (?,"?","?","?","?",?,?,?,"?",?,"?","?","?")',[d1[i][0],d1[i][1],d1[i][2],d1[i][3],d1[i][4],d1[i][5],d1[i][6],d1[i][7],d1[i][8],d1[i][9],d1[i][10],d1[i][11],d1[i][12]]);
     };
 
         // alert("carga cliente finalizada");
