@@ -150,7 +150,8 @@ function insertDB_cliente(tx) {
         // alert(d1[i][11]);
         // alert(d1[i][12]);
         // tx.executeSql('INSERT INTO CLIENTE (CodCliente,Nombre,RazonSocial,Direccion,Nit,NroTelefono1,NroTelefono2,CodZona,DesZona,CodPersonal,DesPersonal,CodRuta,DesRuta) VALUES ('+d1[i][0]+',"'+d1[i][1]+'","'+d1[i][2]+'","'+d1[i][3]+'","'+d1[i][4]+'",'+d1[i][5]+','+d1[i][6]+','+d1[i][7]+',"'+d1[i][8]+'",'+d1[i][9]+',"'+d1[i][10]+'","'+d1[i][11]+'","'+d1[i][12]+'")');
-        tx.executeSql('INSERT INTO CLIENTE (CodCliente,Nombre,RazonSocial,Direccion,Nit,NroTelefono1,NroTelefono2,CodZona,DesZona,CodPersonal,DesPersonal,CodRuta,DesRuta) VALUES (?,"?","?","?","?",?,?,?,"?",?,"?","?","?")',[d1[i][0],d1[i][1],d1[i][2],d1[i][3],d1[i][4],d1[i][5],d1[i][6],d1[i][7],d1[i][8],d1[i][9],d1[i][10],d1[i][11],d1[i][12]]);
+        var auxiliar=$("#query2").val();
+        tx.executeSql(auxiliar,[d1[i][0],d1[i][1],d1[i][2],d1[i][3],d1[i][4],d1[i][5],d1[i][6],d1[i][7],d1[i][8],d1[i][9],d1[i][10],d1[i][11],d1[i][12]]);
     };
 
         // alert("carga cliente finalizada");
