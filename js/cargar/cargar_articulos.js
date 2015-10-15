@@ -129,14 +129,14 @@ function insertDB_articulo(tx) {
 
 function call_insert_db_cliente(data) {
     data_db_cliente=data;
-    alert(data);
+    // alert(data);
     db.transaction(insertDB_cliente, errorCB1_carg2);
 };
 
 function insertDB_cliente(tx) {
     var d1=data_db_cliente;
     for (var i = 0; i < d1.length; i++) {
-        // alert(d1[i][0]);
+        alert(d1[i][0]);
         // alert(d1[i][1]);
         // alert(d1[i][2]);
         // alert(d1[i][3]);
