@@ -136,8 +136,8 @@ function call_insert_db_cliente(data) {
 function insertDB_cliente(tx) {
     var d1=data_db_cliente;
   // alert("lenght:"+d1.length);
-    for (var j = 0; j < d1.length; j++) {
-         alert("j:"+j+" lenght: "+d1.length+" id_0>"+d1[j][0]+"--_1>"+d1[i][1]+"--_2>"+d1[i][2]+"--_3>"+d1[i][3]+"--_4>"+d1[i][4]+"--_5>"+d1[i][5]+"--_6>"+d1[i][6]+"--_7>"+d1[i][7]+"--_8>"+d1[i][8]+"--_9>"+d1[i][9]+"--_10>"+d1[i][10]+"--_11>"+d1[i][11]+"--_12>"+d1[i][12]);
+    for (var i = 0; i < d1.length; i++) {
+         alert("i_C:"+i+" lenght: "+d1.length+" id_0>"+d1[i][0]+"--_1>"+d1[i][1]+"--_2>"+d1[i][2]+"--_3>"+d1[i][3]+"--_4>"+d1[i][4]+"--_5>"+d1[i][5]+"--_6>"+d1[i][6]+"--_7>"+d1[i][7]+"--_8>"+d1[i][8]+"--_9>"+d1[i][9]+"--_10>"+d1[i][10]+"--_11>"+d1[i][11]+"--_12>"+d1[i][12]);
         // alert(d1[i][1]);
         // alert(d1[i][2]);
         // alert(d1[i][3]);
@@ -152,7 +152,8 @@ function insertDB_cliente(tx) {
         // alert(d1[i][12]); 
         // tx.executeSql('INSERT INTO CLIENTE (CodCliente,Nombre,RazonSocial,Direccion,Nit,NroTelefono1,NroTelefono2,CodZona,DesZona,CodPersonal,DesPersonal,CodRuta,DesRuta) VALUES ('+d1[i][0]+',"'+d1[i][1]+'","'+d1[i][2]+'","'+d1[i][3]+'","'+d1[i][4]+'",'+d1[i][5]+','+d1[i][6]+','+d1[i][7]+',"'+d1[i][8]+'",'+d1[i][9]+',"'+d1[i][10]+'","'+d1[i][11]+'","'+d1[i][12]+'")');
         
-        // tx.executeSql('INSERT INTO CLIENTE (CodCliente,Nombre,RazonSocial,Direccion,Nit,NroTelefono1,NroTelefono2,CodZona,DesZona,CodPersonal,DesPersonal,CodRuta,DesRuta) VALUES ('+d1[j][0]+',"'+d1[j][1]+'","'+d1[j][2]+'","'+d1[j][3]+'","'+d1[j][4]+'",'+d1[j][5]+','+d1[j][6]+','+d1[j][7]+',"'+d1[j][8]+'",'+d1[j][9]+',"'+d1[j][10]+'","'+d1[j][11]+'","'+d1[j][12]+'")');
+        tx.executeSql('INSERT INTO CLIENTE (CodCliente,Nombre,RazonSocial,Direccion,Nit,NroTelefono1,NroTelefono2,CodZona,DesZona,CodPersonal,DesPersonal,CodRuta,DesRuta) VALUES ('+d1[i][0]+',"'+d1[i][1]+'","'+d1[i][2]+'","'+d1[i][3]+'","'+d1[i][4]+'",'+d1[i][5]+','+d1[i][6]+','+d1[i][7]+',"'+d1[i][8]+'",'+d1[i][9]+',"'+d1[i][10]+'","'+d1[i][11]+'","'+d1[i][12]+'")');
+        // tx.executeSql('INSERT INTO CLIENTE (CodCliente) VALUES ('+d1[i][0]+')');
         // var auxiliar=$("#query2").val();
         // tx.executeSql(auxiliar,[d1[i][0]]);
         // CodCliente INTEGER,Nombre TEXT,RazonSocial TEXT,Direccion TEXT,Nit TEXT,NroTelefono1 INTEGER,NroTelefono2 INTEGER,CodZona INTEGER,DesZona TEXT,CodPersonal INTEGER,DesPersonal TEXT,CodRuta TEXT,DesRuta TEXT)
