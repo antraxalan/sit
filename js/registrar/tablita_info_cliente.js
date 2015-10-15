@@ -85,10 +85,10 @@ function querySuccess_tablita(tx, results) {
         // alert("Nombre:"+results.rows.item(i).CajaLitro);
 
     alert("guardando "+i); 
-        var_SaldoBs=results.rows.item(i).SaldoBs);
-        var_CajaPac=results.rows.item(i).CajaPac);
-        var_CajaHuari=results.rows.item(i).CajaHuari);
-        var_CajaLitro=results.rows.item(i).CajaLitro);
+        var_SaldoBs=results.rows.item(i).SaldoBs;
+        var_CajaPac=results.rows.item(i).CajaPac;
+        var_CajaHuari=results.rows.item(i).CajaHuari;
+        var_CajaLitro=results.rows.item(i).CajaLitro;
 
 
 alert("SaldoBs"+var_SaldoBs);
@@ -109,27 +109,27 @@ alert("CajaLitro"+var_CajaLitro);
 
     // var num=16;
     alert("llenando a div los valores SaldoBs:"+ var_SaldoBs+" CajaPac:"+var_CajaPac+" CajaHuari:"+var_CajaHuari+" CajaLitro:"+var_CajaLitro); 
-    // var mydata = [
-    // {"Saldo":SaldoBs, "Pac":CajaPac, "Huari":CajaHuari, "Litro":CajaLitro}
-    // ];
+    var mydata = [
+    {"Saldo":SaldoBs, "Pac":CajaPac, "Huari":CajaHuari, "Litro":CajaLitro}
+    ];
 
-    // $( '.tablita_info_cliente' ).html( "<table class='tablesaw' data-tablesaw-mode='swipe' id='tablita_registrar'><thead><tr><th scope='col'>Saldo</th><th scope='col'>Pac</th><th scope='col'>Huari</th><th scope='col'>Litro</th></tr></thead><tbody></tbody></table>" );
+    $( '.tablita_info_cliente' ).html( "<table class='tablesaw' data-tablesaw-mode='swipe' id='tablita_registrar'><thead><tr><th scope='col'>Saldo</th><th scope='col'>Pac</th><th scope='col'>Huari</th><th scope='col'>Litro</th></tr></thead><tbody></tbody></table>" );
 
-    // var tbody = $( '#tablita_registrar tbody' ), props = ["Saldo","Pac","Huari","Litro"];
+    var tbody = $( '#tablita_registrar tbody' ), props = ["Saldo","Pac","Huari","Litro"];
 
-    // $.each( mydata, function(i, value){
-    //     var tr = $('<tr>');
+    $.each( mydata, function(i, value){
+        var tr = $('<tr>');
 
-    //     $.each(props, function(i, prop){
-    //         $('<td>').html(value[prop]).appendTo(tr); 
-    //     });
+        $.each(props, function(i, prop){
+            $('<td>').html(value[prop]).appendTo(tr); 
+        });
 
-    //     tbody.append(tr);
-    // });
+        tbody.append(tr);
+    });
 
-    // // $('#tablita_registrar').table().data( "table" ).refresh();
+    // $('#tablita_registrar').table().data( "table" ).refresh();
 
-    // $('#tablita_registrar').trigger('create');
+    $('#tablita_registrar').trigger('create');
 
 
 
