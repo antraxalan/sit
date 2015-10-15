@@ -85,10 +85,10 @@ function querySuccess_tablita(tx, results) {
         // alert("Nombre:"+results.rows.item(i).CajaLitro);
 
     alert("guardando "+i); 
-        SaldoBs=results.rows.item(i).SaldoBs);
-        CajaPac=results.rows.item(i).CajaPac);
-        CajaHuari=results.rows.item(i).CajaHuari);
-        CajaLitro=results.rows.item(i).CajaLitro);
+        // SaldoBs=results.rows.item(i).SaldoBs);
+        // CajaPac=results.rows.item(i).CajaPac);
+        // CajaHuari=results.rows.item(i).CajaHuari);
+        // CajaLitro=results.rows.item(i).CajaLitro);
 
         // alert("debe_db:"+results.rows.item(i).debe);
         // alert("haber_db:"+results.rows.item(i).haber);
@@ -102,28 +102,28 @@ function querySuccess_tablita(tx, results) {
     }
 
     // var num=16;
-    alert("llenando a div los valores SaldoBs:"+ SaldoBs+" CajaPac:"+CajaPac+" CajaHuari:"+CajaHuari+" CajaLitro:"+CajaLitro); 
-    var mydata = [
-    {"Saldo":SaldoBs, "Pac":CajaPac, "Huari":CajaHuari, "Litro":CajaLitro}
-    ];
+    // alert("llenando a div los valores SaldoBs:"+ SaldoBs+" CajaPac:"+CajaPac+" CajaHuari:"+CajaHuari+" CajaLitro:"+CajaLitro); 
+    // var mydata = [
+    // {"Saldo":SaldoBs, "Pac":CajaPac, "Huari":CajaHuari, "Litro":CajaLitro}
+    // ];
 
-    $( '.tablita_info_cliente' ).html( "<table class='tablesaw' data-tablesaw-mode='swipe' id='tablita_registrar'><thead><tr><th scope='col'>Saldo</th><th scope='col'>Pac</th><th scope='col'>Huari</th><th scope='col'>Litro</th></tr></thead><tbody></tbody></table>" );
+    // $( '.tablita_info_cliente' ).html( "<table class='tablesaw' data-tablesaw-mode='swipe' id='tablita_registrar'><thead><tr><th scope='col'>Saldo</th><th scope='col'>Pac</th><th scope='col'>Huari</th><th scope='col'>Litro</th></tr></thead><tbody></tbody></table>" );
 
-    var tbody = $( '#tablita_registrar tbody' ), props = ["Saldo","Pac","Huari","Litro"];
+    // var tbody = $( '#tablita_registrar tbody' ), props = ["Saldo","Pac","Huari","Litro"];
 
-    $.each( mydata, function(i, value){
-        var tr = $('<tr>');
+    // $.each( mydata, function(i, value){
+    //     var tr = $('<tr>');
 
-        $.each(props, function(i, prop){
-            $('<td>').html(value[prop]).appendTo(tr); 
-        });
+    //     $.each(props, function(i, prop){
+    //         $('<td>').html(value[prop]).appendTo(tr); 
+    //     });
 
-        tbody.append(tr);
-    });
+    //     tbody.append(tr);
+    // });
 
-    // $('#tablita_registrar').table().data( "table" ).refresh();
+    // // $('#tablita_registrar').table().data( "table" ).refresh();
 
-    $('#tablita_registrar').trigger('create');
+    // $('#tablita_registrar').trigger('create');
 
 
 
