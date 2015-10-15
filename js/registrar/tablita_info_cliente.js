@@ -60,8 +60,16 @@ function queryDB_tablita(tx) {
 
     
 // tx.transaction('select a.codcliente,Nombre, sum(debe-haber) SaldoBs from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1400 and a.codcliente=? group by a.codcliente,nombre',[id_cliente_tablita], querySuccess_tablita, errorCB_tablita);
-var query=$("#query").val();
+// var query=$("#query").val();
+// query='select a.codcliente,b.Nombre, a.debe, a.haber from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1400 and a.codcliente=?';
+query='select codcliente,nombre, sum(SaldoBs) SaldoBs,sum(CajaPac) CajaPac,sum(CajaHuari) CajaHuari,sum(cajaLitro) CajaLitro from (select a.codcliente codcliente,Nombre, sum(debe-haber) SaldoBs, 0 CajaPac,0 CajaHuari, 0 CajaLitro from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1400 and a.codcliente=? group by a.codcliente,nombre UNION select a.codcliente codcliente,Nombre, 0 SaldoBs, sum(dcajas-hcajas) CajaPac,0 CajaHuari, 0 CajaLitro from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1600 and codart in (4020,4029) and a.codcliente=? group by a.codcliente,nombre UNION select a.codcliente codcliente,Nombre, 0 SaldoBs, 0 CajaPac,sum(dcajas-hcajas) CajaHuari, 0 CajaLitro from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1600 and codart in (4079) and a.codcliente=? group by a.codcliente,nombre UNION select a.codcliente codcliente,Nombre, 0 SaldoBs, 0 CajaPac,0 CajaHuari, sum(dcajas-hcajas) CajaLitro from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1600 and codart in (4010,4011) and a.codcliente=? group by a.codcliente,nombre ) Temp group by codcliente,nombre';
 tx.executeSql(query,[id_cliente_tablita], querySuccess_tablita, errorCB_tablita);
+
+
+
+
+
+
 
 // tx.executeSql('select * from DETALLE',[], querySuccess_tablita, errorCB_tablita);
 
@@ -79,32 +87,33 @@ function querySuccess_tablita(tx, results) {
     // var CajaPac     =0;
     // var CajaHuari   =0;
     // var CajaLitro   =0;
-    var debe=0;
-    var haber=0;
+    // var debe=0;
+    // var haber=0;
     // alert("item:"+results.rows.item); 
     // alert("iten(1):"+results.rows.item(0)); 
     for (var i = 0; i < len; i++) {
-        alert("debe:"+results.rows.item(i).debe);
-        alert("Debe:"+results.rows.item(i).Debe);
-        alert("Haber:"+results.rows.item(i).Haber);
-        alert("CodCliente:"+results.rows.item(i).CodCliente);
-        alert("Nombre:"+results.rows.item(i).Nombre);
+        alert("debe:"+results.rows.item(i).codcliente);
+        alert("Debe:"+results.rows.item(i).nombre);
+        alert("Haber:"+results.rows.item(i).SaldoBs);
+        alert("CodCliente:"+results.rows.item(i).CajaPac);
+        alert("Nombre:"+results.rows.item(i).CajaHuari);
+        alert("Nombre:"+results.rows.item(i).CajaLitro);
         // alert("debe_db:"+results.rows.item(i).debe);
         // alert("haber_db:"+results.rows.item(i).haber);
         // alert(result.rows.item(i).codcliente);
         // alert(result.rows.item(i).Nombre);
         // alert(result.rows.item(i).debe);
         // alert(result.rows.item(i).haber );
-        debe     =results.rows.item(i).debe+debe;
-        haber    =results.rows.item(i).haber+haber;
+        // debe     =results.rows.item(i).debe+debe;
+        // haber    =results.rows.item(i).haber+haber;
 
     }
 
     // alert(results.rows.item(0));
     SaldoBs=debe-haber;
-    alert(SaldoBs);
-    alert(debe);
-    alert(haber);
+    // alert(SaldoBs);
+    // alert(debe);
+    // alert(haber);
     // alert(SaldoBs);
     // alert(debe);
     // alert(haber);
