@@ -129,7 +129,7 @@ function insertDB_articulo(tx) {
 
 function call_insert_db_cliente(data) {
     data_db_cliente=data;
-    // alert(data);
+    alert(data);
     db.transaction(insertDB_cliente, errorCB1_carg2);
 };
 
