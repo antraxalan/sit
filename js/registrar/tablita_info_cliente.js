@@ -42,7 +42,7 @@ function cargar_info_cliente_html( id_cli ) {
 }
 function queryDB_info_tablita() {
     alert("queryDB_info_tablita");
-    db.transaction(queryDB_tablita, errorCB_tablita2);
+    db.transaction(queryDB_tablita);
 
 }
 function queryDB_tablita(tx) {
@@ -50,7 +50,7 @@ function queryDB_tablita(tx) {
     var query=$("#query").val();
     // query='select a.codcliente,b.Nombre, a.debe, a.haber from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1400 and a.codcliente=?';
     // query='select codcliente,nombre, sum(SaldoBs) SaldoBs,sum(CajaPac) CajaPac,sum(CajaHuari) CajaHuari,sum(cajaLitro) CajaLitro from (select a.codcliente codcliente,Nombre, sum(debe-haber) SaldoBs, 0 CajaPac,0 CajaHuari, 0 CajaLitro from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1400 and a.codcliente=? group by a.codcliente,nombre UNION select a.codcliente codcliente,Nombre, 0 SaldoBs, sum(dcajas-hcajas) CajaPac,0 CajaHuari, 0 CajaLitro from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1600 and codart in (4020,4029) and a.codcliente=? group by a.codcliente,nombre UNION select a.codcliente codcliente,Nombre, 0 SaldoBs, 0 CajaPac,sum(dcajas-hcajas) CajaHuari, 0 CajaLitro from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1600 and codart in (4079) and a.codcliente=? group by a.codcliente,nombre UNION select a.codcliente codcliente,Nombre, 0 SaldoBs, 0 CajaPac,0 CajaHuari, sum(dcajas-hcajas) CajaLitro from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1600 and codart in (4010,4011) and a.codcliente=? group by a.codcliente,nombre ) group by codcliente,nombre';
-    tx.executeSql(query,[id_cliente_tablita,id_cliente_tablita,id_cliente_tablita,id_cliente_tablita], querySuccess_tablita);
+    tx.executeSql(query,[id_cliente_tablita,id_cliente_tablita,id_cliente_tablita,id_cliente_tablita], querySuccess_tablita, errorCB_tablita2);
     // tx.executeSql('select * from DETALLE',[], querySuccess_tablita, errorCB_tablita);
 
 }
