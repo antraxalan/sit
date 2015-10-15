@@ -85,10 +85,16 @@ function querySuccess_tablita(tx, results) {
         // alert("Nombre:"+results.rows.item(i).CajaLitro);
 
     alert("guardando "+i); 
-        // SaldoBs=results.rows.item(i).SaldoBs);
-        // CajaPac=results.rows.item(i).CajaPac);
-        // CajaHuari=results.rows.item(i).CajaHuari);
-        // CajaLitro=results.rows.item(i).CajaLitro);
+        SaldoBs=results.rows.item(i).SaldoBs);
+        CajaPac=results.rows.item(i).CajaPac);
+        CajaHuari=results.rows.item(i).CajaHuari);
+        CajaLitro=results.rows.item(i).CajaLitro);
+
+
+alert("SaldoBs"+SaldoBs);
+alert("CajaPac"+CajaPac);
+alert("CajaHuari"+CajaHuari);
+alert("CajaLitro"+CajaLitro);
 
         // alert("debe_db:"+results.rows.item(i).debe);
         // alert("haber_db:"+results.rows.item(i).haber);
