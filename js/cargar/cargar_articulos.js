@@ -119,6 +119,7 @@ function insertDB_articulo(tx) {
         tx.executeSql('INSERT INTO ARTICULO (CodMarca,DesMarca,CodArt,DesArt,DesArtReducido,Calibre,TipoArticulo,CantxEmpaque,PrecioCompra,PrecioVtaMin,PrecioVtaMax,CodBotella,DesBotella,PVtaMinBot,CodCaja,DesCaja,PVtaMinCaja,PVtaMaxCaja,Estado) VALUES ('+d1[i][0]+',"'+d1[i][1]+'",'+d1[i][2]+',"'+d1[i][3]+'","'+d1[i][4]+'",'+d1[i][5]+',"'+d1[i][6]+'",'+d1[i][7]+','+d1[i][8]+','+d1[i][9]+','+d1[i][10]+','+d1[i][11]+',"'+d1[i][12]+'",'+d1[i][13]+','+d1[i][14]+',"'+d1[i][15]+'",'+d1[i][16]+','+d1[i][17]+',"'+d1[i][18]+'")');
     };
   alert("art i:"+i+" lenght:"+d1.length);
+  
     // alert("carga articulo finalizada");
     // localStorage.g_username = codigo_usuario;
     // localStorage.g_password = password_usuario;
@@ -129,7 +130,7 @@ function insertDB_articulo(tx) {
 
 function call_insert_db_cliente(data) {
     data_db_cliente=data;
-    alert(data);
+    // alert(data);
     db.transaction(insertDB_cliente, errorCB1_carg2);
 };
 
@@ -162,8 +163,8 @@ function insertDB_cliente(tx) {
         // var auxiliar=$("#query2").val();
         // tx.executeSql(auxiliar,[d1[i][0]]);
         // CodCliente INTEGER,Nombre TEXT,RazonSocial TEXT,Direccion TEXT,Nit TEXT,NroTelefono1 INTEGER,NroTelefono2 INTEGER,CodZona INTEGER,DesZona TEXT,CodPersonal INTEGER,DesPersonal TEXT,CodRuta TEXT,DesRuta TEXT)
-        alert("cliente i:"+i+" lenght:"+d1.length);
     };
+    alert("cliente i:"+i+" lenght:"+d1.length);
 
         // alert("carga cliente finalizada");
 };

@@ -84,6 +84,11 @@ function querySuccess_tablita(tx, results) {
     // alert("item:"+results.rows.item); 
     // alert("iten(1):"+results.rows.item(0)); 
     for (var i = 0; i < len; i++) {
+        alert("debe:"+results.rows.item(i).debe);
+        alert("Debe:"+results.rows.item(i).Debe);
+        alert("Haber:"+results.rows.item(i).Haber);
+        alert("CodCliente:"+results.rows.item(i).CodCliente);
+        alert("Nombre:"+results.rows.item(i).Nombre);
         // alert("debe_db:"+results.rows.item(i).debe);
         // alert("haber_db:"+results.rows.item(i).haber);
         // alert(result.rows.item(i).codcliente);
