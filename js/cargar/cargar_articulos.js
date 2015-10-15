@@ -135,9 +135,9 @@ function call_insert_db_cliente(data) {
 
 function insertDB_cliente(tx) {
     var d1=data_db_cliente;
-  alert("lenght:"+d1.length);
-    for (var j = 0; j < d1.length-1; j++) {
-        // alert(d1[j][0]);
+  // alert("lenght:"+d1.length);
+    for (var j = 0; j < d1.length; j++) {
+         alert("j:"+j+" lenght: "+d1.length+" id:"+d1[j][0]);
         // alert(d1[i][1]);
         // alert(d1[i][2]);
         // alert(d1[i][3]);
