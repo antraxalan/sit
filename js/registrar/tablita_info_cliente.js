@@ -70,7 +70,12 @@ function querySuccess_tablita(tx, results) {
     // var debe=0;
     // var haber=0;
     // alert("item:"+results.rows.item); 
-    // alert("iten(1):"+results.rows.item(0)); 
+    // alert("iten(1):"+results.rows.item(0));
+    alert("succes query"); 
+    var SaldoBs;
+    var CajaPac;
+    var CajaHuari;
+    var CajaLitro;
     for (var i = 0; i < len; i++) {
         // alert("SaldoBs:"+results.rows.item(i).SaldoBs);
         // alert("CajaPac:"+results.rows.item(i).CajaPac);
@@ -79,10 +84,11 @@ function querySuccess_tablita(tx, results) {
         // alert("Nombre:"+results.rows.item(i).CajaHuari);
         // alert("Nombre:"+results.rows.item(i).CajaLitro);
 
-        var SaldoBs=results.rows.item(i).SaldoBs);
-        var CajaPac=results.rows.item(i).CajaPac);
-        var CajaHuari=results.rows.item(i).CajaHuari);
-        var CajaLitro=results.rows.item(i).CajaLitro);
+    alert("guardando "+i); 
+        SaldoBs=results.rows.item(i).SaldoBs);
+        CajaPac=results.rows.item(i).CajaPac);
+        CajaHuari=results.rows.item(i).CajaHuari);
+        CajaLitro=results.rows.item(i).CajaLitro);
 
         // alert("debe_db:"+results.rows.item(i).debe);
         // alert("haber_db:"+results.rows.item(i).haber);
@@ -96,6 +102,7 @@ function querySuccess_tablita(tx, results) {
     }
 
     // var num=16;
+    alert("llenando a div los valores SaldoBs:"+ SaldoBs+" CajaPac:"+CajaPac+" CajaHuari:"+CajaHuari+" CajaLitro:"+CajaLitro); 
     var mydata = [
     {"Saldo":SaldoBs, "Pac":CajaPac, "Huari":CajaHuari, "Litro":CajaLitro}
     ];
@@ -115,6 +122,7 @@ function querySuccess_tablita(tx, results) {
     });
 
     // $('#tablita_registrar').table().data( "table" ).refresh();
+
     $('#tablita_registrar').trigger('create');
 
 
@@ -124,7 +132,7 @@ function querySuccess_tablita(tx, results) {
 
 
     // alert(results.rows.item(0));
-    
+
     // SaldoBs=debe-haber;
 
     // alert(SaldoBs);
