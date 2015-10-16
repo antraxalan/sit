@@ -58,6 +58,9 @@
     <script type="text/javascript" src="js/cargar/select_cli_mar.js"></script>
     <script type="text/javascript" src="js/select_plus_filter.js"></script>
     <script type="text/javascript" src="js/registrar/tablita_info_cliente.js"></script>
+
+    <script type="text/javascript" src="js/jquery.showpassword.js"></script>
+
     <title>SITRANS</title>
   </head>
   <body>
@@ -67,12 +70,12 @@
       <input class="direccion" value="192.168.0.114" placeholder="direccion" type="hidden" />
 
 
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+      <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+      <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+      <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+      <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+      <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+      <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
 
 
@@ -93,7 +96,7 @@
             <form class="ui">
               <img src="img/logo_s.jpg" alt="image" style="width:100%; margin-top: 10px; margin-bottom: 10px; ">
               <div class="ui-grid-solo" >
-                <div class="ui-block-a"><button type="button" class="big_button registrar blue_btn">Datos Cliente</button></div>
+                <div class="ui-block-a"><a href="#db_llena"><button type="button" class="big_button registrar blue_btn">Datos Cliente</button></a></div>
                 <!-- <div class="ui-block-a"><button type="button" class="big_button read">read_txt2</button></div> -->
               </div>
               <div class="ui-grid-a" >
@@ -103,7 +106,7 @@
               <!-- <textarea cols="40" rows="8" name="textarea" id="query2">INSERT INTO CLIENTE (CodCliente,Nombre,RazonSocial,Direccion,Nit,NroTelefono1,NroTelefono2,CodZona,DesZona,CodPersonal,DesPersonal,CodRuta,DesRuta) VALUES (?)</textarea>  -->
 
               
-             <!--  <textarea cols="40" rows="8" name="textarea" id="query2">INSERT INTO CLIENTE (CodCliente,Nombre,RazonSocial,Direccion,Nit,NroTelefono1,NroTelefono2,CodZona,DesZona,CodPersonal,DesPersonal,CodRuta,DesRuta) VALUES ('+d1[i][0]+',"'+d1[i][1]+'","'+d1[i][2]+'","'+d1[i][3]+'","'+d1[i][4]+'",'+d1[i][5]+','+d1[i][6]+','+d1[i][7]+',"'+d1[i][8]+'",'+d1[i][9]+',"'+d1[i][10]+'","'+d1[i][11]+'","'+d1[i][12]+'")</textarea> -->
+              <!--  <textarea cols="40" rows="8" name="textarea" id="query2">INSERT INTO CLIENTE (CodCliente,Nombre,RazonSocial,Direccion,Nit,NroTelefono1,NroTelefono2,CodZona,DesZona,CodPersonal,DesPersonal,CodRuta,DesRuta) VALUES ('+d1[i][0]+',"'+d1[i][1]+'","'+d1[i][2]+'","'+d1[i][3]+'","'+d1[i][4]+'",'+d1[i][5]+','+d1[i][6]+','+d1[i][7]+',"'+d1[i][8]+'",'+d1[i][9]+',"'+d1[i][10]+'","'+d1[i][11]+'","'+d1[i][12]+'")</textarea> -->
               <div class="ui-grid-solo" >
                 <div class="ui-block-a"><button type="button" class="big_button info blue_btn">Informacion General</button></div>
               </div>
@@ -119,7 +122,10 @@
                 <label for="textinput-f">Código de usuario:</label>
                 <input id="cod_usuario" placeholder="Código"/>
                 <label for="textinput-f">Contraseña de usuario:</label>
-                <input id="pass_usuario" type="password" placeholder="Contraseña"/>
+                <!-- <input id="pass_usuario" type="password" placeholder="Contraseña"/> -->
+                <input id="pass_usuario" type="password" data-typetoggle='#show-password' class="input" placeholder="Contraseña"/>
+                <label ><input id="show-password" type="checkbox" />Ver Contraseña</label>
+                <hr>
                 <button type="button" class="ui-btn ui-corner-all ui-shadow guardar_cod_usuario">Guardar</button>
                 <button type="button" class="ui-btn ui-btn-b ui-corner-all ui-shadow cerrar_cod_usuario">Cerrar Sesion</button>
 
@@ -141,12 +147,12 @@
 
 
 
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+      <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+      <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+      <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+      <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+      <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+      <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
 
 
@@ -414,8 +420,8 @@
             <textarea cols="40" rows="8" name="textarea" id="obs"></textarea>
           </div>
 
-           <div  class=" tablita_info_cliente">
-           
+          <div  class=" tablita_info_cliente">
+
           </div>
         <!-- <div class="ui-field-contain">
           <input type="submit" id="submit-1" class="ui-btn ui-corner-all " value="Detalles">
@@ -1233,14 +1239,17 @@
     carga_db_crear();
     carga_exit();
     // carga_exit();
-    cargar_select_cliente();
-    cargar_select_marca();
+    $('#pass_usuario').showPassword();
     $("#cod_usuario").val(localStorage.g_username);
     if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
       // alert('oculta:'+localStorage.g_existe);
       // debe_completar();
       $('.cerrar_cod_usuario').hide();
     }else{
+      if(localStorage.db_cargada=='1'){
+        cargar_select_cliente();
+        cargar_select_marca();
+      }
       // alert('muestra:'+localStorage.g_existe);
     }
 
@@ -1271,15 +1280,35 @@
       
     });
 
-
-    $('.registrar').click(function() {
-
+    $('.reemplazar').click(function() {
       if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
         $( "#panel-overlay" ).panel( "open" );
         $("#cod_usuario").focus();
       }else{
-        window.location.href = "index.html#registrar";
+        if(localStorage.db_cargada=='1'){
+          window.location.href = "index.html#registrar";
+        }else{
+          alert("No existen datos cargados.");
+        }
       }
+    });
+
+    $('.registrar').click(function() {
+
+      navigator.notification.confirm(
+        "<h2>Desea reemplazar su información</h2>.<br>La informacion no podra ser recuperada.", 
+        function(buttonIndex){
+         if(buttonIndex == "1"){
+          alert("1");
+           // navigator.app.exitApp();
+         }else{
+          return;
+        }
+      }, 
+      "Confirmación", 
+      "Si,No"
+      ); 
+      
     });
 
     $('.cargar').click(function() {
@@ -1290,27 +1319,13 @@
       $.mobile.loading("show", {
         theme: 'a'
       });
-      // alert("comienza carga");
-      verificar_usuario()
+      if(localStorage.db_cargada=='1'){
+        verificar_usuario()
+      }else{
 
-      // var var1= $(".var1").val();
-      // var direccion= $(".direccion").val();
-      // $.ajax({
-      //   type: 'POST',
-      //   dataType: 'json',
-      //   url: "http://"+direccion+"/sitrans_server/sitrans.php",
-      //   data: "var1=" + var1,
-      //   success: function (resp) {
-      //     $.mobile.loading("hide");
-      //     alert(resp);
-      //   },
-      //   error: function (e) {
-      //     $.mobile.loading("hide");
-      //     alert("No se encuentra conectado a su red.");
-      //   }
-      // });
-  }
-});
+      }
+    }
+  });
 
     $('.finalizar').click(function() {
      if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){

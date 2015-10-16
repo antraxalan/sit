@@ -201,6 +201,7 @@ function errorCB1_carg3(err) {
 
 function success_reload() {
     alert("Datos cargados");
+    localStorage.db_cargada = 1;
     // location.reload();
 }
 
