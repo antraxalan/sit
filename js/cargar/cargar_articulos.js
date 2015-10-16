@@ -54,7 +54,7 @@ function subir_db_cliente() {
       $.mobile.loading("hide");
   }
 });
-  
+
 };
 function subir_db_detalle() {
   var direccion= $(".direccion").val();
@@ -202,6 +202,7 @@ function errorCB1_carg3(err) {
 function success_reload() {
     localStorage.db_cargada = 1;
     // location.reload();
+    $(".registrar").attr("disabled", "disabled");
     navigator.notification.vibrate(1000);
     navigator.notification.beep(1);
     setTimeout(function(){ location.reload(); }, 1000);
