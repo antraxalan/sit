@@ -1319,14 +1319,16 @@
       if(localStorage.db_cargada=='0'||(typeof localStorage.db_cargada === 'undefined')){
         verificar_usuario();
       }else{
+        navigator.notification.vibrate(500);
+        navigator.notification.beep(1);
+        navigator.notification.vibrate(500);
         navigator.notification.confirm(
-          "Desea reemplazar su información?\n La informacion no podra ser recuperada.", 
+          "Desea reemplazar la información existente?\n\nEsta no podra ser recuperada.", 
           function(buttonIndex){
            if(buttonIndex == "1"){
             verificar_usuario();
-
-
           }else{
+            $.mobile.loading("hide");
             return;
           }
         }, 
@@ -1352,9 +1354,11 @@
       $("#panel-overlay").panel("open");
       $("#cod_usuario").focus();
     }else{
-      window.location.href = "info.html";
-
-
+      if(localStorage.db_cargada=='1'){
+          window.location.href = "info.html";
+        }else{
+          alert("No existen datos cargados.");
+        }
     }
   });
 

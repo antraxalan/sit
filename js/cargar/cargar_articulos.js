@@ -203,6 +203,9 @@ function success_reload() {
     alert("Datos cargados");
     localStorage.db_cargada = 1;
     // location.reload();
+    $.mobile.loading("hide");
+    navigator.notification.vibrate(1000);
+    setTimeout(function(){ location.reload(); }, 3000);
 }
 
 
@@ -231,7 +234,7 @@ function verificar_usuario() {
             subir_db_detalle();
             // alert("subir_db_detalle realizado");
             // alert("realizado");
-            $.mobile.loading("hide");
+            // $.mobile.loading("hide");
             // alert("Carga exitosa.");
         }else{
             $.mobile.loading("hide");
