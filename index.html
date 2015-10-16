@@ -1295,19 +1295,16 @@
 
     $('.registrar').click(function() {
 
-      navigator.notification.confirm(
-        "<h2>Desea reemplazar su información</h2>.<br>La informacion no podra ser recuperada.", 
-        function(buttonIndex){
-         if(buttonIndex == "1"){
-          alert("1");
-           // navigator.app.exitApp();
-         }else{
-          return;
+      if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
+        $( "#panel-overlay" ).panel( "open" );
+        $("#cod_usuario").focus();
+      }else{
+        if(localStorage.db_cargada=='1'){
+          window.location.href = "index.html#registrar";
+        }else{
+          alert("No existen datos cargados.");
         }
-      }, 
-      "Confirmación", 
-      "Si,No"
-      ); 
+      }
       
     });
 
@@ -1319,10 +1316,23 @@
       $.mobile.loading("show", {
         theme: 'a'
       });
-      if(localStorage.db_cargada=='1'){
-        verificar_usuario()
+      if(localStorage.db_cargada=='0'||(typeof localStorage.db_cargada === 'undefined')){
+        verificar_usuario();
       }else{
+        navigator.notification.confirm(
+          "Desea reemplazar su información?\n La informacion no podra ser recuperada.", 
+          function(buttonIndex){
+           if(buttonIndex == "1"){
+            verificar_usuario();
 
+
+          }else{
+            return;
+          }
+        }, 
+        "Confirmación", 
+        "Si,No"
+        );
       }
     }
   });
