@@ -398,7 +398,7 @@
              </select>
              <!-- </div> -->
            </div>
-          <!--  <div data-role="fieldcontain" class="ui-field-contain">
+           <div data-role="fieldcontain" class="ui-field-contain">
             <fieldset data-role="controlgroup" data-type="horizontal">
               <legend>Tipo:</legend>
               <label for="cont">Contado</label>
@@ -410,7 +410,7 @@
           <div data-role="fieldcontain" class="ui-field-contain vencimiento">               
             <label for="date">Fecha Vto:</label>
             <input name="mydate" id="fecha2" type="date" data-role="date" data-date-format="dd-mm-yyyy"/>
-          </div>    --> 
+          </div>    
          <!--  <div data-role="fieldcontain" class="ui-field-contain">
             <label for="textarea">query:</label>
             <textarea cols="40" rows="8" name="textarea" id="query">select codcliente,nombre, sum(SaldoBs) SaldoBs,sum(CajaPac) CajaPac,sum(CajaHuari) CajaHuari,sum(cajaLitro) CajaLitro from (select a.codcliente codcliente,Nombre, sum(debe-haber) SaldoBs, 0 CajaPac,0 CajaHuari, 0 CajaLitro from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1400 and a.codcliente=? group by a.codcliente,nombre UNION select a.codcliente codcliente,Nombre, 0 SaldoBs, sum(dcajas-hcajas) CajaPac,0 CajaHuari, 0 CajaLitro from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1600 and codart in (4020,4029) and a.codcliente=? group by a.codcliente,nombre UNION select a.codcliente codcliente,Nombre, 0 SaldoBs, 0 CajaPac,sum(dcajas-hcajas) CajaHuari, 0 CajaLitro from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1600 and codart in (4079) and a.codcliente=? group by a.codcliente,nombre UNION select a.codcliente codcliente,Nombre, 0 SaldoBs, 0 CajaPac,0 CajaHuari, sum(dcajas-hcajas) CajaLitro from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1600 and codart in (4010,4011) and a.codcliente=? group by a.codcliente,nombre ) group by codcliente,nombre</textarea>
@@ -699,36 +699,7 @@
                   <input type="text" name="precio" id="unidades_p" value="" data-clear-btn="true"/>
                 </div>
               </div>
-            </div>
-
-            <div data-role="fieldcontain" class="ui-field-contain">
-              <fieldset data-role="controlgroup" data-type="horizontal">
-                <legend>Envases</legend>
-                <label for="canje">Canje</label>
-                <input type="radio" name="deuda_envase" id="canje" value="canje" checked="checked">
-                <label for="prestamo">Prestamo</label>
-                <input type="radio" name="deuda_envase" id="prestamo" value="prestamo">
-              </fieldset>
-            </div>
-
-            <div class="ui-field-contain">
-              <label for="textarea">Precio por Caja:</label>
-              <input type="text" name="precio" id="precio_in"  data-clear-btn="true" data-toggle="tooltip" data-placement="top" title="Hooray!" alt="12345" />
-            </div>
-
-            <div data-role="fieldcontain" class="ui-field-contain">
-              <fieldset data-role="controlgroup" data-type="horizontal">
-                <legend>Tipo:</legend>
-                <label for="cont">Contado</label>
-                <input type="radio" name="tipo" id="cont" value="cont" checked="checked">
-                <label for="cred">Credito</label>
-                <input type="radio" name="tipo" id="cred" value="cred">
-              </fieldset>
-            </div>
-            <div data-role="fieldcontain" class="ui-field-contain vencimiento">               
-              <label for="date">Fecha Vto:</label>
-              <input name="mydate" id="fecha2" type="date" data-role="date" data-date-format="dd-mm-yyyy"/>
-            </div>   
+            </div>  
 
           </div>
 

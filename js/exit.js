@@ -32,6 +32,7 @@ document.addEventListener("backbutton", function(e){
 };
 
 function exitAppPopup() {
+    navigator.notification.vibrate(200);
     navigator.notification.confirm(
         "Desea cerrar la aplicación?", 
         function(buttonIndex){
