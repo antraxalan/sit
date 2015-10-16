@@ -15,7 +15,7 @@ function subir_db_articulo() {
   var password    =localStorage.g_password;
   var info='articulo';
  // alert("in subir_db_articulo."+direccion+"---"+var1);
-  $.ajax({
+ $.ajax({
     type: 'POST',
     dataType: 'json',
     url: "http://"+direccion+"/sitrans_server/sitrans.php",
@@ -54,7 +54,7 @@ function subir_db_cliente() {
       $.mobile.loading("hide");
   }
 });
- 
+  
 };
 function subir_db_detalle() {
   var direccion= $(".direccion").val();
@@ -138,10 +138,10 @@ function insertDB_cliente(tx) {
     var d1=data_db_cliente;
   // alert("lenght:"+d1.length);
   // tx.executeSql('INSERT INTO CLIENTE (CodCliente,Nombre,RazonSocial,Direccion,Nit,NroTelefono1,NroTelefono2,CodZona,DesZona,CodPersonal,DesPersonal,CodRuta,DesRuta) VALUES (100,"EVELIN  MARIA CARDENAS TROCHE           ","Restaurant Rincon Chume±o               ","Av. Jaime Zuda±es # 1310 Zona alto sopoc","2234836017",73007643,               ,201,"SOPOCACHI                                         ",1,"CENTRAL                                 ","1","SOPOCACHI                               ")');
-    for (var i = 0; i < d1.length; i++) {
-        for (var j = 0; j < 13; j++) {
-            d1[i][j]=d1[i][j].replace(/\s*$/,"");
-        }
+  for (var i = 0; i < d1.length; i++) {
+    for (var j = 0; j < 13; j++) {
+        d1[i][j]=d1[i][j].replace(/\s*$/,"");
+    }
 
          // alert("i_C:"+i+" lenght: "+d1.length+" id_0>"+d1[i][0]+"--_1>"+d1[i][1]+"--_2>"+d1[i][2]+"--_3>"+d1[i][3]+"--_4>"+d1[i][4]+"--_5>"+d1[i][5]+"--_6>"+d1[i][6]+"--_7>"+d1[i][7]+"--_8>"+d1[i][8]+"--_9>"+d1[i][9]+"--_10>"+d1[i][10]+"--_11>"+d1[i][11]+"--_12>"+d1[i][12]);
         // alert(d1[i][1]);
@@ -163,22 +163,22 @@ function insertDB_cliente(tx) {
         // var auxiliar=$("#query2").val();
         // tx.executeSql(auxiliar,[d1[i][0]]);
         // CodCliente INTEGER,Nombre TEXT,RazonSocial TEXT,Direccion TEXT,Nit TEXT,NroTelefono1 INTEGER,NroTelefono2 INTEGER,CodZona INTEGER,DesZona TEXT,CodPersonal INTEGER,DesPersonal TEXT,CodRuta TEXT,DesRuta TEXT)
-    };
+};
     // alert("cliente i:"+i+" lenght:"+d1.length);
 
         // alert("carga cliente finalizada");
-};
-function call_insert_db_detalle(data) {
-    data_db_detalle=data;
-    db.transaction(insertDB_detalle, errorCB1_carg3,success_reload);
-};
-
-function insertDB_detalle(tx) {
-    var d1=data_db_detalle;
-    for (var i = 0; i < d1.length; i++) {
-
-        tx.executeSql('INSERT INTO DETALLE (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades) VALUES ('+d1[i][0]+','+d1[i][1]+','+d1[i][2]+',"'+d1[i][3]+'","'+d1[i][4]+'",'+d1[i][5]+','+d1[i][6]+','+d1[i][7]+','+d1[i][8]+','+d1[i][9]+','+d1[i][10]+','+d1[i][11]+','+d1[i][12]+','+d1[i][13]+','+d1[i][14]+','+d1[i][15]+','+d1[i][16]+','+d1[i][17]+')');
     };
+    function call_insert_db_detalle(data) {
+        data_db_detalle=data;
+        db.transaction(insertDB_detalle, errorCB1_carg3,success_reload);
+    };
+
+    function insertDB_detalle(tx) {
+        var d1=data_db_detalle;
+        for (var i = 0; i < d1.length; i++) {
+
+            tx.executeSql('INSERT INTO DETALLE (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades) VALUES ('+d1[i][0]+','+d1[i][1]+','+d1[i][2]+',"'+d1[i][3]+'","'+d1[i][4]+'",'+d1[i][5]+','+d1[i][6]+','+d1[i][7]+','+d1[i][8]+','+d1[i][9]+','+d1[i][10]+','+d1[i][11]+','+d1[i][12]+','+d1[i][13]+','+d1[i][14]+','+d1[i][15]+','+d1[i][16]+','+d1[i][17]+')');
+        };
     // alert("detalle cargado");
     // alert("detalle i:"+i+" lenght:"+d1.length);
     // location.reload();
@@ -187,25 +187,26 @@ function insertDB_detalle(tx) {
 
 
 function errorCB_cargar(err) {
-     alert("errorCB_cargar: "+err.message);
+   alert("errorCB_cargar: "+err.message);
 }
 function errorCB1_carg1(err) {
-     alert("errorCB1_carg1--: "+err.message);
+   alert("errorCB1_carg1--: "+err.message);
 }
 function errorCB1_carg2(err) {
-     alert("errorCB1_carg2--: "+err.message);
+   alert("errorCB1_carg2--: "+err.message);
 }
 function errorCB1_carg3(err) {
-     alert("errorCB1_carg3--: "+err.message);
+   alert("errorCB1_carg3--: "+err.message);
 }
 
 function success_reload() {
-    alert("Datos cargados");
     localStorage.db_cargada = 1;
     // location.reload();
-    $.mobile.loading("hide");
     navigator.notification.vibrate(1000);
-    setTimeout(function(){ location.reload(); }, 3000);
+    navigator.notification.beep(1);
+    setTimeout(function(){ location.reload(); }, 1000);
+    alert("Datos cargados");
+    $.mobile.loading("hide");
 }
 
 

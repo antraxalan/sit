@@ -1320,8 +1320,6 @@
         verificar_usuario();
       }else{
         navigator.notification.vibrate(500);
-        navigator.notification.beep(1);
-        navigator.notification.vibrate(500);
         navigator.notification.confirm(
           "Desea reemplazar la información existente?\n\nEsta no podra ser recuperada.", 
           function(buttonIndex){
