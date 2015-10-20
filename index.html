@@ -1501,36 +1501,12 @@ $.mobile.navigate( "index.html#venta" );
      $("#old1").popup( "open" );
    });
   $('.old_next1').click(function() {
-     // $( "#old1" ).popup( "close" );
-     // alert("12123123");
-     // alert($(this).val()+"----");
-     // $( "#old2" ).popup( "open" );
-
-    //  history.back();
-    //  setTimeout(function () {
-    //   $("#old2").popup('open');
-    // }, 500);
-
-  $.mobile.switchPopup($("#old1"), $("#old2"), function(){alert("finalizado5")};)
+      //  history.back();
+      //  setTimeout(function () {
+      //   $("#old2").popup('open');
+      // }, 500);
+  $.mobile.switchPopup($("#old1"), $("#old2"), function(){alert("finalizado5")});
 });
-function finalizado(){
-  alert("finalizado3");
-}
-  // $.mobile.switchPopup = function(sourceElement, destinationElement) {
-  //   var afterClose = function() {
-  //     $("#old2").popup("open");
-  //     $("#old1").off("popupafterclose", afterClose);
-
-  //     if (onswitched && typeof onswitched === "function"){
-
-  //     }
-  //   };
-
-  //   $("#old1").on("popupafterclose", afterClose);
-  //   $("#old1").popup("close");
-  // };
-
-
 
   ////////////////fin POPOUP HISTORICO
   $('.show').click(function() {
