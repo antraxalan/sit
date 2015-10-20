@@ -83,7 +83,8 @@
       <div data-role="page" class="paginaprincipal" id="home" >
         <header data-role="header" data-position="fixed">
           <h1>CBN</h1>
-          <!-- <a href="#panel-overlay" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-gear">Opciones</a> -->
+          <!-- <a href="#panel-overlay" class="ui-btn-left ui-btn ui-btn-in
+          ui-mini ui-corner-all ui-btn-icon-right ui-icon-gear">Opciones</a> -->
           <!-- <a href="#" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-grid"></a> -->
           <a href="#panel-overlay" class="ui-btn-left ui-btn ui-icon-grid ui-btn-icon-notext ui-corner-all">Configuracion</a>
 
@@ -513,8 +514,13 @@
         <li><a href="#deuda">DEUDA ENVASES</a></li>
       </ul>
     </nav>
-    <h2>Venta</h2>
-    
+    <!-- <label>Producto: </label><h2>Venta: <h3>dsa</h3></h2> 501 - Alan -->
+    <!-- <p class="titulo_cliente"><b>VENTA: </b></p><div class="nombre_cliente">504 - Alan Aruquipa</div> -->
+    <!--     <h2>VENTA</h2> -->
+    <div class="ui-field-contain">
+      <label for="textarea" class="css_titulo"><b>Cliente:</b></label>
+      <label for="textarea" class="cliente_nombre">Id - Nombre del cliente </label>
+    </div>
     <!-- agregar -->
     <h4 class="mensaje" align="center"></h4>
     <div class="articulo">
@@ -724,11 +730,81 @@
     <!-- Finaliza agregar -->
 
     <div class="ui-grid-b">
-     <div class="ui-block-a"> </div>
-     <div class="ui-block-b"><img src="img/cart.png" height="100" width="100"/></div>
-     <div class="ui-block-c"><button type="button" class="show big_button" data-icon="plus">Agregar</button></div>
-   </div>
-   <div class="lista_carrito">
+      <div class="ui-block-a"> 
+
+        <div data-demo-html="true">
+          <button type="button" data-rel="popup" class="big_button agregar_historico" data-icon="plus">Agregar de<br>Historico</button>
+          <!-- <div id="both" data-role="popup" data-overlay-theme="b" data-theme="b" class="ui-content" data-position-to="#division_lista_botones">
+            <p>I have <code>data-theme="b"</code> and <code>data-overlay-theme="a"</code> set on me</p>
+            <br><br><br><br><br><br><br><br><br>
+          </div> -->
+          <div data-role="popup" id="old1" data-overlay-theme="b" data-theme="a" data-dismissible="true"  data-position-to="#division_lista_botones">
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+            <div data-role="header" data-theme="a">
+              <h1>Seleccione un Producto</h1>
+            </div>
+            <div role="main" class="ui-content">
+              <!-- <h3 class="ui-title">Are you sure you want to delete this page?</h3> -->
+              <p>Seleccione un producto que el cliente haya comprado anteriormente.</p>
+              <!-- <div class="productos_ya_comprados"></div> -->
+              <div data-demo-html="true">
+                <ul data-role="listview" data-inset="true">
+                  <li><a href="#" old-cod-prod="10" old-cant-caja="1" old-cant-uni="4" old-precio="101.5" class="old_next1">
+                    <img src="img/cart.png" />
+                    <h2>564 - BOCK LATA 350CC 4X6 </h2>
+                    <p>    </p></a>
+                  </li>
+                  <li><a href="#" old-cod-prod="20" old-cant-caja="2" old-cant-uni="5" old-precio="102.5" class="old_next1">
+                    <img src="img/cart.png" />
+                    <h2>510 - PILSENER T.O. 300 CC.</h2>
+                    <p>Hot Chip</p></a>
+                  </li>
+                  <li><a href="#" old-cod-prod="30" old-cant-caja="3" old-cant-uni="6" old-precio="103.5" class="old_next1">
+                    <img src="img/cart.png" />
+                    <h2>505 - HUARI 620 CC.</h2>
+                    <p>Phoenix</p></a>
+                  </li>
+                </ul>
+              </div>
+              <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a" data-rel="back">Cancel</a>
+              <!-- <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b old_next1"  >Delete</a> -->
+            </div>
+          </div>
+
+          <div data-role="popup" id="old2" data-overlay-theme="b" data-theme="a" data-dismissible="false"  data-position-to="#division_lista_botones">
+            <div data-role="header" data-theme="a">
+              <h1>Ingrese la Cantidad</h1>
+            </div>
+            <div role="main" class="ui-content">
+              <!-- <h3 class="ui-title">Are you sure you want to delete this page?</h3> -->
+              <p>Ingrese el precio y las cantidades a comprar en cajas o unidades.</p>
+              <div class="ui-field-contain">
+                <label for="textarea">Precio por caja:</label>
+                <input type="text" id="pop_precio" value="105.5" data-clear-btn="true"/>
+              </div>
+              <div class="ui-field-contain">
+                <label for="textarea">Cantidad de Cajas:</label>
+                <input type="text" id="pop_caja" value="" data-clear-btn="true"/>
+              </div>
+              <div class="ui-field-contain">
+                <label for="textarea">Cantidad de Unidades:</label>
+                <input type="text" id="pop_unidades" value="" data-clear-btn="true"/>
+              </div>
+              <div class="productos_ya_comprados"></div>
+
+              <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a" data-rel="back">Cancel</a>
+              <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back" data-transition="flow">Realizar Compra</a>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      <div class="ui-block-b"><img src="img/cart.png" height="100" width="100" style="display: block; margin-left: auto; margin-right: auto;"/></div>
+      <div class="ui-block-c"><button type="button" class="show big_button" data-icon="plus">Agregar<br>Nuevo</button></div>
+    </div>
+    <div id="division_lista_botones"></div>
+    <div class="lista_carrito asd">
      <ul data-role="listview" data-split-icon="edit" data-inset="true">
       <li>
         <a href="#">
@@ -851,7 +927,10 @@
       </ul>
     </nav>
     
-    <h2>Cobranza</h2>
+    <div class="ui-field-contain">
+      <label for="textarea" class="css_titulo"><b>Cliente:</b></label>
+      <label for="textarea" class="cliente_nombre">Id - Nombre del cliente</label>
+    </div>
 
     <h4 class="mensaje_cobranza" align="center"></h4>
     <div class="articulo_cobranza">
@@ -915,7 +994,7 @@
     <!-- Finaliza agregar -->
 
     <div class="ui-grid-b">
-     <div class="ui-block-a"> </div>
+     <div class="ui-block-a"></div>
      <div class="ui-block-b"><img src="img/bol.jpg" height="100" width="100"/></div>
      <div class="ui-block-c"><button type="button" class="show_cobranza big_button" data-icon="plus">Agregar</button></div>
    </div>
@@ -1031,7 +1110,10 @@
     <!-- Deudas -->
     <!-- <button type="button" class="ui-btn-active ui-state-persist prueba1">DEUDA ENVASES</button> -->
 
-    <h2>Deuda</h2>
+    <div class="ui-field-contain">
+      <label for="textarea" class="css_titulo"><b>Cliente:</b></label>
+      <label for="textarea" class="cliente_nombre">Id - Nombre del cliente</label>
+    </div>
 
     <h4 class="mensaje_deuda" align="center"></h4>
     <div class="articulo_deuda">
@@ -1324,10 +1406,10 @@
       $("#cod_usuario").focus();
     }else{
       if(localStorage.db_cargada=='1'){
-          window.location.href = "info.html";
-        }else{
-          alert("No existen datos cargados.");
-        }
+        window.location.href = "info.html";
+      }else{
+        alert("No existen datos cargados.");
+      }
     }
   });
 
@@ -1404,108 +1486,132 @@ $.mobile.navigate( "index.html#venta" );
    });
 
 
-    $('.show').click(function() {
-     $(".articulo").show(300);
+/////////////////////////////////////
+////////////////ini POPOUP HISTORICO
+/////////////////////////////////////
+
+$('.agregar_historico').click(function() {
+     // alert("12123123");
+     $( "#old1" ).popup( "open" );
    });
-    $('.show_cobranza').click(function() {
-     $(".articulo_cobranza").show(300);
+$('.old_next1').click(function() {
+     // $( "#old1" ).popup( "close" );
+     // alert("12123123");
+     // alert($(this).val()+"----");
+     // $( "#old2" ).popup( "open" );
+     history.back();
+     setTimeout(function () {
+      $("#old2").popup('open');
+    }, 100);
    });
-    $('.show_deuda').click(function() {
-     $(".articulo_deuda").show(300);
-   });
 
 
-    $('.guardar_venta').click(function() {
 
-     $(".articulo").hide(300);
-     $('.mensaje').html("<div style='color:green;'>GUARDADO</div>");
-     $('.mensaje').show(300);
-     setTimeout(function(){ $('.mensaje').hide(300); $('.mensaje').html(""); }, 3000);
-   }); 
+////////////////fin POPOUP HISTORICO
+$('.show').click(function() {
+ $(".articulo").show(300);
+});
+$('.show_cobranza').click(function() {
+ $(".articulo_cobranza").show(300);
+});
+$('.show_deuda').click(function() {
+ $(".articulo_deuda").show(300);
+});
 
-    $('.guardar_cobranza').click(function() {
 
-     $(".articulo_cobranza").hide(300);
-     $('.mensaje_cobranza').html("<div style='color:green;'>COBRADO</div>");
-     $('.mensaje_cobranza').show(300);
-     setTimeout(function(){ $('.mensaje_cobranza').hide(300); $('.mensaje_cobranza').html(""); }, 3000);
-   });  
-    $('.guardar_deuda').click(function() {
+$('.guardar_venta').click(function() {
 
-     $(".articulo_deuda").hide(300);
-     $('.mensaje_deuda').html("<div style='color:green;'>COBRADO</div>");
-     $('.mensaje_deuda').show(300);
-     setTimeout(function(){ $('.mensaje_deuda').hide(300); $('.mensaje_deuda').html(""); }, 3000);
-   });  
+ $(".articulo").hide(300);
+ $('.mensaje').html("<div style='color:green;'>GUARDADO</div>");
+ $('.mensaje').show(300);
+ setTimeout(function(){ $('.mensaje').hide(300); $('.mensaje').html(""); }, 3000);
+}); 
 
-    $('.cancelar_venta').click(function() {
-     $(".articulo").hide(300);
-   }); 
-    $('.cancelar_cobranza').click(function() {
-     $(".articulo_cobranza").hide(300);
-   }); 
-    $('.cancelar_deuda').click(function() {
-     $(".articulo_deuda").hide(300);
-   }); 
+$('.guardar_cobranza').click(function() {
 
-    $(".editar_venta_class").on('click', function(event) {
+ $(".articulo_cobranza").hide(300);
+ $('.mensaje_cobranza').html("<div style='color:green;'>COBRADO</div>");
+ $('.mensaje_cobranza').show(300);
+ setTimeout(function(){ $('.mensaje_cobranza').hide(300); $('.mensaje_cobranza').html(""); }, 3000);
+});  
+$('.guardar_deuda').click(function() {
 
-      $(".articulo").hide();
-      var text = $(this).parent().find('h2').text()
-      $('#titulo_popup').html(text);
-      $(".id_venta").val($(this).attr('codigo-venta'));
+ $(".articulo_deuda").hide(300);
+ $('.mensaje_deuda').html("<div style='color:green;'>COBRADO</div>");
+ $('.mensaje_deuda').show(300);
+ setTimeout(function(){ $('.mensaje_deuda').hide(300); $('.mensaje_deuda').html(""); }, 3000);
+});  
+
+$('.cancelar_venta').click(function() {
+ $(".articulo").hide(300);
+}); 
+$('.cancelar_cobranza').click(function() {
+ $(".articulo_cobranza").hide(300);
+}); 
+$('.cancelar_deuda').click(function() {
+ $(".articulo_deuda").hide(300);
+}); 
+
+$(".editar_venta_class").on('click', function(event) {
+
+  $(".articulo").hide();
+  var text = $(this).parent().find('h2').text();
+  $('#titulo_popup').html(text);
+  $(".id_venta").val($(this).attr('codigo-venta'));
       // $( "#alerta_eliminado_venta" ).popup( "close" );
     });
-    $('.eliminar_popup_venta').click(function() {
-      $('.mensaje').html("<div style='color:red;'>ELIMINADO</div>");
-      $('.mensaje').show(300);
-      setTimeout(function(){ $('.mensaje').hide(300); $('.mensaje').html(""); }, 3000);
+$('.eliminar_popup_venta').click(function() {
+  $('.mensaje').html("<div style='color:red;'>ELIMINADO</div>");
+  $('.mensaje').show(300);
+  setTimeout(function(){ $('.mensaje').hide(300); $('.mensaje').html(""); }, 3000);
 
-    }); 
-    $('.editar_popup_venta').click(function() {
-     $(".articulo").show(300);
-   }); 
-
-
-    $("input[name=tipo]:radio").bind( "change", function(event, ui) {
-      if($(this).val()=='cred'){
-        $(".vencimiento").show(200);
-      }else{
-        $(".vencimiento").hide(200);
-      }
-
-    });
-
-    $("input[name=cobranza_monto]:radio").bind( "change", function(event, ui) {
-
-      if($(this).val()=='total_cobranza'){
-        $("#a_cobrar_cobranza").val($("#saldo_cobranza").val()); 
-      }else{
-        $("#a_cobrar_cobranza").val("");
-      }
-
-    });
-
-    $("input[name=deuda_monto]:radio").bind( "change", function(event, ui) {
-      if($(this).val()=='total_deuda'){
-        $("#a_cobrar_deuda").val($("#saldo_deuda").val()); 
-      }else{
-        $("#a_cobrar_deuda").val("");
-      }
-    });
+}); 
+$('.editar_popup_venta').click(function() {
+ $(".articulo").show(300);
+}); 
 
 
-    $("#cliente").on( "change", function(event, ui) {
+$("input[name=tipo]:radio").bind( "change", function(event, ui) {
+  if($(this).val()=='cred'){
+    $(".vencimiento").show(200);
+  }else{
+    $(".vencimiento").hide(200);
+  }
+
+});
+
+$("input[name=cobranza_monto]:radio").bind( "change", function(event, ui) {
+
+  if($(this).val()=='total_cobranza'){
+    $("#a_cobrar_cobranza").val($("#saldo_cobranza").val()); 
+  }else{
+    $("#a_cobrar_cobranza").val("");
+  }
+
+});
+
+$("input[name=deuda_monto]:radio").bind( "change", function(event, ui) {
+  if($(this).val()=='total_deuda'){
+    $("#a_cobrar_deuda").val($("#saldo_deuda").val()); 
+  }else{
+    $("#a_cobrar_deuda").val("");
+  }
+});
+
+
+$("#cliente").on( "change", function(event, ui) {
       // alert($(this).val()+":1::");
       cargar_info_cliente_html($(this).val());
+      alert($( "#cliente option:selected" ).text());
+      $(".cliente_nombre").text($( "#cliente option:selected" ).text());
     });
 
-    $("#producto").bind("change", function(){
-      alert($(this).val()+":2::");
+$("#producto").bind("change", function(){
+  alert($(this).val()+":2::");
 
-    });
+});
 
-  });
+});
 
 
 
