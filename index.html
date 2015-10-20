@@ -428,56 +428,58 @@
           <input type="submit" id="submit-1" class="ui-btn ui-corner-all " value="Detalles">
           <a href="#venta" data-role="button">Detalles</a>
         </div> -->
-
-        <ul data-role="listview" data-inset="true">
-          <li class="cobranza_btn" style="display: none---;">
-            <a href="#venta">
-              <img src="img/cart.png">
-              <h2 class="green">Agregar Productos</h2>
-              <div class="ui-grid-b">
-                <div class="ui-block-a"><p>  </p></div>
-                <div class="ui-block-b"><p>  </p></div>
-                <div class="ui-block-c"><p>Ir a Venta</p></div>
-              </div>
-              <!-- <div class="ui-grid-b">
-                <div class="ui-block-a"><p>6 cajas</p></div>
-                <div class="ui-block-b"><p>2 unidades</p></div>
-                <div class="ui-block-c price"><p><strong>50.5 Bs</strong></p></div>
-              </div> -->
-            </a>
-            <!-- <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a> -->
-          </li>
-          <li class="cobranza_btn" style="display: none---;">
-            <a href="#cobranza">
-              <img src="img/bol.jpg">
-              <h2 class="red">El cliente tiene deuda económica </h2>
-              <div class="ui-grid-b">
-                <div class="ui-block-a"><p>  </p></div>
-                <div class="ui-block-b"><p>  </p></div>
-                <div class="ui-block-c"><p>Ir a Cobranza</p></div>
-              </div>
-              <!-- <div class="ui-grid-b">
-                <div class="ui-block-a"><p>6 cajas</p></div>
-                <div class="ui-block-b"><p>2 unidades</p></div>
-                <div class="ui-block-c price"><p><strong>50.5 Bs</strong></p></div>
-              </div> -->
-            </a>
-            <!-- <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a> -->
-          </li>
-          <li class="deuda_btn" style="display: none---;">
-            <a href="#deuda">
-              <img src="img/caja.jpg">
-              <h2 class="red">El cliente tiene deuda de envases</h2>
-              <!-- <p> Ir a Deuda Envases </p> -->
-              <div class="ui-grid-b">
-                <div class="ui-block-a"><p>  </p></div>
-                <div class="ui-block-b"><p>  </p></div>
-                <div class="ui-block-c"><p>Ir a Deuda Envases</p></div>
-              </div>
-            </a>
-            <!-- <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a> -->
-          </li>
-        </ul>
+        <div class="menu_v_c_d">
+          <ul data-role="listview" data-inset="true">
+            <li class="cobranza_btn" style="display: none---;">
+              <a href="#venta">
+                <img src="img/cart.png">
+                <h2 class="green">Agregar Productos</h2>
+                <div class="ui-grid-b">
+                  <div class="ui-block-a"><p>  </p></div>
+                  <div class="ui-block-b"><p>  </p></div>
+                  <div class="ui-block-c"><p>Ir a Venta</p></div>
+                </div>
+                <!-- <div class="ui-grid-b">
+                  <div class="ui-block-a"><p>6 cajas</p></div>
+                  <div class="ui-block-b"><p>2 unidades</p></div>
+                  <div class="ui-block-c price"><p><strong>50.5 Bs</strong></p></div>
+                </div> -->
+              </a>
+              <!-- <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a> -->
+            </li>
+            <li class="cobranza_btn" style="display: none---;">
+              <a href="#cobranza">
+                <img src="img/bol.jpg">
+                <h2 class="red">El cliente tiene deuda económica </h2>
+                <div class="ui-grid-b">
+                  <div class="ui-block-a"><p>  </p></div>
+                  <div class="ui-block-b"><p>  </p></div>
+                  <div class="ui-block-c"><p>Ir a Cobranza</p></div>
+                </div>
+                <!-- <div class="ui-grid-b">
+                  <div class="ui-block-a"><p>6 cajas</p></div>
+                  <div class="ui-block-b"><p>2 unidades</p></div>
+                  <div class="ui-block-c price"><p><strong>50.5 Bs</strong></p></div>
+                </div> -->
+              </a>
+              <!-- <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a> -->
+            </li>
+            <li class="deuda_btn" style="display: none---;">
+              <a href="#deuda">
+                <img src="img/caja.jpg">
+                <h2 class="red">El cliente tiene deuda de envases</h2>
+                <!-- <p> Ir a Deuda Envases </p> -->
+                <div class="ui-grid-b">
+                  <div class="ui-block-a"><p>  </p></div>
+                  <div class="ui-block-b"><p>  </p></div>
+                  <div class="ui-block-c"><p>Ir a Deuda Envases</p></div>
+                </div>
+              </a>
+              <!-- <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a> -->
+            </li>
+          </ul>
+        </div>
+        <!-- <button type="button" class="menu_v_c_d_btn">qwerty</button> -->
 
       </form>
     </div>
@@ -1467,34 +1469,35 @@ $.mobile.navigate( "index.html#venta" );
   $("#fecha").val(fecha_actual);
   $("#fecha_cobranza").val(fecha_actual);
   $("#fecha_deuda").val(fecha_actual);
+  $('.menu_v_c_d').hide();
   $('.mensaje').hide();
   $('.articulo').hide();
-    // alert('inicia');
-    $(".articulo_cobranza").hide();
-    $(".articulo_deuda").hide();
-    $(".vencimiento").hide();
+  // alert('inicia');
+  $(".articulo_cobranza").hide();
+  $(".articulo_deuda").hide();
+  $(".vencimiento").hide();
 
-    $('.inicio').click(function() {
-     window.location.href = "index.html";
-   }); 
-    $('.otro_cliente').click(function() {
-     $("#cliente option:eq(0)").prop("selected",true);
-     $('#cliente') .selectmenu("refresh");
-     $("#producto option:eq(0)").prop("selected",true);
-     $('#producto') .selectmenu("refresh");
-     window.location.href = "index.html#registrar";
-   });
+  $('.inicio').click(function() {
+   window.location.href = "index.html";
+ }); 
+  $('.otro_cliente').click(function() {
+   $("#cliente option:eq(0)").prop("selected",true);
+   $('#cliente') .selectmenu("refresh");
+   $("#producto option:eq(0)").prop("selected",true);
+   $('#producto') .selectmenu("refresh");
+   window.location.href = "index.html#registrar";
+ });
 
 
-/////////////////////////////////////
-////////////////ini POPOUP HISTORICO
-/////////////////////////////////////
+  /////////////////////////////////////
+  ////////////////ini POPOUP HISTORICO
+  /////////////////////////////////////
 
-$('.agregar_historico').click(function() {
+  $('.agregar_historico').click(function() {
      // alert("12123123");
      $( "#old1" ).popup( "open" );
    });
-$('.old_next1').click(function() {
+  $('.old_next1').click(function() {
      // $( "#old1" ).popup( "close" );
      // alert("12123123");
      // alert($(this).val()+"----");
@@ -1507,109 +1510,118 @@ $('.old_next1').click(function() {
 
 
 
-////////////////fin POPOUP HISTORICO
-$('.show').click(function() {
- $(".articulo").show(300);
-});
-$('.show_cobranza').click(function() {
- $(".articulo_cobranza").show(300);
-});
-$('.show_deuda').click(function() {
- $(".articulo_deuda").show(300);
-});
+  ////////////////fin POPOUP HISTORICO
+  $('.show').click(function() {
+   $(".articulo").show(300);
+ });
+  $('.show_cobranza').click(function() {
+   $(".articulo_cobranza").show(300);
+ });
+  $('.show_deuda').click(function() {
+   $(".articulo_deuda").show(300);
+ });
 
 
-$('.guardar_venta').click(function() {
+  $('.guardar_venta').click(function() {
 
- $(".articulo").hide(300);
- $('.mensaje').html("<div style='color:green;'>GUARDADO</div>");
- $('.mensaje').show(300);
- setTimeout(function(){ $('.mensaje').hide(300); $('.mensaje').html(""); }, 3000);
-}); 
+   $(".articulo").hide(300);
+   $('.mensaje').html("<div style='color:green;'>GUARDADO</div>");
+   $('.mensaje').show(300);
+   setTimeout(function(){ $('.mensaje').hide(300); $('.mensaje').html(""); }, 3000);
+ }); 
 
-$('.guardar_cobranza').click(function() {
+  $('.guardar_cobranza').click(function() {
 
- $(".articulo_cobranza").hide(300);
- $('.mensaje_cobranza').html("<div style='color:green;'>COBRADO</div>");
- $('.mensaje_cobranza').show(300);
- setTimeout(function(){ $('.mensaje_cobranza').hide(300); $('.mensaje_cobranza').html(""); }, 3000);
-});  
-$('.guardar_deuda').click(function() {
+   $(".articulo_cobranza").hide(300);
+   $('.mensaje_cobranza').html("<div style='color:green;'>COBRADO</div>");
+   $('.mensaje_cobranza').show(300);
+   setTimeout(function(){ $('.mensaje_cobranza').hide(300); $('.mensaje_cobranza').html(""); }, 3000);
+ });  
+  $('.guardar_deuda').click(function() {
 
- $(".articulo_deuda").hide(300);
- $('.mensaje_deuda').html("<div style='color:green;'>COBRADO</div>");
- $('.mensaje_deuda').show(300);
- setTimeout(function(){ $('.mensaje_deuda').hide(300); $('.mensaje_deuda').html(""); }, 3000);
-});  
+   $(".articulo_deuda").hide(300);
+   $('.mensaje_deuda').html("<div style='color:green;'>COBRADO</div>");
+   $('.mensaje_deuda').show(300);
+   setTimeout(function(){ $('.mensaje_deuda').hide(300); $('.mensaje_deuda').html(""); }, 3000);
+ });  
 
-$('.cancelar_venta').click(function() {
- $(".articulo").hide(300);
-}); 
-$('.cancelar_cobranza').click(function() {
- $(".articulo_cobranza").hide(300);
-}); 
-$('.cancelar_deuda').click(function() {
- $(".articulo_deuda").hide(300);
-}); 
+  $('.cancelar_venta').click(function() {
+   $(".articulo").hide(300);
+ }); 
+  $('.cancelar_cobranza').click(function() {
+   $(".articulo_cobranza").hide(300);
+ }); 
+  $('.cancelar_deuda').click(function() {
+   $(".articulo_deuda").hide(300);
+ }); 
 
-$(".editar_venta_class").on('click', function(event) {
+  $(".editar_venta_class").on('click', function(event) {
 
-  $(".articulo").hide();
-  var text = $(this).parent().find('h2').text();
-  $('#titulo_popup').html(text);
-  $(".id_venta").val($(this).attr('codigo-venta'));
+    $(".articulo").hide();
+    var text = $(this).parent().find('h2').text();
+    $('#titulo_popup').html(text);
+    $(".id_venta").val($(this).attr('codigo-venta'));
       // $( "#alerta_eliminado_venta" ).popup( "close" );
     });
-$('.eliminar_popup_venta').click(function() {
-  $('.mensaje').html("<div style='color:red;'>ELIMINADO</div>");
-  $('.mensaje').show(300);
-  setTimeout(function(){ $('.mensaje').hide(300); $('.mensaje').html(""); }, 3000);
+  $('.eliminar_popup_venta').click(function() {
+    $('.mensaje').html("<div style='color:red;'>ELIMINADO</div>");
+    $('.mensaje').show(300);
+    setTimeout(function(){ $('.mensaje').hide(300); $('.mensaje').html(""); }, 3000);
 
-}); 
-$('.editar_popup_venta').click(function() {
- $(".articulo").show(300);
-}); 
-
-
-$("input[name=tipo]:radio").bind( "change", function(event, ui) {
-  if($(this).val()=='cred'){
-    $(".vencimiento").show(200);
-  }else{
-    $(".vencimiento").hide(200);
-  }
-
-});
-
-$("input[name=cobranza_monto]:radio").bind( "change", function(event, ui) {
-
-  if($(this).val()=='total_cobranza'){
-    $("#a_cobrar_cobranza").val($("#saldo_cobranza").val()); 
-  }else{
-    $("#a_cobrar_cobranza").val("");
-  }
-
-});
-
-$("input[name=deuda_monto]:radio").bind( "change", function(event, ui) {
-  if($(this).val()=='total_deuda'){
-    $("#a_cobrar_deuda").val($("#saldo_deuda").val()); 
-  }else{
-    $("#a_cobrar_deuda").val("");
-  }
-});
+  }); 
+  $('.editar_popup_venta').click(function() {
+   $(".articulo").show(300);
+ }); 
 
 
-$("#cliente").on( "change", function(event, ui) {
-      // alert($(this).val()+":1::");
-      cargar_info_cliente_html($(this).val());
-      alert($( "#cliente option:selected" ).text());
-      $(".cliente_nombre").text($( "#cliente option:selected" ).text());
-    });
+  $("input[name=tipo]:radio").bind( "change", function(event, ui) {
+    if($(this).val()=='cred'){
+      $(".vencimiento").show(200);
+    }else{
+      $(".vencimiento").hide(200);
+    }
 
-$("#producto").bind("change", function(){
-  alert($(this).val()+":2::");
+  });
 
-});
+  $("input[name=cobranza_monto]:radio").bind( "change", function(event, ui) {
+
+    if($(this).val()=='total_cobranza'){
+      $("#a_cobrar_cobranza").val($("#saldo_cobranza").val()); 
+    }else{
+      $("#a_cobrar_cobranza").val("");
+    }
+
+  });
+
+  $("input[name=deuda_monto]:radio").bind( "change", function(event, ui) {
+    if($(this).val()=='total_deuda'){
+      $("#a_cobrar_deuda").val($("#saldo_deuda").val()); 
+    }else{
+      $("#a_cobrar_deuda").val("");
+    }
+  });
+
+
+  $("#cliente").on( "change", function(event, ui) {
+    // alert($(this).val()+":1::");
+    cargar_info_cliente_html($(this).val());
+    // alert($( "#cliente option:selected" ).text());
+    $(".cliente_nombre").text($( "#cliente option:selected" ).text());
+    if($(this).val()=="-" || $(this).val()==""){
+     $('.menu_v_c_d').hide();
+   }else{
+     $('.menu_v_c_d').show();
+   }
+ });
+
+  $('.editar_popup_venta').click(function() {
+   $(".articulo").show(300);
+ });
+
+  $("#producto").bind("change", function(){
+    alert($(this).val()+":2::");
+
+  });
 
 });
 
