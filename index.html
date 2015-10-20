@@ -60,6 +60,7 @@
     <script type="text/javascript" src="js/registrar/tablita_info_cliente.js"></script>
 
     <script type="text/javascript" src="js/jquery.showpassword.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
 
     <title>SITRANS</title>
   </head>
@@ -1509,22 +1510,27 @@ $.mobile.navigate( "index.html#venta" );
     //  setTimeout(function () {
     //   $("#old2").popup('open');
     // }, 500);
-   $.mobile.switchPopup();
-   });
 
-  $.mobile.switchPopup = function(sourceElement, destinationElement) {
-    var afterClose = function() {
-      $("#old2").popup("open");
-      $("#old1").off("popupafterclose", afterClose);
+  $.mobile.switchPopup($("#old1"), $("#old2"), function(){alert("finalizado5")};)
+});
+function finalizado(){
+  alert("finalizado3");
+}
+  // $.mobile.switchPopup = function(sourceElement, destinationElement) {
+  //   var afterClose = function() {
+  //     $("#old2").popup("open");
+  //     $("#old1").off("popupafterclose", afterClose);
 
-      if (onswitched && typeof onswitched === "function"){
+  //     if (onswitched && typeof onswitched === "function"){
 
-      }
-    };
+  //     }
+  //   };
 
-    $("#old1").on("popupafterclose", afterClose);
-    $("#old1").popup("close");
-  };
+  //   $("#old1").on("popupafterclose", afterClose);
+  //   $("#old1").popup("close");
+  // };
+
+
 
   ////////////////fin POPOUP HISTORICO
   $('.show').click(function() {
