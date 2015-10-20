@@ -450,7 +450,7 @@
             <li class="cobranza_btn" style="display: none---;">
               <a href="#cobranza">
                 <img src="img/bol.jpg">
-                <h2 class="red">El cliente tiene deuda económica </h2>
+                <h2 class="green">Revisar la Deuda Económica </h2>
                 <div class="ui-grid-b">
                   <div class="ui-block-a"><p>  </p></div>
                   <div class="ui-block-b"><p>  </p></div>
@@ -467,7 +467,7 @@
             <li class="deuda_btn" style="display: none---;">
               <a href="#deuda">
                 <img src="img/caja.jpg">
-                <h2 class="red">El cliente tiene deuda de envases</h2>
+                <h2 class="green">Revisar la deuda de envases</h2>
                 <!-- <p> Ir a Deuda Envases </p> -->
                 <div class="ui-grid-b">
                   <div class="ui-block-a"><p>  </p></div>
@@ -1469,7 +1469,9 @@ $.mobile.navigate( "index.html#venta" );
   $("#fecha").val(fecha_actual);
   $("#fecha_cobranza").val(fecha_actual);
   $("#fecha_deuda").val(fecha_actual);
-  $('.menu_v_c_d').hide();
+
+  // $('.menu_v_c_d').hide();
+
   $('.mensaje').hide();
   $('.articulo').hide();
   // alert('inicia');
@@ -1495,20 +1497,34 @@ $.mobile.navigate( "index.html#venta" );
 
   $('.agregar_historico').click(function() {
      // alert("12123123");
-     $( "#old1" ).popup( "open" );
+     $("#old1").popup( "open" );
    });
   $('.old_next1').click(function() {
      // $( "#old1" ).popup( "close" );
      // alert("12123123");
      // alert($(this).val()+"----");
      // $( "#old2" ).popup( "open" );
-     history.back();
-     setTimeout(function () {
-      $("#old2").popup('open');
-    }, 100);
+
+    //  history.back();
+    //  setTimeout(function () {
+    //   $("#old2").popup('open');
+    // }, 500);
+   $.mobile.switchPopup();
    });
 
+  $.mobile.switchPopup = function(sourceElement, destinationElement) {
+    var afterClose = function() {
+      $("#old2").popup("open");
+      $("#old1").off("popupafterclose", afterClose);
 
+      if (onswitched && typeof onswitched === "function"){
+
+      }
+    };
+
+    $("#old1").on("popupafterclose", afterClose);
+    $("#old1").popup("close");
+  };
 
   ////////////////fin POPOUP HISTORICO
   $('.show').click(function() {
