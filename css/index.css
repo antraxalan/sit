@@ -42,7 +42,7 @@
     color: #FF0000;
 }
 .deuda {
-   color: #FF0000;
+ color: #FF0000;
 }
 
 
@@ -73,11 +73,23 @@
 }
 
 .css_titulo {
-    
+
     width: 25% !important;
     font-size: 18px !important;
 }
 .cliente_nombre {
     width: 70% !important;
     font-size: 18px !important;
+}
+
+
+.tab_content {
+    min-height: 950px;
+    background-color: yellow;
+}
+@media only screen and (min-width: 1200px) {
+    .tab_content {
+        min-height: 475px;
+        background-color: red;
+    }
 }

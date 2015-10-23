@@ -518,6 +518,73 @@
         <li><a href="#deuda">DEUDA ENVASES</a></li>
       </ul>
     </nav>
+    
+    <div class="ui-field-contain">
+      <label for="textarea" class="css_titulo"><b>Cliente:</b></label>
+      <label for="textarea" class="cliente_nombre">Id - Nombre del cliente</label>
+    </div>
+    <link rel="stylesheet" href="css/jqm-inlinetabs.min.css" />
+    <script src="js/jqm-inlinetabs.min.js"></script>
+    <h4 class="mensaje_cobranza" align="center"></h4>
+
+
+    <div class="ui-content" role="main">
+
+      <form class="ui">
+
+        <div data-role="inlinetabs" data-content-theme="a" data-theme="a" data-mini="true" id="venta_tabs">
+          <ul>
+            <li data-tab="1"  style="width:15%;" >First tab</li>
+            <li data-tab="2"  style="width:15%;" >Second tab</li>
+            <li data-tab="3"  style="width:15%;" >Third tab</li>
+          </ul>
+
+          <div class="tab_content" data-tab="1">
+            Content of Tab 1
+          </div>
+
+          <div class="tab_content" data-tab="2">
+            Content of Tab 2
+          </div>
+          <div class="tab_content" data-tab="3">
+            Content of Tab 3
+          </div>
+        </div>
+
+
+      </form>
+    </div>
+
+    
+
+  </div>
+  <footer data-role="footer" data-position="fixed">
+    <h3>Copyright &copy; 2015</h3>
+  </footer>
+</div>
+
+
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+<div data-role="page" id="venta_old">
+  <header data-role="header" data-position="fixed">
+    <h1>CBN</h1>
+    <button type="button"  data-icon="user" class="ui-btn-right otro_cliente">Otro Cliente</button>
+  </header> 
+
+  <div data-role="content">
+    <nav data-role="navbar">
+      <ul>
+        <li><a href="#venta" class="ui-btn-active ui-state-persist">VENTA</a></li>
+        <li><a href="#cobranza">COBRANZA</a></li>
+        <li><a href="#deuda">DEUDA ENVASES</a></li>
+      </ul>
+    </nav>
     <!-- <label>Producto: </label><h2>Venta: <h3>dsa</h3></h2> 501 - Alan -->
     <!-- <p class="titulo_cliente"><b>VENTA: </b></p><div class="nombre_cliente">504 - Alan Aruquipa</div> -->
     <!--     <h2>VENTA</h2> -->
@@ -1640,13 +1707,41 @@ $.mobile.navigate( "index.html#venta" );
 $( document ).on( "pagecreate", "#venta", function( event ) {
 
   // alert( "venta" );
-  $('#precio_in').on('input', function() {
-    this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
-  });
-  $('#precio_in').on('blur', function() {
-    if(this.value!=''){
-      this.value = (parseFloat(this.value)).toFixed(2);
+
+
+  $(".tab_content").on("swipeleft",function(){
+    var tab_id=$(this).attr('data-tab');
+    var tab_id_next=tab_id-1+2;
+    var tab_id_prev=tab_id-1;
+    if(tab_id!="3"){
+      $('#venta_tabs').inlinetabs('show', tab_id_next);
     }
+  });
+  $(".tab_content").on("swiperight",function(){
+    var tab_id=$(this).attr('data-tab');
+    var tab_id_next=tab_id-1+2;
+    var tab_id_prev=tab_id-1;
+    if(tab_id!="1"){
+      // alert("right");
+      $('#venta_tabs').inlinetabs('show', tab_id_prev);
+    }
+  });
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////
+//OLD
+
+$('#precio_in').on('input', function() {
+  this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+});
+$('#precio_in').on('blur', function() {
+  if(this.value!=''){
+    this.value = (parseFloat(this.value)).toFixed(2);
+  }
     // alert(this.value);
   });
 
