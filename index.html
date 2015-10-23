@@ -1561,8 +1561,10 @@ $.mobile.navigate( "index.html#venta" );
  }); 
   $('.otro_cliente').click(function() {
     // alert("dsa");
+   $('#cliente').selectmenu();
    $("#cliente option:eq(0)").prop("selected",true);
    $('#cliente') .selectmenu("refresh");
+   $('#producto').selectmenu();
    $("#producto option:eq(0)").prop("selected",true);
    $('#producto') .selectmenu("refresh");
    window.location.href = "index.html#registrar";
