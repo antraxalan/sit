@@ -550,7 +550,7 @@
             Content of Tab 3
           </div>
         </div>
-        <div class="ppp"></div>
+        <div class="ppp">asd2132</div>
         <input class="ppp_input" value="0" />
 
 
@@ -1720,7 +1720,7 @@ $( document ).on( "pagecreate", "#venta", function( event ) {
     num = $('.ppp_input').val();
     num=parseInt(num)+1;
     $('.ppp_input').val(num);
-    $('#ppp').html("left: "+num );
+    $('.ppp').html("left: "+num );
     // if(tab_id!="3"){
     //   // $('#venta_tabs').inlinetabs('show', tab_id_next);
     // }
@@ -1738,7 +1738,7 @@ $( document ).on( "pagecreate", "#venta", function( event ) {
     num = $('.ppp_input').val();
     num=parseInt(num)+1;
     $('.ppp_input').val(num);
-    $('#ppp').html("right: "+num );
+    $('.ppp').html("<p>righ: "+num+"</p>" );
   });
 
 
