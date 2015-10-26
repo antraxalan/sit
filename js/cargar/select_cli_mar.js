@@ -43,8 +43,9 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
           var len = results.rows.length;
           for (var i = 0; i < len; i++) {
             var co_ma= results.rows.item(i).CodMarca;
+            alert(co_ma);
             // if(co_ma!=15 || co_ma!=18 || co_ma!=20 || co_ma!=25 || co_ma!=30 || co_ma!=34 || co_ma!=35 || co_ma!=40 || co_ma!=50 || co_ma!=55 || co_ma!=64 || co_ma!=65 || co_ma!=66 || co_ma!=67 || co_ma!=68 || co_ma!=69 || co_ma!=70 || co_ma!=75 || co_ma!=80 || co_ma!=90 || co_ma!=94 || co_ma!=95 || co_ma!=96)
-            if(co_ma!="18" || co_ma!="25" || co_ma!="35" || co_ma!="50" || co_ma!="70" || co_ma!="94"){
+            if(co_ma!=18 || co_ma!=25 || co_ma!=35 || co_ma!=50 || co_ma!=70 || co_ma!=94){
               co_ma="999";
             }
             tblContent +='<li><a href="#">';
@@ -59,10 +60,10 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
 
           // document.getElementById("tabla_select").innerHTML =tblContent;
           // $('#producto').html(tblContent);
-          $('.list_old_venta').html(tblContent);
+          $('.list_new_venta').html(tblContent);
           // $('#tabla_select').append(tblContent);
           // $("#producto").trigger("create");
-          $(".list_old_venta").trigger("create");
+          $(".list_new_venta").trigger("create");
 
         }
 
