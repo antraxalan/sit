@@ -534,30 +534,397 @@
 
         <div data-role="inlinetabs" data-content-theme="a" data-theme="a" data-mini="true" id="venta_tabs">
           <ul>
-            <li data-tab="1"  style="width:15%;" >First tab</li>
-            <li data-tab="2"  style="width:15%;" >Second tab</li>
-            <li data-tab="3"  style="width:15%;" >Third tab</li>
+            <li data-tab="1"  style="width:15%;" >Historial</li>
+            <li data-tab="2"  style="width:15%;" >Nueva Compra</li>
+            <li data-tab="3"  style="width:15%;" >Carrito</li>
           </ul>
 
           <div class="tab_content" data-tab="1">
-            Content of Tab 1
+
+            <div class="list_old_venta">
+              <ul data-role="listview" data-split-icon="edit" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>52 - DUCAL 300 bot ow</h2>
+                    <div class="ui-grid-b">
+                      <div class="ui-block-a"><p>6 cajas</p></div>
+                      <div class="ui-block-b"><p>2 unidades</p></div>
+                      <div class="ui-block-c price"><strong>50.5 Bs</strong></div>
+                    </div>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>175 - IMPERIAL 1000</h2>
+                    <div class="ui-grid-b">
+                      <div class="ui-block-a"><p>6 cajas</p></div>
+                      <div class="ui-block-b"><p>2 unidades</p></div>
+                      <div class="ui-block-c price"><strong>50.5 Bs</strong></div>
+                    </div>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>203 - TAQUIÑA ICE 300 CC X 1</h2>
+                    <div class="ui-grid-b">
+                      <div class="ui-block-a"><p>6 cajas</p></div>
+                      <div class="ui-block-b"><p>2 unidades</p></div>
+                      <div class="ui-block-c price"><strong>50.5 Bs</strong></div>
+                    </div>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>378 - MALTIN 330 CC. SABOR ORIGINAL</h2>
+                    <div class="ui-grid-b">
+                      <div class="ui-block-a"><p>6 cajas</p></div>
+                      <div class="ui-block-b"><p>2 unidades</p></div>
+                      <div class="ui-block-c price"><strong>50.5 Bs</strong></div>
+                    </div>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>511 - PILSENER TWIST OFF 300 O.W. PROMOCION</h2>
+                    <div class="ui-grid-b">
+                      <div class="ui-block-a"><p>6 cajas</p></div>
+                      <div class="ui-block-b"><p>2 unidades</p></div>
+                      <div class="ui-block-c price"><strong>50.5 Bs</strong></div>
+                    </div>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
+                </li>
+              </ul>
+            </div>
+
+            <div data-role="popup" id="old_add_venta" data-overlay-theme="a" data-theme="a"  style="max-width:800px;">
+              <div data-role="header" data-theme="a">
+                <h1>Producto</h1>
+              </div>
+              <div role="main" class="ui-content">
+                <p id="old_add_popup">...</p>
+                <input class="old_id_venta" type="hidden---" value="9999">
+                <p>__________________________________________</p>
+                <div class="ui-grid-a">
+                  <div class="ui-block-a">
+                    <a href="#" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a eliminar_popup_venta" data-rel="back" data-transition="flow">Eliminar</a>
+                  </div>
+                  <div class="ui-block-b"><a href="#" class="ui-btn ui-icon-edit ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b editar_popup_venta" data-rel="back">Editar</a></div>
+
+                </div>
+              </div>
+            </div>
+
           </div>
 
           <div class="tab_content" data-tab="2">
-            Content of Tab 2
+            
+
+            <div class="list_old_venta">
+              <!-- <ul data-role="listview" data-split-icon="edit" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>52 - DUCAL 300 bot ow</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>175 - IMPERIAL 1000</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>203 - TAQUIÑA ICE 300 CC X 1</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>378 - MALTIN 330 CC. SABOR ORIGINAL</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>511 - PILSENER TWIST OFF 300 O.W. PROMOCION</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>52 - DUCAL 300 bot ow</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>175 - IMPERIAL 1000</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>203 - TAQUIÑA ICE 300 CC X 1</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>378 - MALTIN 330 CC. SABOR ORIGINAL</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>511 - PILSENER TWIST OFF 300 O.W. PROMOCION</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>52 - DUCAL 300 bot ow</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>175 - IMPERIAL 1000</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>203 - TAQUIÑA ICE 300 CC X 1</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>378 - MALTIN 330 CC. SABOR ORIGINAL</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>511 - PILSENER TWIST OFF 300 O.W. PROMOCION</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>52 - DUCAL 300 bot ow</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>175 - IMPERIAL 1000</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>203 - TAQUIÑA ICE 300 CC X 1</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>378 - MALTIN 330 CC. SABOR ORIGINAL</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>511 - PILSENER TWIST OFF 300 O.W. PROMOCION</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>52 - DUCAL 300 bot ow</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>175 - IMPERIAL 1000</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>203 - TAQUIÑA ICE 300 CC X 1</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>378 - MALTIN 330 CC. SABOR ORIGINAL</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>511 - PILSENER TWIST OFF 300 O.W. PROMOCION</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>52 - DUCAL 300 bot ow</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>175 - IMPERIAL 1000</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>203 - TAQUIÑA ICE 300 CC X 1</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>378 - MALTIN 330 CC. SABOR ORIGINAL</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>511 - PILSENER TWIST OFF 300 O.W. PROMOCION</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>52 - DUCAL 300 bot ow</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>175 - IMPERIAL 1000</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>203 - TAQUIÑA ICE 300 CC X 1</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>378 - MALTIN 330 CC. SABOR ORIGINAL</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>511 - PILSENER TWIST OFF 300 O.W. PROMOCION</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>52 - DUCAL 300 bot ow</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>175 - IMPERIAL 1000</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>203 - TAQUIÑA ICE 300 CC X 1</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>378 - MALTIN 330 CC. SABOR ORIGINAL</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/cart.png">
+                    <h2>511 - PILSENER TWIST OFF 300 O.W. PROMOCION</h2>
+                  </a>
+                  <a href="#old_add_venta" class="old_add_venta_class"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
+                </li>
+              </ul> -->
+            </div>
+
+
           </div>
           <div class="tab_content" data-tab="3">
             Content of Tab 3
           </div>
         </div>
-        <div class="ppp">asd2132</div>
-        <input class="ppp_input" value="0" />
-
 
       </form>
     </div>
 
-    
+
 
   </div>
   <footer data-role="footer" data-position="fixed">
@@ -1363,9 +1730,9 @@
 
 
     // $(document).on("pageinit",function(){
-    carga_db_crear();
-    carga_exit();
-    carga_varios_complementos();
+      carga_db_crear();
+      carga_exit();
+      carga_varios_complementos();
     // carga_exit();
     $('#pass_usuario').showPassword();
     $("#cod_usuario").val(localStorage.g_username);
@@ -1561,14 +1928,14 @@ $.mobile.navigate( "index.html#venta" );
  }); 
   $('.otro_cliente').click(function() {
     // alert("dsa");
-   $('#cliente').selectmenu();
-   $("#cliente option:eq(0)").prop("selected",true);
-   $('#cliente') .selectmenu("refresh");
-   $('#producto').selectmenu();
-   $("#producto option:eq(0)").prop("selected",true);
-   $('#producto') .selectmenu("refresh");
-   window.location.href = "index.html#registrar";
- });
+    $('#cliente').selectmenu();
+    $("#cliente option:eq(0)").prop("selected",true);
+    $('#cliente') .selectmenu("refresh");
+    $('#producto').selectmenu();
+    $("#producto option:eq(0)").prop("selected",true);
+    $('#producto') .selectmenu("refresh");
+    window.location.href = "index.html#registrar";
+  });
 
 
   /////////////////////////////////////
@@ -1632,6 +1999,14 @@ $.mobile.navigate( "index.html#venta" );
    $(".articulo_deuda").hide(300);
  }); 
 
+  $(".old_add_venta_class").on('click', function(event) {
+
+    // $(".articulo").hide();
+    var text = $(this).parent().find('h2').text();
+    $('#old_add_popup').html(text);
+    $(".old_id_venta").val($(this).attr('codigo-venta'));
+      // $( "#alerta_eliminado_venta" ).popup( "close" );
+    });
   $(".editar_venta_class").on('click', function(event) {
 
     $(".articulo").hide();
