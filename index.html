@@ -62,6 +62,9 @@
     <script type="text/javascript" src="js/jquery.showpassword.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
 
+    <link rel="stylesheet" href="css/jqm-inlinetabs.min.css" />
+    <script src="js/jqm-inlinetabs.min.js"></script>
+
     <title>SITRANS</title>
   </head>
   <body>
@@ -523,8 +526,8 @@
       <label for="textarea" class="css_titulo"><b>Cliente:</b></label>
       <label for="textarea" class="cliente_nombre">Id - Nombre del cliente</label>
     </div>
-    <link rel="stylesheet" href="css/jqm-inlinetabs.min.css" />
-    <script src="js/jqm-inlinetabs.min.js"></script>
+    <button type="button" class="pppp" >pppp</button>
+    
     <h4 class="mensaje_cobranza" align="center"></h4>
 
 
@@ -542,7 +545,7 @@
           <div class="tab_content" data-tab="1">
 
             <div class="list_old_venta">
-              <ul data-role="listview" data-split-icon="edit" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">
+              <ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
@@ -553,7 +556,7 @@
                       <div class="ui-block-c price"><strong>50.5 Bs</strong></div>
                     </div>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">Comprar</a>
                 </li>
                 <li>
                   <a href="#">
@@ -565,7 +568,7 @@
                       <div class="ui-block-c price"><strong>50.5 Bs</strong></div>
                     </div>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="2" data-transition="flow">Comprar</a>
                 </li>
                 <li>
                   <a href="#">
@@ -577,7 +580,7 @@
                       <div class="ui-block-c price"><strong>50.5 Bs</strong></div>
                     </div>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="3" data-transition="flow">Comprar</a>
                 </li>
                 <li>
                   <a href="#">
@@ -589,7 +592,7 @@
                       <div class="ui-block-c price"><strong>50.5 Bs</strong></div>
                     </div>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
+                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="4" data-transition="flow">Comprar</a>
                 </li>
                 <li>
                   <a href="#">
@@ -601,7 +604,7 @@
                       <div class="ui-block-c price"><strong>50.5 Bs</strong></div>
                     </div>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
+                  <a href="#old_add_venta" class="old_add_venta_class"  data-rel="popup" codigo-venta="12" data-transition="flow">Comprar</a>
                 </li>
               </ul>
             </div>
@@ -612,21 +615,46 @@
               </div>
               <div role="main" class="ui-content">
                 <p id="old_add_popup">...</p>
-                <input class="old_id_venta" type="hidden---" value="9999">
-                <p>__________________________________________</p>
+                <input class="old_id_venta" type="hidden" value="9999">
 
+
+                <div class="ui-grid-a">
+
+                  <div class="ui-block-a"><p class="unidades_popoup">Cajas: </p></div>
+                  <div class="ui-block-b"><p class="unidades_popoup">Unidades: </p></div>
+
+                  <div class="ui-block-a">
+                    <input name="cajas" id="cajas_popup" type="number" class="ui-field-contain"/>
+                  </div>
+                  <div class="ui-block-b">
+                    <input name="unidades" id="unidades_popup" type="number" class="ui-field-contain"/>
+                  </div>
+
+                </div>
 
                 <div data-role="fieldcontain" class="ui-field-contain">               
-                  <label for="date">Fecha Vto:</label>
-                  <input name="mydate" id="fecha2" />
+                  <label for="asd">Precio:</label>
+                  <input name="asd" id="input" />
                 </div> 
+
+                <fieldset data-role="controlgroup" data-type="horizontal">
+                  <legend>Embase:</legend>
+                  <label for="canje_popup">Con Canje</label>
+                  <input type="radio" name="tipo" id="canje_popup" value="canje_popup" checked="checked">
+                  <label for="prest_popup">Prestamo</label>
+                  <input type="radio" name="tipo" id="prest_popup" value="prest_popup">
+                </fieldset>
+
+
+                <p>__________________________________________</p>
+
 
 
                 <div class="ui-grid-a">
                   <div class="ui-block-a">
-                    <a href="#" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a eliminar_popup_venta" data-rel="back" data-transition="flow">Eliminar</a>
+                    <a href="#" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a " data-rel="back" data-transition="flow">Cancelar</a>
                   </div>
-                  <div class="ui-block-b"><a href="#" class="ui-btn ui-icon-edit ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b editar_popup_venta" data-rel="back">Editar</a></div>
+                  <div class="ui-block-b"><a href="#" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_venta_popup" data-rel="back">Confirmar</a></div>
                 </div>
               </div>
             </div>
@@ -1750,7 +1778,7 @@
     }else{
       if(localStorage.db_cargada=='1'){
         cargar_select_cliente();
-        cargar_select_marca();
+        // cargar_select_marca();
       }
       // alert('muestra:'+localStorage.g_existe);
     }
@@ -1962,6 +1990,7 @@ $.mobile.navigate( "index.html#venta" );
 });
 
   ////////////////fin POPOUP HISTORICO
+
   $('.show').click(function() {
    $(".articulo").show(300);
  });
@@ -1970,6 +1999,19 @@ $.mobile.navigate( "index.html#venta" );
  });
   $('.show_deuda').click(function() {
    $(".articulo_deuda").show(300);
+ });
+
+
+
+
+
+
+
+
+
+  
+  $('.pppp').click(function() {
+   cargar_select_marca();
  });
 
 
@@ -2073,8 +2115,9 @@ $.mobile.navigate( "index.html#venta" );
    }
  });
 
-  $('.editar_popup_venta').click(function() {
-   $(".articulo").show(300);
+  $('.confirmar_venta_popup').click(function() {
+   alert("confirmar_venta_popup");
+   // $(".articulo").show(300);
  });
 
   $("#producto").bind("change", function(){
