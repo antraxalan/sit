@@ -56,6 +56,7 @@
 
     <script type="text/javascript" src="js/exit.js"></script>
     <script type="text/javascript" src="js/cargar/select_cli_mar.js"></script>
+    <script type="text/javascript" src="js/cargar/list_ventas.js"></script>
     <script type="text/javascript" src="js/select_plus_filter.js"></script>
     <script type="text/javascript" src="js/registrar/tablita_info_cliente.js"></script>
 
@@ -63,7 +64,7 @@
     <script type="text/javascript" src="js/index.js"></script>
 
     <link rel="stylesheet" href="css/jqm-inlinetabs.min.css" />
-    <script src="js/jqm-inlinetabs.min.js"></script>
+    <script type="text/javascript" src="js/jqm-inlinetabs.min.js"></script>
 
     <title>SITRANS</title>
   </head>
@@ -526,7 +527,6 @@
       <label for="textarea" class="css_titulo"><b>Cliente:</b></label>
       <label for="textarea" class="cliente_nombre">Id - Nombre del cliente</label>
     </div>
-    <button type="button" class="pppp" >pppp</button>
     
     <h4 class="mensaje_cobranza" align="center"></h4>
 
@@ -556,31 +556,31 @@
                       <div class="ui-block-c price"><strong>50.5 Bs</strong></div>
                     </div>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">Comprar</a>
+                  <a href="#add_venta_popup" class="add_venta_popup_class_old" data-rel="popup" codigo-venta="1" cant-cajas="6" cant-unidades="2" last-price="50.5" data-transition="flow">Comprar</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>175 - IMPERIAL 1000</h2>
                     <div class="ui-grid-b">
-                      <div class="ui-block-a"><p>6 cajas</p></div>
-                      <div class="ui-block-b"><p>2 unidades</p></div>
-                      <div class="ui-block-c price"><strong>50.5 Bs</strong></div>
+                      <div class="ui-block-a"><p>5 cajas</p></div>
+                      <div class="ui-block-b"><p>0 unidades</p></div>
+                      <div class="ui-block-c price"><strong>51.5 Bs</strong></div>
                     </div>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="2" data-transition="flow">Comprar</a>
+                  <a href="#add_venta_popup" class="add_venta_popup_class_old" data-rel="popup" codigo-venta="2" cant-cajas="5" cant-unidades="0" last-price="51.5" data-transition="flow">Comprar</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>203 - TAQUIÑA ICE 300 CC X 1</h2>
                     <div class="ui-grid-b">
-                      <div class="ui-block-a"><p>6 cajas</p></div>
-                      <div class="ui-block-b"><p>2 unidades</p></div>
-                      <div class="ui-block-c price"><strong>50.5 Bs</strong></div>
+                      <div class="ui-block-a"><p>7 cajas</p></div>
+                      <div class="ui-block-b"><p>1 unidades</p></div>
+                      <div class="ui-block-c price"><strong>52.5 Bs</strong></div>
                     </div>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="3" data-transition="flow">Comprar</a>
+                  <a href="#add_venta_popup" class="add_venta_popup_class_old" data-rel="popup" codigo-venta="3" cant-cajas="7" cant-unidades="1" last-price="52.5" data-transition="flow">Comprar</a>
                 </li>
                 <li>
                   <a href="#">
@@ -589,10 +589,10 @@
                     <div class="ui-grid-b">
                       <div class="ui-block-a"><p>6 cajas</p></div>
                       <div class="ui-block-b"><p>2 unidades</p></div>
-                      <div class="ui-block-c price"><strong>50.5 Bs</strong></div>
+                      <div class="ui-block-c price"><strong>53.5 Bs</strong></div>
                     </div>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="4" data-transition="flow">Comprar</a>
+                  <a href="#add_venta_popup" class="add_venta_popup_class_old" data-rel="popup" codigo-venta="4" cant-cajas="10" cant-unidades="1" last-price="53.5" data-transition="flow">Comprar</a>
                 </li>
                 <li>
                   <a href="#">
@@ -601,27 +601,27 @@
                     <div class="ui-grid-b">
                       <div class="ui-block-a"><p>6 cajas</p></div>
                       <div class="ui-block-b"><p>2 unidades</p></div>
-                      <div class="ui-block-c price"><strong>50.5 Bs</strong></div>
+                      <div class="ui-block-c price"><strong>54.5 Bs</strong></div>
                     </div>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class"  data-rel="popup" codigo-venta="12" data-transition="flow">Comprar</a>
+                  <a href="#add_venta_popup" class="add_venta_popup_class_old" data-rel="popup" codigo-venta="12" cant-cajas="10" cant-unidades="1" last-price="54.5" data-transition="flow">Comprar</a>
                 </li>
               </ul>
             </div>
 
-            <div data-role="popup" id="old_add_venta" data-overlay-theme="a" data-theme="a"  style="max-width:800px;">
+            <div data-role="popup" id="add_venta_popup" data-overlay-theme="a" data-theme="a"  style="max-width:800px;">
               <div data-role="header" data-theme="a">
                 <h1>Producto</h1>
               </div>
               <div role="main" class="ui-content">
-                <p id="old_add_popup">...</p>
+                <p class="add_popup_prod">...</p>
                 <input class="old_id_venta" type="hidden" value="9999">
 
 
                 <div class="ui-grid-a">
 
-                  <div class="ui-block-a"><p class="unidades_popoup">Cajas: </p></div>
-                  <div class="ui-block-b"><p class="unidades_popoup">Unidades: </p></div>
+                  <div class="ui-block-a"><p class="txt_cajas_popup">Cajas: </p></div>
+                  <div class="ui-block-b"><p class="txt_unidades_popup">Unidades: </p></div>
 
                   <div class="ui-block-a">
                     <input name="cajas" id="cajas_popup" type="number" class="ui-field-contain"/>
@@ -633,8 +633,8 @@
                 </div>
 
                 <div data-role="fieldcontain" class="ui-field-contain">               
-                  <label for="asd">Precio:</label>
-                  <input name="asd" id="input" />
+                  <label for="precio_popup">Precio:</label>
+                  <input name="precio_popup" id="precio_popup" class="precio_input" />
                 </div> 
 
                 <fieldset data-role="controlgroup" data-type="horizontal">
@@ -665,286 +665,295 @@
 
 
             <div class="list_new_venta">
+
+
+              <ul data-role="listview" data-split-icon="edit" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">
+                <li><a href="#">
+                  <img src="img/marcas/35.png">
+                  <h2>123 - alan</h2></a>
+                  <a href="#add_venta_popup" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="123" data-transition="flow">Historial</a>
+                </li>
+              </ul>
               <!-- <ul data-role="listview" data-split-icon="edit" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>52 - DUCAL 300 bot ow</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>175 - IMPERIAL 1000</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>203 - TAQUIÑA ICE 300 CC X 1</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>378 - MALTIN 330 CC. SABOR ORIGINAL</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>511 - PILSENER TWIST OFF 300 O.W. PROMOCION</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>52 - DUCAL 300 bot ow</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>175 - IMPERIAL 1000</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>203 - TAQUIÑA ICE 300 CC X 1</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>378 - MALTIN 330 CC. SABOR ORIGINAL</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>511 - PILSENER TWIST OFF 300 O.W. PROMOCION</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>52 - DUCAL 300 bot ow</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>175 - IMPERIAL 1000</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>203 - TAQUIÑA ICE 300 CC X 1</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>378 - MALTIN 330 CC. SABOR ORIGINAL</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>511 - PILSENER TWIST OFF 300 O.W. PROMOCION</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>52 - DUCAL 300 bot ow</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>175 - IMPERIAL 1000</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>203 - TAQUIÑA ICE 300 CC X 1</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>378 - MALTIN 330 CC. SABOR ORIGINAL</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>511 - PILSENER TWIST OFF 300 O.W. PROMOCION</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>52 - DUCAL 300 bot ow</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>175 - IMPERIAL 1000</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>203 - TAQUIÑA ICE 300 CC X 1</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>378 - MALTIN 330 CC. SABOR ORIGINAL</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>511 - PILSENER TWIST OFF 300 O.W. PROMOCION</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>52 - DUCAL 300 bot ow</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>175 - IMPERIAL 1000</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>203 - TAQUIÑA ICE 300 CC X 1</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>378 - MALTIN 330 CC. SABOR ORIGINAL</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>511 - PILSENER TWIST OFF 300 O.W. PROMOCION</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>52 - DUCAL 300 bot ow</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>175 - IMPERIAL 1000</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>203 - TAQUIÑA ICE 300 CC X 1</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>378 - MALTIN 330 CC. SABOR ORIGINAL</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>511 - PILSENER TWIST OFF 300 O.W. PROMOCION</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>52 - DUCAL 300 bot ow</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>175 - IMPERIAL 1000</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>203 - TAQUIÑA ICE 300 CC X 1</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>378 - MALTIN 330 CC. SABOR ORIGINAL</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
                 </li>
                 <li>
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>511 - PILSENER TWIST OFF 300 O.W. PROMOCION</h2>
                   </a>
-                  <a href="#old_add_venta" class="old_add_venta_class"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
+                  <a href="#new_add_venta" class="add_venta_popup_class_new"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
                 </li>
               </ul> -->
             </div>
@@ -1926,7 +1935,7 @@ $(document).on("pagecreate","#registrar",function(event){
   // $(document).on("pageinit",function(){
   // $('[data-toggle="tooltip"]').tooltip(); 
 
-
+  cargar_new_venta_list();
   // setTimeout(function(){ window.location.href = "index.html#venta"; }, 3000);
 
   $('.d_cliente').click(function() {
@@ -1974,7 +1983,7 @@ $.mobile.navigate( "index.html#venta" );
 
 
   /////////////////////////////////////
-  ////////////////ini POPOUP HISTORICO
+  ////////////////ini POPUP HISTORICO
   /////////////////////////////////////
 
   $('.agregar_historico').click(function() {
@@ -1989,7 +1998,7 @@ $.mobile.navigate( "index.html#venta" );
   $.mobile.switchPopup($("#old1"), $("#old2"), function(){alert("finalizado5")});
 });
 
-  ////////////////fin POPOUP HISTORICO
+  ////////////////fin POPUP HISTORICO
 
   $('.show').click(function() {
    $(".articulo").show(300);
@@ -2009,9 +2018,10 @@ $.mobile.navigate( "index.html#venta" );
 
 
 
-  
+
   $('.pppp').click(function() {
-   cargar_select_marca();
+    alert($.mobile.activePage.attr('id'));  
+   // cargar_select_marca();
  });
 
 
@@ -2048,14 +2058,45 @@ $.mobile.navigate( "index.html#venta" );
    $(".articulo_deuda").hide(300);
  }); 
 
-  $(".old_add_venta_class").on('click', function(event) {
+  $(".add_venta_popup_class_old").on('click', function(event) {
 
     // $(".articulo").hide();
-    var text = $(this).parent().find('h2').text();
-    $('#old_add_popup').html(text);
-    $(".old_id_venta").val($(this).attr('codigo-venta'));
-      // $( "#alerta_eliminado_venta" ).popup( "close" );
-    });
+    var prod=$(this).parent().find('h2').text();
+    var cod=$(this).attr('codigo-venta');
+    var caj=$(this).attr('cant-cajas');
+    var uni=$(this).attr('cant-unidades');
+    var pri=$(this).attr('last-price');
+
+    $('.add_popup_prod').html(prod);
+    $(".old_id_venta").val(cod);
+
+    $('.txt_cajas_popup').html('Cajas: ('+caj+')');
+    $('.txt_unidades_popup').html('Unidades: ('+uni+')');
+    $('#precio_popup').val(pri);
+    // $("#canje_popup").prop('checked', true);
+    $("#canje_popup").prop("checked",true).checkboxradio("refresh");
+    $("#prest_popup").prop("checked",false).checkboxradio("refresh");
+  });
+
+  $(".add_venta_popup_class_new").on('click', function(event) {
+    var prod=$(this).parent().find('h2').text();
+    var cod=$(this).attr('codigo-venta');
+    // var caj=$(this).attr('cant-cajas');
+    // var uni=$(this).attr('cant-unidades');
+    var pri=$(this).attr('last-price');
+
+    $('.add_popup_prod').html(prod);
+    $(".old_id_venta").val(cod);
+
+    $('.txt_cajas_popup').html('Cajas:');
+    $('.txt_unidades_popup').html('Unidades:');
+    $('#precio_popup').val(pri);
+    // $("#canje_popup").prop('checked', true);
+    $("#canje_popup").prop("checked",true).checkboxradio("refresh");
+    $("#prest_popup").prop("checked",false).checkboxradio("refresh");
+  });
+
+
   $(".editar_venta_class").on('click', function(event) {
 
     $(".articulo").hide();
@@ -2182,10 +2223,10 @@ $( document ).on( "pagecreate", "#venta", function( event ) {
 /////////////////////////////////////////////////////////////////////////////////
 //OLD
 
-$('#precio_in').on('input', function() {
+$('.precio_input').on('input', function() {
   this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
 });
-$('#precio_in').on('blur', function() {
+$('.precio_input').on('blur', function() {
   if(this.value!=''){
     this.value = (parseFloat(this.value)).toFixed(2);
   }

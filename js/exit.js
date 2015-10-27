@@ -19,7 +19,8 @@ function start_exit(){
 
 document.addEventListener("backbutton", function(e){
     // alert("back");
-    if ( $('.paginaprincipal').attr('id') == 'home') {
+    // if ( $('.paginaprincipal').attr('id') == 'home') {
+    if ( $.mobile.activePage.attr('id') == 'home') {
         // alert("pag princ");
             //window.location = "#exitDialog";
             exitAppPopup();

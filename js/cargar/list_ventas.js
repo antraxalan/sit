@@ -1,16 +1,13 @@
 
-
 var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
 
 
         // Query the database
         //
-        function queryDB_select_articulo(tx) {
-          tx.executeSql('SELECT CodArt, DesArtReducido, CodMarca from ARTICULO ', [], querySuccess_list_articulo, errorCB_select);
+        function queryDB_new_articulo(tx) {
+          tx.executeSql('SELECT CodArt, DesArtReducido, CodMarca from ARTICULO ', [], querySuccess_new_articulo, errorCB_new);
         }
-        function queryDB_select_cliente(tx) {
-          tx.executeSql('SELECT CodCliente, Nombre from CLIENTE ', [], querySuccess_select_cliente, errorCB_select);
-        }
+       
 
         // function searchQueryDB(tx) {
         //  tx.executeSql("SELECT * FROM DEMO where name like ('%"+ document.getElementById("txtName").value + "%')",
@@ -35,7 +32,7 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
 
          }
 
-         function querySuccess_list_articulo(tx, results) {
+         function querySuccess_new_articulo(tx, results) {
           // var tblText='<table id="t01"><tr><th>ID</th> <th>Name</th> <th>Number</th></tr>';
 
           // var tblContent='<option value="-">Seleccione un producto.</option>';
@@ -74,29 +71,7 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
 
 
 
-        function querySuccess_select_cliente(tx, results) {
-          // var tblText='<table id="t01"><tr><th>ID</th> <th>Name</th> <th>Number</th></tr>';
-          var tblContent2='';
-          // alert("asd");
-          // var tblContent2='<select name="select-custom-cliente" id="cliente" class="filterable-select " data-native-menu="false">';
-          tblContent2 +='<option value="-">Seleccione un cliente.</option>';
-          // tblContent2 +='<option value="3">Alan Aruquipa</option>';
-          var len = results.rows.length;
-          for (var i = 0; i < len; i++) {
-            tblContent2 +='<option value="'+results.rows.item(i).CodCliente+'">'+results.rows.item(i).CodCliente+' - '+results.rows.item(i).Nombre+'</option>'; 
-          }
-          // tblContent2 +='</select>'; 
-          // alert("cli:"+i);
-
-          // document.getElementById("tabla_select").innerHTML =tblContent2;
-          $('#cliente').html(tblContent2);
-          // $('.mensaje123').html(tblContent2);
-
-          // $('#cliente_div_id').html(tblContent2);
-          // $('#tabla_select').append(tblContent2);
-          $("#cliente").trigger("create");
-
-        }
+        
 
 
 
@@ -104,7 +79,7 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
 
         // Transaction error callback
         //
-        function errorCB_select(err) {
+        function errorCB_new(err) {
           alert("Error processing SQL: "+err.code);
         }
 
@@ -112,16 +87,11 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
 
         // Transaction success callback
         //
-        function cargar_select_marca() {
+        function cargar_new_venta_list() {
           // alert("successCB_select_articulo");
           // var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
-          db.transaction(queryDB_select_articulo, errorCB_select);
+          db.transaction(queryDB_new_articulo, errorCB_new);
         }
-        function cargar_select_cliente() {
-          // alert("successCB_select_cliente");
-          // var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
-          db.transaction(queryDB_select_cliente, errorCB_select);
-        }
-        
+       
 
 
