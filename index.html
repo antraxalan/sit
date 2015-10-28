@@ -954,7 +954,12 @@
 
           </div>
           <div class="tab_content" data-tab="3">
-            Content of Tab 3
+
+
+            <div class="list_chart_venta">
+
+            </div>
+
           </div>
         </div>
 
@@ -1929,7 +1934,7 @@ $(document).on("pagecreate","#registrar",function(event){
   // $('[data-toggle="tooltip"]').tooltip(); 
   carga_navigation();
   cargar_new_venta_list();
-       
+
   // setTimeout(function(){ window.location.href = "index.html#venta"; }, 3000);
 
   $('.d_cliente').click(function() {
@@ -2134,15 +2139,18 @@ $.mobile.navigate( "index.html#venta" );
 
   $("#cliente").on( "change", function(event, ui) {
     // alert($(this).val()+":1::");
-    cargar_info_cliente_html($(this).val());
+    
     // alert($( "#cliente option:selected" ).text());
     $(".cliente_nombre").text($( "#cliente option:selected" ).text());
     if($(this).val()=="-" || $(this).val()==""){
      $('.menu_v_c_d').hide();
+     $('.tablita_info_cliente').hide();
    }else{
-     $('.menu_v_c_d').show();
-   }
- });
+    cargar_listas($(this).val());
+    cargar_info_cliente_html($(this).val());
+    $('.menu_v_c_d').show();
+  }
+});
 
   $('.confirmar_venta_popup').click(function() {
    alert("confirmar_venta_popup");
@@ -2177,7 +2185,7 @@ $( document ).on( "pagecreate", "#venta", function( event ) {
     // alert("left");
     if(tab_id!="3"){//"3" cantidad maxima de tabs
       $('#venta_tabs').inlinetabs('show', tab_id_next);
-    }
+  }
 
     // var num=0;
     // num = $('.ppp_input').val();
