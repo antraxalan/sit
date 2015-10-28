@@ -409,7 +409,7 @@
           </div>
           <div data-role="fieldcontain" class="ui-field-contain vencimiento">               
             <label for="date">Fecha Vto:</label>
-            <input name="mydate" id="fecha_vto" type="date" data-role="date" data-date-format="dd-mm-yyyy"/>
+            <input name="mydate" id="fecha_vto" type="date" data-role="date" date-format="dd-mm-yyyy"/>
           </div>    
          <!--  <div data-role="fieldcontain" class="ui-field-contain">
             <label for="textarea">query:</label>
@@ -1927,8 +1927,9 @@
 $(document).on("pagecreate","#registrar",function(event){
   // $(document).on("pageinit",function(){
   // $('[data-toggle="tooltip"]').tooltip(); 
-carga_navigation();
+  carga_navigation();
   cargar_new_venta_list();
+       
   // setTimeout(function(){ window.location.href = "index.html#venta"; }, 3000);
 
   $('.d_cliente').click(function() {
