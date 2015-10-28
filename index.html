@@ -176,7 +176,7 @@
                </select> -->
                <!-- <button type="button" class="s_cliente">select prueba</button> -->
                <label for="date">Fecha:</label>
-               <input name="mydate" id="fecha" disabled="disabled"/>
+               <input name="mydate" id="fecha_actual" disabled="disabled"/>
              </div>
 
              <div data-role="fieldcontain" class="ui-field-contain">
@@ -409,7 +409,7 @@
           </div>
           <div data-role="fieldcontain" class="ui-field-contain vencimiento">               
             <label for="date">Fecha Vto:</label>
-            <input name="mydate" id="fecha2" type="date" data-role="date" data-date-format="dd-mm-yyyy"/>
+            <input name="mydate" id="fecha_vto" type="date" data-role="date" data-date-format="dd-mm-yyyy"/>
           </div>    
          <!--  <div data-role="fieldcontain" class="ui-field-contain">
             <label for="textarea">query:</label>
@@ -1768,7 +1768,7 @@
 
     // $(document).on("pageinit",function(){
       carga_db_crear();
-      carga_exit();
+      carga_navigation();
       carga_varios_complementos();
     // carga_exit();
     $('#pass_usuario').showPassword();
@@ -1927,7 +1927,7 @@
 $(document).on("pagecreate","#registrar",function(event){
   // $(document).on("pageinit",function(){
   // $('[data-toggle="tooltip"]').tooltip(); 
-
+carga_navigation();
   cargar_new_venta_list();
   // setTimeout(function(){ window.location.href = "index.html#venta"; }, 3000);
 
@@ -1947,7 +1947,7 @@ $.mobile.navigate( "index.html#venta" );
   var fecha_actual =((''+day).length<2 ? '0' : '') + day + '/' +
   ((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
 
-  $("#fecha").val(fecha_actual);
+  $("#fecha_actual").val(fecha_actual);
   $("#fecha_cobranza").val(fecha_actual);
   $("#fecha_deuda").val(fecha_actual);
 
@@ -1965,13 +1965,7 @@ $.mobile.navigate( "index.html#venta" );
  }); 
   $('.otro_cliente').click(function() {
     // alert("dsa");
-    $('#cliente').selectmenu();
-    $("#cliente option:eq(0)").prop("selected",true);
-    $('#cliente') .selectmenu("refresh");
-    $('#producto').selectmenu();
-    $("#producto option:eq(0)").prop("selected",true);
-    $('#producto') .selectmenu("refresh");
-    window.location.href = "index.html#registrar";
+    got_to_otro_usuario();
   });
 
 
