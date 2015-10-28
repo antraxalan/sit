@@ -91,12 +91,12 @@ function ConfirmCliente(stat){
     // alert("Inside ConfirmExit");
     if(stat == "1"){
         // alert("exit app fn");
-        window.location.href = "index.html#registrar";
+        go_to_otro_usuario();
     }else{
         return;
     };
 };
-function got_to_otro_usuario(){
+function go_to_otro_usuario(){
     $('#cliente').selectmenu();
     $("#cliente option:eq(0)").prop("selected",true);
     $('#cliente') .selectmenu("refresh");
