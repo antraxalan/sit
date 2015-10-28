@@ -5,8 +5,8 @@ var id_cliente;
         // Query the database
         //
         function queryDB_old_articulo(tx) {
-          alert(parseInt(id_cliente)+" old query");
-          tx.executeSql('SELECT CodConcepto,CodCliente,a.CodArt,CodMarca,DesArt,Precio from detalle a inner join articulo b on a.codart=b.codart where codconcepto=1200 and codcliente=? order by codconcepto,codcliente,a.codart', [parseInt(id_cliente)], querySuccess_old_articulo, errorCB_list);
+          alert(id_cliente+" old query");
+          tx.executeSql('SELECT CodConcepto,CodCliente,a.CodArt,CodMarca,DesArt,Precio from detalle a inner join articulo b on a.codart=b.codart where codconcepto=1200 and codcliente=100 order by codconcepto,codcliente,a.codart', [], querySuccess_old_articulo, errorCB_list);
         }
 
         function queryDB_new_articulo(tx) {
