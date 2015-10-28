@@ -5,15 +5,18 @@ var id_cliente;
         // Query the database
         //
         function queryDB_old_articulo(tx) {
-          tx.executeSql('SELECT CodConcepto,CodCliente,a.CodArt,CodMarca,DesArt,Precio from detalle a inner join articulo b on a.codart=b.codart where codconcepto=1200 and codcliente=? order by codconcepto,codcliente,a.codart', [id_cliente], querySuccess_old_articulo, errorCB_list);
+          alert(parseInt(id_cliente)+" old query");
+          tx.executeSql('SELECT CodConcepto,CodCliente,a.CodArt,CodMarca,DesArt,Precio from detalle a inner join articulo b on a.codart=b.codart where codconcepto=1200 and codcliente=? order by codconcepto,codcliente,a.codart', [parseInt(id_cliente)], querySuccess_old_articulo, errorCB_list);
         }
 
         function queryDB_new_articulo(tx) {
+          alert("new query");
           tx.executeSql('SELECT CodArt, DesArt, CodMarca from ARTICULO ', [], querySuccess_new_articulo, errorCB_list);
         }
 
 
         function querySuccess_old_articulo(tx, results) {
+          alert("succes old");
           var tblContent='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
           var len = results.rows.length;
           for (var i = 0; i < len; i++) {
@@ -41,6 +44,7 @@ var id_cliente;
 
         }
         function querySuccess_new_articulo(tx, results) {
+          alert("succes new");
           // var tblText='<table id="t01"><tr><th>ID</th> <th>Name</th> <th>Number</th></tr>';
 
           // var tblContent='<option value="-">Seleccione un producto.</option>';
