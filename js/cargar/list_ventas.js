@@ -112,8 +112,8 @@ var id_cliente;
           db.transaction(queryDB_new_articulo, errorCB_list);
         }
 
-        function cargar_listas (id_cliente){
-          id_cliente=id_cliente;
+        function cargar_listas (id_cli){
+          id_cliente=id_cli;
 
           cargar_old_venta_list();
           cargar_new_venta_list();
