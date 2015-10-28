@@ -1960,7 +1960,7 @@ $.mobile.navigate( "index.html#venta" );
   $("#fecha_cobranza").val(fecha_actual);
   $("#fecha_deuda").val(fecha_actual);
 
-  // $('.menu_v_c_d').hide();
+  $('.menu_v_c_d').hide();
 
   $('.mensaje').hide();
   $('.articulo').hide();
@@ -2151,6 +2151,7 @@ $.mobile.navigate( "index.html#venta" );
    }else{
     cargar_listas($(this).val());
     cargar_info_cliente_html($(this).val());
+    $('.tablita_info_cliente').show();
     $('.menu_v_c_d').show();
   }
 });
