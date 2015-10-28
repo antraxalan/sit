@@ -50,7 +50,6 @@ document.addEventListener("backbutton", function(e){
                 history.back();
             }
 
-        };
     });
 };
 
