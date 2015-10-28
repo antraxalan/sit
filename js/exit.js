@@ -27,30 +27,33 @@ document.addEventListener("backbutton", function(e){
         //     exitAppPopup();
         // }else{
             // alert("history back");
-            // history.back();
-            switch (curr) {
-                case 'home':
-                exitAppPopup();
-                break; 
-                case 'registrar':
-                window.location.href = "index.html#home";
-                break; 
-                case 'venta':
-                otroCliente();
-                // window.location.href = "index.html#registrar";
-                break; 
-                case 'cobranza':
-                window.location.href = "index.html#venta";
-                break; 
-                case 'deuda':
-                window.location.href = "index.html#cobranza";
-                break; 
+        // history.back();
+        if ($(".ui-page-active .ui-popup-active").length > 0){
+         history.back();
+     }else{
+         switch (curr) {
+            case 'home':
+            exitAppPopup();
+            break; 
+            case 'registrar':
+            window.location.href = "index.html#home";
+            break; 
+            case 'venta':
+            otroCliente();
+            break; 
+            case 'cobranza':
+            window.location.href = "index.html#venta";
+            break; 
+            case 'deuda':
+            window.location.href = "index.html#cobranza";
+            break; 
 
-                default: 
-                history.back();
-            }
+            default: 
+            history.back();
+        };
+    };
 
-    });
+});
 };
 
 function exitAppPopup() {
