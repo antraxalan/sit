@@ -1960,7 +1960,7 @@ $.mobile.navigate( "index.html#venta" );
   $("#fecha_cobranza").val(fecha_actual);
   $("#fecha_deuda").val(fecha_actual);
 
-  $('.menu_v_c_d').hide();
+  // $('.menu_v_c_d').hide();
 
   $('.mensaje').hide();
   $('.articulo').hide();
@@ -2062,7 +2062,7 @@ $.mobile.navigate( "index.html#venta" );
     var caj=$(this).attr('cant-cajas');
     var uni=$(this).attr('cant-unidades');
     var pri=$(this).attr('last-price');
-
+    alert(prod+" old"+ pri);
     $('.add_popup_prod').html(prod);
     $(".old_id_venta").val(cod);
 
@@ -2081,6 +2081,7 @@ $.mobile.navigate( "index.html#venta" );
     // var uni=$(this).attr('cant-unidades');
     var pri=$(this).attr('last-price');
 
+    alert(prod+" new"+pri);
     $('.add_popup_prod').html(prod);
     $(".old_id_venta").val(cod);
 
