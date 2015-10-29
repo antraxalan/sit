@@ -731,9 +731,9 @@
 
               <div class="ui-grid-a">
                 <div class="ui-block-a">
-                  <a href="#" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a " data-rel="back" data-transition="flow">Cancelar</a>
+                  <a href="#" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a close_popup" data-transition="flow">Cancelar</a>
                 </div>
-                <div class="ui-block-b"><a href="#" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_venta_popup" data-rel="back">Confirmar</a></div>
+                <div class="ui-block-b"><a href="#" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_venta_popup">Confirmar</a></div>
               </div>
             </div>
           </div>
@@ -1870,6 +1870,15 @@ $.mobile.navigate( "index.html#venta" );
     $("#prest_popup").prop("checked",false).checkboxradio("refresh");
   });
 
+    $(".close_popup").on('click', function(event) {
+      $( "#add_venta_popup" ).popup( "close" );
+    });
+
+    $('.confirmar_venta_popup').click(function() {
+
+      $( "#add_venta_popup" ).popup( "close" );
+    // $(".articulo").show(300);
+  });
 
     $(".editar_venta_class").on('click', function(event) {
 
@@ -1934,10 +1943,6 @@ $.mobile.navigate( "index.html#venta" );
   }
 });
 
-    $('.confirmar_venta_popup').click(function() {
-     alert("confirmar_venta_popup");
-   // $(".articulo").show(300);
- });
 
     $("#producto").bind("change", function(){
       alert($(this).val()+":2::");
