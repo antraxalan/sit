@@ -545,13 +545,13 @@
 
             <div class="list_new_venta">
 
-              <ul data-role="listview" data-split-icon="edit" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">
+              <!-- <ul data-role="listview" data-split-icon="edit" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">
                 <li><a href="#">
                   <img src="img/marcas/35.png">
                   <h2>123 - alan</h2></a>
                   <a href="#add_venta_popup" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="123" data-transition="flow">Historial</a>
                 </li>
-              </ul>
+              </ul> -->
               <!-- <ul data-role="listview" data-split-icon="edit" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">
                 <li>
                   <a href="#">
@@ -1835,15 +1835,15 @@ $.mobile.navigate( "index.html#venta" );
     // $(".articulo").hide();
     var prod=$(this).parent().find('h2').text();
     var cod=$(this).attr('codigo-venta');
-    var caj=$(this).attr('cant-cajas');
-    var uni=$(this).attr('cant-unidades');
+    // var caj=$(this).attr('cant-cajas');
+    // var uni=$(this).attr('cant-unidades');
     var pri=$(this).attr('last-price');
-    alert(prod+" old"+ " pri:"+pri+" cod:"+cod+" caj:"+caj+" uni:"+uni);
+    // alert(prod+" old"+ " pri:"+pri+" cod:"+cod+" caj:"+caj+" uni:"+uni);
     $('.add_popup_prod').html(prod);
     $(".old_id_venta").val(cod);
 
-    $('.txt_cajas_popup').html('Cajas: ('+caj+')');
-    $('.txt_unidades_popup').html('Unidades: ('+uni+')');
+    // $('.txt_cajas_popup').html('Cajas: ('+caj+')');
+    // $('.txt_unidades_popup').html('Unidades: ('+uni+')');
     $('#precio_popup').val(pri);
     // $("#canje_popup").prop('checked', true);
     $("#canje_popup").prop("checked",true).checkboxradio("refresh");
@@ -1862,8 +1862,8 @@ $.mobile.navigate( "index.html#venta" );
       $('.add_popup_prod').html(prod);
       $(".old_id_venta").val(cod);
 
-      $('.txt_cajas_popup').html('Cajas:');
-      $('.txt_unidades_popup').html('Unidades:');
+      // $('.txt_cajas_popup').html('Cajas:');
+      // $('.txt_unidades_popup').html('Unidades:');
       $('#precio_popup').val(pri);
     // $("#canje_popup").prop('checked', true);
     $("#canje_popup").prop("checked",true).checkboxradio("refresh");
