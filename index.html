@@ -1838,7 +1838,7 @@ $.mobile.navigate( "index.html#venta" );
     var caj=$(this).attr('cant-cajas');
     var uni=$(this).attr('cant-unidades');
     var pri=$(this).attr('last-price');
-    alert(prod+" old"+ pri);
+    alert(prod+" old"+ " pri:"+pri+" cod:"+cod+" caj:"+caj+" uni:"+uni);
     $('.add_popup_prod').html(prod);
     $(".old_id_venta").val(cod);
 
@@ -1854,17 +1854,17 @@ $.mobile.navigate( "index.html#venta" );
     $(".list_new_venta").on('click','.add_venta_popup_class_new', function(event) {
       var prod=$(this).parent().find('h2').text();
       var cod=$(this).attr('codigo-venta');
-    // var caj=$(this).attr('cant-cajas');
-    // var uni=$(this).attr('cant-unidades');
-    var pri=$(this).attr('last-price');
+      var caj=$(this).attr('cant-cajas');
+      var uni=$(this).attr('cant-unidades');
+      var pri=$(this).attr('last-price');
+      alert(prod+" new"+ " pri:"+pri+" cod:"+cod+" caj:"+caj+" uni:"+uni);
+      // alert(prod+" new"+pri);
+      $('.add_popup_prod').html(prod);
+      $(".old_id_venta").val(cod);
 
-    alert(prod+" new"+pri);
-    $('.add_popup_prod').html(prod);
-    $(".old_id_venta").val(cod);
-
-    $('.txt_cajas_popup').html('Cajas:');
-    $('.txt_unidades_popup').html('Unidades:');
-    $('#precio_popup').val(pri);
+      $('.txt_cajas_popup').html('Cajas:');
+      $('.txt_unidades_popup').html('Unidades:');
+      $('#precio_popup').val(pri);
     // $("#canje_popup").prop('checked', true);
     $("#canje_popup").prop("checked",true).checkboxradio("refresh");
     $("#prest_popup").prop("checked",false).checkboxradio("refresh");
