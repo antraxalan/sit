@@ -27,10 +27,7 @@ var id_cliente;
             }
             tblContent +='<li><a href="#">';
             tblContent +='<img src="img/marcas/'+co_ma+'.png">';
-            var cod=$(this).attr('codigo-venta');
-            var caj=$(this).attr('cant-cajas');
-            var uni=$(this).attr('cant-unidades');
-            var pri=$(this).attr('last-price');
+
             tblContent +='<h2>'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</h2></a>';
             tblContent +='<a href="#add_venta_popup" class="add_venta_popup_class_old" data-rel="popup" codigo-venta="'+results.rows.item(i).CodArt+'" last-price="'+results.rows.item(i).Precio+'" data-transition="flow">Historial</a></li>';
             // tblContent +='<option value="'+results.rows.item(i).CodArt+'">'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</option>'; 
