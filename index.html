@@ -53,7 +53,7 @@
     <script type="text/javascript" src="js/usuario/borrar_sesion.js"></script>
 
 
-    <script type="text/javascript" src="js/exit.js"></script>
+    <script type="text/javascript" src="js/navigation.js"></script>
     <script type="text/javascript" src="js/cargar/select_cli_mar.js"></script>
     <script type="text/javascript" src="js/cargar/list_ventas.js"></script>
     <script type="text/javascript" src="js/select_plus_filter.js"></script>
@@ -1750,7 +1750,7 @@ $.mobile.navigate( "index.html#venta" );
  }); 
   $('.otro_cliente').click(function() {
     // alert("dsa");
-    go_to_otro_usuario();
+    otroCliente();
   });
 
 
@@ -1845,9 +1845,11 @@ $.mobile.navigate( "index.html#venta" );
     // $('.txt_cajas_popup').html('Cajas: ('+caj+')');
     // $('.txt_unidades_popup').html('Unidades: ('+uni+')');
     $('.txt_cajas_popup').html('Cajas:');
-      $('.txt_unidades_popup').html('Unidades:');
+    $('.txt_unidades_popup').html('Unidades:');
     $('#precio_popup').val(pri);
     // $("#canje_popup").prop('checked', true);
+    $("#cajas_popup").val('');
+    $("#unidades_popup").val('');
     $("#canje_popup").prop("checked",true).checkboxradio("refresh");
     $("#prest_popup").prop("checked",false).checkboxradio("refresh");
   });
@@ -1867,6 +1869,8 @@ $.mobile.navigate( "index.html#venta" );
       $('.txt_unidades_popup').html('Unidades:');
       $('#precio_popup').val(pri);
     // $("#canje_popup").prop('checked', true);
+    $("#cajas_popup").val('');
+    $("#unidades_popup").val('');
     $("#canje_popup").prop("checked",true).checkboxradio("refresh");
     $("#prest_popup").prop("checked",false).checkboxradio("refresh");
   });
