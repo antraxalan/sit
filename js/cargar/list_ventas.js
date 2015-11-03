@@ -6,7 +6,8 @@ var id_cliente;
         //
         function queryDB_old_articulo(tx) {
           // alert(id_cliente+" old query");
-          tx.executeSql('SELECT CodConcepto,CodCliente,a.CodArt,CodMarca,DesArt,Precio from detalle a inner join articulo b on a.codart=b.codart where codconcepto=1200 and codcliente=? order by codconcepto,codcliente,a.codart', [id_cliente], querySuccess_old_articulo, errorCB_list);
+          // tx.executeSql('SELECT CodConcepto,CodCliente,a.CodArt,CodMarca,DesArt,Precio from detalle a inner join articulo b on a.codart=b.codart where codconcepto=1200 and codcliente=? order by codconcepto,codcliente,a.codart', [id_cliente], querySuccess_old_articulo, errorCB_list);
+          tx.executeSql('select a.CodConcepto,a.CodCliente,a.Fecha,CodMarca,a.CodArt,DesArt,Calibre,CantxEmpaque,PrecioVtaMax, a.Precio UltPrecioVendido,a.Debe Importe,a.Dcajas Cajas, sum(c.dcajas-c.hcajas) CajasCamion from detalle a inner join articulo b on a.codart=b.codart left outer join detalle c on c.codconcepto=1800 and a.codart=c.codart where a.codconcepto=1200 and a.codcliente=? group by a.codconcepto,a.codcliente,a.fecha,a.codart,desart,calibre,cantxempaque,preciovtamax, a.precio,a.debe,a.dcajas,CodMarca order by a.codconcepto,a.codcliente,a.codart', [id_cliente], querySuccess_old_articulo, errorCB_list);
         }
 
         function queryDB_new_articulo(tx) {
@@ -19,6 +20,7 @@ var id_cliente;
           // alert("succes old");
           var tblContent='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
           var len = results.rows.length;
+          var precio;
           for (var i = 0; i < len; i++) {
             var co_ma= results.rows.item(i).CodMarca;
             if(!(co_ma=="18" || co_ma=="25" || co_ma=="35" || co_ma=="50" || co_ma=="70" || co_ma=="94")){ 
@@ -27,9 +29,9 @@ var id_cliente;
             }
             tblContent +='<li><a href="#">';
             tblContent +='<img src="img/marcas/'+co_ma+'.png">';
-
             tblContent +='<h2>'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</h2></a>';
-            tblContent +='<a href="#add_venta_popup" class="add_venta_popup_class_old" data-rel="popup" codigo-venta="'+results.rows.item(i).CodArt+'" last-price="'+results.rows.item(i).Precio+'" data-transition="flow">Historial</a></li>';
+            precio=(parseFloat( results.rows.item(i).Importe/results.rows.item(i).Cajas )).toFixed(2);
+            tblContent +='<a href="#add_venta_popup" class="add_venta_popup_class_old" data-rel="popup" codigo-venta="'+results.rows.item(i).CodArt+'" last-price="'+precio+'" data-transition="flow">Historial</a></li>';
             // tblContent +='<option value="'+results.rows.item(i).CodArt+'">'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</option>'; 
           }
           tblContent +='</ul>';
