@@ -1553,7 +1553,7 @@
     // $(document).on("pageinit",function(){
       carga_db_crear();
       carga_navigation();
-      carga_varios_complementos();
+      // carga_varios_complementos();
     // carga_exit();
     $('#pass_usuario').showPassword();
     $("#cod_usuario").val(localStorage.g_username);
@@ -1969,40 +1969,40 @@ $( document ).on( "pagecreate", "#venta", function( event ) {
 
   // alert( "venta" );
 
+  /////swipe
+  // $(".tab_content").on("swipeleft",function(){
+  //   var tab_id=$(this).attr('data-tab');
+  //   var tab_id_next=tab_id-1+2;
+  //   var tab_id_prev=tab_id-1;
+  //   // alert("left");
+  //   if(tab_id!="3"){//"3" cantidad maxima de tabs
+  //     $('#venta_tabs').inlinetabs('show', tab_id_next);
+  // }
 
-  $(".tab_content").on("swipeleft",function(){
-    var tab_id=$(this).attr('data-tab');
-    var tab_id_next=tab_id-1+2;
-    var tab_id_prev=tab_id-1;
-    // alert("left");
-    if(tab_id!="3"){//"3" cantidad maxima de tabs
-      $('#venta_tabs').inlinetabs('show', tab_id_next);
-  }
+  //   // var num=0;
+  //   // num = $('.ppp_input').val();
+  //   // num=parseInt(num)+1;
+  //   // $('.ppp_input').val(num);
+  //   // $('.ppp').html("left: "+num );
+  // });
+  // $(".tab_content").on("swiperight",function(){
+  //   var tab_id=$(this).attr('data-tab');
+  //   var tab_id_next=tab_id-1+2;
+  //   var tab_id_prev=tab_id-1;
+  //   // alert("right");
+  //   if(tab_id!="1"){
+  //     $('#venta_tabs').inlinetabs('show', tab_id_prev);
+  //   }
 
-    // var num=0;
-    // num = $('.ppp_input').val();
-    // num=parseInt(num)+1;
-    // $('.ppp_input').val(num);
-    // $('.ppp').html("left: "+num );
-  });
-  $(".tab_content").on("swiperight",function(){
-    var tab_id=$(this).attr('data-tab');
-    var tab_id_next=tab_id-1+2;
-    var tab_id_prev=tab_id-1;
-    // alert("right");
-    if(tab_id!="1"){
-      $('#venta_tabs').inlinetabs('show', tab_id_prev);
-    }
+  //   // alert("right");
 
-    // alert("right");
-
-    // var num=0;
-    // num = $('.ppp_input').val();
-    // num=parseInt(num)+1;
-    // $('.ppp_input').val(num);
-    // $('.ppp').html("<p>righ: "+num+"</p>" );
-  });
-
+  //   // var num=0;
+  //   // num = $('.ppp_input').val();
+  //   // num=parseInt(num)+1;
+  //   // $('.ppp_input').val(num);
+  //   // $('.ppp').html("<p>righ: "+num+"</p>" );
+  // });
+  /////swipe fin
 
 
 
