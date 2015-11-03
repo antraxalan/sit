@@ -21,6 +21,7 @@ var id_cliente;
           var tblContent='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
           var len = results.rows.length;
           var precio;
+          var disabled;
           for (var i = 0; i < len; i++) {
             var co_ma= results.rows.item(i).CodMarca;
             if(!(co_ma=="18" || co_ma=="25" || co_ma=="35" || co_ma=="50" || co_ma=="70" || co_ma=="94")){ 
@@ -30,7 +31,14 @@ var id_cliente;
             tblContent +='<li><a href="#">';
             tblContent +='<img src="img/marcas/'+co_ma+'.png">';
             tblContent +='<h2>'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</h2></a>';
-            precio=(parseFloat( results.rows.item(i).Importe/results.rows.item(i).Cajas )).toFixed(2);
+
+            precio=(parseFloat( parseFloat(results.rows.item(i).Importe)/parseFloat(results.rows.item(i).Cajas) )).toFixed(2);
+            if(results.rows.item(i).CajasCamion==""){
+              disabled='class="ui-disabled"';
+              alert(results.rows.item(i).CajasCamion);
+            }else{
+              disabled='';
+            }
             tblContent +='<a href="#add_venta_popup" class="add_venta_popup_class_old" data-rel="popup" codigo-venta="'+results.rows.item(i).CodArt+'" last-price="'+precio+'" data-transition="flow">Historial</a></li>';
             // tblContent +='<option value="'+results.rows.item(i).CodArt+'">'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</option>'; 
           }
