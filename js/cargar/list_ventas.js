@@ -52,7 +52,7 @@ var id_cliente;
           // $('#tabla_select').append(tblContent);
           // $("#producto").trigger("create");
           $(".list_old_venta").trigger("create");
-
+          $('.mensaje_venta_c').html('ready');
         }
         function querySuccess_new_articulo(tx, results) {
           // alert("succes new");
@@ -126,7 +126,7 @@ var id_cliente;
         function cargar_listas (id_cli){
           id_cliente=id_cli;
 
-          cargar_old_venta_list();
+          // cargar_old_venta_list();
           cargar_new_venta_list();
         }
 

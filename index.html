@@ -520,8 +520,11 @@
       <label for="textarea" class="cliente_nombre">Id - Nombre del cliente</label>
     </div>
     
-    <h4 class="mensaje_cobranza" align="center"></h4>
-
+    <h4 class="mensaje_venta_c" align="center"></h4>
+    <h4 class="mensaje_venta" align="center"></h4>
+      <buton type="button" class="cargar_old_venta_list_btn_touch_start">touch_start</buton>
+      <buton type="button" class="cargar_old_venta_list_btn_touch_end">touch_end</buton>
+      <buton type="button" class="cargar_old_venta_list_btn_click">click</buton>
 
     <div class="ui-content" role="main">
 
@@ -2004,6 +2007,18 @@ $( document ).on( "pagecreate", "#venta", function( event ) {
   // });
   /////swipe fin
 
+$('.cargar_old_venta_list_btn_touch_start').on('touchstart', function() {
+  cargar_old_venta_list();
+  $('.mensaje_venta').html('touchstart');
+});
+$('.cargar_old_venta_list_btn_touch_end').on('touchend', function() {
+  cargar_old_venta_list();
+  $('.mensaje_venta').html('touchend');
+});
+$('.cargar_old_venta_list_btn_click').on('click', function() {
+  cargar_old_venta_list();
+  $('.mensaje_venta').html('click');
+});
 
 
 
