@@ -23,6 +23,7 @@ var id_cliente;
           var tblContent='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
           var len = results.rows.length;
           var precio;
+          var aux;
           var disabled;
           for (var i = 0; i < len; i++) {
             var co_ma= results.rows.item(i).CodMarca;
@@ -41,8 +42,12 @@ var id_cliente;
             tblContent +='<li><a href="#" '+disabled+'>';
             tblContent +='<img src="img/marcas/'+co_ma+'.png">';
             tblContent +='<h2>'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</h2></a>';
-
-            precio=(parseFloat( parseFloat(results.rows.item(i).Importe)/parseFloat(results.rows.item(i).Cajas) )).toFixed(2);
+            alert('Importe:'+results.rows.item(i).Importe);
+            alert('Cajas:'+results.rows.item(i).Cajas);
+            aux=parseFloat(results.rows.item(i).Importe)/parseFloat(results.rows.item(i).Cajas);
+            alert('aux:'+aux);
+            precio=(parseFloat( aux )).toFixed(2);
+            alert('precio:'+precio);
             tblContent +='<a href="#add_venta_popup" '+disabled+' class="add_venta_popup_class_old" data-rel="popup" codigo-venta="'+results.rows.item(i).CodArt+'" last-price="'+precio+'" data-transition="flow">Historial</a></li>';
             // tblContent +='<option value="'+results.rows.item(i).CodArt+'">'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</option>'; 
           }
