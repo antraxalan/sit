@@ -30,7 +30,7 @@ var id_cliente;
               // alert(co_ma);
               co_ma="999";
             }
-            alert(results.rows.item(i).CajasCamion+"->CajasCamion  "+results.rows.item(i).CodMarca+"->CodMarca  "+results.rows.item(i).Importe+"->Importe  "+results.rows.item(i).Cajas+"->Cajas  "+results.rows.item(i).CodArt+"->CodArt"+);
+            alert(results.rows.item(i).CajasCamion+"->CajasCamion  "+results.rows.item(i).CodMarca+"->CodMarca  "+results.rows.item(i).Importe+"->Importe  "+results.rows.item(i).Cajas+"->Cajas  "+results.rows.item(i).CodArt+"->CodArt");
             tblContent +='<li><a href="#">';
             tblContent +='<img src="img/marcas/'+co_ma+'.png">';
             tblContent +='<h2>'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</h2></a>';
@@ -56,6 +56,7 @@ var id_cliente;
           $(".list_old_venta").trigger("create");
           $('.mensaje_venta_c').html('Ready');
         }
+
         function querySuccess_new_articulo(tx, results) {
           // alert("succes new");
           // var tblText='<table id="t01"><tr><th>ID</th> <th>Name</th> <th>Number</th></tr>';
