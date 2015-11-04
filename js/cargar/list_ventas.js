@@ -43,8 +43,13 @@ var id_cliente;
             tblContent +='<img src="img/marcas/'+co_ma+'.png">';
             tblContent +='<h2>'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</h2></a>';
             alert('Importe:'+results.rows.item(i).Importe);
+            alert('Debe:'+results.rows.item(i).Debe);
             alert('Cajas:'+results.rows.item(i).Cajas);
-            aux=parseFloat(results.rows.item(i).Importe)/parseFloat(results.rows.item(i).Cajas);
+            if(results.rows.item(i).Cajas!='0'){
+              aux=parseFloat(results.rows.item(i).Importe)/parseFloat(results.rows.item(i).Cajas);
+            }else{
+              aux=0;
+            }
             alert('aux:'+aux);
             precio=(parseFloat( aux )).toFixed(2);
             alert('precio:'+precio);
