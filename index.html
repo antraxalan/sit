@@ -522,11 +522,11 @@
     
     <h4 class="mensaje_venta_c" align="center"></h4>
     <h4 class="mensaje_venta" align="center"></h4>
-      <buton type="button" class="cargar_old_venta_list_btn_touch_start">touch_start</buton>
-      <buton type="button" class="cargar_old_venta_list_btn_touch_end">touch_end</buton>
-      <buton type="button" class="cargar_old_venta_list_btn_click">click</buton>
 
     <div class="ui-content" role="main">
+    <button type="button" class="cargar_old_venta_list_btn_touch_start">touch_start</button>
+    <button type="button" class="cargar_old_venta_list_btn_touch_end">touch_end</button>
+    <button type="button" class="cargar_old_venta_list_btn_click">click</button>
 
       <form class="ui">
 
@@ -1936,21 +1936,20 @@ $.mobile.navigate( "index.html#venta" );
 
 
     $("#cliente").on( "change", function(event, ui) {
-    // alert($(this).val()+":::");
-    
-    // alert($( "#cliente option:selected" ).text());
-    $(".cliente_nombre").text($( "#cliente option:selected" ).text());
-    if($(this).val()=="-" || $(this).val()==""){
-     $('.menu_v_c_d').hide();
-     $('.tablita_info_cliente').hide();
-   }else{
-    cargar_listas($(this).val());
-    cargar_info_cliente_html($(this).val());
-    $('.tablita_info_cliente').show();
-    $('.menu_v_c_d').show();
-  }
-});
+        // alert($(this).val()+":::");
 
+        // alert($( "#cliente option:selected" ).text());
+        $(".cliente_nombre").text($( "#cliente option:selected" ).text());
+        if($(this).val()=="-" || $(this).val()==""){
+         $('.menu_v_c_d').hide();
+         $('.tablita_info_cliente').hide();
+       }else{
+        cargar_listas($(this).val());
+        cargar_info_cliente_html($(this).val());
+        $('.tablita_info_cliente').show();
+        $('.menu_v_c_d').show();
+      }
+    });
 
     $("#producto").bind("change", function(){
       alert($(this).val()+":2::");
@@ -2007,18 +2006,18 @@ $( document ).on( "pagecreate", "#venta", function( event ) {
   // });
   /////swipe fin
 
-$('.cargar_old_venta_list_btn_touch_start').on('touchstart', function() {
-  cargar_old_venta_list();
-  $('.mensaje_venta').html('touchstart');
-});
-$('.cargar_old_venta_list_btn_touch_end').on('touchend', function() {
-  cargar_old_venta_list();
-  $('.mensaje_venta').html('touchend');
-});
-$('.cargar_old_venta_list_btn_click').on('click', function() {
-  cargar_old_venta_list();
-  $('.mensaje_venta').html('click');
-});
+  $('.cargar_old_venta_list_btn_touch_start').on('touchstart', function() {
+    cargar_listas('100');
+    $('.mensaje_venta').html('touchstart');
+  });
+  $('.cargar_old_venta_list_btn_touch_end').on('touchend', function() {
+    cargar_listas('100');
+    $('.mensaje_venta').html('touchend');
+  });
+  $('.cargar_old_venta_list_btn_click').on('click', function() {
+    cargar_listas('100');
+    $('.mensaje_venta').html('click');
+  });
 
 
 
