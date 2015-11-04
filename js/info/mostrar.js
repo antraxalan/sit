@@ -116,10 +116,10 @@ function populateDB_detalle(tx) {
         	tblContent+='<thead>';
         	tblContent+='<tr>';
 
-        	tblContent+='<th data-priority="persist">TipoDcto</th>';
-        	tblContent+='<th data-priority="2">Apu</th>';
-        	tblContent+='<th data-priority="3">Fecha</th>';
-        	tblContent+='<th data-priority="1">FechaVto</th>';
+        	tblContent+='<th data-priority="persist">CodCliente</th>';
+        	tblContent+='<th data-priority="2">Debe</th>';
+        	tblContent+='<th data-priority="3">Haber</th>';
+        	tblContent+='<th data-priority="1">CodArt</th>';
         	tblContent+='</tr>';
         	tblContent+='</thead>';
         	tblContent+='<tbody>';
@@ -128,12 +128,11 @@ function populateDB_detalle(tx) {
         	var len = results.rows.length;
         	for (var i = 0; i < len; i++) {
 
-        		tblContent+='<tr><td>'; 
-
-        		tblContent+=results.rows.item(i).TipoDcto		+'</td><td>';
-        		tblContent+=results.rows.item(i).Apu			+'</td><td>';
-        		tblContent+=results.rows.item(i).Fecha			+'</td><td>';
-        		tblContent+=results.rows.item(i).FechaVto	 	+'</td></tr>';
+        		tblContent+='<tr><td>';
+        		tblContent+=results.rows.item(i).CodCliente		+'</td><td>';
+        		tblContent+=results.rows.item(i).Debe			+'</td><td>';
+        		tblContent+=results.rows.item(i).Haber			+'</td><td>';
+        		tblContent+=results.rows.item(i).CodArt	 	    +'</td></tr>';
         	}
         	tblContent+="</tbody></table>";
         	// document.getElementById("tabla_info").innerHTML =tblContent;
@@ -175,15 +174,15 @@ function populateDB_detalle(tx) {
         //
         function cargar_info_articulo() {
         	// alert("cargar_info_articulo");
-        	db.transaction(populateDB_info_articulo, errorCB_info, successCB_info_articulo);
+        	db.transaction(successCB_info_articulo, errorCB_info);
         }
         function cargar_info_cliente() {
         	// alert("cargar_info_cliente");
-        	db.transaction(populateDB_info_cliente, errorCB_info, successCB_info_cliente);
+        	db.transaction(successCB_info_cliente, errorCB_info);
         }
         function cargar_info_detalle() {
         	// alert("cargar_info_detalle");
-        	db.transaction(populateDB_info_detalle, errorCB_info, successCB_info_detalle);
+        	db.transaction(successCB_info_detalle, errorCB_info);
         }
 
 
