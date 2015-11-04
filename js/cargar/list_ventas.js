@@ -36,7 +36,7 @@ var id_cliente;
             tblContent +='<h2>'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</h2></a>';
 
             precio=(parseFloat( parseFloat(results.rows.item(i).Importe)/parseFloat(results.rows.item(i).Cajas) )).toFixed(2);
-            if(results.rows.item(i).CajasCamion==='NULL'){
+            if(results.rows.item(i).CajasCamion===null){
               disabled='class="ui-disabled"';
               alert("null");
             }else{
