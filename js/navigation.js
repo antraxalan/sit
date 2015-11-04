@@ -18,14 +18,19 @@ function start_navigation(){
 
 
 document.addEventListener("backbutton", function(e){
-
+    var href = document.location.href;
+    var lastPathSegment = href.substr(href.lastIndexOf('/') + 1);
     var curr=$.mobile.activePage.attr('id'); 
+    if(lastPathSegment=='info.html'){
+        curr='info.html';
+    }
 
     if ($(".ui-page-active .ui-popup-active").length > 0){
-     history.back();
- }else{
-     switch (curr) 
-     {
+       history.back();
+   }else{
+
+       switch (curr) 
+       {
         case 'home':
         exitAppPopup();
         break; 
