@@ -5,6 +5,7 @@ var id_cliente;
         // Query the database
         //
         function queryDB_old_articulo(tx) {
+          alert("queryDB_old_articulo");
           // alert(id_cliente+" old query");
           // tx.executeSql('SELECT CodConcepto,CodCliente,a.CodArt,CodMarca,DesArt,Precio from detalle a inner join articulo b on a.codart=b.codart where codconcepto=1200 and codcliente=? order by codconcepto,codcliente,a.codart', [id_cliente], querySuccess_old_articulo, errorCB_list);
           tx.executeSql('select a.CodConcepto,a.CodCliente,a.Fecha,CodMarca,a.CodArt,DesArt,Calibre,CantxEmpaque,PrecioVtaMax, a.Precio UltPrecioVendido,a.Debe Importe,a.Dcajas Cajas, sum(c.dcajas-c.hcajas) CajasCamion from detalle a inner join articulo b on a.codart=b.codart left outer join detalle c on c.codconcepto=1800 and a.codart=c.codart where a.codconcepto=1200 and a.codcliente=? group by a.codconcepto,a.codcliente,a.fecha,a.codart,desart,calibre,cantxempaque,preciovtamax, a.precio,a.debe,a.dcajas,CodMarca order by a.codconcepto,a.codcliente,a.codart', [id_cliente], querySuccess_old_articulo, errorCB_list);
@@ -17,6 +18,7 @@ var id_cliente;
 
 
         function querySuccess_old_articulo(tx, results) {
+          alert("ini query");
           // alert("succes old");
           var tblContent='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
           var len = results.rows.length;
@@ -52,7 +54,7 @@ var id_cliente;
           // $('#tabla_select').append(tblContent);
           // $("#producto").trigger("create");
           $(".list_old_venta").trigger("create");
-          $('.mensaje_venta_c').html('ready');
+          $('.mensaje_venta_c').html('Ready');
         }
         function querySuccess_new_articulo(tx, results) {
           // alert("succes new");
@@ -111,7 +113,7 @@ var id_cliente;
         // Transaction success callback
         //
         function cargar_old_venta_list() {
-
+          alert("cargar_old_venta_list");
           // alert("successCB_select_articulo");
           // var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
           db.transaction(queryDB_old_articulo, errorCB_list);
@@ -124,10 +126,11 @@ var id_cliente;
         }
 
         function cargar_listas (id_cli){
+          alert("cargar_listas");
           id_cliente=id_cli;
 
-          // cargar_old_venta_list();
-          cargar_new_venta_list();
+          cargar_old_venta_list();
+          // cargar_new_venta_list();
         }
 
 
