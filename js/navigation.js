@@ -21,6 +21,7 @@ document.addEventListener("backbutton", function(e){
     var href = document.location.href;
     var lastPathSegment = href.substr(href.lastIndexOf('/') + 1);
     var curr=$.mobile.activePage.attr('id'); 
+    alert(lastPathSegment);
     if(lastPathSegment=='info.html'){
         curr='info.html';
     }
