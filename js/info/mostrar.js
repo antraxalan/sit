@@ -119,7 +119,10 @@ function populateDB_detalle(tx) {
         	tblContent+='<th data-priority="persist">CodCliente</th>';
         	tblContent+='<th data-priority="2">Debe</th>';
         	tblContent+='<th data-priority="3">Haber</th>';
-        	tblContent+='<th data-priority="1">CodArt</th>';
+            tblContent+='<th data-priority="1">CodArt</th>';
+            tblContent+='<th data-priority="1">Fecha</th>';
+            tblContent+='<th data-priority="1">FechaVto</th>';
+        	tblContent+='<th data-priority="1">Precio</th>';
         	tblContent+='</tr>';
         	tblContent+='</thead>';
         	tblContent+='<tbody>';
@@ -132,7 +135,10 @@ function populateDB_detalle(tx) {
         		tblContent+=results.rows.item(i).CodCliente		+'</td><td>';
         		tblContent+=results.rows.item(i).Debe			+'</td><td>';
         		tblContent+=results.rows.item(i).Haber			+'</td><td>';
-        		tblContent+=results.rows.item(i).CodArt	 	    +'</td></tr>';
+                tblContent+=results.rows.item(i).CodArt         +'</td></tr>';
+                tblContent+=results.rows.item(i).Fecha          +'</td></tr>';
+                tblContent+=results.rows.item(i).FechaVto       +'</td></tr>';
+        		tblContent+=results.rows.item(i).Precio 	    +'</td></tr>';
         	}
         	tblContent+="</tbody></table>";
         	// document.getElementById("tabla_info").innerHTML =tblContent;
