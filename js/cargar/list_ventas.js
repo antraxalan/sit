@@ -42,16 +42,6 @@ var lista_contenido;
               // alert("not null");
             }
 
-            '<li>
-            <a href="#">
-            <img src="img/cart.png">
-            <h2>511 - PILSENER TWIST OFF 300 O.W. PROMOCION</h2>
-            <p>Ultima venta: <strong>6</strong> cajas a <strong>55.00</strong> Bolivianos. (<strong>14/08/2012</strong>)</p>
-            </a>
-
-            <a href="#add_venta_popup" class="add_venta_popup_class_old" data-rel="popup" codigo-venta="12" cant-cajas="10" cant-unidades="1" last-price="54.5" data-transition="flow">Comprar</a>
-            </li>'
-
             tblContent +='<li><a href="#" '+disabled+'>';
             tblContent +='<img src="img/marcas/'+co_ma+'.png">';
             tblContent +='<h2>'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</h2>';
@@ -74,8 +64,8 @@ var lista_contenido;
             fecha_ultm = fecha_ultm[0].split("-");
             fecha_ultm = fecha_ultm[2]+'/'+fecha_ultm[1]+'/'+fecha_ultm[0];
 
-            tblContent +='<p>Ultima venta: <strong>'+results.rows.item(i).Cajas+'</strong> cajas a <strong>'+results.rows.item(i).Importe+'</strong> Bolivianos. (<strong>'+fecha_ultm+'</strong>)</p>';
-            tblContent +='</a>'
+            tblContent +='<p>Ultima venta: <strong>'+results.rows.item(i).Cajas+'</strong> cajas a <strong>'+results.rows.item(i).Importe+'</strong> Bolivianos. (<strong>'+fecha_ultm+'</strong>)</p></a>';
+    
 
             tblContent +='<a href="#add_venta_popup" '+disabled+' class="add_venta_popup_class_old" data-rel="popup" codigo-venta="'+results.rows.item(i).CodArt+'" last-price="'+precio+'" data-transition="flow">Historial</a></li>';
             // tblContent +='<option value="'+results.rows.item(i).CodArt+'">'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</option>'; 
