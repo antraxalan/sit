@@ -410,10 +410,6 @@
             <label for="date">Fecha Vto:</label>
             <input name="mydate" id="fecha_vto" type="date" data-role="date" date-format="dd-mm-yyyy"/>
           </div>    
-         <!--  <div data-role="fieldcontain" class="ui-field-contain">
-            <label for="textarea">query:</label>
-            <textarea cols="40" rows="8" name="textarea" id="query">select codcliente,nombre, sum(SaldoBs) SaldoBs,sum(CajaPac) CajaPac,sum(CajaHuari) CajaHuari,sum(cajaLitro) CajaLitro from (select a.codcliente codcliente,Nombre, sum(debe-haber) SaldoBs, 0 CajaPac,0 CajaHuari, 0 CajaLitro from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1400 and a.codcliente=? group by a.codcliente,nombre UNION select a.codcliente codcliente,Nombre, 0 SaldoBs, sum(dcajas-hcajas) CajaPac,0 CajaHuari, 0 CajaLitro from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1600 and codart in (4020,4029) and a.codcliente=? group by a.codcliente,nombre UNION select a.codcliente codcliente,Nombre, 0 SaldoBs, 0 CajaPac,sum(dcajas-hcajas) CajaHuari, 0 CajaLitro from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1600 and codart in (4079) and a.codcliente=? group by a.codcliente,nombre UNION select a.codcliente codcliente,Nombre, 0 SaldoBs, 0 CajaPac,0 CajaHuari, sum(dcajas-hcajas) CajaLitro from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1600 and codart in (4010,4011) and a.codcliente=? group by a.codcliente,nombre ) group by codcliente,nombre</textarea>
-          </div> -->
           <div data-role="fieldcontain" class="ui-field-contain">
             <label for="textarea">Obs:</label>
             <textarea cols="40" rows="8" name="textarea" id="obs"></textarea>
@@ -610,9 +606,9 @@
             <div role="main" class="ui-content">
               <p class="add_popup_prod">...</p>
 
-              <input id="old_id_venta" type="hidden---" value="">
-              <input id="cant_empaque" type="hidden---" value="">
-              <input id="calibre" type="hidden---" value="">
+              <input id="old_id_venta" type="hidden" value="">
+              <input id="cant_empaque" type="hidden" value="">
+              <input id="calibre" type="hidden" value="">
 
 
 
@@ -1785,106 +1781,121 @@ $.mobile.navigate( "index.html#venta" );
     $("#prest_popup").prop("checked",false).checkboxradio("refresh");
   });
 
-  // $(".add_venta_popup_class_new").on('click', function(event) {
-  //   $(".list_new_venta").on('click','.add_venta_popup_class_new', function(event) {
-  //     var prod=$(this).parent().find('h2').text();
-  //     var cod=$(this).attr('codigo-venta');
-  //     // var caj=$(this).attr('cant-cajas');
-  //     // var uni=$(this).attr('cant-unidades');
-  //     var pri=$(this).attr('last-price');
-  //     // alert(prod+" new"+ " pri:"+pri+" cod:"+cod+" caj:"+caj+" uni:"+uni);
-  //     $('.add_popup_prod').html(prod);
-  //     $(".old_id_venta").val(cod);
+    // $(".add_venta_popup_class_new").on('click', function(event) {
+    //   $(".list_new_venta").on('click','.add_venta_popup_class_new', function(event) {
+    //     var prod=$(this).parent().find('h2').text();
+    //     var cod=$(this).attr('codigo-venta');
+    //     // var caj=$(this).attr('cant-cajas');
+    //     // var uni=$(this).attr('cant-unidades');
+    //     var pri=$(this).attr('last-price');
+    //     // alert(prod+" new"+ " pri:"+pri+" cod:"+cod+" caj:"+caj+" uni:"+uni);
+    //     $('.add_popup_prod').html(prod);
+    //     $(".old_id_venta").val(cod);
 
-  //     $('.txt_cajas_popup').html('Cajas:');
-  //     $('.txt_unidades_popup').html('Unidades:');
-  //     $('#precio_popup').val(pri);
-  //   // $("#canje_popup").prop('checked', true);
-  //   $("#cajas_popup").val('');
-  //   $("#unidades_popup").val('');
-  //   $("#canje_popup").prop("checked",true).checkboxradio("refresh");
-  //   $("#prest_popup").prop("checked",false).checkboxradio("refresh");
-  // });
+    //     $('.txt_cajas_popup').html('Cajas:');
+    //     $('.txt_unidades_popup').html('Unidades:');
+    //     $('#precio_popup').val(pri);
+    //   // $("#canje_popup").prop('checked', true);
+    //   $("#cajas_popup").val('');
+    //   $("#unidades_popup").val('');
+    //   $("#canje_popup").prop("checked",true).checkboxradio("refresh");
+    //   $("#prest_popup").prop("checked",false).checkboxradio("refresh");
+    // });
 
-    $(".close_popup").on('click', function(event) {
-      $( "#add_venta_popup" ).popup( "close" );
-    });
+$(".close_popup").on('click', function(event) {
+  $( "#add_venta_popup" ).popup( "close" );
+});
 
-    $('.confirmar_venta_popup').click(function() {
+$('.confirmar_venta_popup').click(function() {
 
-      $( "#add_venta_popup" ).popup( "close" );
-    // $(".articulo").show(300);
-  });
+  var save_id=$("#old_id_venta").val();
+  var save_cal=$("#calibre").val();
+  var save_emp=$("#cant_empaque").val();
+  var save_pre=$('#precio_popup').val();
+  var save_caj=$("#cajas_popup").val();
+  var save_uni=$("#unidades_popup").val();
+  guardar_venta(save_id,save_cal,save_emp,save_pre,save_caj,save_uni);
+  $( "#add_venta_popup" ).popup( "close" );
+  alert("Agregado a lista de confirmacion.");
+  // $(".articulo").show(300);
+});
 
-    $(".editar_venta_class").on('click', function(event) {
+$(".editar_venta_class").on('click', function(event) {
 
-      $(".articulo").hide();
-      var text = $(this).parent().find('h2').text();
-      $('#titulo_popup').html(text);
-      $(".id_venta").val($(this).attr('codigo-venta'));
+  $(".articulo").hide();
+  var text = $(this).parent().find('h2').text();
+  $('#titulo_popup').html(text);
+  $(".id_venta").val($(this).attr('codigo-venta'));
       // $( "#alerta_eliminado_venta" ).popup( "close" );
     });
-    $('.eliminar_popup_venta').click(function() {
-      $('.mensaje').html("<div style='color:red;'>ELIMINADO</div>");
-      $('.mensaje').show(300);
-      setTimeout(function(){ $('.mensaje').hide(300); $('.mensaje').html(""); }, 3000);
+$('.eliminar_popup_venta').click(function() {
+  $('.mensaje').html("<div style='color:red;'>ELIMINADO</div>");
+  $('.mensaje').show(300);
+  setTimeout(function(){ $('.mensaje').hide(300); $('.mensaje').html(""); }, 3000);
 
-    }); 
-    $('.editar_popup_venta').click(function() {
-     $(".articulo").show(300);
-   }); 
+}); 
+$('.editar_popup_venta').click(function() {
+ $(".articulo").show(300);
+}); 
 
 
-    $("input[name=tipo]:radio").bind( "change", function(event, ui) {
-      if($(this).val()=='cred'){
-        $(".vencimiento").show(200);
-      }else{
-        $(".vencimiento").hide(200);
-      }
+$("input[name=tipo]:radio").bind( "change", function(event, ui) {
+  if($(this).val()=='cred'){
+    $(".vencimiento").show(200);
+  }else{
+    $(".vencimiento").hide(200);
+  }
 
+});
+
+$("input[name=cobranza_monto]:radio").bind( "change", function(event, ui) {
+
+  if($(this).val()=='total_cobranza'){
+    $("#a_cobrar_cobranza").val($("#saldo_cobranza").val()); 
+  }else{
+    $("#a_cobrar_cobranza").val("");
+  }
+
+});
+
+$("input[name=deuda_monto]:radio").bind( "change", function(event, ui) {
+  if($(this).val()=='total_deuda'){
+    $("#a_cobrar_deuda").val($("#saldo_deuda").val()); 
+  }else{
+    $("#a_cobrar_deuda").val("");
+  }
+});
+
+
+$("#cliente").on( "change", function(event, ui) {
+    // alert($(this).val()+":::");
+
+    $.mobile.loading("show", {
+      text: "Cargando datos del cliente: "+$(this).val(),
+      textVisible: true,
+      theme: 'b',
+      textonly: false
     });
 
-    $("input[name=cobranza_monto]:radio").bind( "change", function(event, ui) {
+    // alert($( "#cliente option:selected" ).text());
+    $(".cliente_nombre").text($( "#cliente option:selected" ).text());
+    if($(this).val()=="-" || $(this).val()==""){
+     $('.menu_v_c_d').hide();
+     $('.tablita_info_cliente').hide();
+   }else{
+    cargar_listas($(this).val());
+    cargar_info_cliente_html($(this).val());
+    $('.tablita_info_cliente').show();
+    $('.menu_v_c_d').show();
+  }
+});
 
-      if($(this).val()=='total_cobranza'){
-        $("#a_cobrar_cobranza").val($("#saldo_cobranza").val()); 
-      }else{
-        $("#a_cobrar_cobranza").val("");
-      }
+$("#producto").bind("change", function(){
+  alert($(this).val()+":2::");
 
-    });
+});
 
-    $("input[name=deuda_monto]:radio").bind( "change", function(event, ui) {
-      if($(this).val()=='total_deuda'){
-        $("#a_cobrar_deuda").val($("#saldo_deuda").val()); 
-      }else{
-        $("#a_cobrar_deuda").val("");
-      }
-    });
-
-
-    $("#cliente").on( "change", function(event, ui) {
-        // alert($(this).val()+":::");
-
-        // alert($( "#cliente option:selected" ).text());
-        $(".cliente_nombre").text($( "#cliente option:selected" ).text());
-        if($(this).val()=="-" || $(this).val()==""){
-         $('.menu_v_c_d').hide();
-         $('.tablita_info_cliente').hide();
-       }else{
-        cargar_listas($(this).val());
-        cargar_info_cliente_html($(this).val());
-        $('.tablita_info_cliente').show();
-        $('.menu_v_c_d').show();
-      }
-    });
-
-    $("#producto").bind("change", function(){
-      alert($(this).val()+":2::");
-
-    });
-
-  });
+});
 
 
 
@@ -1937,8 +1948,16 @@ $( document ).on( "pagecreate", "#venta", function( event ) {
   $('.cargar_old_venta_list_btn_touch_start').on('touchstart', function() {
     cargar_listas('100');
     $('.mensaje_venta').html('touchstart');
+    var alan="Alan Christian Aruquipa Mollionedop";
+    $.mobile.loading("show", {
+      text: "Cargando la informacion de: "+alan,
+      textVisible: true,
+      theme: 'b',
+      textonly: false
+    });
   });
   $('.cargar_old_venta_list_btn_touch_end').on('touchend', function() {
+    $.mobile.loading("hide");
     cargar_listas('100');
     $('.mensaje_venta').html('touchend');
   });

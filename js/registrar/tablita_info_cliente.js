@@ -75,7 +75,7 @@ function querySuccess_tablita(tx, results) {
     $('#tablita_registrar').trigger('create');
     // alert("trigger tablita_info_cliente");
     $('.tablita_info_cliente').trigger('create');
-
+    $.mobile.loading("hide");
 }
 
 

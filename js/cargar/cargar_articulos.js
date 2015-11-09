@@ -230,14 +230,8 @@ function verificar_usuario() {
     success: function (resp) {
         if(resp=='1'){
             subir_db_articulo();
-            // alert("subir_db_articulo realizado");
             subir_db_cliente();
-            // alert("subir_db_cliente realizado");
             subir_db_detalle();
-            // alert("subir_db_detalle realizado");
-            // alert("realizado");
-            // $.mobile.loading("hide");
-            // alert("Carga exitosa.");
         }else{
             $.mobile.loading("hide");
             alert("Por favor verifique su Codigo y Contraseña.");
@@ -245,7 +239,7 @@ function verificar_usuario() {
     },
     error: function (e) {
         $.mobile.loading("hide");
-        alert("Verifique su red.");
+        alert("Por favor verifique el estado de su red.");
       //----- alert("No se encuentra conectado a su red: "+e.message+" err code: "+e.code+ "e:"+e);
   }
 });
