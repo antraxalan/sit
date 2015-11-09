@@ -532,97 +532,17 @@
 
         <div data-role="inlinetabs" data-content-theme="a" data-theme="a" data-mini="true" id="venta_tabs">
           <ul>
-            <li data-tab="1"  style="width:15%;" >Historial</li>
-            <li data-tab="2"  style="width:15%;" >Nueva Compra</li>
-            <li data-tab="3"  style="width:15%;" >Carrito</li>
+            <li data-tab="1"  style="width:15%;" >Ordenar</li>
+            <li data-tab="2"  style="width:15%;" >Confirmar</li>
           </ul>
 
           <div class="tab_content" data-tab="1">
-
             <div class="list_old_venta">
             </div>
-
           </div>
 
           <div class="tab_content" data-tab="2">
-
-            <div class="list_new_venta">
-
-              <ul data-role="listview" data-split-icon="edit" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">
-                <li><a href="#">
-                  <img src="img/marcas/35.png">
-                  <h2>123 - alan</h2></a>
-                  <a href="#add_venta_popup" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="123" data-transition="flow">Historial</a>
-                </li>
-              </ul>
-              <!-- <ul data-role="listview" data-split-icon="edit" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">
-                <li>
-                  <a href="#">
-                    <img src="img/cart.png">
-                    <h2>52 - DUCAL 300 bot ow</h2>
-                  </a>
-                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img src="img/cart.png">
-                    <h2>175 - IMPERIAL 1000</h2>
-                  </a>
-                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img src="img/cart.png">
-                    <h2>203 - TAQUIÑA ICE 300 CC X 1</h2>
-                  </a>
-                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img src="img/cart.png">
-                    <h2>378 - MALTIN 330 CC. SABOR ORIGINAL</h2>
-                  </a>
-                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img src="img/cart.png">
-                    <h2>511 - PILSENER TWIST OFF 300 O.W. PROMOCION</h2>
-                  </a>
-                  <a href="#new_add_venta" class="add_venta_popup_class_new"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img src="img/cart.png">
-                    <h2>52 - DUCAL 300 bot ow</h2>
-                  </a>
-                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img src="img/cart.png">
-                    <h2>175 - IMPERIAL 1000</h2>
-                  </a>
-                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img src="img/cart.png">
-                    <h2>203 - TAQUIÑA ICE 300 CC X 1</h2>
-                  </a>
-                  <a href="#new_add_venta" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
-                </li>
-              </ul> -->
-            </div>
-
-
-          </div>
-          <div class="tab_content" data-tab="3">
-
-
             <div class="list_chart_venta">
-
-
               <ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">
                 <li>
                   <a href="#" class="ui-disabled">
@@ -689,7 +609,11 @@
             </div>
             <div role="main" class="ui-content">
               <p class="add_popup_prod">...</p>
-              <input class="old_id_venta" type="hidden" value="9999">
+
+              <input id="old_id_venta" type="hidden---" value="">
+              <input id="cant_empaque" type="hidden---" value="">
+              <input id="calibre" type="hidden---" value="">
+
 
 
               <div class="ui-grid-a">
@@ -1834,11 +1758,16 @@ $.mobile.navigate( "index.html#venta" );
     // var uni=$(this).attr('cant-unidades');
     var pri=$(this).attr('last-price');
     var caj=$(this).attr('cajas-camion');
+    var cal=$(this).attr('calibre');
+    var emp=$(this).attr('cant-empaque');
     // alert(caj);
 
     // alert(prod+" old"+ " pri:"+pri+" cod:"+cod+" caj:"+caj+" uni:"+uni);
     $('.add_popup_prod').html(prod);
-    $(".old_id_venta").val(cod);
+    $("#old_id_venta").val(cod);
+
+    $("#calibre").val(cal);
+    $("#cant_empaque").val(emp);
 
     // $('.txt_cajas_popup').html('Cajas: ('+caj+')');
     // $('.txt_unidades_popup').html('Unidades: ('+uni+')');
@@ -1857,25 +1786,25 @@ $.mobile.navigate( "index.html#venta" );
   });
 
   // $(".add_venta_popup_class_new").on('click', function(event) {
-    $(".list_new_venta").on('click','.add_venta_popup_class_new', function(event) {
-      var prod=$(this).parent().find('h2').text();
-      var cod=$(this).attr('codigo-venta');
-      // var caj=$(this).attr('cant-cajas');
-      // var uni=$(this).attr('cant-unidades');
-      var pri=$(this).attr('last-price');
-      // alert(prod+" new"+ " pri:"+pri+" cod:"+cod+" caj:"+caj+" uni:"+uni);
-      $('.add_popup_prod').html(prod);
-      $(".old_id_venta").val(cod);
+  //   $(".list_new_venta").on('click','.add_venta_popup_class_new', function(event) {
+  //     var prod=$(this).parent().find('h2').text();
+  //     var cod=$(this).attr('codigo-venta');
+  //     // var caj=$(this).attr('cant-cajas');
+  //     // var uni=$(this).attr('cant-unidades');
+  //     var pri=$(this).attr('last-price');
+  //     // alert(prod+" new"+ " pri:"+pri+" cod:"+cod+" caj:"+caj+" uni:"+uni);
+  //     $('.add_popup_prod').html(prod);
+  //     $(".old_id_venta").val(cod);
 
-      $('.txt_cajas_popup').html('Cajas:');
-      $('.txt_unidades_popup').html('Unidades:');
-      $('#precio_popup').val(pri);
-    // $("#canje_popup").prop('checked', true);
-    $("#cajas_popup").val('');
-    $("#unidades_popup").val('');
-    $("#canje_popup").prop("checked",true).checkboxradio("refresh");
-    $("#prest_popup").prop("checked",false).checkboxradio("refresh");
-  });
+  //     $('.txt_cajas_popup').html('Cajas:');
+  //     $('.txt_unidades_popup').html('Unidades:');
+  //     $('#precio_popup').val(pri);
+  //   // $("#canje_popup").prop('checked', true);
+  //   $("#cajas_popup").val('');
+  //   $("#unidades_popup").val('');
+  //   $("#canje_popup").prop("checked",true).checkboxradio("refresh");
+  //   $("#prest_popup").prop("checked",false).checkboxradio("refresh");
+  // });
 
     $(".close_popup").on('click', function(event) {
       $( "#add_venta_popup" ).popup( "close" );
