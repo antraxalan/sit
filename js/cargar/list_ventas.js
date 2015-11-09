@@ -2,6 +2,8 @@
 var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
 var id_cliente;
 var lista_contenido;
+var ids_old = [];
+var cantidad_ids;
 
         // Query the database
         //
@@ -26,6 +28,8 @@ var lista_contenido;
           var aux;
           var disabled;
           var fecha_ultm;
+          ids_old = [];
+          cantidad_ids=0;
           lista_contenido='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
           for (var i = 0; i < len; i++) {
             var co_ma= results.rows.item(i).CodMarca;
@@ -41,6 +45,9 @@ var lista_contenido;
               disabled='';
               // alert("not null");
             }
+
+            ids_old[cantidad_ids] = results.rows.item(i).CodArt;
+            cantidad_ids=cantidad_ids+1;
 
             lista_contenido +='<li><a href="#" '+disabled+'>';
             lista_contenido +='<img src="img/marcas/'+co_ma+'.png">';
@@ -65,7 +72,7 @@ var lista_contenido;
             fecha_ultm = fecha_ultm[2]+'/'+fecha_ultm[1]+'/'+fecha_ultm[0];
 
             lista_contenido +='<p>Ultima venta: <strong>'+results.rows.item(i).Cajas+'</strong> cajas a <strong>'+results.rows.item(i).Importe+'</strong> Bolivianos. (<strong>'+fecha_ultm+'</strong>)</p></a>';
-    
+
 
             lista_contenido +='<a href="#add_venta_popup" '+disabled+' class="add_venta_popup_class_old" data-rel="popup" codigo-venta="'+results.rows.item(i).CodArt+'" last-price="'+precio+'" cajas-camion="'+results.rows.item(i).CajasCamion+'" >Historial</a></li>';
             // lista_contenido +='<option value="'+results.rows.item(i).CodArt+'">'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</option>'; 
@@ -91,17 +98,26 @@ var lista_contenido;
           var len = results.rows.length;
           // var lista_contenido='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
           for (var i = 0; i < len; i++) {
-            var co_ma= results.rows.item(i).CodMarca;
-            // if(co_ma!=15 || co_ma!=18 || co_ma!=20 || co_ma!=25 || co_ma!=30 || co_ma!=34 || co_ma!=35 || co_ma!=40 || co_ma!=50 || co_ma!=55 || co_ma!=64 || co_ma!=65 || co_ma!=66 || co_ma!=67 || co_ma!=68 || co_ma!=69 || co_ma!=70 || co_ma!=75 || co_ma!=80 || co_ma!=90 || co_ma!=94 || co_ma!=95 || co_ma!=96)
-            if(!(co_ma=="18" || co_ma=="25" || co_ma=="35" || co_ma=="50" || co_ma=="70" || co_ma=="94")){ 
-              // alert(co_ma);
-              co_ma="999";
+
+
+
+            if($.inArray( results.rows.item(i).CodArt, ids_old )==-1){
+
+              var co_ma= results.rows.item(i).CodMarca;
+              // if(co_ma!=15 || co_ma!=18 || co_ma!=20 || co_ma!=25 || co_ma!=30 || co_ma!=34 || co_ma!=35 || co_ma!=40 || co_ma!=50 || co_ma!=55 || co_ma!=64 || co_ma!=65 || co_ma!=66 || co_ma!=67 || co_ma!=68 || co_ma!=69 || co_ma!=70 || co_ma!=75 || co_ma!=80 || co_ma!=90 || co_ma!=94 || co_ma!=95 || co_ma!=96)
+              if(!(co_ma=="18" || co_ma=="25" || co_ma=="35" || co_ma=="50" || co_ma=="70" || co_ma=="94")){ 
+                // alert(co_ma);
+                co_ma="999";
+              }
+              lista_contenido +='<li><a href="#">';
+              lista_contenido +='<img src="img/marcas/'+co_ma+'.png">';
+              lista_contenido +='<h2>'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</h2></a>';
+              lista_contenido +='<a href="#add_venta_popup" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="'+results.rows.item(i).CodArt+'" last-price="'+results.rows.item(i).PrecioVtaMax+'" cajas-camion="'+results.rows.item(i).CajasCamion+'" >Historial</a></li>';
+              // lista_contenido +='<option value="'+results.rows.item(i).CodArt+'">'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</option>'; 
+
             }
-            lista_contenido +='<li><a href="#">';
-            lista_contenido +='<img src="img/marcas/'+co_ma+'.png">';
-            lista_contenido +='<h2>'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</h2></a>';
-            lista_contenido +='<a href="#add_venta_popup" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="'+results.rows.item(i).CodArt+'" last-price="'+results.rows.item(i).PrecioVtaMax+'" cajas-camion="'+results.rows.item(i).CajasCamion+'" >Historial</a></li>';
-            // lista_contenido +='<option value="'+results.rows.item(i).CodArt+'">'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</option>'; 
+
+
           }
           lista_contenido +='</ul>';
 
@@ -111,7 +127,7 @@ var lista_contenido;
           // $('#producto').html(lista_contenido);
           // $('#tabla_select').append(lista_contenido);
           // $("#producto").trigger("create");
-          
+
           $('.list_old_venta').html(lista_contenido);
           $(".list_old_venta").trigger("create");
 
