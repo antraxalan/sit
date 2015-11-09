@@ -21,12 +21,12 @@ var lista_contenido;
         function querySuccess_old_articulo(tx, results) {
           // alert("ini query");
           // alert("succes old");
-          var tblContent='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
           var len = results.rows.length;
           var precio;
           var aux;
           var disabled;
           var fecha_ultm;
+          lista_contenido='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
           for (var i = 0; i < len; i++) {
             var co_ma= results.rows.item(i).CodMarca;
             if(!(co_ma=="18" || co_ma=="25" || co_ma=="35" || co_ma=="50" || co_ma=="70" || co_ma=="94")){ 
@@ -42,9 +42,9 @@ var lista_contenido;
               // alert("not null");
             }
 
-            tblContent +='<li><a href="#" '+disabled+'>';
-            tblContent +='<img src="img/marcas/'+co_ma+'.png">';
-            tblContent +='<h2>'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</h2>';
+            lista_contenido +='<li><a href="#" '+disabled+'>';
+            lista_contenido +='<img src="img/marcas/'+co_ma+'.png">';
+            lista_contenido +='<h2>'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</h2>';
 
 
             // alert('Importe:'+results.rows.item(i).Importe);
@@ -64,32 +64,32 @@ var lista_contenido;
             fecha_ultm = fecha_ultm[0].split("-");
             fecha_ultm = fecha_ultm[2]+'/'+fecha_ultm[1]+'/'+fecha_ultm[0];
 
-            tblContent +='<p>Ultima venta: <strong>'+results.rows.item(i).Cajas+'</strong> cajas a <strong>'+results.rows.item(i).Importe+'</strong> Bolivianos. (<strong>'+fecha_ultm+'</strong>)</p></a>';
+            lista_contenido +='<p>Ultima venta: <strong>'+results.rows.item(i).Cajas+'</strong> cajas a <strong>'+results.rows.item(i).Importe+'</strong> Bolivianos. (<strong>'+fecha_ultm+'</strong>)</p></a>';
     
 
-            tblContent +='<a href="#add_venta_popup" '+disabled+' class="add_venta_popup_class_old" data-rel="popup" codigo-venta="'+results.rows.item(i).CodArt+'" last-price="'+precio+'" cajas-camion="'+results.rows.item(i).CajasCamion+'" data-transition="flow">Historial</a></li>';
-            // tblContent +='<option value="'+results.rows.item(i).CodArt+'">'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</option>'; 
+            lista_contenido +='<a href="#add_venta_popup" '+disabled+' class="add_venta_popup_class_old" data-rel="popup" codigo-venta="'+results.rows.item(i).CodArt+'" last-price="'+precio+'" cajas-camion="'+results.rows.item(i).CajasCamion+'" >Historial</a></li>';
+            // lista_contenido +='<option value="'+results.rows.item(i).CodArt+'">'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</option>'; 
           }
-          tblContent +='</ul>';
+          // lista_contenido +='</ul>';
 
           // alert("art:"+i);
 
-          // document.getElementById("tabla_select").innerHTML =tblContent;
-          // $('#producto').html(tblContent);
-          $('.list_old_venta').html(tblContent);
-          // $('#tabla_select').append(tblContent);
+          // document.getElementById("tabla_select").innerHTML =lista_contenido;
+          // $('#producto').html(lista_contenido);
+          // $('#tabla_select').append(lista_contenido);
           // $("#producto").trigger("create");
-          $(".list_old_venta").trigger("create");
-          $('.mensaje_venta_c').html('Ready');
+
+
+          // $('.list_old_venta').html(lista_contenido);
+          // $(".list_old_venta").trigger("create");
+          // $('.mensaje_venta_c').html('Ready');
         }
 
         function querySuccess_new_articulo(tx, results) {
           // alert("succes new");
-          // var tblText='<table id="t01"><tr><th>ID</th> <th>Name</th> <th>Number</th></tr>';
 
-          // var tblContent='<option value="-">Seleccione un producto.</option>';
-          var tblContent='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
           var len = results.rows.length;
+          // var lista_contenido='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
           for (var i = 0; i < len; i++) {
             var co_ma= results.rows.item(i).CodMarca;
             // if(co_ma!=15 || co_ma!=18 || co_ma!=20 || co_ma!=25 || co_ma!=30 || co_ma!=34 || co_ma!=35 || co_ma!=40 || co_ma!=50 || co_ma!=55 || co_ma!=64 || co_ma!=65 || co_ma!=66 || co_ma!=67 || co_ma!=68 || co_ma!=69 || co_ma!=70 || co_ma!=75 || co_ma!=80 || co_ma!=90 || co_ma!=94 || co_ma!=95 || co_ma!=96)
@@ -97,22 +97,23 @@ var lista_contenido;
               // alert(co_ma);
               co_ma="999";
             }
-            tblContent +='<li><a href="#">';
-            tblContent +='<img src="img/marcas/'+co_ma+'.png">';
-            tblContent +='<h2>'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</h2></a>';
-            tblContent +='<a href="#add_venta_popup" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="'+results.rows.item(i).CodArt+'" last-price="'+results.rows.item(i).PrecioVtaMax+'" data-transition="flow">Historial</a></li>';
-            // tblContent +='<option value="'+results.rows.item(i).CodArt+'">'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</option>'; 
+            lista_contenido +='<li><a href="#">';
+            lista_contenido +='<img src="img/marcas/'+co_ma+'.png">';
+            lista_contenido +='<h2>'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</h2></a>';
+            lista_contenido +='<a href="#add_venta_popup" class="add_venta_popup_class_new" data-rel="popup" codigo-venta="'+results.rows.item(i).CodArt+'" last-price="'+results.rows.item(i).PrecioVtaMax+'" cajas-camion="'+results.rows.item(i).CajasCamion+'" >Historial</a></li>';
+            // lista_contenido +='<option value="'+results.rows.item(i).CodArt+'">'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</option>'; 
           }
-          tblContent +='</ul>';
+          lista_contenido +='</ul>';
 
           // alert("art:"+i);
 
-          // document.getElementById("tabla_select").innerHTML =tblContent;
-          // $('#producto').html(tblContent);
-          $('.list_new_venta').html(tblContent);
-          // $('#tabla_select').append(tblContent);
+          // document.getElementById("tabla_select").innerHTML =lista_contenido;
+          // $('#producto').html(lista_contenido);
+          // $('#tabla_select').append(lista_contenido);
           // $("#producto").trigger("create");
-          $(".list_new_venta").trigger("create");
+          
+          $('.list_old_venta').html(lista_contenido);
+          $(".list_old_venta").trigger("create");
 
         }
 
