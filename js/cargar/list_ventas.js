@@ -157,7 +157,7 @@ var lista_contenido;
           id_cliente=id_cli;
 
           cargar_old_venta_list();
-          // cargar_new_venta_list();
+          cargar_new_venta_list();
         }
 
 
