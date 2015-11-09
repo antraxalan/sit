@@ -520,9 +520,9 @@
     <h4 class="mensaje_venta" align="center"></h4>
 
     <div class="ui-content" role="main">
-      <button type="button" class="cargar_old_venta_list_btn_touch_start">touch_start</button>
+      <!-- <button type="button" class="cargar_old_venta_list_btn_touch_start">touch_start</button>
       <button type="button" class="cargar_old_venta_list_btn_touch_end">touch_end</button>
-      <button type="button" class="cargar_old_venta_list_btn_click">click</button>
+      <button type="button" class="cargar_old_venta_list_btn_click">click</button> -->
 
       <form class="ui">
 
@@ -1871,7 +1871,7 @@ $("#cliente").on( "change", function(event, ui) {
     // alert($(this).val()+":::");
 
     $.mobile.loading("show", {
-      text: "Cargando datos del cliente: "+$(this).val(),
+      text: "Cargando Información.",
       textVisible: true,
       theme: 'b',
       textonly: false
@@ -1882,6 +1882,7 @@ $("#cliente").on( "change", function(event, ui) {
     if($(this).val()=="-" || $(this).val()==""){
      $('.menu_v_c_d').hide();
      $('.tablita_info_cliente').hide();
+     $.mobile.loading("hide");
    }else{
     cargar_listas($(this).val());
     cargar_info_cliente_html($(this).val());
