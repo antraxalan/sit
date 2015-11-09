@@ -524,9 +524,9 @@
     <h4 class="mensaje_venta" align="center"></h4>
 
     <div class="ui-content" role="main">
-    <button type="button" class="cargar_old_venta_list_btn_touch_start">touch_start</button>
-    <button type="button" class="cargar_old_venta_list_btn_touch_end">touch_end</button>
-    <button type="button" class="cargar_old_venta_list_btn_click">click</button>
+      <button type="button" class="cargar_old_venta_list_btn_touch_start">touch_start</button>
+      <button type="button" class="cargar_old_venta_list_btn_touch_end">touch_end</button>
+      <button type="button" class="cargar_old_venta_list_btn_click">click</button>
 
       <form class="ui">
 
@@ -1833,13 +1833,20 @@ $.mobile.navigate( "index.html#venta" );
     // var caj=$(this).attr('cant-cajas');
     // var uni=$(this).attr('cant-unidades');
     var pri=$(this).attr('last-price');
+    var caj=$(this).attr('cajas-camion');
+    alert(caj);
+
     // alert(prod+" old"+ " pri:"+pri+" cod:"+cod+" caj:"+caj+" uni:"+uni);
     $('.add_popup_prod').html(prod);
     $(".old_id_venta").val(cod);
 
     // $('.txt_cajas_popup').html('Cajas: ('+caj+')');
     // $('.txt_unidades_popup').html('Unidades: ('+uni+')');
-    $('.txt_cajas_popup').html('Cajas:');
+    if(caj=== 'undefined'){
+      $('.txt_cajas_popup').html('Cajas:';
+    }else{
+      $('.txt_cajas_popup').html('Cajas: (<strong>'+caj+'</strong>)');
+    }
     $('.txt_unidades_popup').html('Unidades:');
     $('#precio_popup').val(pri);
     // $("#canje_popup").prop('checked', true);

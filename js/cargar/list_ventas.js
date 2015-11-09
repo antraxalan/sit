@@ -67,7 +67,7 @@ var lista_contenido;
             tblContent +='<p>Ultima venta: <strong>'+results.rows.item(i).Cajas+'</strong> cajas a <strong>'+results.rows.item(i).Importe+'</strong> Bolivianos. (<strong>'+fecha_ultm+'</strong>)</p></a>';
     
 
-            tblContent +='<a href="#add_venta_popup" '+disabled+' class="add_venta_popup_class_old" data-rel="popup" codigo-venta="'+results.rows.item(i).CodArt+'" last-price="'+precio+'" data-transition="flow">Historial</a></li>';
+            tblContent +='<a href="#add_venta_popup" '+disabled+' class="add_venta_popup_class_old" data-rel="popup" codigo-venta="'+results.rows.item(i).CodArt+'" last-price="'+precio+'" cajas-camion="'+results.rows.item(i).CajasCamion+'" data-transition="flow">Historial</a></li>';
             // tblContent +='<option value="'+results.rows.item(i).CodArt+'">'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</option>'; 
           }
           tblContent +='</ul>';
