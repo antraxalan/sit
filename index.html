@@ -538,7 +538,7 @@
           </div>
 
           <div class="tab_content" data-tab="2">
-            <div class="list_chart_venta">
+            <div class="list_old_venta">
               <ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">
                 <li>
                   <a href="#" class="ui-disabled">
@@ -1756,8 +1756,13 @@ $.mobile.navigate( "index.html#venta" );
     var caj=$(this).attr('cajas-camion');
     var cal=$(this).attr('calibre');
     var emp=$(this).attr('cant-empaque');
-    // alert(caj);
-
+    // alert(caj);  
+    $("#old_id_venta").prop('disabled', false);
+    $("#calibre").prop('disabled', false);
+    $("#cant_empaque").prop('disabled', false);
+    $("#precio_popup").prop('disabled', false);
+    $("#cajas_popup").prop('disabled', false);
+    $("#unidades_popup").prop('disabled', false);
     // alert(prod+" old"+ " pri:"+pri+" cod:"+cod+" caj:"+caj+" uni:"+uni);
     $('.add_popup_prod').html(prod);
     $("#old_id_venta").val(cod);
@@ -1814,9 +1819,15 @@ $('.confirmar_venta_popup').click(function() {
   var save_pre=$('#precio_popup').val();
   var save_caj=$("#cajas_popup").val();
   var save_uni=$("#unidades_popup").val();
+  $("#old_id_venta").prop('disabled', true);
+  $("#calibre").prop('disabled', true);
+  $("#cant_empaque").prop('disabled', true);
+  $("#precio_popup").prop('disabled', true);
+  $("#cajas_popup").prop('disabled', true);
+  $("#unidades_popup").prop('disabled', true);
   // guardar_venta(save_id,save_cal,save_emp,save_pre,save_caj,save_uni);
   $( "#add_venta_popup" ).popup( "close" );
-  alert("Agregado a lista de confirmacion.");
+  // alert("Agregado a lista de confirmacion.");
   // $(".articulo").show(300);
 });
 
