@@ -606,9 +606,9 @@
             <div role="main" class="ui-content">
               <p class="add_popup_prod">...</p>
 
-              <input id="old_id_venta" type="hidden" value="">
-              <input id="cant_empaque" type="hidden" value="">
-              <input id="calibre" type="hidden" value="">
+              <input id="old_id_venta" type="hidden---" value="">
+              <input id="cant_empaque" type="hidden---" value="">
+              <input id="calibre" type="hidden---" value="">
 
 
 
@@ -630,6 +630,10 @@
                 <label for="precio_popup">Precio:</label>
                 <input name="precio_popup" id="precio_popup" class="precio_input" />
               </div> 
+              <div data-role="fieldcontain" class="ui-field-contain">               
+                <label for="sub_total"><strong>Sub-Total:</strong></label>
+                <input name="precio_popup" id="sub_total" class="estilo_sub_total" />
+              </div>
 
               <fieldset data-role="controlgroup" data-type="horizontal">
                 <legend>Embase:</legend>
@@ -1811,12 +1815,45 @@ $(".close_popup").on('click', function(event) {
   $( "#add_venta_popup" ).popup( "close" );
 });
 
+$('#cajas_popup, #unidades_popup, #precio_popup ').on('input', function() {
+  // (parseFloat(this.value)).toFixed(2)
+  var e = $('#cant_empaque').val();
+  
+  if($("#precio_popup").val()==''){
+    var p=0;
+  }else{
+    var p=parseFloat($("#precio_popup").val());
+  }
+  if($("#cajas_popup").val()==''){
+    var c=0;
+  }else{
+    var c=parseFloat($("#cajas_popup").val());
+  }
+  if($("#unidades_popup").val()==''){
+    var u=0;
+  }else{
+    var u=parseFloat($("#unidades_popup").val());
+  }
+  // alert(c);
+  // alert(p+c+u);
+  // (parseFloat(this.value)).toFixed(2);
+  // alert(c*p);
+  // alert(u*(p/e));
+  var sub_caj=parseFloat(c*p);
+  var sub_uni=parseFloat(u*(p/e)).toFixed(2);
+  // alert('caj:'+sub_caj+' uni:'+sub_uni);
+  var sub = parseFloat(sub_caj)+parseFloat(sub_uni);
+  $("#sub_total").val(sub.toFixed(2));
+});
+
+
+
 $('.confirmar_venta_popup').click(function() {
 
   var save_id=$("#old_id_venta").val();
   var save_cal=$("#calibre").val();
   var save_emp=$("#cant_empaque").val();
-  var save_pre=$('#precio_popup').val();
+  var save_pre=$("#precio_popup").val();
   var save_caj=$("#cajas_popup").val();
   var save_uni=$("#unidades_popup").val();
   $("#old_id_venta").prop('disabled', true);
@@ -1985,7 +2022,13 @@ $( document ).on( "pagecreate", "#venta", function( event ) {
 //OLD
 
 $('.precio_input').on('input', function() {
+  var val=this.value;
   this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+  var posi = val.indexOf('.');
+  var cant = val.length;
+  if ((cant-posi)>=4 && posi!=-1){
+    this.value = (parseFloat(this.value)).toFixed(2);
+  }
 });
 $('.precio_input').on('blur', function() {
   if(this.value!=''){
