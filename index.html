@@ -606,10 +606,10 @@
             <div role="main" class="ui-content">
               <p class="add_popup_prod">...</p>
 
-              <input id="old_id_venta" type="hidden---" value="">
-              <input id="cant_empaque" type="hidden---" value="">
-              <input id="calibre" type="hidden---" value="">
-              <input id="cant_camion" type="hidden---" value="">
+              <input id="old_id_venta" type="hidden" value="" placeholder="old_id_venta">
+              <input id="cant_empaque" type="hidden" value="" placeholder="cant_empaque">
+              <input id="calibre" type="hidden" value="" placeholder="calibre">
+              <input id="cant_camion" type="hidden" value="" placeholder="cant_camion">
 
 
 
@@ -1820,6 +1820,8 @@ $(".close_popup").on('click', function(event) {
 $('#cajas_popup, #unidades_popup, #precio_popup ').on('input', function() {
   // (parseFloat(this.value)).toFixed(2)
   var e = $('#cant_empaque').val();
+  var camion=$("#cant_camion").val();
+  $("#sub_total").prop('disabled', true);
   
   if($("#precio_popup").val()==''){
     var p=0;
@@ -1836,6 +1838,36 @@ $('#cajas_popup, #unidades_popup, #precio_popup ').on('input', function() {
   }else{
     var u=parseFloat($("#unidades_popup").val());
   }
+  if(c>camion){
+    alert("Usted cuenta con solo "+camion+" cajas.");
+    $("#cajas_popup").val(camion);
+    c=camion;
+  }
+  if(c==camion && u>0){
+    alert("Usted no cuenta con mas cajas para vender unidades.");
+    $("#unidades_popup").val('');
+    u=0;
+  }else{
+    if(u>e-1){
+      alert("El empaque contiene "+e+" unidades. Por favor agregue en cajas.");
+      $("#unidades_popup").val('');
+      u=0;
+    }    
+  }
+  // alert(c);
+  // alert(p+c+u);
+  // (parseFloat(this.value)).toFixed(2);
+  // alert(c*p);
+  // alert(u*(p/e));
+  var sub_caj=parseFloat(c*p);
+  var sub_uni=parseFloat(u*(p/e)).toFixed(2);
+  // alert('caj:'+sub_caj+' uni:'+sub_uni);
+  var sub = parseFloat(sub_caj)+parseFloat(sub_uni);
+  $("#sub_total").val(sub.toFixed(2));
+});
+$('#unidades_popup').on('input', function() {
+  // (parseFloat(this.value)).toFixed(2)
+
   // alert(c);
   // alert(p+c+u);
   // (parseFloat(this.value)).toFixed(2);
