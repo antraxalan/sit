@@ -614,17 +614,14 @@
 
 
               <div class="ui-grid-a">
-
                 <div class="ui-block-a"><p class="txt_cajas_popup">Cajas: </p></div>
                 <div class="ui-block-b"><p class="txt_unidades_popup">Unidades: </p></div>
-
                 <div class="ui-block-a">
                   <input name="cajas" id="cajas_popup" type="number" class="ui-field-contain"/>
                 </div>
                 <div class="ui-block-b">
                   <input name="unidades" id="unidades_popup" type="number" class="ui-field-contain"/>
                 </div>
-
               </div>
 
               <div data-role="fieldcontain" class="ui-field-contain">               
@@ -1914,8 +1911,8 @@ $('.eliminar_popup_venta').click(function() {
   $('.mensaje').html("<div style='color:red;'>ELIMINADO</div>");
   $('.mensaje').show(300);
   setTimeout(function(){ $('.mensaje').hide(300); $('.mensaje').html(""); }, 3000);
-
 }); 
+
 $('.editar_popup_venta').click(function() {
  $(".articulo").show(300);
 }); 
@@ -1951,14 +1948,12 @@ $("input[name=deuda_monto]:radio").bind( "change", function(event, ui) {
 
 $("#cliente").on( "change", function(event, ui) {
     // alert($(this).val()+":::");
-
     $.mobile.loading("show", {
       text: "Cargando Información.",
       textVisible: true,
       theme: 'b',
       textonly: false
     });
-
     // alert($( "#cliente option:selected" ).text());
     $(".cliente_nombre").text($( "#cliente option:selected" ).text());
     if($(this).val()=="-" || $(this).val()==""){
@@ -1975,7 +1970,6 @@ $("#cliente").on( "change", function(event, ui) {
 
 $("#producto").bind("change", function(){
   alert($(this).val()+":2::");
-
 });
 
 });

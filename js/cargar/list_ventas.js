@@ -66,13 +66,14 @@ var cantidad_ids;
             // alert('aux:'+aux);
             precio=(parseFloat( aux )).toFixed(2);
             // alert('precio:'+precio);
+
+
             fecha_ultm = results.rows.item(i).Fecha;
             fecha_ultm = fecha_ultm.split(" ");
             fecha_ultm = fecha_ultm[0].split("-");
             fecha_ultm = fecha_ultm[2]+'/'+fecha_ultm[1]+'/'+fecha_ultm[0];
-
-            lista_contenido +='<p>Ultima venta: <strong>'+results.rows.item(i).Cajas+'</strong> cajas a <strong>'+results.rows.item(i).Importe+'</strong> Bolivianos. (<strong>'+fecha_ultm+'</strong>)</p></a>';
-
+            // (results.rows.item(i).Importe) reemplazado por (precio)
+            lista_contenido +='<p>Ultima venta: <strong>'+results.rows.item(i).Cajas+'</strong> cajas a <strong>'+precio+'</strong> Bolivianos por cada caja. (<strong>'+fecha_ultm+'</strong>)</p></a>';
 
             lista_contenido +='<a href="#add_venta_popup" '+disabled+' class="add_venta_popup_class_old" data-rel="popup" codigo-venta="'+results.rows.item(i).CodArt+'" last-price="'+precio+'" cajas-camion="'+results.rows.item(i).CajasCamion+'" calibre="'+results.rows.item(i).Calibre+'" cant-empaque="'+results.rows.item(i).CantxEmpaque+'"  >Historial</a></li>';
             // lista_contenido +='<option value="'+results.rows.item(i).CodArt+'">'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</option>'; 
