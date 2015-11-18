@@ -27,11 +27,11 @@ document.addEventListener("backbutton", function(e){
     }
 
     if ($(".ui-page-active .ui-popup-active").length > 0){
-       history.back();
-   }else{
+     history.back();
+ }else{
 
-       switch (curr) 
-       {
+     switch (curr) 
+     {
         case 'home':
         exitAppPopup();
         break; 
@@ -109,4 +109,19 @@ function go_to_otro_usuario(){
     $('.tablita_info_cliente').hide();
     $('.menu_v_c_d').hide();
     window.location.href = "index.html#registrar";
+    limpiar_temp_v_table();
 };
+
+function limpiar_temp_v_table(){
+    alert("limpiar");
+    db.transaction(populateDB_TEMP_VENTA, errorCB_cargar);
+} 
+
+function populateDB_TEMP_VENTA(tx) {
+    tx.executeSql('DROP TABLE IF EXISTS TEMP_VENTA');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS TEMP_VENTA (Id INTEGER PRIMARY KEY AUTOINCREMENT,Calibre DECIMAL(18,4),Empaque INTEGER,pre DECIMAL(18,2),caj INTEGER,uni INTEGER)');
+}
+
+ function errorCB_cargar(err) {
+   alert("errorCB_temp: "+err.message);
+ }
