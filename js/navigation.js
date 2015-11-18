@@ -113,13 +113,14 @@ function go_to_otro_usuario(){
 };
 
 function limpiar_temp_v_table(){
-    alert("limpiar");
+
     db.transaction(populateDB_TEMP_VENTA, errorCB_cargar);
 } 
 
 function populateDB_TEMP_VENTA(tx) {
+    localStorage.art='[]';
     tx.executeSql('DROP TABLE IF EXISTS TEMP_VENTA');
-    tx.executeSql('CREATE TABLE IF NOT EXISTS TEMP_VENTA (Id INTEGER PRIMARY KEY AUTOINCREMENT,Calibre DECIMAL(18,4),Empaque INTEGER,pre DECIMAL(18,2),caj INTEGER,uni INTEGER)');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS TEMP_VENTA (Id INTEGER PRIMARY KEY AUTOINCREMENT,IdArt INTEGER,IdCli INTEGER,Calibre DECIMAL(18,4),Empaque INTEGER,pre DECIMAL(18,2),caj INTEGER,uni INTEGER)');
 }
 
  function errorCB_cargar(err) {

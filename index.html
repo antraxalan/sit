@@ -513,6 +513,7 @@
     
     <div class="ui-field-contain">
       <label for="textarea" class="css_titulo"><b>Cliente:</b></label>
+      <input type="hiddens" id="cliente_id" />
       <label for="textarea" class="cliente_nombre">Id - Nombre del cliente</label>
     </div>
     
@@ -1811,11 +1812,13 @@ $.mobile.navigate( "index.html#venta" );
      $('.menu_v_c_d').hide();
      $('.tablita_info_cliente').hide();
      $.mobile.loading("hide");
+     $('#cliente_id').val('');
    }else{
     cargar_listas($(this).val());
     cargar_info_cliente_html($(this).val());
     $('.tablita_info_cliente').show();
     $('.menu_v_c_d').show();
+    $('#cliente_id').val($("#cliente option:selected").val());
   }
 });
 
@@ -1986,19 +1989,22 @@ $('#unidades_popup').on('input', function() {
 
 $('.confirmar_venta_popup').click(function() {
 
-  var save_id=$("#old_id_venta").val();
+  var save_art_id=$("#old_id_venta").val();
   var save_cal=$("#calibre").val();
   var save_emp=$("#cant_empaque").val();
   var save_pre=$("#precio_popup").val();
   var save_caj=$("#cajas_popup").val();
   var save_uni=$("#unidades_popup").val();
+
+  var cli_id=$("#cliente_id").val();
+
   $("#old_id_venta").prop('disabled', true);
   $("#calibre").prop('disabled', true);
   $("#cant_empaque").prop('disabled', true);
   $("#precio_popup").prop('disabled', true);
   $("#cajas_popup").prop('disabled', true);
   $("#unidades_popup").prop('disabled', true);
-  db_temp_guardar_venta(save_id,save_cal,save_emp,save_pre,save_caj,save_uni);
+  db_temp_guardar_venta(save_art_id,cli_id,save_cal,save_emp,save_pre,save_caj,save_uni);
   $( "#add_venta_popup" ).popup( "close" );
 
 });
