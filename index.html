@@ -962,11 +962,13 @@
               </div>
               <div class="ui-field-contain">
                 <label for="textarea">Cantidad de Cajas:</label>
-                <input type="text" id="pop_caja" value="" data-clear-btn="true"/>
+                
+                type="text" id="pop_caja" value="" data-clear-btn="true"/>
               </div>
               <div class="ui-field-contain">
                 <label for="textarea">Cantidad de Unidades:</label>
-                <input type="text" id="pop_unidades" value="" data-clear-btn="true"/>
+                
+                type="text" id="pop_unidades" value="" data-clear-btn="true"/>
               </div>
               <div class="productos_ya_comprados"></div>
 
@@ -1054,7 +1056,8 @@
     </div>
     <div role="main" class="ui-content">
       <p id="titulo_popup">...</p>
-      <input class="id_venta" type="hidden---" value="9999">
+      
+      class="id_venta" type="hidden---" value="9999">
       <p>__________________________________________</p>
       <div class="ui-grid-a">
         <div class="ui-block-a">
@@ -1785,6 +1788,7 @@ $.mobile.navigate( "index.html#venta" );
     // $("#canje_popup").prop('checked', true);
     $("#cajas_popup").val('');
     $("#unidades_popup").val('');
+    $("#sub_total").val('');
     $("#canje_popup").prop("checked",true).checkboxradio("refresh");
     $("#prest_popup").prop("checked",false).checkboxradio("refresh");
   });
@@ -1811,6 +1815,12 @@ $.mobile.navigate( "index.html#venta" );
     // });
 
 $(".close_popup").on('click', function(event) {
+  $("#old_id_venta").prop('disabled', true);
+  $("#calibre").prop('disabled', true);
+  $("#cant_empaque").prop('disabled', true);
+  $("#precio_popup").prop('disabled', true);
+  $("#cajas_popup").prop('disabled', true);
+  $("#unidades_popup").prop('disabled', true);
   $( "#add_venta_popup" ).popup( "close" );
 });
 
