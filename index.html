@@ -513,7 +513,7 @@
     
     <div class="ui-field-contain">
       <label for="textarea" class="css_titulo"><b>Cliente:</b></label>
-      <input type="hiddens" id="cliente_id" />
+      <input type="hidden" id="cliente_id" />
       <label for="textarea" class="cliente_nombre">Id - Nombre del cliente</label>
     </div>
     
@@ -537,7 +537,7 @@
           </div>
 
           <div class="tab_content" data-tab="2">
-            <div class="list_old_venta">
+            <div class="list_carrito_venta">
               <ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">
                 <li>
                   <a href="#" class="ui-disabled">
@@ -571,10 +571,11 @@
                   <a href="#">
                     <img src="img/cart.png">
                     <h2>378 - MALTIN 330 CC. SABOR ORIGINAL</h2>
-                    <div class="ui-grid-b">
+                    <div class="ui-grid-c">
                       <div class="ui-block-a"><p>6 cajas</p></div>
                       <div class="ui-block-b"><p>2 unidades</p></div>
-                      <div class="ui-block-c price"><strong>53.5 Bs</strong></div>
+                      <div class="ui-block-c"><p>Precio/Caja <strong>53.5 Bs</strong></p></div>
+                      <div class="ui-block-d price"><strong>53.5 Bs</strong></div>
                     </div>
                   </a>
                   <a href="#add_venta_popup" class="add_venta_popup_class_old" data-rel="popup" codigo-venta="4" cant-cajas="10" cant-unidades="1" last-price="53.5" data-transition="flow">Comprar</a>
@@ -609,6 +610,8 @@
               <input id="cant_empaque" type="hidden" value="" placeholder="cant_empaque">
               <input id="calibre" type="hidden" value="" placeholder="calibre">
               <input id="cant_camion" type="hidden" value="" placeholder="cant_camion">
+              <input id="cod_marca" type="hidden" value="" placeholder="cod_marca">
+              <input id="des_art" type="hidden" value="" placeholder="des_art">
 
 
 
@@ -649,7 +652,10 @@
                 <div class="ui-block-a">
                   <button type="button" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a close_popup">Cancelar</button>
                 </div>
-                <div class="ui-block-b"><button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_venta_popup">Confirmar</a></div>
+                <div class="ui-block-b">
+                  <button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_venta_popup">Confirmar V</button>
+                  <button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_edicion_popup">Confirmar E</button>
+                </div>
               </div>
             </div>
           </div>
@@ -1900,12 +1906,16 @@ $( document ).on( "pagecreate", "#venta", function( event ) {
 
 
   $(".list_old_venta").on('click','.add_venta_popup_class_old', function(event) {
+    $('.confirmar_venta_popup').show();
+    $('.confirmar_edicion_popup').hide();
     var prod=$(this).parent().find('h2').text();
     var cod=$(this).attr('codigo-venta');
     var pri=$(this).attr('last-price');
     var caj=$(this).attr('cajas-camion');
     var cal=$(this).attr('calibre');
     var emp=$(this).attr('cant-empaque');
+    var cma=$(this).attr('cod-marca');
+    var dar=$(this).attr('des-art');
     $("#old_id_venta").prop('disabled', false);
     $("#calibre").prop('disabled', false);
     $("#cant_empaque").prop('disabled', false);
@@ -1918,6 +1928,53 @@ $( document ).on( "pagecreate", "#venta", function( event ) {
     $("#calibre").val(cal);
     $("#cant_empaque").val(emp);
     $("#cant_camion").val(caj);
+
+    $("#cod_marca").val(cma);
+    $("#des_art").val(dar);
+
+
+    if(caj=== 'undefined'){
+      $('.txt_cajas_popup').html('Cajas:');
+    }else{
+      $('.txt_cajas_popup').html('Cajas: (<strong>'+caj+'</strong>)');
+    }
+    $('.txt_unidades_popup').html('Unidades:');
+    $('#precio_popup').val(pri);
+    $("#cajas_popup").val('');
+    $("#unidades_popup").val('');
+    $("#sub_total").val('');
+    $("#canje_popup").prop("checked",true).checkboxradio("refresh");
+    $("#prest_popup").prop("checked",false).checkboxradio("refresh");
+  });
+
+  $(".list_carrito_venta").on('click','.add_venta_popup_class_old', function(event) {
+    $('.confirmar_venta_popup').hide();
+    $('.confirmar_edicion_popup').show();
+    var prod=$(this).parent().find('h2').text();
+    var cod=$(this).attr('codigo-venta');
+    var pri=$(this).attr('last-price');
+    var caj=$(this).attr('cajas-camion');
+    var cal=$(this).attr('calibre');
+    var emp=$(this).attr('cant-empaque');
+    var cma=$(this).attr('cod-marca');
+    var dar=$(this).attr('des-art');
+    $("#old_id_venta").prop('disabled', false);
+    $("#calibre").prop('disabled', false);
+    $("#cant_empaque").prop('disabled', false);
+    $("#precio_popup").prop('disabled', false);
+    $("#cajas_popup").prop('disabled', false);
+    $("#unidades_popup").prop('disabled', false);
+    // alert(prod+" old"+ " pri:"+pri+" cod:"+cod+" caj:"+caj+" uni:"+uni);
+    $('.add_popup_prod').html(prod);
+    $("#old_id_venta").val(cod);
+    $("#calibre").val(cal);
+    $("#cant_empaque").val(emp);
+    $("#cant_camion").val(caj);
+
+    $("#cod_marca").val(cma);
+    $("#des_art").val(dar);
+
+
     if(caj=== 'undefined'){
       $('.txt_cajas_popup').html('Cajas:');
     }else{
@@ -1994,7 +2051,12 @@ $('.confirmar_venta_popup').click(function() {
   var save_emp=$("#cant_empaque").val();
   var save_pre=$("#precio_popup").val();
   var save_caj=$("#cajas_popup").val();
+  
   var save_uni=$("#unidades_popup").val();
+  var save_caj_cam=$("#cant_camion").val();
+
+  var save_cod_marca  =$("#cod_marca").val();
+  var save_des_Art    =$("#des_art").val();
 
   var cli_id=$("#cliente_id").val();
 
@@ -2004,7 +2066,7 @@ $('.confirmar_venta_popup').click(function() {
   $("#precio_popup").prop('disabled', true);
   $("#cajas_popup").prop('disabled', true);
   $("#unidades_popup").prop('disabled', true);
-  db_temp_guardar_venta(save_art_id,cli_id,save_cal,save_emp,save_pre,save_caj,save_uni);
+  db_temp_guardar_venta(save_art_id,cli_id,save_cal,save_emp,save_pre,save_caj,save_uni,save_caj_cam,save_cod_marca,save_des_Art);
   $( "#add_venta_popup" ).popup( "close" );
 
 });
