@@ -15,16 +15,32 @@ function insertDB_temp_db(tx) {
   // alert("ingreso a la transaccion");
 
 
-  // tx.executeSql('INSERT INTO TEMP_VENTA (IdArt,IdCli,Calibre,Empaque,Precio,Caja,Unidad,CajasCamion,CodMarca,DesArt) VALUES ('+v_save_art_id+','+v_cli_id+','+v_save_cal+','+v_save_emp+','+v_save_pre+','+v_save_caj+','+v_save_uni+','+v_save_caj_cam+','+v_save_cod_mar+',"'+v_save_des_art.trim()+'")');
-  alert('INSERT INTO TEMP_VENTA (IdArt,IdCli,Calibre,Empaque,Precio,Caja,Unidad,CajasCamion,CodMarca,DesArt) VALUES (?,?,?,?,?,?,?,?,?,"?"),['+v_save_art_id+','+v_cli_id+','+v_save_cal+','+v_save_emp+','+v_save_pre+','+v_save_caj+','+v_save_uni+','+v_save_caj_cam+','+v_save_cod_mar+','+v_save_des_art+'],realizado,errorinsert');
-  tx.executeSql('INSERT INTO TEMP_VENTA (IdArt,IdCli,Calibre,Empaque,Precio,Caja,Unidad,CajasCamion,CodMarca,DesArt) VALUES (?,?,?,?,?,?,?,?,?,"?")',[v_save_art_id,v_cli_id,v_save_cal,v_save_emp,v_save_pre,v_save_caj,v_save_uni,v_save_caj_cam,v_save_cod_mar,v_save_des_art],realizado,errorinsert);
-  // tx.executeSql('INSERT INTO TEMP_VENTA (IdArt,IdCli,Calibre,Empaque,Precio,Caja,Unidad,CajasCamion,CodMarca,DesArt) VALUES ('+v_save_art_id+','+v_cli_id+','+v_save_cal+','+v_save_emp+','+v_save_pre+','+v_save_caj+','+v_save_uni+','+v_save_caj_cam+','+v_save_cod_mar+',"'+v_save_des_art+'")');
+  // tx.executeSql('INSERT INTO TEMPVENTA (IdArt,IdCli,Calibre,Empaque,Precio,Caja,Unidad,CajasCamion,CodMarca,DesArt) VALUES ('+v_save_art_id+','+v_cli_id+','+v_save_cal+','+v_save_emp+','+v_save_pre+','+v_save_caj+','+v_save_uni+','+v_save_caj_cam+','+v_save_cod_mar+',"'+v_save_des_art.trim()+'")');
+  alert('INSERT INTO TEMPVENTA (IdArt,IdCli,Calibre,Empaque,Precio,Caja,Unidad,CajasCamion,CodMarca,DesArt) VALUES (?,?,?,?,?,?,?,?,?,"?"),['+v_save_art_id+','+v_cli_id+','+v_save_cal+','+v_save_emp+','+v_save_pre+','+v_save_caj+','+v_save_uni+','+v_save_caj_cam+','+v_save_cod_mar+','+v_save_des_art+'],realizado,errorinsert');
+  tx.executeSql('INSERT INTO TEMPVENTA (IdArt,IdCli,Calibre,Empaque,Precio,Caja,Unidad,CajasCamion,CodMarca,DesArt) VALUES (?,?,?,?,?,?,?,?,?,"?")',[v_save_art_id,v_cli_id,v_save_cal,v_save_emp,v_save_pre,v_save_caj,v_save_uni,v_save_caj_cam,v_save_cod_mar,v_save_des_art],realizado,errorinsert);
+  // tx.executeSql('INSERT INTO TEMPVENTA (IdArt,IdCli,Calibre,Empaque,Precio,Caja,Unidad,CajasCamion,CodMarca,DesArt) VALUES ('+v_save_art_id+','+v_cli_id+','+v_save_cal+','+v_save_emp+','+v_save_pre+','+v_save_caj+','+v_save_uni+','+v_save_caj_cam+','+v_save_cod_mar+',"'+v_save_des_art+'")');
   var arr_art = JSON.parse(localStorage.art);
   var lon=arr_art.length;
   arr_art[lon]=v_save_art_id;
   localStorage.art=JSON.stringify(arr_art);
   cargar_carrito_venta_list();
 };
+
+
+// db.transaction(function(tx) {
+//   tx.executeSql('INSERT INTO TEMPVENTA(firstname,lastname,phonenumber) VALUES (?,?,?)',[inputFirstName,inputLastName,inputPhoneNumber], function(tx) {
+//     //Success callback get executed if the INSERT statement worked well
+//     //Get the last contact we just added and dynamically add it to the table displaying the contacts
+//   });
+// });
+
+
+
+
+
+
+
+
 
 function errorCB1_carg_tmp(err) {
  alert(err.code+"errorCB1_carg1--: "+err.message);

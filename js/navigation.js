@@ -114,13 +114,13 @@ function go_to_otro_usuario(){
 
 function limpiar_temp_v_table(){
 
-    db.transaction(populateDB_TEMP_VENTA, errorCB_cargar);
+    db.transaction(populateDB_TEMPVENTA, errorCB_cargar);
 } 
 
-function populateDB_TEMP_VENTA(tx) {
+function populateDB_TEMPVENTA(tx) {
     localStorage.art='[]';
-    tx.executeSql('DROP TABLE IF EXISTS TEMP_VENTA');
-    tx.executeSql('CREATE TABLE IF NOT EXISTS TEMP_VENTA (IdArt INTEGER,IdCli INTEGER,Calibre DECIMAL(18,4),Empaque INTEGER,Precio DECIMAL(18,2),Caja INTEGER,Unidad INTEGER,CajasCamion INTEGER, CodMarca INTEGER, DesArt TEXT)');
+    tx.executeSql('DROP TABLE IF EXISTS TEMPVENTA');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS TEMPVENTA (IdArt INTEGER,IdCli INTEGER,Calibre DECIMAL(18,4),Empaque INTEGER,Precio DECIMAL(18,2),Caja INTEGER,Unidad INTEGER,CajasCamion INTEGER, CodMarca INTEGER, DesArt TEXT)');
 }
 
  function errorCB_cargar(err) {
