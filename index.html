@@ -2055,8 +2055,8 @@ $('.confirmar_venta_popup').click(function() {
   var save_uni=$("#unidades_popup").val();
   var save_caj_cam=$("#cant_camion").val();
 
-  var save_cod_marca  =$("#cod_marca").val();
-  var save_des_Art    =$("#des_art").val();
+  var save_cod_mar  =$("#cod_marca").val();
+  var save_des_art    =$("#des_art").val();
 
   var cli_id=$("#cliente_id").val();
 
@@ -2066,7 +2066,8 @@ $('.confirmar_venta_popup').click(function() {
   $("#precio_popup").prop('disabled', true);
   $("#cajas_popup").prop('disabled', true);
   $("#unidades_popup").prop('disabled', true);
-  db_temp_guardar_venta(save_art_id,cli_id,save_cal,save_emp,save_pre,save_caj,save_uni,save_caj_cam,save_cod_marca,save_des_Art);
+  alert("  save_art_id="+save_art_id+"  cli_id="+cli_id+"  save_cal="+save_cal+"  save_emp="+save_emp+"  save_pre="+save_pre+"  save_caj="+save_caj+"  save_uni="+save_uni+"  save_caj_cam="+save_caj_cam+"  save_cod_mar="+save_cod_mar+"  save_des_art="+save_des_art);
+  db_temp_guardar_venta(save_art_id,cli_id,save_cal,save_emp,save_pre,save_caj,save_uni,save_caj_cam,save_cod_mar,save_des_art);
   $( "#add_venta_popup" ).popup( "close" );
 
 });
