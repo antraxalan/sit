@@ -17,7 +17,8 @@ function insertDB_temp_db(tx) {
 
   // tx.executeSql('INSERT INTO TEMPVENTA (IdArt,IdCli,Calibre,Empaque,Precio,Caja,Unidad,CajasCamion,CodMarca,DesArt) VALUES ('+v_save_art_id+','+v_cli_id+','+v_save_cal+','+v_save_emp+','+v_save_pre+','+v_save_caj+','+v_save_uni+','+v_save_caj_cam+','+v_save_cod_mar+',"'+v_save_des_art.trim()+'")');
   alert('INSERT INTO TEMPVENTA (IdArt,IdCli,Calibre,Empaque,Precio,Caja,Unidad,CajasCamion,CodMarca,DesArt) VALUES (?,?,?,?,?,?,?,?,?,"?"),['+v_save_art_id+','+v_cli_id+','+v_save_cal+','+v_save_emp+','+v_save_pre+','+v_save_caj+','+v_save_uni+','+v_save_caj_cam+','+v_save_cod_mar+','+v_save_des_art+'],realizado,errorinsert');
-  tx.executeSql('INSERT INTO TEMPVENTA (IdArt,IdCli,Calibre,Empaque,Precio,Caja,Unidad,CajasCamion,CodMarca,DesArt) VALUES (?,?,?,?,?,?,?,?,?,"?")',[v_save_art_id,v_cli_id,v_save_cal,v_save_emp,v_save_pre,v_save_caj,v_save_uni,v_save_caj_cam,v_save_cod_mar,v_save_des_art],realizado,errorinsert);
+tx.executeSql('CREATE TABLE IF NOT EXISTS TEMPVENTA (IdArt INTEGER,IdCli INTEGER,Calibre DECIMAL(18,4),Empaque INTEGER,Precio DECIMAL(18,2),Caja INTEGER,Unidad INTEGER,CajasCamion INTEGER, CodMarca INTEGER, DesArt VARCHAR(255))');
+               tx.executeSql('INSERT INTO TEMPVENTA (IdArt,IdCli,Calibre,Empaque,Precio,Caja,Unidad,CajasCamion,CodMarca,DesArt) VALUES (?,?,?,?,?,?,?,?,?,"?")',[v_save_art_id,v_cli_id,v_save_cal,v_save_emp,v_save_pre,v_save_caj,v_save_uni,v_save_caj_cam,v_save_cod_mar,v_save_des_art],realizado,errorinsert);
   // tx.executeSql('INSERT INTO TEMPVENTA (IdArt,IdCli,Calibre,Empaque,Precio,Caja,Unidad,CajasCamion,CodMarca,DesArt) VALUES ('+v_save_art_id+','+v_cli_id+','+v_save_cal+','+v_save_emp+','+v_save_pre+','+v_save_caj+','+v_save_uni+','+v_save_caj_cam+','+v_save_cod_mar+',"'+v_save_des_art+'")');
   var arr_art = JSON.parse(localStorage.art);
   var lon=arr_art.length;
