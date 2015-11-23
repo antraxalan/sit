@@ -65,6 +65,9 @@
     <link rel="stylesheet" href="css/jqm-inlinetabs.min.css" />
     <script type="text/javascript" src="js/jqm-inlinetabs.min.js"></script>
 
+    <script type="text/javascript" src="js/venta/temp_table_venta.js"></script>
+
+
     <title>SITRANS</title>
   </head>
   <body>
@@ -2067,6 +2070,7 @@ $('.confirmar_venta_popup').click(function() {
   $("#cajas_popup").prop('disabled', true);
   $("#unidades_popup").prop('disabled', true);
   alert("  save_art_id="+save_art_id+"  cli_id="+cli_id+"  save_cal="+save_cal+"  save_emp="+save_emp+"  save_pre="+save_pre+"  save_caj="+save_caj+"  save_uni="+save_uni+"  save_caj_cam="+save_caj_cam+"  save_cod_mar="+save_cod_mar+"  save_des_art="+save_des_art);
+
   db_temp_guardar_venta(save_art_id,cli_id,save_cal,save_emp,save_pre,save_caj,save_uni,save_caj_cam,save_cod_mar,save_des_art);
   $( "#add_venta_popup" ).popup( "close" );
 
