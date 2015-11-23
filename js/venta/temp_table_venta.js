@@ -24,11 +24,9 @@ function insertDB_temp_db(tx) {
   // tx.executeSql('INSERT INTO TEMPVENTA2 (IdArt,IdCli) VALUES ('+v_save_art_id+','+v_cli_id+')');
 
   tx.executeSql('INSERT INTO TEMPVENTA (IdArt,IdCli,Calibre,Empaque,Precio,Caja,Unidad,CajasCamion,CodMarca,DesArt) VALUES ('+v_save_art_id+','+v_cli_id+','+v_save_cal+','+v_save_emp+','+v_save_pre+','+v_save_caj+','+v_save_uni+','+v_save_caj_cam+','+v_save_cod_mar+',"'+v_save_des_art+'")');
-  // var arr_art = JSON.parse(localStorage.art);
-  // var lon=arr_art.length;
-  // arr_art[lon]=v_save_art_id;
-  // localStorage.art=JSON.stringify(arr_art);
-  // cargar_carrito_venta_list();
+
+  
+
 };
 
 
@@ -59,18 +57,24 @@ function errorinsert(err) {
 
 
 function db_temp_guardar_venta(save_art_id,cli_id,save_cal,save_emp,save_pre,save_caj,save_uni,save_caj_cam,save_cod_mar,save_des_art) {
-   v_save_art_id   =save_art_id;
-   v_cli_id        =cli_id;
-   v_save_cal      =save_cal;
-   v_save_emp      =save_emp;
-   v_save_pre      =save_pre;
-   v_save_caj      =save_caj;
-   v_save_uni      =save_uni;
-   v_save_caj_cam  =save_caj_cam;
-   v_save_cod_mar  =save_cod_mar;
-   v_save_des_art  =save_des_art.trim();
-   alert("ingreso funcion");
+ v_save_art_id   =save_art_id;
+ v_cli_id        =cli_id;
+ v_save_cal      =save_cal;
+ v_save_emp      =save_emp;
+ v_save_pre      =save_pre;
+ v_save_caj      =save_caj;
+ v_save_uni      =save_uni;
+ v_save_caj_cam  =save_caj_cam;
+ v_save_cod_mar  =save_cod_mar;
+ v_save_des_art  =save_des_art.trim();
+ alert("ingreso funcion");
 
-  db.transaction(insertDB_temp_db, errorCB1_carg_tmp);
+ var arr_art = JSON.parse(localStorage.art);
+ var lon=arr_art.length;
+ arr_art[lon]=v_save_art_id;
+ localStorage.art=JSON.stringify(arr_art);
+ cargar_carrito_venta_list();
+
+ db.transaction(insertDB_temp_db, errorCB1_carg_tmp);
 
 };
