@@ -13,7 +13,7 @@ var v_save_des_art;
 
 function insertDB_temp_db(tx) {
   alert("ingreso a la transaccion");
-  tx.executeSql('INSERT INTO TEMP_VENTA (IdArt,IdCli,Calibre,Empaque,Precio,Caja,Unidad,CajasCamion,CodMarca,DesArt) VALUES ('+v_save_art_id+','+v_cli_id+','+v_save_cal+','+v_save_emp+','+v_save_pre+','+v_save_caj+','+v_save_uni+','+v_save_caj_cam+','+v_save_cod_mar+','+v_save_des_art+')');
+  tx.executeSql('INSERT INTO TEMP_VENTA (IdArt,IdCli,Calibre,Empaque,Precio,Caja,Unidad,CajasCamion,CodMarca,DesArt) VALUES ('+v_save_art_id+','+v_cli_id+','+v_save_cal+','+v_save_emp+','+v_save_pre+','+v_save_caj+','+v_save_uni+','+v_save_caj_cam+','+v_save_cod_mar+',"'+v_save_des_art+'")');
   var arr_art = JSON.parse(localStorage.art);
   var lon=arr_art.length;
   arr_art[lon]=v_save_art_id;
