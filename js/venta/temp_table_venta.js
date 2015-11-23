@@ -16,7 +16,7 @@ function insertDB_temp_db(tx) {
 
 
   // tx.executeSql('INSERT INTO TEMP_VENTA (IdArt,IdCli,Calibre,Empaque,Precio,Caja,Unidad,CajasCamion,CodMarca,DesArt) VALUES ('+v_save_art_id+','+v_cli_id+','+v_save_cal+','+v_save_emp+','+v_save_pre+','+v_save_caj+','+v_save_uni+','+v_save_caj_cam+','+v_save_cod_mar+',"'+v_save_des_art.trim()+'")');
-  alert('INSERT INTO TEMP_VENTA (IdArt,IdCli,Calibre,Empaque,Precio,Caja,Unidad,CajasCamion,CodMarca,DesArt) VALUES (?,?,?,?,?,?,?,?,?,"?")'+',['+v_save_art_id+','+v_cli_id+','+v_save_cal+','+v_save_emp+','+v_save_pre+','+v_save_caj+','+v_save_uni+','+v_save_caj_cam+','+v_save_cod_mar+','+v_save_des_art+'],realizado,errorinsert');
+  alert('INSERT INTO TEMP_VENTA (IdArt,IdCli,Calibre,Empaque,Precio,Caja,Unidad,CajasCamion,CodMarca,DesArt) VALUES (?,?,?,?,?,?,?,?,?,"?"),['+v_save_art_id+','+v_cli_id+','+v_save_cal+','+v_save_emp+','+v_save_pre+','+v_save_caj+','+v_save_uni+','+v_save_caj_cam+','+v_save_cod_mar+','+v_save_des_art+'],realizado,errorinsert');
   tx.executeSql('INSERT INTO TEMP_VENTA (IdArt,IdCli,Calibre,Empaque,Precio,Caja,Unidad,CajasCamion,CodMarca,DesArt) VALUES (?,?,?,?,?,?,?,?,?,"?")',[v_save_art_id,v_cli_id,v_save_cal,v_save_emp,v_save_pre,v_save_caj,v_save_uni,v_save_caj_cam,v_save_cod_mar,v_save_des_art],realizado,errorinsert);
   // tx.executeSql('INSERT INTO TEMP_VENTA (IdArt,IdCli,Calibre,Empaque,Precio,Caja,Unidad,CajasCamion,CodMarca,DesArt) VALUES ('+v_save_art_id+','+v_cli_id+','+v_save_cal+','+v_save_emp+','+v_save_pre+','+v_save_caj+','+v_save_uni+','+v_save_caj_cam+','+v_save_cod_mar+',"'+v_save_des_art+'")');
   var arr_art = JSON.parse(localStorage.art);
