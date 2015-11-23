@@ -59,6 +59,7 @@ var id_cliente;
         }
 
         function cargar_carrito_venta_list() {
+          alert("cargando a carrito db")
           db.transaction(queryDB_carrito, errorCB_list_carrito);
         }
 

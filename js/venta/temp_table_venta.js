@@ -17,6 +17,7 @@ function insertDB_temp_db(tx) {
   var lon=arr_art.length;
   arr_art[lon]=v_save_art_id;
   localStorage.art=JSON.stringify(arr_art);
+  cargar_carrito_venta_list();
 };
 
 function errorCB1_carg_tmp(err) {
