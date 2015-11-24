@@ -11,12 +11,13 @@ var cantidad_ids;
           // alert("queryDB_old_articulo");
           // alert(id_cliente+" old query");
           // tx.executeSql('SELECT CodConcepto,CodCliente,a.CodArt,CodMarca,DesArt,Precio from detalle a inner join articulo b on a.codart=b.codart where codconcepto=1200 and codcliente=? order by codconcepto,codcliente,a.codart', [id_cliente], querySuccess_old_articulo, errorCB_list);
+          alert(id_cliente);
           tx.executeSql('select a.CodConcepto,a.CodCliente,a.Fecha,CodMarca,a.CodArt,DesArt,Calibre,CantxEmpaque,PrecioVtaMax, a.Precio UltPrecioVendido,a.Debe Importe,a.Dcajas Cajas, sum(c.dcajas-c.hcajas) CajasCamion from detalle a inner join articulo b on a.codart=b.codart left outer join detalle c on c.codconcepto=1800 and a.codart=c.codart where a.codconcepto=1200 and a.codcliente=? group by a.codconcepto,a.codcliente,a.fecha,a.codart,desart,calibre,cantxempaque,preciovtamax, a.precio,a.debe,a.dcajas,CodMarca order by a.codconcepto,a.codcliente,a.codart', [id_cliente], querySuccess_old_articulo, errorCB_list);
         }
 
         function queryDB_new_articulo(tx) {
           // alert("new query");
-          tx.executeSql('select a.CodArt,DesArt,CodMarca,Calibre,CantxEmpaque,PrecioVtaMax,sum(dcajas-hcajas) CajasCamion from articulo a inner join detalle b on a.codart=b.codart and codconcepto=1800 where tipoarticulo="P" group by a.codart,desart,calibre,cantxempaque,preciovtamax,CodMarca order by a.codart', [], querySuccess_new_articulo, errorCB_list);
+          tx.executeSql('select a.CodArt,DesArt,CodMarca,Calibre,CantxEmpaque,PrecioVtaMax,sum(dcajas-hcajas) CajasCamion from articulo a inner join detalle b on a.codart=b.codart and codconcepto=1800 where tipoarticulo="P" group by a.codart,desart,calibre,cantxempaque,preciovtamax,CodMarca order by a.codart', [], querySuccess_new_articulo, errorCB_listb);
         }
 
 
@@ -160,6 +161,15 @@ var cantidad_ids;
         function errorCB_list(err) {
           alert("Error processing SQL2: "+err.code);
         }
+        function errorCB_listb(err) {
+          alert("Error processing SQL2b: "+err.code);
+        }
+        function errorCB_listc(err) {
+          alert("Error processing SQL2c: "+err.code);
+        }
+        function errorCB_listd(err) {
+          alert("Error processing SQL2d: "+err.code);
+        }
 
 
 
@@ -169,13 +179,13 @@ var cantidad_ids;
           // alert("cargar_old_venta_list");
           // alert("successCB_select_articulo");
           // var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
-          db.transaction(queryDB_old_articulo, errorCB_list);
+          db.transaction(queryDB_old_articulo, errorCB_listc);
         }
 
         function cargar_new_venta_list() {
           // alert("successCB_select_articulo");
           // var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
-          db.transaction(queryDB_new_articulo, errorCB_list);
+          db.transaction(queryDB_new_articulo, errorCB_listd);
         }
 
         function cargar_art_list (id_cli){
