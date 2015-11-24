@@ -2077,12 +2077,6 @@ $('.confirmar_venta_popup').click(function() {
 
   var cli_id=$("#cliente_id").val();
 
-  $("#old_id_venta").prop('disabled', true);
-  $("#calibre").prop('disabled', true);
-  $("#cant_empaque").prop('disabled', true);
-  $("#precio_popup").prop('disabled', true);
-  $("#cajas_popup").prop('disabled', true);
-  $("#unidades_popup").prop('disabled', true);
   // alert("  save_art_id="+save_art_id+"  cli_id="+cli_id+"  save_cal="+save_cal+"  save_emp="+save_emp+"  save_pre="+save_pre+"  save_caj="+save_caj+"  save_uni="+save_uni+"  save_caj_cam="+save_caj_cam+"  save_cod_mar="+save_cod_mar+"  save_des_art="+save_des_art);
 
   if(save_caj==''){
@@ -2100,17 +2094,23 @@ $('.confirmar_venta_popup').click(function() {
   if((save_caj==0 && save_uni==0)||(a+b==0)){
     alert("Por favor agregue algun valor en cajas o unidades.");
   }else{
-    if(save_caj==0 && save_uni==0){
+    if($("#sub_total").val()=='NaN'){
+      alert("Verifique e ingrese cantidades correctas.")
+    }else{
+      alert('mando');
+      // db_temp_guardar_venta(save_art_id,cli_id,save_cal,save_emp,save_pre,save_caj,save_uni,save_caj_cam,save_cod_mar,save_des_art);
 
-      if($("#sub_total").val()=='NaN'){
-        alert("Verifique e ingrese cantidades correctas.")
-      }else{
-        alert('mando');
-        // db_temp_guardar_venta(save_art_id,cli_id,save_cal,save_emp,save_pre,save_caj,save_uni,save_caj_cam,save_cod_mar,save_des_art);
-        $( "#add_venta_popup" ).popup( "close" );
-      }
+      $("#old_id_venta").prop('disabled', true);
+      $("#calibre").prop('disabled', true);
+      $("#cant_empaque").prop('disabled', true);
+      $("#precio_popup").prop('disabled', true);
+      $("#cajas_popup").prop('disabled', true);
+      $("#unidades_popup").prop('disabled', true);
 
+      $( "#add_venta_popup" ).popup( "close" );
     }
+
+
   }
 
 
@@ -2132,12 +2132,7 @@ $('.confirmar_edicion_popup').click(function() {
 
   var cli_id=$("#cliente_id").val();
 
-  $("#old_id_venta").prop('disabled', true);
-  $("#calibre").prop('disabled', true);
-  $("#cant_empaque").prop('disabled', true);
-  $("#precio_popup").prop('disabled', true);
-  $("#cajas_popup").prop('disabled', true);
-  $("#unidades_popup").prop('disabled', true);
+
 
   // alert("  save_art_id="+save_art_id+"  cli_id="+cli_id+"  save_cal="+save_cal+"  save_emp="+save_emp+"  save_pre="+save_pre+"  save_caj="+save_caj+"  save_uni="+save_uni+"  save_caj_cam="+save_caj_cam+"  save_cod_mar="+save_cod_mar+"  save_des_art="+save_des_art);
   
@@ -2156,17 +2151,23 @@ $('.confirmar_edicion_popup').click(function() {
   if((save_caj==0 && save_uni==0)||(a+b==0)){
     alert("Por favor agregue algun valor en cajas o unidades.");
   }else{
-    if(save_caj==0 && save_uni==0){
+    if($("#sub_total").val()=='NaN'){
+      alert("Verifique e ingrese cantidades correctas.")
+    }else{
+      alert('mando');
+      // db_temp_guardar_venta(save_art_id,cli_id,save_cal,save_emp,save_pre,save_caj,save_uni,save_caj_cam,save_cod_mar,save_des_art);
 
-      if($("#sub_total").val()=='NaN'){
-        alert("Verifique e ingrese cantidades correctas.")
-      }else{
-        alert('mando');
-        // db_temp_guardar_venta(save_art_id,cli_id,save_cal,save_emp,save_pre,save_caj,save_uni,save_caj_cam,save_cod_mar,save_des_art);
-        $( "#add_venta_popup" ).popup( "close" );
-      }
-
+      $("#old_id_venta").prop('disabled', true);
+      $("#calibre").prop('disabled', true);
+      $("#cant_empaque").prop('disabled', true);
+      $("#precio_popup").prop('disabled', true);
+      $("#cajas_popup").prop('disabled', true);
+      $("#unidades_popup").prop('disabled', true);
+      
+      $( "#add_venta_popup" ).popup( "close" );
     }
+
+    
   }
 
 });
