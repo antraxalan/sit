@@ -64,9 +64,10 @@ var id_cliente;
           db.transaction(queryDB_carrito, errorCB_list_carrito);
         }
 
-        function cargar_listas (id_cli){
-          cargar_art_list(id_cli);
-          cargar_carrito_venta_list(id_cli)
+        function cargar_listas (id_c){
+          alert("cargar_listas"+id_c);
+          cargar_art_list(id_c);
+          cargar_carrito_venta_list(id_c)
 
         }
 

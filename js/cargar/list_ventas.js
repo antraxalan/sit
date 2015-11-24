@@ -181,6 +181,7 @@ var cantidad_ids;
         function cargar_art_list (id_cli){
           // alert("cargar_listas");
           id_cliente=id_cli;
+          alert(id_cli);
 
           cargar_old_venta_list();
           cargar_new_venta_list();
