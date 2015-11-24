@@ -66,6 +66,7 @@
     <script type="text/javascript" src="js/jqm-inlinetabs.min.js"></script>
 
     <script type="text/javascript" src="js/venta/temp_table_venta.js"></script>
+    <script type="text/javascript" src="js/venta/list_carrito.js"></script>
 
 
     <title>SITRANS</title>
@@ -519,7 +520,7 @@
       <input type="hidden" id="cliente_id" />
       <label for="textarea" class="cliente_nombre">Id - Nombre del cliente</label>
     </div>
-    
+    <button class="prueba_funcion" type="button">prueba funcion</button>
     <h4 class="mensaje_venta_c" align="center"></h4>
     <h4 class="mensaje_venta" align="center"></h4>
 
@@ -1767,6 +1768,8 @@ $.mobile.navigate( "index.html#venta" );
     $(".id_venta").val($(this).attr('codigo-venta'));
       // $( "#alerta_eliminado_venta" ).popup( "close" );
     });
+
+
   $('.eliminar_popup_venta').click(function() {
     $('.mensaje').html("<div style='color:red;'>ELIMINADO</div>");
     $('.mensaje').show(300);
@@ -1848,6 +1851,15 @@ $.mobile.navigate( "index.html#venta" );
 //fires the 1st time it is showed
 $( document ).on( "pagecreate", "#venta", function( event ) {
 
+  $(".prueba_funcion").on('click', function(event) {
+// alert("12123123");
+cargar_carrito_venta_list(100);
+    // $(".articulo").hide();
+    // var text = $(this).parent().find('h2').text();
+    // $('#titulo_popup').html(text);
+    // $(".id_venta").val($(this).attr('codigo-venta'));
+      // $( "#alerta_eliminado_venta" ).popup( "close" );
+  });
   // alert( "venta" );
 
   /////swipe
