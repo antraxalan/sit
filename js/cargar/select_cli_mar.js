@@ -105,7 +105,7 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
         // Transaction error callback
         //
         function errorCB_select(err) {
-          alert("Error processing SQL: "+err.code);
+          alert("Error processing SQL3: "+err.code);
         }
 
 

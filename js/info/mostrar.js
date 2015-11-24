@@ -155,7 +155,7 @@ function populateDB_detalle(tx) {
         // Transaction error callback
         //
         function errorCB_info(err) {
-        	alert("Error processing SQL: "+err.code);
+        	alert("Error processing SQL4: "+err.code);
         }
 
         // Transaction success callback

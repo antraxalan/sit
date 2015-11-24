@@ -113,7 +113,7 @@ function go_to_otro_usuario(){
 };
 
 function limpiar_temp_v_table(){
-
+    
     db.transaction(populateDB_TEMPVENTA, errorCB_cargar);
 } 
 

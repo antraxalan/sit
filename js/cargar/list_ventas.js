@@ -158,7 +158,7 @@ var cantidad_ids;
         // Transaction error callback
         //
         function errorCB_list(err) {
-          alert("Error processing SQL: "+err.code);
+          alert("Error processing SQL2: "+err.code);
         }
 
 
