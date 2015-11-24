@@ -98,8 +98,9 @@ var cantidad_ids;
 
           var len = results.rows.length;
 
+          alert(localStorage.art);
           var arr_art_carrito = JSON.parse(localStorage.art);
-          
+          alert(arr_art_carrito);
           // var lista_contenido='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
           for (var i = 0; i < len; i++) {
 
