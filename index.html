@@ -2088,7 +2088,9 @@ $('.confirmar_venta_popup').click(function() {
       alert("Verifique e ingrese cantidades correctas.")
     }else{
       db_temp_guardar_venta(save_art_id,cli_id,save_cal,save_emp,save_pre,save_caj,save_uni,save_caj_cam,save_cod_mar,save_des_art);
-
+      cargar_listas(v_cli_id);
+      // $('.list_old_venta').html(lista_contenido);
+      // $(".list_old_venta").trigger("create");
       $("#old_id_venta").prop('disabled', true);
       $("#calibre").prop('disabled', true);
       $("#cant_empaque").prop('disabled', true);
