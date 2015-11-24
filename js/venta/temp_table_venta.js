@@ -71,7 +71,7 @@ function db_temp_guardar_venta(save_art_id,cli_id,save_cal,save_emp,save_pre,sav
  v_save_caj_cam  =save_caj_cam;
  v_save_cod_mar  =save_cod_mar;
  v_save_des_art  =save_des_art.trim();
- alert("ingreso funcion");
+ // alert("ingreso funcion");
 
  // var arr_art = JSON.parse(localStorage.art);
  // var lon=arr_art.length;

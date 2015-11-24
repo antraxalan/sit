@@ -98,9 +98,10 @@ var cantidad_ids;
 
           var len = results.rows.length;
 
-          alert(localStorage.art);
+
           var arr_art_carrito = JSON.parse(localStorage.art);
           alert(arr_art_carrito);
+          alert(ids_old);
           // var lista_contenido='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
           for (var i = 0; i < len; i++) {
 
@@ -117,7 +118,7 @@ var cantidad_ids;
               lista_contenido +='<li><a href="#">';
               lista_contenido +='<img src="img/marcas/'+co_ma+'.png">';
               lista_contenido +='<h2>'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</h2></a>';
-              lista_contenido +='<a href="#add_venta_popup" class="add_venta_popup_class_old" data-rel="popup" codigo-venta="'+results.rows.item(i).CodArt+'" last-price="'+results.rows.item(i).PrecioVtaMax+'" cajas-camion="'+results.rows.item(i).CajasCamion+'" calibre="'+results.rows.item(i).Calibre+'" cant-empaque="'+results.rows.item(i).CantxEmpaque+'"  >Historial</a></li>';
+              lista_contenido +='<a href="#add_venta_popup" class="add_venta_popup_class_old" data-rel="popup" codigo-venta="'+results.rows.item(i).CodArt+'" last-price="'+results.rows.item(i).PrecioVtaMax+'" cajas-camion="'+results.rows.item(i).CajasCamion+'" calibre="'+results.rows.item(i).Calibre+'" cant-empaque="'+results.rows.item(i).CantxEmpaque+'"  cod-marca="'+results.rows.item(i).CodMarca+'" des-art="'+results.rows.item(i).DesArt+'" >Historial</a></li>';
               // lista_contenido +='<option value="'+results.rows.item(i).CodArt+'">'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</option>'; 
 
             }
