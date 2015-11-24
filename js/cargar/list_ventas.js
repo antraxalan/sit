@@ -97,12 +97,15 @@ var cantidad_ids;
           // alert("succes new");
 
           var len = results.rows.length;
+
+          var arr_art_carrito = JSON.parse(localStorage.art);
+          
           // var lista_contenido='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
           for (var i = 0; i < len; i++) {
 
 
 
-            if($.inArray( results.rows.item(i).CodArt, ids_old )==-1){
+            if(($.inArray( results.rows.item(i).CodArt, ids_old )==-1) && ($.inArray( results.rows.item(i).CodArt, arr_art_carrito )==-1)){
 
               var co_ma= results.rows.item(i).CodMarca;
               // if(co_ma!=15 || co_ma!=18 || co_ma!=20 || co_ma!=25 || co_ma!=30 || co_ma!=34 || co_ma!=35 || co_ma!=40 || co_ma!=50 || co_ma!=55 || co_ma!=64 || co_ma!=65 || co_ma!=66 || co_ma!=67 || co_ma!=68 || co_ma!=69 || co_ma!=70 || co_ma!=75 || co_ma!=80 || co_ma!=90 || co_ma!=94 || co_ma!=95 || co_ma!=96)
@@ -170,7 +173,7 @@ var cantidad_ids;
           db.transaction(queryDB_new_articulo, errorCB_list);
         }
 
-        function cargar_listas (id_cli){
+        function cargar_art_list (id_cli){
           // alert("cargar_listas");
           id_cliente=id_cli;
 

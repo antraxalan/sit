@@ -60,15 +60,14 @@ var id_cliente;
 
         function cargar_carrito_venta_list(cli) {
           id_cliente=cli;
-          alert("cargando a carrito db");
+          // alert("cargando a carrito db");
           db.transaction(queryDB_carrito, errorCB_list_carrito);
         }
 
-        function cargar_listassssssss (id_cli){
-          id_cliente=id_cli;
+        function cargar_listas (id_cli){
+          cargar_art_list(id_cli);
+          cargar_carrito_venta_list(id_cli)
 
-          cargar_old_venta_list();
-          cargar_new_venta_list();
         }
 
 

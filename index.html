@@ -89,7 +89,7 @@
 
 
       <div data-role="page" class="paginaprincipal" id="home" >
-        <header data-role="header" data-position="fixed">
+      <header data-role="header" data-position="fixed" data-tap-toggle="false">
           <h1>CBN</h1>
           <a href="#panel-overlay" class="ui-btn-left ui-btn ui-icon-grid ui-btn-icon-notext ui-corner-all">Configuracion</a>
         </header> 
@@ -142,7 +142,7 @@
 
 
         </div><!-- /content -->
-        <footer data-role="footer" data-position="fixed">
+        <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
           <h3>Copyright &copy; 2015</h3>
           <button type="button" data-icon="power" class="ui-btn-right salir">Salir</button>
         </footer>
@@ -160,8 +160,8 @@
 
 
 
-      <div data-role="page" id="registrar" class="ui-page-theme-a" >
-        <header data-role="header" data-position="fixed">
+      <div data-role="page" id="registrar" class="ui-page-theme-a" data-position="absolute">
+        <header data-role="header" data-position="fixed" data-tap-toggle="false">
           <h1>CBN</h1>
           <a data-icon="home" class="ui-btn-right " href="#home">Inicio</a>
         </header> 
@@ -484,7 +484,7 @@
 
 
   </div><!-- /content -->
-  <footer data-role="footer" data-position="fixed">
+  <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
     <h3>Copyright &copy; 2015</h3>
   </footer>
 </div><!-- /Page Home -->
@@ -501,7 +501,7 @@
 
 
 <div data-role="page" id="venta">
-  <header data-role="header" data-position="fixed">
+  <header data-role="header" data-position="fixed" data-tap-toggle="false">
     <h1>CBN</h1>
     <button type="button"  data-icon="user" class="ui-btn-right otro_cliente">Otro Cliente</button>
   </header> 
@@ -520,7 +520,6 @@
       <input type="hidden" id="cliente_id" />
       <label for="textarea" class="cliente_nombre">Id - Nombre del cliente</label>
     </div>
-    <button class="prueba_funcion" type="button">prueba funcion</button>
     <h4 class="mensaje_venta_c" align="center"></h4>
     <h4 class="mensaje_venta" align="center"></h4>
 
@@ -610,12 +609,12 @@
             <div role="main" class="ui-content">
               <p class="add_popup_prod">...</p>
 
-              <input id="old_id_venta" type="hiddens" value="" placeholder="old_id_venta">
-              <input id="cant_empaque" type="hiddens" value="" placeholder="cant_empaque">
-              <input id="calibre" type="hiddens" value="" placeholder="calibre">
-              <input id="cant_camion" type="hiddens" value="" placeholder="cant_camion">
-              <input id="cod_marca" type="hiddens" value="" placeholder="cod_marca">
-              <input id="des_art" type="hiddens" value="" placeholder="des_art">
+              <input id="old_id_venta" type="hidden" value="" placeholder="old_id_venta">
+              <input id="cant_empaque" type="hidden" value="" placeholder="cant_empaque">
+              <input id="calibre" type="hidden" value="" placeholder="calibre">
+              <input id="cant_camion" type="hidden" value="" placeholder="cant_camion">
+              <input id="cod_marca" type="hidden" value="" placeholder="cod_marca">
+              <input id="des_art" type="hidden" value="" placeholder="des_art">
 
 
 
@@ -674,7 +673,7 @@
 
 
   </div>
-  <footer data-role="footer" data-position="fixed">
+  <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
     <h3>Copyright &copy; 2015</h3>
   </footer>
 </div>
@@ -688,7 +687,7 @@
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
 <div data-role="page" id="venta_old">
-  <header data-role="header" data-position="fixed">
+  <header data-role="header" data-position="fixed" data-tap-toggle="false">
     <h1>CBN</h1>
     <button type="button"  data-icon="user" class="ui-btn-right otro_cliente">Otro Cliente</button>
   </header> 
@@ -1087,7 +1086,7 @@
 
 
 </div>
-<footer data-role="footer" data-position="fixed">
+<footer data-role="footer" data-position="fixed" data-tap-toggle="false">
   <h3>Copyright &copy; 2015</h3>
 </footer>
 </div>  
@@ -1103,7 +1102,7 @@
 
 
 <div data-role="page" id="cobranza">
-  <header data-role="header" data-position="fixed"> 
+  <header data-role="header" data-position="fixed" data-tap-toggle="false"> 
     <h1>CBN</h1>
     <button type="button"  data-icon="user" class="ui-btn-right otro_cliente">Otro Cliente</button>
   </header> 
@@ -1268,7 +1267,7 @@
   </div>
 
 </div>
-<footer data-role="footer" data-position="fixed">
+<footer data-role="footer" data-position="fixed" data-tap-toggle="false">
   <h3>Copyright &copy; 2015</h3>
 </footer>
 </div>
@@ -1283,7 +1282,7 @@
 
 
 <div data-role="page" id="deuda">
-  <header data-role="header" data-position="fixed">
+  <header data-role="header" data-position="fixed" data-tap-toggle="false">
     <h1>CBN</h1>
     <button type="button"  data-icon="user" class="ui-btn-right otro_cliente">Otro Cliente</button>
   </header> 
@@ -1465,7 +1464,7 @@
 
 
 </div>
-<footer data-role="footer" data-position="fixed">
+<footer data-role="footer" data-position="fixed" data-tap-toggle="false">
   <h3>Copyright &copy; 2015</h3>
 </footer>
 </div>
@@ -1851,15 +1850,6 @@ $.mobile.navigate( "index.html#venta" );
 //fires the 1st time it is showed
 $( document ).on( "pagecreate", "#venta", function( event ) {
 
-  $(".prueba_funcion").on('click', function(event) {
-// alert("12123123");
-cargar_carrito_venta_list(100);
-    // $(".articulo").hide();
-    // var text = $(this).parent().find('h2').text();
-    // $('#titulo_popup').html(text);
-    // $(".id_venta").val($(this).attr('codigo-venta'));
-      // $( "#alerta_eliminado_venta" ).popup( "close" );
-    });
   // alert( "venta" );
 
   /////swipe
@@ -2163,7 +2153,7 @@ $('.confirmar_edicion_popup').click(function() {
       $("#precio_popup").prop('disabled', true);
       $("#cajas_popup").prop('disabled', true);
       $("#unidades_popup").prop('disabled', true);
-      
+
       $( "#add_venta_popup" ).popup( "close" );
     }
 
