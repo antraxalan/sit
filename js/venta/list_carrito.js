@@ -65,7 +65,7 @@ var id_cliente;
         }
 
         function cargar_listas (id_c){
-          alert("cargar_listas"+id_c);
+          // alert("cargar_listas"+id_c);
           cargar_art_list(id_c);
           cargar_carrito_venta_list(id_c)
 

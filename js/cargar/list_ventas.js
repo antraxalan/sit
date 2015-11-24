@@ -33,8 +33,10 @@ var cantidad_ids;
           arr_art_carrito = JSON.parse(localStorage.art);
           cantidad_ids=0;
           lista_contenido='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
+          alert(arr_art_carrito);
           for (var i = 0; i < len; i++) {
             if($.inArray( results.rows.item(i).CodArt, arr_art_carrito )==-1){
+
               var co_ma= results.rows.item(i).CodMarca;
               if(!(co_ma=="18" || co_ma=="25" || co_ma=="35" || co_ma=="50" || co_ma=="70" || co_ma=="94")){ 
                 // alert(co_ma);
