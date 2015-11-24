@@ -610,12 +610,12 @@
             <div role="main" class="ui-content">
               <p class="add_popup_prod">...</p>
 
-              <input id="old_id_venta" type="hidden" value="" placeholder="old_id_venta">
-              <input id="cant_empaque" type="hidden" value="" placeholder="cant_empaque">
-              <input id="calibre" type="hidden" value="" placeholder="calibre">
-              <input id="cant_camion" type="hidden" value="" placeholder="cant_camion">
-              <input id="cod_marca" type="hidden" value="" placeholder="cod_marca">
-              <input id="des_art" type="hidden" value="" placeholder="des_art">
+              <input id="old_id_venta" type="hiddens" value="" placeholder="old_id_venta">
+              <input id="cant_empaque" type="hiddens" value="" placeholder="cant_empaque">
+              <input id="calibre" type="hiddens" value="" placeholder="calibre">
+              <input id="cant_camion" type="hiddens" value="" placeholder="cant_camion">
+              <input id="cod_marca" type="hiddens" value="" placeholder="cod_marca">
+              <input id="des_art" type="hiddens" value="" placeholder="des_art">
 
 
 
@@ -1859,7 +1859,7 @@ cargar_carrito_venta_list(100);
     // $('#titulo_popup').html(text);
     // $(".id_venta").val($(this).attr('codigo-venta'));
       // $( "#alerta_eliminado_venta" ).popup( "close" );
-  });
+    });
   // alert( "venta" );
 
   /////swipe
@@ -1921,6 +1921,7 @@ cargar_carrito_venta_list(100);
 
 
   $(".list_old_venta").on('click','.add_venta_popup_class_old', function(event) {
+    $("#sub_total").prop('disabled', true);
     $('.confirmar_venta_popup').show();
     $('.confirmar_edicion_popup').hide();
     var prod=$(this).parent().find('h2').text();
@@ -1962,23 +1963,24 @@ cargar_carrito_venta_list(100);
     $("#prest_popup").prop("checked",false).checkboxradio("refresh");
   });
 
-  $(".list_carrito_venta").on('click','.add_venta_popup_class_old', function(event) {
-    $('.confirmar_venta_popup').hide();
-    $('.confirmar_edicion_popup').show();
-    var prod=$(this).parent().find('h2').text();
-    var cod=$(this).attr('codigo-venta');
-    var pri=$(this).attr('last-price');
-    var caj=$(this).attr('cajas-camion');
-    var cal=$(this).attr('calibre');
-    var emp=$(this).attr('cant-empaque');
-    var cma=$(this).attr('cod-marca');
-    var dar=$(this).attr('des-art');
-    $("#old_id_venta").prop('disabled', false);
-    $("#calibre").prop('disabled', false);
-    $("#cant_empaque").prop('disabled', false);
-    $("#precio_popup").prop('disabled', false);
-    $("#cajas_popup").prop('disabled', false);
-    $("#unidades_popup").prop('disabled', false);
+$(".list_carrito_venta").on('click','.add_venta_popup_class_old', function(event) {
+  $("#sub_total").prop('disabled', true);
+  $('.confirmar_venta_popup').hide();
+  $('.confirmar_edicion_popup').show();
+  var prod=$(this).parent().find('h2').text();
+  var cod=$(this).attr('codigo-venta');
+  var pri=$(this).attr('last-price');
+  var caj=$(this).attr('cajas-camion');
+  var cal=$(this).attr('calibre');
+  var emp=$(this).attr('cant-empaque');
+  var cma=$(this).attr('cod-marca');
+  var dar=$(this).attr('des-art');
+  $("#old_id_venta").prop('disabled', false);
+  $("#calibre").prop('disabled', false);
+  $("#cant_empaque").prop('disabled', false);
+  $("#precio_popup").prop('disabled', false);
+  $("#cajas_popup").prop('disabled', false);
+  $("#unidades_popup").prop('disabled', false);
     // alert(prod+" old"+ " pri:"+pri+" cod:"+cod+" caj:"+caj+" uni:"+uni);
     $('.add_popup_prod').html(prod);
     $("#old_id_venta").val(cod);
@@ -2071,7 +2073,7 @@ $('.confirmar_venta_popup').click(function() {
   var save_caj_cam=$("#cant_camion").val();
 
   var save_cod_mar  =$("#cod_marca").val();
-  var save_des_art    =$("#des_art").val();
+  var save_des_art  =$("#des_art").val();
 
   var cli_id=$("#cliente_id").val();
 
@@ -2081,10 +2083,91 @@ $('.confirmar_venta_popup').click(function() {
   $("#precio_popup").prop('disabled', true);
   $("#cajas_popup").prop('disabled', true);
   $("#unidades_popup").prop('disabled', true);
-  alert("  save_art_id="+save_art_id+"  cli_id="+cli_id+"  save_cal="+save_cal+"  save_emp="+save_emp+"  save_pre="+save_pre+"  save_caj="+save_caj+"  save_uni="+save_uni+"  save_caj_cam="+save_caj_cam+"  save_cod_mar="+save_cod_mar+"  save_des_art="+save_des_art);
+  // alert("  save_art_id="+save_art_id+"  cli_id="+cli_id+"  save_cal="+save_cal+"  save_emp="+save_emp+"  save_pre="+save_pre+"  save_caj="+save_caj+"  save_uni="+save_uni+"  save_caj_cam="+save_caj_cam+"  save_cod_mar="+save_cod_mar+"  save_des_art="+save_des_art);
 
-  db_temp_guardar_venta(save_art_id,cli_id,save_cal,save_emp,save_pre,save_caj,save_uni,save_caj_cam,save_cod_mar,save_des_art);
-  $( "#add_venta_popup" ).popup( "close" );
+  if(save_caj==''){
+    save_caj=0;
+  }else{
+    var a=parseInt(save_caj);
+  };
+
+  if(save_uni==''){
+    save_uni=0;
+  }else{
+    var b=parseInt(save_uni);
+  };
+
+  if((save_caj==0 && save_uni==0)||(a+b==0)){
+    alert("Por favor agregue algun valor en cajas o unidades.");
+  }else{
+    if(save_caj==0 && save_uni==0){
+
+      if($("#sub_total").val()=='NaN'){
+        alert("Verifique e ingrese cantidades correctas.")
+      }else{
+        alert('mando');
+        // db_temp_guardar_venta(save_art_id,cli_id,save_cal,save_emp,save_pre,save_caj,save_uni,save_caj_cam,save_cod_mar,save_des_art);
+        $( "#add_venta_popup" ).popup( "close" );
+      }
+
+    }
+  }
+
+
+});
+
+$('.confirmar_edicion_popup').click(function() {
+
+  var save_art_id=$("#old_id_venta").val();
+  var save_cal=$("#calibre").val();
+  var save_emp=$("#cant_empaque").val();
+  var save_pre=$("#precio_popup").val();
+  var save_caj=$("#cajas_popup").val();
+  
+  var save_uni=$("#unidades_popup").val();
+  var save_caj_cam=$("#cant_camion").val();
+
+  var save_cod_mar  =$("#cod_marca").val();
+  var save_des_art  =$("#des_art").val();
+
+  var cli_id=$("#cliente_id").val();
+
+  $("#old_id_venta").prop('disabled', true);
+  $("#calibre").prop('disabled', true);
+  $("#cant_empaque").prop('disabled', true);
+  $("#precio_popup").prop('disabled', true);
+  $("#cajas_popup").prop('disabled', true);
+  $("#unidades_popup").prop('disabled', true);
+
+  // alert("  save_art_id="+save_art_id+"  cli_id="+cli_id+"  save_cal="+save_cal+"  save_emp="+save_emp+"  save_pre="+save_pre+"  save_caj="+save_caj+"  save_uni="+save_uni+"  save_caj_cam="+save_caj_cam+"  save_cod_mar="+save_cod_mar+"  save_des_art="+save_des_art);
+  
+  if(save_caj==''){
+    save_caj=0;
+  }else{
+    var a=parseInt(save_caj);
+  };
+
+  if(save_uni==''){
+    save_uni=0;
+  }else{
+    var b=parseInt(save_uni);
+  };
+
+  if((save_caj==0 && save_uni==0)||(a+b==0)){
+    alert("Por favor agregue algun valor en cajas o unidades.");
+  }else{
+    if(save_caj==0 && save_uni==0){
+
+      if($("#sub_total").val()=='NaN'){
+        alert("Verifique e ingrese cantidades correctas.")
+      }else{
+        alert('mando');
+        // db_temp_guardar_venta(save_art_id,cli_id,save_cal,save_emp,save_pre,save_caj,save_uni,save_caj_cam,save_cod_mar,save_des_art);
+        $( "#add_venta_popup" ).popup( "close" );
+      }
+
+    }
+  }
 
 });
 
