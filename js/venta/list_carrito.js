@@ -58,12 +58,13 @@ var id_cliente;
           alert("Error processing carrito SQL: "+err.code);
         }
 
-        function cargar_carrito_venta_list() {
+        function cargar_carrito_venta_list(cli) {
+          id_cliente=cli;
           alert("cargando a carrito db");
           db.transaction(queryDB_carrito, errorCB_list_carrito);
         }
 
-        function cargar_listas (id_cli){
+        function cargar_listassssssss (id_cli){
           id_cliente=id_cli;
 
           cargar_old_venta_list();

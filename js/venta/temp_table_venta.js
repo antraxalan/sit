@@ -29,7 +29,7 @@ function insertDB_temp_db(tx) {
  var lon=arr_art.length;
  arr_art[lon]=v_save_art_id;
  localStorage.art=JSON.stringify(arr_art);
- // cargar_carrito_venta_list();
+ cargar_carrito_venta_list(v_cli_id);
 
   
 
