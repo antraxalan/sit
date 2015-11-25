@@ -564,7 +564,8 @@
                     <h2>175 - IMPERIAL 1000</h2>
                     <p>Ultima venta: <strong>6</strong> cajas a <strong>55.00</strong> Bolivianos. (<strong>14/08/2012</strong>)</p>
                   </a>
-                  <a href="#add_venta_popup" class="add_venta_popup_class_old" data-rel="popup" codigo-venta="2" cant-cajas="5" cant-unidades="0" last-price="51.5" data-transition="flow">Comprar</a>
+                  <!-- <a href="#add_venta_popup" class="add_venta_popup_class_old" data-rel="popup" codigo-venta="2" cant-cajas="5" cant-unidades="0" last-price="51.5" data-transition="flow">Comprar</a> -->
+                  <a href="#add_venta_popup" class="add_venta_popup_class_old" data-rel="popup" codigo-venta="175" last-price="55.00" cajas-camion="9" calibre="0.6200" cant-empaque="12"  caj-adq="2" uni-adq="0">Historial</a>
                 </li>
                 <li>
                   <a href="#">
@@ -2037,26 +2038,43 @@ $(".list_carrito_venta").on('click','.add_venta_popup_class_old', function(event
     $("#cod_marca").val(cma);
     $("#des_art").val(dar);
 
-    $("#cajas_popup").val(c_a);
-    $("#unidades_popup").val(u_a);
-
     if(caj=== 'undefined'){
       $('.txt_cajas_popup').html('Cajas:');
     }else{
       $('.txt_cajas_popup').html('Cajas: (<strong>'+caj+'</strong>)');
     }
     $('.txt_unidades_popup').html('Unidades:');
+    
+
+    alert("antes c_a:"+c_a);
+    // $("#cajas_popup").val(c_a);
+    // $("#unidades_popup").val(u_a);
+    if(c_a==0){
+      $('#cajas_popup').val('')
+    }else{
+      $('#cajas_popup').val(c_a)
+    };
+
+    if(u_a==0){
+      $('#unidades_popup').val('')
+    }else{
+      $('#unidades_popup').val(u_a)
+    };
+
     $('#precio_popup').val(pri);
-    $("#cajas_popup").val('');
-    $("#unidades_popup").val('');
-    $("#sub_total").val('');
+    
+    // $("#cajas_popup").val('');
+    // $("#unidades_popup").val('');
+    // $("#sub_total").val('');
     $("#canje_popup").prop("checked",true).checkboxradio("refresh");
     $("#prest_popup").prop("checked",false).checkboxradio("refresh");
-
+    // alert(" c_a="+parseFloat(c_a)+" pri="+parseFloat(pri));
     var ed_sub_caj=parseFloat(c_a)*parseFloat(pri);
     var ed_sub_uni=parseFloat(u_a)*(parseFloat(pri)/parseFloat(emp)).toFixed(2);
+    // alert(" ed_sub_caj="+ed_sub_caj+" ed_sub_uni="+ed_sub_uni);
     var ed_sub = parseFloat(ed_sub_caj)+parseFloat(ed_sub_uni);
-    $("#precio_popup").val(ed_sub.toFixed(2));
+    // alert(" ed_sub="+ed_sub);
+    $("#sub_total").val(ed_sub.toFixed(2));
 
   });
 
