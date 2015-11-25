@@ -24,8 +24,7 @@ var cantidad_ids;
         function querySuccess_old_articulo(tx, results) {
           // alert("ini query");
           // alert("succes old");
-          $('.list_old_venta').html('');
-          $(".list_old_venta").trigger("create");
+
           var len = results.rows.length;
           var precio;
           var aux;
@@ -37,6 +36,7 @@ var cantidad_ids;
           lista_contenido='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
           // alert(arr_art_carrito);
           for (var i = 0; i < len; i++) {
+
             if($.inArray( results.rows.item(i).CodArt, arr_art_carrito )==-1){
 
               var co_ma= results.rows.item(i).CodMarca;

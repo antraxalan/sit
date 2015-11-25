@@ -520,6 +520,11 @@
       <input type="hidden" id="cliente_id" />
       <label for="textarea" class="cliente_nombre">Id - Nombre del cliente</label>
     </div>
+    <button type="button" class="delete_item_500">delete_item_500</button>
+    <button type="button" class="disable_500">disable_500</button>
+    <button type="button" class="trigger_create_div">trigger_create_div</button>
+    <button type="button" class="append_div">append_div</button>
+    <button type="button" class="trigger_div">trigger_div</button>
     <h4 class="mensaje_venta_c" align="center"></h4>
     <h4 class="mensaje_venta" align="center"></h4>
 
@@ -1887,6 +1892,32 @@ $( document ).on( "pagecreate", "#venta", function( event ) {
   // });
   /////swipe fin
 
+// delete_item_500
+// disable_500
+// trigger_create_div
+// append_div
+$(".delete_item_500").on('click', function(event) {
+  alert($('.list_old_venta').find('a[codigo-venta="500"]').parent().text());
+  $('.list_old_venta').find('a[codigo-venta="'+save_art_id+'"]').parent().remove();
+});
+$(".disable_500").on('click', function(event) {
+  alert($('.list_old_venta').find('a[codigo-venta="500"]').parent().text());
+  
+  $('.list_old_venta').find('a[codigo-venta="500"]').parent().addClass("ui-disabled");
+  // $('.list_old_venta').find('a[codigo-venta="'+save_art_id+'"]').parent().remove();
+});
+$(".trigger_create_div").on('click', function(event) {
+  alert("trigger_create_div");
+  $('.list_old_venta').html(' ');
+  $(".list_old_venta").trigger('create');
+});
+$(".append_div").on('click', function(event) {
+  $('.list_old_venta').append('<strong>prueba123</strong>');
+});
+$(".trigger_div").on('click', function(event) {
+  $('.list_old_venta').trigger('create');
+});
+
 
 
   $('.precio_input').on('input', function() {
@@ -2092,7 +2123,7 @@ $('.confirmar_venta_popup').click(function() {
       // $('.list_old_venta').html(' ');
       // $(".tab_content").trigger("create");
       $('.list_old_venta').find('a[codigo-venta="'+save_art_id+'"]').parent().remove();
-      
+
       $("#old_id_venta").prop('disabled', true);
       $("#calibre").prop('disabled', true);
       $("#cant_empaque").prop('disabled', true);
