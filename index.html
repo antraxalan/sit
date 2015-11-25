@@ -1842,6 +1842,7 @@ $.mobile.navigate( "index.html#venta" );
       theme: 'b',
       textonly: false
     });
+    $('#venta_tabs').inlinetabs('show', '1');
     // alert($( "#cliente option:selected" ).text());
     limpiar_temp_v_table();
     $(".cliente_nombre").text($( "#cliente option:selected" ).text());
@@ -2046,7 +2047,7 @@ $(".list_carrito_venta").on('click','.add_venta_popup_class_old', function(event
     $('.txt_unidades_popup').html('Unidades:');
     
 
-    alert("antes c_a:"+c_a);
+    // alert("antes c_a:"+c_a);
     // $("#cajas_popup").val(c_a);
     // $("#unidades_popup").val(u_a);
     if(c_a==0){
