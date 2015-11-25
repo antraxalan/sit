@@ -2118,6 +2118,7 @@ $('.confirmar_venta_popup').click(function() {
     if($("#sub_total").val()=='NaN'){
       alert("Verifique e ingrese cantidades correctas.")
     }else{
+      $('.list_old_venta').find('a[codigo-venta="500"]').parent().addClass("ui-disabled");
       db_temp_guardar_venta(save_art_id,cli_id,save_cal,save_emp,save_pre,save_caj,save_uni,save_caj_cam,save_cod_mar,save_des_art);
       // cargar_listas(v_cli_id);
       // $('.list_old_venta').html(' ');
@@ -2132,7 +2133,7 @@ $('.confirmar_venta_popup').click(function() {
       $("#unidades_popup").prop('disabled', true);
 
       $( "#add_venta_popup" ).popup( "close" );
-      $('.list_old_venta').find('a[codigo-venta="'+save_art_id+'"]').parent().addClass("ui-disabled");
+      // $('.list_old_venta').find('a[codigo-venta="'+save_art_id+'"]').parent().addClass("ui-disabled");
       alert('Añadido al carrito.');
     }
   }
