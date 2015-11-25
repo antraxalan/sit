@@ -520,11 +520,13 @@
       <input type="hidden" id="cliente_id" />
       <label for="textarea" class="cliente_nombre">Id - Nombre del cliente</label>
     </div>
-    <button type="button" class="delete_item_500">delete_item_500</button>
+
+    <!-- <button type="button" class="delete_item_500">delete_item_500</button>
     <button type="button" class="disable_500">disable_500</button>
     <button type="button" class="trigger_create_div">trigger_create_div</button>
     <button type="button" class="append_div">append_div</button>
-    <button type="button" class="trigger_div">trigger_div</button>
+    <button type="button" class="trigger_div">trigger_div</button> -->
+
     <h4 class="mensaje_venta_c" align="center"></h4>
     <h4 class="mensaje_venta" align="center"></h4>
 
@@ -546,6 +548,7 @@
 
           <div class="tab_content" data-tab="2">
             <div class="list_carrito_venta">
+            <button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">5160 Bs</span></button>
               <ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">
                 <li>
                   <a href="#" class="ui-disabled">
@@ -604,7 +607,12 @@
 
 
             </div>
+            <div class="confirmar_orden_div">
+            <!-- <button type="button" calss="confirmar_orden" data-theme="b">Button element</button> -->
+         
+                <button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">5160 Bs</span></button>
 
+            </div>
           </div>
           
           <div data-role="popup" id="add_venta_popup" data-overlay-theme="a" data-theme="a"  style="max-width:800px;">
@@ -2134,15 +2142,12 @@ $('.confirmar_venta_popup').click(function() {
       $( "#add_venta_popup" ).popup( "close" );
       // $('.list_old_venta').find('a[codigo-venta="'+save_art_id+'"]').parent().addClass("ui-disabled");
       alert('Añadido al carrito.');
-      disable_art(save_art_id);
+
+      setInterval(function(){ $('.list_old_venta').find('a[codigo-venta="'+save_art_id+'"]').parent().addClass("ui-disabled"); }, 500);
     }
   }
 });
-function disable_art(id){
-  // alert("dis");
-  setInterval(function(){ $('.list_old_venta').find('a[codigo-venta="500"]').parent().addClass("ui-disabled"); }, 500);
-  // $('.list_old_venta').find('a[codigo-venta="500"]').parent().addClass("ui-disabled");
-}
+
 
 $('.confirmar_edicion_popup').click(function() {
 

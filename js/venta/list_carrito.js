@@ -12,7 +12,9 @@ var id_cliente;
           var lista_contenido='';
           var aux;
           var disabled;
-          lista_contenido='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
+          var precio_total=0;
+          lista_contenido='<button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">0 Bs</span></button>';
+          lista_contenido+='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
           for (var i = 0; i < len; i++) {
             var co_ma= results.rows.item(i).CodMarca;
             if(!(co_ma=="18" || co_ma=="25" || co_ma=="35" || co_ma=="50" || co_ma=="70" || co_ma=="94")){ 
@@ -40,6 +42,8 @@ var id_cliente;
             var sub_uni=parseFloat(u*(p/e)).toFixed(2);
             var sub = parseFloat(sub_caj)+parseFloat(sub_uni);
 
+            precio_total=precio_total+sub;
+
             lista_contenido += '<div class="ui-grid-c">';
               lista_contenido += '<div class="ui-block-a"><p>'+results.rows.item(i).Caja+' caja(s)</p></div>';
               lista_contenido += '<div class="ui-block-b"><p>'+results.rows.item(i).Unidad+' unidad(es)</p></div>';
@@ -50,8 +54,11 @@ var id_cliente;
             lista_contenido +='<a href="#add_venta_popup" '+disabled+' class="add_venta_popup_class_old" data-rel="popup" codigo-venta="'+results.rows.item(i).IdArt+'" last-price="'+results.rows.item(i).Precio+'" cajas-camion="'+results.rows.item(i).CajasCamion+'" calibre="'+results.rows.item(i).Calibre+'" cant-empaque="'+results.rows.item(i).Empaque+'"  >Historial</a></li>';
           }
           lista_contenido +='</ul>';
+          lista_contenido +='<button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">0 Bs</span></button>';
           $('.list_carrito_venta').html(lista_contenido);
           $(".list_carrito_venta").trigger("create");
+          precio_total=precio_total+' Bs';
+          $('.total_carrito').html(precio_total);
         }
 
         function errorCB_list_carrito(err) {
