@@ -526,7 +526,7 @@
     <button type="button" class="trigger_create_div">trigger_create_div</button>
     <button type="button" class="append_div">append_div</button>
     <button type="button" class="trigger_div">trigger_div</button> -->
-    <button type="button" class="append_div">append_div</button>
+  <!--   <button type="button" class="append_div">append_div</button> -->
 
     <h4 class="mensaje_venta_c" align="center"></h4>
     <h4 class="mensaje_venta" align="center"></h4>
@@ -1843,7 +1843,7 @@ $.mobile.navigate( "index.html#venta" );
       theme: 'b',
       textonly: false
     });
-    // $('#venta_tabs').inlinetabs('show', '1');
+    
     // alert($( "#cliente option:selected" ).text());
     limpiar_temp_v_table();
     $(".cliente_nombre").text($( "#cliente option:selected" ).text());
@@ -2254,7 +2254,9 @@ $('.confirmar_edicion_popup').click(function() {
 });
 
 
-
+$(document).on("pageshow","#venta",function(event){ // When entering pagetwo
+  $('#venta_tabs').inlinetabs('show', '1');
+});
 
 
 
