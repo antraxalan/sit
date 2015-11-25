@@ -526,6 +526,7 @@
     <button type="button" class="trigger_create_div">trigger_create_div</button>
     <button type="button" class="append_div">append_div</button>
     <button type="button" class="trigger_div">trigger_div</button> -->
+    <button type="button" class="append_div">append_div</button>
 
     <h4 class="mensaje_venta_c" align="center"></h4>
     <h4 class="mensaje_venta" align="center"></h4>
@@ -1934,7 +1935,9 @@ $(".trigger_create_div").on('click', function(event) {
   $(".list_old_venta").trigger('create');
 });
 $(".append_div").on('click', function(event) {
-  $('.list_old_venta').append('<strong>prueba123</strong>');
+  alert("tab1");
+  $('#venta_tabs').inlinetabs('show', '1');
+  // $('.list_old_venta').append('<strong>prueba123</strong>');
 });
 $(".trigger_div").on('click', function(event) {
   $('.list_old_venta').trigger('create');
@@ -2051,15 +2054,15 @@ $(".list_carrito_venta").on('click','.add_venta_popup_class_old', function(event
     // $("#cajas_popup").val(c_a);
     // $("#unidades_popup").val(u_a);
     if(c_a==0){
-      $('#cajas_popup').val('')
+      $('#cajas_popup').val('');
     }else{
-      $('#cajas_popup').val(c_a)
+      $('#cajas_popup').val(c_a);
     };
 
     if(u_a==0){
-      $('#unidades_popup').val('')
+      $('#unidades_popup').val('');
     }else{
-      $('#unidades_popup').val(u_a)
+      $('#unidades_popup').val(u_a);
     };
 
     $('#precio_popup').val(pri);
