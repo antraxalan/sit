@@ -548,7 +548,7 @@
 
           <div class="tab_content" data-tab="2">
             <div class="list_carrito_venta">
-            <!-- <button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">5160 Bs</span></button> -->
+              <!-- <button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">5160 Bs</span></button> -->
               <ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">
                 <li>
                   <a href="#" class="ui-disabled">
@@ -608,9 +608,9 @@
 
             </div>
             <div class="confirmar_orden_div">
-            <!-- <button type="button" calss="confirmar_orden" data-theme="b">Button element</button> -->
-         
-                <!-- <button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">5160 Bs</span></button> -->
+              <!-- <button type="button" calss="confirmar_orden" data-theme="b">Button element</button> -->
+
+              <!-- <button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">5160 Bs</span></button> -->
 
             </div>
           </div>
@@ -2016,6 +2016,11 @@ $(".list_carrito_venta").on('click','.add_venta_popup_class_old', function(event
   var emp=$(this).attr('cant-empaque');
   var cma=$(this).attr('cod-marca');
   var dar=$(this).attr('des-art');
+
+  var c_a=$(this).attr('caj-adq');
+  var u_a=$(this).attr('uni-adq');
+
+
   $("#old_id_venta").prop('disabled', false);
   $("#calibre").prop('disabled', false);
   $("#cant_empaque").prop('disabled', false);
@@ -2032,6 +2037,8 @@ $(".list_carrito_venta").on('click','.add_venta_popup_class_old', function(event
     $("#cod_marca").val(cma);
     $("#des_art").val(dar);
 
+    $("#cajas_popup").val(c_a);
+    $("#unidades_popup").val(u_a);
 
     if(caj=== 'undefined'){
       $('.txt_cajas_popup').html('Cajas:');
@@ -2045,6 +2052,12 @@ $(".list_carrito_venta").on('click','.add_venta_popup_class_old', function(event
     $("#sub_total").val('');
     $("#canje_popup").prop("checked",true).checkboxradio("refresh");
     $("#prest_popup").prop("checked",false).checkboxradio("refresh");
+
+    var ed_sub_caj=parseFloat(c_a)*parseFloat(pri);
+    var ed_sub_uni=parseFloat(u_a)*(parseFloat(pri)/parseFloat(emp)).toFixed(2);
+    var ed_sub = parseFloat(ed_sub_caj)+parseFloat(ed_sub_uni);
+    $("#precio_popup").val(ed_sub.toFixed(2));
+
   });
 
 $(".close_popup").on('click', function(event) {
