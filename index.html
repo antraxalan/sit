@@ -89,7 +89,7 @@
 
 
       <div data-role="page" class="paginaprincipal" id="home" >
-      <header data-role="header" data-position="fixed" data-tap-toggle="false">
+        <header data-role="header" data-position="fixed" data-tap-toggle="false">
           <h1>CBN</h1>
           <a href="#panel-overlay" class="ui-btn-left ui-btn ui-icon-grid ui-btn-icon-notext ui-corner-all">Configuracion</a>
         </header> 
@@ -1920,20 +1920,20 @@ $(".trigger_div").on('click', function(event) {
 
 
 
-  $('.precio_input').on('input', function() {
-    var val=this.value;
-    this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
-    var posi = val.indexOf('.');
-    var cant = val.length;
-    if ((cant-posi)>=4 && posi!=-1){
-      this.value = (parseFloat(this.value)).toFixed(2);
-    }
-  });
-  $('.precio_input').on('blur', function() {
-    if(this.value!=''){
-      this.value = (parseFloat(this.value)).toFixed(2);
-    }
-  });
+$('.precio_input').on('input', function() {
+  var val=this.value;
+  this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+  var posi = val.indexOf('.');
+  var cant = val.length;
+  if ((cant-posi)>=4 && posi!=-1){
+    this.value = (parseFloat(this.value)).toFixed(2);
+  }
+});
+$('.precio_input').on('blur', function() {
+  if(this.value!=''){
+    this.value = (parseFloat(this.value)).toFixed(2);
+  }
+});
 
 
 
@@ -1941,24 +1941,24 @@ $(".trigger_div").on('click', function(event) {
 
 
 
-  $(".list_old_venta").on('click','.add_venta_popup_class_old', function(event) {
-    $("#sub_total").prop('disabled', true);
-    $('.confirmar_venta_popup').show();
-    $('.confirmar_edicion_popup').hide();
-    var prod=$(this).parent().find('h2').text();
-    var cod=$(this).attr('codigo-venta');
-    var pri=$(this).attr('last-price');
-    var caj=$(this).attr('cajas-camion');
-    var cal=$(this).attr('calibre');
-    var emp=$(this).attr('cant-empaque');
-    var cma=$(this).attr('cod-marca');
-    var dar=$(this).attr('des-art');
-    $("#old_id_venta").prop('disabled', false);
-    $("#calibre").prop('disabled', false);
-    $("#cant_empaque").prop('disabled', false);
-    $("#precio_popup").prop('disabled', false);
-    $("#cajas_popup").prop('disabled', false);
-    $("#unidades_popup").prop('disabled', false);
+$(".list_old_venta").on('click','.add_venta_popup_class_old', function(event) {
+  $("#sub_total").prop('disabled', true);
+  $('.confirmar_venta_popup').show();
+  $('.confirmar_edicion_popup').hide();
+  var prod=$(this).parent().find('h2').text();
+  var cod=$(this).attr('codigo-venta');
+  var pri=$(this).attr('last-price');
+  var caj=$(this).attr('cajas-camion');
+  var cal=$(this).attr('calibre');
+  var emp=$(this).attr('cant-empaque');
+  var cma=$(this).attr('cod-marca');
+  var dar=$(this).attr('des-art');
+  $("#old_id_venta").prop('disabled', false);
+  $("#calibre").prop('disabled', false);
+  $("#cant_empaque").prop('disabled', false);
+  $("#precio_popup").prop('disabled', false);
+  $("#cajas_popup").prop('disabled', false);
+  $("#unidades_popup").prop('disabled', false);
     // alert(prod+" old"+ " pri:"+pri+" cod:"+cod+" caj:"+caj+" uni:"+uni);
     $('.add_popup_prod').html(prod);
     $("#old_id_venta").val(cod);
@@ -2112,13 +2112,12 @@ $('.confirmar_venta_popup').click(function() {
   };
    // alert("  save_art_id="+save_art_id+"  cli_id="+cli_id+"  save_cal="+save_cal+"  save_emp="+save_emp+"  save_pre="+save_pre+"  save_caj="+save_caj+"  save_uni="+save_uni+"  save_caj_cam="+save_caj_cam+"  save_cod_mar="+save_cod_mar+"  save_des_art="+save_des_art);
 
-  if((save_caj==0 && save_uni==0)||(a+b==0)){
+   if((save_caj==0 && save_uni==0)||(a+b==0)){
     alert("Por favor agregue algun valor en cajas o unidades.");
   }else{
     if($("#sub_total").val()=='NaN'){
       alert("Verifique e ingrese cantidades correctas.")
     }else{
-      $('.list_old_venta').find('a[codigo-venta="500"]').parent().addClass("ui-disabled");
       db_temp_guardar_venta(save_art_id,cli_id,save_cal,save_emp,save_pre,save_caj,save_uni,save_caj_cam,save_cod_mar,save_des_art);
       // cargar_listas(v_cli_id);
       // $('.list_old_venta').html(' ');
@@ -2135,9 +2134,13 @@ $('.confirmar_venta_popup').click(function() {
       $( "#add_venta_popup" ).popup( "close" );
       // $('.list_old_venta').find('a[codigo-venta="'+save_art_id+'"]').parent().addClass("ui-disabled");
       alert('Añadido al carrito.');
+      disable_art(save_art_id);
     }
   }
 });
+function disable_art(id){
+  $('.list_old_venta').find('a[codigo-venta="500"]').parent().addClass("ui-disabled");
+}
 
 $('.confirmar_edicion_popup').click(function() {
 
