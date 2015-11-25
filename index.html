@@ -2122,7 +2122,7 @@ $('.confirmar_venta_popup').click(function() {
       // cargar_listas(v_cli_id);
       // $('.list_old_venta').html(' ');
       // $(".tab_content").trigger("create");
-      $('.list_old_venta').find('a[codigo-venta="'+save_art_id+'"]').parent().remove();
+      // $('.list_old_venta').find('a[codigo-venta="'+save_art_id+'"]').parent().remove();
 
       $("#old_id_venta").prop('disabled', true);
       $("#calibre").prop('disabled', true);
@@ -2132,6 +2132,7 @@ $('.confirmar_venta_popup').click(function() {
       $("#unidades_popup").prop('disabled', true);
 
       $( "#add_venta_popup" ).popup( "close" );
+      $('.list_old_venta').find('a[codigo-venta="'+save_art_id+'"]').parent().addClass("ui-disabled");
       alert('Añadido al carrito.');
     }
   }
