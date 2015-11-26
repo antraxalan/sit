@@ -1837,6 +1837,7 @@ $.mobile.navigate( "index.html#venta" );
 
   $("#cliente").on( "change", function(event, ui) {
     // alert($(this).val()+":::");
+  $('.list_old_venta').find('.temp_disabled').removeClass("ui-disabled temp_disabled");
     $.mobile.loading("show", {
       text: "Cargando Información.",
       textVisible: true,
@@ -1860,9 +1861,8 @@ $.mobile.navigate( "index.html#venta" );
     $('#cliente_id').val($("#cliente option:selected").val());
   }
 });
-  $('.list_old_venta').find('.temp_disabled').removeClass("ui-disabled temp_disabled");
   $("#producto").bind("change", function(){
-    alert($(this).val()+":2::");
+  alert($(this).val()+":2::");
   });
 
 });
