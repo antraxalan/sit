@@ -1860,7 +1860,7 @@ $.mobile.navigate( "index.html#venta" );
     $('#cliente_id').val($("#cliente option:selected").val());
   }
 });
-
+  $('.list_old_venta').find('.temp_disabled').removeClass("ui-disabled temp_disabled");
   $("#producto").bind("change", function(){
     alert($(this).val()+":2::");
   });
@@ -2190,7 +2190,7 @@ $('.confirmar_venta_popup').click(function() {
       // $('.list_old_venta').find('a[codigo-venta="'+save_art_id+'"]').parent().addClass("ui-disabled");
       alert('Añadido al carrito.');
 
-      setInterval(function(){ $('.list_old_venta').find('a[codigo-venta="'+save_art_id+'"]').parent().addClass("ui-disabled"); }, 500);
+      setInterval(function(){ $('.list_old_venta').find('a[codigo-venta="'+save_art_id+'"]').parent().addClass("ui-disabled temp_disabled"); }, 500);
     }
   }
 });
