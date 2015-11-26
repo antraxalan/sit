@@ -1837,7 +1837,8 @@ $.mobile.navigate( "index.html#venta" );
 
   $("#cliente").on( "change", function(event, ui) {
     // alert($(this).val()+":::");
-  $('.list_old_venta').find('.temp_disabled').removeClass("ui-disabled temp_disabled");
+    setInterval(function(){ $('.list_old_venta').find('.temp_disabled').removeClass("ui-disabled temp_disabled"); }, 500);
+  // $('.list_old_venta').find('.temp_disabled').removeClass("ui-disabled temp_disabled");
     $.mobile.loading("show", {
       text: "Cargando Información.",
       textVisible: true,
@@ -2190,7 +2191,7 @@ $('.confirmar_venta_popup').click(function() {
       // $('.list_old_venta').find('a[codigo-venta="'+save_art_id+'"]').parent().addClass("ui-disabled");
       alert('Añadido al carrito.');
 
-      setInterval(function(){ $('.list_old_venta').find('a[codigo-venta="'+save_art_id+'"]').parent().addClass("ui-disabled temp_disabled"); }, 500);
+      setInterval(function(){ $('.list_old_venta').find('a[codigo-venta="'+save_art_id+'"]').parent().addClass("ui-disabled temp_disabled"); }, 200);
     }
   }
 });
