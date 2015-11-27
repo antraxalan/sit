@@ -526,7 +526,7 @@
     <button type="button" class="trigger_create_div">trigger_create_div</button>
     <button type="button" class="append_div">append_div</button>
     <button type="button" class="trigger_div">trigger_div</button> -->
-  <!--   <button type="button" class="append_div">append_div</button> -->
+    <button type="button" class="append_div">append_div</button>
 
     <h4 class="mensaje_venta_c" align="center"></h4>
     <h4 class="mensaje_venta" align="center"></h4>
@@ -1936,8 +1936,10 @@ $(".trigger_create_div").on('click', function(event) {
   $(".list_old_venta").trigger('create');
 });
 $(".append_div").on('click', function(event) {
-  alert("tab1");
-  $('#venta_tabs').inlinetabs('show', '1');
+  alert("removeClass");
+  // $('#venta_tabs').inlinetabs('show', '1');
+  // setTimeout
+  $('.list_old_venta').find('.temp_disabled').removeClass("ui-disabled temp_disabled");
   // $('.list_old_venta').append('<strong>prueba123</strong>');
 });
 $(".trigger_div").on('click', function(event) {
@@ -2190,8 +2192,9 @@ $('.confirmar_venta_popup').click(function() {
       $( "#add_venta_popup" ).popup( "close" );
       // $('.list_old_venta').find('a[codigo-venta="'+save_art_id+'"]').parent().addClass("ui-disabled");
       alert('Añadido al carrito.');
-
-      setInterval(function(){ $('.list_old_venta').find('a[codigo-venta="'+save_art_id+'"]').parent().addClass("ui-disabled temp_disabled"); }, 300);
+      // setTimeout(function(){ alert("Hello"); }, 3000);
+      // setInterval(function(){ $('.list_old_venta').find('a[codigo-venta="'+save_art_id+'"]').parent().addClass("ui-disabled temp_disabled"); }, 300);
+      setTimeout(function(){ $('.list_old_venta').find('a[codigo-venta="'+save_art_id+'"]').parent().addClass("ui-disabled temp_disabled"); }, 300);
     }
   }
 });
