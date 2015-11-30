@@ -2270,7 +2270,7 @@ $('.confirmar_edicion_popup').click(function() {
     if($("#sub_total").val()=='NaN'){
       alert("Verifique e ingrese cantidades correctas.")
     }else{
-      db_temp_update_venta(save_art_id,cli_id,save_cal,save_emp,save_pre,save_caj,save_uni,save_caj_cam,save_cod_mar,save_des_art);
+      db_temp_guardar_venta(save_art_id,cli_id,save_cal,save_emp,save_pre,save_caj,save_uni,save_caj_cam,save_cod_mar,save_des_art);
 
       $("#old_id_venta").prop('disabled', true);
       $("#calibre").prop('disabled', true);
