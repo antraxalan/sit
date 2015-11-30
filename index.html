@@ -1976,6 +1976,10 @@ $('.precio_input').on('blur', function() {
 
 
 $(".list_old_venta").on('click','.add_venta_popup_class_old', function(event) {
+
+  var arr_carr = JSON.parse(localStorage.art);
+
+
   $("#sub_total").prop('disabled', true);
   $('.confirmar_venta_popup').show();
   $('.confirmar_edicion_popup').hide();
@@ -1987,6 +1991,12 @@ $(".list_old_venta").on('click','.add_venta_popup_class_old', function(event) {
   var emp=$(this).attr('cant-empaque');
   var cma=$(this).attr('cod-marca');
   var dar=$(this).attr('des-art');
+  if($.inArray( cod, arr_carr )>-1) {
+    $( "#add_venta_popup" ).popup( "close" );
+    alert('Este producto ya fue agregado a la compra. Verifique en la pestaña "Confirmar".')
+  }else{
+    alert('ingreso:'+cod);
+  }
   $("#old_id_venta").prop('disabled', false);
   $("#calibre").prop('disabled', false);
   $("#cant_empaque").prop('disabled', false);
@@ -2200,6 +2210,8 @@ $('.confirmar_venta_popup').click(function() {
       alert('Añadido al carrito.');
       // setTimeout(function(){ alert("Hello"); }, 3000);
       // setInterval(function(){ $('.list_old_venta').find('a[codigo-venta="'+save_art_id+'"]').parent().addClass("ui-disabled temp_disabled"); }, 400);
+
+
       setTimeout(function(){ 
         var arr_carr = JSON.parse(localStorage.art);
         // alert(arr_carr.length);
@@ -2208,6 +2220,8 @@ $('.confirmar_venta_popup').click(function() {
           $('.list_old_venta').find('a[codigo-venta="'+arr_carr[i]+'"]').parent().addClass("ui-disabled temp_disabled"); 
         };
       }, 400);
+
+
       // $('.list_old_venta').trigger('create');
       // $('.list_old_venta').find('a[codigo-venta="'+save_art_id+'"]').parent().addClass("ui-disabled temp_disabled");
       // $('.list_old_venta').trigger('create');
