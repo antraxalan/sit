@@ -1940,10 +1940,12 @@ $(".trigger_create_div").on('click', function(event) {
   $(".list_old_venta").trigger('create');
 });
 $(".append_div").on('click', function(event) {
-  alert("removeClass");
+  // alert("removeClass");
   // $('#venta_tabs').inlinetabs('show', '1');
   // setTimeout
+
   $('.list_old_venta').find('.temp_disabled').removeClass("ui-disabled temp_disabled");
+  $('.list_old_venta').trigger('create');
   // $('.list_old_venta').append('<strong>prueba123</strong>');
 });
 $(".trigger_div").on('click', function(event) {
