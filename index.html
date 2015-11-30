@@ -2021,15 +2021,13 @@ $(".list_old_venta").on('click','.add_venta_popup_class_old', function(event) {
   $("#canje_popup").prop("checked",true).checkboxradio("refresh");
   $("#prest_popup").prop("checked",false).checkboxradio("refresh");
 
+  if($.inArray( cod, arr_carr )>-1) {
+    alert('Este producto ya fue agregado a la compra. Verifique en la pestaña "Confirmar".')
+  }else{
     $("#add_venta_popup").popup( "open" );
+    alert('ingreso:'+cod);
+  }
 
-  // if($.inArray( cod, arr_carr )>-1) {
-  //   alert('Este producto ya fue agregado a la compra. Verifique en la pestaña "Confirmar".')
-  // }else{
-  //   $("#add_venta_popup").popup( "open" );
-  //   alert('ingreso:'+cod);
-  // }
-  
 });
 
 $(".list_carrito_venta").on('click','.add_venta_popup_class_old', function(event) {
