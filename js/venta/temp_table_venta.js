@@ -58,9 +58,9 @@ function updateDB_temp_db(tx) {
 function errorCB1_carg_tmp(err) {
  alert(err.code+"errorCB1_carg1--: "+err.message);
 }
-// function errorCB1_update_tmp(err) {
-//  alert(err.code+"errorCB1_update--: "+err.message);
-// }
+function errorCB1_update_tmp(err) {
+ alert(err.code+"errorCB1_update--: "+err.message);
+}
 function realizado(err) {
  alert("realizado");
 }
