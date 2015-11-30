@@ -2202,9 +2202,9 @@ $('.confirmar_venta_popup').click(function() {
       // setInterval(function(){ $('.list_old_venta').find('a[codigo-venta="'+save_art_id+'"]').parent().addClass("ui-disabled temp_disabled"); }, 400);
       setTimeout(function(){ 
         var arr_carr = JSON.parse(localStorage.art);
-        alert(arr_carr.length);
+        // alert(arr_carr.length);
         for (var i = 0; i < arr_carr.length; i++) {
-          alert(arr_carr[i]);
+          // alert(arr_carr[i]);
           $('.list_old_venta').find('a[codigo-venta="'+arr_carr[i]+'"]').parent().addClass("ui-disabled temp_disabled"); 
         };
       }, 400);
