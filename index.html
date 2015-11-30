@@ -1829,7 +1829,7 @@ $.mobile.navigate( "index.html#venta" );
   $("input[name=deuda_monto]:radio").bind( "change", function(event, ui) {
     if($(this).val()=='total_deuda'){
       $("#a_cobrar_deuda").val($("#saldo_deuda").val()); 
-    }else{
+    }else
       $("#a_cobrar_deuda").val("");
     }
   });
@@ -1837,7 +1837,8 @@ $.mobile.navigate( "index.html#venta" );
 
   $("#cliente").on( "change", function(event, ui) {
     // alert($(this).val()+":::");
-    setInterval(function(){ $('.list_old_venta').find('.temp_disabled').removeClass("ui-disabled temp_disabled"); }, 500);
+    setInterval(function(){ $('.list_old_venta').find('.temp_disabled').removeClass("ui-disabled temp_disabled"); $('.list_old_venta').trigger("create");}, 500);
+    
   // $('.list_old_venta').find('.temp_disabled').removeClass("ui-disabled temp_disabled");
     $.mobile.loading("show", {
       text: "Cargando Información.",
