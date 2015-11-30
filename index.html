@@ -526,7 +526,7 @@
     <button type="button" class="trigger_create_div">trigger_create_div</button>
     <button type="button" class="append_div">append_div</button>
     <button type="button" class="trigger_div">trigger_div</button> -->
-    
+
     <!-- <button type="button" class="append_div">append_div</button> -->
 
     <h4 class="mensaje_venta_c" align="center"></h4>
@@ -2336,6 +2336,7 @@ $('.eliminar_confirmada').click(function() {
   // $('.add_popup_prod').html(prod);
 
   eliminar_db_temp(save_art_id);
+  $("#confirmacion_eliminar").popup( "close" );
   alert("El producto fue eliminado");
 
 });

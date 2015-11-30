@@ -50,6 +50,13 @@ function updateDB_temp_db(tx) {
 
 function deleteDB_temp_db(tx) {
   tx.executeSql('DELETE FROM TEMPVENTA WHERE IdArt='+art_id_del);
+
+  var arr_art_del = JSON.parse(localStorage.art);
+  arr_art_del = $.grep(arr_art_del, function(value) {
+    return value != art_id_del;
+  });
+  localStorage.art=JSON.stringify(arr_art_del);
+
   cargar_listas(v_cli_id);
 };
 
