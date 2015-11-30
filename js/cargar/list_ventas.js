@@ -82,7 +82,7 @@ var cantidad_ids;
               // (results.rows.item(i).Importe) reemplazado por (precio)
               lista_contenido +='<p>Ultima venta: <strong>'+results.rows.item(i).Cajas+'</strong> cajas a <strong>'+precio+'</strong> Bolivianos por cada caja. (<strong>'+fecha_ultm+'</strong>)</p></a>';
 
-              lista_contenido +='<a href="#add_venta_popup" '+disabled+' class="add_venta_popup_class_old" data-rel="popup" codigo-venta="'+results.rows.item(i).CodArt+'" last-price="'+precio+'" cajas-camion="'+results.rows.item(i).CajasCamion+'" calibre="'+results.rows.item(i).Calibre+'" cant-empaque="'+results.rows.item(i).CantxEmpaque+'" cod-marca="'+results.rows.item(i).CodMarca+'" des-art="'+results.rows.item(i).DesArt+'"  >Historial</a></li>';
+              lista_contenido +='<a href="#" '+disabled+' class="add_venta_popup_class_old" data-rel="popup" codigo-venta="'+results.rows.item(i).CodArt+'" last-price="'+precio+'" cajas-camion="'+results.rows.item(i).CajasCamion+'" calibre="'+results.rows.item(i).Calibre+'" cant-empaque="'+results.rows.item(i).CantxEmpaque+'" cod-marca="'+results.rows.item(i).CodMarca+'" des-art="'+results.rows.item(i).DesArt+'"  >Historial</a></li>';
               // lista_contenido +='<option value="'+results.rows.item(i).CodArt+'">'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</option>'; 
             }
           }
@@ -127,7 +127,7 @@ var cantidad_ids;
               lista_contenido +='<li><a href="#">';
               lista_contenido +='<img src="img/marcas/'+co_ma+'.png">';
               lista_contenido +='<h2>'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</h2></a>';
-              lista_contenido +='<a href="#add_venta_popup" class="add_venta_popup_class_old" data-rel="popup" codigo-venta="'+results.rows.item(i).CodArt+'" last-price="'+results.rows.item(i).PrecioVtaMax+'" cajas-camion="'+results.rows.item(i).CajasCamion+'" calibre="'+results.rows.item(i).Calibre+'" cant-empaque="'+results.rows.item(i).CantxEmpaque+'"  cod-marca="'+results.rows.item(i).CodMarca+'" des-art="'+results.rows.item(i).DesArt+'" >Historial</a></li>';
+              lista_contenido +='<a href="#" class="add_venta_popup_class_old" data-rel="popup" codigo-venta="'+results.rows.item(i).CodArt+'" last-price="'+results.rows.item(i).PrecioVtaMax+'" cajas-camion="'+results.rows.item(i).CajasCamion+'" calibre="'+results.rows.item(i).Calibre+'" cant-empaque="'+results.rows.item(i).CantxEmpaque+'"  cod-marca="'+results.rows.item(i).CodMarca+'" des-art="'+results.rows.item(i).DesArt+'" >Historial</a></li>';
               // lista_contenido +='<option value="'+results.rows.item(i).CodArt+'">'+results.rows.item(i).CodArt+' - '+results.rows.item(i).DesArt+'</option>'; 
 
             }

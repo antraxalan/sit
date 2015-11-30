@@ -1991,44 +1991,46 @@ $(".list_old_venta").on('click','.add_venta_popup_class_old', function(event) {
   var emp=$(this).attr('cant-empaque');
   var cma=$(this).attr('cod-marca');
   var dar=$(this).attr('des-art');
-  if($.inArray( cod, arr_carr )>-1) {
-    $( "#add_venta_popup" ).popup( "close" );
-    alert('Este producto ya fue agregado a la compra. Verifique en la pestaña "Confirmar".')
-  }else{
-    alert('ingreso:'+cod);
-  }
   $("#old_id_venta").prop('disabled', false);
   $("#calibre").prop('disabled', false);
   $("#cant_empaque").prop('disabled', false);
   $("#precio_popup").prop('disabled', false);
   $("#cajas_popup").prop('disabled', false);
   $("#unidades_popup").prop('disabled', false);
-    // alert(prod+" old"+ " pri:"+pri+" cod:"+cod+" caj:"+caj+" uni:"+uni);
-    $('.add_popup_prod').html(prod);
-    $("#old_id_venta").val(cod);
-    $("#calibre").val(cal);
-    $("#cant_empaque").val(emp);
-    $("#cant_camion").val(caj);
+  // alert(prod+" old"+ " pri:"+pri+" cod:"+cod+" caj:"+caj+" uni:"+uni);
+  $('.add_popup_prod').html(prod);
+  $("#old_id_venta").val(cod);
+  $("#calibre").val(cal);
+  $("#cant_empaque").val(emp);
+  $("#cant_camion").val(caj);
 
-    $("#cod_marca").val(cma);
-    $("#des_art").val(dar);
+  $("#cod_marca").val(cma);
+  $("#des_art").val(dar);
 
 
-    if(caj=== 'undefined'){
-      $('.txt_cajas_popup').html('Cajas:');
-    }else{
-      $('.txt_cajas_popup').html('Cajas: (<strong>'+caj+'</strong>)');
-    }
-    $('.txt_unidades_popup').html('Unidades:');
-    $('#precio_popup').val(pri);
-    $("#cajas_popup").val('');
-    $("#unidades_popup").val('');
-    $("#sub_total").val('');
-    $("#canje_popup").prop("checked",true).checkboxradio("refresh");
-    $("#prest_popup").prop("checked",false).checkboxradio("refresh");
-  });
+  if(caj=== 'undefined'){
+    $('.txt_cajas_popup').html('Cajas:');
+  }else{
+    $('.txt_cajas_popup').html('Cajas: (<strong>'+caj+'</strong>)');
+  }
+  $('.txt_unidades_popup').html('Unidades:');
+  $('#precio_popup').val(pri);
+  $("#cajas_popup").val('');
+  $("#unidades_popup").val('');
+  $("#sub_total").val('');
+  $("#canje_popup").prop("checked",true).checkboxradio("refresh");
+  $("#prest_popup").prop("checked",false).checkboxradio("refresh");
+
+  if($.inArray( cod, arr_carr )>-1) {
+    alert('Este producto ya fue agregado a la compra. Verifique en la pestaña "Confirmar".')
+  }else{
+    $("#add_venta_popup").popup( "open" );
+    alert('ingreso:'+cod);
+  }
+});
 
 $(".list_carrito_venta").on('click','.add_venta_popup_class_old', function(event) {
+  $("#add_venta_popup").popup( "open" );
   $("#sub_total").prop('disabled', true);
   $('.confirmar_venta_popup').hide();
   $('.confirmar_edicion_popup').show();
