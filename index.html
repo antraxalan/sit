@@ -666,13 +666,40 @@
 
 
 
-              <div class="ui-grid-a">
+              <div class="ui-grid-b">
                 <div class="ui-block-a">
                   <button type="button" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a close_popup">Cancelar</button>
                 </div>
                 <div class="ui-block-b">
+                  <button type="button" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a eliminar_del_carrito">Eliminar</button>
+                </div>
+                <div class="ui-block-c">
                   <button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_venta_popup">Confirmar V</button>
                   <button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_edicion_popup">Confirmar E</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div data-role="popup" id="confirmacion_eliminar" data-overlay-theme="a" data-theme="a"  style="max-width:800px;">
+            <div data-role="header" data-theme="a">
+              <h1>Confirmar</h1>
+            </div>
+            <div role="main" class="ui-content">
+              <input id="old_id_venta_confirm" type="hidden" value="" placeholder="old_id_venta_confirm">
+              <p>El producto:</p>
+              <p class="add_popup_prod">...</p>
+              <p>Va a ser eliminado del carrito de compras. <br></br><strong>Desea eliminarlo?</strong></p>
+              
+              <p>__________________________________________</p>
+              <div class="ui-grid-a">
+                <div class="ui-block-a">
+                  <button type="button" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a close_popup_confirm">Cancelar</button>
+                </div>
+                <div class="ui-block-b">
+                  <button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b eliminar_confirmada">Eliminar</button>
                 </div>
               </div>
             </div>
@@ -1944,9 +1971,10 @@ $(".append_div").on('click', function(event) {
   // $('#venta_tabs').inlinetabs('show', '1');
   // setTimeout
 
-  $('.list_old_venta').find('.temp_disabled').removeClass("ui-disabled temp_disabled");
-  $('.list_old_venta').trigger('create');
-  // $('.list_old_venta').append('<strong>prueba123</strong>');
+  // $('.list_old_venta').find('.temp_disabled').removeClass("ui-disabled temp_disabled");
+  // $('.list_old_venta').trigger('create');
+
+  $("#confirmacion_eliminar").popup( "open" );
 });
 $(".trigger_div").on('click', function(event) {
   $('.list_old_venta').trigger('create');
@@ -1983,6 +2011,8 @@ $(".list_old_venta").on('click','.add_venta_popup_class_old', function(event) {
   $("#sub_total").prop('disabled', true);
   $('.confirmar_venta_popup').show();
   $('.confirmar_edicion_popup').hide();
+  $('.eliminar_del_carrito').hide();
+
   var prod=$(this).parent().find('h2').text();
   var cod=$(this).attr('codigo-venta');
   var pri=$(this).attr('last-price');
@@ -2035,6 +2065,8 @@ $(".list_carrito_venta").on('click','.add_venta_popup_class_old', function(event
   $("#sub_total").prop('disabled', true);
   $('.confirmar_venta_popup').hide();
   $('.confirmar_edicion_popup').show();
+  $('.eliminar_del_carrito').show();
+
   var prod=$(this).parent().find('h2').text();
   var cod=$(this).attr('codigo-venta');
   var pri=$(this).attr('last-price');
@@ -2280,11 +2312,36 @@ $('.confirmar_edicion_popup').click(function() {
       $("#unidades_popup").prop('disabled', true);
 
       $( "#add_venta_popup" ).popup( "close" );
-      alert('Añadido al carrito.');
+      alert('Modificado.');
     }
     
   }
 
+});
+
+$('.eliminar_del_carrito').click(function() {
+  $.mobile.switchPopup($("#add_venta_popup"), $("#confirmacion_eliminar"), function(){});
+  // var save_art_id=$("#old_id_venta").val();
+  // var cli_id=$("#cliente_id").val();
+  var save_des_art  =$("#des_art").val();
+  // $('.add_popup_prod').html(prod);
+  alert(save_des_art+" --- save_art_id");
+
+});
+
+
+$('.eliminar_confirmada').click(function() {
+  // $.mobile.switchPopup($("#add_venta_popup"), $("#confirmacion_eliminar"), function(){});
+  var save_art_id=$("#old_id_venta").val();
+  // $('.add_popup_prod').html(prod);
+
+  eliminar_db_temp(save_art_id);
+  alert("El producto fue eliminado");
+
+});
+
+$(".close_popup_confirm").on('click', function(event) {
+  $("#confirmacion_eliminar").popup( "close" );
 });
 
 

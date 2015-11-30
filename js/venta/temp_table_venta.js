@@ -11,6 +11,8 @@ var v_save_caj_cam;
 var v_save_cod_mar;
 var v_save_des_art;
 
+var art_id_del;
+
 function insertDB_temp_db(tx) {
   // alert("ingreso a la transaccion");
 
@@ -33,7 +35,7 @@ function insertDB_temp_db(tx) {
 };
 
 function updateDB_temp_db(tx) {
-  alert('updateDB_temp_db');
+  // alert('updateDB_temp_db');
   // tx.executeSql('INSERT INTO TEMPVENTA (IdArt,IdCli,Calibre,Empaque,Precio,Caja,Unidad,CajasCamion,CodMarca,DesArt) VALUES ('+v_save_art_id+','+v_cli_id+','+v_save_cal+','+v_save_emp+','+v_save_pre+','+v_save_caj+','+v_save_uni+','+v_save_caj_cam+','+v_save_cod_mar+',"'+v_save_des_art+'")');
   tx.executeSql('UPDATE TEMPVENTA SET Precio ='+v_save_pre+', Caja ='+v_save_caj+', Unidad ='+v_save_uni+' WHERE IdArt = '+ v_save_art_id+' and IdCli= '+v_cli_id);
 
@@ -43,6 +45,11 @@ function updateDB_temp_db(tx) {
   // var lon=arr_art.length;
   // arr_art[lon]=v_save_art_id;
   // localStorage.art=JSON.stringify(arr_art);
+  cargar_listas(v_cli_id);
+};
+
+function deleteDB_temp_db(tx) {
+  tx.executeSql('DELETE FROM table_name WHERE id='+art_id_del);
   cargar_listas(v_cli_id);
 };
 
@@ -60,6 +67,9 @@ function errorCB1_carg_tmp(err) {
 }
 function errorCB1_update_tmp(err) {
  alert(err.code+"errorCB1_update--: "+err.message);
+}
+function errorCB1_delete_tmp(err) {
+ alert(err.code+"errorCB1_delete--: "+err.message);
 }
 function realizado(err) {
  alert("realizado");
@@ -93,7 +103,7 @@ function db_temp_guardar_venta(save_art_id,cli_id,save_cal,save_emp,save_pre,sav
 };
 
 function db_temp_update_venta(save_art_id,cli_id,save_cal,save_emp,save_pre,save_caj,save_uni,save_caj_cam,save_cod_mar,save_des_art) {
-  alert('db_temp_update_venta');
+  // alert('db_temp_update_venta');
   v_save_art_id   =save_art_id;
   v_cli_id        =cli_id;
   v_save_cal      =save_cal;
@@ -105,6 +115,13 @@ function db_temp_update_venta(save_art_id,cli_id,save_cal,save_emp,save_pre,save
   v_save_cod_mar  =save_cod_mar;
   v_save_des_art  =save_des_art.trim();
   db.transaction(updateDB_temp_db, errorCB1_update_tmp);
+
+};
+
+function eliminar_db_temp(art_id_delete) {
+  // alert('db_temp_update_venta');
+  art_id_del   =art_id_delete;
+  db.transaction(deleteDB_temp_db, errorCB1_delete_tmp);
 
 };
 
