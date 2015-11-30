@@ -49,7 +49,7 @@ function updateDB_temp_db(tx) {
 };
 
 function deleteDB_temp_db(tx) {
-  tx.executeSql('DELETE FROM table_name WHERE id='+art_id_del);
+  tx.executeSql('DELETE FROM TEMPVENTA WHERE IdArt='+art_id_del);
   cargar_listas(v_cli_id);
 };
 
