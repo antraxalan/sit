@@ -25,12 +25,24 @@ function insertDB_temp_db(tx) {
 
   tx.executeSql('INSERT INTO TEMPVENTA (IdArt,IdCli,Calibre,Empaque,Precio,Caja,Unidad,CajasCamion,CodMarca,DesArt) VALUES ('+v_save_art_id+','+v_cli_id+','+v_save_cal+','+v_save_emp+','+v_save_pre+','+v_save_caj+','+v_save_uni+','+v_save_caj_cam+','+v_save_cod_mar+',"'+v_save_des_art+'")');
 
- var arr_art = JSON.parse(localStorage.art);
- var lon=arr_art.length;
- arr_art[lon]=v_save_art_id;
- localStorage.art=JSON.stringify(arr_art);
- cargar_listas(v_cli_id);
+  var arr_art = JSON.parse(localStorage.art);
+  var lon=arr_art.length;
+  arr_art[lon]=v_save_art_id;
+  localStorage.art=JSON.stringify(arr_art);
+  cargar_listas(v_cli_id);
+};
 
+function updateDB_temp_db(tx) {
+  // tx.executeSql('INSERT INTO TEMPVENTA (IdArt,IdCli,Calibre,Empaque,Precio,Caja,Unidad,CajasCamion,CodMarca,DesArt) VALUES ('+v_save_art_id+','+v_cli_id+','+v_save_cal+','+v_save_emp+','+v_save_pre+','+v_save_caj+','+v_save_uni+','+v_save_caj_cam+','+v_save_cod_mar+',"'+v_save_des_art+'")');
+  tx.executeSql('UPDATE TEMPVENTA SET Precio ='+v_save_pre+', Caja ='+v_save_caj+', Unidad ='+v_save_uni+' WHERE IdArt = '+ v_save_art_id+' and IdCli= '+v_cli_id);
+
+  // tx.executeSql('UPDATE DEMO SET name ="'+document.getElementById("editNameBox").value+'", number= "'+document.getElementById("editNumberBox").value+ '" WHERE id = '+ currentRow, [], queryDB, errorCB);
+
+  // var arr_art = JSON.parse(localStorage.art);
+  // var lon=arr_art.length;
+  // arr_art[lon]=v_save_art_id;
+  // localStorage.art=JSON.stringify(arr_art);
+  cargar_listas(v_cli_id);
 };
 
 
@@ -51,6 +63,9 @@ function insertDB_temp_db(tx) {
 
 function errorCB1_carg_tmp(err) {
  alert(err.code+"errorCB1_carg1--: "+err.message);
+}
+function errorCB1_update_tmp(err) {
+ alert(err.code+"errorCB1_update--: "+err.message);
 }
 function realizado(err) {
  alert("realizado");
@@ -82,3 +97,18 @@ function db_temp_guardar_venta(save_art_id,cli_id,save_cal,save_emp,save_pre,sav
  db.transaction(insertDB_temp_db, errorCB1_carg_tmp);
 
 };
+function db_temp_guardar_venta(save_art_id,cli_id,save_cal,save_emp,save_pre,save_caj,save_uni,save_caj_cam,save_cod_mar,save_des_art) {
+ v_save_art_id   =save_art_id;
+ v_cli_id        =cli_id;
+ v_save_cal      =save_cal;
+ v_save_emp      =save_emp;
+ v_save_pre      =save_pre;
+ v_save_caj      =save_caj;
+ v_save_uni      =save_uni;
+ v_save_caj_cam  =save_caj_cam;
+ v_save_cod_mar  =save_cod_mar;
+ v_save_des_art  =save_des_art.trim();
+ db.transaction(updateDB_temp_db, errorCB1_update_tmp);
+
+};
+
