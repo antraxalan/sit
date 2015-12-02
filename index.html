@@ -540,7 +540,7 @@
         <div data-role="inlinetabs" data-content-theme="a" data-theme="a" data-mini="true" id="venta_tabs">
           <ul>
             <li data-tab="1"  style="width:15%;" >Ordenar</li>
-            <li data-tab="2"  style="width:15%;" >Confirmar</li>
+            <li data-tab="2"  style="width:15%;" >Carrito</li>
           </ul>
 
           <div class="tab_content" data-tab="1">
@@ -1251,9 +1251,9 @@
           <img src="img/bol.jpg">
           <h2>5136</h2>
           <div class="ui-grid-b">
-            <div class="ui-block-a"><p>17/02/2015</p></div>
-            <div class="ui-block-b"><p>17/02/2015</p></div>
-            <div class="ui-block-c red"><strong>50.5 Bs</strong></div>
+            <div class="ui-block-a"><p>FECHA: 17/02/2015</p></div>
+            <div class="ui-block-b"><p>VENCIMIENTO: 17/02/2015</p></div>
+            <div class="ui-block-c red"><strong>MONTO: 50.5 Bs</strong></div>
           </div>
         </a>
         <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
@@ -2042,7 +2042,7 @@ $(".list_old_venta").on('click','.add_venta_popup_class_old', function(event) {
   if(caj=== 'undefined'){
     $('.txt_cajas_popup').html('Cajas:');
   }else{
-    $('.txt_cajas_popup').html('Cajas: (<strong>'+caj+'</strong>)');
+    $('.txt_cajas_popup').html('Cajas: (<strong>'+caj+'</strong> Disponibles)');
   }
   $('.txt_unidades_popup').html('Unidades:');
   $('#precio_popup').val(pri);

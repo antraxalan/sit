@@ -57,7 +57,7 @@ var id_cliente;
           lista_contenido +='<button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">0 Bs</span></button>';
           $('.list_carrito_venta').html(lista_contenido);
           $(".list_carrito_venta").trigger("create");
-          precio_total=precio_total+' Bs';
+          precio_total=precio_total.toFixed(2)+' Bs';
           $('.total_carrito').html(precio_total);
         }
 
