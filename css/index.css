@@ -95,5 +95,6 @@
 }
 .estilo_sub_total {
     border:5px solid #D6F4DD !important;
+    font-weight: bold;
 }
 

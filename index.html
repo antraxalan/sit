@@ -68,7 +68,8 @@
     <script type="text/javascript" src="js/venta/temp_table_venta.js"></script>
     <script type="text/javascript" src="js/venta/list_carrito.js"></script>
 
-
+    <script type="text/javascript" src="js/cobranza/list_cobranza.js"></script>
+    
     <title>SITRANS</title>
   </head>
   <body>
@@ -101,7 +102,7 @@
             <form class="ui">
               <img src="img/logo_s.jpg" alt="image" style="width:100%; margin-top: 0px; margin-bottom: 10px; ">
               <div class="ui-grid-solo" >
-                <div class="ui-block-a"><a href="#db_llena"><button type="button" class="big_button registrar blue_btn">Datos Cliente</button></a></div>
+                <div class="ui-block-a"><a href="#"><button type="button" class="big_button registrar blue_btn">Datos Cliente</button></a></div>
                 <!-- <div class="ui-block-a"><button type="button" class="big_button read">read_txt2</button></div> -->
               </div>
               <div class="ui-grid-a" >
@@ -447,7 +448,7 @@
             </li>
             <li class="cobranza_btn" style="display: none---;">
               <a href="#cobranza">
-                <img src="img/bol.jpg">
+                <img src="img/5bs.png">
                 <h2 class="green">Revisar la Deuda Económica </h2>
                 <div class="ui-grid-b">
                   <div class="ui-block-a"><p>  </p></div>
@@ -517,7 +518,7 @@
     
     <div class="ui-field-contain">
       <label for="textarea" class="css_titulo"><b>Cliente:</b></label>
-      <input type="hidden" id="cliente_id" />
+      <input type="hidden" class="cliente_id" />
       <label for="textarea" class="cliente_nombre">Id - Nombre del cliente</label>
     </div>
 
@@ -748,6 +749,7 @@
     <!--     <h2>VENTA</h2> -->
     <div class="ui-field-contain">
       <label for="textarea" class="css_titulo"><b>Cliente:</b></label>
+      <input type="hidden" class="cliente_id" />
       <label for="textarea" class="cliente_nombre">Id - Nombre del cliente </label>
     </div>
     <!-- agregar -->
@@ -1161,11 +1163,12 @@
     
     <div class="ui-field-contain">
       <label for="textarea" class="css_titulo"><b>Cliente:</b></label>
+      <input type="hidden" class="cliente_id" />
       <label for="textarea" class="cliente_nombre">Id - Nombre del cliente</label>
     </div>
 
     <h4 class="mensaje_cobranza" align="center"></h4>
-    <div class="articulo_cobranza">
+    <!-- <div class="articulo_cobranza">
 
       <div class="ui-content" role="main">
 
@@ -1222,12 +1225,13 @@
         </form>
       </div>
 
-    </div>
+    </div> -->
     <!-- Finaliza agregar -->
 
+            <button type="button" class="ui-btn ui-icon-shop ui-btn-icon-right ui-shadow ui-btn-b ui-corner-all prueba_cobranza">Confirmar Cobranza</button>
     <div class="ui-grid-b">
      <div class="ui-block-a"></div>
-     <div class="ui-block-b"><img src="img/bol.jpg" height="100" width="100"/></div>
+     <div class="ui-block-b"><img src="img/5bs.png" height="100" width="100"/></div>
      <div class="ui-block-c"><button type="button" class="show_cobranza big_button" data-icon="plus">Agregar</button></div>
    </div>
 
@@ -1248,7 +1252,7 @@
       </li>
       <li>
         <a href="#">
-          <img src="img/bol.jpg">
+          <img src="img/5bs.png">
           <h2>5136</h2>
           <div class="ui-grid-b">
             <div class="ui-block-a"><p>FECHA: 17/02/2015</p></div>
@@ -1260,7 +1264,7 @@
       </li>
       <li>
         <a href="#">
-          <img src="img/bol.jpg">
+          <img src="img/5bs.png">
           <h2>5137</h2>
           <div class="ui-grid-b">
             <div class="ui-block-a"><p>17/07/2015</p></div>
@@ -1272,7 +1276,7 @@
       </li>
       <li>
         <a href="#">
-          <img src="img/bol.jpg">
+          <img src="img/5bs.png">
           <h2>5138</h2>
           <div class="ui-grid-b">
             <div class="ui-block-a"><p>17/07/2015</p></div>
@@ -1284,7 +1288,7 @@
       </li>
       <li>
         <a href="#">
-          <img src="img/bol.jpg">
+          <img src="img/5bs.png">
           <h2>5139</h2>
           <div class="ui-grid-b">
             <div class="ui-block-a"><p>17/07/2015</p></div>
@@ -1296,7 +1300,7 @@
       </li>
       <li>
         <a href="#">
-          <img src="img/bol.jpg">
+          <img src="img/5bs.png">
           <h2>5140</h2>
           <div class="ui-grid-b">
             <div class="ui-block-a"><p>17/07/2015</p></div>
@@ -1344,6 +1348,7 @@
 
     <div class="ui-field-contain">
       <label for="textarea" class="css_titulo"><b>Cliente:</b></label>
+      <input type="hidden" class="cliente_id" />
       <label for="textarea" class="cliente_nombre">Id - Nombre del cliente</label>
     </div>
 
@@ -1885,13 +1890,13 @@ $.mobile.navigate( "index.html#venta" );
      $('.menu_v_c_d').hide();
      $('.tablita_info_cliente').hide();
      $.mobile.loading("hide");
-     $('#cliente_id').val('');
+     $('.cliente_id').val('');
    }else{
     cargar_listas($(this).val());
     cargar_info_cliente_html($(this).val());
     $('.tablita_info_cliente').show();
     $('.menu_v_c_d').show();
-    $('#cliente_id').val($("#cliente option:selected").val());
+    $('.cliente_id').val($("#cliente option:selected").val());
   }
 });
 $("#producto").bind("change", function(){
@@ -2206,7 +2211,7 @@ $('.confirmar_venta_popup').click(function() {
   var save_cod_mar  =$("#cod_marca").val();
   var save_des_art  =$("#des_art").val();
 
-  var cli_id=$("#cliente_id").val();
+  var cli_id=$(".cliente_id").val();
 
 
   if(save_caj==''){
@@ -2278,7 +2283,7 @@ $('.confirmar_edicion_popup').click(function() {
   var save_cod_mar  =$("#cod_marca").val();
   var save_des_art  =$("#des_art").val();
 
-  var cli_id=$("#cliente_id").val();
+  var cli_id=$(".cliente_id").val();
 // alert(save_art_id);
   // $('.list_carrito_venta').find('a[codigo-venta="'+save_art_id+'"]').parent().remove();
 
@@ -2323,7 +2328,7 @@ $('.confirmar_edicion_popup').click(function() {
 $('.eliminar_del_carrito').click(function() {
   $.mobile.switchPopup($("#add_venta_popup"), $("#confirmacion_eliminar"), function(){});
   // var save_art_id=$("#old_id_venta").val();
-  // var cli_id=$("#cliente_id").val();
+  // var cli_id=$(".cliente_id").val();
   // var save_des_art  =$("#des_art").val();
   // $('.add_popup_prod').html(prod);
 
@@ -2356,6 +2361,17 @@ $(document).on("pageshow","#venta",function(event){ // When entering pagetwo
 
 $( document ).on( "pagecreate", "#cobranza", function( event ) {
   // alert( "cobranza" );
+  $(".show_cobranza").on('click', function(event) {
+    var cli_id=$(".cliente_id").val();
+    alert("agregar:"+cli_id+".");
+    cargar_cobranza_list(cli_id);
+  });
+  $(".prueba_cobranza").on('click', function(event) {
+    $(".cliente_id").val(500);
+    alert("agregado: 500");
+    // cargar_cobranza_list(cliente);
+  });
+  
 });
 
 $( document ).on( "pagecreate", "#deuda", function( event ) {
