@@ -74,11 +74,11 @@ var id_cliente;
           db.transaction(queryDB_cobranza, errorCB_list_cobranza);
         }
 
-        function cargar_listas (id_c){
-          // alert("cargar_listas"+id_c);
-          // cargar_art_list(id_c);
-          cargar_cobranza_list(id_c);
+        // function cargar_listas (id_c){
+        //   // alert("cargar_listas"+id_c);
+        //   // cargar_art_list(id_c);
+        //   cargar_cobranza_list(id_c);
 
-        }
+        // }
 
 
