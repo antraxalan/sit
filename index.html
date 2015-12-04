@@ -1110,7 +1110,7 @@
     <div role="main" class="ui-content">
       <p id="titulo_popup">...</p>
       
-      class="id_venta" type="hidden---" value="9999">
+      <input class="id_venta" type="hidden---" value="">
       <p>__________________________________________</p>
       <div class="ui-grid-a">
         <div class="ui-block-a">
@@ -1168,7 +1168,12 @@
     </div>
 
     <h4 class="mensaje_cobranza" align="center"></h4>
-    <!-- <div class="articulo_cobranza">
+
+
+
+
+
+    <div class="articulo_cobranza">
 
       <div class="ui-content" role="main">
 
@@ -1225,42 +1230,45 @@
         </form>
       </div>
 
-    </div> -->
+    </div>
+
+
+
+
+
+
+
+
+
     <!-- Finaliza agregar -->
 
-            <button type="button" class="ui-btn ui-icon-shop ui-btn-icon-right ui-shadow ui-btn-b ui-corner-all prueba_cobranza">Confirmar Cobranza</button>
-    <div class="ui-grid-b">
+    <!-- <button type="button" class="ui-btn ui-icon-shop ui-btn-icon-right ui-shadow ui-btn-b ui-corner-all prueba_cobranza">Confirmar Cobranza</button> -->
+    <!-- <div class="ui-grid-b">
      <div class="ui-block-a"></div>
      <div class="ui-block-b"><img src="img/5bs.png" height="100" width="100"/></div>
      <div class="ui-block-c"><button type="button" class="show_cobranza big_button" data-icon="plus">Agregar</button></div>
-   </div>
+   </div> -->
 
    <div class="lista_cobranza">
      <ul data-role="listview" data-split-icon="edit" data-inset="true">
 
       <li>
-        <a>
-          <img src="img/info.png">
-          <h2>NUMERO DE FACTURA</h2>
-          <div class="ui-grid-b">
-            <div class="ui-block-a"><p><strong>FECHA</strong></p></div>
-            <div class="ui-block-b"><p><strong>VENCIMIENTO</strong></p></div>
-            <div class="ui-block-c"><p><strong>MONTO</strong></p></div>
-          </div>
-        </a>
-        <a data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
-      </li>
-      <li>
         <a href="#">
-          <img src="img/5bs.png">
-          <h2>5136</h2>
-          <div class="ui-grid-b">
-            <div class="ui-block-a"><p>FECHA: 17/02/2015</p></div>
-            <div class="ui-block-b"><p>VENCIMIENTO: 17/02/2015</p></div>
-            <div class="ui-block-c red"><strong>MONTO: 50.5 Bs</strong></div>
+          <img src="img/5bs.png" style="margin-top:12px; margin-left:10px">
+          <!-- <h2>5136</h2> -->
+          <div class="ui-grid-c">
+            <div class="ui-block-a" align="center"><p>Fecha de Emisión: </p></div>
+            <div class="ui-block-b" align="center"><p>Fecha de Vencimiento: </p></div>
+            <div class="ui-block-c" align="center"><strong>Saldo</strong></div>
+            <div class="ui-block-d" align="center"><strong>A Cobrar:</strong></div>
+
+            <div class="ui-block-a" align="center" style="margin-top: 15px;  "><p>17/02/2015</p></div>
+            <div class="ui-block-b" align="center" style="margin-top: 15px;"><p>17/02/2015</p></div>
+            <div class="ui-block-c red" align="center" style="margin-top: 17px;"><strong>50.1 Bs</strong></div>
+            <div class="ui-block-d red"><input/></div>
           </div>
         </a>
-        <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
+        <a href="#add_cobranza_popup" class="editar_cobranza_class" data-rel="popup" codigo-venta="1" data-transition="flow">Purchase album</a>
       </li>
       <li>
         <a href="#">
@@ -1272,7 +1280,7 @@
             <div class="ui-block-c green"><strong>-50.5 Bs</strong></div>
           </div>
         </a>
-        <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
+        <a href="#add_cobranza_popup" class="editar_cobranza_class" data-rel="popup" codigo-venta="2" data-transition="flow">Purchase album</a>
       </li>
       <li>
         <a href="#">
@@ -1284,7 +1292,7 @@
             <div class="ui-block-c red"><strong>50.5 Bs</strong></div>
           </div>
         </a>
-        <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
+        <a href="#add_cobranza_popup" class="editar_cobranza_class" data-rel="popup" codigo-venta="3" data-transition="flow">Purchase album</a>
       </li>
       <li>
         <a href="#">
@@ -1296,7 +1304,7 @@
             <div class="ui-block-c red"><strong>50.5 Bs</strong></div>
           </div>
         </a>
-        <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
+        <a href="#add_cobranza_popup" class="editar_cobranza_class" data-rel="popup" codigo-venta="4" data-transition="flow">Purchase album</a>
       </li>
       <li>
         <a href="#">
@@ -1308,17 +1316,86 @@
             <div class="ui-block-c red"><strong>50.5 Bs</strong></div>
           </div>
         </a>
-        <a href="#editar_venta" class="editar_venta_class"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
+        <a href="#add_cobranza_popup" class="editar_cobranza_class"  data-rel="popup" codigo-venta="12" data-transition="flow">Purchase album</a>
       </li>
     </ul>
   </div>
-
 </div>
+
+
+
+
+
+<div data-role="popup" id="add_cobranza_popup" data-overlay-theme="a" data-theme="a"  style="max-width:800px;">
+  <div data-role="header" data-theme="a">
+    <h1>Cobranza</h1>
+  </div>
+  <div role="main" class="ui-content">
+    <p class="add_popup_prod">...</p>
+    <input id="old_id_venta" type="hidden" value="" placeholder="old_id_venta">
+    <input id="cant_empaque" type="hidden" value="" placeholder="cant_empaque">
+    <input id="calibre" type="hidden" value="" placeholder="calibre">
+    <input id="cant_camion" type="hidden" value="" placeholder="cant_camion">
+    <input id="cod_marca" type="hidden" value="" placeholder="cod_marca">
+    <input id="des_art" type="hidden" value="" placeholder="des_art">
+
+
+
+    <div class="ui-grid-a">
+      <div class="ui-block-a"><p class="txt_cajas_popup">Cajas: </p></div>
+      <div class="ui-block-b"><p class="txt_unidades_popup">Unidades: </p></div>
+      <div class="ui-block-a">
+        <input name="cajas" id="cajas_popup" type="number" class="ui-field-contain" data-clear-btn="true"/>
+      </div>
+      <div class="ui-block-b">
+        <input name="unidades" id="unidades_popup" type="number" class="ui-field-contain" data-clear-btn="true"/>
+      </div>
+    </div>
+
+    <div data-role="fieldcontain" class="ui-field-contain">               
+      <label for="precio_popup">Precio:</label>
+      <input name="precio_popup" id="precio_popup" class="precio_input" data-clear-btn="true"/>
+    </div> 
+    <div data-role="fieldcontain" class="ui-field-contain">               
+      <label for="sub_total"><strong>Sub-Total:</strong></label>
+      <input name="precio_popup" id="sub_total" class="estilo_sub_total"/>
+    </div>
+
+    <fieldset data-role="controlgroup" data-type="horizontal">
+      <legend>Embase:</legend>
+      <label for="canje_popup">Con Canje</label>
+      <input type="radio" name="tipo" id="canje_popup" value="canje_popup" checked="checked" data-clear-btn="true"/>
+      <label for="prest_popup">Prestamo</label>
+      <input type="radio" name="tipo" id="prest_popup" value="prest_popup" data-clear-btn="true"/>
+    </fieldset>
+
+
+    <p>__________________________________________</p>
+
+
+
+    <div class="ui-grid-b">
+      <div class="ui-block-a">
+        <button type="button" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a close_popup">Cancelar</button>
+      </div>
+      <div class="ui-block-b">
+        <button type="button" style="background-color: #F01111;" class="ui-btn ui-icon-alert ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b eliminar_del_carrito">Eliminar</button>
+      </div>
+      <div class="ui-block-c">
+        <button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_venta_popup">Confirmar V</button>
+        <button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_edicion_popup">Confirmar E</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
 <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
   <h3>Copyright &copy; 2015</h3>
 </footer>
 </div>
-
 
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
@@ -1850,7 +1927,7 @@ $.mobile.navigate( "index.html#venta" );
   });
 
   $("input[name=cobranza_monto]:radio").bind( "change", function(event, ui) {
-
+    alert("Change radio ");
     if($(this).val()=='total_cobranza'){
       $("#a_cobrar_cobranza").val($("#saldo_cobranza").val()); 
     }else{
