@@ -14,11 +14,37 @@ var id_cliente;
           var aux;
           var disabled;
           var precio_total=0;
+          var color;
           lista_contenido='<button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">0 Bs</span></button>';
           lista_contenido+='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
           alert(len);
           for (var i = 0; i < len; i++) { 
             alert(i);
+      lista_contenido+= '<li><a href="#">';
+          lista_contenido+= '<img src="img/bs1.png" >';
+          lista_contenido+= '<div class="ui-grid-c">';
+            lista_contenido+= '<div class="ui-block-a" align="center"><p style="margin-top: 3px;">Fecha de Emisión: </p></div>';
+            lista_contenido+= '<div class="ui-block-b" align="center"><p style="margin-top: 3px;">Fecha de Vencimiento: </p></div>';
+            lista_contenido+= '<div class="ui-block-c" align="center"><strong>Saldo</strong></div>';
+            lista_contenido+= '<div class="ui-block-d" align="center"><strong>A Cobrar</strong></div>';
+
+            lista_contenido+= '<div class="ui-block-a" align="center" ><p>'+results.rows.item(i).fecha+'</p></div>';
+            lista_contenido+= '<div class="ui-block-b" align="center" ><p>'+results.rows.item(i).fechavto+'</p></div>';
+            if(results.rows.item(i).SaldoBs>0){
+              color='green';
+            }else{
+              color='red';
+            }
+            lista_contenido+= '<div class="ui-block-c '+color+'" align="center" style="margin-top: 4px;"><strong>'+results.rows.item(i).SaldoBs+' Bs.</strong></div>';
+            lista_contenido+= '<div class="ui-block-d " align="center" ><p class="html_cobrado" marca-cobranza-html="'+results.rows.item(i).tipodctom+'">0.00 Bs.</p></div>';
+          lista_contenido+= '</div>';
+        lista_contenido+= '</a>';
+        lista_contenido+= '<a href="#" class="editar_cobranza_class" data-rel="popup" nrodctom="'+results.rows.item(i).tipodctom+'" saldo="'+results.rows.item(i).SaldoBs+'" fecha="'+results.rows.item(i).fecha+'" fecha-venc="'+results.rows.item(i).fechavto+'" cobrado="">SITRANS</a>';
+      lista_contenido+= '</li>';
+
+
+
+
             // var co_ma= results.rows.item(i).CodMarca;
             // if(!(co_ma=="18" || co_ma=="25" || co_ma=="35" || co_ma=="50" || co_ma=="70" || co_ma=="94")){ 
             //   co_ma="999";
@@ -56,10 +82,10 @@ var id_cliente;
 
             // lista_contenido +='<a href="#add_venta_popup" '+disabled+' class="add_venta_popup_class_old" data-rel="popup" codigo-venta="'+results.rows.item(i).IdArt+'" last-price="'+results.rows.item(i).Precio+'" cajas-camion="'+results.rows.item(i).CajasCamion+'" calibre="'+results.rows.item(i).Calibre+'" cant-empaque="'+results.rows.item(i).Empaque+'"  caj-adq="'+results.rows.item(i).Caja+'" uni-adq="'+results.rows.item(i).Unidad+'">Historial</a></li>';
           }
-          // lista_contenido +='</ul>';
+          lista_contenido +='</ul>';
           // lista_contenido +='<button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">0 Bs</span></button>';
-          // $('.list_carrito_venta').html(lista_contenido);
-          // $(".list_carrito_venta").trigger("create");
+          $('.list_cobranza').html(lista_contenido);
+          $(".list_cobranza").trigger("create");
           // precio_total=precio_total.toFixed(2)+' Bs';
           // $('.total_carrito').html(precio_total);
         }

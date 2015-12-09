@@ -1214,7 +1214,7 @@
 
 
 
-
+<!-- 
     <div class="articulo_cobranza">
 
       <div class="ui-content" role="main">
@@ -1272,7 +1272,8 @@
         </form>
       </div>
 
-    </div>
+    </div> 
+    -->
 
 
 
@@ -2061,6 +2062,7 @@ $.mobile.navigate( "index.html#venta" );
      $('.cliente_id').val('');
    }else{
     cargar_listas($(this).val());
+    cargar_cobranza_list($(this).val());
     cargar_info_cliente_html($(this).val());
     $('.tablita_info_cliente').show();
     $('.menu_v_c_d').show();
