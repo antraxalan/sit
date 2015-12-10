@@ -5,7 +5,7 @@ var id_cliente;
 
         function queryDB_cobranza(tx) {         
           // tx.executeSql('select IdArt ,IdCli ,Calibre ,Empaque ,Precio ,Caja ,Unidad, CajasCamion, CodMarca, DesArt from TEMPVENTA WHERE IdCli=?', [id_cliente], querySuccess_carrito, errorCB_list_cobranza);
-          tx.executeSql('select a.codcliente codcliente,Nombre, tipodctom,nrodctom,fecha,fechavto, sum(debe-haber) SaldoBs from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1400 and a.codcliente=? group by a.codcliente,nombre, tipodctom,nrodctom,fecha,fechavto having sum(debe-haber)<>0 order by fecha', [id_cliente], querySuccess_cobranza, errorCB_list_cobranza);
+          tx.executeSql('select a.codcliente codcliente,Nombre, TipoDctoM,NroDctoM,Fecha,FechaVto, sum(debe-haber) SaldoBs from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1400 and a.codcliente=? group by a.codcliente,nombre, tipodctom,NroDctoM,Fecha,FechaVto having sum(debe-haber)<>0 order by Fecha', [id_cliente], querySuccess_cobranza, errorCB_list_cobranza);
         }
 
         function querySuccess_cobranza(tx, results) { 
@@ -16,7 +16,7 @@ var id_cliente;
           var precio_total=0;
           var color;
           lista_contenido='<button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">0 Bs</span></button>';
-          lista_contenido+='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
+          lista_contenido='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
           // alert(len);
           for (var i = 0; i < len; i++) { 
             // alert(i);
@@ -28,18 +28,18 @@ var id_cliente;
             lista_contenido+= '<div class="ui-block-c" align="center"><strong>Saldo</strong></div>';
             lista_contenido+= '<div class="ui-block-d" align="center"><strong>A Cobrar</strong></div>';
 
-            lista_contenido+= '<div class="ui-block-a" align="center" ><p>'+results.rows.item(i).fecha+'</p></div>';
-            lista_contenido+= '<div class="ui-block-b" align="center" ><p>'+results.rows.item(i).fechavto+'</p></div>';
+            lista_contenido+= '<div class="ui-block-a" align="center" ><p>'+results.rows.item(i).Fecha+'</p></div>';
+            lista_contenido+= '<div class="ui-block-b" align="center" ><p>'+results.rows.item(i).FechaVto+'</p></div>';
             if(results.rows.item(i).SaldoBs>0){
               color='red';
             }else{
               color='green';
             }
             lista_contenido+= '<div class="ui-block-c '+color+'" align="center" style="margin-top: 4px;"><strong>'+results.rows.item(i).SaldoBs+' Bs.</strong></div>';
-            lista_contenido+= '<div class="ui-block-d " align="center" ><p class="html_cobrado" marca-cobranza-html="'+results.rows.item(i).tipodctom+'">0.00 Bs.</p></div>';
+            lista_contenido+= '<div class="ui-block-d " align="center" ><p class="html_cobrado" marca-cobranza-html="'+results.rows.item(i).NroDctoM+'">0.00 Bs.</p></div>';
           lista_contenido+= '</div>';
         lista_contenido+= '</a>';
-        lista_contenido+= '<a href="#" class="editar_cobranza_class" data-rel="popup" nrodctom="'+results.rows.item(i).tipodctom+'" saldo="'+results.rows.item(i).SaldoBs+'" fecha="'+results.rows.item(i).fecha+'" fecha-venc="'+results.rows.item(i).fechavto+'" cobrado="">SITRANS</a>';
+        lista_contenido+= '<a href="#" class="editar_cobranza_class" data-rel="popup" nrodctom="'+results.rows.item(i).NroDctoM+'" saldo="'+results.rows.item(i).SaldoBs+'" fecha="'+results.rows.item(i).fecha+'" fecha-venc="'+results.rows.item(i).FechaVto+'" cobrado="">SITRANS</a>';
       lista_contenido+= '</li>';
 
 

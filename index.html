@@ -434,7 +434,7 @@
           <div  class=" tablita_info_cliente">
 
           </div>
-        <!-- <div class="ui-field-contain">
+<!--         <div class="ui-field-contain">
           <input type="submit" id="submit-1" class="ui-btn ui-corner-all " value="Detalles">
           <a href="#venta" data-role="button">Detalles</a>
         </div> -->
@@ -443,50 +443,20 @@
             <li class="cobranza_btn" style="display: none---;">
               <a href="#venta">
                 <img src="img/cart.png">
-                <h2 class="green">Agregar Productos</h2>
-                <div class="ui-grid-b">
-                  <div class="ui-block-a"><p>  </p></div>
-                  <div class="ui-block-b"><p>  </p></div>
-                  <div class="ui-block-c"><p>Ir a Venta</p></div>
+                 <div class="ui-grid-b">
+                <div class="ui-block-a"><h2 class="green">Agregar Productos</h2></div>
+                <div class="ui-block-b"><h2 class="green">Deuda Economica</h2></div>
+                <div class="ui-block-c"><h2 class="green">Deuda Envases</h2></div>
                 </div>
-                <!-- <div class="ui-grid-b">
-                  <div class="ui-block-a"><p>6 cajas</p></div>
-                  <div class="ui-block-b"><p>2 unidades</p></div>
-                  <div class="ui-block-c price"><p><strong>50.5 Bs</strong></p></div>
-                </div> -->
-              </a>
-              <!-- <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">SITRANS</a> -->
-            </li>
-            <li class="cobranza_btn" style="display: none---;">
-              <a href="#cobranza">
-                <img src="img/bs2.png">
-                <h2 class="green">Revisar la Deuda Económica </h2>
                 <div class="ui-grid-b">
                   <div class="ui-block-a"><p>  </p></div>
                   <div class="ui-block-b"><p>  </p></div>
-                  <div class="ui-block-c"><p>Ir a Cobranza</p></div>
-                </div>
-                <!-- <div class="ui-grid-b">
-                  <div class="ui-block-a"><p>6 cajas</p></div>
-                  <div class="ui-block-b"><p>2 unidades</p></div>
-                  <div class="ui-block-c price"><p><strong>50.5 Bs</strong></p></div>
-                </div> -->
-              </a>
-              <!-- <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">SITRANS</a> -->
-            </li>
-            <li class="deuda_btn" style="display: none---;">
-              <a href="#deuda">
-                <img src="img/caja.jpg">
-                <h2 class="green">Revisar la deuda de envases</h2>
-                <!-- <p> Ir a Deuda Envases </p> -->
-                <div class="ui-grid-b">
-                  <div class="ui-block-a"><p>  </p></div>
-                  <div class="ui-block-b"><p>  </p></div>
-                  <div class="ui-block-c"><p>Ir a Deuda Envases</p></div>
+                  <div class="ui-block-c"><p>Realizar transacciones.</p></div>
                 </div>
               </a>
               <!-- <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">SITRANS</a> -->
             </li>
+
           </ul>
         </div>
         <!-- <button type="button" class="menu_v_c_d_btn">qwerty</button> -->
@@ -561,7 +531,7 @@
 
         <div data-role="inlinetabs" data-content-theme="a" data-theme="a" data-mini="true" id="venta_tabs">
           <ul>
-            <li data-tab="1"  style="width:15%;" >Ordenar</li>
+            <li data-tab="1"  style="width:15%;" >Productos</li>
             <li data-tab="2"  style="width:15%;" >Carrito</li>
           </ul>
 
@@ -1761,6 +1731,7 @@
         $("#cod_usuario").focus();
       }else{
         if(localStorage.db_cargada=='1'){
+          otroCliente();
           window.location.href = "index.html#registrar";
         }else{
           alert("No existen datos cargados.");
@@ -1885,7 +1856,7 @@ $.mobile.navigate( "index.html#venta" );
 
 
 
-  $('.menu_v_c_d').hide();
+  // $('.menu_v_c_d').hide();
 
 
 
