@@ -17,9 +17,9 @@ var id_cliente;
           var color;
           lista_contenido='<button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">0 Bs</span></button>';
           lista_contenido+='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
-          alert(len);
+          // alert(len);
           for (var i = 0; i < len; i++) { 
-            alert(i);
+            // alert(i);
       lista_contenido+= '<li><a href="#">';
           lista_contenido+= '<img src="img/bs1.png" >';
           lista_contenido+= '<div class="ui-grid-c">';
@@ -31,9 +31,9 @@ var id_cliente;
             lista_contenido+= '<div class="ui-block-a" align="center" ><p>'+results.rows.item(i).fecha+'</p></div>';
             lista_contenido+= '<div class="ui-block-b" align="center" ><p>'+results.rows.item(i).fechavto+'</p></div>';
             if(results.rows.item(i).SaldoBs>0){
-              color='green';
-            }else{
               color='red';
+            }else{
+              color='green';
             }
             lista_contenido+= '<div class="ui-block-c '+color+'" align="center" style="margin-top: 4px;"><strong>'+results.rows.item(i).SaldoBs+' Bs.</strong></div>';
             lista_contenido+= '<div class="ui-block-d " align="center" ><p class="html_cobrado" marca-cobranza-html="'+results.rows.item(i).tipodctom+'">0.00 Bs.</p></div>';
