@@ -24,7 +24,7 @@ var id_cliente;
           fch_vto=fch_vto.split(" ");
           fch_vto=fch_vto[0].split("-");
           fch_vto=fch_vto[2]+'/'+fch_vto[1]+'/'+fch_vto[0];
-          
+
           lista_contenido='<button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">0 Bs</span></button>';
           lista_contenido='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
           // alert(len);
@@ -101,7 +101,7 @@ var id_cliente;
         }
 
         function errorCB_list_cobranza(err) {
-          alert("Error processing cobranza SQL: "+err.code);
+          alert("Error processing cobranza SQL: "+err.code+" Mensaje: "+err.message);
         }
 
         function cargar_cobranza_list(cli) {
