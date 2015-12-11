@@ -443,10 +443,10 @@
             <li class="cobranza_btn" style="display: none---;">
               <a href="#venta">
                 <img src="img/cart.png">
-                 <div class="ui-grid-b">
-                <div class="ui-block-a"><h2 class="green">Agregar Productos</h2></div>
-                <div class="ui-block-b"><h2 class="green">Deuda Economica</h2></div>
-                <div class="ui-block-c"><h2 class="green">Deuda Envases</h2></div>
+                <div class="ui-grid-b">
+                  <div class="ui-block-a"><h2 class="green">Agregar Productos</h2></div>
+                  <div class="ui-block-b"><h2 class="green">Deuda Economica</h2></div>
+                  <div class="ui-block-c"><h2 class="green">Deuda Envases</h2></div>
                 </div>
                 <div class="ui-grid-b">
                   <div class="ui-block-a"><p>  </p></div>
@@ -1243,7 +1243,7 @@
       </div>
 
     </div> 
-    -->
+  -->
 
 
 
@@ -1253,9 +1253,9 @@
 
 
 
-    <!-- Finaliza agregar -->
+  <!-- Finaliza agregar -->
 
-    <!-- <button type="button" class="ui-btn ui-icon-shop ui-btn-icon-right ui-shadow ui-btn-b ui-corner-all prueba_cobranza">Confirmar Cobranza</button> -->
+  <!-- <button type="button" class="ui-btn ui-icon-shop ui-btn-icon-right ui-shadow ui-btn-b ui-corner-all prueba_cobranza">Confirmar Cobranza</button> -->
     <!-- <div class="ui-grid-b">
      <div class="ui-block-a"></div>
      <div class="ui-block-b"><img src="img/5bs.png" height="100" width="100"/></div>
@@ -1731,8 +1731,8 @@
         $("#cod_usuario").focus();
       }else{
         if(localStorage.db_cargada=='1'){
-          otroCliente();
-          window.location.href = "index.html#registrar";
+          go_to_otro_usuario();
+          // window.location.href = "index.html#registrar";
         }else{
           alert("No existen datos cargados.");
         }
@@ -2407,6 +2407,11 @@ $('.confirmar_venta_popup').click(function() {
       // $('.list_old_venta').trigger('create');
     }
   }
+
+  $(".list_carrito_venta").on('click','.btn_confirmar_ventas_global', function(event) {
+    alert("btn_confirmar_ventas_global");
+  }); 
+  
 });
 
 
@@ -2606,7 +2611,7 @@ $(".confirmar_cobranza_popup").on('click', function(event) {
   var documenton=$('#cob_nrodctom').val();
   var cobrar=$('#cob_cobrar').val();
   if(cobrar==''||cobrar=='NaN'){cobrar='0.00'}
-  var auxi= $('.list_cobranza').find('a[nrodctom="'+documenton+'"]').attr('cobrado',cobrar);
+    var auxi= $('.list_cobranza').find('a[nrodctom="'+documenton+'"]').attr('cobrado',cobrar);
 
   $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+documenton+"']").html(cobrar+' Bs.');
   $("#add_cobranza_popup").popup( "close" );
