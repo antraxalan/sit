@@ -15,17 +15,18 @@ var id_cliente;
           var disabled;
           var precio_total=0;
           var color;
-          // var fch=results.rows.item(i).Fecha;
-          // fch=fch.split(" ");
-          // fch=fch[0].split("-");
-          // fch=fch[2]+'/'+fch[1]+'/'+fch[0];
 
-          // var fch_vto=results.rows.item(i).FechaVto;
-          // fch_vto=fch_vto.split(" ");
-          // fch_vto=fch_vto[0].split("-");
-          // fch_vto=fch_vto[2]+'/'+fch_vto[1]+'/'+fch_vto[0];
+          var fch = results.rows.item(i).Fecha;
+          fch = fch.split(" ");
+          fch = fch[0].split("-");
+          fch = fch[2]+'/'+fch[1]+'/'+fch[0];
 
-          lista_contenido='<button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">0 Bs</span></button>';
+          var fch_vto = results.rows.item(i).FechaVto;
+          fch_vto = fch_vto.split(" ");
+          fch_vto = fch_vto[0].split("-");
+          fch_vto = fch_vto[2]+'/'+fch_vto[1]+'/'+fch_vto[0];
+
+          // lista_contenido='<button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">0 Bs</span></button>';
           lista_contenido='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
           // alert(len);
           for (var i = 0; i < len; i++) { 
