@@ -15,15 +15,15 @@ var id_cliente;
           var disabled;
           var precio_total=0;
           var color;
-          var fch=results.rows.item(i).Fecha;
-          fch=fch.split(" ");
-          fch=fch[0].split("-");
-          fch=fch[2]+'/'+fch[1]+'/'+fch[0];
+          // var fch=results.rows.item(i).Fecha;
+          // fch=fch.split(" ");
+          // fch=fch[0].split("-");
+          // fch=fch[2]+'/'+fch[1]+'/'+fch[0];
 
-          var fch_vto=results.rows.item(i).FechaVto;
-          fch_vto=fch_vto.split(" ");
-          fch_vto=fch_vto[0].split("-");
-          fch_vto=fch_vto[2]+'/'+fch_vto[1]+'/'+fch_vto[0];
+          // var fch_vto=results.rows.item(i).FechaVto;
+          // fch_vto=fch_vto.split(" ");
+          // fch_vto=fch_vto[0].split("-");
+          // fch_vto=fch_vto[2]+'/'+fch_vto[1]+'/'+fch_vto[0];
 
           lista_contenido='<button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">0 Bs</span></button>';
           lista_contenido='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
@@ -39,7 +39,9 @@ var id_cliente;
             lista_contenido+= '<div class="ui-block-d" align="center"><strong>A Cobrar</strong></div>';
 
             // lista_contenido+= '<div class="ui-block-a" align="center" ><p>'+fch+'</p></div>';
+            lista_contenido+= '<div class="ui-block-a" align="center" ><p>'+results.rows.item(i).Fecha+'</p></div>';
             // lista_contenido+= '<div class="ui-block-b" align="center" ><p>'+fch_vto+'</p></div>';
+            lista_contenido+= '<div class="ui-block-b" align="center" ><p>'+results.rows.item(i).FechaVto+'</p></div>';
             if(results.rows.item(i).SaldoBs>0){
               color='red';
             }else{
@@ -50,6 +52,7 @@ var id_cliente;
           lista_contenido+= '</div>';
         lista_contenido+= '</a>';
         // lista_contenido+= '<a href="#" class="editar_cobranza_class" data-rel="popup" nrodctom="'+results.rows.item(i).NroDctoM+'" saldo="'+results.rows.item(i).SaldoBs+'" fecha="'+fch+'" fecha-venc="'+fch_vto+'" cobrado="">SITRANS</a>';
+        lista_contenido+= '<a href="#" class="editar_cobranza_class" data-rel="popup" nrodctom="'+results.rows.item(i).NroDctoM+'" saldo="'+results.rows.item(i).SaldoBs+'" fecha="'+results.rows.item(i).Fecha+'" fecha-venc="'+results.rows.item(i).FechaVto+'" cobrado="">SITRANS</a>';
       lista_contenido+= '</li>';
 
 
