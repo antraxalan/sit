@@ -1764,7 +1764,8 @@ $('.confirmar_venta_popup').click(function() {
 
 
 $(".list_carrito_venta").on('click','.btn_confirmar_ventas_global', function(event) {
-  alert("btn_confirmar_ventas_global");
+  var cli_id=$(".cliente_id").val();
+  cargar_cobranza_list(cli_id);
 }); 
 
 $('.confirmar_edicion_popup').click(function() {
