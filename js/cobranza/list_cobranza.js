@@ -6,15 +6,18 @@ var total_venta;
 
 function queryDB_cobranza_last_sale(tx) {         
           // tx.executeSql('select IdArt ,IdCli ,Calibre ,Empaque ,Precio ,Caja ,Unidad, CajasCamion, CodMarca, DesArt from TEMPVENTA WHERE IdCli=?', [id_cliente], querySuccess_carrito, errorCB_list_cobranza);
-          tx.executeSql('select round(sum ((Precio*Caja)+((Precio/Empaque)*Unidad)),2) Total from TEMP_VENTA where IdCli=?', [id_cliente], querySuccess_cobranza_last_sale, errorCB_list_cobranza2);
+          tx.executeSql('select round(sum ((Precio*Caja)+((Precio/Empaque)*Unidad)),2) Total from TEMP_VENTA where IdCli=?', [id_cliente], querySuccess_cobranza_last_sale, errorCB_list_cobranza_last_sale);
         }
         function queryDB_cobranza(tx) {         
           // tx.executeSql('select IdArt ,IdCli ,Calibre ,Empaque ,Precio ,Caja ,Unidad, CajasCamion, CodMarca, DesArt from TEMPVENTA WHERE IdCli=?', [id_cliente], querySuccess_carrito, errorCB_list_cobranza);
           tx.executeSql('select a.CodCliente CodCliente,Nombre, TipoDctoM,NroDctoM,Fecha,FechaVto, sum(debe-haber) SaldoBs from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1400 and a.codcliente=? group by a.codcliente,nombre, tipodctom,NroDctoM,Fecha,FechaVto having sum(debe-haber)<>0 order by Fecha', [id_cliente], querySuccess_cobranza, errorCB_list_cobranza2);
         }
 
-        function querySuccess_cobranza(tx, results) {
-          total_venta = results.rows.item(0).Total;
+        function querySuccess_cobranza_last_sale(tx, results_last) {
+          var len = results_last.rows.length;
+          for (var i = 0; i < len; i++) {
+            total_venta = results_last.rows.item(i).Total;
+          }
         }
 
         function querySuccess_cobranza(tx, results) { 
@@ -148,7 +151,7 @@ function queryDB_cobranza_last_sale(tx) {
           alert("Error processing cobranza2 SQL: "+err.code+" Mensaje: "+err.message);
         }
         function errorCB_list_cobranza_last_sale(err) {
-          alert("Error processing cobranza2 SQL: "+err.code+" Mensaje: "+err.message);
+          alert("Error processing cobranza last SQL: "+err.code+" Mensaje: "+err.message);
         }
 
         function cargar_cobranza_list(cli) {
