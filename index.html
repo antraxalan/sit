@@ -531,8 +531,9 @@
 
       <form class="ui">
 
-        <button type="button" class="cargar_html_venta" data-theme="b">PRUEBA cargando html</button>
-        <input class="cargar_html_venta_input" value="select IdArt ,IdCli ,Calibre ,Empaque ,Precio ,Caja ,Unidad, CajasCamion, CodMarca, DesArt from TEMPVENTA WHERE IdCli=100" />
+        <!-- <button type="button" class="cargar_html_venta" data-theme="b">PRUEBA cargando html</button> -->
+        <!-- <input class="cargar_html_venta_input" value="select IdArt ,IdCli ,Calibre ,Empaque ,Precio ,Caja ,Unidad, CajasCamion, CodMarca, DesArt from TEMPVENTA WHERE IdCli=100" /> -->
+        <!-- <input class="cargar_html_venta_input" value="SELECT * FROM USUARIO where codigo = 1" /> -->
 
 
         <div data-role="inlinetabs" data-content-theme="a" data-theme="a" data-mini="true" id="venta_tabs">
@@ -1835,15 +1836,17 @@ $(".close_popup_confirm").on('click', function(event) {
   $("#confirmacion_eliminar").popup( "close" );
 });
 
-$(".cargar_html_venta").on('click', function(event) {
-  var query=$(".cargar_html_venta_input").val();
-  var resultado1={};
-  // alert(query);
-  // alert(query_general);
-  resultado1=query_general(query);
-  var len = resultado1.rows.length;
-  alert(len);
-});
+// $(".cargar_html_venta").on('click', function(event) {
+//   var query=$(".cargar_html_venta_input").val();
+//   var resultado1={};
+//   // alert(query);
+//   // alert(query_general);
+//   resultado1=query_general(query);
+//   resultado1=query_general(query);
+//   var len = resultado1.rows.length;
+//   alert(len);
+//   // setTimeout(function(){ alert(len); }, 500);
+// });
 
 
 
