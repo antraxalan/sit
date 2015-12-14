@@ -15,14 +15,14 @@ function queryDB_cobranza_last_sale(tx) {
 
         function querySuccess_cobranza_last_sale(tx, results_last) {
           var len = results_last.rows.length;
-          alert("len:>"+len);
+          // alert("len:>"+len);
           var Precio;
           var Caja;
           var Empaque;
           var Unidad;
           total_venta=0;
           for (var i = 0; i < len; i++) {
-            alert("entro a for");
+            // alert("entro a for");
             // IdArt,IdCli,Calibre,Empaque,Precio,Caja,Unidad,CajasCamion,CodMarca,DesArt
             var Precio  =results_last.rows.item(i).Precio;
             var Caja    =results_last.rows.item(i).Caja;
