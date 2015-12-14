@@ -706,6 +706,31 @@
           </div>
 
 
+          <div data-role="popup" id="confirmar_venta_fchvto_popup" data-overlay-theme="a" data-theme="a"  style="max-width:800px;">
+            <div data-role="header" data-theme="a">
+              <h1>Confirmar</h1>
+            </div>
+            <div role="main" class="ui-content">
+              <p>Confirma el pedido por:</p>
+              <p class="precio_total_popup">...</p>
+              
+              <p>Con fecha de fecha de vencimiento:</p>
+              
+              <input id="fchvto_total_popup" type="date" data-role="date" date-format="dd-mm-yyyy"/>
+              
+              <p>__________________________________________</p>
+              <div class="ui-grid-a">
+                <div class="ui-block-a">
+                  <button type="button" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a close_popup_fchvto">Cancelar</button>
+                </div>
+                <div class="ui-block-b">
+                  <button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_venta_fchvto">Confirmar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
 
         </div>
 
@@ -782,7 +807,8 @@
             <div data-role="fieldcontain" class="ui-field-contain"data-demo-html="true">               
 
               <label for="date">Fecha:</label>
-              <input name="mydate" id="fecha_cobranza" disabled="disabled"/>
+              <input date
+               id="fecha_cobranza" disabled="disabled"/>
             </div> 
             <div class="ui-field-contain">
               <label for="textarea">Numero de factura:</label>
@@ -1763,9 +1789,41 @@ $('.confirmar_venta_popup').click(function() {
 }); 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// precio_total_popup
+// fchvto_total_popup
+// close_popup_fchvto
+// confirmar_venta_fchvto
+
+
+
 $(".list_carrito_venta").on('click','.btn_confirmar_ventas_global', function(event) {
+  var month = d.getMonth()+1;
+  var day = d.getDate();
+  var fecha_actual =((''+day).length<2 ? '0' : '') + day + '/' +((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
+
   var cli_id=$(".cliente_id").val();
   cargar_cobranza_list(cli_id);
+  $("#fchvto_total_popup").val(fecha_actual);
+  $("#confirmar_venta_fchvto_popup").popup( "close" );
 }); 
 
 $('.confirmar_edicion_popup').click(function() {
