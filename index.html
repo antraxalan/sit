@@ -1838,8 +1838,10 @@ $(".close_popup_confirm").on('click', function(event) {
 $(".cargar_html_venta").on('click', function(event) {
   var query=$(".cargar_html_venta_input").val();
   var resultado1={};
+  // alert(query);
+  // alert(query_general);
   resultado1=query_general(query);
-  var len = results.rows.length;
+  var len = resultado1.rows.length;
   alert(len);
 });
 

@@ -5,11 +5,11 @@ var general_result={};
 
 
 function queryDB_general(tx) {         
-  tx.executeSql(query, [], querySuccess_general, errorCB_general);
+  tx.executeSql(general_query, [], querySuccess_general, errorCB_general);
 }
 
 function querySuccess_general(tx, results) { 
-  general_result=results;
+  // general_result=results;
 }
 
 function errorCB_general(err) {
