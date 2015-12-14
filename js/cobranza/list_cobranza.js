@@ -6,7 +6,7 @@ var total_venta;
 
 function queryDB_cobranza_last_sale(tx) {         
           // tx.executeSql('select IdArt ,IdCli ,Calibre ,Empaque ,Precio ,Caja ,Unidad, CajasCamion, CodMarca, DesArt from TEMPVENTA WHERE IdCli=?', [id_cliente], querySuccess_carrito, errorCB_list_cobranza);
-          tx.executeSql('select round(sum ((Precio*Caja)+((Precio/Empaque)*Unidad)),2) Total from TEMP_VENTA where IdCli=?', [id_cliente], querySuccess_cobranza_last_sale, errorCB_list_cobranza_last_sale);
+          tx.executeSql('select * from TEMP_VENTA where IdCli=?', [id_cliente], querySuccess_cobranza_last_sale, errorCB_list_cobranza_last_sale);
         }
         function queryDB_cobranza(tx) {         
           // tx.executeSql('select IdArt ,IdCli ,Calibre ,Empaque ,Precio ,Caja ,Unidad, CajasCamion, CodMarca, DesArt from TEMPVENTA WHERE IdCli=?', [id_cliente], querySuccess_carrito, errorCB_list_cobranza);
@@ -15,9 +15,24 @@ function queryDB_cobranza_last_sale(tx) {
 
         function querySuccess_cobranza_last_sale(tx, results_last) {
           var len = results_last.rows.length;
+          alert("len:>"+len);
+          var Precio;
+          var Caja;
+          var Empaque;
+          var Unidad;
+          total_venta=0;
           for (var i = 0; i < len; i++) {
-            total_venta = results_last.rows.item(i).Total;
+            alert("entro a for");
+            // IdArt,IdCli,Calibre,Empaque,Precio,Caja,Unidad,CajasCamion,CodMarca,DesArt
+            var Precio  =results_last.rows.item(i).Precio;
+            var Caja    =results_last.rows.item(i).Caja;
+            var Empaque =results_last.rows.item(i).Empaque;
+            var Unidad  =results_last.rows.item(i).Unidad;
+
+            total_venta = total_venta+(parseFloat((Precio*Caja)+((Precio/Empaque)*Unidad)));
           }
+          total_venta = total_venta.toFixed(2);
+
         }
 
         function querySuccess_cobranza(tx, results) { 
@@ -116,7 +131,7 @@ function queryDB_cobranza_last_sale(tx) {
 
             // lista_contenido +='<a href="#add_venta_popup" '+disabled+' class="add_venta_popup_class_old" data-rel="popup" codigo-venta="'+results.rows.item(i).IdArt+'" last-price="'+results.rows.item(i).Precio+'" cajas-camion="'+results.rows.item(i).CajasCamion+'" calibre="'+results.rows.item(i).Calibre+'" cant-empaque="'+results.rows.item(i).Empaque+'"  caj-adq="'+results.rows.item(i).Caja+'" uni-adq="'+results.rows.item(i).Unidad+'">Historial</a></li>';
           }
-          if(total_venta==''|| total_venta==0){
+          if(total_venta==''|| total_venta==0 || total_venta==='undefined'){
             var a=1;
           }else{
            lista_contenido+= '<li><a href="#">';
