@@ -9,7 +9,7 @@ function queryDB_general(tx) {
 }
 
 function querySuccess_general(tx, results) { 
-  // general_result=results;
+  general_result=results;
 }
 
 function errorCB_general(err) {
