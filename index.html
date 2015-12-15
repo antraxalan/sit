@@ -1826,6 +1826,7 @@ $('.confirmar_venta_fchvto').on('click', function() {
 
     // $('#venta_tabs').removeClass("ui-disabled blured_alan"); 
     localStorage.fecha_venta=fecha_vto;
+    var cli_id=$(".cliente_id").val();
     $('#venta_tabs').addClass("ui-disabled blured_alan"); 
     $("#confirmar_venta_fchvto_popup").popup("close"); 
     cargar_cobranza_list(cli_id); 
