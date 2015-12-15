@@ -709,7 +709,7 @@
 
           <div data-role="popup" id="confirmar_venta_fchvto_popup" data-overlay-theme="a" data-theme="a"  style="max-width:800px;">
             <div data-role="header" data-theme="a">
-              <h1>Consolidar Pedido</h1>
+              <h1>Confirmar Pedido</h1>
             </div>
             <div role="main" class="ui-content">
               <p>Confirma el pedido por:</p>
@@ -1178,7 +1178,7 @@
 
     <div class="ui-grid-b">
      <div class="ui-block-a"> </div>
-     <div class="ui-block-b"><img src="img/caja.jpg" height="100" width="100"/></div>
+     <div class="ui-block-b"><img src="img/caja.png" height="100" width="100"/></div>
      <div class="ui-block-c"><button type="button" class="show_deuda big_button" data-icon="plus">Agregar</button></div>
    </div>
 
@@ -1199,7 +1199,7 @@
       </li>
       <li>
         <a href="#">
-          <img src="img/caja.jpg">
+        <img src="img/caja.png">
           <h2>5136</h2>
           <div class="ui-grid-b">
             <div class="ui-block-a">5</div>
@@ -1211,7 +1211,7 @@
       </li>
       <li>
         <a href="#">
-          <img src="img/caja.jpg">
+        <img src="img/caja.png">
           <h2>5137</h2>
           <div class="ui-grid-b">
             <div class="ui-block-a"><p>0</p></div>
@@ -1223,7 +1223,7 @@
       </li>
       <li>
         <a href="#">
-          <img src="img/caja.jpg">
+        <img src="img/caja.png">
           <h2>5138</h2>
           <div class="ui-grid-b">
             <div class="ui-block-a"><p>5</p></div>
@@ -1235,7 +1235,7 @@
       </li>
       <li>
         <a href="#">
-          <img src="img/caja.jpg">
+        <img src="img/caja.png">
           <h2>5139</h2>
           <div class="ui-grid-b">
             <div class="ui-block-a"><p>0</p></div>
@@ -1247,7 +1247,7 @@
       </li>
       <li>
         <a href="#">
-          <img src="img/caja.jpg">
+        <img src="img/caja.png">
           <h2>5140</h2>
           <div class="ui-grid-b">
             <div class="ui-block-a"><p>10</p></div>
@@ -1808,10 +1808,13 @@ $(".list_carrito_venta").on('click','.btn_confirmar_ventas_global', function(eve
   var month = d.getMonth()+1;
   var day = d.getDate();
   var fecha_actual =((''+day).length<2 ? '0' : '') + day + '/' +((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
-  $('.precio_total_popup').html(precio);
+  $('.precio_total_popup').html('<strong>'+precio+'</strong>');
   $("#fchvto_total_popup").val(fecha_actual);
-
-  $("#confirmar_venta_fchvto_popup").popup( "open" );
+  if(precio=='0.00 Bs'){
+    alert("No tiene productos agregados para Confirmar este Pedido.");
+  }else{
+    $("#confirmar_venta_fchvto_popup").popup("open");
+  }
 });
 
 $('.close_popup_fchvto').on('click', function() {
