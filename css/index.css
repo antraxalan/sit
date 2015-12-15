@@ -99,13 +99,9 @@
 }
 
 .blured_alan{
-    font-family:sans-serif;
-    font-weight:bold;
-    -webkit-filter: blur(1px);
-   
+    -webkit-filter: grayscale(1);
 }
 
 .not_blured_alan{
-    -webkit-filter: none;
-    
+    -webkit-filter: none; 
 }

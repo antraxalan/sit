@@ -32,6 +32,7 @@ function queryDB_cobranza_last_sale(tx) {
             total_venta = total_venta+(parseFloat((Precio*Caja)+((Precio/Empaque)*Unidad)));
           }
           total_venta = total_venta.toFixed(2);
+          alert("total_venta: "+total_venta);
 
         }
 
@@ -53,7 +54,7 @@ function queryDB_cobranza_last_sale(tx) {
 
           // lista_contenido='<button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">0 Bs</span></button>';
           lista_contenido='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
-          // alert(len);
+          alert(len);
           for (var i = 0; i < len; i++) { 
             fch = results.rows.item(i).Fecha;
             fch = fch.split(" ");
