@@ -110,11 +110,15 @@ function go_to_otro_usuario(){
     $('.menu_v_c_d').hide();
     window.location.href = "index.html#registrar";
     limpiar_temp_v_table();
+    $('#venta_tabs').removeClass("ui-disabled blured_alan");
+
     // $('.list_old_venta').find('.temp_disabled').removeClass("ui-disabled temp_disabled");
 };
 
 function limpiar_temp_v_table(){
+    $('#venta_tabs').removeClass("ui-disabled blured_alan");
     
+
     db.transaction(populateDB_TEMPVENTA, errorCB_cargar);
 } 
 

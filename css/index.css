@@ -98,3 +98,14 @@
     font-weight: bold;
 }
 
+.blured_alan{
+    font-family:sans-serif;
+    font-weight:bold;
+    -webkit-filter: blur(1px);
+   
+}
+
+.not_blured_alan{
+    -webkit-filter: none;
+    
+}

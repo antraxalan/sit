@@ -535,6 +535,7 @@
         <!-- <input class="cargar_html_venta_input" value="select IdArt ,IdCli ,Calibre ,Empaque ,Precio ,Caja ,Unidad, CajasCamion, CodMarca, DesArt from TEMPVENTA WHERE IdCli=100" /> -->
         <!-- <input class="cargar_html_venta_input" value="SELECT * FROM USUARIO where codigo = 1" /> -->
 
+        <!-- <button type="button" class="op_pop" data-theme="b">op_pop<span class="ui-li-count total_carrito_val">50.00 Bs</span></button> -->
 
         <div data-role="inlinetabs" data-content-theme="a" data-theme="a" data-mini="true" id="venta_tabs">
           <ul>
@@ -708,7 +709,7 @@
 
           <div data-role="popup" id="confirmar_venta_fchvto_popup" data-overlay-theme="a" data-theme="a"  style="max-width:800px;">
             <div data-role="header" data-theme="a">
-              <h1>Confirmar</h1>
+              <h1>Consolidar Pedido</h1>
             </div>
             <div role="main" class="ui-content">
               <p>Confirma el pedido por:</p>
@@ -1801,8 +1802,36 @@ $('.confirmar_venta_popup').click(function() {
 
 
 
+$(".list_carrito_venta").on('click','.btn_confirmar_ventas_global', function(event) {
+  var precio=$(this).find('.total_carrito_val').text();
+  var d = new Date();
+  var month = d.getMonth()+1;
+  var day = d.getDate();
+  var fecha_actual =((''+day).length<2 ? '0' : '') + day + '/' +((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
+  $('.precio_total_popup').html(precio);
+  $("#fchvto_total_popup").val(fecha_actual);
 
+  $("#confirmar_venta_fchvto_popup").popup( "open" );
+});
 
+$('.close_popup_fchvto').on('click', function() {
+  $("#confirmar_venta_fchvto_popup").popup("close");
+});
+
+$('.confirmar_venta_fchvto').on('click', function() {
+  var fecha_vto=$("#fchvto_total_popup").val();
+  if (fecha_vto==''){
+    alert("Por favor ingrese una fecha de vencimiento");
+  }else{
+
+    // $('#venta_tabs').removeClass("ui-disabled blured_alan"); 
+    localStorage.fecha_venta=fecha_vto;
+    $('#venta_tabs').addClass("ui-disabled blured_alan"); 
+    $("#confirmar_venta_fchvto_popup").popup("close"); 
+    cargar_cobranza_list(cli_id); 
+    alert("Pedido Consolidado");
+  }
+});
 
 
 
@@ -1815,16 +1844,16 @@ $('.confirmar_venta_popup').click(function() {
 
 
 
-$(".list_carrito_venta").on('click','.btn_confirmar_ventas_global', function(event) {
-  var month = d.getMonth()+1;
-  var day = d.getDate();
-  var fecha_actual =((''+day).length<2 ? '0' : '') + day + '/' +((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
+// $(".list_carrito_venta").on('click','.btn_confirmar_ventas_global', function(event) {
+//   var month = d.getMonth()+1;
+//   var day = d.getDate();
+//   var fecha_actual =((''+day).length<2 ? '0' : '') + day + '/' +((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
 
-  var cli_id=$(".cliente_id").val();
-  cargar_cobranza_list(cli_id);
-  $("#fchvto_total_popup").val(fecha_actual);
-  $("#confirmar_venta_fchvto_popup").popup( "close" );
-}); 
+//   var cli_id=$(".cliente_id").val();
+//   // cargar_cobranza_list(cli_id); 
+//   $("#fchvto_total_popup").val(fecha_actual);
+//   $("#confirmar_venta_fchvto_popup").popup( "open" );
+// }); 
 
 $('.confirmar_edicion_popup').click(function() {
 

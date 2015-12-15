@@ -134,6 +134,12 @@ function queryDB_cobranza_last_sale(tx) {
           if(total_venta==''|| total_venta==0 || total_venta==='undefined'){
             var a=1;
           }else{
+            var f_vto=localStorage.fecha_venta;
+            if(f_vto==0){
+              f_vto=fecha_actual;
+            }else{
+              f_vto=f_vto;
+            }
            lista_contenido+= '<li><a href="#">';
            lista_contenido+= '<img src="img/bs2.png" >';
            lista_contenido+= '<div class="ui-grid-c">';
@@ -142,12 +148,12 @@ function queryDB_cobranza_last_sale(tx) {
            lista_contenido+= '<div class="ui-block-c" align="center"><strong>Saldo</strong></div>';
            lista_contenido+= '<div class="ui-block-d" align="center"><strong>A Cobrar</strong></div>';
            lista_contenido+= '<div class="ui-block-a" align="center" ><p>'+fecha_actual+'</p></div>';
-           lista_contenido+= '<div class="ui-block-b" align="center" ><p>'+fecha_actual+'</p></div>';
+           lista_contenido+= '<div class="ui-block-b" align="center" ><p>'+f_vto+'</p></div>';
            lista_contenido+= '<div class="ui-block-c red" align="center" style="margin-top: 4px;"><strong>'+total_venta+' Bs.</strong></div>';
            lista_contenido+= '<div class="ui-block-d " align="center" ><p class="html_cobrado" marca-cobranza-html="1000'+id_cliente+'">0.00 Bs.</p></div>';
            lista_contenido+= '</div>';
            lista_contenido+= '</a>';
-           lista_contenido+= '<a href="#" class="editar_cobranza_class" data-rel="popup" nrodctom="1000'+id_cliente+'" saldo="'+total_venta+'" fecha="'+fecha_actual+'" fecha-venc="'+fecha_actual+'" cobrado="">SITRANS</a>';
+           lista_contenido+= '<a href="#" class="editar_cobranza_class" data-rel="popup" nrodctom="1000'+id_cliente+'" saldo="'+total_venta+'" fecha="'+fecha_actual+'" fecha-venc="'+f_vto+'" cobrado="">SITRANS</a>';
            lista_contenido+= '</li>';
          }
 
