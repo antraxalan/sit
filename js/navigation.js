@@ -118,6 +118,7 @@ function go_to_otro_usuario(){
 function limpiar_temp_v_table(){
     $('#venta_tabs').removeClass("ui-disabled blured_alan");
     localStorage.fecha_venta=0;
+    steps_clear();
     db.transaction(populateDB_TEMPVENTA, errorCB_cargar);
 } 
 
