@@ -31,6 +31,8 @@
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile.css" />
     <link rel="stylesheet" type="text/css" href="css/tablesaw.css" />
 
+    <link rel="stylesheet" type="text/css" href="css/steps.css" />
+
 
     <!-- <link rel="stylesheet" type="text/css" href="css/theme-classic.css"/> -->
     <!-- <link type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.min.css" rel="stylesheet" />   -->
@@ -45,6 +47,8 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery.mobile.js"></script>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    
+    <script type="text/javascript" src="js/steps.js"></script>
     
     <script type="text/javascript" src="js/db_crear.js"></script>
 
@@ -141,99 +145,22 @@
             <br><br>
             <!-- <button type="button" class="ui-btn ui-corner-all ui-shadow">Button</button> -->
           </div>
-          <style>
 
-            .progress {
-              width: 100%;
-              margin: 10px auto;
-              text-align: center;
-            }
-            .progress .circle,
-            .progress .bar {
-              display: inline-block;
-              background: #fff;
-              width: 40px; height: 40px;
-              border-radius: 40px;
-              border: 1px solid #d5d5da;
-            }
-            .progress .bar {
-              position: relative;
-              width: 80px;
-              height: 6px;
-              top: -33px;
-              margin-left: -5px;
-              margin-right: -5px;
-              border-left: none;
-              border-right: none;
-              border-radius: 0;
-            }
-            .progress .circle .label {
-              display: inline-block;
-              width: 32px;
-              height: 32px;
-              line-height: 32px;
-              border-radius: 32px;
-              margin-top: 3px;
-              color: #b5b5ba;
-              font-size: 17px;
-            }
-            .progress .circle .title {
-              color: #b5b5ba;
-              font-size: 13px;
-              line-height: 30px;
-              margin-left: -5px;
-            }
-
-            /* Done / Active */
-            .progress .bar.done,
-            .progress .circle.done {
-              background: #eee;
-            }
-            .progress .bar.active {
-              background: linear-gradient(to right, #EEE 40%, #FFF 60%);
-            }
-            .progress .circle.done .label {
-              color: #FFF;
-              background: #81CE97;
-              box-shadow: inset 0 0 2px rgba(0,0,0,.2);
-            }
-            .progress .circle.done .title {
-              color: #444;
-            }
-            .progress .circle.active .label {
-              color: #FFF;
-              background: #0c95be;
-              box-shadow: inset 0 0 2px rgba(0,0,0,.2);
-            }
-            .progress .circle.active .title {
-              color: #0c95be;
-            }
-          </style>
 
           <div class="progress">
-            <div class="circle done">
+            <div class="circle ">
               <span class="label">1</span>
-              <span class="title">0%</span>
+              <span class="title">Venta</span>
             </div>
-            <span class="bar done"></span>
-            <div class="circle done">
+            <span class="bar "></span>
+            <div class="circle ">
               <span class="label">2</span>
-              <span class="title">25%</span>
+              <span class="title">Cobranza</span>
             </div>
-            <span class="bar half"></span>
-            <div class="circle active">
+            <span class="bar "></span>
+            <div class="circle ">
               <span class="label">3</span>
-              <span class="title">50%</span>
-            </div>
-            <span class="bar"></span>
-            <div class="circle">
-              <span class="label">4</span>
-              <span class="title">75%</span>
-            </div>
-            <span class="bar"></span>
-            <div class="circle">
-              <span class="label">5</span>
-              <span class="title">100%</span>
+              <span class="title">Envases</span>
             </div>
           </div>
           
@@ -539,7 +466,7 @@
         <div class="menu_v_c_d">
           <ul data-role="listview" data-inset="true">
             <li class="cobranza_btn" style="display: none---;">
-              <a href="#venta">
+              <a href="#" class="registrar_v_c_d">
                 <img src="img/cart.png">
                 <div class="ui-grid-b">
                   <div class="ui-block-a"><h2 class="green">Agregar Productos</h2></div>
@@ -610,7 +537,23 @@
       <input type="hidden" class="cliente_id" />
       <label for="textarea" class="cliente_nombre">Id - Nombre del cliente</label>
     </div>
-
+    
+    <div class="progress">
+      <div class="circle ">
+        <span class="label">1</span>
+        <span class="title">0%</span>
+      </div>
+      <span class="bar "></span>
+      <div class="circle ">
+        <span class="label">2</span>
+        <span class="title">50%</span>
+      </div>
+      <span class="bar "></span>
+      <div class="circle ">
+        <span class="label">3</span>
+        <span class="title">100%</span>
+      </div>
+    </div>
     <!-- <button type="button" class="delete_item_500">delete_item_500</button>
     <button type="button" class="disable_500">disable_500</button>
     <button type="button" class="trigger_create_div">trigger_create_div</button>
@@ -885,7 +828,23 @@
       <input type="hidden" class="cliente_id" />
       <label for="textarea" class="cliente_nombre">Id - Nombre del cliente</label>
     </div>
-
+    
+    <div class="progress">
+      <div class="circle ">
+        <span class="label">1</span>
+        <span class="title">0%</span>
+      </div>
+      <span class="bar "></span>
+      <div class="circle ">
+        <span class="label">2</span>
+        <span class="title">50%</span>
+      </div>
+      <span class="bar "></span>
+      <div class="circle ">
+        <span class="label">3</span>
+        <span class="title">100%</span>
+      </div>
+    </div>
     <h4 class="mensaje_cobranza" align="center"></h4>
 
 
@@ -1197,6 +1156,23 @@
       <input type="hidden" class="cliente_id" />
       <label for="textarea" class="cliente_nombre">Id - Nombre del cliente</label>
     </div>
+    
+    <div class="progress">
+      <div class="circle ">
+        <span class="label">1</span>
+        <span class="title">0%</span>
+      </div>
+      <span class="bar "></span>
+      <div class="circle ">
+        <span class="label">2</span>
+        <span class="title">50%</span>
+      </div>
+      <span class="bar "></span>
+      <div class="circle ">
+        <span class="label">3</span>
+        <span class="title">100%</span>
+      </div>
+    </div>
 
     <h4 class="mensaje_deuda" align="center"></h4>
     <div class="articulo_deuda">
@@ -1396,31 +1372,15 @@
 
 // jQuery(document).ready(function() {
   $(document).on("pagecreate","#home",function(){
-    localStorage.steps=1;
+
 
     $('.prev_mod').on('click',function(){
-      localStorage.steps=1;
-      $('.progress .circle').removeClass().addClass('circle');
-      $('.progress .bar').removeClass().addClass('bar');
+      steps_clear();
     });
     
     $('.next_mod').on('click',function(){
-     var i = localStorage.steps;
-
-     $('.progress .circle:nth-of-type(' + i + ')').addClass('active');
-     $('.progress .circle:nth-of-type(' + (i - 1) + ')').removeClass('active').addClass('done');
-     $('.progress .circle:nth-of-type(' + (i - 1) + ') .label').html('&#10003;');
-     $('.progress .bar:nth-of-type(' + (i - 1) + ')').addClass('active');
-     $('.progress .bar:nth-of-type(' + (i - 2) + ')').removeClass('active').addClass('done');
-     i++;
-     if (i == 0) {
-      $('.progress .bar').removeClass().addClass('bar');
-      $('.progress div.circle').removeClass().addClass('circle');
-      i = 1;
-    }
-    alert(i);
-    localStorage.steps=i;
-  });
+     steps_next();
+   });
 
     // $(document).on("pageinit",function(){
       carga_db_crear();
@@ -1617,7 +1577,11 @@
       otroCliente();
     });
 
-
+    $('.registrar_v_c_d').on('click', function() {
+      steps_next();
+      window.location.href = "index.html#venta";
+    });
+    
 
     $('.guardar_cobranza').click(function() {
 
