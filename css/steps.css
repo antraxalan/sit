@@ -36,9 +36,10 @@
 }
 .progress .circle .title {
   color: #b5b5ba;
-  font-size: 13px;
+  font-size: 20px;
   line-height: 30px;
-  margin-left: -5px;
+  margin-left: -20px;
+  /*margin-right: 5px;*/
 }
 
 /* Done / Active */
