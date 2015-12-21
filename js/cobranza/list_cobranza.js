@@ -52,7 +52,7 @@ function queryDB_cobranza_last_sale(tx) {
           var fecha_actual =((''+day).length<2 ? '0' : '') + day + '/' +((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
 
           // lista_contenido='<button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">0.00 Bs.</span></button>';
-          lista_contenido='<button type="button" class="class_confirmaciones btn_confirmar_cobranza" data-theme="b">CONFIRMAR COBRO<span style="box-shadow:2px 2px 4px 1px gray inset;" class="ui-li-count total_cobranza_val ui-page-theme-a">0.00 Bs.</span></button>';
+          lista_contenido='<button type="button" class="class_confirmaciones btn_confirmar_cobranza" data-theme="b">CONFIRMAR COBRO<span style="box-shadow:-1px -1px 4px 1px gray inset;" class="ui-li-count total_cobranza_val ui-page-theme-a">0.00 Bs.</span></button>';
           lista_contenido+='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
           // alert(len);
           for (var i = 0; i < len; i++) { 
@@ -159,7 +159,7 @@ function queryDB_cobranza_last_sale(tx) {
             lista_contenido+= '<a href="#" class="editar_cobranza_class" data-rel="popup" nrodctom="1000'+id_cliente+'" saldo="'+total_venta+'" fecha="'+fecha_actual+'" fecha-venc="'+f_vto+'" cobrado="">SITRANS</a>';
             lista_contenido+= '</li>';
           }
-          lista_contenido+='<button type="button" class="class_confirmaciones btn_confirmar_cobranza" data-theme="b">CONFIRMAR COBRO<span style="box-shadow:2px 2px 4px 1px gray inset;" class="ui-li-count total_cobranza_val ui-page-theme-a">0.00 Bs.</span></button>';
+          lista_contenido+='<button type="button" class="class_confirmaciones btn_confirmar_cobranza" data-theme="b">CONFIRMAR COBRO<span style="box-shadow:-1px -1px 4px 1px gray inset;" class="ui-li-count total_cobranza_val ui-page-theme-a">0.00 Bs.</span></button>';
           lista_contenido +='</ul>';
           // lista_contenido +='<button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">0.00 Bs.</span></button>';
           $('.list_cobranza').html(lista_contenido);

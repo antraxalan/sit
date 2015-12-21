@@ -2114,10 +2114,11 @@ $(document).on("pageshow","#deuda",function(event){ // When entering pagetwo
 
 
 $( document ).on( "pagecreate", "#cobranza", function( event ) {
+
   $(".prev_cobranza").on('click', function(event) {
     // alert("dsads");
     // querySuccess_cobranza();
-    history.back();
+    exitCobranza();
   });
 
 
