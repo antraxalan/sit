@@ -2124,20 +2124,6 @@ $( document ).on( "pagecreate", "#cobranza", function( event ) {
     querySuccess_cobranza();
   });
 
-  $('.list_cobranza').on('change','html_cobrado', function( event ) {
-    alert("change");
-    var total=0;
-    var aux;
-    $(".html_cobrado").each(function(index, el) {
-      // total = $(this).attr('atribb');
-      // total = $(this).text();
-      aux = $(this).text();
-      aux = aux.split(" ");
-      total=(parseFloat(aux[0]))+total;
-      // alert(variable);
-    });
-    $('.total_cobranza_val').html(total.toFixed(2)+' Bs.');
-  });
 
   $(".show_cobranza").on('click', function(event) {
     var cli_id=$(".cliente_id").val();
@@ -2240,9 +2226,45 @@ $(".confirmar_cobranza_popup").on('click', function(event) {
     var auxi= $('.list_cobranza').find('a[nrodctom="'+documenton+'"]').attr('cobrado',cobrar);
 
   $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+documenton+"']").html(cobrar+' Bs.');
+
+
+  var total=0;
+  var aux;
+  $(".html_cobrado").each(function(index, el) {
+    alert("each");
+      // total = $(this).attr('atribb');
+      // total = $(this).text();
+      aux = $(this).text();
+      aux = aux.split(" ");
+      total=(parseFloat(aux[0]))+total;
+      // alert(variable);
+    });
+  $('.total_cobranza_val').html(total.toFixed(2)+' Bs.');
+
+
+
+
   $("#add_cobranza_popup").popup( "close" );
   // $("#w3s").attr("cobrado", "");
+
 });
+
+
+// $('.list_cobranza').on('change','html_cobrado', function( event ) {
+//   alert("change");
+//   var total=0;
+//   var aux;
+//   $(".html_cobrado").each(function(index, el) {
+//       // total = $(this).attr('atribb');
+//       // total = $(this).text();
+//       aux = $(this).text();
+//       aux = aux.split(" ");
+//       total=(parseFloat(aux[0]))+total;
+//       // alert(variable);
+//     });
+//   $('.total_cobranza_val').html(total.toFixed(2)+' Bs.');
+// });
+
 
 });
 
