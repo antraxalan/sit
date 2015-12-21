@@ -1947,7 +1947,7 @@ $(".list_carrito_venta").on('click','.btn_confirmar_ventas_global', function(eve
   var fecha_actual =((''+day).length<2 ? '0' : '') + day + '/' +((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
   $('.precio_total_popup').html('<strong>'+precio+'</strong>');
   $("#fchvto_total_popup").val(fecha_actual);
-  if(precio=='0.00 Bs'){
+  if(precio=='0.00 Bs.'){
     alert("No tiene productos agregados para Confirmar este Pedido.");
   }else{
     $("#confirmar_venta_fchvto_popup").popup("open");
@@ -2124,6 +2124,20 @@ $( document ).on( "pagecreate", "#cobranza", function( event ) {
     querySuccess_cobranza();
   });
 
+  $('.list_cobranza').on('change','html_cobrado', function( event ) {
+    alert("change");
+    var total=0;
+    var aux;
+    $(".html_cobrado").each(function(index, el) {
+      // total = $(this).attr('atribb');
+      // total = $(this).text();
+      aux = $(this).text();
+      aux = aux.split(" ");
+      total=(parseFloat(aux[0]))+total;
+      // alert(variable);
+    });
+    $('.total_cobranza_val').html(total.toFixed(2)+' Bs.');
+  });
 
   $(".show_cobranza").on('click', function(event) {
     var cli_id=$(".cliente_id").val();
