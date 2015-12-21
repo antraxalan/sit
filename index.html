@@ -1600,7 +1600,6 @@
     });
 
     $('.registrar_v_c_d').on('click', function() {
-      steps_next();
       window.location.href = "index.html#venta";
     });
     
@@ -2052,7 +2051,11 @@ $(".close_popup_vacio").on('click', function(event) {
 });
 
 $(".confirmar_venta_vacio").on('click', function(event) {
+  var cli_id=$(".cliente_id").val();
   limpiar_temp_v_table();
+  cargar_listas(cli_id);
+  cargar_cobranza_list(cli_id);
+  cargar_info_cliente_html(cli_id);
   window.location.href = "index.html#cobranza";
 });
 
