@@ -13,7 +13,7 @@ var id_cliente;
           var aux;
           var disabled;
           var precio_total=0;
-          lista_contenido='<button type="button" class="btn_confirmar_ventas_global" data-theme="b">CONFIRMAR PEDIDO<span class="ui-li-count total_carrito_val">0 Bs</span></button>';
+          lista_contenido='<button type="button" class="class_confirmaciones btn_confirmar_ventas_global" data-theme="b">CONFIRMAR PEDIDO<span class="ui-li-count total_carrito_val">0 Bs</span></button>';
           lista_contenido+='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
           for (var i = 0; i < len; i++) {
             var co_ma= results.rows.item(i).CodMarca;
@@ -54,7 +54,7 @@ var id_cliente;
             lista_contenido +='<a href="#add_venta_popup" '+disabled+' class="add_venta_popup_class_old" data-rel="popup" codigo-venta="'+results.rows.item(i).IdArt+'" last-price="'+results.rows.item(i).Precio+'" cajas-camion="'+results.rows.item(i).CajasCamion+'" calibre="'+results.rows.item(i).Calibre+'" cant-empaque="'+results.rows.item(i).Empaque+'"  caj-adq="'+results.rows.item(i).Caja+'" uni-adq="'+results.rows.item(i).Unidad+'">Historial</a></li>';
           }
           lista_contenido +='</ul>';
-          lista_contenido +='<button type="button" class="btn_confirmar_ventas_global" data-theme="b">CONFIRMAR PEDIDO<span class="ui-li-count total_carrito_val">0 Bs</span></button>';
+          lista_contenido +='<button type="button" class="class_confirmaciones btn_confirmar_ventas_global" data-theme="b">CONFIRMAR PEDIDO<span class="ui-li-count total_carrito_val">0 Bs</span></button>';
           $('.list_carrito_venta').html(lista_contenido);
           $(".list_carrito_venta").trigger("create");
           precio_total=precio_total.toFixed(2)+' Bs';

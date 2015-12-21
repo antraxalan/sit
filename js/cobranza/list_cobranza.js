@@ -52,7 +52,8 @@ function queryDB_cobranza_last_sale(tx) {
           var fecha_actual =((''+day).length<2 ? '0' : '') + day + '/' +((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
 
           // lista_contenido='<button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">0 Bs</span></button>';
-          lista_contenido='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
+          lista_contenido='<button type="button" class="class_confirmaciones btn_confirmar_cobranza" data-theme="b">CONFIRMAR COBRO<span class="ui-li-count total_cobranza_val">0 Bs</span></button>';
+          lista_contenido+='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
           // alert(len);
           for (var i = 0; i < len; i++) { 
             fch = results.rows.item(i).Fecha;
@@ -158,7 +159,7 @@ function queryDB_cobranza_last_sale(tx) {
             lista_contenido+= '<a href="#" class="editar_cobranza_class" data-rel="popup" nrodctom="1000'+id_cliente+'" saldo="'+total_venta+'" fecha="'+fecha_actual+'" fecha-venc="'+f_vto+'" cobrado="">SITRANS</a>';
             lista_contenido+= '</li>';
           }
-
+          lista_contenido+='<button type="button" class="class_confirmaciones btn_confirmar_cobranza" data-theme="b">CONFIRMAR COBRO<span class="ui-li-count total_cobranza_val">0 Bs</span></button>';
           lista_contenido +='</ul>';
           // lista_contenido +='<button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">0 Bs</span></button>';
           $('.list_cobranza').html(lista_contenido);

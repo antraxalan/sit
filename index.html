@@ -771,6 +771,28 @@
               </div>
             </div>
           </div>
+<!-- btn_confirmar_ventas_vacia -->
+
+          <div data-role="popup" id="confirmar_venta_vacia" data-overlay-theme="a" data-theme="a"  style="max-width:800px;">
+            <div data-role="header" data-theme="a">
+              <h1>Confirmar Sin Pedido</h1>
+            </div>
+            <div role="main" class="ui-content">
+              <p>Usted no podra agregar productos mas adelante.</p>
+              
+              <p>Desea continuar sin realizar pedido alguno?</p>
+              
+               <p>__________________________________________</p>
+              <div class="ui-grid-a">
+                <div class="ui-block-a">
+                  <button type="button" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a close_popup_vacio">Cancelar</button>
+                </div>
+                <div class="ui-block-b">
+                  <button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_venta_vacio">Confirmar</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
 
@@ -1956,12 +1978,6 @@ $('.confirmar_venta_fchvto').on('click', function() {
 
 
 
-// precio_total_popup
-// fchvto_total_popup
-// close_popup_fchvto
-// confirmar_venta_fchvto
-
-
 
 // $(".list_carrito_venta").on('click','.btn_confirmar_ventas_global', function(event) {
 //   var month = d.getMonth()+1;
@@ -2029,6 +2045,24 @@ $('.eliminar_del_carrito').click(function() {
   $.mobile.switchPopup($("#add_venta_popup"), $("#confirmacion_eliminar"), function(){});
 });
 
+// btn_confirmar_ventas_vacia
+// close_popup_vacio
+// confirmar_venta_vacio
+
+$(".close_popup_vacio").on('click', function(event) {
+  $("#confirmar_venta_vacia").popup("close");
+  
+});
+
+$(".confirmar_venta_vacio").on('click', function(event) {
+  alert("Cofirmada");
+  window.location.href = "index.html#cobranza";
+  $("#confirmar_venta_vacia").popup("close");
+});
+
+$(".list_old_venta").on('click','.btn_confirmar_ventas_vacia', function(event) {
+  $("#confirmar_venta_vacia").popup("open");
+});
 
 $('.eliminar_confirmada').click(function() {
   var save_art_id=$("#old_id_venta").val();
@@ -2040,7 +2074,7 @@ $('.eliminar_confirmada').click(function() {
 });
 
 $(".close_popup_confirm").on('click', function(event) {
-  $("#confirmacion_eliminar").popup( "close" );
+  $("#confirmacion_eliminar").popup("close");
 });
 
 // $(".cargar_html_venta").on('click', function(event) {
