@@ -2051,13 +2051,13 @@ $('.eliminar_del_carrito').click(function() {
 
 $(".close_popup_vacio").on('click', function(event) {
   $("#confirmar_venta_vacia").popup("close");
-  
+  window.location.href = "index.html#cobranza";
 });
 
 $(".confirmar_venta_vacio").on('click', function(event) {
-  alert("Cofirmada");
+  // alert("Cofirmada");
   window.location.href = "index.html#cobranza";
-  $("#confirmar_venta_vacia").popup("close");
+  // $("#confirmar_venta_vacia").popup("close");
 });
 
 $(".list_old_venta").on('click','.btn_confirmar_ventas_vacia', function(event) {
