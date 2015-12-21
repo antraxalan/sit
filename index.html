@@ -771,7 +771,7 @@
               </div>
             </div>
           </div>
-<!-- btn_confirmar_ventas_vacia -->
+          <!-- btn_confirmar_ventas_vacia -->
 
           <div data-role="popup" id="confirmar_venta_vacia" data-overlay-theme="a" data-theme="a"  style="max-width:800px;">
             <div data-role="header" data-theme="a">
@@ -782,7 +782,7 @@
               
               <p>Desea continuar sin realizar pedido alguno?</p>
               
-               <p>__________________________________________</p>
+              <p>__________________________________________</p>
               <div class="ui-grid-a">
                 <div class="ui-block-a">
                   <button type="button" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a close_popup_vacio">Cancelar</button>
@@ -942,7 +942,7 @@
 
 
 
-
+  <button type="button" class="prueba_cobranza">Lista</button>
 
 
 
@@ -1967,10 +1967,12 @@ $('.confirmar_venta_fchvto').on('click', function() {
     // $('#venta_tabs').removeClass("ui-disabled blured_alan"); 
     localStorage.fecha_venta=fecha_vto;
     var cli_id=$(".cliente_id").val();
-    $('#venta_tabs').addClass("ui-disabled blured_alan"); 
-    $("#confirmar_venta_fchvto_popup").popup("close"); 
+    // $('#venta_tabs').addClass("ui-disabled blured_alan"); 
+    // $("#confirmar_venta_fchvto_popup").popup("close"); 
     cargar_cobranza_list(cli_id); 
-    alert("Pedido Consolidado");
+    // alert("Pedido Consolidado");
+    window.location.href = "index.html#cobranza";
+
   }
 });
 
@@ -2049,15 +2051,13 @@ $('.eliminar_del_carrito').click(function() {
 // close_popup_vacio
 // confirmar_venta_vacio
 
+
 $(".close_popup_vacio").on('click', function(event) {
   $("#confirmar_venta_vacia").popup("close");
-  window.location.href = "index.html#cobranza";
 });
 
 $(".confirmar_venta_vacio").on('click', function(event) {
-  // alert("Cofirmada");
   window.location.href = "index.html#cobranza";
-  // $("#confirmar_venta_vacia").popup("close");
 });
 
 $(".list_old_venta").on('click','.btn_confirmar_ventas_vacia', function(event) {
@@ -2095,7 +2095,20 @@ $(".close_popup_confirm").on('click', function(event) {
 
 
 $(document).on("pageshow","#venta",function(event){ // When entering pagetwo
+  steps_clear();
+  steps_next();
   $('#venta_tabs').inlinetabs('show', '1');
+});
+$(document).on("pageshow","#cobranza",function(event){ // When entering pagetwo
+  steps_clear();
+  steps_next();
+  steps_next();
+});
+$(document).on("pageshow","#deuda",function(event){ // When entering pagetwo
+  steps_clear();
+  steps_next();
+  steps_next();
+  steps_next();
 });
 
 
@@ -2106,6 +2119,10 @@ $(document).on("pageshow","#venta",function(event){ // When entering pagetwo
 
 
 $( document ).on( "pagecreate", "#cobranza", function( event ) {
+  $(".prueba_cobranza").on('click', function(event) {
+    // alert("dsads");
+    querySuccess_cobranza();
+  });
 
 
   $(".show_cobranza").on('click', function(event) {

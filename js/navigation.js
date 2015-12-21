@@ -42,7 +42,8 @@ document.addEventListener("backbutton", function(e){
         otroCliente();
         break; 
         case 'cobranza':
-        window.location.href = "index.html#venta";
+        exitCobranza();
+        // window.location.href = "index.html#venta";
         break; 
         case 'deuda':
         window.location.href = "index.html#cobranza";
@@ -66,8 +67,6 @@ function exitAppPopup() {
         "Confirmación", 
         "Si,No"
         ); 
-    // alert("Outside Notification"); 
-    //return false;
 };
 function otroCliente() {
     navigator.notification.vibrate(50);
@@ -79,10 +78,18 @@ function otroCliente() {
         "Confirmación", 
         "Si,No"
         ); 
-    // alert("Outside Notification"); 
-    //return false;
 };
-
+function exitCobranza() {
+    navigator.notification.vibrate(200);
+    navigator.notification.confirm(
+        "Podria perder todos los cambios realizados, desea volver a Venta?", 
+        function(buttonIndex){
+            ConfirmExitCobranza(buttonIndex);
+        }, 
+        "Ir a Venta", 
+        "Si,No"
+        ); 
+};
 function ConfirmExit(stat){
     // alert("Inside ConfirmExit");
     if(stat == "1"){
@@ -98,6 +105,16 @@ function ConfirmCliente(stat){
     if(stat == "1"){
         // alert("exit app fn");
         go_to_otro_usuario();
+    }else{
+        return;
+    };
+};
+
+function ConfirmExitCobranza(stat){
+    // alert("Inside ConfirmExit");
+    if(stat == "1"){
+        // alert("exit app fn");
+        window.location.href = "index.html#venta";
     }else{
         return;
     };
