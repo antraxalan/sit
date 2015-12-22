@@ -105,15 +105,27 @@
 .not_blured_alan{
     -webkit-filter: none; 
 }
-@media screen and (orientation: portrait) {
-    .tab_content {
-        /*min-height: 375px;*/
-        background-color: yellow;
-    }
+
+.tab_content {
+    /*min-height: 850px;*/
+    background-color: yellow;
 }
-@media screen and (orientation: landscape) {
+@media only screen and (min-width: 420px) {
     .tab_content {
         /*min-height: 375px;*/
         background-color: red;
     }
 }
+
+
+
+/*@media screen and (orientation: portrait) {
+    .tab_content {
+        background-color: yellow;
+    }
+}
+@media screen and (orientation: landscape) {
+    .tab_content {
+      background-color: red;
+    }
+}*/
