@@ -85,12 +85,12 @@
 
 .tab_content {
     min-height: 850px;
-    /*background-color: yellow;*/
+    background-color: yellow;
 }
 @media only screen and (min-width: 1200px) {
     .tab_content {
         min-height: 375px;
-        /*background-color: red;*/
+        background-color: red;
     }
 }
 .estilo_sub_total {

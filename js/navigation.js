@@ -136,7 +136,7 @@ function limpiar_temp_v_table(){
     $('#venta_tabs').removeClass("ui-disabled blured_alan");
     localStorage.fecha_venta=0;
     db.transaction(populateDB_TEMPVENTA, errorCB_cargar);
-} 
+}
 
 function populateDB_TEMPVENTA(tx) {
     localStorage.art='[]';
