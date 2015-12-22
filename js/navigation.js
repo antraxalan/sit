@@ -90,6 +90,17 @@ function exitCobranza() {
         "Si,No"
         ); 
 };
+function Cobranza_to_Deuda() {
+    navigator.notification.vibrate(200);
+    navigator.notification.confirm(
+        "Ya realizo todos los cambios necesarios en Cobranza?", 
+        function(buttonIndex){
+            ConfirmCobranza_to_Deuda(buttonIndex);
+        }, 
+        "Ir a Envases", 
+        "Si,No"
+        ); 
+};
 function ConfirmExit(stat){
     // alert("Inside ConfirmExit");
     if(stat == "1"){
@@ -115,6 +126,15 @@ function ConfirmExitCobranza(stat){
     if(stat == "1"){
         // alert("exit app fn");
         window.location.href = "index.html#venta";
+    }else{
+        return;
+    };
+};
+function ConfirmCobranza_to_Deuda(stat){
+    // alert("Inside ConfirmExit");
+    if(stat == "1"){
+        // alert("exit app fn");
+        window.location.href = "index.html#deuda";
     }else{
         return;
     };

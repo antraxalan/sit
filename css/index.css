@@ -111,11 +111,19 @@
     /*background-color: yellow;*/
     margin-top:-50px !important;
 }
+.btn_next_style {
+    margin-top:-40px !important;
+    float: right !important;
+}
 @media only screen and (max-width: 420px) {
     .btn_prev_style {
         /*color: red !important;*/
         margin-top: 30px !important;
         /*background-color: red;*/
+    }
+    .btn_next_style {
+        margin-top: 30px !important;
+        float: right !important;
     }
 }
 

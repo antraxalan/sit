@@ -862,7 +862,8 @@
         <span class="title">Envases</span>
       </div>
     </div>
-    <button type="button" data-icon="arrow-l" class="btn_prev_style prev_cobranza" data-inline="true">Venta</button>
+    <button type="button" data-icon="arrow-l" class="btn_prev_style prev_cobranza" data-inline="true">&nbsp&nbspVenta&nbsp&nbsp</button>
+    <button type="button" data-icon="arrow-r" class="btn_next_style next_cobranza" data-iconpos="right" data-inline="true">Envases</button>
     <br>
 
     <div class="ui-field-contain">
@@ -2123,6 +2124,11 @@ $( document ).on( "pagecreate", "#cobranza", function( event ) {
     // alert("dsads");
     // querySuccess_cobranza();
     exitCobranza();
+  });
+  $(".next_cobranza").on('click', function(event) {
+    // alert("dsads");
+    // querySuccess_cobranza();
+    Cobranza_to_Deuda();
   });
 
 
