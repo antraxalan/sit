@@ -24,7 +24,11 @@
     <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" />
-    <preference name="AndroidLaunchMode" value="singleInstance" />
+
+    <gap:config-file platform="android" parent="/manifest/application">
+        <activity android:launchMode="singleTop" />
+    </gap:config-file>
+
     <gap:plugin name="org.apache.cordova.battery-status" />
     <gap:plugin name="org.apache.cordova.camera" />
     <gap:plugin name="org.apache.cordova.media-capture" />
