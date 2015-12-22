@@ -85,12 +85,12 @@
 
 .tab_content {
     min-height: 850px;
-    background-color: yellow;
+    /*background-color: yellow;*/
 }
 @media only screen and (min-width: 1200px) {
     .tab_content {
         min-height: 375px;
-        background-color: red;
+        /*background-color: red;*/
     }
 }
 .estilo_sub_total {
@@ -104,4 +104,16 @@
 
 .not_blured_alan{
     -webkit-filter: none; 
+}
+@media screen and (orientation: portrait) {
+    .tab_content {
+        /*min-height: 375px;*/
+        background-color: yellow;
+    }
+}
+@media screen and (orientation: landscape) {
+    .tab_content {
+        /*min-height: 375px;*/
+        background-color: red;
+    }
 }
