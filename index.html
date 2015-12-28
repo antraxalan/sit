@@ -775,7 +775,7 @@
 
           <div data-role="popup" id="confirmar_venta_vacia" data-overlay-theme="a" data-theme="a"  style="max-width:800px;">
             <div data-role="header" data-theme="a">
-            <h1>Sin Pedido</h1>
+              <h1>Sin Pedido</h1>
             </div>
             <div role="main" class="ui-content">
               <p>Usted no podra agregar productos mas adelante.</p>
@@ -875,101 +875,8 @@
     <h4 class="mensaje_cobranza" align="center"></h4>
 
 
-
-
-<!-- 
-    <div class="articulo_cobranza">
-
-      <div class="ui-content" role="main">
-
-        <form class="ui">
-
-
-          <div data-role="fieldcontain" class="ui-field-contain ui-body ui-bar-a ui-corner-all">
-            Ingreso:
-            <div data-role="fieldcontain" class="ui-field-contain"data-demo-html="true">               
-
-              <label for="date">Fecha:</label>
-              <input date
-               id="fecha_cobranza" disabled="disabled"/>
-            </div> 
-            <div class="ui-field-contain">
-              <label for="textarea">Numero de factura:</label>
-              <input type="text" name="precio" id="nro_factura" value="" data-clear-btn="true"/>
-            </div>
-
-            <div data-role="fieldcontain" class="ui-field-contain">
-              <fieldset data-role="controlgroup" data-type="horizontal">
-                <legend>Cobro:</legend>
-                <label for="parcial_cobranza">Parcial</label>
-                <input type="radio" name="cobranza_monto" id="parcial_cobranza" value="parcial_cobranza" checked="checked">
-                <label for="total_cobranza">Total</label>
-                <input type="radio" name="cobranza_monto" id="total_cobranza" value="total_cobranza">
-              </fieldset>
-            </div>
-
-            <div class="ui-grid-a">
-              <div class="ui-block-a">
-                <div class="ui-field-contain">
-                  <label for="textarea">Saldo:</label>
-                  <input type="text" name="Ingreso" id="saldo_cobranza"  value="590" data-clear-btn="true" disabled="disabled"/>
-                </div>
-              </div>
-              <div class="ui-block-b">
-                <div class="ui-field-contain">
-                  <label for="textarea">A Cobrar:</label>
-                  <input type="text" name="Ingreso" id="a_cobrar_cobranza" value="" data-clear-btn="true"/>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="ui-field-contain">
-            <br>
-            <button type="button" class="ui-btn ui-icon-minus ui-btn-icon-right ui-shadow ui-btn-a ui-corner-all cancelar_cobranza">Cancelar</button>
-            <br>
-            <button type="button" class="ui-btn ui-icon-shop ui-btn-icon-right ui-shadow ui-btn-b ui-corner-all guardar_cobranza">Confirmar Cobranza</button>
-            <br>
-            <hr>
-          </div>
-        </form>
-      </div>
-
-    </div> 
-  -->
-
-
-
-
-  <!-- Finaliza agregar -->
-
-    <!-- <div class="ui-grid-b">
-     <div class="ui-block-a"></div>
-     <div class="ui-block-b"><img src="img/5bs.png" height="100" width="100"/></div>
-     <div class="ui-block-c"><button type="button" class="show_cobranza big_button" data-icon="plus">Agregar</button></div>
-   </div> -->
-
-   <div class="list_cobranza">
+    <div class="list_cobranza">
      <ul data-role="listview" data-split-icon="edit" data-inset="true">
-
-      <!-- <li>
-        <a href="#">
-          <img src="img/bs.png" style="margin-top:12px; margin-left:10px">
-          <div class="ui-grid-c">
-            <div class="ui-block-a" align="center"><p style="margin-top: 3px;">Fecha de Emisión: </p></div>
-            <div class="ui-block-b" align="center"><p style="margin-top: 3px;">Fecha de Vencimiento: </p></div>
-            <div class="ui-block-c" align="center"><strong>Saldo</strong></div>
-            <div class="ui-block-d" align="center"><strong>A Cobrar:</strong></div>
-
-            <div class="ui-block-a" align="center" style="margin-top: 15px;  "><p>17/02/2015</p></div>
-            <div class="ui-block-b" align="center" style="margin-top: 15px;"><p>17/02/2015</p></div>
-            <div class="ui-block-c red" align="center" style="margin-top: 17px;"><strong>50.1 Bs</strong></div>
-            <div class="ui-block-d red"><input/></div>
-          </div>
-        </a>
-        <a href="#add_cobranza_popup" class="editar_cobranza_class" data-rel="popup" codigo-venta="1" >SITRANS</a>
-      </li> -->
 
       <li>
         <a href="#">
@@ -1071,7 +978,6 @@
     <!-- <p class="add_popup_prod">...</p> -->
 
     <input id="cob_nrodctom"  type="hidden" placeholder="cob_nrodctom">
-    <!-- <input id="cob_saldo"     type="hidden" placeholder="cob_saldo"> -->
     <input id="cob_fecha"     type="hidden" placeholder="cob_fecha">
     <input id="cob_venc"      type="hidden" placeholder="cob_venc">
 
@@ -1094,27 +1000,8 @@
       <div class="ui-block-b">
         <input name="cob_cobranza" id="cob_cobrar" class="precio_input_cob" data-clear-btn="true"/>
       </div>
-      <!-- <div class="ui-block-a"></div>
-      <div class="ui-block-b">
-        <a href="#" style="height:10px; width:30px;" class="cambio_signo" data-role="button" data-mini="true"><img src="img/sign.png" style="margin-top:-9px; margin-left:-9px;"></a>
-      </div> -->
     </div>
-
-   <!--  <div data-role="fieldcontain" class="ui-field-contain">               
-      <label for="precio_popup">Precio:</label>
-      <input name="precio_popup" id="precio_popup" class="precio_input" data-clear-btn="true"/>
-    </div>  -->
-
-    <!-- <div data-role="fieldcontain" class="ui-field-contain">               
-      <label for="sub_total"><strong>Sub-Total:</strong></label>
-      <input name="precio_popup" id="sub_total" class="estilo_sub_total"/>
-    </div> -->
-
-
     <p>__________________________________________</p>
-
-
-
     <div class="ui-grid-b">
       <div class="ui-block-a">
         <button type="button" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a cobranza_close_popup">Cancelar</button>
@@ -1589,7 +1476,7 @@
     $('.mensaje').hide();
     $('.articulo').hide();
     $(".articulo_cobranza").hide();
-    $(".articulo_deuda").hide();
+
     $(".vencimiento").hide();
 
     $('.inicio').click(function() {
@@ -1605,21 +1492,7 @@
     });
     
 
-    $('.guardar_cobranza').click(function() {
 
-     // $(".articulo_cobranza").hide(300);
-     // $('.mensaje_cobranza').html("<div style='color:green;'>COBRADO</div>");
-     // $('.mensaje_cobranza').show(300);
-     // setTimeout(function(){ $('.mensaje_cobranza').hide(300); $('.mensaje_cobranza').html(""); }, 3000);
-   }); 
-
-    $('.guardar_deuda').click(function() {
-
-     // $(".articulo_deuda").hide(300);
-     // $('.mensaje_deuda').html("<div style='color:green;'>COBRADO</div>");
-     // $('.mensaje_deuda').show(300);
-     // setTimeout(function(){ $('.mensaje_deuda').hide(300); $('.mensaje_deuda').html(""); }, 3000);
-   });  
 
 
 
@@ -1743,7 +1616,7 @@ $( document ).on( "pagecreate", "#venta", function( event ) {
     $("#prest_popup").prop("checked",false).checkboxradio("refresh");
 
     if($.inArray( cod, arr_carr )>-1) {
-      alert('Este producto ya fue agregado a la compra. Verifique en la pestaña "Confirmar".');
+      alert('Este producto ya fue agregado a la compra. Verifique en la pestaña "Carrito".');
     }else{
       $("#add_venta_popup").popup( "open" );
     }
