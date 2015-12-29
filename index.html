@@ -704,7 +704,7 @@
               </fieldset>
 
 
-              <p>__________________________________________</p>
+              <hr>
 
 
 
@@ -735,7 +735,7 @@
               <p class="add_popup_prod">...</p>
               <p>Va a ser eliminado del carrito de compras. <br></br><strong>Desea eliminarlo?</strong></p>
               
-              <p>__________________________________________</p>
+              <hr>
               <div class="ui-grid-a">
                 <div class="ui-block-a">
                   <button type="button" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a close_popup_confirm">Cancelar</button>
@@ -760,7 +760,7 @@
               
               <input id="fchvto_total_popup" type="date" data-role="date" date-format="dd-mm-yyyy"/>
               
-              <p>__________________________________________</p>
+              <hr>
               <div class="ui-grid-a">
                 <div class="ui-block-a">
                   <button type="button" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a close_popup_fchvto">Cancelar</button>
@@ -782,7 +782,7 @@
               
               <p>Desea continuar sin adquirir productos?</p>
               
-              <p>__________________________________________</p>
+              <hr>
               <div class="ui-grid-a">
                 <div class="ui-block-a">
                   <button type="button" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a close_popup_vacio">Cancelar</button>
@@ -1001,7 +1001,7 @@
         <input name="cob_cobranza" id="cob_cobrar" class="precio_input_cob" data-clear-btn="true"/>
       </div>
     </div>
-    <p>__________________________________________</p>
+    <hr>
     <div class="ui-grid-b">
       <div class="ui-block-a">
         <button type="button" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a cobranza_close_popup">Cancelar</button>
@@ -1085,7 +1085,7 @@
     
 
     <h4 class="mensaje_deuda" align="center"></h4>
-    <div class="articulo_deuda">
+    <div class="articulo_deuda" style="display:none;">
 
       <div class="ui-content" role="main">
 
@@ -1136,9 +1136,6 @@
                 </div>
               </div>
             </div>
-
-            
-
           </div>
 
 
@@ -1244,6 +1241,174 @@
 
 
 </div>
+
+
+
+
+
+
+<div data-role="popup" id="add_deuda_popup" data-overlay-theme="a" data-theme="a"  style="max-width:800px;">
+  <div data-role="header" data-theme="a">
+    <h1>Envases</h1>
+  </div>
+  <div role="main" class="ui-content">
+    <!-- <p class="add_popup_prod">...</p> -->
+
+    <input id="deu_nrodctom"  type="hidden" placeholder="deu_nrodctom">
+    <input id="deu_fecha"     type="hidden" placeholder="deu_fecha">
+    <input id="deu_venc"      type="hidden" placeholder="deu_venc">
+    <input id="deu_cod_art"   type="hidden" placeholder="deu_cod_art">
+
+<!-- 
+    <fieldset data-role="controlgroup" data-type="horizontal">
+      <legend>Tipo:</legend>
+      <label for="parcial_popup">Parcial</label>
+      <input type="radio" name="contado" id="parcial_popup" value="parcial_popup" checked="checked" data-clear-btn="true"/>
+      <label for="total_popup">Total</label>
+      <input type="radio" name="contado" id="total_popup" value="total_popup" data-clear-btn="true"/>
+    </fieldset>
+    <br>
+    <legend><strong>Monto a cancelar:</strong></legend> -->
+
+
+<!--     <div class="ui-grid-a">
+      <div class="ui-block-a"><p class="ui-disables">Saldo: </p></div>
+      <div class="ui-block-b"><p>A Cobrar: </p></div>
+      <div class="ui-block-a">
+        <input name="cajas" id="cob_saldo" type="number" class="ui-field-contain" data-clear-btn="true"/>
+      </div>
+      <div class="ui-block-b">
+        <input name="cob_cobranza" id="cob_cobrar" class="precio_input_cob" data-clear-btn="true"/>
+      </div>
+    </div> -->
+    <div class ="cajas_option">
+
+      <fieldset data-role="controlgroup" data-type="horizontal">
+        <legend>Tipo:</legend>
+        <label for="solo_cajas">Solo Cajas</label>
+        <input type="radio" name="cajas_cuadro_opciones" id="solo_cajas" value="solo_cajas" checked="checked" data-clear-btn="true"/>
+        <label for="con_botellas">Con Botellas</label>
+        <input type="radio" name="cajas_cuadro_opciones" id="con_botellas" value="con_botellas" data-clear-btn="true"/>
+      </fieldset>
+
+    </div>
+
+
+    <div data-role="fieldcontain" class="ui-field-contain ui-body  ui-corner-all">
+
+      <div class="cajas_option">
+       <text class="add_popup_prod">4029 - CAJA PLAST.PACEÐA 12 BOT.</text>
+       <div class="ui-grid-a">
+        <div class="ui-block-a">
+          <div class="ui-field-contain">
+            <label for="textarea">Saldo Cajas:</label>
+            <input type="number" id="saldo_deuda"  value="20" />
+          </div>
+        </div>
+        <div class="ui-block-b">
+          <div class="ui-field-contain">
+            <label for="textarea">A Cobrar:</label>
+            <input type="number" id="a_cobrar_deuda" value="" data-clear-btn="true"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="botellas_option ui-bar-a">
+      <text class="add_popup_prod" style="font-weight: normal;">3020 - BOTELLA 620 CC.</text>
+      <div class="ui-grid-a">
+        <div class="ui-block-a">
+          <div class="ui-field-contain">
+            <label for="textarea">Saldo Botellas:</label>
+            <input type="number" id="saldo_deuda"  value="2"  />
+          </div>
+        </div>
+        <div class="ui-block-b">
+          <div class="ui-field-contain">
+            <label for="textarea">A Cobrar:</label>
+            <input type="number" id="a_cobrar_deuda" value="" data-clear-btn="true"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <hr>
+  <div class="ui-grid-b">
+    <div class="ui-block-a">
+      <button type="button" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a deuda_close_popup">Cancelar</button>
+    </div>
+    <div class="ui-block-b">
+      <!-- <button type="button" style="background-color: #F01111;" class="ui-btn ui-icon-alert ui-btn-icon-right ui-corner-all ui-shadow ui-btn-b eliminar_del_carrito">Eliminar</button> -->
+    </div>
+    <div class="ui-block-c">
+      <button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_deuda_popup">Confirmar</button>
+      <!-- <button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_edicion_popup">Confirmar E</button> -->
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<div data-role="popup" id="prueba_popup" data-overlay-theme="a" data-theme="a"  style="max-width:800px;">
+  <div data-role="header" data-theme="a">
+    <h1>Cobranza</h1>
+  </div>
+  <div role="main" class="ui-content">
+    <!-- <p class="add_popup_prod">...</p> -->
+
+    <input id="cob_nrodctom"  type="hidden" placeholder="cob_nrodctom">
+    <input id="cob_fecha"     type="hidden" placeholder="cob_fecha">
+    <input id="cob_venc"      type="hidden" placeholder="cob_venc">
+
+
+    <fieldset data-role="controlgroup" data-type="horizontal">
+      <legend>Tipo:</legend>
+      <label for="parcial_popup">Parcial</label>
+      <input type="radio" name="contado" id="parcial_popup" value="parcial_popup" checked="checked" data-clear-btn="true"/>
+      <label for="total_popup">Total</label>
+      <input type="radio" name="contado" id="total_popup" value="total_popup" data-clear-btn="true"/>
+    </fieldset>
+    <br>
+    <legend><strong>Monto a cancelar:</strong></legend>
+    <div class="ui-grid-a">
+      <div class="ui-block-a"><p class="ui-disables">Saldo: </p></div>
+      <div class="ui-block-b"><p>A Cobrar: </p></div>
+      <div class="ui-block-a">
+        <input name="cajas" id="cob_saldo" type="number" class="ui-field-contain" data-clear-btn="true"/>
+      </div>
+      <div class="ui-block-b">
+        <input name="cob_cobranza" id="cob_cobrar" class="precio_input_cob" data-clear-btn="true"/>
+      </div>
+    </div>
+    <hr>
+    <div class="ui-grid-b">
+      <div class="ui-block-a">
+        <button type="button" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a cobranza_close_popup">Cancelar</button>
+      </div>
+      <div class="ui-block-b">
+        <!-- <button type="button" style="background-color: #F01111;" class="ui-btn ui-icon-alert ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b eliminar_del_carrito">Eliminar</button> -->
+      </div>
+      <div class="ui-block-c">
+        <button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_cobranza_popup">Confirmar</button>
+        <!-- <button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_edicion_popup">Confirmar E</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
 <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
   <h3>Copyright &copy; 2015</h3>
 </footer>
@@ -2131,8 +2296,23 @@ $(".list_cobranza").on('click','.btn_confirmar_cobranza', function(event) {
 
 });
 
+
+
+
 $( document ).on( "pagecreate", "#deuda", function( event ) {
   // alert( "deuda" );
+  $(".guardar_deuda").on("click", function(event){
+
+    $("#add_deuda_popup").popup( "open" );
+
+
+  })
+
+  $(".deuda_close_popup").on('click', function(event) {
+    $("#add_deuda_popup").popup( "close" );
+  });
+
+
 
 });
 

@@ -6,7 +6,7 @@ var total_venta;
 
 function queryDB_cobranza_last_sale(tx) {         
           // tx.executeSql('select IdArt ,IdCli ,Calibre ,Empaque ,Precio ,Caja ,Unidad, CajasCamion, CodMarca, DesArt from TEMPVENTA WHERE IdCli=?', [id_cliente], querySuccess_carrito, errorCB_list_cobranza);
-          tx.executeSql('select * from TEMPVENTA where IdCli=?', [id_cliente], querySuccess_cobranza_last_sale, errorCB_list_cobranza_last_sale);
+          tx.executeSql('select IdArt ,IdCli ,Calibre ,Empaque ,Precio ,Caja ,Unidad, CajasCamion, CodMarca, DesArt from TEMPVENTA where IdCli=?', [id_cliente], querySuccess_cobranza_last_sale, errorCB_list_cobranza_last_sale);
         }
         function queryDB_cobranza(tx) {         
           // tx.executeSql('select IdArt ,IdCli ,Calibre ,Empaque ,Precio ,Caja ,Unidad, CajasCamion, CodMarca, DesArt from TEMPVENTA WHERE IdCli=?', [id_cliente], querySuccess_carrito, errorCB_list_cobranza);
