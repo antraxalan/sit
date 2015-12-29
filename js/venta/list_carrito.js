@@ -16,6 +16,7 @@ var id_cliente;
           lista_contenido='<button type="button" class="class_confirmaciones btn_confirmar_ventas_global" data-theme="b">CONFIRMAR PEDIDO<span style="box-shadow:-1px -1px 4px 1px gray inset;" class="ui-li-count total_carrito_val ui-page-theme-a">0.00 Bs.</span></button>';
           lista_contenido+='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Cobros...">';
           for (var i = 0; i < len; i++) {
+            alert("codcaja"+results.rows.item(i).CodCaja+" codbotella"+results.rows.item(i).CodBotella);
             var co_ma= results.rows.item(i).CodMarca;
             if(!(co_ma=="18" || co_ma=="25" || co_ma=="35" || co_ma=="50" || co_ma=="70" || co_ma=="94")){ 
               co_ma="999";
