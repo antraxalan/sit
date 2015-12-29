@@ -4,7 +4,7 @@ var id_cliente;
 
 
         function queryDB_carrito(tx) {         
-          tx.executeSql('select IdArt ,IdCli ,Calibre ,Empaque ,Precio ,Caja ,Unidad, CajasCamion, CodMarca, DesArt from TEMPVENTA WHERE IdCli=?', [id_cliente], querySuccess_carrito, errorCB_list_carrito);
+          tx.executeSql('select IdArt ,IdCli ,Calibre ,Empaque ,Precio ,Caja ,Unidad, CajasCamion, CodMarca, DesArt, CodCaja, CodBotella from TEMPVENTA WHERE IdCli=?', [id_cliente], querySuccess_carrito, errorCB_list_carrito);
         }
 
         function querySuccess_carrito(tx, results) { 

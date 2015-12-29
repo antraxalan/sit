@@ -25,7 +25,7 @@ function insertDB_temp_db(tx) {
   
   // tx.executeSql('INSERT INTO TEMPVENTA2 (IdArt,IdCli) VALUES ('+v_save_art_id+','+v_cli_id+')');
 
-  tx.executeSql('INSERT INTO TEMPVENTA (IdArt,IdCli,Calibre,Empaque,Precio,Caja,Unidad,CajasCamion,CodMarca,DesArt) VALUES ('+v_save_art_id+','+v_cli_id+','+v_save_cal+','+v_save_emp+','+v_save_pre+','+v_save_caj+','+v_save_uni+','+v_save_caj_cam+','+v_save_cod_mar+',"'+v_save_des_art+'")');
+  tx.executeSql('INSERT INTO TEMPVENTA (IdArt,IdCli,Calibre,Empaque,Precio,Caja,Unidad,CajasCamion,CodMarca,DesArt,CodBotella,CodCaja) VALUES ('+v_save_art_id+','+v_cli_id+','+v_save_cal+','+v_save_emp+','+v_save_pre+','+v_save_caj+','+v_save_uni+','+v_save_caj_cam+','+v_save_cod_mar+',"'+v_save_des_art+'", (SELECT CodBotella FROM ARTICULO WHERE CodArt ='+v_save_art_id+') , (SELECT CodBotella FROM ARTICULO WHERE CodArt ='+v_save_art_id+') )');
 
   var arr_art = JSON.parse(localStorage.art);
   var lon=arr_art.length;

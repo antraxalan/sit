@@ -27,11 +27,11 @@ document.addEventListener("backbutton", function(e){
     }
 
     if ($(".ui-page-active .ui-popup-active").length > 0){
-     history.back();
- }else{
+       history.back();
+   }else{
 
-     switch (curr) 
-     {
+       switch (curr) 
+       {
         case 'home':
         exitAppPopup();
         break; 
@@ -161,9 +161,9 @@ function limpiar_temp_v_table(){
 function populateDB_TEMPVENTA(tx) {
     localStorage.art='[]';
     tx.executeSql('DROP TABLE IF EXISTS TEMPVENTA');
-    tx.executeSql('CREATE TABLE IF NOT EXISTS TEMPVENTA (IdArt INTEGER,IdCli INTEGER,Calibre DECIMAL(18,4),Empaque INTEGER,Precio DECIMAL(18,2),Caja INTEGER,Unidad INTEGER,CajasCamion INTEGER, CodMarca INTEGER, DesArt VARCHAR(255))');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS TEMPVENTA (IdArt INTEGER,IdCli INTEGER,Calibre DECIMAL(18,4),Empaque INTEGER,Precio DECIMAL(18,2),Caja INTEGER,Unidad INTEGER,CajasCamion INTEGER, CodMarca INTEGER, DesArt VARCHAR(255), CodCaja INTEGER, CodBotella INTEGER)');
 }
 
- function errorCB_cargar(err) {
-   alert("errorCB_temp: "+err.message);
- }
+function errorCB_cargar(err) {
+ alert("errorCB_temp: "+err.message);
+}
