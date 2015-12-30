@@ -100,6 +100,7 @@ var cantidad_ids;
           // $('.list_old_venta').html(lista_contenido);
           // $(".list_old_venta").trigger("create");
           // $('.mensaje_venta_c').html('Ready');
+          alert("2");
         }
 
         function querySuccess_new_articulo(tx, results) {
@@ -147,7 +148,7 @@ var cantidad_ids;
 
           $('.list_old_venta').html(lista_contenido);
           $(".list_old_venta").trigger("create");
-
+          alert("3");
         }
 
 
@@ -189,9 +190,10 @@ var cantidad_ids;
         function cargar_art_list (id_cli){
           // alert("cargar_listas");
           id_cliente=id_cli;
-
+          alert("1");
           cargar_old_venta_list();
           cargar_new_venta_list();
+          alert("4");
         }
 
 
