@@ -548,7 +548,10 @@
       </div>
     </div>
     
-    <br>
+    <button type="button" data-icon="arrow-l" class="btn_prev_style otro_cliente" data-inline="true">Otro Cliente</button>
+    <button type="button" data-icon="arrow-r" class="btn_next_style btn_confirmar_ventas_vacia" data-iconpos="right" data-inline="true">Cobranza</button>
+    
+
 
     <div class="ui-field-contain">
       <label for="textarea" class="css_titulo"><b>Cliente:</b></label>
@@ -862,9 +865,10 @@
         <span class="title">Envases</span>
       </div>
     </div>
+
     <button type="button" data-icon="arrow-l" class="btn_prev_style prev_cobranza" data-inline="true">&nbsp&nbspVenta&nbsp&nbsp</button>
     <button type="button" data-icon="arrow-r" class="btn_next_style next_cobranza" data-iconpos="right" data-inline="true">Envases</button>
-    <br>
+    
 
     <div class="ui-field-contain">
       <label for="textarea" class="css_titulo"><b>Cliente:</b></label>
@@ -1073,9 +1077,13 @@
         <span class="title">Envases</span>
       </div>
     </div>
-    <br>
+    
     <!-- Deudas -->
     <!-- <button type="button" class="ui-btn-active ui-state-persist prueba1">DEUDA ENVASES</button> -->
+
+    <button type="button" data-icon="arrow-l" class="btn_prev_style prev_deuda" data-inline="true">Cobranza</button>
+    <button type="button" data-icon="arrow-r" class="btn_next_style next_deuda" data-theme="b" data-iconpos="right" data-inline="true">Finalizar</button>
+    
 
     <div class="ui-field-contain">
       <label for="textarea" class="css_titulo"><b>Cliente:</b></label>
@@ -1155,109 +1163,105 @@
     </div>
     <!-- Finaliza agregar -->
 
-    <div class="ui-grid-b">
-     <div class="ui-block-a"> </div>
-     <div class="ui-block-b"><img src="img/caja.png" height="100" width="100"/></div>
-     <div class="ui-block-c"><button type="button" class="show_deuda big_button" data-icon="plus">Agregar</button></div>
-   </div>
+    <div class="list_deuda">
 
-   <div class="list_deuda">
-     <ul data-role="listview" data-split-icon="edit" data-inset="true">
 
-      <li>
-        <a>
-          <img src="img/info.png">
-          <h2>NUMERO DE VENTA</h2>
-          <div class="ui-grid-b">
-            <div class="ui-block-a"><p><strong>CAJAS</strong></p></div>
-            <div class="ui-block-b"><p><strong>BOTELLAS</strong></p></div>
-            <div class="ui-block-c"><p><strong> </strong></p></div>
-          </div>
-        </a>
-        <a data-rel="popup" codigo-venta="1" data-transition="flow">SITRANS</a>
-      </li>
-      <li>
-        <a href="#">
-          <img src="img/caja.png">
-          <h2>5136</h2>
-          <div class="ui-grid-b">
-            <div class="ui-block-a">5</div>
-            <div class="ui-block-b"><p>0</p></div>
-            <div class="ui-block-c red"><strong> </strong></div>
-          </div>
-        </a>
-        <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="1" data-transition="flow">SITRANS</a>
-      </li>
-      <li>
-        <a href="#">
-          <img src="img/caja.png">
-          <h2>5137</h2>
-          <div class="ui-grid-b">
-            <div class="ui-block-a"><p>0</p></div>
-            <div class="ui-block-b"><p>2</p></div>
-            <div class="ui-block-c green"><strong> </strong></div>
-          </div>
-        </a>
-        <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="2" data-transition="flow">SITRANS</a>
-      </li>
-      <li>
-        <a href="#">
-          <img src="img/caja.png">
-          <h2>5138</h2>
-          <div class="ui-grid-b">
-            <div class="ui-block-a"><p>5</p></div>
-            <div class="ui-block-b"><p>0</p></div>
-            <div class="ui-block-c red"><strong> </strong></div>
-          </div>
-        </a>
-        <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="3" data-transition="flow">SITRANS</a>
-      </li>
-      <li>
-        <a href="#">
-          <img src="img/caja.png">
-          <h2>5139</h2>
-          <div class="ui-grid-b">
-            <div class="ui-block-a"><p>0</p></div>
-            <div class="ui-block-b"><p>2</p></div>
-            <div class="ui-block-c red"><strong> </strong></div>
-          </div>
-        </a>
-        <a href="#editar_venta" class="editar_venta_class" data-rel="popup" codigo-venta="4" data-transition="flow">SITRANS</a>
-      </li>
-      <li>
-        <a href="#">
-          <img src="img/caja.png">
-          <h2>5140</h2>
-          <div class="ui-grid-b">
-            <div class="ui-block-a"><p>10</p></div>
-            <div class="ui-block-b"><p>1</p></div>
-            <div class="ui-block-c red"><strong> </strong></div>
-          </div>
-        </a>
-        <a href="#editar_venta" class="editar_venta_class"  data-rel="popup" codigo-venta="12" data-transition="flow">SITRANS</a>
-      </li>
-    </ul>
+
+      <ul data-role="listview" data-split-icon="forward" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">
+        <li>
+          <a href="#">
+            <img src="img/caja.png" >
+            <h2>4020 - CAJA PLAST.TAQ.12 BOT.</h2>
+            <div class="ui-grid-c">
+              <!-- <div class="ui-block-a" align="center" ><p>Caja(s) Prestada(s): 5</p></div> -->
+              <div class="ui-block-c" align="right"><p>Caja(s) Prestada(s):&nbsp</p></div>
+              <div class="ui-block-b" align="left"><p><strong>5</strong></p></div>
+              <div class="ui-block-c" align="right"><p>Cajas Devueltas:&nbsp</p></div>
+              <div class="ui-block-d " align="left" ><p class="html_cobrado" marca-cobranza-html="4020">0</p></div>
+            </div>
+          </a>
+          <a href="#" class="editar_deuda_class" data-rel="popup" nrodctom="4047" saldo="50.10" fecha="31/11/2015" fecha-venc="31/12/2015" cobrado="50.10">SITRANS</a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="img/caja.png">
+            <h2>4020 - CAJA PLAST.TAQ.12 BOT.</h2>
+            <p>Caja(s) prestada(s): <strong>5</strong></p>
+          </a>
+          <a href="#add_venta_popup" class="editar_deuda_class" data-rel="popup" codigo-venta="1" cant-cajas="6" cant-unidades="2" last-price="50.5" data-transition="flow">Comprar</a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="img/caja.png">
+            <h2>4029 - CAJA PLAST.PACEÐA 12 BOT.</h2>
+            <p>Ultima venta: <strong>6</strong> cajas a <strong>55.00</strong> Bolivianos. (<strong>14/08/2012</strong>)</p>
+          </a>
+          <!-- <a href="#add_venta_popup" class="editar_deuda_class" data-rel="popup" codigo-venta="2" cant-cajas="5" cant-unidades="0" last-price="51.5" data-transition="flow">Comprar</a> -->
+          <a href="#add_venta_popup" class="editar_deuda_class" data-rel="popup" codigo-venta="175" last-price="55.00" cajas-camion="9" calibre="0.6200" cant-empaque="12"  caj-adq="2" uni-adq="0">Historial</a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="img/caja.png">
+            <h2>4079 - CAJA HUARI 620CC.</h2>
+            <div class="ui-grid-b">
+              <div class="ui-block-a"><p>7 cajas</p></div>
+              <div class="ui-block-b"><p>1 unidades</p></div>
+              <div class="ui-block-c price"><strong>52.5 Bs.</strong></div>
+            </div>
+          </a>
+          <a href="#add_venta_popup" class="editar_deuda_class" data-rel="popup" codigo-venta="3" cant-cajas="7" cant-unidades="1" last-price="52.5" data-transition="flow">Comprar</a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="img/botellita.png">
+            <h2>3020 - BOTELLA 620 CC.</h2>
+            <div class="ui-grid-c">
+              <div class="ui-block-a"><p>6 cajas</p></div>
+              <div class="ui-block-b"><p>2 unidades</p></div>
+              <div class="ui-block-c"><p>Precio/Caja <strong>53.5 Bs.</strong></p></div>
+              <div class="ui-block-d price"><strong>53.5 Bs.</strong></div>
+            </div>
+          </a>
+          <a href="#add_venta_popup" class="editar_deuda_class" data-rel="popup" codigo-venta="4" cant-cajas="10" cant-unidades="1" last-price="53.5" data-transition="flow">Comprar</a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="img/botellita.png">
+            <h2>3079 - BOTELLA HUARI 620CC.</h2>
+            <div class="ui-grid-b">
+              <div class="ui-block-a"><p>6 cajas</p></div>
+              <div class="ui-block-b"><p>2 unidades</p></div>
+              <div class="ui-block-c price"><strong>54.5 Bs.</strong></div>
+            </div>
+          </a>
+          <a href="#add_venta_popup" class="editar_deuda_class" data-rel="popup" codigo-venta="12" cant-cajas="10" cant-unidades="1" last-price="54.5" data-transition="flow">Comprar</a>
+        </li>
+      </ul>
+
+
+
+   
+    </div>
+
+
   </div>
 
 
-</div>
 
 
 
 
+  <div data-role="popup" id="add_deuda_popup" data-overlay-theme="a" data-theme="a"  style="max-width:800px;">
+    <div data-role="header" data-theme="a">
+      <h1>Envases</h1>
+    </div>
+    <div role="main" class="ui-content">
+      <!-- <p class="add_popup_prod">...</p> -->
 
-
-<div data-role="popup" id="add_deuda_popup" data-overlay-theme="a" data-theme="a"  style="max-width:800px;">
-  <div data-role="header" data-theme="a">
-    <h1>Envases</h1>
-  </div>
-  <div role="main" class="ui-content">
-    <!-- <p class="add_popup_prod">...</p> -->
-
-    <input id="deu_nrodctom"  type="hidden" placeholder="deu_nrodctom">
-    <input id="deu_fecha"     type="hidden" placeholder="deu_fecha">
-    <input id="deu_venc"      type="hidden" placeholder="deu_venc">
-    <input id="deu_cod_art"   type="hidden" placeholder="deu_cod_art">
+      <input id="deu_nrodctom"  type="hidden" placeholder="deu_nrodctom">
+      <input id="deu_fecha"     type="hidden" placeholder="deu_fecha">
+      <input id="deu_venc"      type="hidden" placeholder="deu_venc">
+      <input id="deu_cod_art"   type="hidden" placeholder="deu_cod_art">
 
 <!-- 
     <fieldset data-role="controlgroup" data-type="horizontal">
@@ -2301,15 +2305,25 @@ $(".list_cobranza").on('click','.btn_confirmar_cobranza', function(event) {
 
 $( document ).on( "pagecreate", "#deuda", function( event ) {
   // alert( "deuda" );
-  $(".guardar_deuda").on("click", function(event){
-
-    $("#add_deuda_popup").popup( "open" );
-
-
+  $(".list_deuda").on("click",".editar_deuda_class", function(event){
+    $("#add_deuda_popup").popup("open");
   })
 
   $(".deuda_close_popup").on('click', function(event) {
-    $("#add_deuda_popup").popup( "close" );
+    $("#add_deuda_popup").popup("close");
+  });
+
+
+  $(".prev_deuda").on('click', function(event) {
+    // alert("dsads");
+    // querySuccess_cobranza();
+    window.location.href = "index.html#cobranza";
+  });
+  $(".next_deuda").on('click', function(event) {
+    // alert("dsads");
+    // querySuccess_cobranza();
+    alert("Finalizado");
+    window.location.href = "index.html";
   });
 
 
