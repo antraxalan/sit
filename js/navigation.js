@@ -46,7 +46,7 @@ document.addEventListener("backbutton", function(e){
         // window.location.href = "index.html#venta";
         break; 
         case 'deuda':
-        window.location.href = "index.html#cobranza";
+        exitDeuda();
         break; 
 
         default: 
@@ -90,6 +90,17 @@ function exitCobranza() {
         "Si,No"
         ); 
 };
+function exitDeuda() {
+    navigator.notification.vibrate(200);
+    navigator.notification.confirm(
+        "Esta seguro que desea volver a Cobranza?", 
+        function(buttonIndex){
+            ConfirmExitDeuda(buttonIndex);
+        }, 
+        "Ir a Cobranza", 
+        "Si,No"
+        ); 
+};
 function Cobranza_to_Deuda() {
     navigator.notification.vibrate(200);
     navigator.notification.confirm(
@@ -130,6 +141,17 @@ function ConfirmExitCobranza(stat){
         return;
     };
 };
+
+function ConfirmExitDeuda(stat){
+    // alert("Inside ConfirmExit");
+    if(stat == "1"){
+        // alert("exit app fn");
+        window.location.href = "index.html#cobranza";
+    }else{
+        return;
+    };
+};
+
 function ConfirmCobranza_to_Deuda(stat){
     // alert("Inside ConfirmExit");
     if(stat == "1"){
