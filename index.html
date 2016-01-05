@@ -1093,79 +1093,8 @@
     
 
     <h4 class="mensaje_deuda" align="center"></h4>
-    <div class="articulo_deuda" style="display:none;">
-
-      <div class="ui-content" role="main">
-
-        <form class="ui">
-
-
-          <div data-role="fieldcontain" class="ui-field-contain ui-body ui-bar-a ui-corner-all">
-            Ingreso:
-            <div data-role="fieldcontain" class="ui-field-contain"data-demo-html="true">               
-
-              <label for="date">Fecha:</label>
-              <input name="mydate" id="fecha_deuda" disabled="disabled"/>
-            </div> 
-            <div class="ui-field-contain">
-              <label for="textarea">Codigo Envase:</label>
-              <input type="text" name="precio" id="cod_env" value="" data-clear-btn="true"/>
-            </div>
-            <div class="ui-field-contain">
-              <label for="textarea">Descripcion:</label>
-              <input type="text" name="precio" id="descripcion_deuda" value="" data-clear-btn="true"/>
-            </div>
-
-            <div class="ui-grid-a">
-              <div class="ui-block-a">
-                <div class="ui-field-contain">
-                  <label for="textarea">Cajas:</label>
-                  <input type="text" name="Ingreso" id="saldo_deuda"  value="20" data-clear-btn="true" disabled="disabled"/>
-                </div>
-              </div>
-              <div class="ui-block-b">
-                <div class="ui-field-contain">
-                  <label for="textarea">A Cobrar:</label>
-                  <input type="text" name="Ingreso" id="a_cobrar_deuda" value="" data-clear-btn="true"/>
-                </div>
-              </div>
-            </div>
-            <div class="ui-grid-a">
-              <div class="ui-block-a">
-                <div class="ui-field-contain">
-                  <label for="textarea">Botellas:</label>
-                  <input type="text" name="Ingreso" id="saldo_deuda"  value="2" data-clear-btn="true" disabled="disabled"/>
-                </div>
-              </div>
-              <div class="ui-block-b">
-                <div class="ui-field-contain">
-                  <label for="textarea">A Cobrar:</label>
-                  <input type="text" name="Ingreso" id="a_cobrar_deuda" value="" data-clear-btn="true"/>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-
-
-          <div class="ui-field-contain">
-            <br>
-            <button type="button" class="ui-btn ui-icon-minus ui-btn-icon-right ui-shadow ui-btn-a ui-corner-all cancelar_deuda">Cancelar</button>
-            <br>
-            <button type="button" class="ui-btn ui-icon-shop ui-btn-icon-right ui-shadow ui-btn-b ui-corner-all guardar_deuda">Confirmar Deuda</button>
-            <br>
-            <hr>
-          </div>
-        </form>
-      </div>
-
-    </div>
-    <!-- Finaliza agregar -->
 
     <div class="list_deuda">
-
-
 
       <ul data-role="listview" data-split-icon="forward" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">
         <li>
@@ -1175,72 +1104,74 @@
             <div class="ui-grid-c">
               <!-- <div class="ui-block-a" align="center" ><p>Caja(s) Prestada(s): 5</p></div> -->
               <div class="ui-block-c" align="right"><p>Caja(s) Prestada(s):&nbsp</p></div>
-              <div class="ui-block-b" align="left"><p><strong>5</strong></p></div>
-              <div class="ui-block-c" align="right"><p>Cajas Devueltas:&nbsp</p></div>
+              <div class="ui-block-b" align="left"><p><strong>2</strong></p></div>
+              <div class="ui-block-c" align="right"><p>Caja(s) Devuelta(s):&nbsp</p></div>
               <div class="ui-block-d " align="left" ><p class="html_cobrado" marca-cobranza-html="4020">0</p></div>
             </div>
           </a>
-          <a href="#" class="editar_deuda_class" data-rel="popup" nrodctom="4047" saldo="50.10" fecha="31/11/2015" fecha-venc="31/12/2015" cobrado="50.10">SITRANS</a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="img/caja.png">
-            <h2>4020 - CAJA PLAST.TAQ.12 BOT.</h2>
-            <p>Caja(s) prestada(s): <strong>5</strong></p>
-          </a>
-          <a href="#add_venta_popup" class="editar_deuda_class" data-rel="popup" codigo-venta="1" cant-cajas="6" cant-unidades="2" last-price="50.5" data-transition="flow">Comprar</a>
+          <a href="#" class="editar_deuda_class" cod-art="4020" tipo="C" saldo-cajas="2" saldo-unidades="2" cod-botella="0" cod-caja="0" cant-empaque="1" >SITRANS</a>
         </li>
         <li>
           <a href="#">
             <img src="img/caja.png">
             <h2>4029 - CAJA PLAST.PACEÐA 12 BOT.</h2>
-            <p>Ultima venta: <strong>6</strong> cajas a <strong>55.00</strong> Bolivianos. (<strong>14/08/2012</strong>)</p>
+            <div class="ui-grid-c">
+              <!-- <div class="ui-block-a" align="center" ><p>Caja(s) Prestada(s): 5</p></div> -->
+              <div class="ui-block-c" align="right"><p>Caja(s) Prestada(s):&nbsp</p></div>
+              <div class="ui-block-b" align="left"><p><strong>111</strong></p></div>
+              <div class="ui-block-c" align="right"><p>Caja(s) Devuelta(s):&nbsp</p></div>
+              <div class="ui-block-d " align="left" ><p class="html_cobrado" marca-cobranza-html="4020">0</p></div>
+            </div>
           </a>
-          <!-- <a href="#add_venta_popup" class="editar_deuda_class" data-rel="popup" codigo-venta="2" cant-cajas="5" cant-unidades="0" last-price="51.5" data-transition="flow">Comprar</a> -->
-          <a href="#add_venta_popup" class="editar_deuda_class" data-rel="popup" codigo-venta="175" last-price="55.00" cajas-camion="9" calibre="0.6200" cant-empaque="12"  caj-adq="2" uni-adq="0">Historial</a>
+          <a href="#" class="editar_deuda_class" cod-art="4029" tipo="C" saldo-cajas="111" saldo-unidades="111" cod-botella="3020" cod-caja="0" cant-empaque="1">Historial</a>
         </li>
         <li>
           <a href="#">
             <img src="img/caja.png">
             <h2>4079 - CAJA HUARI 620CC.</h2>
-            <div class="ui-grid-b">
-              <div class="ui-block-a"><p>7 cajas</p></div>
-              <div class="ui-block-b"><p>1 unidades</p></div>
-              <div class="ui-block-c price"><strong>52.5 Bs.</strong></div>
+            <div class="ui-grid-c">
+              <!-- <div class="ui-block-a" align="center" ><p>Caja(s) Prestada(s): 5</p></div> -->
+              <div class="ui-block-c" align="right"><p>Caja(s) Prestada(s):&nbsp</p></div>
+              <div class="ui-block-b" align="left"><p><strong>15</strong></p></div>
+              <div class="ui-block-c" align="right"><p>Caja(s) Devuelta(s):&nbsp</p></div>
+              <div class="ui-block-d " align="left" ><p class="html_cobrado" marca-cobranza-html="4020">0</p></div>
             </div>
           </a>
-          <a href="#add_venta_popup" class="editar_deuda_class" data-rel="popup" codigo-venta="3" cant-cajas="7" cant-unidades="1" last-price="52.5" data-transition="flow">Comprar</a>
+          <a href="#" class="editar_deuda_class" cod-art="4079" tipo="C" saldo-cajas="15" saldo-unidades="15" cod-botella="3079" cod-caja="0" cant-empaque="1">Comprar</a>
         </li>
         <li>
           <a href="#">
             <img src="img/botellita.png">
             <h2>3020 - BOTELLA 620 CC.</h2>
             <div class="ui-grid-c">
-              <div class="ui-block-a"><p>6 cajas</p></div>
-              <div class="ui-block-b"><p>2 unidades</p></div>
-              <div class="ui-block-c"><p>Precio/Caja <strong>53.5 Bs.</strong></p></div>
-              <div class="ui-block-d price"><strong>53.5 Bs.</strong></div>
+              <!-- <div class="ui-block-a" align="center" ><p>Caja(s) Prestada(s): 5</p></div> -->
+              <div class="ui-block-c" align="right"><p>Botella(s) Prestada(s):&nbsp</p></div>
+              <div class="ui-block-b" align="left"><p><strong>109</strong></p></div>
+              <div class="ui-block-c" align="right"><p>Botella(s) Devuelta(s):&nbsp</p></div>
+              <div class="ui-block-d " align="left" ><p class="html_cobrado" marca-cobranza-html="4020">0</p></div>
             </div>
           </a>
-          <a href="#add_venta_popup" class="editar_deuda_class" data-rel="popup" codigo-venta="4" cant-cajas="10" cant-unidades="1" last-price="53.5" data-transition="flow">Comprar</a>
+          <a href="#" class="editar_deuda_class" cod-art="3020" tipo="B" saldo-cajas="109" saldo-unidades="109" cod-botella="0" cod-caja="4029" cant-empaque="12">Comprar</a>
         </li>
         <li>
           <a href="#">
             <img src="img/botellita.png">
             <h2>3079 - BOTELLA HUARI 620CC.</h2>
-            <div class="ui-grid-b">
-              <div class="ui-block-a"><p>6 cajas</p></div>
-              <div class="ui-block-b"><p>2 unidades</p></div>
-              <div class="ui-block-c price"><strong>54.5 Bs.</strong></div>
+            <div class="ui-grid-c">
+              <!-- <div class="ui-block-a" align="center" ><p>Caja(s) Prestada(s): 5</p></div> -->
+              <div class="ui-block-c" align="right"><p>Botella(s) Prestada(s):&nbsp</p></div>
+              <div class="ui-block-b" align="left"><p><strong>15</strong></p></div>
+              <div class="ui-block-c" align="right"><p>Botella(s) Devuelta(s):&nbsp</p></div>
+              <div class="ui-block-d " align="left" ><p class="html_cobrado" marca-cobranza-html="4020">0</p></div>
             </div>
           </a>
-          <a href="#add_venta_popup" class="editar_deuda_class" data-rel="popup" codigo-venta="12" cant-cajas="10" cant-unidades="1" last-price="54.5" data-transition="flow">Comprar</a>
+          <a href="#" class="editar_deuda_class" cod-art="3079" tipo="B" saldo-cajas="15" saldo-unidades="15" cod-botella="0" cod-caja="4079" cant-empaque="12" >Comprar</a>
         </li>
       </ul>
 
 
 
-   
+
     </div>
 
 
@@ -1258,10 +1189,11 @@
     <div role="main" class="ui-content">
       <!-- <p class="add_popup_prod">...</p> -->
 
-      <input id="deu_nrodctom"  type="hidden" placeholder="deu_nrodctom">
-      <input id="deu_fecha"     type="hidden" placeholder="deu_fecha">
-      <input id="deu_venc"      type="hidden" placeholder="deu_venc">
-      <input id="deu_cod_art"   type="hidden" placeholder="deu_cod_art">
+      <input id="cod_art_caja" type="hiddennnnnn" placeholder="cod_art_caja">
+      <br>
+      <input id="cod_art_botella" type="hiddennnnnn" placeholder="cod_art_botella">
+      <br>
+      <input id="doble_deuda" type="hiddennnnnn" placeholder="doble_deuda">
 
 <!-- 
     <fieldset data-role="controlgroup" data-type="horizontal">
@@ -1285,7 +1217,7 @@
         <input name="cob_cobranza" id="cob_cobrar" class="precio_input_cob" data-clear-btn="true"/>
       </div>
     </div> -->
-    <div class ="cajas_option">
+    <div class ="check_cajas">
 
       <fieldset data-role="controlgroup" data-type="horizontal">
         <legend>Tipo:</legend>
@@ -1306,13 +1238,13 @@
         <div class="ui-block-a">
           <div class="ui-field-contain">
             <label for="textarea">Saldo Cajas:</label>
-            <input type="number" id="saldo_deuda"  value="20" />
+            <input type="number" id="saldo_deuda_cajas"  value="20" />
           </div>
         </div>
         <div class="ui-block-b">
           <div class="ui-field-contain">
             <label for="textarea">A Cobrar:</label>
-            <input type="number" id="a_cobrar_deuda" value="" data-clear-btn="true"/>
+            <input type="number" id="a_cobrar_deuda_cajas" value="" data-clear-btn="true"/>
           </div>
         </div>
       </div>
@@ -1324,13 +1256,13 @@
         <div class="ui-block-a">
           <div class="ui-field-contain">
             <label for="textarea">Saldo Botellas:</label>
-            <input type="number" id="saldo_deuda"  value="2"  />
+            <input type="number" id="saldo_deuda_botellas"  value="2"  />
           </div>
         </div>
         <div class="ui-block-b">
           <div class="ui-field-contain">
             <label for="textarea">A Cobrar:</label>
-            <input type="number" id="a_cobrar_deuda" value="" data-clear-btn="true"/>
+            <input type="number" id="a_cobrar_deuda_botellas" value="" data-clear-btn="true"/>
           </div>
         </div>
       </div>
@@ -1353,59 +1285,6 @@
 </div>
 </div>
 
-
-
-
-
-
-
-
-<div data-role="popup" id="prueba_popup" data-overlay-theme="a" data-theme="a"  style="max-width:800px;">
-  <div data-role="header" data-theme="a">
-    <h1>Cobranza</h1>
-  </div>
-  <div role="main" class="ui-content">
-    <!-- <p class="add_popup_prod">...</p> -->
-
-    <input id="cob_nrodctom"  type="hidden" placeholder="cob_nrodctom">
-    <input id="cob_fecha"     type="hidden" placeholder="cob_fecha">
-    <input id="cob_venc"      type="hidden" placeholder="cob_venc">
-
-
-    <fieldset data-role="controlgroup" data-type="horizontal">
-      <legend>Tipo:</legend>
-      <label for="parcial_popup">Parcial</label>
-      <input type="radio" name="contado" id="parcial_popup" value="parcial_popup" checked="checked" data-clear-btn="true"/>
-      <label for="total_popup">Total</label>
-      <input type="radio" name="contado" id="total_popup" value="total_popup" data-clear-btn="true"/>
-    </fieldset>
-    <br>
-    <legend><strong>Monto a cancelar:</strong></legend>
-    <div class="ui-grid-a">
-      <div class="ui-block-a"><p class="ui-disables">Saldo: </p></div>
-      <div class="ui-block-b"><p>A Cobrar: </p></div>
-      <div class="ui-block-a">
-        <input name="cajas" id="cob_saldo" type="number" class="ui-field-contain" data-clear-btn="true"/>
-      </div>
-      <div class="ui-block-b">
-        <input name="cob_cobranza" id="cob_cobrar" class="precio_input_cob" data-clear-btn="true"/>
-      </div>
-    </div>
-    <hr>
-    <div class="ui-grid-b">
-      <div class="ui-block-a">
-        <button type="button" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a cobranza_close_popup">Cancelar</button>
-      </div>
-      <div class="ui-block-b">
-        <!-- <button type="button" style="background-color: #F01111;" class="ui-btn ui-icon-alert ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b eliminar_del_carrito">Eliminar</button> -->
-      </div>
-      <div class="ui-block-c">
-        <button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_cobranza_popup">Confirmar</button>
-        <!-- <button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_edicion_popup">Confirmar E</button> -->
-      </div>
-    </div>
-  </div>
-</div>
 
 
 
@@ -2163,13 +2042,9 @@ $(document).on("pageshow","#deuda",function(event){ // When entering pagetwo
 $( document ).on( "pagecreate", "#cobranza", function( event ) {
 
   $(".prev_cobranza").on('click', function(event) {
-    // alert("dsads");
-    // querySuccess_cobranza();
     exitCobranza();
   });
   $(".next_cobranza").on('click', function(event) {
-    // alert("dsads");
-    // querySuccess_cobranza();
     Cobranza_to_Deuda();
   });
 
@@ -2181,14 +2056,11 @@ $( document ).on( "pagecreate", "#cobranza", function( event ) {
   });
 
   $(".list_cobranza").on('click','.editar_cobranza_class', function(event) {
-    // alert("editar_cobranza_class");
     $("#add_cobranza_popup").popup( "open" );
 
     $("#parcial_popup").prop("checked",true).checkboxradio("refresh");
     $("#total_popup").prop("checked",false).checkboxradio("refresh");
 
-    // $("#canje_popup").prop("checked",true).checkboxradio("refresh");
-    // $("#prest_popup").prop("checked",false).checkboxradio("refresh");
 
     var c_nrodctom  =$(this).attr('nrodctom');
     var c_saldo     =$(this).attr('saldo');
@@ -2197,7 +2069,6 @@ $( document ).on( "pagecreate", "#cobranza", function( event ) {
     var c_cobrar    =$(this).attr('cobrado');
 
     c_saldo=(parseFloat(c_saldo)).toFixed(2);
-    // alert(c_cobrar);
     $('#cob_nrodctom').val(c_nrodctom);
     $('#cob_saldo').val(c_saldo);
     $('#cob_fecha').val(c_fecha);
@@ -2215,22 +2086,23 @@ $( document ).on( "pagecreate", "#cobranza", function( event ) {
     }
   });
 
-$('.precio_input_cob').on('input', function() {
-  var val=this.value;
-  this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*)\./g, '$1');
-  var posi = val.indexOf('.');
-  var cant = val.length;
-  if ((cant-posi)>=4 && posi!=-1){
-    this.value = (parseFloat(this.value)).toFixed(2);
-  }
-});
-$('.precio_input_cob').on('blur', function() {
-  if(this.value!=''){
-    this.value = (parseFloat(this.value)).toFixed(2);
-  }
-});
+  $('.precio_input_cob').on('input', function() {
+    var val=this.value;
+    this.value = this.value.replace(/[^0-9.-]/g, '').replace(/(\..*)\./g, '$1');
+    var posi = val.indexOf('.');
+    var cant = val.length;
+    if ((cant-posi)>=4 && posi!=-1){
+      this.value = (parseFloat(this.value)).toFixed(2);
+    }
+  });
 
-$("input[name=contado]:radio").bind( "change", function(event, ui) {
+  $('.precio_input_cob').on('blur', function() {
+    if(this.value!=''){
+      this.value = (parseFloat(this.value)).toFixed(2);
+    }
+  });
+
+  $("input[name=contado]:radio").bind( "change", function(event, ui) {
     // alert("Change radio ");
     if($(this).val()=='total_popup'){
       $("#cob_cobrar").val($("#cob_saldo").val()); 
@@ -2239,63 +2111,53 @@ $("input[name=contado]:radio").bind( "change", function(event, ui) {
     }
   });
 
-$(".cambio_signo").on('click', function(event) {
-  var auxiliar=$("#cob_cobrar").val();
-  if(auxiliar=='NaN'|| auxiliar==''){
-    $("#cob_cobrar").val('');
-  }else{
-    auxiliar=parseFloat(auxiliar);
-    auxiliar=auxiliar*(-1);
-    auxiliar=auxiliar.toFixed(2);
-    $("#cob_cobrar").val(auxiliar);
-  }
-});
+  $(".cambio_signo").on('click', function(event) {
+    var auxiliar=$("#cob_cobrar").val();
+    if(auxiliar=='NaN'|| auxiliar==''){
+      $("#cob_cobrar").val('');
+    }else{
+      auxiliar=parseFloat(auxiliar);
+      auxiliar=auxiliar*(-1);
+      auxiliar=auxiliar.toFixed(2);
+      $("#cob_cobrar").val(auxiliar);
+    }
+  });
 
-$(".cobranza_close_popup").on('click', function(event) {
-  $("#add_cobranza_popup").popup( "close" );
-});
+  $(".cobranza_close_popup").on('click', function(event) {
+    $("#add_cobranza_popup").popup( "close" );
+  });
 
-$('#cob_cobrar').on('input', function() {
-  if($("#cob_saldo").val()==$("#cob_cobrar").val()){
-    // alert("a");
-    $("#parcial_popup").prop("checked",false).checkboxradio("refresh");
-    $("#total_popup").prop("checked",true).checkboxradio("refresh");
-  }else{
-    // alert("b");
-    $("#parcial_popup").prop("checked",true).checkboxradio("refresh");
-    $("#total_popup").prop("checked",false).checkboxradio("refresh");
-  }
-});
+  $('#cob_cobrar').on('input', function() {
+    if($("#cob_saldo").val()==$("#cob_cobrar").val()){
+      $("#parcial_popup").prop("checked",false).checkboxradio("refresh");
+      $("#total_popup").prop("checked",true).checkboxradio("refresh");
+    }else{
+      $("#parcial_popup").prop("checked",true).checkboxradio("refresh");
+      $("#total_popup").prop("checked",false).checkboxradio("refresh");
+    }
 
-$(".confirmar_cobranza_popup").on('click', function(event) {
-  // $("#add_cobranza_popup").popup( "close" );
-  var documenton=$('#cob_nrodctom').val();
-  var cobrar=$('#cob_cobrar').val();
-  if(cobrar==''||cobrar=='NaN'){cobrar='0.00'}
-    var auxi= $('.list_cobranza').find('a[nrodctom="'+documenton+'"]').attr('cobrado',cobrar);
-  $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+documenton+"']").html(cobrar+' Bs.');
+  });
 
-  var total=0;
-  var aux;
-  $(".html_cobrado").each(function(index, el) {
-    // alert("each");
-      // total = $(this).attr('atribb');
-      // total = $(this).text();
+  $(".confirmar_cobranza_popup").on('click', function(event) {
+    var documenton=$('#cob_nrodctom').val();
+    var cobrar=$('#cob_cobrar').val();
+    if(cobrar==''||cobrar=='NaN'){cobrar='0.00'}
+      var auxi= $('.list_cobranza').find('a[nrodctom="'+documenton+'"]').attr('cobrado',cobrar);
+    $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+documenton+"']").html(cobrar+' Bs.');
+    var total=0;
+    var aux;
+    $(".html_cobrado").each(function(index, el) {
       aux = $(this).text();
       aux = aux.split(" ");
       total=(parseFloat(aux[0]))+total;
-      // alert(variable);
     });
-  $('.total_cobranza_val').html(total.toFixed(2)+' Bs.');
+    $('.total_cobranza_val').html(total.toFixed(2)+' Bs.');
+    $("#add_cobranza_popup").popup( "close" );
+  });
 
-  $("#add_cobranza_popup").popup( "close" );
-});
-
-$(".list_cobranza").on('click','.btn_confirmar_cobranza', function(event) {
-  window.location.href = "index.html#deuda";
-});
-
-
+  $(".list_cobranza").on('click','.btn_confirmar_cobranza', function(event) {
+    window.location.href = "index.html#deuda";
+  });
 
 
 });
@@ -2304,27 +2166,106 @@ $(".list_cobranza").on('click','.btn_confirmar_cobranza', function(event) {
 
 
 $( document ).on( "pagecreate", "#deuda", function( event ) {
-  // alert( "deuda" );
-  $(".list_deuda").on("click",".editar_deuda_class", function(event){
-    $("#add_deuda_popup").popup("open");
-  })
+
+  $(".prev_deuda").on('click', function(event) {
+    window.location.href = "index.html#cobranza";
+  });
+  $(".next_deuda").on('click', function(event) {
+    alert("Finalizado");
+    window.location.href = "index.html";
+  });
 
   $(".deuda_close_popup").on('click', function(event) {
     $("#add_deuda_popup").popup("close");
   });
 
+  function clear_deuda_popup(){
+   $("#solo_cajas").prop("checked",true).checkboxradio("refresh");
+   $("#con_botellas").prop("checked",false).checkboxradio("refresh");
 
-  $(".prev_deuda").on('click', function(event) {
-    // alert("dsads");
-    // querySuccess_cobranza();
-    window.location.href = "index.html#cobranza";
-  });
-  $(".next_deuda").on('click', function(event) {
-    // alert("dsads");
-    // querySuccess_cobranza();
-    alert("Finalizado");
-    window.location.href = "index.html";
-  });
+   $("#saldo_deuda_cajas").val('');
+   $("#a_cobrar_deuda_cajas").val('');
+   $("#saldo_deuda_botellas").val('');
+   $("#a_cobrar_deuda_botellas").val('');
+
+   $("#saldo_deuda_cajas").prop('disabled', true);
+   $("#saldo_deuda_botellas").prop('disabled', true);
+
+   $('.check_cajas').hide();
+   $('.cajas_option').hide();
+   $('.botellas_option').hide();
+
+   $("#cod_art_caja").val('');
+   $("#cod_art_botella").val('');
+   $("#doble_deuda").val('0');
+
+ };
+
+ $(".list_deuda").on("click",".editar_deuda_class", function(event){
+  $("#add_deuda_popup").popup("open");
+  clear_deuda_popup();
+
+  // var prod=$(this).parent().find('h2').text();
+  var cod_art        =$(this).attr('cod-art');
+  var tipo           =$(this).attr('tipo');
+  var saldo_cajas    =$(this).attr('saldo-cajas');
+  var saldo_unidades =$(this).attr('saldo-unidades');
+  var cod_botella    =$(this).attr('cod-botella');
+  var cod_caja       =$(this).attr('cod-caja');
+  var cant_empaque   =$(this).attr('cant-empaque');
+
+  if(tipo=='C'){
+    var buscar=cod_botella;
+  }
+  if(tipo=='B'){
+    var buscar=cod_caja;
+  }
+
+  if(tipo=='C'){
+    if(buscar=='0'){
+      $('.cajas_option').show();
+      $("#saldo_deuda_cajas").val(saldo_cajas);
+      $("#cod_art_caja").val(cod_art);
+    }else{
+
+      prod=$(this).parent().find('h2').text();
+      var sel= $('.list_deuda').find('a[cod-art="'+buscar+'"]');
+
+      var cod_art_botella        =sel.attr('cod-art');
+      var tipo_botella           =sel.attr('tipo');
+      var saldo_cajas_botella    =sel.attr('saldo-cajas');
+      var saldo_unidades_botella =sel.attr('saldo-unidades');
+      var cod_botella_botella    =sel.attr('cod-botella');
+      var cod_caja_botella       =sel.attr('cod-caja');
+      var cant_empaque_botella   =sel.attr('cant-empaque');
+      $("#cod_art_caja").val(cod_art);
+      $("#cod_art_botella").val(cod_art_botella);
+
+      $('.check_cajas').show();
+      $('.cajas_option').show();
+    }
+  }
+
+})
+
+
+
+$("input[name=cajas_cuadro_opciones]:radio").bind( "change", function(event, ui) {
+      // alert("changed");
+      if($(this).val()=='con_botellas'){
+        $(".botellas_option").show(200);
+        $("#doble_deuda").val('1');
+      }else{
+        $(".botellas_option").hide(200);
+        $("#doble_deuda").val('0');
+      }
+
+    });
+
+
+$(".deuda_close_popup").on('click', function(event) {
+  $("#add_deuda_popup").popup("close");
+});
 
 
 
