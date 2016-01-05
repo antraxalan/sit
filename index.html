@@ -763,7 +763,7 @@
               
               <input id="fchvto_total_popup" type="date" data-role="date" date-format="dd-mm-yyyy"/>
               <hr>
-              <p>Esta seguro(a) de que no desea agregar mas productos o modificar el pedido?</p>
+              <p>Esta seguro(a) de no realizar mas cambios en el pedido?</p>
               
               <hr>
               <div class="ui-grid-a">
@@ -1226,7 +1226,7 @@
           </div>
           <div class="ui-block-b">
             <div class="ui-field-contain">
-              <label for="textarea">A Cobrar:</label>
+              <label for="textarea">A Retornar:</label>
               <input type="number" id="a_cobrar_deuda_caja" value="" data-clear-btn="true"/>
             </div>
           </div>
@@ -1244,7 +1244,7 @@
           </div>
           <div class="ui-block-b">
             <div class="ui-field-contain">
-              <label for="textarea">A Cobrar:</label>
+              <label for="textarea">A Retornar:</label>
               <input type="number" id="a_cobrar_deuda_botella" value="" data-clear-btn="true"/>
             </div>
           </div>
@@ -2288,37 +2288,53 @@ $('#a_cobrar_deuda_caja').on('input', function() {
 
 
 $(".confirmar_deuda_popup").on('click', function(event) {
-  $("#add_deuda_popup").popup("close");
 
   var tipo =$("#doble_deuda").val();
   if(tipo=='0'){
-    var cod_art   =$("#cod_art_caja").val();
-    var cobr_caja =$("#a_cobrar_deuda_caja").val();
-    var sel_c= $('.list_deuda').find('a[cod-art="'+cod_art+'"]');
-    sel_c.parent().find('.html_cobrado_deuda').text(cobr_caja);
-    sel_c.attr('deuda-cob',cobr_caja);
+    if($("#a_cobrar_deuda_caja").val()==''){
+      alert("Por favor verifique la cantidad a retornar.");
+    }else{
+      var cod_art   =$("#cod_art_caja").val();
+      var cobr_caja =$("#a_cobrar_deuda_caja").val();
+      cobr_caja =parseInt(cobr_caja);
+      var sel_c= $('.list_deuda').find('a[cod-art="'+cod_art+'"]');
+      sel_c.parent().find('.html_cobrado_deuda').text(cobr_caja);
+      sel_c.attr('deuda-cob',cobr_caja);
+      $("#add_deuda_popup").popup("close");
+    }
   }
   if(tipo=='1'){
-    var cod_art   =$("#cod_art_caja").val();
-    var cobr_caja =$("#a_cobrar_deuda_caja").val();
-    var cod_art_bot =$("#cod_art_botella").val(); 
-    var cobr_bote =$("#a_cobrar_deuda_botella").val();
-    var sel_c= $('.list_deuda').find('a[cod-art="'+cod_art+'"]');
-    var sel_b= $('.list_deuda').find('a[cod-art="'+cod_art_bot+'"]');
-    sel_c.parent().find('.html_cobrado_deuda').text(cobr_caja);
-    sel_c.attr('deuda-cob',cobr_caja);
-    sel_b.parent().find('.html_cobrado_deuda').text(cobr_bote);
-    sel_b.attr('deuda-cob',cobr_bote);
-
+    if($("#a_cobrar_deuda_caja").val()=='' && $("#a_cobrar_deuda_botella").val()==''){
+      alert("Por favor verifique las cantidades a retornar.");
+    }else{
+      var cod_art   =$("#cod_art_caja").val();
+      var cobr_caja =$("#a_cobrar_deuda_caja").val();
+      cobr_caja =parseInt(cobr_caja);
+      var cod_art_bot =$("#cod_art_botella").val(); 
+      var cobr_bote =$("#a_cobrar_deuda_botella").val();
+      cobr_bote =parseInt(cobr_bote);
+      var sel_c= $('.list_deuda').find('a[cod-art="'+cod_art+'"]');
+      var sel_b= $('.list_deuda').find('a[cod-art="'+cod_art_bot+'"]');
+      sel_c.parent().find('.html_cobrado_deuda').text(cobr_caja);
+      sel_c.attr('deuda-cob',cobr_caja);
+      sel_b.parent().find('.html_cobrado_deuda').text(cobr_bote);
+      sel_b.attr('deuda-cob',cobr_bote);
+      $("#add_deuda_popup").popup("close");
+    }
   }
   if(tipo=='2'){
-    var cod_art_bot =$("#cod_art_botella").val(); 
-    var cobr_bote =$("#a_cobrar_deuda_botella").val();
-    var sel_b= $('.list_deuda').find('a[cod-art="'+cod_art_bot+'"]');
-    sel_b.parent().find('.html_cobrado_deuda').text(cobr_bote);
-    sel_b.attr('deuda-cob',cobr_bote);
+    if($("#a_cobrar_deuda_botella").val()==''){
+      alert("Por favor verifique la cantidad a retornar.");
+    }else{
+      var cod_art_bot =$("#cod_art_botella").val(); 
+      var cobr_bote =$("#a_cobrar_deuda_botella").val();
+      cobr_bote =parseInt(cobr_bote);
+      var sel_b= $('.list_deuda').find('a[cod-art="'+cod_art_bot+'"]');
+      sel_b.parent().find('.html_cobrado_deuda').text(cobr_bote);
+      sel_b.attr('deuda-cob',cobr_bote);
+      $("#add_deuda_popup").popup("close");
+    }
   }
-
 
 });
 
