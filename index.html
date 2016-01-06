@@ -72,8 +72,8 @@
 
     <script type="text/javascript" src="js/venta/temp_table_venta.js"></script>
     <script type="text/javascript" src="js/venta/list_carrito.js"></script>
-
     <script type="text/javascript" src="js/cobranza/list_cobranza.js"></script>
+    <script type="text/javascript" src="js/deuda/list_deuda.js"></script>
 
     <script type="text/javascript" src="js/general_query.js"></script>
     
@@ -1567,6 +1567,7 @@
      }else{
       cargar_listas($(this).val());
       cargar_cobranza_list($(this).val());
+      cargar_deuda_list($(this).val());
       cargar_info_cliente_html($(this).val());
       $('.tablita_info_cliente').show();
       $('.menu_v_c_d').show();
@@ -1876,6 +1877,7 @@ $('.confirmar_venta_fchvto').on('click', function() {
     // $('#venta_tabs').addClass("ui-disabled blured_alan"); 
     // $("#confirmar_venta_fchvto_popup").popup("close"); 
     cargar_cobranza_list(cli_id); 
+    cargar_deuda_list(cli_id); 
     // alert("Pedido Consolidado");
     window.location.href = "index.html#cobranza";
 
@@ -1894,6 +1896,7 @@ $('.confirmar_venta_fchvto').on('click', function() {
 
 //   var cli_id=$(".cliente_id").val();
 //   // cargar_cobranza_list(cli_id); 
+//   // cargar_deuda_list(cli_id); 
 //   $("#fchvto_total_popup").val(fecha_actual);
 //   $("#confirmar_venta_fchvto_popup").popup( "open" );
 // }); 
@@ -1967,6 +1970,7 @@ $(".confirmar_venta_vacio").on('click', function(event) {
   limpiar_temp_v_table();
   cargar_listas(cli_id);
   cargar_cobranza_list(cli_id);
+  cargar_deuda_list(cli_id);
   cargar_info_cliente_html(cli_id);
   window.location.href = "index.html#cobranza";
 });
@@ -2047,6 +2051,7 @@ $( document ).on( "pagecreate", "#cobranza", function( event ) {
     var cli_id=$(".cliente_id").val();
     alert("agregar:"+cli_id+".");
     cargar_cobranza_list(cli_id);
+    cargar_deuda_list(cli_id);
   });
 
   $(".list_cobranza").on('click','.editar_cobranza_class', function(event) {
