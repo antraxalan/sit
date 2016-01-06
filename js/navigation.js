@@ -165,8 +165,10 @@ function go_to_otro_usuario(){
     $('#cliente').selectmenu();
     $("#cliente option:eq(0)").prop("selected",true);
     $('#cliente') .selectmenu("refresh");
+    $('#obs').val('');
     $('.tablita_info_cliente').hide();
     $('.menu_v_c_d').hide();
+
     window.location.href = "index.html#registrar";
     limpiar_temp_v_table();
     $('#venta_tabs').removeClass("ui-disabled blured_alan");

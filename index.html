@@ -121,7 +121,7 @@
               <div class="ui-grid-solo" >
                 <div class="ui-block-a"><button type="button" class="big_button info blue_btn">Informacion General</button></div>
               </div>
-              <button type="button" class="big_button tabs blue_btn">Prueba</button>
+              <!-- <button type="button" class="big_button tabs blue_btn">Prueba</button> -->
             </form>
           </div>
           
@@ -147,7 +147,7 @@
             <!-- <button type="button" class="ui-btn ui-corner-all ui-shadow">Button</button> -->
           </div>
 
-
+<!-- 
           <div class="progress">
             <div class="circle ">
               <span class="label">1</span>
@@ -167,7 +167,7 @@
           
           <button type="button" data-icon="power" data-inline="true" class="next_mod">Next</button>
           
-          <button type="button" data-icon="power" data-inline="true" class="prev_mod">Prev</button>
+          <button type="button" data-icon="power" data-inline="true" class="prev_mod">Prev</button> -->
 
         </div><!-- /content -->
         <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
@@ -208,24 +208,18 @@
     <h3>BIENVENIDO A SITRANS APP</h3>
     <div class="ui-content" role="main">
       <form class="ui">
-       <div data-role="fieldcontain" class="ui-field-contain"data-demo-html="true">               
-                <!-- <button type="button" class="pruebita_select">pruebita</button>
-                <select name="select-custom-cliente" id="cliente_prueba" class="filterable-select " data-native-menu="false">
-                 <option value="-">Seleccione un cliente.</option>
-                 <option value="100">100 - EEEVELIN  MARIA CARDENAS TROCHE</option>
-                 <option value="101">101 - ALVAREZ MORALES FELIX</option>
-               </select> -->
-               <!-- <button type="button" class="s_cliente">select prueba</button> -->
-               <label for="date">Fecha:</label>
-               <input name="mydate" id="fecha_actual" disabled="disabled"/>
-             </div>
+        <div data-role="fieldcontain" class="ui-field-contain"data-demo-html="true">               
+         <label for="date">Fecha:</label>
+         <input name="mydate" id="fecha_actual" disabled="disabled"/>
+       </div>
 
-             <div data-role="fieldcontain" class="ui-field-contain">
-              <label for="select-custom-20">Cliente:</label>
+       <p>Por favor seleccione un cliente de la lista para comenzar las transacciones:</p>
+       <div data-role="fieldcontain" class="ui-field-contain">
+        <label for="select-custom-20">Cliente:</label>
 
-              <select name="select-custom-cliente" id="cliente" class="filterable-select" data-native-menu="false">
+        <select name="select-custom-cliente" id="cliente" class="filterable-select" data-native-menu="false">
 
-                <option value="-">Seleccione un cliente.</option>
+               <!--  <option value="-">Seleccione un cliente.</option>
                <option value="100">100 - EEEVELIN  MARIA CARDENAS TROCHE</option>
                <option value="101">101 - ALVAREZ MORALES FELIX</option>
                <option value="102">102 - LOPEZ ERNESTO</option>
@@ -433,13 +427,13 @@
                <option value="308">308 - RAMIRO QUISPE</option>
                <option value="309">309 - VICTOR ALMIRANTE</option>
                <option value="310">310 - MIRIAN ALBORTA</option>
-               <option value="311">311 - MIUSIC</option> 
+               <option value="311">311 - MIUSIC</option>  -->
                
 
              </select>
              <!-- </div> -->
            </div>
-           <div data-role="fieldcontain" class="ui-field-contain">
+          <!--  <div data-role="fieldcontain" class="ui-field-contain">
             <fieldset data-role="controlgroup" data-type="horizontal">
               <legend>Tipo:</legend>
               <label for="cont">Contado</label>
@@ -447,15 +441,11 @@
               <label for="cred">Credito</label>
               <input type="radio" name="tipo" id="cred" value="cred">
             </fieldset>
-          </div>
-          <div data-role="fieldcontain" class="ui-field-contain vencimiento">               
+          </div> -->
+          <!-- <div data-role="fieldcontain" class="ui-field-contain vencimiento">               
             <label for="date">Fecha Vto:</label>
             <input name="mydate" id="fecha_vto" type="date" data-role="date" date-format="dd-mm-yyyy"/>
-          </div>    
-          <div data-role="fieldcontain" class="ui-field-contain">
-            <label for="textarea">Obs:</label>
-            <textarea cols="40" rows="8" name="textarea" id="obs"></textarea>
-          </div>
+          </div>     -->
 
           <div  class=" tablita_info_cliente">
 
@@ -465,6 +455,10 @@
           <a href="#venta" data-role="button">Detalles</a>
         </div> -->
         <div class="menu_v_c_d">
+          <div data-role="fieldcontain" class="ui-field-contain">
+            <label for="textarea">Observaciones:</label>
+            <textarea cols="40" rows="8" name="textarea" id="obs"></textarea>
+          </div>
           <ul data-role="listview" data-inset="true">
             <li class="cobranza_btn" style="display: none---;">
               <a href="#" class="registrar_v_c_d">
@@ -1256,6 +1250,34 @@
   </div>
 </div>
 
+
+
+<div data-role="popup" id="fin_popup" data-overlay-theme="a" data-theme="a"  style="max-width:800px;">
+  <div data-role="header" data-theme="a">
+    <h1>Finalizar</h1>
+  </div>
+  <div role="main" class="ui-content">
+    <p>Todos las transacciones seran guardadas para el cliente:</p>
+    <div class="ui-field-contain">
+      <label class="cliente_nombre">Id - Nombre del cliente</label>
+    </div>
+    
+    <div data-role="fieldcontain" class="ui-field-contain">
+      <label for="textarea">Observaciones finales:</label>
+      <textarea cols="40" rows="8" name="textarea" id="obs_final"></textarea>
+    </div>
+    <p>Presione el boton confirmar si completo todas las <br>transacciones requeridas por el cliente.</p>
+    <hr>
+    <div class="ui-grid-a">
+      <div class="ui-block-a">
+        <button type="button" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a close_popup_final">Cancelar</button>
+      </div>
+      <div class="ui-block-b">
+        <button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_final">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
@@ -2131,6 +2153,12 @@ $( document ).on( "pagecreate", "#cobranza", function( event ) {
   });
 
   $(".list_cobranza").on('click','.btn_confirmar_cobranza', function(event) {
+    var total_cobro_fin=$(this).find('span').text();
+    if(total_cobro_fin=='0.00 Bs.'){
+      alert('Pasando a Envases sin cobros.');
+    }else{
+      alert('Confirmado el cobro de '+$(this).find('span').text());
+    }
     window.location.href = "index.html#deuda";
   });
 
@@ -2143,11 +2171,25 @@ $( document ).on( "pagecreate", "#cobranza", function( event ) {
 $( document ).on( "pagecreate", "#deuda", function( event ) {
 
   $(".prev_deuda").on('click', function(event) {
-    exitDeuda();;
+    exitDeuda();
   });
+
   $(".next_deuda").on('click', function(event) {
-    alert("Finalizado");
-    window.location.href = "index.html";
+    $("#fin_popup").popup("open");
+    $('obs_final').val($('#obs').val());
+  });
+
+
+
+  $(".close_popup_final").on('click', function(event) {
+    $("#fin_popup").popup("close");
+
+  });
+
+  $(".confirmar_final").on('click', function(event) {
+    alert('Consolidado');
+    $("#fin_popup").popup("close");
+    go_to_otro_usuario();
   });
 
 
