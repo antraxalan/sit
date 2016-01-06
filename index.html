@@ -698,20 +698,7 @@
                 <label for="sub_total"><strong>Sub-Total:</strong></label>
                 <input name="precio_popup" id="sub_total" class="estilo_sub_total"/>
               </div>
-
-              <fieldset data-role="controlgroup" data-type="horizontal">
-                <legend>Embase:</legend>
-                <label for="canje_popup">Con Canje</label>
-                <input type="radio" name="tipo" id="canje_popup" value="canje_popup" checked="checked" data-clear-btn="true"/>
-                <label for="prest_popup">Prestamo</label>
-                <input type="radio" name="tipo" id="prest_popup" value="prest_popup" data-clear-btn="true"/>
-              </fieldset>
-
-
               <hr>
-
-
-
               <div class="ui-grid-b">
                 <div class="ui-block-a">
                   <button type="button" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a close_popup">Cancelar</button>
@@ -720,8 +707,8 @@
                   <button type="button" style="background-color: #F01111;" class="ui-btn ui-icon-alert ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b eliminar_del_carrito">Eliminar</button>
                 </div>
                 <div class="ui-block-c">
-                  <button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_venta_popup">Confirmar V</button>
-                  <button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_edicion_popup">Confirmar E</button>
+                  <button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_venta_popup">Confirmar</button>
+                  <button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_edicion_popup">Confirmar</button>
                 </div>
               </div>
             </div>
@@ -1107,9 +1094,9 @@
             <div class="ui-grid-c">
               <!-- <div class="ui-block-a" align="center" ><p>Caja(s) Prestada(s): 5</p></div> -->
               <div class="ui-block-c" align="right"><p>Caja(s) Prestada(s):&nbsp</p></div>
-              <div class="ui-block-b" align="left"><p><strong>2</strong></p></div>
+              <div class="ui-block-b red" align="left"><p><strong>2</strong></p></div>
               <div class="ui-block-c" align="right"><p>Caja(s) Devuelta(s):&nbsp</p></div>
-              <div class="ui-block-d " align="left" ><p class="html_cobrado_deuda">0</p></div>
+              <div class="ui-block-d " align="left" ><p class="html_cobrado_deuda"><strong>0</strong></p></div>
             </div>
           </a>
           <a href="#" class="editar_deuda_class" cod-art="4020" des-art="CAJA PLAST.TAQ.12 BOT." tipo="C" saldo-cajas="2" saldo-unidades="2" cod-botella="0" cod-caja="0" cant-empaque="1" deuda-cob="0">SITRANS</a>
@@ -1121,9 +1108,9 @@
             <div class="ui-grid-c">
               <!-- <div class="ui-block-a" align="center" ><p>Caja(s) Prestada(s): 5</p></div> -->
               <div class="ui-block-c" align="right"><p>Caja(s) Prestada(s):&nbsp</p></div>
-              <div class="ui-block-b" align="left"><p><strong>111</strong></p></div>
+              <div class="ui-block-b red" align="left"><p><strong>111</strong></p></div>
               <div class="ui-block-c" align="right"><p>Caja(s) Devuelta(s):&nbsp</p></div>
-              <div class="ui-block-d " align="left" ><p class="html_cobrado_deuda">0</p></div>
+              <div class="ui-block-d " align="left" ><p class="html_cobrado_deuda"><strong>0</strong></p></div>
             </div>
           </a>
           <a href="#" class="editar_deuda_class" cod-art="4029" des-art="CAJA PLAST.PACEÐA 12 BOT." tipo="C" saldo-cajas="111" saldo-unidades="111" cod-botella="3020" cod-caja="0" cant-empaque="1" deuda-cob="0">SITRANS</a>
@@ -1135,9 +1122,9 @@
             <div class="ui-grid-c">
               <!-- <div class="ui-block-a" align="center" ><p>Caja(s) Prestada(s): 5</p></div> -->
               <div class="ui-block-c" align="right"><p>Caja(s) Prestada(s):&nbsp</p></div>
-              <div class="ui-block-b" align="left"><p><strong>15</strong></p></div>
+              <div class="ui-block-b red" align="left"><p><strong>15</strong></p></div>
               <div class="ui-block-c" align="right"><p>Caja(s) Devuelta(s):&nbsp</p></div>
-              <div class="ui-block-d " align="left" ><p class="html_cobrado_deuda">0</p></div>
+              <div class="ui-block-d " align="left" ><p class="html_cobrado_deuda"><strong>0</strong></p></div>
             </div>
           </a>
           <a href="#" class="editar_deuda_class" cod-art="4079" des-art="CAJA HUARI 620CC." tipo="C" saldo-cajas="15" saldo-unidades="15" cod-botella="3079" cod-caja="0" cant-empaque="1" deuda-cob="0">SITRANS</a>
@@ -1149,12 +1136,12 @@
             <div class="ui-grid-c">
               <!-- <div class="ui-block-a" align="center" ><p>Caja(s) Prestada(s): 5</p></div> -->
               <div class="ui-block-c" align="right"><p>Botella(s) Prestada(s):&nbsp</p></div>
-              <div class="ui-block-b" align="left"><p><strong>1308</strong></p></div>
+              <div class="ui-block-b red" align="left"><p><strong>1308</strong></p></div>
               <div class="ui-block-c" align="right"><p>Botella(s) Devuelta(s):&nbsp</p></div>
-              <div class="ui-block-d " align="left" ><p class="html_cobrado_deuda">0</p></div>
+              <div class="ui-block-d " align="left" ><p class="html_cobrado_deuda"><strong>0</strong></p></div>
             </div>
           </a>
-          <a href="#" class="editar_deuda_class" cod-art="3020" des-art="BOTELLA 620 CC." tipo="B" saldo-cajas="109" saldo-unidades="109" cod-botella="0" cod-caja="4029" cant-empaque="12" deuda-cob="0">SITRANS</a>
+          <a href="#" class="editar_deuda_class" cod-art="3020" des-art="BOTELLA 620 CC." tipo="B" saldo-cajas="109" saldo-unidades="1308" cod-botella="0" cod-caja="4029" cant-empaque="12" deuda-cob="0">SITRANS</a>
         </li>
         <li>
           <a href="#">
@@ -1163,12 +1150,12 @@
             <div class="ui-grid-c">
               <!-- <div class="ui-block-a" align="center" ><p>Caja(s) Prestada(s): 5</p></div> -->
               <div class="ui-block-c" align="right"><p>Botella(s) Prestada(s):&nbsp</p></div>
-              <div class="ui-block-b" align="left"><p><strong>180</strong></p></div>
+              <div class="ui-block-b red" align="left"><p><strong>180</strong></p></div>
               <div class="ui-block-c" align="right"><p>Botella(s) Devuelta(s):&nbsp</p></div>
-              <div class="ui-block-d " align="left" ><p class="html_cobrado_deuda">0</p></div>
+              <div class="ui-block-d " align="left" ><p class="html_cobrado_deuda"><strong>0</strong></p></div>
             </div>
           </a>
-          <a href="#" class="editar_deuda_class" cod-art="3079" des-art="BOTELLA HUARI 620CC." tipo="B" saldo-cajas="15" saldo-unidades="15" cod-botella="0" cod-caja="4079" cant-empaque="12" deuda-cob="0">SITRANS</a>
+          <a href="#" class="editar_deuda_class" cod-art="3079" des-art="BOTELLA HUARI 620CC." tipo="B" saldo-cajas="15" saldo-unidades="180" cod-botella="0" cod-caja="4079" cant-empaque="12" deuda-cob="0">SITRANS</a>
         </li>
       </ul>
 
@@ -2164,15 +2151,6 @@ $( document ).on( "pagecreate", "#deuda", function( event ) {
   });
 
 
-  $(".prev_cobranza").on('click', function(event) {
-    exitCobranza();
-  });
-  $(".next_cobranza").on('click', function(event) {
-    Cobranza_to_Deuda();
-  });
-
-
-
 
 
   $(".deuda_close_popup").on('click', function(event) {
@@ -2303,7 +2281,7 @@ $(".confirmar_deuda_popup").on('click', function(event) {
       var cobr_caja =$("#a_cobrar_deuda_caja").val();
       cobr_caja =parseInt(cobr_caja);
       var sel_c= $('.list_deuda').find('a[cod-art="'+cod_art+'"]');
-      sel_c.parent().find('.html_cobrado_deuda').text(cobr_caja);
+      sel_c.parent().find('.html_cobrado_deuda').html('<strong>'+cobr_caja+'</strong>');
       sel_c.attr('deuda-cob',cobr_caja);
       $("#add_deuda_popup").popup("close");
     }
@@ -2320,9 +2298,9 @@ $(".confirmar_deuda_popup").on('click', function(event) {
       cobr_bote =parseInt(cobr_bote);
       var sel_c= $('.list_deuda').find('a[cod-art="'+cod_art+'"]');
       var sel_b= $('.list_deuda').find('a[cod-art="'+cod_art_bot+'"]');
-      sel_c.parent().find('.html_cobrado_deuda').text(cobr_caja);
+      sel_c.parent().find('.html_cobrado_deuda').html('<strong>'+cobr_caja+'</strong>');
       sel_c.attr('deuda-cob',cobr_caja);
-      sel_b.parent().find('.html_cobrado_deuda').text(cobr_bote);
+      sel_b.parent().find('.html_cobrado_deuda').html('<strong>'+cobr_bote+'</strong>');
       sel_b.attr('deuda-cob',cobr_bote);
       $("#add_deuda_popup").popup("close");
     }
@@ -2335,7 +2313,7 @@ $(".confirmar_deuda_popup").on('click', function(event) {
       var cobr_bote =$("#a_cobrar_deuda_botella").val();
       cobr_bote =parseInt(cobr_bote);
       var sel_b= $('.list_deuda').find('a[cod-art="'+cod_art_bot+'"]');
-      sel_b.parent().find('.html_cobrado_deuda').text(cobr_bote);
+      sel_b.parent().find('.html_cobrado_deuda').html('<strong>'+cobr_bote+'</strong>');
       sel_b.attr('deuda-cob',cobr_bote);
       $("#add_deuda_popup").popup("close");
     }
