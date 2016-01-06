@@ -27,7 +27,7 @@
     <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <!-- <link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme.css" /> -->
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme.css" />
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile.css" />
     <link rel="stylesheet" type="text/css" href="css/tablesaw.css" />
 
@@ -224,7 +224,7 @@
 
               <select name="select-custom-cliente" id="cliente" class="filterable-select " data-native-menu="false">
 
-               <!-- <option value="-">Seleccione un cliente.</option>
+                <option value="-">Seleccione un cliente.</option>
                <option value="100">100 - EEEVELIN  MARIA CARDENAS TROCHE</option>
                <option value="101">101 - ALVAREZ MORALES FELIX</option>
                <option value="102">102 - LOPEZ ERNESTO</option>
@@ -432,7 +432,7 @@
                <option value="308">308 - RAMIRO QUISPE</option>
                <option value="309">309 - VICTOR ALMIRANTE</option>
                <option value="310">310 - MIRIAN ALBORTA</option>
-               <option value="311">311 - MIUSIC</option> -->
+               <option value="311">311 - MIUSIC</option> 
                
 
              </select>
@@ -549,7 +549,7 @@
     </div>
     
     <button type="button" data-icon="arrow-l" class="btn_prev_style otro_cliente" data-inline="true">Otro Cliente</button>
-    <button type="button" data-icon="arrow-r" class="btn_next_style btn_confirmar_ventas_vacia" data-iconpos="right" data-inline="true">Cobranza</button>
+    <button type="button" data-icon="arrow-r" class="btn_next_style btn_confirmar_ventas_vacia_next" data-iconpos="right" data-inline="true">Cobranza</button>
     
 
 
@@ -1965,6 +1965,10 @@ $(".confirmar_venta_vacio").on('click', function(event) {
 });
 
 $(".list_old_venta").on('click','.btn_confirmar_ventas_vacia', function(event) {
+  $("#confirmar_venta_vacia").popup("open");
+});
+
+$(".btn_confirmar_ventas_vacia_next").on('click', function(event) {
   $("#confirmar_venta_vacia").popup("open");
 });
 
