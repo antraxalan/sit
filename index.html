@@ -446,7 +446,7 @@
             <label for="date">Fecha Vto:</label>
             <input name="mydate" id="fecha_vto" type="date" data-role="date" date-format="dd-mm-yyyy"/>
           </div>     -->
-
+          <br></br>
           <div  class=" tablita_info_cliente">
 
           </div>
@@ -455,10 +455,7 @@
           <a href="#venta" data-role="button">Detalles</a>
         </div> -->
         <div class="menu_v_c_d">
-          <div data-role="fieldcontain" class="ui-field-contain">
-            <label for="textarea">Observaciones:</label>
-            <textarea cols="40" rows="8" name="textarea" id="obs"></textarea>
-          </div>
+          
           <ul data-role="listview" data-inset="true">
             <li class="cobranza_btn" style="display: none---;">
               <a href="#" class="registrar_v_c_d">
@@ -2176,7 +2173,6 @@ $( document ).on( "pagecreate", "#deuda", function( event ) {
 
   $(".next_deuda").on('click', function(event) {
     $("#fin_popup").popup("open");
-    $('obs_final').val($('#obs').val());
   });
 
 
