@@ -84,17 +84,12 @@ function querySuccess_deuda(tx, results) {
     saldounidades   =results.rows.item(i).SaldoUnidades;
     prestcajas      =results.rows.item(i).PrestCajas;
     prestunidades   =results.rows.item(i).PrestUnidades;
-    alert(art_codart);
-    alert(codart);
-    
+ 
     var index=$.inArray(codart,art_codart);
-    alert(index);
 
     empaq  =art_cantxempaque[index];
     codbot =art_codbotella[index]; 
     cobcaj =art_codcaja[index]; 
-    alert(empaq+' - '+codbot+' - '+cobcaj);
-
 
     var img='';
     var titulo='';
@@ -137,7 +132,7 @@ function querySuccess_deuda(tx, results) {
     lista_contenido+= '<div class="ui-block-d " align="left" ><p class="html_cobrado_deuda"><strong>0</strong></p></div>';
     lista_contenido+= '</div>';
     lista_contenido+= '</a>';
-    lista_contenido+= '<a href="#" class="editar_deuda_class" cod-art="'+codart+'" des-art="'+desart+'" tipo="'+tipoarticulo+'" saldo-cajas="'+saldo_c_t+'" saldo-unidades="'+saldo_u_t+'" cod-botella="0" cod-caja="0" cant-empaque="1" deuda-cob="0">SITRANS</a>';
+    lista_contenido+= '<a href="#" class="editar_deuda_class" cod-art="'+codart+'" des-art="'+desart+'" tipo="'+tipoarticulo+'" saldo-cajas="'+saldo_c_t+'" saldo-unidades="'+saldo_u_t+'" cod-botella="'+codbot+'" cod-caja="'+cobcaj+'" cant-empaque="'+empaq+'" deuda-cob="0">SITRANS</a>';
     lista_contenido+= '</li>';
 
 
