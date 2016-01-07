@@ -23,7 +23,6 @@ function querySuccess_deuda_articulos(tx, results_art) {
   var tipo;
   var count=0;
 
-  total_venta=0;
   for (var i = 0; i < len; i++) {
     tipo=results_art.rows.item(i).TipoArticulo;
 
@@ -40,6 +39,92 @@ function querySuccess_deuda_articulos(tx, results_art) {
 
 function querySuccess_deuda(tx, results) {
   alert("success");
+  var len = results.rows.length;
+  var lista_contenido='';
+
+  // var aux;
+  // var disabled;
+  // var precio_total=0;
+  // var color;
+  // var fch;
+  // var fch_vto;
+
+  var codconcepto;
+  var codcliente;
+  var nombre;
+  var codart;
+  var desart;
+  var tipoarticulo;
+  var saldocajas;
+  var saldounidades;
+  var prestcajas;
+  var prestunidades;
+
+  var d = new Date();
+  var month = d.getMonth()+1;
+  var day = d.getDate();
+  var fecha_actual =((''+day).length<2 ? '0' : '') + day + '/' +((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
+
+  lista_contenido+='<button type="button" class="class_confirmaciones btn_confirmar_deuda" data-theme="b">CONFIRMAR COBRO</button>';
+  lista_contenido+='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Cobro de Envases...">';
+
+  for (var i = 0; i < len; i++) {
+
+    codconcepto     =results.rows.item(i).codconcepto;
+    codcliente      =results.rows.item(i).codcliente;
+    nombre          =results.rows.item(i).nombre;
+    codart          =trim(results.rows.item(i).codart);
+    desart          =trim(results.rows.item(i).desart);
+    tipoarticulo    =results.rows.item(i).tipoarticulo;
+    saldocajas      =results.rows.item(i).saldocajas;
+    saldounidades   =results.rows.item(i).saldounidades;
+    prestcajas      =results.rows.item(i).prestcajas;
+    prestunidades   =results.rows.item(i).prestunidades;
+
+    var img='';
+    var titulo='';
+    var titulo2='';
+    if(tipoarticulo=='C'){
+      img='caja.png';
+      titulo='Caja(s) Prestada(s):';
+      titulo2='Caja(s) Devuelta(s):';
+    }
+    if(tipoarticulo=='B'){
+      img='botellita.png';
+      titulo='Botella(s) Prestada(s):';
+      titulo2='Botella(s) Devuelta(s):';
+    }
+    var deuda_t=0;
+    var saldo_t=0;
+    var saldo_u_t=0;
+
+
+    lista_contenido+= '<li>';
+    lista_contenido+= '<a href="#">';
+    lista_contenido+= '<img src="img/'+img+'" >';
+    lista_contenido+= '<h2>'+codart+' - '+desart+'</h2>';
+    lista_contenido+= '<div class="ui-grid-c">';
+    lista_contenido+= '<div class="ui-block-c" align="right"><p>'+titulo+'&nbsp</p></div>';
+    lista_contenido+= '<div class="ui-block-b red" align="left"><p><strong>'+deuda_t+'</strong></p></div>';
+    lista_contenido+= '<div class="ui-block-c" align="right"><p>'+titulo2+'&nbsp</p></div>';
+    lista_contenido+= '<div class="ui-block-d " align="left" ><p class="html_cobrado_deuda"><strong>0</strong></p></div>';
+    lista_contenido+= '</div>';
+    lista_contenido+= '</a>';
+    lista_contenido+= '<a href="#" class="editar_deuda_class" cod-art="'+codart+'" des-art="'+desart+'" tipo="'+tipoarticulo+'" saldo-cajas="'+saldo_t+'" saldo-unidades="'+saldo_u_t+'" cod-botella="0" cod-caja="0" cant-empaque="1" deuda-cob="0">SITRANS</a>';
+    lista_contenido+= '</li>';
+
+
+
+  }
+
+
+  lista_contenido+='<button type="button" class="class_confirmaciones btn_confirmar_deuda" data-theme="b">CONFIRMAR COBRO</button>';
+  lista_contenido +='</ul>';
+  // lista_contenido +='<button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">0.00 Bs.</span></button>';
+  $('.list_deuda').html(lista_contenido);
+  $(".list_deuda").trigger("create");
+  // precio_total=precio_total.toFixed(2)+' Bs';
+  // $('.total_carrito').html(precio_total);
 }
 
 function errorCB_list_deuda(err) {
