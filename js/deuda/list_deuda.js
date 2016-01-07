@@ -73,8 +73,8 @@ function querySuccess_deuda(tx, results) {
     codconcepto     =results.rows.item(i).codconcepto;
     codcliente      =results.rows.item(i).codcliente;
     nombre          =results.rows.item(i).nombre;
-    codart          =trim(results.rows.item(i).codart);
-    desart          =trim(results.rows.item(i).desart);
+    codart          =$.trim(results.rows.item(i).codart);
+    desart          =$.trim(results.rows.item(i).desart);
     tipoarticulo    =results.rows.item(i).tipoarticulo;
     saldocajas      =results.rows.item(i).saldocajas;
     saldounidades   =results.rows.item(i).saldounidades;
