@@ -102,7 +102,7 @@ function querySuccess_deuda(tx, results) {
     lista_contenido+= '<li>';
     lista_contenido+= '<a href="#">';
     lista_contenido+= '<img src="img/'+img+'" >';
-    lista_contenido+= '<h2>'+codart+' - '+desart+'</h2>';
+    lista_contenido+= '<h2>codart='+codart+' - desart='+desart+' - codconcepto='+codconcepto+' - codcliente='+codcliente+' - nombre='+nombre+' - codart='+codart+' - desart='+desart+' - tipoarticulo='+tipoarticulo+' - saldocajas='+saldocajas+' - saldounidades='+saldounidades+' - prestcajas='+prestcajas+' - prestunidades='+prestunidades+'</h2>';
     lista_contenido+= '<div class="ui-grid-c">';
     lista_contenido+= '<div class="ui-block-c" align="right"><p>'+titulo+'&nbsp</p></div>';
     lista_contenido+= '<div class="ui-block-b red" align="left"><p><strong>'+deuda_t+'</strong></p></div>';
