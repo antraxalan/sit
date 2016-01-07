@@ -1064,7 +1064,7 @@
 
     <button type="button" data-icon="arrow-l" class="btn_prev_style prev_deuda" data-inline="true">Cobranza</button>
     <button type="button" data-icon="arrow-r" class="btn_next_style next_deuda" data-theme="b" data-iconpos="right" data-inline="true">Finalizar</button>
-    <button type="button" data-icon="arrow-r" class="btn_next_style qwerty123" data-theme="b" data-iconpos="right" data-inline="true">dsadsadsa</button>
+
     
 
     <div class="ui-field-contain">
@@ -2029,6 +2029,7 @@ $(document).on("pageshow","#deuda",function(event){ // When entering pagetwo
   steps_next();
   steps_next();
   steps_next();
+  $.('.next_deuda').hide();
 });
 
 
@@ -2181,9 +2182,6 @@ $( document ).on( "pagecreate", "#deuda", function( event ) {
     $("#fin_popup").popup("open");
   });
 
-  $(".qwerty123").on('click', function(event) {
-    querySuccess_deuda();
-  });
 
 
 
@@ -2366,9 +2364,16 @@ $(".confirmar_deuda_popup").on('click', function(event) {
       $("#add_deuda_popup").popup("close");
     }
   }
-
 });
 
+
+
+ $(".list_deuda").on('click','.btn_confirmar_deuda', function(event) {
+
+    $.('.next_deuda').show();
+    alert('Por favor presione Finalizar para compeltar la transaccion.'); 
+    
+  });
 
 
 });

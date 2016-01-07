@@ -124,7 +124,8 @@ function querySuccess_deuda(tx, results) {
     lista_contenido+= '<li>';
     lista_contenido+= '<a href="#">';
     lista_contenido+= '<img src="img/'+img+'" >';
-    lista_contenido+= '<h2>codart='+codart+' <br>- desart='+desart+' <br>- codconcepto='+codconcepto+' <br>- codcliente='+codcliente+' <br>- nombre='+nombre+' <br>- codart='+codart+' <br>- desart='+desart+' <br>- tipoarticulo='+tipoarticulo+' <br>- saldocajas='+saldocajas+' <br>- saldounidades='+saldounidades+' prestcajas='+prestcajas+'<br>- prestunidades='+prestunidades+' <br>- empaq='+empaq+' <br>- codbot='+codbot+' <br>- cobcaj='+cobcaj+' <br> - deuda_t='+deuda_t+' <br> - saldo_c_t='+saldo_c_t+' <br> - saldo_u_t='+saldo_u_t+'</h2>';
+    lista_contenido+= '<h2>codart='+codart+'- desart='+desart+' </h2>';
+    // lista_contenido+= '<h2>codart='+codart+' <br>- desart='+desart+' <br>- codconcepto='+codconcepto+' <br>- codcliente='+codcliente+' <br>- nombre='+nombre+' <br>- codart='+codart+' <br>- desart='+desart+' <br>- tipoarticulo='+tipoarticulo+' <br>- saldocajas='+saldocajas+' <br>- saldounidades='+saldounidades+' prestcajas='+prestcajas+'<br>- prestunidades='+prestunidades+' <br>- empaq='+empaq+' <br>- codbot='+codbot+' <br>- cobcaj='+cobcaj+' <br> - deuda_t='+deuda_t+' <br> - saldo_c_t='+saldo_c_t+' <br> - saldo_u_t='+saldo_u_t+'</h2>';
     lista_contenido+= '<div class="ui-grid-c">';
     lista_contenido+= '<div class="ui-block-c" align="right"><p>'+titulo+'&nbsp</p></div>';
     lista_contenido+= '<div class="ui-block-b red" align="left"><p><strong>'+deuda_t+'</strong></p></div>';
