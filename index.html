@@ -455,7 +455,7 @@
           <a href="#venta" data-role="button">Detalles</a>
         </div> -->
         <div class="menu_v_c_d">
-          
+
           <ul data-role="listview" data-inset="true">
             <li class="cobranza_btn" style="display: none---;">
               <a href="#" class="registrar_v_c_d">
@@ -2029,7 +2029,7 @@ $(document).on("pageshow","#deuda",function(event){ // When entering pagetwo
   steps_next();
   steps_next();
   steps_next();
-  $('.next_deuda').hide();
+  // $('.next_deuda').hide();
 });
 
 
@@ -2193,7 +2193,7 @@ $( document ).on( "pagecreate", "#deuda", function( event ) {
 
   $(".confirmar_final").on('click', function(event) {
     alert('Consolidado');
-    $("#fin_popup").popup("close");
+    // $("#fin_popup").popup("close");
     go_to_otro_usuario();
   });
 
@@ -2369,12 +2369,11 @@ $(".confirmar_deuda_popup").on('click', function(event) {
 
 
 
- $(".list_deuda").on('click','.btn_confirmar_deuda', function(event) {
+$(".list_deuda").on('click','.btn_confirmar_deuda', function(event) {
 
-    $('.next_deuda').show();
-    alert('Por favor presione Finalizar para compeltar la transaccion.'); 
-    
-  });
+  $('.next_deuda').show();
+  alert('Por favor presione el boton Finalizar para compeltar la transaccion.'); 
+});
 
 
 });
