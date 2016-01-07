@@ -84,12 +84,16 @@ function querySuccess_deuda(tx, results) {
     saldounidades   =results.rows.item(i).SaldoUnidades;
     prestcajas      =results.rows.item(i).PrestCajas;
     prestunidades   =results.rows.item(i).PrestUnidades;
-
+    alert(art_codart);
+    alert(codart);
+    
     var index=$.inArray(codart,art_codart);
+    alert(index);
 
     empaq  =art_cantxempaque[index];
     codbot =art_codbotella[index]; 
     cobcaj =art_codcaja[index]; 
+    alert(empaq+' - '+codbot+' - '+cobcaj);
 
 
     var img='';
