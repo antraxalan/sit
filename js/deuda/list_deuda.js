@@ -11,7 +11,7 @@ function queryDB_todos_articulos(tx) {
   tx.executeSql('select CodArt,TipoArticulo,CantxEmpaque,CodBotella,CodCaja from ARTICULO', [], querySuccess_deuda_articulos, errorCB_todos_articulos);
 }
 function queryDB_deuda(tx) {         
-  tx.executeSql('select codconcepto,codcliente,nombre,codart,desart,tipoarticulo,sum(saldocajas) saldocajas,sum(saldounidades) saldounidades, sum(prestcajas) prestcajas,sum(prestunidades) prestunidades from( select CodConcepto,a.CodCliente CodCliente,nombre, a.codart CodArt,desart,tipoarticulo,Sum(DUnidades-HUnidades)/CantxEmpaque saldocajas,Sum(DUnidades-HUnidades) saldounidades, 0 PrestCajas, 0 PrestUnidades, CodBotella,CodCaja, CantxEmpaque from Detalle a inner join Articulo b on a.CodArt=b.CodArt inner join cliente c on a.codcliente=c.codcliente where CodConcepto=1600 and a.codcliente=? group by CodConcepto,a.CodCliente,nombre,a.CodArt,desart,tipoarticulo,CantxEmpaque, CodBotella,CodCaja,CantxEmpaque having Sum(Debe-Haber)<>0 or Sum(DUnidades-HUnidades)/CantxEmpaque<>0 or Sum(DUnidades-HUnidades)<>0 UNION select 1600 CodConcepto,a.CodCliente CodCliente,nombre, a.codCaja CodArt,b.desart,tipoarticulo,0 saldocajas,0 saldounidades,Sum(Caja) Prestcajas,Sum(Caja) PrestUnidades,  a.CodBotella,a.CodCaja,cantxempaque from TempVenta a inner join Articulo b on a.Codcaja=b.codart inner join cliente c on a.codcliente=c.codcliente where a.CodCaja>0 group by a.CodCliente,nombre,a.CodCaja,b.desart,tipoarticulo,CantxEmpaque, a.CodBotella,a.CodCaja UNION select 1600 CodConcepto,a.CodCliente CodCliente,nombre, a.codBotella CodArt,b.desart,tipoarticulo,0 saldocajas,0 saldounidades,Sum(Caja) Prestcajas,Sum(Unidad+caja*cantxempaque) PrestUnidades,  a.CodBotella,a.CodCaja,cantxempaque from TempVenta a inner join Articulo b on a.Codbotella=b.codart inner join cliente c on a.codcliente=c.codcliente where a.CodBotella>0 group by a.CodCliente,nombre,a.CodBotella,b.desart,tipoarticulo,CantxEmpaque, a.CodBotella,a.CodCaja) group by codconcepto,codcliente,nombre,codart,desart,tipoarticulo order by tipoarticulo desc,codart', [id_cliente], querySuccess_deuda, errorCB_list_deuda2);
+  tx.executeSql('select CodConcepto,CodCliente,Nombre,CodArt,DesArt,TipoArticulo,sum(saldocajas) SaldoCajas,sum(saldounidades) SaldoUnidades, sum(prestcajas) PrestCajas,sum(prestunidades) PrestUnidades from( select CodConcepto,a.CodCliente CodCliente,nombre, a.codart CodArt,desart,tipoarticulo,Sum(DUnidades-HUnidades)/CantxEmpaque saldocajas,Sum(DUnidades-HUnidades) saldounidades, 0 PrestCajas, 0 PrestUnidades, CodBotella,CodCaja, CantxEmpaque from Detalle a inner join Articulo b on a.CodArt=b.CodArt inner join cliente c on a.codcliente=c.codcliente where CodConcepto=1600 and a.codcliente=? group by CodConcepto,a.CodCliente,nombre,a.CodArt,desart,tipoarticulo,CantxEmpaque, CodBotella,CodCaja,CantxEmpaque having Sum(Debe-Haber)<>0 or Sum(DUnidades-HUnidades)/CantxEmpaque<>0 or Sum(DUnidades-HUnidades)<>0 UNION select 1600 CodConcepto,a.CodCliente CodCliente,nombre, a.codCaja CodArt,b.desart,tipoarticulo,0 saldocajas,0 saldounidades,Sum(Caja) Prestcajas,Sum(Caja) PrestUnidades,  a.CodBotella,a.CodCaja,cantxempaque from TempVenta a inner join Articulo b on a.Codcaja=b.codart inner join cliente c on a.codcliente=c.codcliente where a.CodCaja>0 group by a.CodCliente,nombre,a.CodCaja,b.desart,tipoarticulo,CantxEmpaque, a.CodBotella,a.CodCaja UNION select 1600 CodConcepto,a.CodCliente CodCliente,nombre, a.codBotella CodArt,b.desart,tipoarticulo,0 saldocajas,0 saldounidades,Sum(Caja) Prestcajas,Sum(Unidad+caja*cantxempaque) PrestUnidades,  a.CodBotella,a.CodCaja,cantxempaque from TempVenta a inner join Articulo b on a.Codbotella=b.codart inner join cliente c on a.codcliente=c.codcliente where a.CodBotella>0 group by a.CodCliente,nombre,a.CodBotella,b.desart,tipoarticulo,CantxEmpaque, a.CodBotella,a.CodCaja) group by codconcepto,codcliente,nombre,codart,desart,tipoarticulo order by tipoarticulo desc,codart', [id_cliente], querySuccess_deuda, errorCB_list_deuda2);
 }
 
 
@@ -70,16 +70,16 @@ function querySuccess_deuda(tx, results) {
 
   for (var i = 0; i < len; i++) {
 
-    codconcepto     =results.rows.item(i).codconcepto;
-    codcliente      =results.rows.item(i).codcliente;
-    nombre          =results.rows.item(i).nombre;
-    codart          =$.trim(results.rows.item(i).codart);
-    desart          =$.trim(results.rows.item(i).desart);
-    tipoarticulo    =results.rows.item(i).tipoarticulo;
-    saldocajas      =results.rows.item(i).saldocajas;
-    saldounidades   =results.rows.item(i).saldounidades;
-    prestcajas      =results.rows.item(i).prestcajas;
-    prestunidades   =results.rows.item(i).prestunidades;
+    codconcepto     =results.rows.item(i).CodConcepto;
+    codcliente      =results.rows.item(i).CodCliente;
+    nombre          =results.rows.item(i).Nombre;
+    codart          =$.trim(results.rows.item(i).CodArt);
+    desart          =$.trim(results.rows.item(i).DesArt);
+    tipoarticulo    =results.rows.item(i).TipoArticulo;
+    saldocajas      =results.rows.item(i).SaldoCajas;
+    saldounidades   =results.rows.item(i).SaldoUnidades;
+    prestcajas      =results.rows.item(i).PrestCajas;
+    prestunidades   =results.rows.item(i).PrestUnidades;
 
     var img='';
     var titulo='';
@@ -102,7 +102,7 @@ function querySuccess_deuda(tx, results) {
     lista_contenido+= '<li>';
     lista_contenido+= '<a href="#">';
     lista_contenido+= '<img src="img/'+img+'" >';
-    lista_contenido+= '<h2>codart='+codart+' - desart='+desart+' - codconcepto='+codconcepto+' - codcliente='+codcliente+' - nombre='+nombre+' - codart='+codart+' - desart='+desart+' - tipoarticulo='+tipoarticulo+' - saldocajas='+saldocajas+' - saldounidades='+saldounidades+' - prestcajas='+prestcajas+' - prestunidades='+prestunidades+'</h2>';
+    lista_contenido+= '<h2>codart='+codart+' <br>- desart='+desart+' <br>- codconcepto='+codconcepto+' <br>- codcliente='+codcliente+' <br>- nombre='+nombre+' <br>- codart='+codart+' <br>- desart='+desart+' <br>- tipoarticulo='+tipoarticulo+' <br>- saldocajas='+saldocajas+' <br>- saldounidades='+saldounidades+' <br>- prestcajas='+prestcajas+' <br>- prestunidades='+prestunidades+'</h2>';
     lista_contenido+= '<div class="ui-grid-c">';
     lista_contenido+= '<div class="ui-block-c" align="right"><p>'+titulo+'&nbsp</p></div>';
     lista_contenido+= '<div class="ui-block-b red" align="left"><p><strong>'+deuda_t+'</strong></p></div>';
