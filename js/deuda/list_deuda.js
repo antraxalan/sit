@@ -34,11 +34,11 @@ function querySuccess_deuda_articulos(tx, results_art) {
       count=count+1;
     }
   }
-  alert(art_codart.length);
+  // alert(art_codart.length);
 }
 
 function querySuccess_deuda(tx, results) {
-  alert("success");
+  // alert("success");
   var len = results.rows.length;
   var lista_contenido='';
 

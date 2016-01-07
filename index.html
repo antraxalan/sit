@@ -2158,6 +2158,7 @@ $( document ).on( "pagecreate", "#cobranza", function( event ) {
 
   $(".list_cobranza").on('click','.btn_confirmar_cobranza', function(event) {
     var total_cobro_fin=$(this).find('span').text();
+    $('.next_deuda').hide();
     if(total_cobro_fin=='0.00 Bs.'){
       alert('Pasando a Envases sin cobros.');
     }else{

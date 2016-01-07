@@ -156,6 +156,7 @@ function ConfirmCobranza_to_Deuda(stat){
     // alert("Inside ConfirmExit");
     if(stat == "1"){
         // alert("exit app fn");
+        $('.next_deuda').hide();
         window.location.href = "index.html#deuda";
     }else{
         return;
