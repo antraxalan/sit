@@ -2193,11 +2193,8 @@ $( document ).on( "pagecreate", "#deuda", function( event ) {
 
   $(".confirmar_final").on('click', function(event) {
     alert('Consolidado');
-    // $("#fin_popup").popup("close");
     go_to_otro_usuario();
   });
-
-
 
 
   $(".deuda_close_popup").on('click', function(event) {
@@ -2370,7 +2367,7 @@ $(".confirmar_deuda_popup").on('click', function(event) {
 
 
 $(".list_deuda").on('click','.btn_confirmar_deuda', function(event) {
-
+  $('.next_deuda').attr('style','-webkit-box-shadow: inset 0 0 10px #0C95BE, 0 0 10px #0C95BE; -moz-box-shadow: inset 0 0 10px #0C95BE, 0 0 10px #0C95BE; box-shadow: inset 0 0 10px #0C95BE, 0 0 10px #0C95BE;')
   $('.next_deuda').show();
   alert('Por favor presione el boton Finalizar para compeltar la transaccion.'); 
 });
