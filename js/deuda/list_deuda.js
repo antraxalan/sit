@@ -60,6 +60,10 @@ function querySuccess_deuda(tx, results) {
   var prestcajas;
   var prestunidades;
 
+  var empaq;
+  var codbot;
+  var cobcaj;
+
   var d = new Date();
   var month = d.getMonth()+1;
   var day = d.getDate();
@@ -81,28 +85,48 @@ function querySuccess_deuda(tx, results) {
     prestcajas      =results.rows.item(i).PrestCajas;
     prestunidades   =results.rows.item(i).PrestUnidades;
 
+    var index=$.inArray(codart,art_codart);
+
+    empaq  =art_cantxempaque[index];
+    codbot =art_codbotella[index]; 
+    cobcaj =art_codcaja[index]; 
+
+
     var img='';
     var titulo='';
     var titulo2='';
+
+    var deuda_t=0;
+    var saldo_c_t=0;
+    var saldo_u_t=0;
+
     if(tipoarticulo=='C'){
       img='caja.png';
       titulo='Caja(s) Prestada(s):';
       titulo2='Caja(s) Devuelta(s):';
+      saldocajas=parseInt(saldocajas);
+      prestcajas=parseInt(prestcajas);
+      deuda_t=saldocajas+prestcajas;
+      saldo_c_t=deuda_t;
+      saldo_u_t=deuda_t;
     }
     if(tipoarticulo=='B'){
       img='botellita.png';
       titulo='Botella(s) Prestada(s):';
       titulo2='Botella(s) Devuelta(s):';
+      saldounidades=parseInt(saldounidades);
+      prestunidades=parseInt(prestunidades);
+      deuda_t=saldounidades+prestunidades;
+      saldo_c_t=0;
+      saldo_u_t=deuda_t;
     }
-    var deuda_t=0;
-    var saldo_t=0;
-    var saldo_u_t=0;
 
 
     lista_contenido+= '<li>';
     lista_contenido+= '<a href="#">';
     lista_contenido+= '<img src="img/'+img+'" >';
-    lista_contenido+= '<h2>codart='+codart+' <br>- desart='+desart+' <br>- codconcepto='+codconcepto+' <br>- codcliente='+codcliente+' <br>- nombre='+nombre+' <br>- codart='+codart+' <br>- desart='+desart+' <br>- tipoarticulo='+tipoarticulo+' <br>- saldocajas='+saldocajas+' <br>- saldounidades='+saldounidades+' <br>- prestcajas='+prestcajas+' <br>- prestunidades='+prestunidades+'</h2>';
+    lista_contenido+= '<h2>codart='+codart+' <br>- desart='+desart+' <br>- codconcepto='+codconcepto+' <br>- codcliente='+codcliente+' <br>- nombre='+nombre+' <br>- codart='+codart+' <br>- desart='+desart+' <br>- tipoarticulo='+tipoarticulo+' <br>- saldocajas='+saldocajas+' <br>- saldounidades='+saldounidades+' prestcajas='+prestcajas+' 
+    <br>- prestunidades='+prestunidades+' <br>- empaq='+empaq+' <br>- codbot='+codbot+' <br>- cobcaj='+cobcaj+' <br> - deuda_t='+deuda_t+' <br> - saldo_c_t='+saldo_c_t+' <br> - saldo_u_t='+saldo_u_t+'</h2>';
     lista_contenido+= '<div class="ui-grid-c">';
     lista_contenido+= '<div class="ui-block-c" align="right"><p>'+titulo+'&nbsp</p></div>';
     lista_contenido+= '<div class="ui-block-b red" align="left"><p><strong>'+deuda_t+'</strong></p></div>';
@@ -110,7 +134,7 @@ function querySuccess_deuda(tx, results) {
     lista_contenido+= '<div class="ui-block-d " align="left" ><p class="html_cobrado_deuda"><strong>0</strong></p></div>';
     lista_contenido+= '</div>';
     lista_contenido+= '</a>';
-    lista_contenido+= '<a href="#" class="editar_deuda_class" cod-art="'+codart+'" des-art="'+desart+'" tipo="'+tipoarticulo+'" saldo-cajas="'+saldo_t+'" saldo-unidades="'+saldo_u_t+'" cod-botella="0" cod-caja="0" cant-empaque="1" deuda-cob="0">SITRANS</a>';
+    lista_contenido+= '<a href="#" class="editar_deuda_class" cod-art="'+codart+'" des-art="'+desart+'" tipo="'+tipoarticulo+'" saldo-cajas="'+saldo_c_t+'" saldo-unidades="'+saldo_u_t+'" cod-botella="0" cod-caja="0" cant-empaque="1" deuda-cob="0">SITRANS</a>';
     lista_contenido+= '</li>';
 
 
