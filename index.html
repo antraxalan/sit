@@ -2372,6 +2372,19 @@ $(".list_deuda").on('click','.btn_confirmar_deuda', function(event) {
   alert('Por favor presione el boton Finalizar para compeltar la transaccion.'); 
 });
 
+$("#a_cobrar_deuda_caja, #a_cobrar_deuda_botella").on('focus', function(event) {
+  if($(this).val()=='0'){
+      $(this).val('');
+  }
+});
+
+$("#add_deuda_popup").on("popupbeforeposition", function (e, ui) {
+    // ui.x = 100;
+    ui.y = 450;
+    /* OR
+   ui.positionTo = "window"
+   */
+});
 
 });
 
