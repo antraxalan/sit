@@ -95,35 +95,27 @@ function querySuccess_deuda(tx, results) {
     var titulo='';
     var titulo2='';
 
-    var saldo_t=0;
-    var prestamo_t=0;
     var deuda_t=0;
     var saldo_c_t=0;
     var saldo_u_t=0;
 
     if(tipoarticulo=='C'){
       img='caja.png';
-      titulo='Caja(s) Saldo(s):';
-      titulo1='Caja(s) Prestamo(s):';
-      titulo2='Caja(s) a Retornar:';
+      titulo='Caja(s) Prestada(s):';
+      titulo2='Caja(s) Devuelta(s):';
       saldocajas=parseInt(saldocajas);
       prestcajas=parseInt(prestcajas);
       deuda_t=saldocajas+prestcajas;
-      saldo_t=saldocajas;
-      prestamo_t=prestcajas;
       saldo_c_t=deuda_t;
       saldo_u_t=deuda_t;
     }
     if(tipoarticulo=='B'){
       img='botellita.png';
-      titulo='Botella(s) Saldo(s):';
-      titulo1='Botella(s) Prestamo(s):';
-      titulo2='Botella(s) a Retornar:';
+      titulo='Botella(s) Prestada(s):';
+      titulo2='Botella(s) Devuelta(s):';
       saldounidades=parseInt(saldounidades);
       prestunidades=parseInt(prestunidades);
       deuda_t=saldounidades+prestunidades;
-      saldo_t=saldounidades;
-      prestamo_t=prestunidades;
       saldo_c_t=0;
       saldo_u_t=deuda_t;
     }
@@ -134,13 +126,11 @@ function querySuccess_deuda(tx, results) {
     lista_contenido+= '<img src="img/'+img+'" >';
     lista_contenido+= '<h2>'+codart+' - '+desart+'</h2>';
     // lista_contenido+= '<h2>codart='+codart+' <br>- desart='+desart+' <br>- codconcepto='+codconcepto+' <br>- codcliente='+codcliente+' <br>- nombre='+nombre+' <br>- codart='+codart+' <br>- desart='+desart+' <br>- tipoarticulo='+tipoarticulo+' <br>- saldocajas='+saldocajas+' <br>- saldounidades='+saldounidades+' prestcajas='+prestcajas+'<br>- prestunidades='+prestunidades+' <br>- empaq='+empaq+' <br>- codbot='+codbot+' <br>- cobcaj='+cobcaj+' <br> - deuda_t='+deuda_t+' <br> - saldo_c_t='+saldo_c_t+' <br> - saldo_u_t='+saldo_u_t+'</h2>';
-    lista_contenido+= '<div class="container_12">';
-    lista_contenido+= '<div class="grid_3" align="right"><p>'+titulo+'&nbsp</p></div>';
-    lista_contenido+= '<div class="grid_1 red" align="left"><p><strong>'+saldo_t+'</strong></p></div>';
-    lista_contenido+= '<div class="grid_3" align="right"><p>'+titulo1+'&nbsp</p></div>';
-    lista_contenido+= '<div class="grid_1 red" align="left"><p><strong>'+prestamo_t+'</strong></p></div>';
-    lista_contenido+= '<div class="grid_3" align="right"><p>'+titulo2+'&nbsp</p></div>';
-    lista_contenido+= '<div class="grid_1" align="left" ><p class="html_cobrado_deuda"><strong>0</strong></p></div>';
+    lista_contenido+= '<div class="ui-grid-c">';
+    lista_contenido+= '<div class="ui-block-c" align="right"><p>'+titulo+'&nbsp</p></div>';
+    lista_contenido+= '<div class="ui-block-b red" align="left"><p><strong>'+deuda_t+'</strong></p></div>';
+    lista_contenido+= '<div class="ui-block-c" align="right"><p>'+titulo2+'&nbsp</p></div>';
+    lista_contenido+= '<div class="ui-block-d " align="left" ><p class="html_cobrado_deuda"><strong>0</strong></p></div>';
     lista_contenido+= '</div>';
     lista_contenido+= '</a>';
     lista_contenido+= '<a href="#" class="editar_deuda_class" cod-art="'+codart+'" des-art="'+desart+'" tipo="'+tipoarticulo+'" saldo-cajas="'+saldo_c_t+'" saldo-unidades="'+saldo_u_t+'" cod-botella="'+codbot+'" cod-caja="'+cobcaj+'" cant-empaque="'+empaq+'" deuda-cob="0">SITRANS</a>';

@@ -33,7 +33,8 @@
     <link rel="stylesheet" type="text/css" href="css/tablesaw.css" />
 
     <link rel="stylesheet" type="text/css" href="css/steps.css" />
-
+    
+    <link rel="stylesheet" type="text/css" href="css/jquery-mobile-fluid960.css"/>
 
     <!-- <link rel="stylesheet" type="text/css" href="css/theme-classic.css"/> -->
     <!-- <link type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.min.css" rel="stylesheet" />   -->
@@ -1083,12 +1084,14 @@
           <a href="#">
             <img src="img/caja.png" >
             <h2>4020 - CAJA PLAST.TAQ.12 BOT.</h2>
-            <div class="ui-grid-c">
-              <!-- <div class="ui-block-a" align="center" ><p>Caja(s) Prestada(s): 5</p></div> -->
-              <div class="ui-block-c" align="right"><p>Caja(s) Prestada(s):&nbsp</p></div>
-              <div class="ui-block-b red" align="left"><p><strong>2</strong></p></div>
-              <div class="ui-block-c" align="right"><p>Caja(s) Devuelta(s):&nbsp</p></div>
-              <div class="ui-block-d " align="left" ><p class="html_cobrado_deuda"><strong>0</strong></p></div>
+            <div class="container_12">
+              <!-- <div class="ui-block-a" align="center"><p>Caja(s) Prestada(s): 5</p></div> -->
+              <div class="grid_3"     align="right"><p>Caja(s) Prestada(s):&nbsp</p></div>
+              <div class="grid_1 red" align="left"><p><strong>2</strong></p></div>
+              <div class="grid_3"     align="right"><p>Caja(s) Reciente(s):&nbsp</p></div>
+              <div class="grid_1 red" align="left"><p><strong>2</strong></p></div>
+              <div class="grid_3"     align="right"><p>Caja(s) a Retornar:&nbsp</p></div>
+              <div class="grid_1"     align="left" ><p class="html_cobrado_deuda"><strong>0</strong></p></div>
             </div>
           </a>
           <a href="#" class="editar_deuda_class" cod-art="4020" des-art="CAJA PLAST.TAQ.12 BOT." tipo="C" saldo-cajas="2" saldo-unidades="2" cod-botella="0" cod-caja="0" cant-empaque="1" deuda-cob="0">SITRANS</a>
@@ -1099,7 +1102,7 @@
             <h2>4029 - CAJA PLAST.PACEÐA 12 BOT.</h2>
             <div class="ui-grid-c">
               <!-- <div class="ui-block-a" align="center" ><p>Caja(s) Prestada(s): 5</p></div> -->
-              <div class="ui-block-c" align="right"><p>Caja(s) Prestada(s):&nbsp</p></div>
+              <div class="ui-block-a" align="right"><p>Caja(s) Prestada(s):&nbsp</p></div>
               <div class="ui-block-b red" align="left"><p><strong>111</strong></p></div>
               <div class="ui-block-c" align="right"><p>Caja(s) Devuelta(s):&nbsp</p></div>
               <div class="ui-block-d " align="left" ><p class="html_cobrado_deuda"><strong>0</strong></p></div>
@@ -1113,7 +1116,7 @@
             <h2>4079 - CAJA HUARI 620CC.</h2>
             <div class="ui-grid-c">
               <!-- <div class="ui-block-a" align="center" ><p>Caja(s) Prestada(s): 5</p></div> -->
-              <div class="ui-block-c" align="right"><p>Caja(s) Prestada(s):&nbsp</p></div>
+              <div class="ui-block-a" align="right"><p>Caja(s) Prestada(s):&nbsp</p></div>
               <div class="ui-block-b red" align="left"><p><strong>15</strong></p></div>
               <div class="ui-block-c" align="right"><p>Caja(s) Devuelta(s):&nbsp</p></div>
               <div class="ui-block-d " align="left" ><p class="html_cobrado_deuda"><strong>0</strong></p></div>
@@ -1127,7 +1130,7 @@
             <h2>3020 - BOTELLA 620 CC.</h2>
             <div class="ui-grid-c">
               <!-- <div class="ui-block-a" align="center" ><p>Caja(s) Prestada(s): 5</p></div> -->
-              <div class="ui-block-c" align="right"><p>Botella(s) Prestada(s):&nbsp</p></div>
+              <div class="ui-block-a" align="right"><p>Botella(s) Prestada(s):&nbsp</p></div>
               <div class="ui-block-b red" align="left"><p><strong>1308</strong></p></div>
               <div class="ui-block-c" align="right"><p>Botella(s) Devuelta(s):&nbsp</p></div>
               <div class="ui-block-d " align="left" ><p class="html_cobrado_deuda"><strong>0</strong></p></div>
@@ -1141,7 +1144,7 @@
             <h2>3079 - BOTELLA HUARI 620CC.</h2>
             <div class="ui-grid-c">
               <!-- <div class="ui-block-a" align="center" ><p>Caja(s) Prestada(s): 5</p></div> -->
-              <div class="ui-block-c" align="right"><p>Botella(s) Prestada(s):&nbsp</p></div>
+              <div class="ui-block-a" align="right"><p>Botella(s) Prestada(s):&nbsp</p></div>
               <div class="ui-block-b red" align="left"><p><strong>180</strong></p></div>
               <div class="ui-block-c" align="right"><p>Botella(s) Devuelta(s):&nbsp</p></div>
               <div class="ui-block-d " align="left" ><p class="html_cobrado_deuda"><strong>0</strong></p></div>
@@ -2191,11 +2194,6 @@ $( document ).on( "pagecreate", "#deuda", function( event ) {
 
   });
 
-  $(".confirmar_final").on('click', function(event) {
-    alert('Consolidado');
-    go_to_otro_usuario();
-  });
-
 
   $(".deuda_close_popup").on('click', function(event) {
     $("#add_deuda_popup").popup("close");
@@ -2374,7 +2372,7 @@ $(".list_deuda").on('click','.btn_confirmar_deuda', function(event) {
 
 $("#a_cobrar_deuda_caja, #a_cobrar_deuda_botella").on('focus', function(event) {
   if($(this).val()=='0'){
-      $(this).val('');
+    $(this).val('');
   }
 });
 
@@ -2384,7 +2382,16 @@ $("#add_deuda_popup").on("popupbeforeposition", function (e, ui) {
     /* OR
    ui.positionTo = "window"
    */
+ });
+
+$(".confirmar_final").on('click', function(event) {
+  alert('Consolidado');
+  go_to_otro_usuario();
 });
+
+
+
+
 
 });
 
