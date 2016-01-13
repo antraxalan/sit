@@ -2331,7 +2331,7 @@ $(".confirmar_deuda_popup").on('click', function(event) {
     }
   }
   if(tipo=='1'){
-    if($("#a_cobrar_deuda_caja").val()=='' && $("#a_cobrar_deuda_botella").val()==''){
+    if($("#a_cobrar_deuda_caja").val()=='' || $("#a_cobrar_deuda_botella").val()==''){
       alert("Por favor verifique las cantidades a retornar.");
     }else{
       var cod_art   =$("#cod_art_caja").val();
