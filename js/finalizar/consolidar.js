@@ -1,14 +1,16 @@
   
 var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
 var id_cliente;
+var max1;
+var max6;
 
 // var art_codart        = [];
 // var art_cantxempaque  = [];
 // var art_codbotella    = []; 
 // var art_codcaja       = []; 
 
-function queryDB_todos_articulos2(tx) {         
-  tx.executeSql('select CodArt,TipoArticulo,CantxEmpaque,CodBotella,CodCaja from ARTICULO', [], querySuccess_deuda_articulos, errorCB_todos_articulos2);
+function queryDB_todos_maximo(tx) {         
+  tx.executeSql('select max(NroDctoM) as max_doc1, (select max(NroDctoM) as max_doc from detalle where TipoDctoM=6) as max_doc6 from detalle where TipoDctoM=1', [], querySuccess_deuda_maximos, errorCB_todos_maximos2);
 }
 
 function queryDB_consolidar(tx) {         
@@ -16,29 +18,65 @@ function queryDB_consolidar(tx) {
 }
 
 
-function querySuccess_deuda_articulos(tx, results_art) {
-  var len = results_art.rows.length;
-
-  var tipo;
-  var count=0;
-
+function querySuccess_deuda_maximos(tx, results_max) {
+  var len = results_max.rows.length;
+  alert('querySuccess_deuda_maximos len:'+len);
+  max1=0;
+  max6=0;
   for (var i = 0; i < len; i++) {
-    tipo=results_art.rows.item(i).TipoArticulo;
+    max1=results_max.rows.item(i).max_doc1;
+    max6=results_max.rows.item(i).max_doc6;
+    alert('max_doc1:'+max1);
+    alert('max_doc6:'+max6);
 
-    if(tipo=='C' || tipo=='B'){
-      art_codart[count]        = parseInt(results_art.rows.item(i).CodArt);
-      art_cantxempaque[count]  = parseInt(results_art.rows.item(i).CantxEmpaque);
-      art_codbotella[count]    = parseInt(results_art.rows.item(i).CodBotella); 
-      art_codcaja[count]       = parseInt(results_art.rows.item(i).CodCaja);
-      count=count+1;
+    if(max1===null || max1=='0'){
+      max1=0;
     }
+
+    if(max6===null || max6=='0'){
+      max6=0;
+    }
+
   }
-  // alert(art_codart.length);
 }
 
 function querySuccess_consolidar(tx, results) {
-  alert("success");
-  
+
+  var len = results.rows.length;
+  var d = new Date();
+  var month = d.getMonth()+1;
+  var day = d.getDate();
+  var fecha_actual =((''+day).length<2 ? '0' : '') + day + '/' +((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
+
+  var c_IdArt;
+  var c_TipoDctoM;
+  var c_CodConcepto;
+  var c_CodCliente;
+  var c_Nombre;
+  var c_CodArt;
+  var c_DesArt;
+  var c_TipoArticulo;
+  var c_Precio;
+  var c_Cajas;
+  var c_Unidades;
+  var c_CantxEmpaque;
+
+  for (var i = 0; i < len; i++) {
+    c_IdArt         =results.rows.item(i).IdArt;
+    c_TipoDctoM     =results.rows.item(i).TipoDctoM;
+    c_CodConcepto   =results.rows.item(i).CodConcepto;
+    c_CodCliente    =results.rows.item(i).CodCliente;
+    c_Nombre        =results.rows.item(i).Nombre;
+    c_CodArt        =results.rows.item(i).CodArt;
+    c_DesArt        =results.rows.item(i).DesArt;
+    c_TipoArticulo  =results.rows.item(i).TipoArticulo;
+    c_Precio        =results.rows.item(i).Precio;
+    c_Cajas         =results.rows.item(i).Cajas;
+    c_Unidades      =results.rows.item(i).Unidades;
+    c_CantxEmpaque  =results.rows.item(i).CantxEmpaque;
+
+  }
+  alert('querySuccess_consolidar len:'+len);
 }
 
 function errorCB_consolidar(err) {
@@ -47,13 +85,13 @@ function errorCB_consolidar(err) {
 function errorCB_consolidar2(err) {
   alert("Error processing consolidar2 SQL: "+err.code+" Mensaje: "+err.message);
 }
-function errorCB_todos_articulos2(err) {
+function errorCB_todos_maximos2(err) {
   alert("Error processing consolidar last SQL: "+err.code+" Mensaje: "+err.message);
 }
 
 function cargar_consolidar_script(cli) {
   id_cliente=cli;
-  // db.transaction(queryDB_todos_articulos2, errorCB_todos_articulos2);
+  db.transaction(queryDB_todos_maximo, errorCB_todos_maximos2);
   db.transaction(queryDB_consolidar, errorCB_consolidar);
 }
 
