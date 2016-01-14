@@ -66,9 +66,12 @@
 
 
         <div class="ui-content" role="main">
+
           <button class="cargar_info_articulo">Cargar info articulo</button>
           <button class="cargar_info_cliente">Cargar info cliente</button>
           <button class="cargar_info_detalle">Cargar info detalle</button>
+          <button class="cargar_info_transaccion">Cargar info transaccion</button>
+          <button class="borrar_info_transaccion">Borrar transaccion</button>
           <div id="tabla_info"></div>
 
           
@@ -126,6 +129,16 @@
     $('.cargar_info_detalle').on("click", function() {
       // alert('cargando');
       cargar_info_detalle();
+      // $("#movie-table-popup-popup").trigger("create");
+    });
+    $('.cargar_info_transaccion').on("click", function() {
+      // alert('cargando');
+      cargar_info_transaccion();
+      // $("#movie-table-popup-popup").trigger("create");
+    });
+    $('.borrar_info_transaccion').on("click", function() {
+      // alert('cargando');
+      borrar_info_transaccion();
       // $("#movie-table-popup-popup").trigger("create");
     });
 
