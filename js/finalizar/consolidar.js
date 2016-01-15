@@ -76,7 +76,8 @@ function querySuccess_consolidar(tx, results) {
     c_Cajas         =results.rows.item(i).Cajas;
     c_Unidades      =results.rows.item(i).Unidades;
     c_CantxEmpaque  =results.rows.item(i).CantxEmpaque;
-
+    alert(' c_IdArt='+c_IdArt+' c_TipoDctoM='+c_TipoDctoM+' c_CodConcepto='+c_CodConcepto+' c_CodCliente='+c_CodCliente+' c_Nombre='+c_Nombre+' c_CodArt='+c_CodArt+' c_DesArt='+c_DesArt+' c_TipoArticulo='+c_TipoArticulo+' c_Precio='+c_Precio+' c_Cajas='+c_Cajas+' c_Unidades='+c_Unidades+' c_CantxEmpaque='+c_CantxEmpaque);
+    
   }
   alert('querySuccess_consolidar len:'+len);
 }
