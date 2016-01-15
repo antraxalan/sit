@@ -201,6 +201,7 @@ function errorCB1_carg3(err) {
 
 function success_reload() {
     localStorage.db_cargada = 1;
+    localStorage.id_transportista = id_transp;
     // location.reload();
     $(".registrar").attr("disabled", "disabled");
     navigator.notification.vibrate(1000);
