@@ -26,8 +26,8 @@ function querySuccess_deuda_maximos(tx, results_max) {
   for (var i = 0; i < len; i++) {
     max1=results_max.rows.item(i).max_doc1;
     max6=results_max.rows.item(i).max_doc6;
-    alert('max_doc1:'+max1);
-    alert('max_doc6:'+max6);
+    // alert('max_doc1:'+max1);
+    // alert('max_doc6:'+max6);
 
     if(max1===null || max1=='0'){
       max1=0;
@@ -36,7 +36,6 @@ function querySuccess_deuda_maximos(tx, results_max) {
     if(max6===null || max6=='0'){
       max6=0;
     }
-
   }
 }
 
@@ -47,6 +46,9 @@ function querySuccess_consolidar(tx, results) {
   var month = d.getMonth()+1;
   var day = d.getDate();
   var fecha_actual =((''+day).length<2 ? '0' : '') + day + '/' +((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
+
+  alert('max_doc1:'+max1);
+  alert('max_doc6:'+max6);
 
   var c_IdArt;
   var c_TipoDctoM;
