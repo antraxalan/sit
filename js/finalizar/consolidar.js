@@ -156,7 +156,7 @@ function querySuccess_consolidar(tx, results) {
   // var sql = 'INSERT INTO table (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades) VALUES (?,?,?,"?","?",?,?,?,?,?,?,?,?,?,?,?,?,?)';
 
 
-  alert('i_Debe='+i_Debe+'i_Haber='+i_Haber+'\ni_Dcajas='+i_Dcajas+'i_Hcajas='+i_Hcajas+'\ni_Dunidades='+i_Dunidades+'i_Hunidades='+i_Hunidades+'\ni_CodCliente='+i_CodCliente);
+  // alert('i_Debe='+i_Debe+'i_Haber='+i_Haber+'\ni_Dcajas='+i_Dcajas+'i_Hcajas='+i_Hcajas+'\ni_Dunidades='+i_Dunidades+'i_Hunidades='+i_Hunidades+'\ni_CodCliente='+i_CodCliente);
 
 
   tx.executeSql('INSERT INTO DETALLE (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades) VALUES ('+i_TipoDcto+','+i_NroDcto+','+i_Apu+',"'+i_Fecha+'","'+i_FechaVto+'",'+i_TipoDctoM+','+i_NroDctoM+','+i_Precio+','+i_Tc+','+i_CodConcepto+','+i_CodCliente+','+i_Debe+','+i_Haber+','+i_CodArt+','+i_Dcajas+','+i_Hcajas+','+i_Dunidades+','+i_Hunidades+')',[],renderEntries1,dbErrorHandler1);
@@ -168,7 +168,7 @@ function querySuccess_consolidar(tx, results) {
     i_CodConcepto=1800;
     i_Apu=i_Apu+10;
 
-    alert('i_Debe='+i_Debe+'i_Haber='+i_Haber+'\ni_Dcajas='+i_Dcajas+'i_Hcajas='+i_Hcajas+'\ni_Dunidades='+i_Dunidades+'i_Hunidades='+i_Hunidades+'\ni_CodCliente='+i_CodCliente);
+    // alert('i_Debe='+i_Debe+'i_Haber='+i_Haber+'\ni_Dcajas='+i_Dcajas+'i_Hcajas='+i_Hcajas+'\ni_Dunidades='+i_Dunidades+'i_Hunidades='+i_Hunidades+'\ni_CodCliente='+i_CodCliente);
     
     // stmt.bindString(i_TipoDcto,i_NroDcto,i_Apu,i_Fecha,i_FechaVto,i_TipoDctoM,i_NroDctoM,i_Precio,i_Tc,i_CodConcepto,i_CodCliente,i_Debe,i_Haber,i_CodArt,i_Dcajas,i_Hcajas,i_Dunidades,i_Hunidades);
     tx.executeSql('INSERT INTO DETALLE (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades) VALUES ('+i_TipoDcto+','+i_NroDcto+','+i_Apu+',"'+i_Fecha+'","'+i_FechaVto+'",'+i_TipoDctoM+','+i_NroDctoM+','+i_Precio+','+i_Tc+','+i_CodConcepto+','+i_CodCliente+','+i_Debe+','+i_Haber+','+i_CodArt+','+i_Dcajas+','+i_Hcajas+','+i_Dunidades+','+i_Hunidades+')',[],renderEntries2,dbErrorHandler2);
@@ -179,11 +179,58 @@ function querySuccess_consolidar(tx, results) {
 
     // stmt.execute();
     // stmt.clearBindings();
-  }//end for 
+  }//end for TEMPVENTA
+
+
+
+
+  //START COBRANZA
+  // var documenton=$('#cob_nrodctom').val();
+  // var cobrar=$('#cob_cobrar').val();
+  // if(cobrar==''||cobrar=='NaN'){cobrar='0.00'}
+    // var auxi= $('.list_cobranza').find('a[nrodctom="'+documenton+'"]').attr('cobrado',cobrar);
+  // $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+documenton+"']").html(cobrar+' Bs.');
+  // var total=0;
+  var count=0;
+  var nrodctom_arr=[];
+  var monto_arr=[];
+  $(".editar_cobranza_class").each(function(index, el) {
+    var aux_nro = $(this).attr("nrodctom");
+    var aux_cob = $(this).attr("cobrado");
+    if(aux_cob!='0.00'){
+      nrodctom_arr[count]  =aux_nro;
+      monto_arr[count]     =aux_cob;
+      count                =count+1;
+      alert('nrodctom='+aux_nro+' cobrado='+aux_cob);
+    }
+  });
+  //END COBRANZA
+
+
+  //START ENVASES
+
+  var count=0;
+  var cod_art_arr=[];
+  var deuda_cob_arr=[];
+  $(".editar_deuda_class").each(function(index, el) {
+    var aux_cod = $(this).attr("cod-art");
+    var aux_deu = $(this).attr("deuda-cob");
+    if(aux_deu!='0'){
+      cod_art_arr[count]    =aux_cod;
+      deuda_cob_arr[count]  =aux_deu;
+      count                 =count+1;
+      alert('cod-art='+aux_cod+' deuda-cob='+aux_deu);
+    }
+  });
+  //END ENVASES
+
+
+
+
 
   // db.setTransactionSuccessful();
   // db.endTransaction();
-  alert('INSERTADOS querySuccess_consolidar len:'+len);
+  // alert('INSERTADOS querySuccess_consolidar len:'+len);
 }
 function renderEntries1() {
   alert("Ok renderEntries1 ");
