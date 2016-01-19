@@ -165,6 +165,8 @@ function querySuccess_consolidar(tx, results) {
     i_Hcajas = [i_Dcajas, i_Dcajas = i_Hcajas][0];
     i_Hunidades = [i_Dunidades, i_Dunidades = i_Hunidades][0];
     i_CodCliente=id_tra;
+    i_CodConcepto=1800;
+    i_Apu=i_Apu+10;
 
     alert('i_Debe='+i_Debe+'i_Haber='+i_Haber+'\ni_Dcajas='+i_Dcajas+'i_Hcajas='+i_Hcajas+'\ni_Dunidades='+i_Dunidades+'i_Hunidades='+i_Hunidades+'\ni_CodCliente='+i_CodCliente);
     
