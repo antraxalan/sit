@@ -46,7 +46,7 @@ function querySuccess_consolidar(tx, results) {
   var month = d.getMonth()+1;
   var day = d.getDate();
   var fecha_actual =((''+day).length<2 ? '0' : '') + day + '/' +((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
-
+  localStorage.id_transportista=13;
   var id_tra=localStorage.id_transportista;
   var f_vto=localStorage.fecha_venta;
   
@@ -155,20 +155,23 @@ function querySuccess_consolidar(tx, results) {
 
   // var sql = 'INSERT INTO table (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades) VALUES (?,?,?,"?","?",?,?,?,?,?,?,?,?,?,?,?,?,?)';
 
-    alert('1 i_Haber='+i_Haber+'\n i_Hcajas='+i_Hcajas+'\n i_Hunidades='+i_Hunidades+'\n i_CodCliente='+i_CodCliente);
 
-    tx.executeSql('INSERT INTO DETALLE (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades) VALUES ('+i_TipoDcto+','+i_NroDcto+','+i_Apu+',"'+i_Fecha+'","'+i_FechaVto+'",'+i_TipoDctoM+','+i_NroDctoM+','+i_Precio+','+i_Tc+','+i_CodConcepto+','+i_CodCliente+','+i_Debe+','+i_Haber+','+i_CodArt+','+i_Dcajas+','+i_Hcajas+','+i_Dunidades+','+i_Hunidades+')',[],renderEntries1,dbErrorHandler1);
+  alert('i_Debe='+i_Debe+'i_Haber='+i_Haber+'\ni_Dcajas='+i_Dcajas+'i_Hcajas='+i_Hcajas+'\ni_Dunidades='+i_Dunidades+'i_Hunidades='+i_Hunidades+'\ni_CodCliente='+i_CodCliente);
+
+
+  tx.executeSql('INSERT INTO DETALLE (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades) VALUES ('+i_TipoDcto+','+i_NroDcto+','+i_Apu+',"'+i_Fecha+'","'+i_FechaVto+'",'+i_TipoDctoM+','+i_NroDctoM+','+i_Precio+','+i_Tc+','+i_CodConcepto+','+i_CodCliente+','+i_Debe+','+i_Haber+','+i_CodArt+','+i_Dcajas+','+i_Hcajas+','+i_Dunidades+','+i_Hunidades+')',[],renderEntries1,dbErrorHandler1);
     //TRANSVERSAL
     i_Haber = [i_Debe, i_Debe = i_Haber][0];
     i_Hcajas = [i_Dcajas, i_Dcajas = i_Hcajas][0];
     i_Hunidades = [i_Dunidades, i_Dunidades = i_Hunidades][0];
     i_CodCliente=id_tra;
 
-    alert('2 i_Haber='+i_Haber+'\n i_Hcajas='+i_Hcajas+'\n i_Hunidades='+i_Hunidades+'\n i_CodCliente='+i_CodCliente);
+    alert('i_Debe='+i_Debe+'i_Haber='+i_Haber+'\ni_Dcajas='+i_Dcajas+'i_Hcajas='+i_Hcajas+'\ni_Dunidades='+i_Dunidades+'i_Hunidades='+i_Hunidades+'\ni_CodCliente='+i_CodCliente);
+    
     // stmt.bindString(i_TipoDcto,i_NroDcto,i_Apu,i_Fecha,i_FechaVto,i_TipoDctoM,i_NroDctoM,i_Precio,i_Tc,i_CodConcepto,i_CodCliente,i_Debe,i_Haber,i_CodArt,i_Dcajas,i_Hcajas,i_Dunidades,i_Hunidades);
     tx.executeSql('INSERT INTO DETALLE (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades) VALUES ('+i_TipoDcto+','+i_NroDcto+','+i_Apu+',"'+i_Fecha+'","'+i_FechaVto+'",'+i_TipoDctoM+','+i_NroDctoM+','+i_Precio+','+i_Tc+','+i_CodConcepto+','+i_CodCliente+','+i_Debe+','+i_Haber+','+i_CodArt+','+i_Dcajas+','+i_Hcajas+','+i_Dunidades+','+i_Hunidades+')',[],renderEntries2,dbErrorHandler2);
     // tx.executeSql("select id, title, body, updated from notes order by updated desc",[],renderEntries,dbErrorHandler);
-   
+
     // stmt.bindString(1, values.get(i).number);
     // stmt.bindString(2, values.get(i).nick);
 
