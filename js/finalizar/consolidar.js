@@ -53,13 +53,22 @@ function querySuccess_consolidar(tx, results) {
   if(f_vto==0){
     f_vto=fecha_actual;
   }else{
-    f_vto=f_vto;
+
     f_vto = f_vto.split("-");
     f_vto = f_vto[2]+'/'+f_vto[1]+'/'+f_vto[0];
   }
 
   // alert('max_doc1:'+max1);
   // alert('max_doc6:'+max6);
+
+
+  fecha_actual = fecha_actual.split("/");
+  fecha_actual = fecha_actual[2]+'-'+fecha_actual[1]+'-'+fecha_actual[0]+' 00:00:00.000';
+
+  f_vto = f_vto.split("/");
+  f_vto = f_vto[2]+'-'+f_vto[1]+'-'+f_vto[0]+' 00:00:00.000';
+
+
   var i_max_1=max1+1;
   var i_max_6=max6+1;
 
@@ -117,20 +126,20 @@ function querySuccess_consolidar(tx, results) {
     i_TipoDcto      =c_TipoDctoM;
     i_NroDcto       =i_max_1;
     i_Apu           =i_Apu+10;
-    // i_Fecha         =999999999;
-    // i_FechaVto      =999999999;
+    // i_Fecha         =9999999999;
+    // i_FechaVto      =9999999999;
     i_TipoDctoM     =c_TipoDctoM;
     i_NroDctoM      =i_max_1;
     i_Precio        =c_Precio;
     i_Tc            =0;
     i_CodConcepto   =c_CodConcepto;
     i_CodCliente    =c_CodCliente;
-    // i_Debe          =999999999;
+    // i_Debe          =9999999999;
     i_Haber         =0;
     i_CodArt        =c_CodArt;
-    // i_Dcajas        =999999999;
+    // i_Dcajas        =9999999999;
     i_Hcajas        =0;
-    // i_Dunidades     =999999999;
+    // i_Dunidades     =9999999999;
     i_Hunidades     =0;
 
 

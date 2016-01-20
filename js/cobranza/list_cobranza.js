@@ -155,10 +155,10 @@ function queryDB_cobranza_last_sale(tx) {
             lista_contenido+= '<div class="ui-block-a" align="center" ><p>'+fecha_actual+'</p></div>';
             lista_contenido+= '<div class="ui-block-b" align="center" ><p>'+f_vto+'</p></div>';
             lista_contenido+= '<div class="ui-block-c red" align="center" style="margin-top: 4px;"><strong>'+total_venta+' Bs.</strong></div>';
-            lista_contenido+= '<div class="ui-block-d " align="center" ><p class="html_cobrado" marca-cobranza-html="999999999'+id_cliente+'">0.00 Bs.</p></div>';
+            lista_contenido+= '<div class="ui-block-d " align="center" ><p class="html_cobrado" marca-cobranza-html="9999999999">0.00 Bs.</p></div>';
             lista_contenido+= '</div>';
             lista_contenido+= '</a>';
-            lista_contenido+= '<a href="#" class="editar_cobranza_class" data-rel="popup" nrodctom="999999999'+id_cliente+'" saldo="'+total_venta+'" fecha="'+fecha_actual+'" fecha-venc="'+f_vto+'" cobrado="">SITRANS</a>';
+            lista_contenido+= '<a href="#" class="editar_cobranza_class" data-rel="popup" nrodctom="9999999999" saldo="'+total_venta+'" fecha="'+fecha_actual+'" fecha-venc="'+f_vto+'" cobrado="">SITRANS</a>';
             lista_contenido+= '</li>';
           }
           lista_contenido+='<button type="button" class="class_confirmaciones btn_confirmar_cobranza" data-theme="b">CONFIRMAR COBRO<span style="box-shadow:-1px -1px 4px 1px gray inset;" class="ui-li-count total_cobranza_val ui-page-theme-a">0.00 Bs.</span></button>';
