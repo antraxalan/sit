@@ -452,6 +452,21 @@
           <div  class=" tablita_info_cliente">
 
           </div>
+          <table class="tablesaw" data-tablesaw-mode="swipe" id="tablita_registrar">
+            <thead>
+              <tr>
+                <th colspan="4" style="text-align:center;">DEUDA</th>
+              </tr>
+              <tr>
+              <th scope="col">Saldo Bs</th>
+                <th scope="col">Paceña</th>
+                <th scope="col">Huari</th>
+                <th scope="col">Litro</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
 <!--         <div class="ui-field-contain">
           <input type="submit" id="submit-1" class="ui-btn ui-corner-all " value="Detalles">
           <a href="#venta" data-role="button">Detalles</a>
@@ -1443,7 +1458,8 @@
       $( "#panel-overlay" ).panel( "open" );
       $("#cod_usuario").focus();
     }else{
-      window.location.href = "db.html";
+      alert("Aun en desarrollo.");
+      // window.location.href = "db.html";
     }
 
   });
@@ -1454,7 +1470,8 @@
       $("#cod_usuario").focus();
     }else{
       if(localStorage.db_cargada=='1'){
-        window.location.href = "info.html";
+        alert("Aun en desarrollo.");
+        // window.location.href = "info.html";
       }else{
         alert("No existen datos cargados.");
       }
@@ -2386,9 +2403,9 @@ $("#add_deuda_popup").on("popupbeforeposition", function (e, ui) {
  });
 
 $(".confirmar_final").on('click', function(event) {
-  // alert('Consolidado');
-  cargar_consolidar_script();
-  // go_to_otro_usuario();
+  alert('Consolidado');
+  go_to_otro_usuario();
+  // cargar_consolidar_script();
 });
 
 

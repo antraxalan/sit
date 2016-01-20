@@ -55,9 +55,9 @@ function querySuccess_tablita(tx, results) {
     {"Saldo":var_SaldoBs, "Pac":var_CajaPac, "Huari":var_CajaHuari, "Litro":var_CajaLitro}
     ];
 
-    $( '.tablita_info_cliente' ).html( "<table class='tablesaw' data-tablesaw-mode='swipe' id='tablita_registrar'><thead><tr><th scope='col'>Saldo</th><th scope='col'>Pac</th><th scope='col'>Huari</th><th scope='col'>Litro</th></tr></thead><tbody></tbody></table>" );
+    $( '.tablita_info_cliente' ).html( '<table class="tablesaw" data-tablesaw-mode="swipe" id="tablita_registrar"><thead><tr><th colspan="4" style="text-align:center;">DEUDA</th></tr><tr><th scope="col">Saldo Bs</th><th scope="col">Paceña</th><th scope="col">Huari</th><th scope="col">Litro</th></tr></thead><tbody></tbody></table>' );
 
-    var tbody = $( '#tablita_registrar tbody' ), props = ["Saldo","Pac","Huari","Litro"];
+    var tbody = $( '#tablita_registrar tbody' ), props = ["Saldo Bs","Paceña","Huari","Litro"];
 
     $.each( mydata, function(i, value){
         var tr = $('<tr>');

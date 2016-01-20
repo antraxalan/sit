@@ -46,7 +46,7 @@ function querySuccess_consolidar(tx, results) {
   var month = d.getMonth()+1;
   var day = d.getDate();
   var fecha_actual =((''+day).length<2 ? '0' : '') + day + '/' +((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
-  localStorage.id_transportista=13;
+  // localStorage.id_transportista=13;
   var id_tra=localStorage.id_transportista;
   var f_vto=localStorage.fecha_venta;
   
@@ -206,7 +206,9 @@ function querySuccess_consolidar(tx, results) {
   $(".editar_cobranza_class").each(function(index, el) {
     var aux_nro = $(this).attr("nrodctom");
     var aux_cob = $(this).attr("cobrado");
-    if(aux_cob!='0.00'){
+    if(aux_cob=='0.00' || aux_cob==''){
+      aux_cob=aux_cob;
+    }else{
       nrodctom_arr[count]  =aux_nro;
       monto_arr[count]     =aux_cob;
       count                =count+1;
