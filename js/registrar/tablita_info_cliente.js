@@ -39,7 +39,7 @@ function querySuccess_tablita(tx, results) {
     var var_CajaHuari;
     var var_CajaLitro;
     for (var i = 0; i < len; i++) {
-        var_SaldoBs=results.rows.item(i).SaldoBs;
+        var_SaldoBs=results.rows.item(i).SaldoBs+' Bs.';
         var_CajaPac=results.rows.item(i).CajaPac;
         var_CajaHuari=results.rows.item(i).CajaHuari;
         var_CajaLitro=results.rows.item(i).CajaLitro;

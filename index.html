@@ -117,7 +117,7 @@
               </div>
               <div class="ui-grid-a" >
                 <div class="ui-block-a"><button type="button" class="big_button cargar">Cargar Datos del Camion</button></div>
-                <div class="ui-block-b"><button type="button" class="big_button finalizar">Finalizar</button></div>     
+                <div class="ui-block-b"><button type="button" class="big_button finalizar">Cierre de Ruta</button></div>     
               </div>
               
               <div class="ui-grid-solo" >
@@ -453,7 +453,7 @@
 
           </div>
 
-          
+
           <!-- <table class="tablesaw" data-tablesaw-mode="swipe" id="tablita_registrar">
             <thead>
               <tr>
@@ -597,7 +597,7 @@
         <div data-role="inlinetabs" data-content-theme="a" data-theme="a" data-mini="true" id="venta_tabs">
           <ul>
             <li data-tab="1"  style="width:15%;" >Productos</li>
-            <li data-tab="2"  style="width:15%;" >Carrito</li>
+            <li data-tab="2"  style="width:15%;" >Compra Total</li>
           </ul>
 
           <div class="tab_content" data-tab="1">
@@ -703,7 +703,7 @@
               </div>
 
               <div data-role="fieldcontain" class="ui-field-contain">               
-                <label for="precio_popup">Precio:</label>
+                <label for="precio_popup">Precio por Caja:</label>
                 <input name="precio_popup" id="precio_popup" class="precio_input" data-clear-btn="true"/>
               </div> 
               <div data-role="fieldcontain" class="ui-field-contain">               
@@ -1474,8 +1474,8 @@
       $("#cod_usuario").focus();
     }else{
       if(localStorage.db_cargada=='1'){
-        alert("Aun en desarrollo.");
-        // window.location.href = "info.html";
+        // alert("Aun en desarrollo.");
+        window.location.href = "info.html";
       }else{
         alert("No existen datos cargados.");
       }
@@ -1854,7 +1854,7 @@ $('.confirmar_venta_popup').click(function() {
       $("#unidades_popup").prop('disabled', true);
 
       $( "#add_venta_popup" ).popup( "close" );
-      alert('Añadido al carrito.');
+      alert('Añadido a la Compra Total.');
     }
   }
 }); 
