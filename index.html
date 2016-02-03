@@ -2407,9 +2407,9 @@ $("#add_deuda_popup").on("popupbeforeposition", function (e, ui) {
  });
 
 $(".confirmar_final").on('click', function(event) {
+  cargar_consolidar_script($(".cliente_id").val());
   alert('Consolidado');
   go_to_otro_usuario();
-  // cargar_consolidar_script();
 });
 
 

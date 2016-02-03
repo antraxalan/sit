@@ -105,7 +105,7 @@ function querySuccess_consolidar(tx, results) {
   var i_Hunidades;
   
 
-  var sql = 'INSERT INTO table (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades) VALUES (?,?,?,"?","?",?,?,?,?,?,?,?,?,?,?,?,?,?)';
+  // var sql = 'INSERT INTO table (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades) VALUES (?,?,?,"?","?",?,?,?,?,?,?,?,?,?,?,?,?,?)';
   // db.beginTransaction();
   // var stmt = db.compileStatement(sql);
 
@@ -193,6 +193,7 @@ function querySuccess_consolidar(tx, results) {
 
 
 
+  alert("insertando cobranza");
   //START COBRANZA
   // var documenton=$('#cob_nrodctom').val();
   // var cobrar=$('#cob_cobrar').val();
@@ -203,21 +204,70 @@ function querySuccess_consolidar(tx, results) {
   var count=0;
   var nrodctom_arr=[];
   var monto_arr=[];
+  var fchvto_arr=[];
+  var tipodctom_arr=[];
   $(".editar_cobranza_class").each(function(index, el) {
     var aux_nro = $(this).attr("nrodctom");
     var aux_cob = $(this).attr("cobrado");
+    var aux_fch = $(this).attr("fecha-venc");
+    var aux_dcm = $(this).attr("tipodctom");
     if(aux_cob=='0.00' || aux_cob==''){
       aux_cob=aux_cob;
     }else{
       nrodctom_arr[count]  =aux_nro;
       monto_arr[count]     =aux_cob;
+
+      aux_fch = aux_fch.split("/");
+      aux_fch = aux_fch[2]+'-'+aux_fch[1]+'-'+aux_fch[0]+' 00:00:00.000';
+
+      fchvto_arr[count]    =aux_fch;
+      tipodctom_arr[count] =aux_dcm;
       count                =count+1;
       alert('nrodctom='+aux_nro+' cobrado='+aux_cob);
     }
   });
+
+  for (var i = 0; i < count; i++) {
+
+    
+
+    i_TipoDcto    =6;
+    i_NroDcto     =i_max_6;
+    i_Apu         =i_Apu+10;
+    i_Fecha       =fecha_actual;
+    i_FechaVto    =fecha_actual;
+    i_TipoDctoM   =6;
+    i_NroDctoM    =i_max_6;
+    i_Precio      =0;
+    i_Tc          =0;
+    i_CodConcepto =1200;
+    i_CodCliente  =1;
+    i_Debe        =monto_arr[i];
+    i_Haber       =0;
+    i_CodArt      =0;
+    i_Dcajas      =0;
+    i_Hcajas      =0;
+    i_Dunidades   =0;
+    i_Hunidades   =0;
+
+
+    tx.executeSql('INSERT INTO DETALLE (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades) VALUES ('+i_TipoDcto+','+i_NroDcto+','+i_Apu+',"'+i_Fecha+'","'+i_FechaVto+'",'+i_TipoDctoM+','+i_NroDctoM+','+i_Precio+','+i_Tc+','+i_CodConcepto+','+i_CodCliente+','+i_Debe+','+i_Haber+','+i_CodArt+','+i_Dcajas+','+i_Hcajas+','+i_Dunidades+','+i_Hunidades+')',[],renderEntries3,dbErrorHandler3);
+    
+    i_Apu         =i_Apu+10;
+    i_FechaVto    =fchvto_arr[i];
+    i_TipoDctoM   =tipodctom_arr[i];
+    i_NroDctoM    =nrodctom_arr[i];
+    i_CodConcepto =1400;
+    i_CodCliente  =id_cliente;
+    i_Debe        =0;
+    i_Haber       =monto_arr[i];
+
+    tx.executeSql('INSERT INTO DETALLE (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades) VALUES ('+i_TipoDcto+','+i_NroDcto+','+i_Apu+',"'+i_Fecha+'","'+i_FechaVto+'",'+i_TipoDctoM+','+i_NroDctoM+','+i_Precio+','+i_Tc+','+i_CodConcepto+','+i_CodCliente+','+i_Debe+','+i_Haber+','+i_CodArt+','+i_Dcajas+','+i_Hcajas+','+i_Dunidades+','+i_Hunidades+')',[],renderEntries4,dbErrorHandler4);
+
+  }
   //END COBRANZA
 
-
+  alert("insertando envases");
   //START ENVASES
 
   var count=0;
@@ -246,14 +296,26 @@ function querySuccess_consolidar(tx, results) {
 function renderEntries1() {
   alert("Ok renderEntries1 ");
 }
-function renderEntries2(err) {
+function renderEntries2() {
   alert("Ok renderEntries2 ");
+}
+function renderEntries3() {
+  alert("Ok renderEntries3 ");
+}
+function renderEntries4() {
+  alert("Ok renderEntries4 ");
 }
 function dbErrorHandler1(err) {
   alert("Error processing dbErrorHandler1 SQL: "+err.code+" Mensaje: "+err.message);
 }
 function dbErrorHandler2(err) {
   alert("Error processing dbErrorHandler2 SQL: "+err.code+" Mensaje: "+err.message);
+}
+function dbErrorHandler3(err) {
+  alert("Error processing dbErrorHandler3 SQL: "+err.code+" Mensaje: "+err.message);
+}
+function dbErrorHandler4(err) {
+  alert("Error processing dbErrorHandler4 SQL: "+err.code+" Mensaje: "+err.message);
 }
 
 // String sql = "INSERT INTO table (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
