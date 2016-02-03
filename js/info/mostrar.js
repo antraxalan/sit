@@ -210,7 +210,7 @@ function populateDB_detalle(tx) {
                 tblContent+=results.rows.item(i).Dcajas         +'</td><td>';
                 tblContent+=results.rows.item(i).Hcajas         +'</td><td>';
                 tblContent+=results.rows.item(i).Dunidades      +'</td><td>';
-                tblContent+=results.rows.item(i).Hunidades      +'</td><td>';
+                tblContent+=results.rows.item(i).Hunidades      +'</td></tr>';
 
 
 
@@ -222,6 +222,30 @@ function populateDB_detalle(tx) {
                 // tblContent+=results.rows.item(i).FechaVto       +'</td></tr>';
                 // tblContent+=results.rows.item(i).Precio      +'</td></tr>';
             }
+            tblContent+='<tr>';
+
+                tblContent+='<td>TipoDcto</td>';
+                tblContent+='<td>NroDcto</td>';
+                tblContent+='<td>Apu</td>';
+                tblContent+='<td>Fecha</td>';
+                tblContent+='<td>FechaVto</td>';
+                tblContent+='<td>TipoDctoM</td>';
+                tblContent+='<td>NroDctoM</td>';
+                tblContent+='<td>Precio</td>';
+                tblContent+='<td>Tc</td>';
+                tblContent+='<td>CodConcepto</td>';
+                tblContent+='<td>CodCliente</td>';
+                tblContent+='<td>Debe</td>';
+                tblContent+='<td>Haber</td>';
+                tblContent+='<td>CodArt</td>';
+                tblContent+='<td>Dcajas</td>';
+                tblContent+='<td>Hcajas</td>';
+                tblContent+='<td>Dunidades</td>';
+                tblContent+='<td>Hunidades</td>';
+
+            tblContent+='</tr>';
+
+
             tblContent+="</tbody></table>";
             // document.getElementById("tabla_info").innerHTML =tblContent;
             $('#tabla_info').html(tblContent);

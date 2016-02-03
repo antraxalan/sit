@@ -201,7 +201,7 @@ function querySuccess_consolidar(tx, results) {
     // var auxi= $('.list_cobranza').find('a[nrodctom="'+documenton+'"]').attr('cobrado',cobrar);
   // $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+documenton+"']").html(cobrar+' Bs.');
   // var total=0;
-  count=0;
+  var count=0;
   var nrodctom_arr=[];
   var monto_arr=[];
   var fchvto_arr=[];
@@ -256,7 +256,11 @@ function querySuccess_consolidar(tx, results) {
     i_Apu         =i_Apu+10;
     i_FechaVto    =fchvto_arr[i];
     i_TipoDctoM   =tipodctom_arr[i];
-    i_NroDctoM    =nrodctom_arr[i];
+    if(nrodctom_arr[i]=='9999999999'){
+      i_NroDctoM    =i_max_1;
+    }else{
+      i_NroDctoM    =nrodctom_arr[i];  
+    }
     i_CodConcepto =1400;
     i_CodCliente  =id_cliente;
     i_Debe        =0;
@@ -324,7 +328,7 @@ function querySuccess_consolidar(tx, results) {
     i_Hunidades   =deuda_cob_arr[i];
 
 
-    tx.executeSql('INSERT INTO DETALLE (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades) VALUES ('+i_TipoDcto+','+i_NroDcto+','+i_Apu+',"'+i_Fecha+'","'+i_FechaVto+'",'+i_TipoDctoM+','+i_NroDctoM+','+i_Precio+','+i_Tc+','+i_CodConcepto+','+i_CodCliente+','+i_Debe+','+i_Haber+','+i_CodArt+','+i_Dcajas+','+i_Hcajas+','+i_Dunidades+','+i_Hunidades+')',[],renderEntries3,dbErrorHandler3);
+    tx.executeSql('INSERT INTO DETALLE (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades) VALUES ('+i_TipoDcto+','+i_NroDcto+','+i_Apu+',"'+i_Fecha+'","'+i_FechaVto+'",'+i_TipoDctoM+','+i_NroDctoM+','+i_Precio+','+i_Tc+','+i_CodConcepto+','+i_CodCliente+','+i_Debe+','+i_Haber+','+i_CodArt+','+i_Dcajas+','+i_Hcajas+','+i_Dunidades+','+i_Hunidades+')',[],renderEntries5,dbErrorHandler5);
     
     i_Apu         =i_Apu+10;
     i_CodConcepto =1800;
@@ -332,7 +336,7 @@ function querySuccess_consolidar(tx, results) {
     i_Hcajas = [i_Dcajas, i_Dcajas = i_Hcajas][0];
     i_Hunidades = [i_Dunidades, i_Dunidades = i_Hunidades][0];
 
-    tx.executeSql('INSERT INTO DETALLE (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades) VALUES ('+i_TipoDcto+','+i_NroDcto+','+i_Apu+',"'+i_Fecha+'","'+i_FechaVto+'",'+i_TipoDctoM+','+i_NroDctoM+','+i_Precio+','+i_Tc+','+i_CodConcepto+','+i_CodCliente+','+i_Debe+','+i_Haber+','+i_CodArt+','+i_Dcajas+','+i_Hcajas+','+i_Dunidades+','+i_Hunidades+')',[],renderEntries4,dbErrorHandler4);
+    tx.executeSql('INSERT INTO DETALLE (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades) VALUES ('+i_TipoDcto+','+i_NroDcto+','+i_Apu+',"'+i_Fecha+'","'+i_FechaVto+'",'+i_TipoDctoM+','+i_NroDctoM+','+i_Precio+','+i_Tc+','+i_CodConcepto+','+i_CodCliente+','+i_Debe+','+i_Haber+','+i_CodArt+','+i_Dcajas+','+i_Hcajas+','+i_Dunidades+','+i_Hunidades+')',[],renderEntries6,dbErrorHandler6);
 
   }
 
@@ -346,6 +350,8 @@ function querySuccess_consolidar(tx, results) {
   // db.endTransaction();
   // alert('INSERTADOS querySuccess_consolidar len:'+len);
 }
+
+
 function renderEntries1() {
   alert("Ok renderEntries1 ");
 }
@@ -357,6 +363,12 @@ function renderEntries3() {
 }
 function renderEntries4() {
   alert("Ok renderEntries4 ");
+}
+function renderEntries4() {
+  alert("Ok renderEntries5 ");
+}
+function renderEntries4() {
+  alert("Ok renderEntries6 ");
 }
 function dbErrorHandler1(err) {
   alert("Error processing dbErrorHandler1 SQL: "+err.code+" Mensaje: "+err.message);
@@ -370,6 +382,14 @@ function dbErrorHandler3(err) {
 function dbErrorHandler4(err) {
   alert("Error processing dbErrorHandler4 SQL: "+err.code+" Mensaje: "+err.message);
 }
+function dbErrorHandler5(err) {
+  alert("Error processing dbErrorHandler5 SQL: "+err.code+" Mensaje: "+err.message);
+}
+function dbErrorHandler6(err) {
+  alert("Error processing dbErrorHandler6 SQL: "+err.code+" Mensaje: "+err.message);
+}
+
+
 
 // String sql = "INSERT INTO table (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
