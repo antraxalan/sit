@@ -20,7 +20,7 @@ function queryDB_consolidar(tx) {
 
 function querySuccess_deuda_maximos(tx, results_max) {
   var len = results_max.rows.length;
-  alert('querySuccess_deuda_maximos len:'+len);
+  // alert('querySuccess_deuda_maximos len:'+len);
   max1=0;
   max6=0;
   for (var i = 0; i < len; i++) {
@@ -193,7 +193,7 @@ function querySuccess_consolidar(tx, results) {
 
 
 
-  alert("insertando cobranza");
+  // alert("insertando cobranza");
   //START COBRANZA
   // var documenton=$('#cob_nrodctom').val();
   // var cobrar=$('#cob_cobrar').val();
@@ -223,7 +223,7 @@ function querySuccess_consolidar(tx, results) {
       fchvto_arr[count]    =aux_fch;
       tipodctom_arr[count] =aux_dcm;
       count                =count+1;
-      alert('nrodctom='+aux_nro+' cobrado='+aux_cob);
+      // alert('nrodctom='+aux_nro+' cobrado='+aux_cob);
     }
   });
 
@@ -277,7 +277,7 @@ function querySuccess_consolidar(tx, results) {
 
 
   ////////////////////////////////////////////////////////////////////
-  alert("insertando envases");
+  // alert("insertando envases");
   //START ENVASES
   ////////////////////////////////////////////////////////////////////
   count=0;
@@ -296,7 +296,7 @@ function querySuccess_consolidar(tx, results) {
       tipo_arr[count]       =aux_tip;
       empaque_arr[count]    =aux_cem;
       count                 =count+1;
-      alert('cod-art='+aux_cod+' deuda-cob='+aux_deu);
+      // alert('cod-art='+aux_cod+' deuda-cob='+aux_deu);
     }
   });
 
@@ -353,40 +353,40 @@ function querySuccess_consolidar(tx, results) {
 
 
 function renderEntries1() {
-  alert("Ok renderEntries1 ");
+  // alert("Ok renderEntries1 ");
 }
 function renderEntries2() {
-  alert("Ok renderEntries2 ");
+  // alert("Ok renderEntries2 ");
 }
 function renderEntries3() {
-  alert("Ok renderEntries3 ");
+  // alert("Ok renderEntries3 ");
 }
 function renderEntries4() {
-  alert("Ok renderEntries4 ");
+  // alert("Ok renderEntries4 ");
 }
 function renderEntries5() {
-  alert("Ok renderEntries5 ");
+  // alert("Ok renderEntries5 ");
 }
 function renderEntries6() {
-  alert("Ok renderEntries6 ");
+  // alert("Ok renderEntries6 ");
 }
 function dbErrorHandler1(err) {
-  alert("Error processing dbErrorHandler1 SQL: "+err.code+" Mensaje: "+err.message);
+  // alert("Error processing dbErrorHandler1 SQL: "+err.code+" Mensaje: "+err.message);
 }
 function dbErrorHandler2(err) {
-  alert("Error processing dbErrorHandler2 SQL: "+err.code+" Mensaje: "+err.message);
+  // alert("Error processing dbErrorHandler2 SQL: "+err.code+" Mensaje: "+err.message);
 }
 function dbErrorHandler3(err) {
-  alert("Error processing dbErrorHandler3 SQL: "+err.code+" Mensaje: "+err.message);
+  // alert("Error processing dbErrorHandler3 SQL: "+err.code+" Mensaje: "+err.message);
 }
 function dbErrorHandler4(err) {
-  alert("Error processing dbErrorHandler4 SQL: "+err.code+" Mensaje: "+err.message);
+  // alert("Error processing dbErrorHandler4 SQL: "+err.code+" Mensaje: "+err.message);
 }
 function dbErrorHandler5(err) {
-  alert("Error processing dbErrorHandler5 SQL: "+err.code+" Mensaje: "+err.message);
+  // alert("Error processing dbErrorHandler5 SQL: "+err.code+" Mensaje: "+err.message);
 }
 function dbErrorHandler6(err) {
-  alert("Error processing dbErrorHandler6 SQL: "+err.code+" Mensaje: "+err.message);
+  // alert("Error processing dbErrorHandler6 SQL: "+err.code+" Mensaje: "+err.message);
 }
 
 
@@ -414,13 +414,13 @@ function dbErrorHandler6(err) {
 
 
 function errorCB_consolidar(err) {
-  alert("Error processing consolidar SQL: "+err.code+" Mensaje: "+err.message);
+  // alert("Error processing consolidar SQL: "+err.code+" Mensaje: "+err.message);
 }
 function errorCB_consolidar2(err) {
-  alert("Error processing consolidar2 SQL: "+err.code+" Mensaje: "+err.message);
+  // alert("Error processing consolidar2 SQL: "+err.code+" Mensaje: "+err.message);
 }
 function errorCB_todos_maximos2(err) {
-  alert("Error processing consolidar last SQL: "+err.code+" Mensaje: "+err.message);
+  // alert("Error processing consolidar last SQL: "+err.code+" Mensaje: "+err.message);
 }
 
 function cargar_consolidar_script(cli) {
