@@ -364,10 +364,10 @@ function renderEntries3() {
 function renderEntries4() {
   alert("Ok renderEntries4 ");
 }
-function renderEntries4() {
+function renderEntries5() {
   alert("Ok renderEntries5 ");
 }
-function renderEntries4() {
+function renderEntries6() {
   alert("Ok renderEntries6 ");
 }
 function dbErrorHandler1(err) {
