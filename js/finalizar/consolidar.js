@@ -201,7 +201,7 @@ function querySuccess_consolidar(tx, results) {
     // var auxi= $('.list_cobranza').find('a[nrodctom="'+documenton+'"]').attr('cobrado',cobrar);
   // $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+documenton+"']").html(cobrar+' Bs.');
   // var total=0;
-  var count=0;
+  count=0;
   var nrodctom_arr=[];
   var monto_arr=[];
   var fchvto_arr=[];
@@ -227,9 +227,9 @@ function querySuccess_consolidar(tx, results) {
     }
   });
 
-  for (var i = 0; i < count; i++) {
+  for (i = 0; i < count; i++) {
 
-    
+
 
     i_TipoDcto    =6;
     i_NroDcto     =i_max_6;
@@ -267,22 +267,75 @@ function querySuccess_consolidar(tx, results) {
   }
   //END COBRANZA
 
+
+
+
+
+
+  ////////////////////////////////////////////////////////////////////
   alert("insertando envases");
   //START ENVASES
-
-  var count=0;
+  ////////////////////////////////////////////////////////////////////
+  count=0;
   var cod_art_arr=[];
   var deuda_cob_arr=[];
+  var tipo_arr=[];
+  var empaque_arr=[];
   $(".editar_deuda_class").each(function(index, el) {
     var aux_cod = $(this).attr("cod-art");
     var aux_deu = $(this).attr("deuda-cob");
+    var aux_tip = $(this).attr("tipo");
+    var aux_cem = $(this).attr("cant-empaque");
     if(aux_deu!='0'){
       cod_art_arr[count]    =aux_cod;
       deuda_cob_arr[count]  =aux_deu;
+      tipo_arr[count]       =aux_tip;
+      empaque_arr[count]    =aux_cem;
       count                 =count+1;
       alert('cod-art='+aux_cod+' deuda-cob='+aux_deu);
     }
   });
+
+  for (i = 0; i < count; i++) {
+
+    i_TipoDcto    =1;
+    i_NroDcto     =i_max_1;
+    i_Apu         =i_Apu+10;
+    i_Fecha       =fecha_actual;
+    i_FechaVto    =f_vto;
+    i_TipoDctoM   =1;
+    i_NroDctoM    =i_max_1;
+    i_Precio      =0;
+    i_Tc          =0;
+    i_CodConcepto =1600;
+    i_CodCliente  =id_cliente;
+    i_Debe        =0;
+    i_Haber       =0;
+    i_CodArt      =cod_art_arr[i];
+    i_Dcajas      =0;
+    if(tipo_arr[i]=='C'){
+      i_Hcajas      =deuda_cob_arr[i];
+    }
+    if(tipo_arr[i]=='B'){
+      i_Hcajas    =parseInt(deuda_cob_arr[i])/parseInt(empaque_arr[i]);
+      i_Hcajas    = i_Hcajas.toFixed(2);
+    }
+    i_Dunidades   =0;
+    i_Hunidades   =deuda_cob_arr[i];
+
+
+    tx.executeSql('INSERT INTO DETALLE (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades) VALUES ('+i_TipoDcto+','+i_NroDcto+','+i_Apu+',"'+i_Fecha+'","'+i_FechaVto+'",'+i_TipoDctoM+','+i_NroDctoM+','+i_Precio+','+i_Tc+','+i_CodConcepto+','+i_CodCliente+','+i_Debe+','+i_Haber+','+i_CodArt+','+i_Dcajas+','+i_Hcajas+','+i_Dunidades+','+i_Hunidades+')',[],renderEntries3,dbErrorHandler3);
+    
+    i_Apu         =i_Apu+10;
+    i_CodConcepto =1800;
+    i_CodCliente  =1;
+    i_Hcajas = [i_Dcajas, i_Dcajas = i_Hcajas][0];
+    i_Hunidades = [i_Dunidades, i_Dunidades = i_Hunidades][0];
+
+    tx.executeSql('INSERT INTO DETALLE (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades) VALUES ('+i_TipoDcto+','+i_NroDcto+','+i_Apu+',"'+i_Fecha+'","'+i_FechaVto+'",'+i_TipoDctoM+','+i_NroDctoM+','+i_Precio+','+i_Tc+','+i_CodConcepto+','+i_CodCliente+','+i_Debe+','+i_Haber+','+i_CodArt+','+i_Dcajas+','+i_Hcajas+','+i_Dunidades+','+i_Hunidades+')',[],renderEntries4,dbErrorHandler4);
+
+  }
+
   //END ENVASES
 
 
