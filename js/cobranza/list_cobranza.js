@@ -138,13 +138,16 @@ function queryDB_cobranza_last_sale(tx) {
             var a=1;
           }else{
             var f_vto=localStorage.fecha_venta;
+              alert('f_vto: '+f_vto);
             if(f_vto==0){
               f_vto=fecha_actual;
             }else{
-              f_vto=f_vto;
+
               f_vto = f_vto.split("-");
               f_vto = f_vto[2]+'/'+f_vto[1]+'/'+f_vto[0];
+              alert('f_vto: '+f_vto);
             }
+            alert('localStorage.fecha_venta'+localStorage.fecha_venta);
             lista_contenido+= '<li><a href="#">';
             lista_contenido+= '<img src="img/actual.png" >';
             lista_contenido+= '<div class="ui-grid-c">';
