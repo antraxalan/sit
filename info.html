@@ -29,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme.css" />
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery-mobile-fluid960.css"/>
     <!-- <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="css/theme-classic.css"/> -->
     <!-- <link type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.min.css" rel="stylesheet" />   -->
@@ -71,6 +72,12 @@
           <button class="cargar_info_cliente">Cargar info cliente</button>
           <button class="cargar_info_detalle">Cargar info detalle</button>
           <button class="cargar_info_transaccion">Cargar info transaccion</button>
+          <div class="container_12">
+            <div class="grid_6"     align="right"><button class="cargar_info_query">Cargar info transaccion</button>
+            </div>
+            <div class="grid_6"     align="left"><textarea rows="4" cols="50" class="query" >SELECT * from DETALLE where FechaVto between 01/01/2012 and 01/01/2016</textarea></div>
+          </div>
+          <br>
           <button class="borrar_info_transaccion">Borrar transaccion</button>
           <div id="tabla_info"></div>
 
@@ -134,6 +141,11 @@
     $('.cargar_info_transaccion').on("click", function() {
       // alert('cargando');
       cargar_info_transaccion();
+      // $("#movie-table-popup-popup").trigger("create");
+    });
+    $('.cargar_info_query').on("click", function() {
+      // alert('cargando');
+      cargar_info_query();
       // $("#movie-table-popup-popup").trigger("create");
     });
     $('.borrar_info_transaccion').on("click", function() {

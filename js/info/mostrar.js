@@ -31,6 +31,11 @@ function populateDB_detalle(tx) {
         function queryDB_info_transaccion(tx) {
             tx.executeSql('SELECT TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades FROM DETALLE where TipoDcto>0', [], querySuccess_info_transaccion, errorCB_info);
         }
+        function queryDB_info_query(tx) {
+            var query = $('.query').val();
+            alert(query);
+            tx.executeSql(query, [], querySuccess_info_query, errorCB_info);
+        }
         function queryDB_info_borrar_transaccion(tx) {
         	tx.executeSql('DELETE from DETALLE where TipoDcto>0', [], querySuccess_info_borrar_transaccion, errorCB_info);
         }
@@ -254,6 +259,110 @@ function populateDB_detalle(tx) {
 
             }
 
+            function querySuccess_info_query(tx, results) {
+            // var tblText='<table id="t01"><tr><th>ID</th> <th>Name</th> <th>Number</th></tr>';
+            var tblContent='<form>';
+            tblContent+='<input id="filterTable-input" data-type="search">';
+            tblContent+='</form>';
+            tblContent+='<table data-role="table"  data-mode="columntoggle" data-filter="true" data-input="#filterTable-input" class="ui-responsive selector_tabla">';
+            tblContent+='<thead>';
+            tblContent+='<tr>';
+
+                tblContent+='<th data-priority="persist">TipoDcto</th>';
+                tblContent+='<th data-priority="2">NroDcto</th>';
+                tblContent+='<th data-priority="3">Apu</th>';
+                tblContent+='<th data-priority="4">Fecha</th>';
+                tblContent+='<th data-priority="5">FechaVto</th>';
+                tblContent+='<th data-priority="6">TipoDctoM</th>';
+                tblContent+='<th data-priority="7">NroDctoM</th>';
+                tblContent+='<th data-priority="8">Precio</th>';
+                tblContent+='<th data-priority="9">Tc</th>';
+                tblContent+='<th data-priority="10">CodConcepto</th>';
+                tblContent+='<th data-priority="11">CodCliente</th>';
+                tblContent+='<th data-priority="12">Debe</th>';
+                tblContent+='<th data-priority="13">Haber</th>';
+                tblContent+='<th data-priority="14">CodArt</th>';
+                tblContent+='<th data-priority="15">Dcajas</th>';
+                tblContent+='<th data-priority="16">Hcajas</th>';
+                tblContent+='<th data-priority="17">Dunidades</th>';
+                tblContent+='<th data-priority="18">Hunidades</th>';
+
+            tblContent+='</tr>';
+            tblContent+='</thead>';
+            tblContent+='<tbody>';
+
+
+            var len = results.rows.length;
+            for (var i = 0; i < len; i++) {
+
+                tblContent+='<tr><td>';
+                tblContent+=results.rows.item(i).TipoDcto       +'</td><td>';
+                tblContent+=results.rows.item(i).NroDcto        +'</td><td>';
+                tblContent+=results.rows.item(i).Apu            +'</td><td>';
+                tblContent+=results.rows.item(i).Fecha          +'</td><td>';
+                tblContent+=results.rows.item(i).FechaVto       +'</td><td>';
+                tblContent+=results.rows.item(i).TipoDctoM      +'</td><td>';
+                tblContent+=results.rows.item(i).NroDctoM       +'</td><td>';
+                tblContent+=results.rows.item(i).Precio         +'</td><td>';
+                tblContent+=results.rows.item(i).Tc             +'</td><td>';
+                tblContent+=results.rows.item(i).CodConcepto    +'</td><td>';
+                tblContent+=results.rows.item(i).CodCliente     +'</td><td>';
+                tblContent+=results.rows.item(i).Debe           +'</td><td>';
+                tblContent+=results.rows.item(i).Haber          +'</td><td>';
+                tblContent+=results.rows.item(i).CodArt         +'</td><td>';
+                tblContent+=results.rows.item(i).Dcajas         +'</td><td>';
+                tblContent+=results.rows.item(i).Hcajas         +'</td><td>';
+                tblContent+=results.rows.item(i).Dunidades      +'</td><td>';
+                tblContent+=results.rows.item(i).Hunidades      +'</td></tr>';
+
+
+
+                // tblContent+=results.rows.item(i).CodCliente      +'</td><td>';
+                // tblContent+=results.rows.item(i).Debe            +'</td><td>';
+                // tblContent+=results.rows.item(i).Haber           +'</td><td>';
+          //       tblContent+=results.rows.item(i).CodArt         +'</td></tr>';
+                // tblContent+=results.rows.item(i).Fecha          +'</td></tr>';
+                // tblContent+=results.rows.item(i).FechaVto       +'</td></tr>';
+                // tblContent+=results.rows.item(i).Precio      +'</td></tr>';
+            }
+            tblContent+='<tr>';
+
+                tblContent+='<td>TipoDcto</td>';
+                tblContent+='<td>NroDcto</td>';
+                tblContent+='<td>Apu</td>';
+                tblContent+='<td>Fecha</td>';
+                tblContent+='<td>FechaVto</td>';
+                tblContent+='<td>TipoDctoM</td>';
+                tblContent+='<td>NroDctoM</td>';
+                tblContent+='<td>Precio</td>';
+                tblContent+='<td>Tc</td>';
+                tblContent+='<td>CodConcepto</td>';
+                tblContent+='<td>CodCliente</td>';
+                tblContent+='<td>Debe</td>';
+                tblContent+='<td>Haber</td>';
+                tblContent+='<td>CodArt</td>';
+                tblContent+='<td>Dcajas</td>';
+                tblContent+='<td>Hcajas</td>';
+                tblContent+='<td>Dunidades</td>';
+                tblContent+='<td>Hunidades</td>';
+
+            tblContent+='</tr>';
+
+
+            tblContent+="</tbody></table>";
+            // document.getElementById("tabla_info").innerHTML =tblContent;
+            $('#tabla_info').html(tblContent);
+             // $('#tabla_info').append(tblContent);
+             $("#tabla_info").trigger("create");
+
+            }
+
+
+
+
+
+
+
         	function querySuccess_info_borrar_transaccion(tx, results) {
         	alert("eliminado");
 
@@ -291,6 +400,11 @@ function populateDB_detalle(tx) {
             // var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
             db.transaction(queryDB_info_transaccion, errorCB_info);
         }
+        function successCB_info_query() {
+            // alert("successCB_info_detalle");
+            // var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
+            db.transaction(queryDB_info_query, errorCB_info);
+        }
         function successCB_info_borrar_transaccion() {
         	// alert("successCB_info_detalle");
         	// var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
@@ -315,6 +429,10 @@ function populateDB_detalle(tx) {
         function cargar_info_transaccion() {
             // alert("cargar_info_transaccion");
             db.transaction(successCB_info_transaccion, errorCB_info);
+        }
+        function cargar_info_query() {
+            // alert("successCB_info_query");
+            db.transaction(successCB_info_query, errorCB_info);
         }
         function borrar_info_transaccion() {
         	// alert("cargar_info_transaccion");

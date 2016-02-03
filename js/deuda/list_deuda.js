@@ -69,7 +69,7 @@ function querySuccess_deuda(tx, results) {
   var day = d.getDate();
   var fecha_actual =((''+day).length<2 ? '0' : '') + day + '/' +((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
 
-  lista_contenido+='<button type="button" class="class_confirmaciones btn_confirmar_deuda" data-theme="b">CONFIRMAR COBRO</button>';
+  lista_contenido+='<button type="button" class="class_confirmaciones btn_confirmar_deuda" data-theme="b">CONFIRMAR DEVOLUCION</button>';
   lista_contenido+='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Cobro de Envases...">';
 
   for (var i = 0; i < len; i++) {
@@ -151,7 +151,7 @@ function querySuccess_deuda(tx, results) {
   }
 
 
-  lista_contenido+='<button type="button" class="class_confirmaciones btn_confirmar_deuda" data-theme="b">CONFIRMAR COBRO</button>';
+  lista_contenido+='<button type="button" class="class_confirmaciones btn_confirmar_deuda" data-theme="b">CONFIRMAR DEVOLUCION</button>';
   lista_contenido +='</ul>';
   // lista_contenido +='<button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">0.00 Bs.</span></button>';
   $('.list_deuda').html(lista_contenido);
