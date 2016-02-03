@@ -46,7 +46,7 @@ var cantidad_ids;
                 co_ma="999";
               }
               // alert(results.rows.item(i).CajasCamion+"->CajasCamion  "+results.rows.item(i).CodMarca+"->CodMarca  "+results.rows.item(i).Importe+"->Importe  "+results.rows.item(i).Cajas+"->Cajas  "+results.rows.item(i).CodArt+"->CodArt");
-              if(results.rows.item(i).CajasCamion===null){
+              if(results.rows.item(i).CajasCamion===null ||results.rows.item(i).CajasCamion=="0"){
                 disabled='class="ui-disabled"';
                 // alert("null");
               }else{
