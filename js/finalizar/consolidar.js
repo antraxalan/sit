@@ -49,7 +49,7 @@ function querySuccess_consolidar(tx, results) {
   // localStorage.id_transportista=13;
   var id_tra=localStorage.id_transportista;
   var f_vto=localStorage.fecha_venta;
-  alert(f_vto);
+  
   if(f_vto==0){
     f_vto=fecha_actual;
   }else{
@@ -57,7 +57,7 @@ function querySuccess_consolidar(tx, results) {
     f_vto = f_vto.split("-");
     f_vto = f_vto[2]+'/'+f_vto[1]+'/'+f_vto[0];
   }
-  alert(f_vto);
+
   // alert('max_doc1:'+max1);
   // alert('max_doc6:'+max6);
 
@@ -67,7 +67,7 @@ function querySuccess_consolidar(tx, results) {
 
   f_vto = f_vto.split("/");
   f_vto = f_vto[2]+'-'+f_vto[1]+'-'+f_vto[0]+' 00:00:00.000';
-  alert(f_vto);
+
 
   var i_max_1=max1+1;
   var i_max_6=max6+1;
@@ -349,6 +349,7 @@ function querySuccess_consolidar(tx, results) {
   // db.setTransactionSuccessful();
   // db.endTransaction();
   // alert('INSERTADOS querySuccess_consolidar len:'+len);
+  go_to_otro_usuario();
 }
 
 

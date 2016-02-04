@@ -1899,8 +1899,6 @@ $('.confirmar_venta_fchvto').on('click', function() {
 
     // $('#venta_tabs').removeClass("ui-disabled blured_alan"); 
     localStorage.fecha_venta=fecha_vto;
-    var fff= localStorage.fecha_venta;
-    alert(fff);
     var cli_id=$(".cliente_id").val();
     // $('#venta_tabs').addClass("ui-disabled blured_alan"); 
     // $("#confirmar_venta_fchvto_popup").popup("close"); 
@@ -2411,7 +2409,7 @@ $("#add_deuda_popup").on("popupbeforeposition", function (e, ui) {
 $(".confirmar_final").on('click', function(event) {
   cargar_consolidar_script($(".cliente_id").val());
   alert('Consolidado');
-  go_to_otro_usuario();
+  // go_to_otro_usuario();
 });
 
 
