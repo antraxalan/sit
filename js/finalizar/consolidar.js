@@ -241,7 +241,7 @@ function querySuccess_consolidar(tx, results) {
     i_Precio      =0;
     i_Tc          =0;
     i_CodConcepto =1200;
-    i_CodCliente  =1;
+    i_CodCliente  =id_tra;
     i_Debe        =monto_arr[i];
     i_Haber       =0;
     i_CodArt      =0;
@@ -332,7 +332,7 @@ function querySuccess_consolidar(tx, results) {
     
     i_Apu         =i_Apu+10;
     i_CodConcepto =1800;
-    i_CodCliente  =1;
+    i_CodCliente  =id_tra;
     i_Hcajas = [i_Dcajas, i_Dcajas = i_Hcajas][0];
     i_Hunidades = [i_Dunidades, i_Dunidades = i_Hunidades][0];
 
