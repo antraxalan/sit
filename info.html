@@ -33,7 +33,14 @@
     <!-- <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="css/theme-classic.css"/> -->
     <!-- <link type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.min.css" rel="stylesheet" />   -->
-
+    <link rel="stylesheet" href="css/morris.css">
+    <style type="text/css">
+      #graph {
+        width: 800px;
+        height: 250px;
+        margin: 20px auto 0 auto;
+      }
+    </style>
 
     <!-- <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" /> -->
 
@@ -43,13 +50,16 @@
     
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     
-    <script type="text/javascript" src="js/fusioncharts-jquery-plugin.js"></script>
+
 
     <script type="text/javascript" src="js/db_crear.js"></script>
     <script type="text/javascript" src="js/navigation.js"></script>
 
 
     <script type="text/javascript" src="js/info/mostrar.js"></script>
+
+    <script src="js/raphael-min.js"></script>
+    <script src="js/morris.js"></script>
 
     <title>SITRANS</title>
   </head>
@@ -108,7 +118,7 @@
 
 
 
-            <div id="chart-container"></div>
+              <div id="graph"></div>
 
             </div><!-- /content -->
             <footer data-role="footer" data-position="fixed">
@@ -161,56 +171,24 @@
    }); 
 
 
-
-
-
-    $("#chart-container").insertFusionCharts({
-        type: "pie3d",
-        width: "400",
-        height: "350",
-        dataFormat: "json",
-        dataSource: {
-             chart: {
-        caption: "Age profile of website visitors",
-        subcaption: "Last Year",
-        startingangle: "120",
-        showlabels: "0",
-        showlegend: "1",
-        enablemultislicing: "0",
-        slicingdistance: "15",
-        showpercentvalues: "1",
-        showpercentintooltip: "0",
-        plottooltext: "Age group : $label Total visit : $datavalue",
-        theme: "fint"
-    },
-    data: [
-        {
-            label: "Teenage",
-            value: "1250400"
-        },
-        {
-            label: "Adult",
-            value: "1463300"
-        },
-        {
-            label: "Mid-age",
-            value: "1050700"
-        },
-        {
-            label: "Senior",
-            value: "491000"
-        }
-    ]
-        }
+    $(function () {
+      Morris.Donut({
+        element: 'graph',
+        data: [
+        {value: 70, label: 'foo'},
+        {value: 15, label: 'bar'},
+        {value: 10, label: 'baz'},
+        {value: 5, label: 'A really really long label'}
+        ],
+        formatter: function (x) { return x + "%"}
+      }).on('click', function(i, row){
+        console.log(i, row);
+      });
     });
 
+  }); 
 
 
-
-
-
-
-  });
 
     // $('.read').click(function() {
     //   window.location.href = "r_w_txt_dir.html";
