@@ -68,7 +68,7 @@ function queryDB_cobranza_last_sale(tx) {
 
             // alert(i);
             lista_contenido+= '<li><a href="#">';
-            lista_contenido+= '<img src="img/cob2.png" >';
+            lista_contenido+= '<img src="img/cob1.png" >';
             lista_contenido+= '<div class="ui-grid-c">';
             lista_contenido+= '<div class="ui-block-a" align="center"><p style="margin-top: 3px;">Fecha de Emisión: </p></div>';
             lista_contenido+= '<div class="ui-block-b" align="center"><p style="margin-top: 3px;">Fecha de Vencimiento: </p></div>';
