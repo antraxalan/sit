@@ -42,6 +42,8 @@
     <script type="text/javascript" src="js/index.js"></script>
     
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    
+    <script type="text/javascript" src="js/fusioncharts-jquery-plugin.js"></script>
 
     <script type="text/javascript" src="js/db_crear.js"></script>
     <script type="text/javascript" src="js/navigation.js"></script>
@@ -106,7 +108,7 @@
 
 
 
-
+            <div id="chart-container"></div>
 
             </div><!-- /content -->
             <footer data-role="footer" data-position="fixed">
@@ -157,6 +159,56 @@
     $('.inicio').click(function() {
      window.location.href = "index.html";
    }); 
+
+
+
+
+
+    $("#chart-container").insertFusionCharts({
+        type: "pie3d",
+        width: "400",
+        height: "350",
+        dataFormat: "json",
+        dataSource: {
+             chart: {
+        caption: "Age profile of website visitors",
+        subcaption: "Last Year",
+        startingangle: "120",
+        showlabels: "0",
+        showlegend: "1",
+        enablemultislicing: "0",
+        slicingdistance: "15",
+        showpercentvalues: "1",
+        showpercentintooltip: "0",
+        plottooltext: "Age group : $label Total visit : $datavalue",
+        theme: "fint"
+    },
+    data: [
+        {
+            label: "Teenage",
+            value: "1250400"
+        },
+        {
+            label: "Adult",
+            value: "1463300"
+        },
+        {
+            label: "Mid-age",
+            value: "1050700"
+        },
+        {
+            label: "Senior",
+            value: "491000"
+        }
+    ]
+        }
+    });
+
+
+
+
+
+
 
   });
 
