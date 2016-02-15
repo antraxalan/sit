@@ -33,7 +33,14 @@
     <!-- <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="css/theme-classic.css"/> -->
     <!-- <link type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.min.css" rel="stylesheet" />   -->
-
+    <link rel="stylesheet" href="css/morris.css">
+    <style type="text/css">
+      #graph {
+        width: 200px;
+        height: 200px;
+        margin: 20px auto 0 auto;
+      }
+    </style>
 
     <!-- <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" /> -->
 
@@ -51,8 +58,8 @@
 
     <script type="text/javascript" src="js/info/mostrar.js"></script>
 
-    <script src="js/Chart.js"></script>
-
+    <script src="js/raphael-min.js"></script>
+    <script src="js/morris.js"></script>
 
     <title>SITRANS</title>
   </head>
@@ -83,7 +90,7 @@
             <div class="grid_6"     align="left"><textarea rows="4" cols="50" class="query" >SELECT * from DETALLE where FechaVto between '2012-01-01' and '2012-01-01'</textarea></div>
           </div>
           <br>
-          <button class="borrar_info_transaccion">Borrar Informacion</button>
+          <button class="borrar_info_transaccion">Borrar transaccion</button>
           <div id="tabla_info"></div>
 
           
@@ -110,32 +117,31 @@
               </tbody></table> -->
 
 
+
               <div class="container_12">
-                <div class="grid_4"     align="right">
-                  dsa
-                </div>
-                <div class="grid_4"     align="center">
+               <div class="grid_4"     align="right">
+                 dsa
+               </div>
+               <div class="grid_4"     align="center">
 
-                  <div id="canvas-holder">
-                    <canvas id="chart-area" width="500" height="500"/>
-                  </div>
+                 <div id="graph"></div>
+                 
+               </div>
+               <div class="grid_4"     align="left">
+                 123
+               </div>
+             </div>
 
-                </div>
-                <div class="grid_4"     align="left">
-                  123
-                </div>
-              </div>
-              <div id="graph"></div>
 
-            </div><!-- /content -->
-            <footer data-role="footer" data-position="fixed">
-              <h3>Copyright &copy; 2015</h3>
-            </footer>
-          </div><!-- /Page Home -->
+           </div><!-- /content -->
+           <footer data-role="footer" data-position="fixed">
+            <h3>Copyright &copy; 2015</h3>
+          </footer>
+        </div><!-- /Page Home -->
 
-        </div>
+      </div>
 
-        <script type="text/javascript" charset="utf-8">
+      <script type="text/javascript" charset="utf-8">
 
 // jQuery(document).ready(function() {
   $(document).on("pagecreate","#home",function(){
@@ -178,7 +184,29 @@
    }); 
 
 
-   }); 
+    $(function () {
+      Morris.Donut({
+        element: 'graph',
+        data: [
+        {value: 70, label: 'foo'},
+        {value: 15, label: 'bar'},
+        {value: 10, label: 'baz'},
+        {value: 5, label: 'A really really long label'}
+        ],
+        labelColor: '#060',
+        colors: [
+        '#0BA462',
+        '#39B580',
+        '#67C69D',
+        '#95D7BB'
+        ],
+        formatter: function (x) { return x + "%"}
+      }).on('click', function(i, row){
+        console.log(i, row);
+      });
+    });
+
+  }); 
 
 
 
@@ -186,49 +214,5 @@
     //   window.location.href = "r_w_txt_dir.html";
     // });
 </script>
-<script>
-
-    var doughnutData = [
-        {
-          value: 300,
-          color:"#F7464A",
-          highlight: "#FF5A5E",
-          label: "Red"
-        },
-        {
-          value: 50,
-          color: "#46BFBD",
-          highlight: "#5AD3D1",
-          label: "Green"
-        },
-        {
-          value: 100,
-          color: "#FDB45C",
-          highlight: "#FFC870",
-          label: "Yellow"
-        },
-        {
-          value: 40,
-          color: "#949FB1",
-          highlight: "#A8B3C5",
-          label: "Grey"
-        },
-        {
-          value: 120,
-          color: "#4D5360",
-          highlight: "#616774",
-          label: "Dark Grey"
-        }
-
-      ];
-
-      window.onload = function(){
-        var ctx = document.getElementById("chart-area").getContext("2d");
-        window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {responsive : true});
-      };
-
-
-
-  </script>
 </body>
 </html>
