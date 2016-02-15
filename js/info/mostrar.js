@@ -28,7 +28,7 @@ function populateDB_detalle(tx) {
         function queryDB_info_detalle(tx) {
             tx.executeSql('SELECT * FROM DETALLE ORDER BY TipoDcto DESC', [], querySuccess_info_detalle, errorCB_info);
         }
-        function queryDB_info_detalle(tx) {
+        function queryDB_info_maestro(tx) {
             tx.executeSql('SELECT TipoDcto,NroDcto,Fecha,FechaVto,Obs,CodCliente,Conteo FROM DETALLE ORDER BY TipoDcto DESC', [], querySuccess_info_maestro, errorCB_info);
         }
         function queryDB_info_transaccion(tx) {
