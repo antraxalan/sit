@@ -29,7 +29,7 @@ function populateDB_detalle(tx) {
             tx.executeSql('SELECT * FROM DETALLE ORDER BY TipoDcto DESC', [], querySuccess_info_detalle, errorCB_info);
         }
         function queryDB_info_maestro(tx) {
-            tx.executeSql('SELECT TipoDcto,NroDcto,Fecha,FechaVto,Obs,CodCliente,Conteo FROM DETALLE ORDER BY TipoDcto DESC', [], querySuccess_info_maestro, errorCB_info);
+            tx.executeSql('SELECT TipoDcto,NroDcto,Fecha,FechaVto,Obs,CodCliente,Conteo FROM MAESTRO ORDER BY TipoDcto DESC', [], querySuccess_info_maestro, errorCB_info);
         }
         function queryDB_info_transaccion(tx) {
             tx.executeSql('SELECT TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades FROM DETALLE where TipoDcto>0', [], querySuccess_info_transaccion, errorCB_info);
