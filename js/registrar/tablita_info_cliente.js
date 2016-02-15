@@ -39,10 +39,10 @@ function querySuccess_tablita(tx, results) {
     var var_CajaHuari;
     var var_CajaLitro;
     for (var i = 0; i < len; i++) {
-        var_SaldoBs=results.rows.item(i).SaldoBs+' Bs.';
-        var_CajaPac=results.rows.item(i).CajaPac;
-        var_CajaHuari=results.rows.item(i).CajaHuari;
-        var_CajaLitro=results.rows.item(i).CajaLitro;
+        var_SaldoBs=results.rows.item(i).SaldoBs.toFixed(2)+' Bs.';
+        var_CajaPac=results.rows.item(i).CajaPac.toFixed(2);
+        var_CajaHuari=results.rows.item(i).CajaHuari.toFixed(2);
+        var_CajaLitro=results.rows.item(i).CajaLitro.toFixed(2);
 
         // alert("SaldoBs"+var_SaldoBs);
         // alert("CajaPac"+var_CajaPac);

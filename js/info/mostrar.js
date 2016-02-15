@@ -28,6 +28,9 @@ function populateDB_detalle(tx) {
         function queryDB_info_detalle(tx) {
             tx.executeSql('SELECT * FROM DETALLE ORDER BY TipoDcto DESC', [], querySuccess_info_detalle, errorCB_info);
         }
+        function queryDB_info_detalle(tx) {
+            tx.executeSql('SELECT TipoDcto,NroDcto,Fecha,FechaVto,Obs,CodCliente,Conteo FROM DETALLE ORDER BY TipoDcto DESC', [], querySuccess_info_maestro, errorCB_info);
+        }
         function queryDB_info_transaccion(tx) {
             tx.executeSql('SELECT TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades FROM DETALLE where TipoDcto>0', [], querySuccess_info_transaccion, errorCB_info);
         }
@@ -150,6 +153,45 @@ function populateDB_detalle(tx) {
                 tblContent+=results.rows.item(i).Fecha          +'</td></tr>';
                 // tblContent+=results.rows.item(i).FechaVto       +'</td></tr>';
                 // tblContent+=results.rows.item(i).Precio      +'</td></tr>';
+            }
+            tblContent+="</tbody></table>";
+            // document.getElementById("tabla_info").innerHTML =tblContent;
+            $('#tabla_info').html(tblContent);
+             // $('#tabla_info').append(tblContent);
+             $("#tabla_info").trigger("create");
+
+            }
+            function querySuccess_info_maestro(tx, results) {
+            // var tblText='<table id="t01"><tr><th>ID</th> <th>Name</th> <th>Number</th></tr>';
+            var tblContent='<form>';
+            tblContent+='<input id="filterTable-input" data-type="search">';
+            tblContent+='</form>';
+            tblContent+='<table data-role="table"  data-mode="columntoggle" data-filter="true" data-input="#filterTable-input" class="ui-responsive selector_tabla">';
+            tblContent+='<thead>';
+            tblContent+='<tr>';
+                tblContent+='<th> TipoDcto </th>';
+                tblContent+='<th> NroDcto </th>';
+                tblContent+='<th> Fecha </th>';
+                tblContent+='<th> FechaVto </th>';
+                tblContent+='<th> Obs </th>';
+                tblContent+='<th> CodCliente </th>';
+                tblContent+='<th> Conteo </th>';
+            tblContent+='</tr>';
+            tblContent+='</thead>';
+            tblContent+='<tbody>';
+
+
+            var len = results.rows.length;
+            for (var i = 0; i < len; i++) {
+
+                tblContent+='<tr><td>';
+                tblContent+=results.rows.item(i).TipoDcto   +'</td><td>';
+                tblContent+=results.rows.item(i).NroDcto    +'</td><td>';
+                tblContent+=results.rows.item(i).Fecha      +'</td><td>';
+                tblContent+=results.rows.item(i).FechaVto   +'</td><td>';
+                tblContent+=results.rows.item(i).Obs        +'</td><td>';
+                tblContent+=results.rows.item(i).CodCliente +'</td><td>';
+                tblContent+=results.rows.item(i).Conteo     +'</td></tr>';
             }
             tblContent+="</tbody></table>";
             // document.getElementById("tabla_info").innerHTML =tblContent;
@@ -395,6 +437,11 @@ function populateDB_detalle(tx) {
             // var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
             db.transaction(queryDB_info_detalle, errorCB_info);
         }
+        function successCB_info_maestro() {
+            // alert("successCB_info_detalle");
+            // var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
+            db.transaction(queryDB_info_maestro, errorCB_info);
+        }
         function successCB_info_transaccion() {
             // alert("successCB_info_detalle");
             // var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
@@ -424,6 +471,10 @@ function populateDB_detalle(tx) {
         function cargar_info_detalle() {
             // alert("cargar_info_detalle");
             db.transaction(successCB_info_detalle, errorCB_info);
+        }
+        function cargar_info_maestro() {
+            // alert("cargar_info_detalle");
+            db.transaction(successCB_info_maestro, errorCB_info);
         }
 
         function cargar_info_transaccion() {
