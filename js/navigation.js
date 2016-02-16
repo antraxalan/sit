@@ -166,7 +166,7 @@ function go_to_otro_usuario(){
     $('#cliente').selectmenu();
     $("#cliente option:eq(0)").prop("selected",true);
     $('#cliente') .selectmenu("refresh");
-    $('#obs').val('');
+    $('#obs_final').val('');
     $('.tablita_info_cliente').hide();
     $('.menu_v_c_d').hide();
 

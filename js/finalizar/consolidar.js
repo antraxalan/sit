@@ -105,6 +105,7 @@ function querySuccess_consolidar(tx, results) {
   var i_Hunidades;
   
 
+  
   // var sql = 'INSERT INTO table (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades) VALUES (?,?,?,"?","?",?,?,?,?,?,?,?,?,?,?,?,?,?)';
   // db.beginTransaction();
   // var stmt = db.compileStatement(sql);
@@ -280,7 +281,7 @@ function querySuccess_consolidar(tx, results) {
   // alert("insertando envases");
   //START ENVASES
   ////////////////////////////////////////////////////////////////////
-  count=0;
+  var count2=0;
   var cod_art_arr=[];
   var deuda_cob_arr=[];
   var tipo_arr=[];
@@ -291,16 +292,16 @@ function querySuccess_consolidar(tx, results) {
     var aux_tip = $(this).attr("tipo");
     var aux_cem = $(this).attr("cant-empaque");
     if(aux_deu!='0'){
-      cod_art_arr[count]    =aux_cod;
-      deuda_cob_arr[count]  =aux_deu;
-      tipo_arr[count]       =aux_tip;
-      empaque_arr[count]    =aux_cem;
-      count                 =count+1;
+      cod_art_arr[count2]    =aux_cod;
+      deuda_cob_arr[count2]  =aux_deu;
+      tipo_arr[count2]       =aux_tip;
+      empaque_arr[count2]    =aux_cem;
+      count2                 =count2+1;
       // alert('cod-art='+aux_cod+' deuda-cob='+aux_deu);
     }
   });
 
-  for (i = 0; i < count; i++) {
+  for (i = 0; i < count2; i++) {
 
     i_TipoDcto    =1;
     i_NroDcto     =i_max_1;
@@ -344,15 +345,46 @@ function querySuccess_consolidar(tx, results) {
 
 
 
+  //Maestro
+if((len+count2)>0){
+  var TipoDcto_1    =1;
+  var NroDcto_1     =i_max_1;
+  var Fecha_1       =fecha_actual;
+  var FechaVto_1    =f_vto;
+  var Obs_1         =$('#obs_final').val();
+  var CodCliente_1  =id_cliente;
+  var Conteo_1      =0;
+  tx.executeSql('INSERT INTO MAESTRO (TipoDcto,NroDcto,Fecha,FechaVto,Obs,CodCliente,Conteo) VALUES ('+TipoDcto_1+','+NroDcto_1+',"'+Fecha_1+'","'+FechaVto_1+'","'+Obs_1+'",'+CodCliente_1+','+Conteo_1+')',[],renderEntries0,dbErrorHandler0);
+}
+if(count>0){
+  var TipoDcto_6    =6;
+  var NroDcto_6     =i_max_6;
+  var Fecha_6       =fecha_actual;
+  var FechaVto_6    =f_vto;
+  var Obs_6         =$('#obs_final').val();
+  var CodCliente_6  =id_cliente;
+  var Conteo_6      =0;
+  tx.executeSql('INSERT INTO MAESTRO (TipoDcto,NroDcto,Fecha,FechaVto,Obs,CodCliente,Conteo) VALUES ('+TipoDcto_6+','+NroDcto_6+',"'+Fecha_6+'","'+FechaVto_6+'","'+Obs_6+'",'+CodCliente_6+','+Conteo_6+')',[],renderEntries0,dbErrorHandler0);
+}
 
+  //End Maestro
+
+if((len+count+coutn2)>-1){
+  go_to_otro_usuario();
+  alert("Consolidado.");
+}else{
+  alert("Usted no realizó ninguna transacción. Por favor ingrese alguna operación.");
+  window.location.href = "index.html#venta";
+}
 
   // db.setTransactionSuccessful();
   // db.endTransaction();
   // alert('INSERTADOS querySuccess_consolidar len:'+len);
-  go_to_otro_usuario();
 }
 
-
+function renderEntries0() {
+  // alert("Ok renderEntries1 ");
+}
 function renderEntries1() {
   // alert("Ok renderEntries1 ");
 }
@@ -370,6 +402,9 @@ function renderEntries5() {
 }
 function renderEntries6() {
   // alert("Ok renderEntries6 ");
+}
+function dbErrorHandler0(err) {
+  // alert("Error processing dbErrorHandler1 SQL: "+err.code+" Mensaje: "+err.message);
 }
 function dbErrorHandler1(err) {
   // alert("Error processing dbErrorHandler1 SQL: "+err.code+" Mensaje: "+err.message);
