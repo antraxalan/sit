@@ -30,15 +30,31 @@
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme.css" />
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile.css" />
     <link rel="stylesheet" type="text/css" href="css/jquery-mobile-fluid960.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/pagespeed_elfmiyYq65.css"/>
     <!-- <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="css/theme-classic.css"/> -->
     <!-- <link type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.min.css" rel="stylesheet" />   -->
     <link rel="stylesheet" href="css/morris.css">
     <style type="text/css">
-      #graph {
+      .graph_cont {
         width: 200px;
         height: 200px;
-        margin: 20px auto 0 auto;
+        margin: 0 auto 0 auto;
+
+      }
+      .font-green:hover {
+        /*background-color: yellow;*/
+
+        font-size: 30px !important;
+      }
+      .texto_resaltado{
+
+        color:rgba(0,0,0,.6);
+        /*background-color:#dadada;*/
+        text-shadow:rgba(0,0,0,.2) 2px 6px 5px,rgba(255,255,255,.4) 0 -4px 30px;
+
       }
     </style>
 
@@ -46,6 +62,7 @@
 
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery.mobile.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
@@ -67,34 +84,37 @@
     <div class="app" >
 
       <div data-role="page" id="home" >
-       <header data-role="header" data-position="fixed">
+       <header data-role="header" data-position="fixed" data-tap-toggle="false" style="height:45px;">
         <h1>CBN</h1>
         <button data-icon="home" class="ui-btn-right inicio">Inicio</button>
       </header> 
 
+
       <div data-role="content">
-        <h3>Informacion General</h3>
+        <!-- <h3>Informacion General</h3> -->
 
 
 
 
         <div class="ui-content" role="main">
 
-          <button class="cargar_info_articulo">Cargar info articulo</button>
-          <button class="cargar_info_cliente">Cargar info cliente</button>
-          <button class="cargar_info_detalle">Cargar info detalle</button>
-          <button class="cargar_info_maestro">Cargar info maestro</button>
-          <button class="cargar_info_transaccion">Cargar info transaccion</button>
-          <div class="container_12">
-            <div class="grid_6"     align="right"><button class="cargar_info_query">Cargar info transaccion</button>
-            </div>
-            <div class="grid_6"     align="left"><textarea rows="4" cols="50" class="query" >SELECT * from DETALLE where FechaVto between '2012-01-01' and '2012-01-01'</textarea></div>
-          </div>
-          <br>
-          <button class="borrar_info_transaccion">Borrar transaccion</button>
-          <div id="tabla_info"></div>
 
-          
+          <div style="display: none;">
+            <button class="cargar_info_articulo">Cargar info articulo</button>
+            <button class="cargar_info_cliente">Cargar info cliente</button>
+            <button class="cargar_info_detalle">Cargar info detalle</button>
+            <button class="cargar_info_maestro">Cargar info maestro</button>
+            <button class="cargar_info_transaccion">Cargar info transaccion</button>
+            <div class="container_12">
+              <div class="grid_6"     align="right"><button class="cargar_info_query">Cargar info transaccion</button>
+              </div>
+              <div class="grid_6"     align="left"><textarea rows="4" cols="50" class="query" >SELECT * from DETALLE where FechaVto between '2012-01-01' and '2012-01-01'</textarea></div>
+            </div>
+            <br>
+            <button class="borrar_info_transaccion">Borrar transaccion</button>
+            <div id="tabla_info"></div>
+
+
 <!--           <form>
             <input id="filterTable-input" data-type="search">
           </form>
@@ -125,7 +145,7 @@
                </div>
                <div class="grid_4"     align="center">
 
-                 <div id="graph"></div>
+                 <div id="graphs"></div>
                  
                </div>
                <div class="grid_4"     align="left">
@@ -134,19 +154,156 @@
              </div>
 
 
-           </div><!-- /content -->
-           <footer data-role="footer" data-position="fixed">
-            <h3>Copyright &copy; 2015</h3>
-          </footer>
-        </div><!-- /Page Home -->
+           </div>
 
-      </div>
 
-      <script type="text/javascript" charset="utf-8">
+
+
+
+
+
+
+           <div class="row" style="margin-top: 10px;">
+            <div class="col-md-12">
+              <div class="panel-layout">
+                <div class="panel-box col-xs-4 bg-default text-center">
+                  <div class="panel-content">
+
+                    <h3>Venta</h3>
+                    <h4 class="opacity-80">Total vendido en el Día</h4>
+                  </div>
+                </div>
+                <div class="panel-box col-xs-8 text-center">
+
+                  <div class="panel-content bg-black texto_resaltado">
+                    <!-- <canvas style="display: inline-block; width: 348px; height: 80px; vertical-align: top;" width="348" height="80"></canvas> -->
+                    <div class="sparkline-big" style="display: inline-block; width: 100%; height: 80px; vertical-align: top;"><h3 style="color:white;"><br>SITRANS<br>Resumen</h3></div>
+                  </div>
+                  <div class="panel-content bg-white">
+                    <div class="center-vertical">
+
+                      <ul class="center-content nav nav-justified">
+                        <li>
+                          <h3 class="font-green">201</h3>
+                          <h4 class="opacity-80">Cajas</h4>
+                        </li>
+                        <li>
+                          <h3 class="font-green">580.50</h3>
+                          <h4 class="opacity-80">Bolivianos</h4>
+                        </li>
+                      </ul>
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+<!--           <div class="row">
+            <div class="col-md-12">
+              <h3 class="bg-black pricing-title">Silver</h3>
+            </div>
+          </div>
+
+
+
+
+
+          <div class="col-md-12">
+            <div class="pricing-box content-box">
+              <h3 class="bg-black pricing-title">Silver</h3>
+              <div class="bg-blue pricing-specs">
+                <span><sup>$</sup>299</span>
+                <i>Once per month</i>
+              </div>
+              <ul>
+                <li>Lorem ipsum</li>
+                <li>Not included</li>
+                <li><i class="glyph-icon icon-check-circle font-size-23 font-green"></i></li>
+                <li><i class="glyph-icon icon-times font-size-23 font-red"></i></li>
+                <li>Another item</li>
+                <li>This is included</li>
+              </ul>
+              <div class="pad25A">
+                <a href="#" class="btn btn-lg text-transform-upr btn-black font-size-12 font-size-12" title="">Sign Up Now!</a>
+              </div>
+            </div>
+          </div> -->
+   <br>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="pricing-box content-box">
+                <h3 class="bg-black pricing-title">Resumen General</h3>
+                <div class="row">
+                <div class="col-md-4" style="margin-top: 20px;">
+                  <div class="content-box bg-blue">
+                    <div class="content-box-wrapper">
+                      <div id="graph1" class="graph_cont"></div>
+                      <div class="text-center font-size-18 font-bold font-black opacity-80 text-transform-upr">Deuda Economica
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4" style="margin-top: 20px;">
+                  <div class="content-box bg-orange">
+                    <div class="content-box-wrapper">
+                      <div id="graph2" class="graph_cont"></div>
+                      <div class="text-center font-size-18 font-bold font-black opacity-80 text-transform-upr">Envases
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4" style="margin-top: 20px;">
+                  <div class="content-box bg-green">
+                    <div class="content-box-wrapper">
+                      <div id="graph3" class="graph_cont"></div>
+                      <div class="text-center font-size-18 font-bold font-black opacity-80 text-transform-upr">Cajas
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div><!-- /content -->
+        <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
+          <h3>Copyright &copy; 2016</h3>
+        </footer>
+
+      </div><!-- /Page Home -->
+
+    </div>
+
+    <script type="text/javascript" charset="utf-8">
 
 // jQuery(document).ready(function() {
   $(document).on("pagecreate","#home",function(){
-
+    // if(window.innerHeight > window.innerWidth){
+    //   alert("Landscape.");
+    // }else{
+    //   alert("Portrait.");
+    // }
   // $(document).on("pageinit",function(){
     carga_navigation();
     $('.cargar_info_articulo').on("click", function() {
@@ -191,28 +348,70 @@
 
 
     $(function () {
+      var deu_cob=3000.50;
+      var deu_saldo=5005.55;
+      var env_cob=1000;
+      var env_saldo=7083;
+      var caj_cob=83;
+      var caj_saldo=590;
+
       Morris.Donut({
-        element: 'graph',
+        element: 'graph1',
         data: [
-        {value: 70, label: 'foo'},
-        {value: 15, label: 'bar'},
-        {value: 10, label: 'baz'},
-        {value: 5, label: 'A really really long label'}
+        {value: deu_saldo, label: 'Saldo'},
+        {value: deu_cob, label: 'Cobrado'}
         ],
-        labelColor: '#060',
+        labelColor: '#000',
         colors: [
-        '#0BA462',
-        '#39B580',
-        '#67C69D',
-        '#95D7BB'
+        '#91DDF9',
+        '#3C88A4',
         ],
-        formatter: function (x) { return x + "%"}
+        formatter: function (x) { return x + " Bs."}
       }).on('click', function(i, row){
-        console.log(i, row);
-      });
+        // alert("i="+i+" row="+JSON.stringify(row));
+      }).select(1);
+
+
+      Morris.Donut({
+        element: 'graph2',
+        data: [
+        {value: env_saldo, label: 'Saldo'},
+        {value: env_cob, label: 'Cobrado'}
+        ],
+        labelColor: '#000',
+        colors: [
+        '#FBA48C',
+        '#A64F37',
+        ],
+        formatter: function (x) { return x + " Bot."}
+      }).on('click', function(i, row){
+        // alert("i="+i+" row="+JSON.stringify(row));
+      }).select(1);
+
+
+      Morris.Donut({
+        element: 'graph3',
+        data: [
+        {value: caj_saldo, label: 'Saldo'},
+        {value: caj_cob, label: 'Cobrado'}
+        ],
+        labelColor: '#000',
+        select:1,
+        colors: [
+        '#BDE090',
+        '#688B3B',
+        ],
+        formatter: function (x) { return x + " Caj."}
+      }).on('click', function(i, row){
+        // alert("i="+i+" row="+JSON.stringify(row));
+      }).select(1);
+
+
+
+
     });
 
-  }); 
+}); 
 
 
 
