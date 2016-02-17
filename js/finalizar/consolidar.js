@@ -14,7 +14,7 @@ function queryDB_todos_maximo(tx) {
 }
 
 function queryDB_consolidar(tx) { 
-alert("queryDB_consolidar");        
+// alert("queryDB_consolidar");        
   tx.executeSql('select IdArt, TipoDctoM, CodConcepto,CodCliente,Nombre,CodArt,DesArt,TipoArticulo,Precio, sum(Prestcajas) Cajas,sum(Prestunidades) Unidades,CantxEmpaque from (select IdArt,1 TipoDctoM, 1400 CodConcepto,a.CodCliente,Nombre, IdArt CodArt,b.DesArt,"V" TipoArticulo,Precio Precio,Caja Prestcajas,Unidad PrestUnidades, 0 CodBotella,0 CodCaja,Empaque CantxEmpaque from TempVenta a inner join Articulo b on a.IdArt=b.CodArt inner join cliente c on a.CodCliente=c.CodCliente group by IdArt,Nombre,Precio,b.DesArt,Caja,Unidad,Empaque,a.CodCliente UNION select IdArt,1 TipoDctoM, 1600 CodConcepto,a.CodCliente CodCliente,Nombre, a.codCaja CodArt,b.DesArt,TipoArticulo,0 Precio,Sum(Caja) Prestcajas,Sum(Caja) PrestUnidades, a.CodBotella,a.CodCaja,CantxEmpaque from TempVenta a inner join Articulo b on a.Codcaja=b.CodArt inner join cliente c on a.CodCliente=c.CodCliente where a.CodCaja>0 group by a.CodCliente,Nombre,a.CodCaja,b.DesArt,TipoArticulo,CantxEmpaque, a.CodBotella,a.CodCaja,IdArt UNION select IdArt,1 TipoDctoM, 1600 CodConcepto,a.CodCliente CodCliente,Nombre, a.codBotella CodArt,b.DesArt,TipoArticulo,0 Precio,Sum(Caja) Prestcajas,Sum(Unidad+caja*CantxEmpaque) PrestUnidades, a.CodBotella,a.CodCaja,CantxEmpaque from TempVenta a inner join Articulo b on a.Codbotella=b.CodArt inner join cliente c on a.CodCliente=c.CodCliente where a.CodBotella>0 group by a.CodCliente,Nombre,a.CodBotella,b.DesArt,TipoArticulo,CantxEmpaque, a.CodBotella,a.CodCaja,IdArt ) group by CodConcepto,CodCliente,Nombre,CodArt,DesArt,TipoArticulo,IdArt,CantxEmpaque,Precio,TipoDctoM order by IdArt,TipoArticulo desc,CodArt', [], querySuccess_consolidar, errorCB_consolidar2);
 }
 
@@ -41,7 +41,7 @@ function querySuccess_deuda_maximos(tx, results_max) {
 }
 
 function querySuccess_consolidar(tx, results) {
-  alert("querySuccess_consolidar");
+  // alert("querySuccess_consolidar");
   var len = results.rows.length;
   var d = new Date();
   var month = d.getMonth()+1;
@@ -218,7 +218,7 @@ function querySuccess_consolidar(tx, results) {
     }else{
       nrodctom_arr[count]  =aux_nro;
       monto_arr[count]     =aux_cob;
-      alert(aux_fch+" - "+count);
+      // alert(aux_fch+" - "+count);
       aux_fch = aux_fch.split("/");
       aux_fch = aux_fch[2]+'-'+aux_fch[1]+'-'+aux_fch[0]+' 00:00:00.000';
 
@@ -347,7 +347,7 @@ function querySuccess_consolidar(tx, results) {
 
 
   //Maestro
-  alert("len+count2"+(len+count2));
+  // alert("len+count2"+(len+count2));
 if((len+count2)>0){
   var TipoDcto_1    =1;
   var NroDcto_1     =i_max_1;
@@ -358,7 +358,7 @@ if((len+count2)>0){
   var Conteo_1      =0;
   tx.executeSql('INSERT INTO MAESTRO (TipoDcto,NroDcto,Fecha,FechaVto,Obs,CodCliente,Conteo) VALUES ('+TipoDcto_1+','+NroDcto_1+',"'+Fecha_1+'","'+FechaVto_1+'","'+Obs_1+'",'+CodCliente_1+','+Conteo_1+')',[],renderEntries0,dbErrorHandler0);
 }
-alert("count"+count);
+// alert("count"+count);
 if(count>0){
   var TipoDcto_6    =6;
   var NroDcto_6     =i_max_6;
@@ -371,7 +371,7 @@ if(count>0){
 }
 
   //End Maestro
-alert("(len+count+coutn2)"+(len+count+count2));
+// alert("(len+count+coutn2)"+(len+count+count2));
 if((len+count+count2)>-1){
   go_to_otro_usuario();
   alert("Consolidado.");
@@ -463,7 +463,7 @@ function errorCB_todos_maximos2(err) {
 }
 
 function cargar_consolidar_script(cli) {
-  alert("cargar_consolidar_script");
+  // alert("cargar_consolidar_script");
   id_cliente=cli;
   db.transaction(queryDB_todos_maximo, errorCB_todos_maximos2);
   db.transaction(queryDB_consolidar, errorCB_consolidar);

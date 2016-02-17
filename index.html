@@ -1681,7 +1681,7 @@ $( document ).on( "pagecreate", "#venta", function( event ) {
     $("#prest_popup").prop("checked",false).checkboxradio("refresh");
 
     if($.inArray( cod, arr_carr )>-1) {
-      alert('Este producto ya fue agregado a la compra. Verifique en la pestaña "Carrito".');
+      alert('Ingrese a la pestaña "Compra Total" Para modificar o eliminar este producto.');
     }else{
       $("#add_venta_popup").popup( "open" );
     }
