@@ -363,7 +363,7 @@ if(count>0){
   var TipoDcto_6    =6;
   var NroDcto_6     =i_max_6;
   var Fecha_6       =fecha_actual;
-  var FechaVto_6    =f_vto;
+  var FechaVto_6    =fecha_actual;
   var Obs_6         =$('#obs_final').val();
   var CodCliente_6  =id_cliente;
   var Conteo_6      =0;
