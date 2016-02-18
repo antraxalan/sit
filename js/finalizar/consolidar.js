@@ -372,7 +372,7 @@ if(count>0){
 
   //End Maestro
 // alert("(len+count+coutn2)"+(len+count+count2));
-if((len+count+count2)>-1){
+if((len+count+count2)>0){
   go_to_otro_usuario();
   alert("Consolidado.");
 }else{
