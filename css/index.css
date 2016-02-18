@@ -128,10 +128,10 @@
 }
 
 .class_confirmaciones{
-    -webkit-box-shadow: inset 0 0 10px #0C981F, 0 0 10px #0C981F !important;
-    -moz-box-shadow: inset 0 0 10px #0C981F, 0 0 10px #0C981F !important;
-    box-shadow: inset 0 0 10px #0C981F, 0 0 10px #0C981F !important;
-    background-color: #0C981F !important;
+    -webkit-box-shadow: inset 0 0 10px #2B9842, 0 0 10px #2B9842 !important;
+    -moz-box-shadow: inset 0 0 10px #2B9842, 0 0 10px #2B9842 !important;
+    box-shadow: inset 0 0 10px #2B9842, 0 0 10px #2B9842 !important;
+    background-color: #2B9842 !important;
 } 
 
 .next_deuda {
