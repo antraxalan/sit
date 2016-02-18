@@ -127,12 +127,25 @@
     }
 }
 
+.class_confirmaciones{
+    -webkit-box-shadow: inset 0 0 10px #67D275, 0 0 10px #67D275 !important;
+    -moz-box-shadow: inset 0 0 10px #67D275, 0 0 10px #67D275 !important;
+    box-shadow: inset 0 0 10px #67D275, 0 0 10px #67D275 !important;
+
+} 
 
 .next_deuda {
     -webkit-box-shadow: inset 0 0 10px #81CE97, 0 0 10px #81CE97 !important;
     -moz-box-shadow: inset 0 0 10px #81CE97, 0 0 10px #81CE97 !important;
     box-shadow: inset 0 0 10px #81CE97, 0 0 10px #81CE97 !important;
     background-color: #0C95BE !important;
+}
+
+.btn_confirmar_ventas_vacia {
+        -webkit-box-shadow: inset 0 0 10px #BC1919, 0 0 10px #BC1919 !important;
+    -moz-box-shadow: inset 0 0 10px #BC1919, 0 0 10px #BC1919 !important;
+    box-shadow: inset 0 0 10px #BC1919, 0 0 10px #BC1919 !important;
+    background-color: #BC1919 !important;
 }
 
 

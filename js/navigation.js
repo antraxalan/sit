@@ -93,18 +93,18 @@ function exitCobranza() {
 function exitDeuda() {
     navigator.notification.vibrate(200);
     navigator.notification.confirm(
-        "Esta seguro que desea volver a Cobranza?", 
+        "Esta seguro que desea volver a Cobros?", 
         function(buttonIndex){
             ConfirmExitDeuda(buttonIndex);
         }, 
-        "Ir a Cobranza", 
+        "Ir a Cobros", 
         "Si,No"
         ); 
 };
 function Cobranza_to_Deuda() {
     navigator.notification.vibrate(200);
     navigator.notification.confirm(
-        "Ya realizo todos los cambios necesarios en Cobranza?", 
+        "Ya realizo todos los cambios necesarios en Cobros?", 
         function(buttonIndex){
             ConfirmCobranza_to_Deuda(buttonIndex);
         }, 
