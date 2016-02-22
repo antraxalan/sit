@@ -254,7 +254,7 @@ function populateDB_articulo(tx) {
   }
 
 
-  function verificar_usuario() {
+  function verificar_usuario_y_carga() {
 
     var direccion= $(".direccion").val();
   // var var1= $(".var1").val();

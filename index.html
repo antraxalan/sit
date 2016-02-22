@@ -123,6 +123,7 @@
               <div class="ui-grid-solo" >
                 <div class="ui-block-a"><button type="button" class="big_button info blue_btn">Informacion General</button></div>
               </div>
+              <div class="ui-block-a"><button type="button" class="big_button cargar_2">Cargar Datos del Camion 2</button></div>
               <!-- <button type="button" class="big_button tabs blue_btn">Prueba</button> -->
             </form>
           </div>
@@ -1441,14 +1442,43 @@
         theme: 'a'
       });
       if(localStorage.db_cargada=='0'||(typeof localStorage.db_cargada === 'undefined')){
-        verificar_usuario();
+        verificar_usuario_y_carga();
       }else{
         navigator.notification.vibrate(500);
         navigator.notification.confirm(
           "Desea reemplazar la información existente?\n\nEsta no podra ser recuperada.", 
           function(buttonIndex){
            if(buttonIndex == "1"){
-            verificar_usuario();
+            verificar_usuario_y_carga();
+          }else{
+            $.mobile.loading("hide");
+            return;
+          }
+        }, 
+        "Confirmación", 
+        "Si,No"
+        );
+      }
+    }
+  });
+
+    $('.cargar_2').click(function() {
+     if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
+      $( "#panel-overlay" ).panel( "open" );
+      $("#cod_usuario").focus();
+    }else{
+      $.mobile.loading("show", {
+        theme: 'a'
+      });
+      if(localStorage.db_cargada=='0'||(typeof localStorage.db_cargada === 'undefined')){
+        verificar_usuario_y_carga();
+      }else{
+        navigator.notification.vibrate(500);
+        navigator.notification.confirm(
+          "Desea reemplazar la información existente?\n\nEsta no podra ser recuperada.", 
+          function(buttonIndex){
+           if(buttonIndex == "1"){
+            verificar_usuario_y_carga();
           }else{
             $.mobile.loading("hide");
             return;
@@ -1685,7 +1715,7 @@ $( document ).on( "pagecreate", "#venta", function( event ) {
     $("#prest_popup").prop("checked",false).checkboxradio("refresh");
 
     if($.inArray( cod, arr_carr )>-1) {
-      alert('Ingrese a la pestaña "Compra Total"\n Para modificar o eliminar este producto.');
+      alert('Ingrese a la pestaña "Compra Total"\n\n Para modificar o eliminar este producto.');
     }else{
       $("#add_venta_popup").popup( "open" );
     }
