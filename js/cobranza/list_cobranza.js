@@ -54,7 +54,7 @@ function queryDB_cobranza_last_sale(tx) {
 
           // lista_contenido='<button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">0.00 Bs.</span></button>';
           lista_contenido='<button type="button" class="class_confirmaciones btn_confirmar_cobranza" data-theme="b">CONFIRMAR COBRO<span style="box-shadow:-1px -1px 4px 1px gray inset;" class="ui-li-count total_cobranza_val ui-page-theme-a">0.00 Bs.</span></button>';
-          lista_contenido+='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Cobros...">';
+          lista_contenido+='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Cobros..." data-icon="false">';
           // alert(len);
           for (var i = 0; i < len; i++) { 
             fch = results.rows.item(i).Fecha;
@@ -91,7 +91,9 @@ function queryDB_cobranza_last_sale(tx) {
             lista_contenido+= '<div class="ui-block-d " align="center" ><p class="html_cobrado" marca-cobranza-html="'+results.rows.item(i).NroDctoM+'">0.00 Bs.</p></div>';
             lista_contenido+= '</div>';
             lista_contenido+= '</a>';
-            lista_contenido+= '<a href="#" class="editar_cobranza_class" data-rel="popup" tipodctom="'+results.rows.item(i).TipoDctoM+'" nrodctom="'+results.rows.item(i).NroDctoM+'" saldo="'+results.rows.item(i).SaldoBs+'" fecha="'+fch+'" fecha-venc="'+fch_vto+'" cobrado="">SITRANS</a>';
+            // lista_contenido+= '<a href="#" class="editar_cobranza_class" data-rel="popup" tipodctom="'+results.rows.item(i).TipoDctoM+'" nrodctom="'+results.rows.item(i).NroDctoM+'" saldo="'+results.rows.item(i).SaldoBs+'" fecha="'+fch+'" fecha-venc="'+fch_vto+'" cobrado="">SITRANS</a>';
+
+
         // lista_contenido+= '<a href="#" class="editar_cobranza_class" data-rel="popup" nrodctom="'+results.rows.item(i).NroDctoM+'" saldo="'+results.rows.item(i).SaldoBs+'" fecha="'+results.rows.item(i).Fecha+'" fecha-venc="'+results.rows.item(i).FechaVto+'" cobrado="">SITRANS</a>';
         lista_contenido+= '</li>';
 
@@ -159,7 +161,7 @@ function queryDB_cobranza_last_sale(tx) {
             lista_contenido+= '<div class="ui-block-d " align="center" ><p class="html_cobrado" marca-cobranza-html="9999999999">0.00 Bs.</p></div>';
             lista_contenido+= '</div>';
             lista_contenido+= '</a>';
-            lista_contenido+= '<a href="#" class="editar_cobranza_class" data-rel="popup" tipodctom="1" nrodctom="9999999999" saldo="'+total_venta+'" fecha="'+fecha_actual+'" fecha-venc="'+f_vto+'" cobrado="">SITRANS</a>';
+            // lista_contenido+= '<a href="#" class="editar_cobranza_class" data-rel="popup" tipodctom="1" nrodctom="9999999999" saldo="'+total_venta+'" fecha="'+fecha_actual+'" fecha-venc="'+f_vto+'" cobrado="">SITRANS</a>';
             lista_contenido+= '</li>';
           }
           lista_contenido+='<button type="button" class="class_confirmaciones btn_confirmar_cobranza" data-theme="b">CONFIRMAR COBRO<span style="box-shadow:-1px -1px 4px 1px gray inset;" class="ui-li-count total_cobranza_val ui-page-theme-a">0.00 Bs.</span></button>';
