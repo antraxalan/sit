@@ -131,14 +131,14 @@ function querySuccess_deuda(tx, results) {
 
     lista_contenido+= '<li>';
     lista_contenido+= '<a href="#">';
-    lista_contenido+= '<img src="img/'+img+'" >';
+    lista_contenido+= '<img src="img/'+img+'"  style="margin-top: 8px;">';
     // lista_contenido+= '<h2>codart='+codart+' <br>- desart='+desart+' <br>- codconcepto='+codconcepto+' <br>- codcliente='+codcliente+' <br>- nombre='+nombre+' <br>- codart='+codart+' <br>- desart='+desart+' <br>- tipoarticulo='+tipoarticulo+' <br>- saldocajas='+saldocajas+' <br>- saldounidades='+saldounidades+' prestcajas='+prestcajas+'<br>- prestunidades='+prestunidades+' <br>- empaq='+empaq+' <br>- codbot='+codbot+' <br>- cobcaj='+cobcaj+' <br> - deuda_t='+deuda_t+' <br> - saldo_c_t='+saldo_c_t+' <br> - saldo_u_t='+saldo_u_t+'</h2>';
     
     lista_contenido+= '<div class="container_12">';
     lista_contenido+= '<div class="grid_1" align="left">&nbsp</div>';
-    lista_contenido+= '<div class="grid_1 red" align="right">Saldo</div>';
+    lista_contenido+= '<div class="grid_1" align="right">Saldo</div>';
     lista_contenido+= '<div class="grid_3" align="left">&nbsp</div>';
-    lista_contenido+= '<div class="grid_1 red" align="right">Prestamo</div>';
+    lista_contenido+= '<div class="grid_1" align="right">Prestamo</div>';
     lista_contenido+= '<div class="grid_3" align="left">&nbsp</div>';
     lista_contenido+= '<div class="grid_1" align="right" >Devolución</div>';
     lista_contenido+= '</div>';
