@@ -67,7 +67,7 @@
     
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     
-
+<script type="text/javascript" charset="utf-8" src="video.js"></script>
 
     <script type="text/javascript" src="js/db_crear.js"></script>
     <script type="text/javascript" src="js/navigation.js"></script>
@@ -291,7 +291,8 @@
 <!-- <embed src="mp444.mp4" width="100%"> -->
 
 
-
+<a href="#" onclick="playVideo('http://path.to.my/file.mp4')">Play HTTP</a><p/><br><br>
+    <a href="#" onclick="playVideo('file:///android_asset/www/mp444.mp4')">Play File</a><p/>
 
         </div><!-- /content -->
         <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
@@ -301,7 +302,12 @@
       </div><!-- /Page Home -->
 
     </div>
-
+<script type="text/javascript">
+    
+function playVideo(vidUrl) {
+    window.plugins.videoPlayer.play(vidUrl);
+}
+</script>
     <script type="text/javascript" charset="utf-8">
 
 // jQuery(document).ready(function() {

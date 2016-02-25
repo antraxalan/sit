@@ -25,6 +25,7 @@
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" />
 
+
     <gap:config-file platform="android" parent="/manifest/application">
         <activity android:launchMode="singleInstance" />
     </gap:config-file>
@@ -47,6 +48,10 @@
     <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
+
+    <gap:plugin name="com.moust.cordova.videoplayer" spec="1.0.0"  />
+    <gap:plugin name="com.jaeger.html5video" spec="1.2.1" />
+
     <icon src="icon.png" />
     <icon gap:platform="android" gap:qualifier="ldpi" src="www/res/icon/android/icon-36-ldpi.png" />
     <icon gap:platform="android" gap:qualifier="mdpi" src="www/res/icon/android/icon-48-mdpi.png" />
