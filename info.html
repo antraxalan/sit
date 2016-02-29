@@ -67,7 +67,7 @@
     
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     
-<script type="text/javascript" charset="utf-8" src="video.js"></script>
+    <script type="text/javascript" charset="utf-8" src="video.js"></script>
 
     <script type="text/javascript" src="js/db_crear.js"></script>
     <script type="text/javascript" src="js/navigation.js"></script>
@@ -231,39 +231,39 @@
               </div>
             </div>
           </div> -->
-   <br>
+          <br>
           <div class="row">
             <div class="col-md-12">
               <div class="pricing-box content-box">
                 <h3 class="bg-black pricing-title">General</h3>
                 <div class="row">
-                <div class="col-md-4" style="margin-top: 20px;">
-                  <div class="content-box bg-blue">
-                    <div class="content-box-wrapper">
-                      <div id="graph1" class="graph_cont"></div>
-                      <div class="text-center text-transform-upr" style="font-size: 16px; color:black; font-weight: bold;">Deuda Economica
+                  <div class="col-md-4" style="margin-top: 20px;">
+                    <div class="content-box bg-blue">
+                      <div class="content-box-wrapper">
+                        <div id="graph1" class="graph_cont"></div>
+                        <div class="text-center text-transform-upr" style="font-size: 16px; color:black; font-weight: bold;">Deuda Economica
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-md-4" style="margin-top: 20px;">
-                  <div class="content-box bg-orange">
-                    <div class="content-box-wrapper">
-                      <div id="graph2" class="graph_cont"></div>
-                      <div class="text-center text-transform-upr" style="font-size: 16px; color:black; font-weight: bold;">Envases
+                  <div class="col-md-4" style="margin-top: 20px;">
+                    <div class="content-box bg-orange">
+                      <div class="content-box-wrapper">
+                        <div id="graph2" class="graph_cont"></div>
+                        <div class="text-center text-transform-upr" style="font-size: 16px; color:black; font-weight: bold;">Envases
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-md-4" style="margin-top: 20px;">
-                  <div class="content-box bg-green">
-                    <div class="content-box-wrapper">
-                      <div id="graph3" class="graph_cont"></div>
-                      <div class="text-center text-transform-upr" style="font-size: 16px; color:black; font-weight: bold;">Cajas
+                  <div class="col-md-4" style="margin-top: 20px;">
+                    <div class="content-box bg-green">
+                      <div class="content-box-wrapper">
+                        <div id="graph3" class="graph_cont"></div>
+                        <div class="text-center text-transform-upr" style="font-size: 16px; color:black; font-weight: bold;">Cajas
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
                 </div>
               </div>
             </div>
@@ -271,28 +271,72 @@
 
 
 
+<style type="text/css">
+  
+  /* entire container, keeps perspective */
+.flip-container {
+  perspective: 1000;
+}
+  /* flip the pane when hovered */
+  .flip-container:hover .flipper, .flip-container.hover .flipper {
+    transform: rotateY(180deg);
+  }
+
+.flip-container, .front, .back {
+  width: 320px;
+  height: 480px;
+  margin: auto;
+
+}
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+  backface-visibility: hidden;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg);
+}
+</style>
+
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="front">
+              <!-- front content -->
+              <img src="img/Alan_sit/1.png" width="100%"/>
+              </div>
+              <div class="back">
+                <!-- back content -->
+              <img src="img/Alan_sit/2.png" width="100%"/>
+              </div>
+            </div>
+          </div>
 
 
 
+          <embed src="gifff.gif" width="100%"/>
 
 
-
-
-
-
-<video width="400" controls>
-  <source src="file:///android_asset/www/mp444.mp4" type="video/mp4">
-  <source src="file:///android_asset/www/ogggg.ogg" type="video/ogg">
-  Your browser does not support HTML5 video.
-</video>
-<img src="gifff.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
-<embed src="swfff.swf">
-<embed src="gifff.gif" width="100%">
-<!-- <embed src="mp444.mp4" width="100%"> -->
-
-
-<a href="#" onclick="playVideo('http://path.to.my/file.mp4')">Play HTTP</a><p/><br><br>
-    <a href="#" onclick="playVideo('file:///android_asset/www/mp444.mp4')">Play File</a><p/>
 
         </div><!-- /content -->
         <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
@@ -302,12 +346,12 @@
       </div><!-- /Page Home -->
 
     </div>
-<script type="text/javascript">
-    
-function playVideo(vidUrl) {
-    window.plugins.videoPlayer.play(vidUrl);
-}
-</script>
+    <script type="text/javascript">
+
+      function playVideo(vidUrl) {
+        window.plugins.videoPlayer.play(vidUrl);
+      }
+    </script>
     <script type="text/javascript" charset="utf-8">
 
 // jQuery(document).ready(function() {
