@@ -110,45 +110,72 @@
 
           <div class="ui-content" role="main">
             <form class="ui">
-              <img src="img/logo_s.jpg" alt="image" style="width:100%; margin-top: 0px; margin-bottom: 10px; ">
-              <div class="ui-grid-solo" >
-                <div class="ui-block-a"><a href="#"><button type="button" class="big_button registrar blue_btn">Datos Cliente</button></a></div>
-                <!-- <div class="ui-block-a"><button type="button" class="big_button read">read_txt2</button></div> -->
+              <div class="logo" align="right">
+                <img src="img/moni.png" alt="image" style="width:70px; ">
+                <br>
+                22 de Febrero
               </div>
-              <div class="ui-grid-a" >
-                <div class="ui-block-a"><button type="button" class="big_button cargar">Cargar Datos del Camion</button></div>
-                <div class="ui-block-b"><button type="button" class="big_button finalizar">Cierre de Ruta</button></div>     
+              <div class="logo" align="center">
+                <img src="img/2.png" alt="image" style="width:30%; ">
               </div>
-              
-              <div class="ui-grid-solo" >
-                <div class="ui-block-a"><button type="button" class="big_button info blue_btn">Informacion General</button></div>
-              </div>
-              <!-- <div class="ui-block-a"><button type="button" class="big_button cargar_2">Cargar Datos del Camion 2</button></div> -->
-              <!-- <button type="button" class="big_button tabs blue_btn">Prueba</button> -->
-            </form>
-          </div>
-          
-          
-          <div data-role="panel" id="panel-overlay" data-display="overlay">
-            <div data-role="collapsibleset" data-content-theme="a">
-              <div data-role="collapsible" data-collapsed="false">
-                <h3>Usuario</h3>
-                <label for="textinput-f"><strong>Complete los siguientes campos:</strong></label>
-                <label for="textinput-f">Código de usuario:</label>
-                <input id="cod_usuario" placeholder="Código"/>
-                <label for="textinput-f">Contraseña de usuario:</label>
-                <!-- <input id="pass_usuario" type="password" placeholder="Contraseña"/> -->
-                <input id="pass_usuario" type="password" data-typetoggle='#show-password' class="input" placeholder="Contraseña"/>
-                <label ><input id="show-password" type="checkbox" />Ver Contraseña</label>
-                <hr>
-                <button type="button" class="ui-btn ui-corner-all ui-shadow guardar_cod_usuario">Guardar</button>
-                <button type="button" class="ui-btn ui-btn-b ui-corner-all ui-shadow cerrar_cod_usuario">Cerrar Sesion</button>
+
+
+              <br></br>
+              <div class="container_12">
+                <div class="grid_2"     align="right">
+                 &nbsp
+               </div>
+               <div class="grid_8"     align="center">
+
+
+
+                 <div class="ui-grid-solo" >
+                  <div class="ui-block-a"><a href="#"><button type="button" class="big_button registrar blue_btn">Datos Cliente</button></a></div>
+                  <!-- <div class="ui-block-a"><button type="button" class="big_button read">read_txt2</button></div> -->
+                </div>
+
+                <div class="ui-grid-solo" >
+                  <div class="ui-block-a"><button type="button" class="big_button info blue_btn">Informacion General</button></div>
+                </div>
+
+                <div class="ui-grid-a" >
+                <div class="ui-block-a"><button type="button" class="big_button cargar">Cargar Datos <br>del Camion</button></div>
+                  <div class="ui-block-b"><button type="button" class="big_button finalizar">Cierre de Ruta</button></div>     
+                </div>
 
               </div>
-            </div>
-            <br><br>
-            <!-- <button type="button" class="ui-btn ui-corner-all ui-shadow">Button</button> -->
+              <div class="grid_4"     align="left">
+               &nbsp
+             </div>
+           </div>
+
+
+           <!-- <div class="ui-block-a"><button type="button" class="big_button cargar_2">Cargar Datos del Camion 2</button></div> -->
+           <!-- <button type="button" class="big_button tabs blue_btn">Prueba</button> -->
+         </form>
+       </div>
+
+
+       <div data-role="panel" id="panel-overlay" data-display="overlay">
+        <div data-role="collapsibleset" data-content-theme="a">
+          <div data-role="collapsible" data-collapsed="false">
+            <h3>Usuario</h3>
+            <label for="textinput-f"><strong>Complete los siguientes campos:</strong></label>
+            <label for="textinput-f">Código de usuario:</label>
+            <input id="cod_usuario" placeholder="Código"/>
+            <label for="textinput-f">Contraseña de usuario:</label>
+            <!-- <input id="pass_usuario" type="password" placeholder="Contraseña"/> -->
+            <input id="pass_usuario" type="password" data-typetoggle='#show-password' class="input" placeholder="Contraseña"/>
+            <label ><input id="show-password" type="checkbox" />Ver Contraseña</label>
+            <hr>
+            <button type="button" class="ui-btn ui-corner-all ui-shadow guardar_cod_usuario">Guardar</button>
+            <button type="button" class="ui-btn ui-btn-b ui-corner-all ui-shadow cerrar_cod_usuario">Cerrar Sesion</button>
+
           </div>
+        </div>
+        <br><br>
+        <!-- <button type="button" class="ui-btn ui-corner-all ui-shadow">Button</button> -->
+      </div>
 
 <!-- 
           <div class="progress">
@@ -610,7 +637,7 @@
 
           <div class="tab_content" data-tab="2">
             <div class="list_carrito_venta">
-              
+
               <button type="button" class="class_confirmaciones btn_confirmar_ventas_global" data-theme="b">CONFIRMAR PEDIDO<span style="box-shadow:-1px -1px 4px 1px gray inset;" class="ui-li-count total_carrito_val ui-page-theme-a">0.00 Bs.</span></button>
               <!-- <button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">5160 Bs</span></button> -->
               <ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">
