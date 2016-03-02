@@ -139,7 +139,7 @@
                 </div>
 
                 <div class="ui-grid-a" >
-                <div class="ui-block-a"><button type="button" class="big_button cargar">Cargar Datos <br>del Camion</button></div>
+                  <div class="ui-block-a"><button type="button" class="big_button cargar">Cargar Datos <br>del Camion</button></div>
                   <div class="ui-block-b"><button type="button" class="big_button finalizar">Cierre de Ruta</button></div>     
                 </div>
 
@@ -935,7 +935,7 @@
       </li>
 
       <li>
-        <a href="#">
+        <a href="#" class="total_li">
           <img src="img/bs1.png" >
           <div class="ui-grid-c">
             <div class="ui-block-a" align="center"><p style="margin-top: 3px;">Fecha de Emisión: </p></div>
@@ -949,7 +949,7 @@
             <div class="ui-block-d " align="center" ><p class="html_cobrado" marca-cobranza-html="6090">0.00 Bs.</p></div>
           </div>
         </a>
-        <a href="#" class="editar_cobranza_class" data-rel="popup" nrodctom="6090" saldo="-150.50" fecha="31/03/2015" fecha-venc="31/08/2015" cobrado="">SITRANS</a>
+        <div href="#" class="editar_cobranza_class" data-rel="popup" nrodctom="6090" saldo="-150.50" fecha="31/03/2015" fecha-venc="31/08/2015" cobrado=""></div>
       </li>
 
       <li>
@@ -2243,18 +2243,26 @@ $( document ).on( "pagecreate", "#cobranza", function( event ) {
   $(".confirmar_cobranza_popup").on('click', function(event) {
     var documenton=$('#cob_nrodctom').val();
     var cobrar=$('#cob_cobrar').val();
-    if(cobrar==''||cobrar=='NaN'){cobrar='0.00'}
-      var auxi= $('.list_cobranza').find('a[nrodctom="'+documenton+'"]').attr('cobrado',cobrar);
+    if(cobrar==''||cobrar=='NaN'){cobrar='0.00';localStorage.total_cobro=0;}
+      // cambio de <a> por <div>
+      // var auxi= $('.list_cobranza').find('a[nrodctom="'+documenton+'"]').attr('cobrado',cobrar);
+      var auxi= $('.list_cobranza').find('div[nrodctom="'+documenton+'"]').attr('cobrado',cobrar);
     $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+documenton+"']").html(cobrar+' Bs.');
     var total=0;
     var aux;
+    //1. Suma todos los html para el resultado total. 
     $(".html_cobrado").each(function(index, el) {
       aux = $(this).text();
       aux = aux.split(" ");
       total=(parseFloat(aux[0]))+total;
     });
+    //1. Agrega esa suma al boton. 
     $('.total_cobranza_val').html(total.toFixed(2)+' Bs.');
+    //fin 1.
+    localStorage.total_cobro=cobrar;
+    list_cobranza_ajuste_automatico();
     $("#add_cobranza_popup").popup( "close" );
+
   });
 
   $(".list_cobranza").on('click','.btn_confirmar_cobranza', function(event) {

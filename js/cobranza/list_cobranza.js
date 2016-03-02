@@ -11,7 +11,7 @@ function queryDB_cobranza_last_sale(tx) {
         function queryDB_cobranza(tx) {         
 
           // tx.executeSql('select a.CodCliente CodCliente,Nombre, TipoDctoM,NroDctoM,Fecha,FechaVto, sum(debe-haber) SaldoBs from detalle a inner join cliente b on a.codcliente=b.codcliente where codconcepto=1400 and a.codcliente=? group by a.codcliente,nombre, tipodctom,NroDctoM,Fecha,FechaVto having sum(debe-haber)<>0 order by Fecha', [id_cliente], querySuccess_cobranza, errorCB_list_cobranza2);
-          tx.executeSql('select a.codcliente codcliente,Nombre, tipodctom,nrodctom,c.fecha,c.fechavto, sum(debe-haber) SaldoBs from detalle a inner join cliente b on a.codcliente=b.codcliente inner join maestro c on a.tipodctom=c.tipodcto and a.nrodctom=c.nrodcto where codconcepto=1400 and a.codcliente=? group by a.codcliente,nombre, tipodctom,nrodctom,c.fecha,c.fechavto having sum(debe-haber)<>0 order by c.fecha', [id_cliente], querySuccess_cobranza, errorCB_list_cobranza2);
+          tx.executeSql('select a.codcliente codcliente,Nombre, tipodctom,nrodctom,c.fecha,c.fechavto, sum(debe-haber) SaldoBs from detalle a inner join cliente b on a.codcliente=b.codcliente inner join maestro c on a.tipodctom=c.tipodcto and a.nrodctom=c.nrodcto where codconcepto=1400 and a.codcliente=? group by a.codcliente,nombre, tipodctom,nrodctom,c.fecha,c.fechavto having sum(debe-haber)<>0 order by SaldoBs, c.fecha', [id_cliente], querySuccess_cobranza, errorCB_list_cobranza2);
         }
 
         function querySuccess_cobranza_last_sale(tx, results_last) {
@@ -45,6 +45,7 @@ function queryDB_cobranza_last_sale(tx) {
           var color;
           var fch;
           var fch_vto;
+          var total_total_total=0;
 
           var d = new Date();
 
@@ -53,7 +54,12 @@ function queryDB_cobranza_last_sale(tx) {
           var fecha_actual =((''+day).length<2 ? '0' : '') + day + '/' +((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
 
           // lista_contenido='<button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">0.00 Bs.</span></button>';
-          lista_contenido='<button type="button" class="class_confirmaciones btn_confirmar_cobranza" data-theme="b">CONFIRMAR COBRO<span style="box-shadow:-1px -1px 4px 1px gray inset;" class="ui-li-count total_cobranza_val ui-page-theme-a">0.00 Bs.</span></button>';
+
+
+
+
+
+          // lista_contenido='<button type="button" class="class_confirmaciones btn_confirmar_cobranza" data-theme="b">CONFIRMAR COBRO<span style="box-shadow:-1px -1px 4px 1px gray inset;" class="ui-li-count total_cobranza_val ui-page-theme-a">0.00 Bs.</span></button>';
           lista_contenido+='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Cobros..." data-icon="false">';
           // alert(len);
           for (var i = 0; i < len; i++) { 
@@ -69,7 +75,7 @@ function queryDB_cobranza_last_sale(tx) {
 
             // alert(i);
             lista_contenido+= '<li><a href="#">';
-            lista_contenido+= '<img src="img/cob3.png" >';
+            lista_contenido+= '<img src="img/cob1.png" >';
             lista_contenido+= '<div class="ui-grid-c">';
             lista_contenido+= '<div class="ui-block-a" align="center"><p style="margin-top: 3px;">Fecha de Emisión: </p></div>';
             lista_contenido+= '<div class="ui-block-b" align="center"><p style="margin-top: 3px;">Fecha de Vencimiento: </p></div>';
@@ -86,12 +92,14 @@ function queryDB_cobranza_last_sale(tx) {
               color='green';
             }
             var saldo_bs=parseFloat(results.rows.item(i).SaldoBs);
+            total_total_total=total_total_total+saldo_bs;
             saldo_bs = saldo_bs.toFixed(2);
             lista_contenido+= '<div class="ui-block-c '+color+'" align="center" style="margin-top: 4px;"><strong>'+saldo_bs+' Bs.</strong></div>';
             lista_contenido+= '<div class="ui-block-d " align="center" ><p class="html_cobrado" marca-cobranza-html="'+results.rows.item(i).NroDctoM+'">0.00 Bs.</p></div>';
             lista_contenido+= '</div>';
             lista_contenido+= '</a>';
             // lista_contenido+= '<a href="#" class="editar_cobranza_class" data-rel="popup" tipodctom="'+results.rows.item(i).TipoDctoM+'" nrodctom="'+results.rows.item(i).NroDctoM+'" saldo="'+results.rows.item(i).SaldoBs+'" fecha="'+fch+'" fecha-venc="'+fch_vto+'" cobrado="">SITRANS</a>';
+            lista_contenido+= '<div href="#" class="editar_cobranza_class" data-rel="popup" tipodctom="'+results.rows.item(i).TipoDctoM+'" nrodctom="'+results.rows.item(i).NroDctoM+'" saldo="'+results.rows.item(i).SaldoBs+'" fecha="'+fch+'" fecha-venc="'+fch_vto+'" cobrado=""></div>';
 
 
         // lista_contenido+= '<a href="#" class="editar_cobranza_class" data-rel="popup" nrodctom="'+results.rows.item(i).NroDctoM+'" saldo="'+results.rows.item(i).SaldoBs+'" fecha="'+results.rows.item(i).Fecha+'" fecha-venc="'+results.rows.item(i).FechaVto+'" cobrado="">SITRANS</a>';
@@ -138,9 +146,11 @@ function queryDB_cobranza_last_sale(tx) {
             // lista_contenido +='<a href="#add_venta_popup" '+disabled+' class="add_venta_popup_class_old" data-rel="popup" codigo-venta="'+results.rows.item(i).IdArt+'" last-price="'+results.rows.item(i).Precio+'" cajas-camion="'+results.rows.item(i).CajasCamion+'" calibre="'+results.rows.item(i).Calibre+'" cant-empaque="'+results.rows.item(i).Empaque+'"  caj-adq="'+results.rows.item(i).Caja+'" uni-adq="'+results.rows.item(i).Unidad+'">Historial</a></li>';
           }
           if(total_venta==''|| total_venta==0 || total_venta==='undefined'){
-            var a=1;
+            var a=0;
           }else{
+            var a=1;
             var f_vto=localStorage.fecha_venta;
+            total_total_total=total_total_total+total_venta;
             if(f_vto==0){
               f_vto=fecha_actual;
             }else{
@@ -162,9 +172,39 @@ function queryDB_cobranza_last_sale(tx) {
             lista_contenido+= '</div>';
             lista_contenido+= '</a>';
             // lista_contenido+= '<a href="#" class="editar_cobranza_class" data-rel="popup" tipodctom="1" nrodctom="9999999999" saldo="'+total_venta+'" fecha="'+fecha_actual+'" fecha-venc="'+f_vto+'" cobrado="">SITRANS</a>';
+            lista_contenido+= '<div href="#" class="editar_cobranza_class" data-rel="popup" tipodctom="1" nrodctom="9999999999" saldo="'+total_venta+'" fecha="'+fecha_actual+'" fecha-venc="'+f_vto+'" cobrado=""></div>';
             lista_contenido+= '</li>';
           }
-          lista_contenido+='<button type="button" class="class_confirmaciones btn_confirmar_cobranza" data-theme="b">CONFIRMAR COBRO<span style="box-shadow:-1px -1px 4px 1px gray inset;" class="ui-li-count total_cobranza_val ui-page-theme-a">0.00 Bs.</span></button>';
+          // lista_contenido+='<button type="button" class="class_confirmaciones btn_confirmar_cobranza" data-theme="b">CONFIRMAR COBRO<span style="box-shadow:-1px -1px 4px 1px gray inset;" class="ui-li-count total_cobranza_val ui-page-theme-a">0.00 Bs.</span></button>';
+
+
+          if((len+a)!=0){
+            lista_contenido+= '<li><a href="#" class="total_li">';
+            lista_contenido+= '<img src="img/bs2.png">';
+            lista_contenido+= '<div class="ui-grid-c">';
+            lista_contenido+= '<div class="ui-block-a" align="center">&nbsp</div>';
+            lista_contenido+= '<div class="ui-block-b" align="center">&nbsp</div>';
+            lista_contenido+= '<div class="ui-block-c" align="center"><strong>SALDO TOTAL</strong></div>';
+            lista_contenido+= '<div class="ui-block-d" align="center"><strong>A COBRAR TOTAL</strong></div>';
+            lista_contenido+= '<div class="ui-block-a" align="center" >&nbsp</div>';
+            lista_contenido+= '<div class="ui-block-b" align="center" >&nbsp</div>';
+            if(total_total_total>0){
+              color='red';
+            }else{
+              color='green';
+            }
+            lista_contenido+= '<div class="ui-block-c 'color'" align="center" style="margin-top: 4px;"><strong>'+total_total_total+' Bs.</strong></div>';
+            lista_contenido+= '<div class="ui-block-d " align="center" ><p class="html_cobrado" marca-cobranza-html="19999999999">0.00 Bs.</p></div>';
+            lista_contenido+= '</div>';
+            lista_contenido+= '</a>';
+            lista_contenido+= '<a href="#" class="editar_cobranza_class" data-rel="popup" tipodctom="1" nrodctom="19999999999" saldo="'+total_total_total+'" fecha="'+fecha_actual+'" fecha-venc="'+f_vto+'" cobrado="">SITRANS</a>';
+            lista_contenido+= '</li>';
+          }else{
+            lista_contenido+= '<h3 align="center">El cliente no tiene deudas.</h3>';
+          }
+
+
+
           lista_contenido +='</ul>';
           // lista_contenido +='<button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">0.00 Bs.</span></button>';
           $('.list_cobranza').html(lista_contenido);

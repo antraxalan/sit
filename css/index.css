@@ -42,7 +42,7 @@
     color: #FF0000;
 }
 .deuda {
-   color: #FF0000;
+ color: #FF0000;
 }
 
 
@@ -142,7 +142,7 @@
 }
 
 .btn_confirmar_ventas_vacia {
-        -webkit-box-shadow: inset 0 0 10px #BC1919, 0 0 10px #BC1919 !important;
+    -webkit-box-shadow: inset 0 0 10px #BC1919, 0 0 10px #BC1919 !important;
     -moz-box-shadow: inset 0 0 10px #BC1919, 0 0 10px #BC1919 !important;
     box-shadow: inset 0 0 10px #BC1919, 0 0 10px #BC1919 !important;
     background-color: #BC1919 !important;
@@ -158,4 +158,11 @@
     .tab_content {
       background-color: red;
     }
-}*/
+    }*/
+
+    .total_li{
+        background-color: #EAF3E4 !important;
+    }
+    .total_li:hover {
+        background-color: #DFE8DA !important;
+    }

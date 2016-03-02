@@ -196,6 +196,25 @@ function querySuccess_consolidar(tx, results) {
 
 
   // alert("insertando cobranza");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   //START COBRANZA
   // var documenton=$('#cob_nrodctom').val();
   // var cobrar=$('#cob_cobrar').val();
@@ -213,7 +232,7 @@ function querySuccess_consolidar(tx, results) {
     var aux_cob = $(this).attr("cobrado");
     var aux_fch = $(this).attr("fecha-venc");
     var aux_dcm = $(this).attr("tipodctom");
-    if(aux_cob=='0.00' || aux_cob==''){
+    if(aux_cob=='0.00' || aux_cob=='' || aux_nro=='19999999999'){
       aux_cob=aux_cob;
     }else{
       nrodctom_arr[count]  =aux_nro;
@@ -272,6 +291,22 @@ function querySuccess_consolidar(tx, results) {
 
   }
   //END COBRANZA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
