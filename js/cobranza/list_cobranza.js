@@ -193,7 +193,7 @@ function queryDB_cobranza_last_sale(tx) {
             }else{
               color='green';
             }
-            lista_contenido+= '<div class="ui-block-c 'color'" align="center" style="margin-top: 4px;"><strong>'+total_total_total+' Bs.</strong></div>';
+            lista_contenido+= '<div class="ui-block-c '+color+'" align="center" style="margin-top: 4px;"><strong>'+total_total_total+' Bs.</strong></div>';
             lista_contenido+= '<div class="ui-block-d " align="center" ><p class="html_cobrado" marca-cobranza-html="19999999999">0.00 Bs.</p></div>';
             lista_contenido+= '</div>';
             lista_contenido+= '</a>';
