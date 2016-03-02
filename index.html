@@ -2243,13 +2243,16 @@ $( document ).on( "pagecreate", "#cobranza", function( event ) {
   $(".confirmar_cobranza_popup").on('click', function(event) {
     var documenton=$('#cob_nrodctom').val();
     var cobrar=$('#cob_cobrar').val();
-    if(cobrar==''||cobrar=='NaN'){cobrar='0.00';localStorage.total_cobro=0;}
+    if(cobrar==''||cobrar=='NaN'){
+      cobrar='0.00';
+      localStorage.total_cobro=0;
+    }
       // cambio de <a> por <div>
       // var auxi= $('.list_cobranza').find('a[nrodctom="'+documenton+'"]').attr('cobrado',cobrar);
       var auxi= $('.list_cobranza').find('div[nrodctom="'+documenton+'"]').attr('cobrado',cobrar);
-    $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+documenton+"']").html(cobrar+' Bs.');
-    var total=0;
-    var aux;
+      $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+documenton+"']").html(cobrar+' Bs.');
+      var total=0;
+      var aux;
     //1. Suma todos los html para el resultado total. 
     $(".html_cobrado").each(function(index, el) {
       aux = $(this).text();
@@ -2265,8 +2268,8 @@ $( document ).on( "pagecreate", "#cobranza", function( event ) {
 
   });
 
-  $(".list_cobranza").on('click','.btn_confirmar_cobranza', function(event) {
-    var total_cobro_fin=$(this).find('span').text();
+$(".list_cobranza").on('click','.btn_confirmar_cobranza', function(event) {
+  var total_cobro_fin=$(this).find('span').text();
     // $('.next_deuda').hide();
     if(total_cobro_fin=='0.00 Bs.'){
       alert('Pasando a Envases sin cobros.');
