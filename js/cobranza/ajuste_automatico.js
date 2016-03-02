@@ -24,25 +24,25 @@ function list_cobranza_ajuste_automatico() {
         credito = ((cobro*(-1))+credito).toFixed(2);
         cobro=0;
         if(count==items){
-          $('.list_cobranza').find('div[nrodctom="'+documenton+'"]').attr('cobrado',(credito*(-1)));
-          $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+documenton+"']").html(credito*(-1)+' Bs.');
+          $('.list_cobranza').find('div[nrodctom="'+aux_nro+'"]').attr('cobrado',(credito*(-1)).toFixed(2));
+          $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+aux_nro+"']").html(credito*(-1).toFixed(2)+' Bs.');
           credito=0;
         }
         if(count<items){
 
           if(aux_sal<0){
-            $('.list_cobranza').find('div[nrodctom="'+documenton+'"]').attr('cobrado',(aux_sal));
-            $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+documenton+"']").html(aux_sal+' Bs.');
+            $('.list_cobranza').find('div[nrodctom="'+aux_nro+'"]').attr('cobrado',(aux_sal).toFixed(2));
+            $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+aux_nro+"']").html(aux_sal.toFixed(2)+' Bs.');
             credito=credito+aux_sal;
           }else{
 
             if((credito*(-1))<=aux_sal){
-              $('.list_cobranza').find('div[nrodctom="'+documenton+'"]').attr('cobrado',((credito*(-1))));
-              $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+documenton+"']").html((credito*(-1))+' Bs.');
+              $('.list_cobranza').find('div[nrodctom="'+aux_nro+'"]').attr('cobrado',((credito*(-1))).toFixed(2));
+              $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+aux_nro+"']").html((credito*(-1)).toFixed(2)+' Bs.');
               credito=0;
             }else{
-              $('.list_cobranza').find('div[nrodctom="'+documenton+'"]').attr('cobrado',(aux_sal));
-              $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+documenton+"']").html(aux_sal+' Bs.');
+              $('.list_cobranza').find('div[nrodctom="'+aux_nro+'"]').attr('cobrado',(aux_sal.toFixed(2)));
+              $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+aux_nro+"']").html(aux_sal.toFixed(2)+' Bs.');
               credito=((credito*(-1))-aux_sal).toFixed(2);
             }
           }
