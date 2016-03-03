@@ -24,7 +24,7 @@ function list_cobranza_ajuste_automatico() {
     cobro=parseFloat(cobro);
     credito = ((cobro*(-1))+parseFloat(credito)).toFixed(2);
     cobro=0;
-    if (credito<0 && items>1){
+    if (credito!=0 && items>1){
       if( aux_sal < 0 || credito <0){
         if(count==items){
           $('.list_cobranza').find('div[nrodctom="'+aux_nro+'"]').attr('cobrado',(credito*(-1)).toFixed(2));
