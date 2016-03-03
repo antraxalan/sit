@@ -194,10 +194,11 @@ function queryDB_cobranza_last_sale(tx) {
               color='green';
             }
             lista_contenido+= '<div class="ui-block-c '+color+'" align="center" style="margin-top: 4px;"><strong>'+total_total_total+' Bs.</strong></div>';
-            lista_contenido+= '<div class="ui-block-d " align="center" ><p class="html_cobrado" marca-cobranza-html="19999999999" style="margin-top: 4px; font-size: 16px; font-weight: bold;">0.00 Bs.</p></div>';
+            lista_contenido+= '<div class="ui-block-d " align="center" ><p class="html_cobrado" marca-cobranza-html="19999999999" style="margin-top: 4px; font-size: 16px; font-weight: bold;">'+parseFloat(cobro_list).toFixed(2)+' Bs.</p></div>';
             lista_contenido+= '</div>';
             lista_contenido+= '</a>';
-            lista_contenido+= '<a href="#" class="editar_cobranza_class" data-rel="popup" tipodctom="1" nrodctom="19999999999" saldo="'+total_total_total+'" fecha="'+fecha_actual+'" fecha-venc="'+f_vto+'" cobrado="">SITRANS</a>';
+            var cobro_list=localStorage.total_cobro;
+            lista_contenido+= '<a href="#" class="editar_cobranza_class" data-rel="popup" tipodctom="1" nrodctom="19999999999" saldo="'+total_total_total+'" fecha="'+fecha_actual+'" fecha-venc="'+f_vto+'" cobrado="'+parseFloat(cobro_list).toFixed(2)+'">SITRANS</a>';
             lista_contenido+= '</li>';
           }else{
             lista_contenido+= '<h3 align="center">El cliente no tiene deudas.</h3>';
