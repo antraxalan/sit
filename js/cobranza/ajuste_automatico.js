@@ -23,12 +23,13 @@ function list_cobranza_ajuste_automatico() {
     aux_dcm=parseFloat(aux_dcm);
     items=parseFloat(items);
     cobro=parseFloat(cobro);
-    if (cobro!=0 && items>1){
+    credito = ((cobro*(-1))+parseFloat(credito)).toFixed(2);
+    cobro=0;
+    if (credito<0 && items>1){
       alert("1 if");
-      if(cobro > 0 || aux_sal < 0 || credito <0){
+      if( aux_sal < 0 || credito <0){
         alert("2 if");
-        credito = ((cobro*(-1))+parseFloat(credito)).toFixed(2);
-        cobro=0;
+
         if(count==items){
           alert("3 if");
           $('.list_cobranza').find('div[nrodctom="'+aux_nro+'"]').attr('cobrado',(credito*(-1)).toFixed(2));
@@ -47,12 +48,12 @@ function list_cobranza_ajuste_automatico() {
             alert("1 else");
 
             if((credito*(-1))<=aux_sal){
-            alert("6 if");
+              alert("6 if");
               $('.list_cobranza').find('div[nrodctom="'+aux_nro+'"]').attr('cobrado',((credito*(-1))).toFixed(2));
               $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+aux_nro+"']").html((credito*(-1)).toFixed(2)+' Bs.');
               credito=0;
             }else{
-            alert("2 else");
+              alert("2 else");
               alert("segundo else");
               $('.list_cobranza').find('div[nrodctom="'+aux_nro+'"]').attr('cobrado',(aux_sal.toFixed(2)));
               $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+aux_nro+"']").html(aux_sal.toFixed(2)+' Bs.');
