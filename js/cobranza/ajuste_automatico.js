@@ -12,16 +12,17 @@ function list_cobranza_ajuste_automatico() {
     var aux_nro = $(this).attr("nrodctom");
     // var aux_cob = $(this).attr("cobrado");
     var aux_sal = $(this).attr("saldo");
-    aux_sal=parseFloat(aux_sal);
     var aux_fch = $(this).attr("fecha-venc");
-    aux_fch=parseFloat(aux_fch);
     var aux_dcm = $(this).attr("tipodctom");
-    aux_dcm=parseFloat(aux_dcm);
     var items = $('.editar_cobranza_class').length;
-    items=parseFloat(items);
     var sum_aux;
     count=count+1;
     alert("items:"+items+" count:"+count+" \n\n aux_nro:"+aux_nro+" \n\n aux_sal:"+aux_sal+" \n\n credito:"+credito);
+    aux_sal=parseFloat(aux_sal);
+    aux_fch=parseFloat(aux_fch);
+    aux_dcm=parseFloat(aux_dcm);
+    items=parseFloat(items);
+    cobro=parseFloat(cobro);
     if (cobro!=0 && items>1){
       alert("1 if");
       if(cobro > 0 || aux_sal < 0 || credito <0){
