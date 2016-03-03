@@ -92,7 +92,7 @@ function queryDB_cobranza_last_sale(tx) {
               color='green';
             }
             var saldo_bs=parseFloat(results.rows.item(i).SaldoBs);
-            total_total_total=total_total_total+saldo_bs;
+            total_total_total=total_total_total+parseFloat(saldo_bs);
             saldo_bs = saldo_bs.toFixed(2);
             lista_contenido+= '<div class="ui-block-c '+color+'" align="center" style="margin-top: 4px;"><strong>'+saldo_bs+' Bs.</strong></div>';
             lista_contenido+= '<div class="ui-block-d " align="center" ><p class="html_cobrado" marca-cobranza-html="'+results.rows.item(i).NroDctoM+'">0.00 Bs.</p></div>';
@@ -150,7 +150,7 @@ function queryDB_cobranza_last_sale(tx) {
           }else{
             var a=1;
             var f_vto=localStorage.fecha_venta;
-            total_total_total=total_total_total+total_venta;
+            total_total_total=total_total_total+parseFloat(total_venta);
             if(f_vto==0){
               f_vto=fecha_actual;
             }else{

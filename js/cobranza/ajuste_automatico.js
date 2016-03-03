@@ -18,7 +18,7 @@ function list_cobranza_ajuste_automatico() {
     var items = $('.editar_cobranza_class').length;
     var sum_aux;
     count=count+1;
-
+    alert("items:"+items+" count:"+count+" \n\n aux_nro:"+aux_nro+" \n\n aux_sal:"+aux_sal+" \n\n credito:"+credito);
     if (cobro!=0 && items>1){
       if(cobro > 0 || aux_sal < 0 || credito <0){
         credito = ((cobro*(-1))+credito).toFixed(2);
