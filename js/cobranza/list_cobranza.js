@@ -79,8 +79,8 @@ function queryDB_cobranza_last_sale(tx) {
             lista_contenido+= '<div class="ui-grid-c">';
             lista_contenido+= '<div class="ui-block-a" align="center"><p style="margin-top: 3px;">Fecha de Emisión: </p></div>';
             lista_contenido+= '<div class="ui-block-b" align="center"><p style="margin-top: 3px;">Fecha de Vencimiento: </p></div>';
-            lista_contenido+= '<div class="ui-block-c" align="center"><strong>Saldo</strong></div>';
-            lista_contenido+= '<div class="ui-block-d" align="center"><strong>A Cobrar</strong></div>';
+            lista_contenido+= '<div class="ui-block-c" align="center"><p style="margin-top: 3px;">Saldo</p></div>';
+            lista_contenido+= '<div class="ui-block-d" align="center"><p style="margin-top: 3px;">A Cobrar</p></div>';
 
             lista_contenido+= '<div class="ui-block-a" align="center" ><p>'+fch+'</p></div>';
             // lista_contenido+= '<div class="ui-block-a" align="center" ><p>'+results.rows.item(i).Fecha+'</p></div>';
@@ -94,7 +94,7 @@ function queryDB_cobranza_last_sale(tx) {
             var saldo_bs=parseFloat(results.rows.item(i).SaldoBs);
             total_total_total=total_total_total+parseFloat(saldo_bs);
             saldo_bs = saldo_bs.toFixed(2);
-            lista_contenido+= '<div class="ui-block-c '+color+'" align="center" style="margin-top: 4px;"><strong>'+saldo_bs+' Bs.</strong></div>';
+            lista_contenido+= '<div class="ui-block-c '+color+'" align="center"><p>'+saldo_bs+' Bs.</p></div>';
             lista_contenido+= '<div class="ui-block-d " align="center" ><p class="html_cobrado" marca-cobranza-html="'+results.rows.item(i).NroDctoM+'">0.00 Bs.</p></div>';
             lista_contenido+= '</div>';
             lista_contenido+= '</a>';
@@ -163,11 +163,11 @@ function queryDB_cobranza_last_sale(tx) {
             lista_contenido+= '<div class="ui-grid-c">';
             lista_contenido+= '<div class="ui-block-a" align="center"><p style="margin-top: 3px;">Fecha de Emisión: </p></div>';
             lista_contenido+= '<div class="ui-block-b" align="center"><p style="margin-top: 3px;">Fecha de Vencimiento: </p></div>';
-            lista_contenido+= '<div class="ui-block-c" align="center"><strong>Saldo</strong></div>';
-            lista_contenido+= '<div class="ui-block-d" align="center"><strong>A Cobrar</strong></div>';
+            lista_contenido+= '<div class="ui-block-c" align="center"><p style="margin-top: 3px;">Saldo</p></div>';
+            lista_contenido+= '<div class="ui-block-d" align="center"><p style="margin-top: 3px;">A Cobrar</p></div>';
             lista_contenido+= '<div class="ui-block-a" align="center" ><p>'+fecha_actual+'</p></div>';
             lista_contenido+= '<div class="ui-block-b" align="center" ><p>'+f_vto+'</p></div>';
-            lista_contenido+= '<div class="ui-block-c red" align="center" style="margin-top: 4px;"><strong>'+total_venta+' Bs.</strong></div>';
+            lista_contenido+= '<div class="ui-block-c red" align="center"><p>'+total_venta+' Bs.</p></div>';
             lista_contenido+= '<div class="ui-block-d " align="center" ><p class="html_cobrado" marca-cobranza-html="9999999999">0.00 Bs.</p></div>';
             lista_contenido+= '</div>';
             lista_contenido+= '</a>';
@@ -194,7 +194,7 @@ function queryDB_cobranza_last_sale(tx) {
               color='green';
             }
             lista_contenido+= '<div class="ui-block-c '+color+'" align="center" style="margin-top: 4px;"><strong>'+total_total_total+' Bs.</strong></div>';
-            lista_contenido+= '<div class="ui-block-d " align="center" ><p class="html_cobrado" marca-cobranza-html="19999999999">0.00 Bs.</p></div>';
+            lista_contenido+= '<div class="ui-block-d " align="center" ><p class="html_cobrado" marca-cobranza-html="19999999999" style="margin-top: 4px; font-size: 16px; font-weight: bold;">0.00 Bs.</p></div>';
             lista_contenido+= '</div>';
             lista_contenido+= '</a>';
             lista_contenido+= '<a href="#" class="editar_cobranza_class" data-rel="popup" tipodctom="1" nrodctom="19999999999" saldo="'+total_total_total+'" fecha="'+fecha_actual+'" fecha-venc="'+f_vto+'" cobrado="">SITRANS</a>';
