@@ -57,7 +57,7 @@ function list_cobranza_ajuste_automatico() {
               // alert("segundo else");
               $('.list_cobranza').find('div[nrodctom="'+aux_nro+'"]').attr('cobrado',(aux_sal.toFixed(2)));
               $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+aux_nro+"']").html(aux_sal.toFixed(2)+' Bs.');
-              credito=(parseFloat(credito)-parseFloat(aux_sal)).toFixed(2);
+              credito=(parseFloat(credito)+parseFloat(aux_sal)).toFixed(2);
             }
           }
         }
