@@ -1336,7 +1336,7 @@
     
     <div data-role="fieldcontain" class="ui-field-contain">
       <label for="textarea">Observaciones finales:</label>
-      <textarea cols="40" rows="8" name="textarea" id="obs_final"></textarea>
+      <textarea cols="40" rows="8" name="textarea" id="obs_final_old"></textarea>
     </div>
     <p>Presione el boton confirmar si completo todas las <br>transacciones requeridas por el cliente.</p>
     <hr>
@@ -1514,17 +1514,20 @@
           <td colspan="4" style="text-align:center;">Venta</td>
         </tr>
         <tr>
-          <td >Saldo Bs</td>
-          <td >Paceña</td>
-          <td >Huari</td>
+          <td >Producto</td>
+          <td >Cajas</td>
+          <td >Unid.</td>
+          <td >Precio/Caja</td>
 
         </tr>
       </thead>
+      <tbody>
       <tr><td>1,1</td><td>neat</td><td>100%</td></tr>
       <tr><td>2,1</td><td>table</td><td>90%</td></tr>
       <tr><td>3,1</td><td>in</td><td>80%</td></tr>
       <tr><td>4,1</td><td>jQuery</td><td>20%</td></tr>
       <tr><td>5,1</td><td>mobile</td><td>10%</td></tr>
+      </tbody>
     </table>
 
     <table class="resumen_tabla_g">
@@ -1539,8 +1542,9 @@
 
       </tr>
     </thead>
+    <tbody>
     <tr><td>1,1</td><td>neat</td><td>100%</td></tr>
-
+    </tbody>
   </table>
   <table class="resumen_tabla_g">
    <thead>
@@ -2531,7 +2535,7 @@ $( document ).on( "pagecreate", "#deuda", function( event ) {
 
   $(".next_deuda").on('click', function(event) {
     cargar_tablas_finales($(".cliente_id").val());
-    $("#fin_popup_2").popup("open");
+    
   });
 
 
