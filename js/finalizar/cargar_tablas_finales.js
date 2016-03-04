@@ -22,6 +22,7 @@ function querySuccess_datos_temp(tx, results) {
   tabla_venta+='<tr>';
   tabla_venta+='<td>Producto</td>';
   tabla_venta+='<td>Cajas</td>';
+  tabla_venta+='<td>Unidades</td>';
   tabla_venta+='<td>Precio/Caja</td>';
   tabla_venta+='</tr>';
   tabla_venta+='</thead>';
@@ -46,8 +47,8 @@ function querySuccess_datos_temp(tx, results) {
   tabla_cobros+='<thead>';
   tabla_cobros+='<tr><td colspan="4" style="text-align:center;">Cobros</td></tr>';
   tabla_cobros+='<tr>';
-  tabla_cobros+='<td>Saldo</td>';
-  tabla_cobros+='<td>A Cobrar</td>';
+  tabla_cobros+='<td width="50%">Saldo Total</td>';
+  tabla_cobros+='<td width="50%">A Cobrar</td>';
   tabla_cobros+='</tr>';
   tabla_cobros+='</thead>';
   tabla_cobros+='<tbody>';
@@ -77,8 +78,8 @@ function querySuccess_datos_temp(tx, results) {
   tabla_envases+='<thead>';
   tabla_envases+='<tr><td colspan="4" style="text-align:center;">Envases</td></tr>';
   tabla_envases+='<tr>';
-  tabla_envases+='<td>Saldo</td>';
-  tabla_envases+='<td>A Cobrar</td>';
+  tabla_envases+='<td width="75%">Descrición</td>';
+  tabla_envases+='<td width="25%">A Cobrar</td>';
   tabla_envases+='</tr>';
   tabla_envases+='</thead>';
   tabla_envases+='<tbody>';
@@ -87,12 +88,12 @@ function querySuccess_datos_temp(tx, results) {
     var des_env = $(this).attr("des-art");
     var cob_env = $(this).attr("deuda-cob");
     if(cob_env!='0'){
-      tabla_cobros+='<tr><td>'+cod_env+' - '+des_env+'</td><td>'+cob_env+'</td></tr>';
+      tabla_envases+='<tr><td>'+cod_env+' - '+des_env+'</td><td>'+cob_env+'</td></tr>';
       count2                 =count2+1;
     }
   });
-  tabla_cobros+='</tbody>';
-  tabla_cobros+='</table>';
+  tabla_envases+='</tbody>';
+  tabla_envases+='</table>';
   //END ENVASES
   var tablas='';
   if(len>0){
