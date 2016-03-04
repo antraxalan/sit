@@ -76,9 +76,10 @@
     <script type="text/javascript" src="js/cobranza/list_cobranza.js"></script>
     <script type="text/javascript" src="js/cobranza/ajuste_automatico.js"></script>
     <script type="text/javascript" src="js/deuda/list_deuda.js"></script>
-  
+
 
     <script type="text/javascript" src="js/finalizar/consolidar.js"></script>
+    <script type="text/javascript" src="js/finalizar/cargar_tablas_finales.js"></script>
 
     <script type="text/javascript" src="js/general_query.js"></script>
     
@@ -1351,6 +1352,239 @@
 </div>
 
 
+<div data-role="popup" id="fin_popup_2" data-overlay-theme="a" data-theme="a"  style="max-width:800px;">
+  <div data-role="header" data-theme="a">
+    <h1>Finalizar</h1>
+  </div>
+  <div role="main" class="ui-content">
+    <p>Todos las transacciones seran guardadas para el cliente:</p>
+    <div class="ui-field-contain">
+      <label class="cliente_nombre">Id - Nombre del cliente</label>
+    </div>
+
+
+    <style type="text/css">
+      .resumen_tabla_r  {
+        color: black;
+        background: #fff;
+        border: 1px solid #b4b4b4;
+        font: bold 17px helvetica;
+        padding: 0;
+        margin-top:10px;
+        width: 100%;
+        -webkit-border-radius: 8px;
+      }
+
+      .resumen_tabla_r tr td {
+        color: #666;
+        border-bottom: 1px solid #b4b4b4;
+        border-right: 1px solid #b4b4b4;
+        padding: 10px 10px 10px 10px;
+        background-image: -webkit-linear-gradient(top, #fdfdfd, #eee);
+      }
+
+      .resumen_tabla_r thead tr td {
+        color: red;
+        text-align: center;
+        border-bottom: 1px solid #b4b4b4;
+        border-right: 1px solid #b4b4b4;
+        padding: 10px 10px 10px 10px;
+        background-image: -webkit-linear-gradient(top, #fdfdfd, #eee);
+      }
+
+      .resumen_tabla_r tr td:last-child {
+        border-right: none;
+      }
+
+      .resumen_tabla_r tr:last-child td {
+        border-bottom: none;
+      }
+      .resumen_tabla_r thead tr:last-child td  {
+        border-bottom: 1px solid #b4b4b4;
+      }
+
+
+
+
+
+
+
+
+      .resumen_tabla_y  {
+        color: black;
+        background: #fff;
+        border: 1px solid #b4b4b4;
+        font: bold 17px helvetica;
+        padding: 0;
+        margin-top:10px;
+        width: 100%;
+        -webkit-border-radius: 8px;
+      }
+
+      .resumen_tabla_y tr td {
+        color: #666;
+        border-bottom: 1px solid #b4b4b4;
+        border-right: 1px solid #b4b4b4;
+        padding: 10px 10px 10px 10px;
+        background-image: -webkit-linear-gradient(top, #fdfdfd, #eee);
+      }
+
+      .resumen_tabla_y thead tr td {
+        color: yellow;
+        text-align: center;
+        border-bottom: 1px solid #b4b4b4;
+        border-right: 1px solid #b4b4b4;
+        padding: 10px 10px 10px 10px;
+        background-image: -webkit-linear-gradient(top, #4A4A4A, #222);
+      }
+
+      .resumen_tabla_y tr td:last-child {
+        border-right: none;
+      }
+
+      .resumen_tabla_y tr:last-child td {
+        border-bottom: none;
+      }
+      .resumen_tabla_y thead tr:last-child td  {
+        border-bottom: 1px solid #b4b4b4;
+      }
+
+
+
+
+
+
+
+
+      .resumen_tabla_g  {
+        color: black;
+        background: #fff;
+        border: 1px solid #b4b4b4;
+        font: bold 17px helvetica;
+        padding: 0;
+        margin-top:10px;
+        width: 100%;
+        -webkit-border-radius: 8px;
+      }
+
+      .resumen_tabla_g tr td {
+        color: #666;
+        border-bottom: 1px solid #b4b4b4;
+        border-right: 1px solid #b4b4b4;
+        padding: 10px 10px 10px 10px;
+        background-image: -webkit-linear-gradient(top, #fdfdfd, #eee);
+      }
+
+      .resumen_tabla_g thead tr td {
+        color: black;
+        text-align: center;
+        font-weight: bold;
+        border-bottom: 1px solid #b4b4b4;
+        border-right: 1px solid #b4b4b4;
+        padding: 10px 10px 10px 10px;
+        background-image: -webkit-linear-gradient(top, #D4D4D4, #BEBEBE);
+      }
+
+      .resumen_tabla_g tr td:last-child {
+        border-right: none;
+      }
+
+      .resumen_tabla_g tr:last-child td {
+        border-bottom: none;
+      }
+      .resumen_tabla_g thead tr:last-child td  {
+        border-bottom: 1px solid #b4b4b4;
+      }
+
+
+
+
+
+
+
+
+
+    </style>
+
+    <div class="tables_resumen" style="width:600px;">
+
+      <table class="resumen_tabla_g">
+       <thead>
+        <tr>
+          <td colspan="4" style="text-align:center;">Venta</td>
+        </tr>
+        <tr>
+          <td >Saldo Bs</td>
+          <td >Paceña</td>
+          <td >Huari</td>
+
+        </tr>
+      </thead>
+      <tr><td>1,1</td><td>neat</td><td>100%</td></tr>
+      <tr><td>2,1</td><td>table</td><td>90%</td></tr>
+      <tr><td>3,1</td><td>in</td><td>80%</td></tr>
+      <tr><td>4,1</td><td>jQuery</td><td>20%</td></tr>
+      <tr><td>5,1</td><td>mobile</td><td>10%</td></tr>
+    </table>
+
+    <table class="resumen_tabla_g">
+     <thead>
+      <tr>
+        <td colspan="4" style="text-align:center;">Cobro</td>
+      </tr>
+      <tr>
+        <td >Saldo Bs</td>
+        <td >Paceña</td>
+        <td >Huari</td>
+
+      </tr>
+    </thead>
+    <tr><td>1,1</td><td>neat</td><td>100%</td></tr>
+
+  </table>
+  <table class="resumen_tabla_g">
+   <thead>
+    <tr>
+      <td colspan="4" style="text-align:center;">Envases</td>
+    </tr>
+    <tr>
+      <td >Saldo Bs</td>
+      <td >Paceña</td>
+      <td >Huari</td>
+
+    </tr>
+  </thead>
+  <tr><td>1,1</td><td>neat</td><td>100%</td></tr>
+  <tr><td>2,1</td><td>table</td><td>90%</td></tr>
+  <tr><td>3,1</td><td>in</td><td>80%</td></tr>
+  <tr><td>4,1</td><td>jQuery</td><td>20%</td></tr>
+  <tr><td>5,1</td><td>mobile</td><td>10%</td></tr>
+</table>
+
+</div>
+
+
+
+
+
+<div data-role="fieldcontain" class="ui-field-contain">
+  <label for="textarea">Observaciones finales:</label>
+  <textarea cols="40" rows="8" name="textarea" id="obs_final"></textarea>
+</div>
+<p>Presione el boton confirmar si todas las transacciones requeridas por el o la cliente <br>son correctas.</p>
+<hr>
+<div class="ui-grid-a">
+  <div class="ui-block-a">
+    <button type="button" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a close_popup_final">Cancelar</button>
+  </div>
+  <div class="ui-block-b">
+    <button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_final">Confirmar</button>
+  </div>
+</div>
+</div>
+</div>
+
+
 
 
 
@@ -2296,7 +2530,8 @@ $( document ).on( "pagecreate", "#deuda", function( event ) {
   });
 
   $(".next_deuda").on('click', function(event) {
-    $("#fin_popup").popup("open");
+    cargar_tablas_finales($(".cliente_id").val());
+    $("#fin_popup_2").popup("open");
   });
 
 
