@@ -3,7 +3,7 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
 var id_cliente;
 
 function queryDB_datos_temp_venta(tx) {  
-  tx.executeSql('select IdArt ,IdCli ,Calibre ,Empaque ,Precio ,Caja ,Unidad, CajasCamion, CodMarca, DesArt, CodCaja, CodBotella, CodCliente from TEMPVENTA WHERE IdCli=?', [], querySuccess_datos_temp, errorCB_datos);
+  tx.executeSql('select IdArt ,IdCli ,Calibre ,Empaque ,Precio ,Caja ,Unidad, CajasCamion, CodMarca, DesArt, CodCaja, CodBotella, CodCliente from TEMPVENTA WHERE IdCli=?', [id_cliente], querySuccess_datos_temp, errorCB_datos);
 }
 
 
