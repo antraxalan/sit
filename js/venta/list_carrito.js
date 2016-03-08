@@ -54,9 +54,7 @@ function querySuccess_carrito(tx, results) {
 
     lista_contenido +='<a href="#add_venta_popup" '+disabled+' class="add_venta_popup_class_old" data-rel="popup" codigo-venta="'+results.rows.item(i).IdArt+'" last-price="'+results.rows.item(i).Precio+'" cajas-camion="'+results.rows.item(i).CajasCamion+'" calibre="'+results.rows.item(i).Calibre+'" cant-empaque="'+results.rows.item(i).Empaque+'"  caj-adq="'+results.rows.item(i).Caja+'" uni-adq="'+results.rows.item(i).Unidad+'">Historial</a></li>';
   }
-  lista_contenido +='</ul>';
-  lista_contenido +='<div style="display:none;"><button type="button" class="class_confirmaciones btn_confirmar_ventas_global" data-theme="b">CONFIRMAR PEDIDO<span style="box-shadow:-1px -1px 4px 1px gray inset;" class="ui-li-count total_carrito_val ui-page-theme-a">0.00 Bs.</span></button></div>';
-
+  
   lista_contenido +='<li><a href="#" class="total_li">';
   lista_contenido +='<div class="ui-grid-c">';
   lista_contenido +='<div class="ui-block-a" align="center" ></div>';
@@ -65,6 +63,10 @@ function querySuccess_carrito(tx, results) {
   lista_contenido +='<div class="ui-block-d" align="center" style="margin-top: 4px; font-size: 16px;"><strong class="total_carrito_val">0.00 Bs.</strong></div>';
   lista_contenido +='</div>';
   lista_contenido +='</a></li>';
+
+  lista_contenido +='</ul>';
+  lista_contenido +='<div style="display:none;"><button type="button" class="class_confirmaciones btn_confirmar_ventas_global" data-theme="b">CONFIRMAR PEDIDO<span style="box-shadow:-1px -1px 4px 1px gray inset;" class="ui-li-count total_carrito_val ui-page-theme-a">0.00 Bs.</span></button></div>';
+
 
   if(len<=0){
     lista_contenido= '<h3 align="center">Sin Compra. <br>Por favor vuelva a la tabla Productos y agregue  algun item o proceda con el siguiente paso.</h3>';

@@ -93,8 +93,11 @@ function querySuccess_datos_temp(tx, results) {
     var cob_env = $(this).attr("deuda-cob");
     var sal_env = $(this).attr("saldo-t");
     var pre_env = $(this).attr("prestamo-t");
+    var anterior_env=parseFloat(pre_env)+parseFloat(sal_env);
+    var actual_env=parseFloat(anterior_env)-parseFloat(cob_env);
+
     if(cob_env!='0'){
-      tabla_envases+='<tr><td>'+cod_env+' - '+des_env+'</td><td>'+cob_env+'</td><td>'+sal_env+'</td><td>'+pre_env+'</td></tr>';
+      tabla_envases+='<tr><td>'+cod_env+' - '+des_env+'</td><td>'+anterior_env+'</td><td>'+actual_env+'</td><td>'+cob_env+'</td></tr>';
       count2                 =count2+1;
     }
   });
