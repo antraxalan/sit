@@ -33,7 +33,7 @@ var cantidad_ids;
           ids_old = [];
           arr_art_carrito = JSON.parse(localStorage.art);
           cantidad_ids=0;
-          lista_contenido='<button type="button" class="class_confirmaciones btn_confirmar_ventas_vacia" data-theme="b">AVANZAR SIN COMPRAR</button>';
+          lista_contenido='<div style="display:none;"><button type="button" class="class_confirmaciones btn_confirmar_ventas_vacia" data-theme="b">AVANZAR SIN COMPRAR</button></div>';
           lista_contenido+='<ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">';
           // alert(arr_art_carrito);
           for (var i = 0; i < len; i++) {
@@ -136,7 +136,7 @@ var cantidad_ids;
           }
 
           }
-          lista_contenido+='<button type="button" class="class_confirmaciones btn_confirmar_ventas_vacia" data-theme="b">AVANZAR SIN COMPRAR</button>';
+          lista_contenido+='<div style="display:none;"><button type="button" class="class_confirmaciones btn_confirmar_ventas_vacia" data-theme="b">AVANZAR SIN COMPRAR</button></div>';
           lista_contenido +='</ul>';
 
           // alert("art:"+i);

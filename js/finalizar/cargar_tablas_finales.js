@@ -47,8 +47,9 @@ function querySuccess_datos_temp(tx, results) {
   tabla_cobros+='<thead>';
   tabla_cobros+='<tr><td colspan="4" style="text-align:center;">Cobros</td></tr>';
   tabla_cobros+='<tr>';
-  tabla_cobros+='<td width="50%">Saldo Total</td>';
-  tabla_cobros+='<td width="50%">A Cobrar</td>';
+  tabla_cobros+='<td width="33%">Saldo Anterior</td>';
+  tabla_cobros+='<td width="33%">Saldo Actual</td>';
+  tabla_cobros+='<td width="33%">A Cobrar</td>';
   tabla_cobros+='</tr>';
   tabla_cobros+='</thead>';
   tabla_cobros+='<tbody>';
@@ -61,10 +62,11 @@ function querySuccess_datos_temp(tx, results) {
   });
   var lcl_cobro=localStorage.total_cobro;
   lcl_cobro = parseFloat(lcl_cobro);
+  var aux_actual=total_cobros-lcl_cobro;
   if(lcl_cobro!=0){
     count = count+1;
   }
-  tabla_cobros+='<tr><td>'+total_cobros+'</td><td>'+lcl_cobro+'</td></tr>';
+  tabla_cobros+='<tr><td>'+total_cobros+'</td><td>'+aux_actual+'</td><td>'+lcl_cobro+'</td></tr>';
   tabla_cobros+='</tbody>';
   tabla_cobros+='</table>';
   //END COBRANZA
@@ -78,8 +80,10 @@ function querySuccess_datos_temp(tx, results) {
   tabla_envases+='<thead>';
   tabla_envases+='<tr><td colspan="4" style="text-align:center;">Envases</td></tr>';
   tabla_envases+='<tr>';
-  tabla_envases+='<td width="75%">Descrición</td>';
-  tabla_envases+='<td width="25%">A Cobrar</td>';
+  tabla_envases+='<td width="64%">Descripción</td>';
+  tabla_envases+='<td width="12%">Saldo Anterior</td>';
+  tabla_envases+='<td width="12%">Saldo Actual</td>';
+  tabla_envases+='<td width="12%">A Cobrar</td>';
   tabla_envases+='</tr>';
   tabla_envases+='</thead>';
   tabla_envases+='<tbody>';
@@ -87,8 +91,10 @@ function querySuccess_datos_temp(tx, results) {
     var cod_env = $(this).attr("cod-art");
     var des_env = $(this).attr("des-art");
     var cob_env = $(this).attr("deuda-cob");
+    var sal_env = $(this).attr("saldo-t");
+    var pre_env = $(this).attr("prestamo-t");
     if(cob_env!='0'){
-      tabla_envases+='<tr><td>'+cod_env+' - '+des_env+'</td><td>'+cob_env+'</td></tr>';
+      tabla_envases+='<tr><td>'+cod_env+' - '+des_env+'</td><td>'+cob_env+'</td><td>'+sal_env+'</td><td>'+pre_env+'</td></tr>';
       count2                 =count2+1;
     }
   });

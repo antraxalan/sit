@@ -160,9 +160,15 @@
     }
     }*/
 
-    .total_li{
+    ._total_li{
         background-color: #EAF3E4 !important;
     }
-    .total_li:hover {
+    ._total_li:hover {
         background-color: #DFE8DA !important;
+    }
+    .total_li{
+        background-color: #ABDEBA !important;
+    }
+    .total_li:hover {
+        background-color: #81CE98 !important;
     }

@@ -157,7 +157,7 @@ function querySuccess_deuda(tx, results) {
 
     lista_contenido+= '<p>'+codart+' - '+desart+'</p>';
     lista_contenido+= '</a>';
-    lista_contenido+= '<a href="#" class="editar_deuda_class" cod-art="'+codart+'" des-art="'+desart+'" tipo="'+tipoarticulo+'" saldo-cajas="'+saldo_c_t+'" saldo-unidades="'+saldo_u_t+'" cod-botella="'+codbot+'" cod-caja="'+cobcaj+'" cant-empaque="'+empaq+'" deuda-cob="0">SITRANS</a>';
+    lista_contenido+= '<a href="#" class="editar_deuda_class" cod-art="'+codart+'" des-art="'+desart+'" tipo="'+tipoarticulo+'" saldo-cajas="'+saldo_c_t+'" saldo-unidades="'+saldo_u_t+'" cod-botella="'+codbot+'" cod-caja="'+cobcaj+'" cant-empaque="'+empaq+'" saldo-t="'+saldo_t+'" prestamo-t="'+prestamo_t+'" deuda-cob="0">SITRANS</a>';
     lista_contenido+= '</li>';
 
 
@@ -167,6 +167,9 @@ function querySuccess_deuda(tx, results) {
 
   // lista_contenido+='<button type="button" class="class_confirmaciones btn_confirmar_deuda" data-theme="b">CONFIRMAR DEVOLUCION</button>';
   lista_contenido+='</ul>';
+  if(len<=0){
+    lista_contenido= '<h3 align="center">Sin envases por cobrar.</h3>';
+  }
   // lista_contenido+='<button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">0.00 Bs.</span></button>';
   $('.list_deuda').html(lista_contenido);
   $(".list_deuda").trigger("create");

@@ -200,13 +200,13 @@ function queryDB_cobranza_last_sale(tx) {
             lista_contenido+= '</a>';
             lista_contenido+= '<a href="#" class="editar_cobranza_class" data-rel="popup" tipodctom="1" nrodctom="19999999999" saldo="'+total_total_total+'" fecha="'+fecha_actual+'" fecha-venc="'+f_vto+'" cobrado="'+parseFloat(cobro_list).toFixed(2)+'">SITRANS</a>';
             lista_contenido+= '</li>';
+            lista_contenido +='</ul>';
           }else{
-            lista_contenido+= '<h3 align="center">El cliente no tiene deudas.</h3>';
+            lista_contenido= '<h3 align="center">El cliente no tiene deudas.</h3>';
           }
 
 
 
-          lista_contenido +='</ul>';
           // lista_contenido +='<button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">0.00 Bs.</span></button>';
           $('.list_cobranza').html(lista_contenido);
           $(".list_cobranza").trigger("create");

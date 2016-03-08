@@ -595,6 +595,8 @@
     
     <button type="button" data-icon="arrow-l" class="btn_prev_style otro_cliente" data-inline="true">Otro Cliente</button>
     <button type="button" data-icon="arrow-r" class="btn_next_style btn_confirmar_ventas_vacia_next" data-iconpos="right" data-inline="true">Cobros</button>
+    <button type="button" data-icon="arrow-r" class="btn_next_style btn_confirmar_ventas_cobrar_next" data-iconpos="right" data-inline="true" 
+    style="background-color: #2B9842; color: white; text-shadow:0  1px  0  #2B9842 ;">Cobros</button>
     
 
 
@@ -625,236 +627,254 @@
         <!-- <input class="cargar_html_venta_input" value="SELECT * FROM USUARIO where codigo = 1" /> -->
 
         <!-- <button type="button" class="op_pop" data-theme="b">op_pop<span class="ui-li-count total_carrito_val">50.00 Bs</span></button> -->
+        <style type="text/css">
 
-        <div data-role="inlinetabs" data-content-theme="a" data-theme="a" data-mini="true" id="venta_tabs">
+          #venta_tabs > .ui-inlinetabs-bar > .ui-btn-active{
+            background-color: #3588CE !important;
+            border-color:#3588CE !important;
+            text-shadow:0  1px  0  #9C9C9C !important;
+            color: #fff !important;
+          }
+          #venta_tabs > .ui-inlinetabs-bar > .ui-inlinetabs-tab{
+            background-color: #F7F7F7 ;
+            border-color:#F7F7F7;
+            text-shadow:0  1px  0  #F7F7F7 ;
+            color: #555;
+          }
+        </style>
+        <input type="hidden" class="total_carrito_input" />
+        <div data-role="inlinetabs"  id="venta_tabs"data-theme="a" data-content-theme="a" data-tab-theme="b">
           <ul>
             <li data-tab="1"  style="width:15%;" >Productos</li>
             <li data-tab="2"  style="width:15%;" >Compra Total</li>
           </ul>
 
-          <div class="tab_content" data-tab="1">
-            <div class="list_old_venta">
-              <button type="button" class="class_confirmaciones btn_confirmar_ventas_vacia" data-theme="b">AVANZAR SIN COMPRAR</button>
-              <button type="button" class="class_confirmaciones btn_confirmar_ventas_global" data-theme="b">CONFIRMAR PEDIDO<span style="box-shadow:-1px -1px 4px 1px gray inset;" class="ui-li-count total_carrito_val ui-page-theme-a">0.00 Bs.</span></button>
-            </div>
-          </div>
-
-          <div class="tab_content" data-tab="2">
-            <div class="list_carrito_venta">
-
-              <button type="button" class="class_confirmaciones btn_confirmar_ventas_global" data-theme="b">CONFIRMAR PEDIDO<span style="box-shadow:-1px -1px 4px 1px gray inset;" class="ui-li-count total_carrito_val ui-page-theme-a">0.00 Bs.</span></button>
-              <!-- <button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">5160 Bs</span></button> -->
-              <ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">
-                <li>
-                  <a href="#" class="ui-disabled">
-                    <img src="img/cart.png">
-                    <h2>52 - DUCAL 300 bot ow</h2>
-                    <p>6 cajas a 55.00 bolivianos</p>
-                  </a>
-                  <a href="#add_venta_popup" class="ui-disabled"  class="add_venta_popup_class_old" data-rel="popup" codigo-venta="1" cant-cajas="6" cant-unidades="2" last-price="50.5" data-transition="flow" >Comprar</a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img src="img/cart.png">
-                    <h2>175 - IMPERIAL 1000</h2>
-                    <p>Ultima venta: <strong>6</strong> cajas a <strong>55.00</strong> Bolivianos. (<strong>14/08/2012</strong>)</p>
-                  </a>
-                  <!-- <a href="#add_venta_popup" class="add_venta_popup_class_old" data-rel="popup" codigo-venta="2" cant-cajas="5" cant-unidades="0" last-price="51.5" data-transition="flow">Comprar</a> -->
-                  <a href="#add_venta_popup" class="add_venta_popup_class_old" data-rel="popup" codigo-venta="175" last-price="55.00" cajas-camion="9" calibre="0.6200" cant-empaque="12"  caj-adq="2" uni-adq="0">Historial</a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img src="img/cart.png">
-                    <h2>203 - TAQUIÑA ICE 300 CC X 1</h2>
-                    <div class="ui-grid-b">
-                      <div class="ui-block-a"><p>7 cajas</p></div>
-                      <div class="ui-block-b"><p>1 unidades</p></div>
-                      <div class="ui-block-c price"><strong>52.5 Bs.</strong></div>
-                    </div>
-                  </a>
-                  <a href="#add_venta_popup" class="add_venta_popup_class_old" data-rel="popup" codigo-venta="3" cant-cajas="7" cant-unidades="1" last-price="52.5" data-transition="flow">Comprar</a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img src="img/cart.png">
-                    <h2>378 - MALTIN 330 CC. SABOR ORIGINAL</h2>
-                    <div class="ui-grid-c">
-                      <div class="ui-block-a"><p>6 cajas</p></div>
-                      <div class="ui-block-b"><p>2 unidades</p></div>
-                      <div class="ui-block-c"><p>Precio/Caja <strong>53.5 Bs.</strong></p></div>
-                      <div class="ui-block-d price"><strong>53.5 Bs.</strong></div>
-                    </div>
-                  </a>
-                  <a href="#add_venta_popup" class="add_venta_popup_class_old" data-rel="popup" codigo-venta="4" cant-cajas="10" cant-unidades="1" last-price="53.5" data-transition="flow">Comprar</a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img src="img/cart.png">
-                    <h2>511 - PILSENER TWIST OFF 300 O.W. PROMOCION</h2>
-                    <div class="ui-grid-b">
-                      <div class="ui-block-a"><p>6 cajas</p></div>
-                      <div class="ui-block-b"><p>2 unidades</p></div>
-                      <div class="ui-block-c price"><strong>54.5 Bs.</strong></div>
-                    </div>
-                  </a>
-                  <a href="#add_venta_popup" class="add_venta_popup_class_old" data-rel="popup" codigo-venta="12" cant-cajas="10" cant-unidades="1" last-price="54.5" data-transition="flow">Comprar</a>
-                </li>
-              </ul>
-
-
-            </div>
-            <div class="confirmar_orden_div">
-              <!-- <button type="button" calss="confirmar_orden" data-theme="b">Button element</button> -->
-
-              <!-- <button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">5160 Bs.</span></button> -->
-
-            </div>
-          </div>
-          
-          <div data-role="popup" id="add_venta_popup" data-overlay-theme="a" data-theme="a"  style="max-width:800px;">
-            <div data-role="header" data-theme="a">
-              <h1>Producto</h1>
-            </div>
-            <div role="main" class="ui-content">
-              <p class="add_popup_prod">...</p>
-
-              <input id="old_id_venta" type="hidden" value="" placeholder="old_id_venta">
-              <input id="cant_empaque" type="hidden" value="" placeholder="cant_empaque">
-              <input id="calibre" type="hidden" value="" placeholder="calibre">
-              <input id="cant_camion" type="hidden" value="" placeholder="cant_camion">
-              <input id="cod_marca" type="hidden" value="" placeholder="cod_marca">
-              <input id="des_art" type="hidden" value="" placeholder="des_art">
-
-
-
-              <div class="ui-grid-a">
-                <div class="ui-block-a"><p class="txt_cajas_popup">Cajas: </p></div>
-                <div class="ui-block-b"><p class="txt_unidades_popup">Unidades: </p></div>
-                <div class="ui-block-a">
-                  <input name="cajas" id="cajas_popup" type="number" class="ui-field-contain" data-clear-btn="true"/>
-                </div>
-                <div class="ui-block-b">
-                  <input name="unidades" id="unidades_popup" type="number" class="ui-field-contain" data-clear-btn="true"/>
-                </div>
-              </div>
-
-              <div data-role="fieldcontain" class="ui-field-contain">               
-                <label for="precio_popup">Precio por Caja:</label>
-                <input name="precio_popup" id="precio_popup" class="precio_input" data-clear-btn="true"/>
-              </div> 
-              <div data-role="fieldcontain" class="ui-field-contain">               
-                <label for="sub_total"><strong>Sub-Total:</strong></label>
-                <input name="precio_popup" id="sub_total" class="estilo_sub_total"/>
-              </div>
-              <hr>
-              <div class="ui-grid-b">
-                <div class="ui-block-a">
-                  <button type="button" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a close_popup">Cancelar</button>
-                </div>
-                <div class="ui-block-b">
-                  <button type="button" style="background-color: #F01111;" class="ui-btn ui-icon-alert ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b eliminar_del_carrito">Eliminar</button>
-                </div>
-                <div class="ui-block-c">
-                  <button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_venta_popup">Confirmar</button>
-                  <button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_edicion_popup">Confirmar</button>
-                </div>
+          <div class="tab_content" data-tab="1" id="tab_1_id">
+            <div class="list_old_venta" >
+              <a type="button" class="class_confirmaciones btn_confirmar_ventas_vaciassssss" data-theme="b" href="#popup123" data-role="button" data-rel="dialog" data-transition="pop">AVANZAR SIN COMPRAR</a>
+              <div style="display:none;">
+                <button type="button" class="class_confirmaciones btn_confirmar_ventas_global" data-theme="b">CONFIRMAR PEDIDO<span style="box-shadow:-1px -1px 4px 1px gray inset;" class="ui-li-count total_carrito_val ui-page-theme-a" >0.00 Bs.</span></button></div>
               </div>
             </div>
-          </div>
+
+            <div class="tab_content" data-tab="2" id="tab_2_id" class= "tabtabtab">
+              <div class="list_carrito_venta">
+
+                <button type="button" class="class_confirmaciones btn_confirmar_ventas_global" data-theme="b">CONFIRMAR PEDIDO<span style="box-shadow:-1px -1px 4px 1px gray inset;" class="ui-li-count total_carrito_val ui-page-theme-a">0.00 Bs.</span></button>
+                <!-- <button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">5160 Bs</span></button> -->
+                <ul data-role="listview" data-split-icon="tag" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">
+                  <li>
+                    <a href="#" class="ui-disabled">
+                      <img src="img/cart.png">
+                      <h2>52 - DUCAL 300 bot ow</h2>
+                      <p>6 cajas a 55.00 bolivianos</p>
+                    </a>
+                    <a href="#add_venta_popup" class="ui-disabled"  class="add_venta_popup_class_old" data-rel="popup" codigo-venta="1" cant-cajas="6" cant-unidades="2" last-price="50.5" data-transition="flow" >Comprar</a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="img/cart.png">
+                      <h2>175 - IMPERIAL 1000</h2>
+                      <p>Ultima venta: <strong>6</strong> cajas a <strong>55.00</strong> Bolivianos. (<strong>14/08/2012</strong>)</p>
+                    </a>
+                    <!-- <a href="#add_venta_popup" class="add_venta_popup_class_old" data-rel="popup" codigo-venta="2" cant-cajas="5" cant-unidades="0" last-price="51.5" data-transition="flow">Comprar</a> -->
+                    <a href="#add_venta_popup" class="add_venta_popup_class_old" data-rel="popup" codigo-venta="175" last-price="55.00" cajas-camion="9" calibre="0.6200" cant-empaque="12"  caj-adq="2" uni-adq="0">Historial</a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="img/cart.png">
+                      <h2>203 - TAQUIÑA ICE 300 CC X 1</h2>
+                      <div class="ui-grid-b">
+                        <div class="ui-block-a"><p>7 cajas</p></div>
+                        <div class="ui-block-b"><p>1 unidades</p></div>
+                        <div class="ui-block-c price"><strong>52.5 Bs.</strong></div>
+                      </div>
+                    </a>
+                    <a href="#add_venta_popup" class="add_venta_popup_class_old" data-rel="popup" codigo-venta="3" cant-cajas="7" cant-unidades="1" last-price="52.5" data-transition="flow">Comprar</a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="img/cart.png">
+                      <h2>378 - MALTIN 330 CC. SABOR ORIGINAL</h2>
+                      <div class="ui-grid-c">
+                        <div class="ui-block-a"><p>6 cajas</p></div>
+                        <div class="ui-block-b"><p>2 unidades</p></div>
+                        <div class="ui-block-c"><p>Precio/Caja <strong>53.5 Bs.</strong></p></div>
+                        <div class="ui-block-d price"><strong>53.5 Bs.</strong></div>
+                      </div>
+                    </a>
+                    <a href="#add_venta_popup" class="add_venta_popup_class_old" data-rel="popup" codigo-venta="4" cant-cajas="10" cant-unidades="1" last-price="53.5" data-transition="flow">Comprar</a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="img/cart.png">
+                      <h2>511 - PILSENER TWIST OFF 300 O.W. PROMOCION</h2>
+                      <div class="ui-grid-b">
+                        <div class="ui-block-a"><p>6 cajas</p></div>
+                        <div class="ui-block-b"><p>2 unidades</p></div>
+                        <div class="ui-block-c price"><strong>54.5 Bs.</strong></div>
+                      </div>
+                    </a>
+                    <a href="#add_venta_popup" class="add_venta_popup_class_old" data-rel="popup" codigo-venta="12" cant-cajas="10" cant-unidades="1" last-price="54.5" data-transition="flow">Comprar</a>
+                  </li>
+                </ul>
 
 
+              </div>
+              <div class="confirmar_orden_div">
+                <!-- <button type="button" calss="confirmar_orden" data-theme="b">Button element</button> -->
 
-          <div data-role="popup" id="confirmacion_eliminar" data-overlay-theme="a" data-theme="a"  style="max-width:800px;">
-            <div data-role="header" data-theme="a">
-              <h1>Confirmar</h1>
+                <!-- <button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">5160 Bs.</span></button> -->
+
+              </div>
             </div>
-            <div role="main" class="ui-content">
-              <input id="old_id_venta_confirm" type="hidden" value="" placeholder="old_id_venta_confirm">
-              <p>El producto:</p>
-              <p class="add_popup_prod">...</p>
-              <p>Va a ser eliminado del carrito de compras. <br></br><strong>Desea eliminarlo?</strong></p>
-              
-              <hr>
-              <div class="ui-grid-a">
-                <div class="ui-block-a">
-                  <button type="button" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a close_popup_confirm">Cancelar</button>
+
+            <div data-role="popup" id="add_venta_popup" data-overlay-theme="a" data-theme="a"  style="max-width:800px;">
+              <div data-role="header" data-theme="a">
+                <h1>Producto</h1>
+              </div>
+              <div role="main" class="ui-content">
+                <p class="add_popup_prod">...</p>
+
+                <input id="old_id_venta" type="hidden" value="" placeholder="old_id_venta">
+                <input id="cant_empaque" type="hidden" value="" placeholder="cant_empaque">
+                <input id="calibre" type="hidden" value="" placeholder="calibre">
+                <input id="cant_camion" type="hidden" value="" placeholder="cant_camion">
+                <input id="cod_marca" type="hidden" value="" placeholder="cod_marca">
+                <input id="des_art" type="hidden" value="" placeholder="des_art">
+
+
+
+                <div class="ui-grid-a">
+                  <div class="ui-block-a"><p class="txt_cajas_popup">Cajas: </p></div>
+                  <div class="ui-block-b"><p class="txt_unidades_popup">Unidades: </p></div>
+                  <div class="ui-block-a">
+                    <input name="cajas" id="cajas_popup" type="number" class="ui-field-contain" data-clear-btn="true"/>
+                  </div>
+                  <div class="ui-block-b">
+                    <input name="unidades" id="unidades_popup" type="number" class="ui-field-contain" data-clear-btn="true"/>
+                  </div>
                 </div>
-                <div class="ui-block-b">
-                  <button type="button" style="background-color: #F01111;" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b eliminar_confirmada">Eliminar</button>
+
+                <div data-role="fieldcontain" class="ui-field-contain">               
+                  <label for="precio_popup">Precio por Caja:</label>
+                  <input name="precio_popup" id="precio_popup" class="precio_input" data-clear-btn="true"/>
+                </div> 
+                <div data-role="fieldcontain" class="ui-field-contain">               
+                  <label for="sub_total"><strong>Sub-Total:</strong></label>
+                  <input name="precio_popup" id="sub_total" class="estilo_sub_total"/>
+                </div>
+                <hr>
+                <div class="ui-grid-b">
+                  <div class="ui-block-a">
+                    <button type="button" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a close_popup">Cancelar</button>
+                  </div>
+                  <div class="ui-block-b">
+                    <button type="button" style="background-color: #F01111;" class="ui-btn ui-icon-alert ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b eliminar_del_carrito">Eliminar</button>
+                  </div>
+                  <div class="ui-block-c">
+                    <button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_venta_popup">Confirmar</button>
+                    <button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_edicion_popup">Confirmar</button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
 
-          <div data-role="popup" id="confirmar_venta_fchvto_popup" data-overlay-theme="a" data-theme="a"  style="max-width:800px;">
-            <div data-role="header" data-theme="a">
-              <h1>Confirmar Pedido</h1>
-            </div>
-            <div role="main" class="ui-content">
-              <p>Confirmar el pedido por:</p>
-              <p class="precio_total_popup">...</p>
-              
-              <p>Con fecha de fecha de vencimiento:</p>
-              
-              <input id="fchvto_total_popup" type="date" data-role="date" date-format="dd-mm-yyyy"/>
-              <hr>
-              <p>Esta seguro(a) de no realizar mas cambios en el pedido?</p>
-              
-              <hr>
-              <div class="ui-grid-a">
-                <div class="ui-block-a">
-                  <button type="button" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a close_popup_fchvto">Cancelar</button>
-                </div>
-                <div class="ui-block-b">
-                  <button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_venta_fchvto">Confirmar</button>
+
+            <div data-role="popup" id="confirmacion_eliminar" data-overlay-theme="a" data-theme="a"  style="max-width:800px;">
+              <div data-role="header" data-theme="a">
+                <h1>Confirmar</h1>
+              </div>
+              <div role="main" class="ui-content">
+                <input id="old_id_venta_confirm" type="hidden" value="" placeholder="old_id_venta_confirm">
+                <p>El producto:</p>
+                <p class="add_popup_prod">...</p>
+                <p>Va a ser eliminado del carrito de compras. <br></br><strong>Desea eliminarlo?</strong></p>
+
+                <hr>
+                <div class="ui-grid-a">
+                  <div class="ui-block-a">
+                    <button type="button" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a close_popup_confirm">Cancelar</button>
+                  </div>
+                  <div class="ui-block-b">
+                    <button type="button" style="background-color: #F01111;" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b eliminar_confirmada">Eliminar</button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <!-- btn_confirmar_ventas_vacia -->
 
-          <div data-role="popup" id="confirmar_venta_vacia" data-overlay-theme="a" data-theme="a"  style="max-width:800px;">
-            <div data-role="header" data-theme="a">
-              <h1>Sin Pedido</h1>
-            </div>
-            <div role="main" class="ui-content">
-              <p>Usted no podra agregar productos mas adelante.</p>
-              
-              <p>Desea continuar sin adquirir productos?</p>
-              
-              <hr>
-              <div class="ui-grid-a">
-                <div class="ui-block-a">
-                  <button type="button" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a close_popup_vacio">Cancelar</button>
-                </div>
-                <div class="ui-block-b">
-                  <button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_venta_vacio">Confirmar</button>
+
+            <div data-role="popup" id="confirmar_venta_fchvto_popup" data-overlay-theme="a" data-theme="a"  style="max-width:800px;">
+              <div data-role="header" data-theme="a">
+                <h1>Confirmar Pedido</h1>
+              </div>
+              <div role="main" class="ui-content">
+                <p>Confirmar el pedido por:</p>
+                <p class="precio_total_popup">...</p>
+
+                <p>Con fecha de fecha de vencimiento:</p>
+
+                <input id="fchvto_total_popup" type="date" data-role="date" date-format="dd-mm-yyyy"/>
+                <hr>
+                <p>Esta seguro(a) de no realizar mas cambios en el pedido?</p>
+
+                <hr>
+                <div class="ui-grid-a">
+                  <div class="ui-block-a">
+                    <button type="button" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a close_popup_fchvto">Cancelar</button>
+                  </div>
+                  <div class="ui-block-b">
+                    <button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_venta_fchvto">Confirmar</button>
+                  </div>
                 </div>
               </div>
             </div>
+            <!-- btn_confirmar_ventas_vacia -->
+
+            <div data-role="popup" id="confirmar_venta_vacia" data-overlay-theme="a" data-theme="a"  style="max-width:800px;">
+              <div data-role="header" data-theme="a">
+                <h1>Sin Pedido</h1>
+              </div>
+              <div role="main" class="ui-content">
+                <p>Usted no podra agregar productos mas adelante.</p>
+
+                <p>Desea continuar sin adquirir productos?</p>
+
+                <hr>
+                <div class="ui-grid-a">
+                  <div class="ui-block-a">
+                    <button type="button" class="ui-btn ui-icon-delete ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-a close_popup_vacio">Cancelar</button>
+                  </div>
+                  <div class="ui-block-b">
+                    <button type="button" class="ui-btn ui-icon-check ui-btn-icon-right ui-corner-all ui-shadow  ui-btn-b confirmar_venta_vacio">Confirmar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
           </div>
+        </form>
+      </div>
 
 
 
-        </div>
 
-      </form>
+
     </div>
-
-
-
+    <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
+      <h3>Copyright &copy; 2016</h3>
+    </footer>
   </div>
-  <footer data-role="footer" data-position="fixed" data-tap-toggle="false">
-    <h3>Copyright &copy; 2016</h3>
-  </footer>
-</div>
 
 
 
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 <!-- 
  ######   #######  ########  ########     ###    ##    ## ########    ###    
 ##    ## ##     ## ##     ## ##     ##   ## ##   ###   ##      ##    ## ##   
@@ -870,7 +890,22 @@
 
 
 
+<div data-role="page" id="popup123">
 
+  <div data-role="header" data-theme="e">
+    <h1>Dialog</h1>
+  </div><!-- /header -->
+
+  <div data-role="content" data-theme="d">  
+    <h2>Popup</h2>
+    <p>I have an id of "popup" on my page container and only look like a dialog because the link to me had a <code>data-rel="dialog"</code> attribute which gives me this inset look and a <code>data-transition="pop"</code> attribute to change the transition to pop. Without this, I'd be styled as a normal page.</p>    
+    <p><a href="#one" data-rel="back" data-role="button" data-inline="true" data-icon="back">Back to page "one"</a></p> 
+  </div><!-- /content -->
+  
+  <div data-role="footer">
+    <h4>Page Footer</h4>
+  </div><!-- /footer -->
+</div><!-- /page popup -->
 
 
 <div data-role="page" id="cobranza">
@@ -935,7 +970,7 @@
             <div class="ui-block-d " align="center" ><p class="html_cobrado" marca-cobranza-html="4047">50.10 Bs.</p></div>
           </div>
         </a>
-        <a href="#" class="editar_cobranza_class" data-rel="popup" nrodctom="4047" saldo="50.10" fecha="31/11/2015" fecha-venc="31/12/2015" cobrado="50.11">SITRANS</a>
+        <a href="#" class="editar_cobranza_class" data-rel="popup" data-theme="b" nrodctom="4047" saldo="50.10" fecha="31/11/2015" fecha-venc="31/12/2015" cobrado="50.11">SITRANS</a>
       </li>
 
       <li>
@@ -954,6 +989,23 @@
           </div>
         </a>
         <div href="#" class="editar_cobranza_class" data-rel="popup" nrodctom="6090" saldo="-150.50" fecha="31/03/2015" fecha-venc="31/08/2015" cobrado=""></div>
+      </li>
+      <li>
+        <a href="#" class="total_li">
+          <!-- <img src="img/bs1.png" > -->
+          <div class="ui-grid-c">
+          <!--   <div class="ui-block-a" align="center"><p style="margin-top: 3px;">Fecha de Emisión: </p></div>
+            <div class="ui-block-b" align="center"><p style="margin-top: 3px;">Fecha de Vencimiento: </p></div>
+            <div class="ui-block-c" align="center"><strong>Saldo</strong></div>
+            <div class="ui-block-d" align="center"><strong>A Cobrar</strong></div> -->
+
+            <div class="ui-block-a" align="center" ></div>
+            <div class="ui-block-b" align="center" ></div>
+            <div class="ui-block-c green" align="center" style="margin-top: 4px; font-size: 16px;"><strong>-150.51 Bs.</strong></div>
+            <div class="ui-block-d " align="center" ></div>
+          </div>
+        </a>
+        <a href="#" class="editar_cobranza_class" data-rel="popup" data-theme="b" nrodctom="6090" saldo="-150.50" fecha="31/03/2015" fecha-venc="31/08/2015" cobrado=""></a>
       </li>
 
       <li>
@@ -1522,11 +1574,11 @@
         </tr>
       </thead>
       <tbody>
-      <tr><td>1,1</td><td>neat</td><td>100%</td></tr>
-      <tr><td>2,1</td><td>table</td><td>90%</td></tr>
-      <tr><td>3,1</td><td>in</td><td>80%</td></tr>
-      <tr><td>4,1</td><td>jQuery</td><td>20%</td></tr>
-      <tr><td>5,1</td><td>mobile</td><td>10%</td></tr>
+        <tr><td>1,1</td><td>neat</td><td>100%</td></tr>
+        <tr><td>2,1</td><td>table</td><td>90%</td></tr>
+        <tr><td>3,1</td><td>in</td><td>80%</td></tr>
+        <tr><td>4,1</td><td>jQuery</td><td>20%</td></tr>
+        <tr><td>5,1</td><td>mobile</td><td>10%</td></tr>
       </tbody>
     </table>
 
@@ -1543,7 +1595,7 @@
       </tr>
     </thead>
     <tbody>
-    <tr><td>1,1</td><td>neat</td><td>100%</td></tr>
+      <tr><td>1,1</td><td>neat</td><td>100%</td></tr>
     </tbody>
   </table>
   <table class="resumen_tabla_g">
@@ -2179,16 +2231,6 @@ $('.confirmar_venta_popup').click(function() {
 
 
 
-
-
-
-
-
-
-
-
-
-
 $(".list_carrito_venta").on('click','.btn_confirmar_ventas_global', function(event) {
   var precio=$(this).find('.total_carrito_val').text();
   var d = new Date();
@@ -2226,10 +2268,6 @@ $('.confirmar_venta_fchvto').on('click', function() {
 
   }
 });
-
-
-
-
 
 
 // $(".list_carrito_venta").on('click','.btn_confirmar_ventas_global', function(event) {
@@ -2319,11 +2357,30 @@ $(".confirmar_venta_vacio").on('click', function(event) {
 });
 
 $(".list_old_venta").on('click','.btn_confirmar_ventas_vacia', function(event) {
-  $("#confirmar_venta_vacia").popup("open");
+  $("#popup123").popup("open");
 });
 
 $(".btn_confirmar_ventas_vacia_next").on('click', function(event) {
   $("#confirmar_venta_vacia").popup("open");
+});
+
+$(".btn_confirmar_ventas_cobrar_next").on('click', function(event) {
+  $("#confirmar_venta_fchvto_popup").popup("open");
+  var precio=$(this).find('.total_carrito_val').text();
+  var d = new Date();
+  var month = d.getMonth()+1;
+  var day = d.getDate();
+  // var fecha_actual =((''+day).length<2 ? '0' : '') + day + '/' +((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
+  var fecha_actual =   d.getFullYear() + '-' +((''+month).length<2 ? '0' : '') + month + '-' +  ((''+day).length<2 ? '0' : '') + day;
+  // var fecha_actual = now.getFullYear()+"-"+(month)+"-"+(day) ;
+  $('.precio_total_popup').html('<strong>'+precio+'</strong>');
+  $("#fchvto_total_popup").val(fecha_actual);
+  // alert("sadsdas");
+  if(precio=='0.00 Bs.'){
+    alert("No tiene productos agregados para Confirmar este Pedido.");
+  }else{
+    $("#confirmar_venta_fchvto_popup").popup("open");
+  }
 });
 
 $('.eliminar_confirmada').click(function() {
@@ -2351,6 +2408,22 @@ $(".close_popup_confirm").on('click', function(event) {
 //   // setTimeout(function(){ alert(len); }, 500);
 // });
 
+$('#venta_tabs').on('tab-show', '#tab_1_id', function() {
+  $('.btn_confirmar_ventas_cobrar_next').hide();
+  $('.btn_confirmar_ventas_vacia_next').show();
+});
+
+$('#venta_tabs').on('tab-show', '#tab_2_id', function() {
+  var aux_tot_carr_in = $('.total_carrito_input').val();
+  aux_tot_carr_in=parseFloat(aux_tot_carr_in).toFixed(2);
+  if(aux_tot_carr_in>0){
+    $('.btn_confirmar_ventas_vacia_next').hide();
+    $('.btn_confirmar_ventas_cobrar_next').show();
+  }else{
+    $('.btn_confirmar_ventas_vacia_next').show();
+    $('.btn_confirmar_ventas_cobrar_next').hide();
+  }
+});
 
 
 });
@@ -2360,6 +2433,8 @@ $(document).on("pageshow","#venta",function(event){ // When entering pagetwo
   steps_clear();
   steps_next();
   $('#venta_tabs').inlinetabs('show', '1');
+  $('.btn_confirmar_ventas_cobrar_next').hide();
+  $('.btn_confirmar_ventas_vacia_next').show();
 });
 $(document).on("pageshow","#cobranza",function(event){ // When entering pagetwo
   steps_clear();
