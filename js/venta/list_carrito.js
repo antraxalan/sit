@@ -55,7 +55,7 @@ function querySuccess_carrito(tx, results) {
     lista_contenido +='<a href="#add_venta_popup" '+disabled+' class="add_venta_popup_class_old" data-rel="popup" codigo-venta="'+results.rows.item(i).IdArt+'" last-price="'+results.rows.item(i).Precio+'" cajas-camion="'+results.rows.item(i).CajasCamion+'" calibre="'+results.rows.item(i).Calibre+'" cant-empaque="'+results.rows.item(i).Empaque+'"  caj-adq="'+results.rows.item(i).Caja+'" uni-adq="'+results.rows.item(i).Unidad+'">Historial</a></li>';
   }
   
-  lista_contenido +='<li><a href="#" class="total_li">';
+  lista_contenido +='<li data-icon="false"><a href="#" class="total_li">';
   lista_contenido +='<div class="ui-grid-c">';
   lista_contenido +='<div class="ui-block-a" align="center" ></div>';
   lista_contenido +='<div class="ui-block-b" align="center" style="margin-top: 4px; font-size: 16px;"><strong >COMPRA TOTAL</strong></div>';
