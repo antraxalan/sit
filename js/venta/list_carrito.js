@@ -69,7 +69,7 @@ function querySuccess_carrito(tx, results) {
 
 
   if(len<=0){
-    lista_contenido= '<h3 align="center">Sin Compra. <br>Por favor vuelva a la tabla Productos y agregue  algun item o proceda con el siguiente paso.</h3>';
+    lista_contenido= '<h3 align="center">Sin Compra. <br>Por favor vuelva a la pestaña "Productos" y agregue algun item o proceda con el siguiente paso.</h3>';
   }
   $('.list_carrito_venta').html(lista_contenido);
   $(".list_carrito_venta").trigger("create");
@@ -95,15 +95,13 @@ function errorCB_list_carrito(err) {
 
 function cargar_carrito_venta_list(cli) {
   id_cliente=cli;
-          // alert("cargando a carrito db");
-          db.transaction(queryDB_carrito, errorCB_list_carrito);
-        }
+  db.transaction(queryDB_carrito, errorCB_list_carrito);
+}
 
-        function cargar_listas (id_c){
-          // alert("cargar_listas"+id_c);
-          cargar_art_list(id_c);
-          cargar_carrito_venta_list(id_c)
+function cargar_listas (id_c){
+  cargar_art_list(id_c);
+  cargar_carrito_venta_list(id_c)
 
-        }
+}
 
 
