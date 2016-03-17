@@ -172,3 +172,64 @@
     .total_li:hover {
         background-color: #81CE98 !important;
     }
+
+
+
+
+    #venta_tabs > .ui-inlinetabs-bar > .ui-btn-active{
+        background-color: #3588CE !important;
+        border-color:#3588CE !important;
+        text-shadow:0  1px  0  #9C9C9C !important;
+        color: #fff !important;
+    }
+    #venta_tabs > .ui-inlinetabs-bar > .ui-inlinetabs-tab{
+        background-color: #F7F7F7 ;
+        border-color:#F7F7F7;
+        text-shadow:0  1px  0  #F7F7F7 ;
+        color: #555;
+    }
+
+
+
+
+
+      .resumen_tabla_final  {
+        color: black;
+        background: #fff;
+        border: 1px solid #b4b4b4;
+        font: bold 17px helvetica;
+        padding: 0;
+        margin-top:10px;
+        width: 100%;
+        -webkit-border-radius: 8px;
+      }
+
+      .resumen_tabla_final tr td {
+        color: #666;
+        border-bottom: 1px solid #b4b4b4;
+        border-right: 1px solid #b4b4b4;
+        padding: 10px 10px 10px 10px;
+        background-image: -webkit-linear-gradient(top, #fdfdfd, #eee);
+      }
+
+      .resumen_tabla_final thead tr td {
+        color: black;
+        text-align: center;
+        font-weight: bold;
+        border-bottom: 1px solid #b4b4b4;
+        border-right: 1px solid #b4b4b4;
+        padding: 10px 10px 10px 10px;
+        background-image: -webkit-linear-gradient(top, #D4D4D4, #BEBEBE);
+      }
+
+      .resumen_tabla_final tr td:last-child {
+        border-right: none;
+      }
+
+      .resumen_tabla_final tr:last-child td {
+        border-bottom: none;
+      }
+      .resumen_tabla_final thead tr:last-child td  {
+        border-bottom: 1px solid #b4b4b4;
+      }
+
