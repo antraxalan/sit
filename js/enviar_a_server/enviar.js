@@ -52,6 +52,7 @@ function populateDB_detalle(tx) {
         // Query the success callback
         //
         function querySuccess_enviar_detalle(tx, results) {
+            $.mobile.loading("show");
             alert("querySuccess_enviar_detalle");
           var direccion   =$(".direccion").val();
           var codigo      =localStorage.g_username;
@@ -63,10 +64,12 @@ function populateDB_detalle(tx) {
             url: "http://"+direccion+"/sitrans_server/sitrans_insert.php",
             data: "codigo=" + codigo + "&password=" + password + "&info=" + info + "&data=" + results,
             success: function (resp) {
+              $.mobile.loading("hide");
               alert(resp);
           },
           error: function (e) {
               $.mobile.loading("hide");
+            alert('error enviar');
           }
       });
       }
