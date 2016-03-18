@@ -54,7 +54,7 @@ function populateDB_detalle(tx) {
         function querySuccess_enviar_detalle(tx, results) {
             $.mobile.loading("show");
             alert("querySuccess_enviar_detalle");
-
+            var data = '';
             var len = results.rows.length;
             for (var i = 0; i < len; i++) {
 
