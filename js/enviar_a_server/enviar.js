@@ -6,10 +6,10 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
         //
         function queryDB_enviar_detalle(tx) {
             // alert("queryDB_enviar_detalle");
-            tx.executeSql('SELECT * FROM DETALLE Conteo=-1', [], querySuccess_enviar_detalle, errorCB_enviar);
+            tx.executeSql('SELECT * FROM DETALLE Apu<>0', [], querySuccess_enviar_detalle, errorCB_enviar);
         }
         function queryDB_enviar_maestro(tx) {
-        	tx.executeSql('SELECT * FROM MAESTRO WHERE Apu<>0', [], querySuccess_enviar_maestro, errorCB_enviar);
+        	tx.executeSql('SELECT * FROM MAESTRO WHERE Conteo=-1', [], querySuccess_enviar_maestro, errorCB_enviar);
         }
 
 
