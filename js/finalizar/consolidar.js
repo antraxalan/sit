@@ -390,7 +390,7 @@ if((len+count2)>0){
   var FechaVto_1    =f_vto;
   var Obs_1         =$('#obs_final').val();
   var CodCliente_1  =id_cliente;
-  var Conteo_1      =0;
+  var Conteo_1      =-1;
   tx.executeSql('INSERT INTO MAESTRO (TipoDcto,NroDcto,Fecha,FechaVto,Obs,CodCliente,Conteo) VALUES ('+TipoDcto_1+','+NroDcto_1+',"'+Fecha_1+'","'+FechaVto_1+'","'+Obs_1+'",'+CodCliente_1+','+Conteo_1+')',[],renderEntries0,dbErrorHandler0);
 }
 // alert("count"+count);
@@ -401,7 +401,7 @@ if(count>0){
   var FechaVto_6    =fecha_actual;
   var Obs_6         =$('#obs_final').val();
   var CodCliente_6  =id_cliente;
-  var Conteo_6      =0;
+  var Conteo_6      =-1;
   tx.executeSql('INSERT INTO MAESTRO (TipoDcto,NroDcto,Fecha,FechaVto,Obs,CodCliente,Conteo) VALUES ('+TipoDcto_6+','+NroDcto_6+',"'+Fecha_6+'","'+FechaVto_6+'","'+Obs_6+'",'+CodCliente_6+','+Conteo_6+')',[],renderEntries0,dbErrorHandler0);
 }
 
