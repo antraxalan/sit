@@ -204,15 +204,7 @@ function queryDB_cobranza_last_sale(tx) {
           }else{
             lista_contenido= '<h3 align="center">El cliente no tiene deudas.</h3>';
           }
-          '
-    <li data-icon="false"><a href="#" class="total_li">
-      <div class="ui-grid-c">
-      <div class="ui-block-a" align="right" style="margin-top: 4px; font-size: 16px;"><strong >SALDO TOTAL:&nbsp</strong></div>
-        <div class="ui-block-b" align="left" style="margin-top: 4px; font-size: 16px;"><strong class="total_carrito_val">0.00 Bs.</strong></div>
-        <div class="ui-block-c" align="right" style="margin-top: 4px; font-size: 16px;"><strong >A COBRAR TOTAL:&nbsp</strong></div>
-        <div class="ui-block-d" align="left" style="margin-top: 4px; font-size: 16px;"><strong class="total_carrito_val">0.00 Bs.</strong></div>
-      </div>
-    </a></li>'
+     
 
 
           // lista_contenido +='<button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">0.00 Bs.</span></button>';
