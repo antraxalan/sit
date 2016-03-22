@@ -95,7 +95,7 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
           },
           error: function (e) {
               $.mobile.loading("hide");
-              alert('error enviar'e.Message);
+              alert('error enviar'+e.Message);
           }
       });
        }
