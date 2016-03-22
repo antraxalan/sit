@@ -151,6 +151,7 @@ function queryDB_cobranza_last_sale(tx) {
             var a=1;
             var f_vto=localStorage.fecha_venta;
             total_total_total=total_total_total+parseFloat(total_venta);
+
             if(f_vto==0){
               f_vto=fecha_actual;
             }else{
@@ -184,13 +185,14 @@ function queryDB_cobranza_last_sale(tx) {
             }else{
               color='green';
             }
+            total_total_total=total_total_total.toFixed(2);
             var cobro_list=localStorage.total_cobro;
             lista_contenido+= '<li><a href="#" class="total_li">';
             // lista_contenido+= '<img src="img/bs2.png">';
             lista_contenido+= '<div class="ui-grid-c">';
-            lista_contenido+= '<div class="ui-block-a" align="right" style="margin-top: 4px; font-size: 16px;"><strong >SALDO TOTAL:&nbsp</strong></div>';
-            lista_contenido+= '<div class="ui-block-b" align="left" style="margin-top: 4px; font-size: 16px;"><strong>'+total_total_total+' Bs.</strong></div>';
-            lista_contenido+= '<div class="ui-block-c" align="right" style="margin-top: 4px; font-size: 16px;"><strong>SALDO TOTAL:&nbsp</strong></div>';
+            lista_contenido+= '<div class="ui-block-a" align="right" style="margin-top: 4px; font-size: 16px;"><strong >SALDO TOTAL :&nbsp&nbsp</strong></div>';
+            lista_contenido+= '<div class="ui-block-b '+color+'" align="left" style="margin-top: 4px; font-size: 16px;"><strong>'+total_total_total+' Bs.</strong></div>';
+            lista_contenido+= '<div class="ui-block-c" align="right" style="margin-top: 4px; font-size: 16px;"><strong>A COBRAR TOTAL :&nbsp&nbsp</strong></div>';
             lista_contenido+= '<div class="ui-block-d" align="left" style="margin-top: 4px; font-size: 16px;"><strong class="html_cobrado" marca-cobranza-html="19999999999">'+parseFloat(cobro_list).toFixed(2)+' Bs.</strong></div>';
             // lista_contenido+= '<div class="ui-block-a" align="center" >&nbsp</div>';
             // lista_contenido+= '<div class="ui-block-b" align="center" >&nbsp</div>';
