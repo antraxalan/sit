@@ -962,7 +962,7 @@
         <!-- <input class="cargar_html_venta_input" value="SELECT * FROM USUARIO where codigo = 1" /> -->
 
         <!-- <button type="button" class="op_pop" data-theme="b">op_pop<span class="ui-li-count total_carrito_val">50.00 Bs</span></button> -->
-<button class="tabla_boton" type="button">tabla</button>
+
         <input type="hidden" class="total_carrito_input" />
         <div data-role="inlinetabs"  id="venta_tabs" data-theme="a" data-content-theme="a" data-tab-theme="b">
           <ul class="cabecera_tabs">
@@ -2227,16 +2227,7 @@
 
 
 $( document ).on( "pagecreate", "#venta", function( event ) {
- $(".tabla_boton").on('click', function(event) {
-  var auxiliar=$("#venta_tabs li a.active");
-  // auxiliar=$("ul.cabecera_tabs li a.active");
-
-  auxiliar=$("#venta_tabs .ui-btn-active").index();
-  // auxiliar=$("#venta_tabs ui-btn-active").attr('data-id');
-
-  // auxiliar=9;
-  alert(JSON.stringify(auxiliar));
- });
+ 
   $('.precio_input').on('input', function() {
     var val=this.value;
     this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
