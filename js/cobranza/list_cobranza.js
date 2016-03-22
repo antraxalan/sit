@@ -179,23 +179,23 @@ function queryDB_cobranza_last_sale(tx) {
 
 
           if((len+a)!=0){
-            lista_contenido+= '<li><a href="#" class="total_li">';
-            lista_contenido+= '<img src="img/bs2.png">';
-            lista_contenido+= '<div class="ui-grid-c">';
-            lista_contenido+= '<div class="ui-block-a" align="center">&nbsp</div>';
-            lista_contenido+= '<div class="ui-block-b" align="center">&nbsp</div>';
-            lista_contenido+= '<div class="ui-block-c" align="center"><strong>SALDO TOTAL</strong></div>';
-            lista_contenido+= '<div class="ui-block-d" align="center"><strong>A COBRAR TOTAL</strong></div>';
-            lista_contenido+= '<div class="ui-block-a" align="center" >&nbsp</div>';
-            lista_contenido+= '<div class="ui-block-b" align="center" >&nbsp</div>';
             if(total_total_total>0){
               color='red';
             }else{
               color='green';
             }
-            lista_contenido+= '<div class="ui-block-c '+color+'" align="center" style="margin-top: 4px;"><strong>'+total_total_total+' Bs.</strong></div>';
             var cobro_list=localStorage.total_cobro;
-            lista_contenido+= '<div class="ui-block-d " align="center" ><p class="html_cobrado" marca-cobranza-html="19999999999" style="margin-top: 4px; font-size: 16px; font-weight: bold;">'+parseFloat(cobro_list).toFixed(2)+' Bs.</p></div>';
+            lista_contenido+= '<li><a href="#" class="total_li">';
+            // lista_contenido+= '<img src="img/bs2.png">';
+            lista_contenido+= '<div class="ui-grid-c">';
+            lista_contenido+= '<div class="ui-block-a" align="right" style="margin-top: 4px; font-size: 16px;"><strong >SALDO TOTAL:&nbsp</strong></div>';
+            lista_contenido+= '<div class="ui-block-b" align="left" style="margin-top: 4px; font-size: 16px;"><strong>'+total_total_total+' Bs.</strong></div>';
+            lista_contenido+= '<div class="ui-block-c" align="right" style="margin-top: 4px; font-size: 16px;"><strong>SALDO TOTAL:&nbsp</strong></div>';
+            lista_contenido+= '<div class="ui-block-d" align="left" style="margin-top: 4px; font-size: 16px;"><strong class="html_cobrado" marca-cobranza-html="19999999999">'+parseFloat(cobro_list).toFixed(2)+' Bs.</strong></div>';
+            // lista_contenido+= '<div class="ui-block-a" align="center" >&nbsp</div>';
+            // lista_contenido+= '<div class="ui-block-b" align="center" >&nbsp</div>';
+            // lista_contenido+= '<div class="ui-block-c '+color+'" align="center" style="margin-top: 4px;"><strong>'+total_total_total+' Bs.</strong></div>';
+            // lista_contenido+= '<div class="ui-block-d " align="center" ><p class="html_cobrado" marca-cobranza-html="19999999999" style="margin-top: 4px; font-size: 16px; font-weight: bold;">'+parseFloat(cobro_list).toFixed(2)+' Bs.</p></div>';
             lista_contenido+= '</div>';
             lista_contenido+= '</a>';
             lista_contenido+= '<a href="#" class="editar_cobranza_class" data-rel="popup" tipodctom="1" nrodctom="19999999999" saldo="'+total_total_total+'" fecha="'+fecha_actual+'" fecha-venc="'+f_vto+'" cobrado="'+parseFloat(cobro_list).toFixed(2)+'">SITRANS</a>';
@@ -204,7 +204,15 @@ function queryDB_cobranza_last_sale(tx) {
           }else{
             lista_contenido= '<h3 align="center">El cliente no tiene deudas.</h3>';
           }
-
+          '
+    <li data-icon="false"><a href="#" class="total_li">
+      <div class="ui-grid-c">
+      <div class="ui-block-a" align="right" style="margin-top: 4px; font-size: 16px;"><strong >SALDO TOTAL:&nbsp</strong></div>
+        <div class="ui-block-b" align="left" style="margin-top: 4px; font-size: 16px;"><strong class="total_carrito_val">0.00 Bs.</strong></div>
+        <div class="ui-block-c" align="right" style="margin-top: 4px; font-size: 16px;"><strong >A COBRAR TOTAL:&nbsp</strong></div>
+        <div class="ui-block-d" align="left" style="margin-top: 4px; font-size: 16px;"><strong class="total_carrito_val">0.00 Bs.</strong></div>
+      </div>
+    </a></li>'
 
 
           // lista_contenido +='<button type="button" data-theme="b">CONFIRMAR ORDEN<span class="ui-li-count total_carrito">0.00 Bs.</span></button>';

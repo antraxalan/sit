@@ -77,9 +77,10 @@ function querySuccess_carrito(tx, results) {
   precio_total=precio_total.toFixed(2)+' Bs.';
 
   $('.total_carrito_val').html(precio_total);
+  
   var aux_tot_carr_in = $('.total_carrito_input').val();
   aux_tot_carr_in=parseFloat(aux_tot_carr_in).toFixed(2);
-  if(precio_total>0){
+  if(aux_tot_carr_in>0){
     $('.btn_confirmar_ventas_vacia_next').hide();
     $('.btn_confirmar_ventas_cobrar_next').show();
   }else{
@@ -101,7 +102,6 @@ function cargar_carrito_venta_list(cli) {
 function cargar_listas (id_c){
   cargar_art_list(id_c);
   cargar_carrito_venta_list(id_c)
-
 }
 
 

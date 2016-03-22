@@ -16,7 +16,7 @@ function querySuccess_datos_temp(tx, results) {
   var c_Cajas;
   var c_Unidades;
   var tabla_venta='';
-  tabla_venta+='<table class="resumen_tabla_g">';
+  tabla_venta+='<table class="resumen_tabla_final">';
   tabla_venta+='<thead>';
   tabla_venta+='<tr><td colspan="4" style="text-align:center;">Venta</td></tr>';
   tabla_venta+='<tr>';
@@ -43,7 +43,7 @@ function querySuccess_datos_temp(tx, results) {
   var count=0;
   var total_cobros=0;
   var tabla_cobros='';
-  tabla_cobros+='<table class="resumen_tabla_g">';
+  tabla_cobros+='<table class="resumen_tabla_final">';
   tabla_cobros+='<thead>';
   tabla_cobros+='<tr><td colspan="4" style="text-align:center;">Cobros</td></tr>';
   tabla_cobros+='<tr>';
@@ -76,7 +76,7 @@ function querySuccess_datos_temp(tx, results) {
   ////////////////////////////////////////////////////////////////////
   var count2=0;
   var tabla_envases='';
-  tabla_envases+='<table class="resumen_tabla_g">';
+  tabla_envases+='<table class="resumen_tabla_final">';
   tabla_envases+='<thead>';
   tabla_envases+='<tr><td colspan="4" style="text-align:center;">Envases</td></tr>';
   tabla_envases+='<tr>';
