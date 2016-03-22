@@ -78,9 +78,11 @@ function querySuccess_carrito(tx, results) {
 
   $('.total_carrito_val').html(precio_total);
   
+  var tab_auxiliar=$("#venta_tabs .ui-btn-active").index();
+
   var aux_tot_carr_in = $('.total_carrito_input').val();
   aux_tot_carr_in=parseFloat(aux_tot_carr_in).toFixed(2);
-  if(aux_tot_carr_in>0){
+  if(aux_tot_carr_in>0 && tab_auxiliar==1){
     $('.btn_confirmar_ventas_vacia_next').hide();
     $('.btn_confirmar_ventas_cobrar_next').show();
   }else{
