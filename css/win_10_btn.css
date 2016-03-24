@@ -52,17 +52,29 @@
     /*position:absolute;*/
     /*bottom:20px;*/
     /*left:40px;*/
-    font-size:24px;
+    font-size:18px;
     /*text-align:center;*/
-    text-align: center !important;
-
-    margin: auto;
-
+/*    text-align: center !important;*/
     text-shadow: -1px 1px black;
+height:66px; 
+width:500px; 
+text-align:center; 
+display:table-cell; 
+vertical-align:middle; 
 
-    position: relative;
+
+
+
+
+
+/*display: flex;
+  align-items: center;
+  justify-content: center;*/
+
+    /*position: relative;
     transform: translate(0, -50%);
-    top: 50%;
+    transform: translateY(-50%);
+    top: 50%;*/
   }
 
   .btn_win_10 .wide h2.top{
@@ -245,8 +257,7 @@
 
 
 .h2_container{
-  height: 70px; 
-  vertical-align: middle; 
+
   margin: 0px 10px 10px 10px
 }
 .img_right{
