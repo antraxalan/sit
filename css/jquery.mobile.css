@@ -730,8 +730,8 @@ html.ui-nosvg .ui-btn.ui-checkbox-on:after {
     font-family: 'sitrans';
     src: url('../fonts/bariol_regular.eot');
     src: url('../fonts/bariol_regular.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/bariol_regular.woff2') format('woff2'),
-         url('../fonts/bariol_regular.woff') format('woff'),
+         /*url('../fonts/bariol_regular.woff2') format('woff2'),*/
+         /*url('../fonts/bariol_regular.woff') format('woff'),*/
          url('../fonts/bariol_regular.ttf') format('truetype'),
          url('../fonts/bariol_regular.svg#bariol_regularregular') format('svg');
     font-weight: normal;

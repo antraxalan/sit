@@ -232,4 +232,10 @@
       .resumen_tabla_final thead tr:last-child td  {
         border-bottom: 1px solid #b4b4b4;
       }
-
+.new_footer{
+    background-color:#ffffff !important;
+    border-color:#ffffff !important;
+}
+.new_footer h3{
+    padding: 20px 0px 20px 0px !important;
+}
