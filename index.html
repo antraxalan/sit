@@ -216,7 +216,7 @@
             </div>
 
             <div class="grid_3 btn_win_10" style="display: inline-block; overflow: hidden;">
-              <div class="cargar btn_div_cont">
+              <div class="cargar_datos_camion btn_div_cont">
                 <div  class='box gray' style="vertical-align: middle;">
                   <div class="img_center"><img src="img/cargar.png"/></div>
                   <div class="h2_container">
@@ -266,6 +266,27 @@
           </div>
 
 
+          <div data-role="popup" class="win_10_popup" id="cargar_popup" data-overlay-theme="a" data-theme="a"  >
+            <div role="main" class="ui-content" >
+              <h1>Cargar Datos</h1>
+              <label for="textinput-f"><strong>Que tipo de Clientes desea cargar?</strong></label>
+              <br>
+              <div class="cargar_button_1" align="center" style="display:nonessssss;">
+
+                <button type="button" data-theme="b" class="button_b_10 cargar_btn_todos">Todos los Clientes</button>
+                <button type="button" data-theme="b" class="button_b_10 cargar_btn_x_chofer">Por Chofer</button>
+                <button type="cod-ruta=""button" data-theme="b" class="button_b_10 cargar_btn_x_rutas" data-icon="bullets" data-iconpos="right" >Por rutas</button>
+              </div>
+
+              <div class="cargar_button_2" align="center">
+
+                <button type="button" data-theme="b" class="button_o_10 por_rutas" data-icon="navigation" data-iconpos="right" cod-ruta="1">Ruta Norte</button>
+                <button type="button" data-theme="b" class="button_o_10 por_rutas" data-icon="navigation" data-iconpos="right" cod-ruta="2">Ruta Sur</button>
+                <button type="button" data-theme="b" class="button_o_10 por_rutas" data-icon="navigation" data-iconpos="right" cod-ruta="3">Ruta Sopocachi</button>
+                <button type="button" data-theme="b" class="button_o_10 por_rutas" data-icon="navigation" data-iconpos="right" cod-ruta="4">Ruta Centro</button>
+              </div>
+            </div>
+          </div>
 
 
 
@@ -318,7 +339,7 @@
         </div><!-- /content -->
         <footer data-role="footer" data-position="fixed" data-tap-toggle="false" class="new_footer">
           <h3>Copyright &copy; 2016</h3>
-          <button type="button" data-icon="power" class="ui-btn-right salir">Salir</button>
+          <button type="button" data-icon="power" class="ui-btn-right salir" data-theme="b" style="width:100px; font-size: 15px; background-color: #DD554C; border-color:#DD554C; ">Salir</button>
         </footer>
       </div><!-- /Page Home -->
 
@@ -1706,6 +1727,9 @@
   //   verificar_online();
   // });
 
+$('.logo_container').on('tap',function(){
+  $('#cargar_popup').popup( "open" );
+});
 
 $('.moni_container').on('tap',function(){
 // alert('moni_container');
@@ -1850,40 +1874,74 @@ $(".con_index").css("background-image", "none");
     }
   });
 
-    $('.cargar_2').click(function() {
-     if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
-      $('#login_popup').popup( "open" );
-      $("#cod_usuario").focus();
-    }else{
-      $.mobile.loading("show", {
-        theme: 'a'
-      });
-      if(localStorage.db_cargada=='0'||(typeof localStorage.db_cargada === 'undefined')){
-        verificar_usuario_y_carga();
-      }else{
-        navigator.notification.vibrate(500);
-        navigator.notification.confirm(
-          "Desea reemplazar la información existente?\n\nEsta no podra ser recuperada.", 
-          function(buttonIndex){
-           if(buttonIndex == "1"){
-            verificar_usuario_y_carga();
-          }else{
-            $.mobile.loading("hide");
-            return;
-          }
-        }, 
-        "Confirmación", 
-        "Si,No"
-        );
-      }
-    }
+    $('.cargar_datos_camion').on('click',function() {
+    //  if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
+    //   $('#login_popup').popup( "open" );
+    //   $("#cod_usuario").focus();
+    // }else{
+
+      $('.cargar_button_1').show();
+      $('.cargar_button_2').hide();
+      $('#cargar_popup').popup( "open" );
+      
+    // }
   });
 
-    $('.finalizar').click(function() {
-     if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
-      $('#login_popup').popup( "open" );
-      $("#cod_usuario").focus();
-    }else{
+    $('.cargar_btn_todos').on('click',function(){
+      $('#cargar_popup').popup( "close" );
+    });
+    $('.cargar_btn_x_chofer').on('click',function(){
+      $('#cargar_popup').popup( "close" );
+    });
+    $('.cargar_btn_x_rutas').on('click',function(){
+      $('.cargar_button_1').hide();
+      $('.cargar_button_2').show();
+    });
+    $('.por_rutas').on('click',function(){
+      $('#cargar_popup').popup( "close" );
+    });
+
+// cargar_button_1
+// cargar_btn_todos
+// cargar_btn_x_chofer
+// cargar_btn_x_rutas
+// cargar_button_2
+// id
+
+$('.cargar_2').click(function() {
+ if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
+  $('#login_popup').popup( "open" );
+  $("#cod_usuario").focus();
+}else{
+  $.mobile.loading("show", {
+    theme: 'a'
+  });
+  if(localStorage.db_cargada=='0'||(typeof localStorage.db_cargada === 'undefined')){
+    verificar_usuario_y_carga();
+  }else{
+    navigator.notification.vibrate(500);
+    navigator.notification.confirm(
+      "Desea reemplazar la información existente?\n\nEsta no podra ser recuperada.", 
+      function(buttonIndex){
+       if(buttonIndex == "1"){
+        verificar_usuario_y_carga();
+      }else{
+        $.mobile.loading("hide");
+        return;
+      }
+    }, 
+    "Confirmación", 
+    "Si,No"
+    );
+  }
+}
+});
+
+$('.finalizar').click(function() {
+ if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
+  $('#login_popup').popup( "open" );
+  $("#cod_usuario").focus();
+}else{
       // alert("Aun en desarrollo.");
       enviar_detalle();
       enviar_maestro();
@@ -1892,12 +1950,12 @@ $(".con_index").css("background-image", "none");
 
   });
 
-    $('.info').click(function() {
-     if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
-      $('#login_popup').popup( "open" );
-      $("#cod_usuario").focus();
-    }else{
-      if(localStorage.db_cargada=='1'){
+$('.info').click(function() {
+ if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
+  $('#login_popup').popup( "open" );
+  $("#cod_usuario").focus();
+}else{
+  if(localStorage.db_cargada=='1'){
         // alert("Aun en desarrollo.");
         window.location.href = "info.html";
       }else{
@@ -1906,16 +1964,16 @@ $(".con_index").css("background-image", "none");
     }
   });
 
-    $('.salir').click(function() {
-     exitAppPopup();
-   });
+$('.salir').click(function() {
+ exitAppPopup();
+});
 
-    $('.tabs').click(function() {
-     window.location.href = "lata/css-coke.html";
-   });
+$('.tabs').click(function() {
+ window.location.href = "lata/css-coke.html";
+});
 
 
-  });
+});
 
 </script>
 
@@ -2486,10 +2544,10 @@ $('#venta_tabs').on('tab-show', '#tab_2_id', function() {
 
 $(document).on("pageshow","#home",function(event){ // When entering pagetwo
   verificar_online();
-  if(localStorage.g_username==''&&localStorage.g_password==''){
-    $('.moni_icon').html('<img src="img/moni.png" alt="image" style="width:70px; ">');
-  }else{
+  if(localStorage.g_existe=='1'){
     $('.moni_icon').html('<img src="img/moni_g.png" alt="image" style="width:70px; ">');
+  }else{
+    $('.moni_icon').html('<img src="img/moni.png" alt="image" style="width:70px; ">');
   }
 });
 $(document).on("pageshow","#venta",function(event){ // When entering pagetwo

@@ -10,7 +10,7 @@ function guardar_datos(user,pass) {
     var codigo      =user;
     var password    =pass;
     var info='is_ok';
-    alert(' codigo:'+codigo+' password:'+password+' info:'+info);
+    // alert(' codigo:'+codigo+' password:'+password+' info:'+info);
     $.ajax({
         type: 'POST',
         dataType: 'json',
@@ -18,7 +18,7 @@ function guardar_datos(user,pass) {
         data: "codigo=" + codigo + "&password=" + password + "&info=" + info,
         success: function (resp) {
             if(resp=='ok'){
-                alert(resp);
+                // alert(resp);
                 db.transaction(insertDB, errorCB1);
             }else{
              alert("Verifique que los datos ingresados sean correctos."); 
@@ -50,7 +50,7 @@ function insertDB(tx) {
 
 function insertSuccess_usuario() {
     $('#login_popup').popup( "close" );
-    alert("Datos Guardados final");
+    alert("Datos verificados y almacenados.");
     location.reload();
 };
 

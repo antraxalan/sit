@@ -36,7 +36,7 @@ function almacenar_user(tx, results) {
 		localStorage.g_existe = results.rows.length;
 		localStorage.removeItem("g_username");
 		localStorage.removeItem("g_password");
-		$('#login_popup').popup( "open" );
+		// $('#login_popup').popup( "open" );
 		// $('.cerrar_cod_usuario').hide();
 
 	}else{
