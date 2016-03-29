@@ -10,6 +10,7 @@ function guardar_datos(user,pass) {
     var codigo      =user;
     var password    =pass;
     var info='is_ok';
+    alert(' codigo:'+codigo+' password:'+password+' info:'+info);
     $.ajax({
         type: 'POST',
         dataType: 'json',
@@ -17,13 +18,14 @@ function guardar_datos(user,pass) {
         data: "codigo=" + codigo + "&password=" + password + "&info=" + info,
         success: function (resp) {
             if(resp=='ok'){
+                alert(resp);
                 db.transaction(insertDB, errorCB1);
             }else{
              alert("Verifique que los datos ingresados sean correctos."); 
          }
      },
      error: function (e) {
-      alert("Verifique el estado de la red.");
+      alert("Verifique el estado de la red."+e.message);
   }
 });
 };
@@ -37,7 +39,7 @@ function insertDB(tx) {
         // tx.executeSql('INSERT INTO DEMO (id, data) VALUES (1, "First row")');
     // tx.executeSql('INSERT INTO USUARIO (id,codigo,pass) VALUES (1,"11","22")');
     $('#login_popup').popup( "close" );
-    alert("Datos Guardados");
+    alert("Datos Guardados final");
     location.reload();
 };
 
@@ -101,7 +103,7 @@ function errorCB(err) {
     // alert("Error processing SQL: "+err.message);
 }
 function errorCB1(err) {
-    // alert("1Error processing SQL: "+err.message);
+    alert("1Error processing SQL: "+err.message);
 }
 function errorCB2(err) {
     // alert("2Error processing SQL: "+err.message);
