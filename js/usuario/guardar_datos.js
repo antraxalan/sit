@@ -25,22 +25,20 @@ function guardar_datos(user,pass) {
          }
      },
      error: function (e) {
-      alert("Verifique el estado de la red."+e.message);
+      alert("Verifique el estado de la red.");
   }
 });
 };
 
 function insertDB(tx) {
     tx.executeSql('DELETE FROM USUARIO WHERE id = 1');
-    tx.executeSql('INSERT INTO USUARIO (id,codigo,pass) VALUES (1,"'+codigo_usuario+'","'+password_usuario+'")');
+    tx.executeSql('INSERT INTO USUARIO (id,codigo,pass) VALUES (1,"'+codigo_usuario+'","'+password_usuario+'")', [], insertSuccess_usuario, errorCB_insert_usuario);
     localStorage.g_username = codigo_usuario;
     localStorage.g_password = password_usuario;
     localStorage.g_existe = 1;
         // tx.executeSql('INSERT INTO DEMO (id, data) VALUES (1, "First row")');
     // tx.executeSql('INSERT INTO USUARIO (id,codigo,pass) VALUES (1,"11","22")');
-    $('#login_popup').popup( "close" );
-    alert("Datos Guardados final");
-    location.reload();
+
 };
 
 
@@ -48,6 +46,13 @@ function insertDB(tx) {
 
 
 
+
+
+function insertSuccess_usuario() {
+    $('#login_popup').popup( "close" );
+    alert("Datos Guardados final");
+    location.reload();
+};
 
 
 function mostrar(user) {
@@ -110,6 +115,9 @@ function errorCB2(err) {
 }
 function errorCB3(err) {
     // alert("3Error processing SQL: "+err.message);
+}
+function errorCB_insert_usuario(err) {
+    alert("inError processing SQL: "+err.message);
 }
 
 
