@@ -36,7 +36,7 @@ function almacenar_user(tx, results) {
 		localStorage.g_existe = results.rows.length;
 		localStorage.removeItem("g_username");
 		localStorage.removeItem("g_password");
-		$( "#panel-overlay" ).panel( "open" );
+		$('#login_popup').popup( "open" );
 		// $('.cerrar_cod_usuario').hide();
 
 	}else{
@@ -51,7 +51,7 @@ function almacenar_user(tx, results) {
 
 }
 // function debe_completar() {
-// 	$( "#panel-overlay" ).panel( "open" );
+// 	$('#login_popup').popup( "open" );
 // 	$("#colapsar").setAttribute("data-collapsed","false");
 // 	$("#cod_usuario").focus();
 // }

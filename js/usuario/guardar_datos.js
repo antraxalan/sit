@@ -1,12 +1,33 @@
 var codigo_usuario;
 var password_usuario;
 var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
+
 function guardar_datos(user,pass) {
     codigo_usuario=user;
     password_usuario=pass;
-    // var dbShell = window.openDatabase(database_name, database_version, database_displayname, database_size);
-    db.transaction(insertDB, errorCB1);
+
+    var direccion   =$(".direccion").val();
+    var codigo      =user;
+    var password    =pass;
+    var info='is_ok';
+    $.ajax({
+        type: 'POST',
+        dataType: 'json',
+        url: "http://"+direccion+"/sitrans_server/online.php",
+        data: "codigo=" + codigo + "&password=" + password + "&info=" + info,
+        success: function (resp) {
+            if(resp=='ok'){
+                db.transaction(insertDB, errorCB1);
+            }else{
+             alert("Verifique que los datos ingresados sean correctos."); 
+         }
+     },
+     error: function (e) {
+      alert("Verifique el estado de la red.");
+  }
+});
 };
+
 function insertDB(tx) {
     tx.executeSql('DELETE FROM USUARIO WHERE id = 1');
     tx.executeSql('INSERT INTO USUARIO (id,codigo,pass) VALUES (1,"'+codigo_usuario+'","'+password_usuario+'")');
@@ -15,6 +36,9 @@ function insertDB(tx) {
     localStorage.g_existe = 1;
         // tx.executeSql('INSERT INTO DEMO (id, data) VALUES (1, "First row")');
     // tx.executeSql('INSERT INTO USUARIO (id,codigo,pass) VALUES (1,"11","22")');
+    $('#login_popup').popup( "close" );
+    alert("Datos Guardados");
+    location.reload();
 };
 
 
