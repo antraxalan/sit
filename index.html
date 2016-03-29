@@ -54,6 +54,8 @@
     <script type="text/javascript" src="js/jquery.mobile.js"></script>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     
+    <script type="text/javascript" src="js/online.js"></script>
+
     <script type="text/javascript" src="js/steps.js"></script>
     
     <script type="text/javascript" src="js/db_crear.js"></script>
@@ -122,29 +124,45 @@
 
           <div class="ui-content" role="main">
             <form class="ui">
-              <div class="logo" align="right">
+              <div class="connection_container" >
+                <div class="con_index">
+                  <img src="img/off.png" alt="image" style="width:50px; ">
+                </div>
+               <!--  <div class="loa_index">
+                  <img src="img/loader.gif" alt="image" style="width:50px; ">
+                </div> -->
+
+                <div>Red Distribuidor</div>
+                <div class="refresh_icon">
+                  <img src="img/refresh2.png" alt="image" style="width:50px;">
+                </div>
+              </div>
+
+              <div class="moni_container" >
                 <img src="img/moni.png" alt="image" style="width:70px; ">
                 <br>
-                22 de Febrero
-              </div>
-              <div class="logo" align="center">
-                <img src="img/logo.png" alt="image" style="width:450px; margin-top: -50px;">
+                <div class="mostrar_dia_actual">...</div>
+                <div class="mostrar_fecha_actual">...</div>
               </div>
 
-
-
-<DIV style="display:none;">
-              <div class="shortcut-button">
-                <span class="icon mif-rocket"></span>
-                <span class="title"><img src="img/moni.png"/></span>
-              </div>
-              <div class="shortcut-button bg-cyan bg-active-darkBlue fg-white">
-                <span class="icon mif-rocket" align="right"><img src="img/moni.png" style="width:100%;height:100%;" /></span>
-                <span class="title">Rocket</span>
-                <span class="badge">10</span>
+              <div class="logo_container" align="center">
+                <img src="img/logo.png" alt="image" style="width:450px;">
               </div>
 
-</DIV>
+
+
+              <DIV style="display:none;">
+                <div class="shortcut-button">
+                  <span class="icon mif-rocket"></span>
+                  <span class="title"><img src="img/moni.png"/></span>
+                </div>
+                <div class="shortcut-button bg-cyan bg-active-darkBlue fg-white">
+                  <span class="icon mif-rocket" align="right"><img src="img/moni.png" style="width:100%;height:100%;" /></span>
+                  <span class="title">Rocket</span>
+                  <span class="badge">10</span>
+                </div>
+
+              </DIV>
 
 
 
@@ -396,7 +414,7 @@
         </div>
 
 
-       
+
 
 
         <!-- <div class="ui-block-a"><button type="button" class="big_button cargar_2">Cargar Datos del Camion 2</button></div> -->
@@ -1835,15 +1853,40 @@
 // jQuery(document).ready(function() {
   $(document).on("pagecreate","#home",function(){
 
+  //  $('#home').on('tap',function(){
+  //   verificar_online();
+  // });
 
-    $('.prev_mod').on('click',function(){
-      steps_clear();
-    });
-    
-    $('.next_mod').on('click',function(){
-     steps_next();
-   });
+$('.refresh_icon').on('tap',function(){
+  verificar_online();
+});
 
+$('.prev_mod').on('click',function(){
+  steps_clear();
+});
+
+$('.next_mod').on('click',function(){
+ steps_next();
+});
+
+var d = new Date();
+var month = d.getMonth()+1;
+var day = d.getDate();
+var fecha_actual =((''+day).length<2 ? '0' : '') + day + '/' +((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
+var nom_dia_index = new Date();
+var nom_dia_fecha = nom_dia_index.getUTCDay();
+var weekday=new Array(7);
+weekday[0]="Domingo";
+weekday[1]="Lunes";
+weekday[2]="Martes";
+weekday[3]="Miercoles";
+weekday[4]="Jueves";
+weekday[5]="Viernes";
+weekday[6]="Sabado";
+
+$('.mostrar_dia_actual').html(weekday[nom_dia_fecha]);
+$('.mostrar_fecha_actual').html(fecha_actual);
+$(".con_index").css("background-image", "none");
     // $(document).on("pageinit",function(){
       carga_db_crear();
       carga_navigation();
@@ -2581,6 +2624,9 @@ $('#venta_tabs').on('tab-show', '#tab_2_id', function() {
 });
 
 
+$(document).on("pageshow","#home",function(event){ // When entering pagetwo
+  verificar_online();
+});
 $(document).on("pageshow","#venta",function(event){ // When entering pagetwo
   steps_clear();
   steps_next();

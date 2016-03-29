@@ -239,3 +239,28 @@
 .new_footer h3{
     padding: 20px 0px 20px 0px !important;
 }
+.connection_container {
+    
+    position: absolute;
+    left: 0px;
+    text-align: center;
+    width:150px;
+}
+.moni_container {
+    
+    position: absolute;
+    right: 0px;
+    text-align: center;
+    width:150px;
+}
+.logo_container {
+    padding-top: 60px;
+}
+
+.con_index {
+    /*background: url("../img/loader.gif") no-repeat center top;*/
+    background-image: url("../img/loader.gif");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 50px;
+}
