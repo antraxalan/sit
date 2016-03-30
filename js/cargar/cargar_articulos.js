@@ -3,6 +3,7 @@ var data_db_articulo;
 var data_db_cliente;
 var data_db_detalle;
 var data_db_maestro;
+var codigo_ruta;
 var id_transp=localStorage.g_username;
 
 function subir_db_articulo() {
@@ -46,7 +47,7 @@ function subir_db_cliente() {
     type: 'POST',
     dataType: 'json',
     url: "http://"+direccion+"/sitrans_server/sitrans.php",
-    data: "codigo=" + codigo + "&password=" + password + "&info=" + info,
+    data: "codigo=" + codigo + "&password=" + password + "&info=" + info + "&codigo_ruta=" + codigo_ruta,
     success: function (resp) {
       db.transaction(populateDB_cliente, errorCB_cargar);
       call_insert_db_cliente(resp);
@@ -254,8 +255,8 @@ function populateDB_articulo(tx) {
   }
 
 
-  function verificar_usuario_y_carga() {
-
+  function verificar_usuario_y_carga(codigo) {
+    codigo_ruta=codigo;
     var direccion= $(".direccion").val();
   // var var1= $(".var1").val();
   // var codigo= $("#cod_usuario").val();

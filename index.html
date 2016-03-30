@@ -60,6 +60,8 @@
     
     <script type="text/javascript" src="js/db_crear.js"></script>
 
+    <script type="text/javascript" src="js/cargar/cargar_datos_camion.js"></script>
+
     <script type="text/javascript" src="js/cargar/cargar_articulos.js"></script>
     <script type="text/javascript" src="js/usuario/guardar_datos.js"></script>
     <script type="text/javascript" src="js/usuario/borrar_sesion.js"></script>
@@ -273,17 +275,17 @@
               <br>
               <div class="cargar_button_1" align="center" style="display:nonessssss;">
 
-                <button type="button" data-theme="b" class="button_b_10 cargar_btn_todos">Todos los Clientes</button>
-                <button type="button" data-theme="b" class="button_b_10 cargar_btn_x_chofer">Por Chofer</button>
-                <button type="cod-ruta=""button" data-theme="b" class="button_b_10 cargar_btn_x_rutas" data-icon="bullets" data-iconpos="right" >Por rutas</button>
+                <button type="button" cod-carga="a" data-theme="b" class="button_b_10 carga_class_gnrl cargar_btn_todos">Todos los Clientes</button>
+                <button type="button" cod-carga="b" data-theme="b" class="button_b_10 carga_class_gnrl cargar_btn_x_chofer">Por Chofer</button>
+                <button type="button" cod-carga="c" data-theme="b" class="button_b_10 carga_class_gnrl cargar_btn_x_rutas" data-icon="bullets" data-iconpos="right" >Por rutas</button>
               </div>
 
               <div class="cargar_button_2" align="center">
 
-                <button type="button" data-theme="b" class="button_o_10 por_rutas" data-icon="navigation" data-iconpos="right" cod-ruta="1">Ruta Norte</button>
-                <button type="button" data-theme="b" class="button_o_10 por_rutas" data-icon="navigation" data-iconpos="right" cod-ruta="2">Ruta Sur</button>
-                <button type="button" data-theme="b" class="button_o_10 por_rutas" data-icon="navigation" data-iconpos="right" cod-ruta="3">Ruta Sopocachi</button>
-                <button type="button" data-theme="b" class="button_o_10 por_rutas" data-icon="navigation" data-iconpos="right" cod-ruta="4">Ruta Centro</button>
+                <button type="button" data-theme="b" class="button_o_10 carga_class_gnrl por_rutas" data-icon="navigation" data-iconpos="right" cod-carga="1">Ruta Norte</button>
+                <button type="button" data-theme="b" class="button_o_10 carga_class_gnrl por_rutas" data-icon="navigation" data-iconpos="right" cod-carga="2">Ruta Sur</button>
+                <button type="button" data-theme="b" class="button_o_10 carga_class_gnrl por_rutas" data-icon="navigation" data-iconpos="right" cod-carga="3">Ruta Sopocachi</button>
+                <button type="button" data-theme="b" class="button_o_10 carga_class_gnrl por_rutas" data-icon="navigation" data-iconpos="right" cod-carga="4">Ruta Centro</button>
               </div>
             </div>
           </div>
@@ -1875,17 +1877,13 @@ $(".con_index").css("background-image", "none");
   });
 
     $('.cargar_datos_camion').on('click',function() {
-    //  if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
-    //   $('#login_popup').popup( "open" );
-    //   $("#cod_usuario").focus();
-    // }else{
+      cargar_datos_btn_press();
+    });
 
-      $('.cargar_button_1').show();
-      $('.cargar_button_2').hide();
-      $('#cargar_popup').popup( "open" );
-      
-    // }
-  });
+    $('.carga_class_gnrl').on('click',function() {
+      var cod=$(this).attr('cod-carga');
+      cargar_datos_btn_gnrl_press(cod);
+    });
 
     $('.cargar_btn_todos').on('click',function(){
       $('#cargar_popup').popup( "close" );
