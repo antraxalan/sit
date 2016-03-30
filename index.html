@@ -1743,7 +1743,7 @@ $('.refresh_icon').on('tap',function(){
   verificar_online();
 });
 
-$('.con_index').on('tap',function(){
+$('.con_index').on('click',function(){
   verificar_online_alert();
 });
 
@@ -1880,7 +1880,7 @@ $(".con_index").css("background-image", "none");
       cargar_datos_btn_press();
     });
 
-    $('.carga_class_gnrl').on('click',function() {
+    $('#cargar_popup').on('click','.carga_class_gnrl',function() {
       var cod=$(this).attr('cod-carga');
       cargar_datos_btn_gnrl_press(cod);
     });
