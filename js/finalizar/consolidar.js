@@ -15,8 +15,15 @@ var glo_cod_per_vis;
 
 function queryDB_todos_maximo(tx) {         
   // tx.executeSql('select max(NroDctoM) as max_doc1, (select max(NroDctoM) as max_doc from detalle where TipoDctoM=6) as max_doc6, (select max(NumTransaccion) as max_transaccion from detalle) as max_transa from detalle where TipoDctoM=1', [], querySuccess_deuda_maximos, errorCB_todos_maximos2);
+
   var queryyyy=$('#obs_final').val();
   tx.executeSql(queryyyy, [], querySuccess_deuda_maximos, errorCB_todos_maximos2);
+}
+function queryDB_pragma(tx) {         
+  // tx.executeSql('select max(NroDctoM) as max_doc1, (select max(NroDctoM) as max_doc from detalle where TipoDctoM=6) as max_doc6, (select max(NumTransaccion) as max_transaccion from detalle) as max_transa from detalle where TipoDctoM=1', [], querySuccess_deuda_maximos, errorCB_todos_maximos2);
+
+  var query_p=$('.prueba_query_string').val();
+  tx.executeSql(query_p, [], querySuccess_pragma, errorCB_todos_maximos2_pra);
 }
 
 function queryDB_consolidar(tx) { 
@@ -33,9 +40,7 @@ function querySuccess_deuda_maximos(tx, results_max) {
   for (var i = 0; i < len; i++) {
     max1=results_max.rows.item(i).max_doc1;
     max6=results_max.rows.item(i).max_doc6;
-    maxtransa=results_max.rows.item(i).max_transa;
-    // alert('max_doc1:'+max1);
-    // alert('max_doc6:'+max6);
+    var maxtransa=results_max.rows.item(i).max_transa;
 
     if(max1===null || max1=='0'){
       max1=0;
@@ -44,17 +49,27 @@ function querySuccess_deuda_maximos(tx, results_max) {
     if(max6===null || max6=='0'){
       max6=0;
     }
-    if(maxtransa===null || maxtransa=='0'|| maxtransa==''){
+    if(maxtransa===null || maxtransa=='0'){
       maxtransa=1;
     }else{
       maxtransa=parseInt(maxtransa);
       glo_num_transa=maxtransa+1;
     }
   }
+  alert('max_doc1:'+max1);
+  alert('max_doc6:'+max6);
+  alert('glo_num_transa:'+glo_num_transa);
+}
+
+function querySuccess_pragma(tx, results_pra) {
+  var len = results_pra.rows.length;
+  alert('querySuccess_pragma len:'+len);
+  
+  alert(JSON.stringify(results_pra));
 }
 
 function querySuccess_consolidar(tx, results) {
-  // alert("querySuccess_consolidar");
+  alert("querySuccess_consolidar");
 
   glo_cod_per_vis=localStorage.id_transportista;
   var len = results.rows.length;
@@ -210,7 +225,7 @@ function querySuccess_consolidar(tx, results) {
 
 
 
-  // alert("insertando cobranza");
+  alert("insertando cobranza");
 
 
 
@@ -329,7 +344,7 @@ function querySuccess_consolidar(tx, results) {
 
 
   ////////////////////////////////////////////////////////////////////
-  // alert("insertando envases");
+  alert("insertando envases");
   //START ENVASES
   ////////////////////////////////////////////////////////////////////
   var count2=0;
@@ -512,6 +527,10 @@ function errorCB_todos_maximos2(err) {
   alert("Error processing consolidar last SQL: "+err.code+" Mensaje: "+err.message);
 }
 
+function errorCB_todos_maximos2_pra(err) {
+  alert("Error processing consolidar last pra SQL: "+err.code+" Mensaje: "+err.message);
+}
+
 function cargar_consolidar_script(cli) {
   // alert("cargar_consolidar_script");
   id_cliente=cli;
@@ -519,6 +538,27 @@ function cargar_consolidar_script(cli) {
   db.transaction(queryDB_todos_maximo, errorCB_todos_maximos2);
   db.transaction(queryDB_consolidar, errorCB_consolidar);
 }
+
+function prag() {
+
+
+  // db.transaction(queryDB_pragma, errorCB_todos_maximos2_pra);
+
+
+  var query_p=$('.prueba_query_string').val();
+  // tx.executeSql(query_p, [], querySuccess_pragma, errorCB_todos_maximos2_pra);
+  db.transaction(function(tx) {
+
+   tx.executeSql(query_p, [], function (tx, results) {
+
+    alert(JSON.stringify(results.rows));
+  });
+
+
+
+ });
+}
+
 
 
 
