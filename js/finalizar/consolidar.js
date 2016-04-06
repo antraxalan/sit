@@ -14,7 +14,9 @@ var glo_cod_per_vis;
 // var art_codcaja       = []; 
 
 function queryDB_todos_maximo(tx) {         
-  tx.executeSql('select max(NroDctoM) as max_doc1, (select max(NroDctoM) as max_doc from detalle where TipoDctoM=6) as max_doc6, (select max(NumTransaccion) as max_transaccion from detalle) as max_transa from detalle where TipoDctoM=1', [], querySuccess_deuda_maximos, errorCB_todos_maximos2);
+  // tx.executeSql('select max(NroDctoM) as max_doc1, (select max(NroDctoM) as max_doc from detalle where TipoDctoM=6) as max_doc6, (select max(NumTransaccion) as max_transaccion from detalle) as max_transa from detalle where TipoDctoM=1', [], querySuccess_deuda_maximos, errorCB_todos_maximos2);
+  var queryyyy=$('#obs_final').val();
+  tx.executeSql(queryyyy, [], querySuccess_deuda_maximos, errorCB_todos_maximos2);
 }
 
 function queryDB_consolidar(tx) { 
@@ -455,25 +457,25 @@ function renderEntries6() {
   // alert("Ok renderEntries6 ");
 }
 function dbErrorHandler0(err) {
-  // alert("Error processing dbErrorHandler1 SQL: "+err.code+" Mensaje: "+err.message);
+  alert("Error processing dbErrorHandler1 SQL: "+err.code+" Mensaje: "+err.message);
 }
 function dbErrorHandler1(err) {
-  // alert("Error processing dbErrorHandler1 SQL: "+err.code+" Mensaje: "+err.message);
+  alert("Error processing dbErrorHandler1 SQL: "+err.code+" Mensaje: "+err.message);
 }
 function dbErrorHandler2(err) {
-  // alert("Error processing dbErrorHandler2 SQL: "+err.code+" Mensaje: "+err.message);
+  alert("Error processing dbErrorHandler2 SQL: "+err.code+" Mensaje: "+err.message);
 }
 function dbErrorHandler3(err) {
-  // alert("Error processing dbErrorHandler3 SQL: "+err.code+" Mensaje: "+err.message);
+  alert("Error processing dbErrorHandler3 SQL: "+err.code+" Mensaje: "+err.message);
 }
 function dbErrorHandler4(err) {
-  // alert("Error processing dbErrorHandler4 SQL: "+err.code+" Mensaje: "+err.message);
+  alert("Error processing dbErrorHandler4 SQL: "+err.code+" Mensaje: "+err.message);
 }
 function dbErrorHandler5(err) {
-  // alert("Error processing dbErrorHandler5 SQL: "+err.code+" Mensaje: "+err.message);
+  alert("Error processing dbErrorHandler5 SQL: "+err.code+" Mensaje: "+err.message);
 }
 function dbErrorHandler6(err) {
-  // alert("Error processing dbErrorHandler6 SQL: "+err.code+" Mensaje: "+err.message);
+  alert("Error processing dbErrorHandler6 SQL: "+err.code+" Mensaje: "+err.message);
 }
 
 
@@ -501,13 +503,13 @@ function dbErrorHandler6(err) {
 
 
 function errorCB_consolidar(err) {
-  // alert("Error processing consolidar SQL: "+err.code+" Mensaje: "+err.message);
+  alert("Error processing consolidar SQL: "+err.code+" Mensaje: "+err.message);
 }
 function errorCB_consolidar2(err) {
-  // alert("Error processing consolidar2 SQL: "+err.code+" Mensaje: "+err.message);
+  alert("Error processing consolidar2 SQL: "+err.code+" Mensaje: "+err.message);
 }
 function errorCB_todos_maximos2(err) {
-  // alert("Error processing consolidar last SQL: "+err.code+" Mensaje: "+err.message);
+  alert("Error processing consolidar last SQL: "+err.code+" Mensaje: "+err.message);
 }
 
 function cargar_consolidar_script(cli) {

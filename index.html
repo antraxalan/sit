@@ -1665,7 +1665,7 @@
 
 <div data-role="fieldcontain" class="ui-field-contain">
   <label for="textarea">Observaciones finales:</label>
-  <textarea cols="40" rows="8" name="textarea" id="obs_final"></textarea>
+  <textarea cols="40" rows="8" name="textarea" id="obs_final">select max(NroDctoM) as max_doc1, (select max(NroDctoM) as max_doc from detalle where TipoDctoM=6) as max_doc6, (select max(NumTransaccion) as max_transaccion from detalle) as max_transa from detalle where TipoDctoM=1</textarea>
 </div>
 <p>Presione el boton confirmar si todas las transacciones requeridas por el o la cliente <br>son correctas.</p>
 <hr>
