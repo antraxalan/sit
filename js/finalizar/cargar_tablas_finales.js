@@ -137,7 +137,7 @@ function errorCB_datos(err) {
 function cargar_tablas_finales(cli) {
   id_cliente=cli;
   db.transaction(queryDB_datos_temp_venta, errorCB_consolidar);
-  $('#obs_final').val("select max(NroDctoM) as max_doc1, (select max(NroDctoM) as max_doc from detalle where TipoDctoM=6) as max_doc6, (select max(NumTransaccion) as max_transaccion from detalle) as max_transa from detalle where TipoDctoM=1");
+  // $('#obs_final').val("select max(NroDctoM) as max_doc1, (select max(NroDctoM) as max_doc from detalle where TipoDctoM=6) as max_doc6, (select max(NumTransaccion) as max_transaccion from detalle) as max_transa from detalle where TipoDctoM=1");
 }
 
 

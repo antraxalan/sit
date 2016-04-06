@@ -29,10 +29,10 @@ function populateDB_detalle(tx) {
             tx.executeSql('SELECT * FROM DETALLE ORDER BY TipoDcto DESC', [], querySuccess_info_detalle, errorCB_info);
         }
         function queryDB_info_maestro(tx) {
-            tx.executeSql('SELECT TipoDcto,NroDcto,Fecha,FechaVto,Obs,CodCliente,Conteo FROM MAESTRO ORDER BY TipoDcto DESC', [], querySuccess_info_maestro, errorCB_info);
+            tx.executeSql('SELECT TipoDcto,NroDcto,Fecha,FechaVto,Obs,CodCliente,Conteo,NumTransaccion,CodClienteVis,CodPersonalVis FROM MAESTRO ORDER BY TipoDcto DESC', [], querySuccess_info_maestro, errorCB_info);
         }
         function queryDB_info_transaccion(tx) {
-            tx.executeSql('SELECT TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades FROM DETALLE where TipoDcto>0', [], querySuccess_info_transaccion, errorCB_info);
+            tx.executeSql('SELECT TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades,NumTransaccion,CodClienteVis,CodPersonalVis FROM DETALLE where TipoDcto>0', [], querySuccess_info_transaccion, errorCB_info);
         }
         function queryDB_info_query(tx) {
             var query = $('.query').val();
@@ -176,6 +176,9 @@ function populateDB_detalle(tx) {
                 tblContent+='<th> Obs </th>';
                 tblContent+='<th> CodCliente </th>';
                 tblContent+='<th> Conteo </th>';
+                tblContent+='<th data-priority="1">NumTransaccion</th>';
+                tblContent+='<th data-priority="2">CodClienteVis</th>';
+                tblContent+='<th data-priority="3">CodPersonalVis</th>';
             tblContent+='</tr>';
             tblContent+='</thead>';
             tblContent+='<tbody>';
@@ -191,7 +194,10 @@ function populateDB_detalle(tx) {
                 tblContent+=results.rows.item(i).FechaVto   +'</td><td>';
                 tblContent+=results.rows.item(i).Obs        +'</td><td>';
                 tblContent+=results.rows.item(i).CodCliente +'</td><td>';
-                tblContent+=results.rows.item(i).Conteo     +'</td></tr>';
+                tblContent+=results.rows.item(i).Conteo     +'</td><td>';
+                tblContent+=results.rows.item(i).NumTransaccion+'</td><td>';
+                tblContent+=results.rows.item(i).CodClienteVis+'</td><td>';
+                tblContent+=results.rows.item(i).CodPersonalVis+'</td></tr>';
             }
             tblContent+="</tbody></table>";
             // document.getElementById("tabla_info").innerHTML =tblContent;
@@ -213,9 +219,9 @@ function populateDB_detalle(tx) {
             tblContent+='<tr>';
 
                 tblContent+='<th data-priority="persist">TipoDcto</th>';
-                tblContent+='<th data-priority="2">NroDcto</th>';
-                tblContent+='<th data-priority="3">Apu</th>';
-                tblContent+='<th data-priority="4">Fecha</th>';
+                tblContent+='<th data-priority="32">NroDcto</th>';
+                tblContent+='<th data-priority="33">Apu</th>';
+                tblContent+='<th data-priority="34">Fecha</th>';
                 tblContent+='<th data-priority="5">FechaVto</th>';
                 tblContent+='<th data-priority="6">TipoDctoM</th>';
                 tblContent+='<th data-priority="7">NroDctoM</th>';
@@ -230,6 +236,9 @@ function populateDB_detalle(tx) {
                 tblContent+='<th data-priority="16">Hcajas</th>';
                 tblContent+='<th data-priority="17">Dunidades</th>';
                 tblContent+='<th data-priority="18">Hunidades</th>';
+                tblContent+='<th data-priority="1">NumTransaccion</th>';
+                tblContent+='<th data-priority="2">CodClienteVis</th>';
+                tblContent+='<th data-priority="3">CodPersonalVis</th>';
 
             tblContent+='</tr>';
             tblContent+='</thead>';
@@ -257,7 +266,10 @@ function populateDB_detalle(tx) {
                 tblContent+=results.rows.item(i).Dcajas         +'</td><td>';
                 tblContent+=results.rows.item(i).Hcajas         +'</td><td>';
                 tblContent+=results.rows.item(i).Dunidades      +'</td><td>';
-                tblContent+=results.rows.item(i).Hunidades      +'</td></tr>';
+                tblContent+=results.rows.item(i).Hunidades      +'</td><td>';
+                tblContent+=results.rows.item(i).NumTransaccion +'</td><td>';
+                tblContent+=results.rows.item(i).CodClienteVis  +'</td><td>';
+                tblContent+=results.rows.item(i).CodPersonalVis +'</td></tr>';
 
 
 
@@ -289,6 +301,9 @@ function populateDB_detalle(tx) {
                 tblContent+='<td>Hcajas</td>';
                 tblContent+='<td>Dunidades</td>';
                 tblContent+='<td>Hunidades</td>';
+                tblContent+='<th>NumTransaccion</th>';
+                tblContent+='<th>CodClienteVis</th>';
+                tblContent+='<th>CodPersonalVis</th>';
 
             tblContent+='</tr>';
 

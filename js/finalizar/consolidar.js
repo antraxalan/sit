@@ -14,17 +14,12 @@ var glo_cod_per_vis;
 // var art_codcaja       = []; 
 
 function queryDB_todos_maximo(tx) {         
-  // tx.executeSql('select max(NroDctoM) as max_doc1, (select max(NroDctoM) as max_doc from detalle where TipoDctoM=6) as max_doc6, (select max(NumTransaccion) as max_transaccion from detalle) as max_transa from detalle where TipoDctoM=1', [], querySuccess_deuda_maximos, errorCB_todos_maximos2);
+  tx.executeSql('select max(NroDctoM) as max_doc1, (select max(NroDctoM) as max_doc from detalle where TipoDctoM=6) as max_doc6, (select max(NumTransaccion) as max_transaccion from detalle) as max_transa from detalle where TipoDctoM=1', [], querySuccess_deuda_maximos, errorCB_todos_maximos2);
 
-  var queryyyy=$('#obs_final').val();
-  tx.executeSql(queryyyy, [], querySuccess_deuda_maximos, errorCB_todos_maximos2);
+  // var queryyyy=$('#obs_final').val();
+  // tx.executeSql(queryyyy, [], querySuccess_deuda_maximos, errorCB_todos_maximos2);
 }
-function queryDB_pragma(tx) {         
-  // tx.executeSql('select max(NroDctoM) as max_doc1, (select max(NroDctoM) as max_doc from detalle where TipoDctoM=6) as max_doc6, (select max(NumTransaccion) as max_transaccion from detalle) as max_transa from detalle where TipoDctoM=1', [], querySuccess_deuda_maximos, errorCB_todos_maximos2);
 
-  var query_p=$('.prueba_query_string').val();
-  tx.executeSql(query_p, [], querySuccess_pragma, errorCB_todos_maximos2_pra);
-}
 
 function queryDB_consolidar(tx) { 
 // alert("queryDB_consolidar");        
@@ -41,7 +36,7 @@ function querySuccess_deuda_maximos(tx, results_max) {
     max1=results_max.rows.item(i).max_doc1;
     max6=results_max.rows.item(i).max_doc6;
     var maxtransa=results_max.rows.item(i).max_transa;
-    alert('maxtransa:'+maxtransa);
+    // alert('maxtransa:'+maxtransa);
     if(max1===null || max1=='0'){
       max1=0;
     }
@@ -57,17 +52,12 @@ function querySuccess_deuda_maximos(tx, results_max) {
       glo_num_transa=maxtransa+1;
     }
   }
-  alert('max_doc1:'+max1);
-  alert('max_doc6:'+max6);
-  alert('glo_num_transa:'+glo_num_transa);
+  // alert('max_doc1:'+max1);
+  // alert('max_doc6:'+max6);
+  // alert('glo_num_transa:'+glo_num_transa);
 }
 
-function querySuccess_pragma(tx, results_pra) {
-  var len = results_pra.rows.length;
-  alert('querySuccess_pragma len:'+len);
-  
-  alert(JSON.stringify(results_pra));
-}
+
 
 function querySuccess_consolidar(tx, results) {
   alert("querySuccess_consolidar");
@@ -543,7 +533,7 @@ function cargar_consolidar_script(cli) {
 function prag() {
 
 
-  // db.transaction(queryDB_pragma, errorCB_todos_maximos2_pra);
+
 
 
   var query_p=$('.prueba_query_string').val();
@@ -552,7 +542,7 @@ function prag() {
 
    tx.executeSql(query_p, [], function (tx, results) {
 
-    alert(JSON.stringify(results.rows));
+    alert(JSON.stringify(results.rows.item(0)));
   });
 
 
