@@ -51,6 +51,7 @@ function querySuccess_deuda_maximos(tx, results_max) {
     }
     if(maxtransa===null || maxtransa=='0'){
       maxtransa=1;
+      glo_num_transa=maxtransa;
     }else{
       maxtransa=parseInt(maxtransa);
       glo_num_transa=maxtransa+1;
@@ -551,7 +552,7 @@ function prag() {
 
    tx.executeSql(query_p, [], function (tx, results) {
 
-    alert(JSON.stringify(results.rows));
+    alert(JSON.stringify(results));
   });
 
 
