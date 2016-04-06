@@ -552,7 +552,7 @@ function prag() {
 
    tx.executeSql(query_p, [], function (tx, results) {
 
-    alert(JSON.stringify(results));
+    alert(JSON.stringify(results.rows));
   });
 
 
