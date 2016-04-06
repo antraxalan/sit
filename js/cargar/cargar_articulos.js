@@ -30,6 +30,7 @@ function subir_db_articulo() {
       },
       error: function (e) {
         $.mobile.loading("hide");
+        alert('Por favor verifique que este conectado correctamente a su red para realizar la carga.');
       //----- alert("No se encuentra conectado a su red: "+e.message+" err code: "+e.code+ "e:"+e);
     }
   });
@@ -54,6 +55,7 @@ function subir_db_cliente() {
     },
     error: function (e) {
       $.mobile.loading("hide");
+      alert('Por favor verifique que este conectado correctamente a su red para realizar la carga.');
     }
   });
 
@@ -74,6 +76,7 @@ function subir_db_detalle() {
     },
     error: function (e) {
       $.mobile.loading("hide");
+      alert('Por favor verifique que este conectado correctamente a su red para realizar la carga.');
     }
   });
 };
@@ -93,6 +96,7 @@ function subir_db_maestro() {
     },
     error: function (e) {
       $.mobile.loading("hide");
+      alert('Por favor verifique que este conectado correctamente a su red para realizar la carga.');
     }
   });
 };
@@ -109,12 +113,12 @@ function populateDB_articulo(tx) {
   function populateDB_detalle(tx) {
     //----- alert("18");
     tx.executeSql('DROP TABLE IF EXISTS DETALLE');
-    tx.executeSql('CREATE TABLE IF NOT EXISTS DETALLE (TipoDcto INTEGER,NroDcto INTEGER,Apu INTEGER,Fecha DATE,FechaVto DATE,TipoDctoM INTEGER,NroDctoM INTEGER,Precio REAL,Tc REAL,CodConcepto INTEGER,CodCliente INTEGER,Debe REAL,Haber REAL,CodArt INTEGER,Dcajas REAL,Hcajas REAL,Dunidades REAL,Hunidades REAL)');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS DETALLE (TipoDcto INTEGER,NroDcto INTEGER,Apu INTEGER,Fecha DATE,FechaVto DATE,TipoDctoM INTEGER,NroDctoM INTEGER,Precio REAL,Tc REAL,CodConcepto INTEGER,CodCliente INTEGER,Debe REAL,Haber REAL,CodArt INTEGER,Dcajas REAL,Hcajas REAL,Dunidades REAL,Hunidades REAL,NumTransaccion INTEGER,CodClienteVis INTEGER,CodPersonalVis INTEGER)');
   }
   function populateDB_maestro(tx) {
     //----- alert("18");
     tx.executeSql('DROP TABLE IF EXISTS MAESTRO');
-    tx.executeSql('CREATE TABLE IF NOT EXISTS MAESTRO (TipoDcto INTEGER,NroDcto INTEGER,Fecha DATE,FechaVto DATE,Obs TEXT,CodCliente INTEGER,Conteo INTEGER)');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS MAESTRO (TipoDcto INTEGER,NroDcto INTEGER,Fecha DATE,FechaVto DATE,Obs TEXT,CodCliente INTEGER,Conteo INTEGER,NumTransaccion INTEGER,CodClienteVis INTEGER,CodPersonalVis INTEGER)');
   }
 
 
@@ -183,7 +187,8 @@ function populateDB_articulo(tx) {
         // alert(d1[i][11]);
         // alert(d1[i][12]); 
         // tx.executeSql('INSERT INTO CLIENTE (CodCliente,Nombre,RazonSocial,Direccion,Nit,NroTelefono1,NroTelefono2,CodZona,DesZona,CodPersonal,DesPersonal,CodRuta,DesRuta) VALUES ('+d1[i][0]+',"'+d1[i][1]+'","'+d1[i][2]+'","'+d1[i][3]+'","'+d1[i][4]+'",'+d1[i][5]+','+d1[i][6]+','+d1[i][7]+',"'+d1[i][8]+'",'+d1[i][9]+',"'+d1[i][10]+'","'+d1[i][11]+'","'+d1[i][12]+'")');
-        
+  
+
         tx.executeSql('INSERT INTO CLIENTE (CodCliente,Nombre,RazonSocial,Direccion,Nit,NroTelefono1,NroTelefono2,CodZona,DesZona,CodPersonal,DesPersonal,CodRuta,DesRuta) VALUES ('+d1[i][0]+',"'+d1[i][1]+'","'+d1[i][2]+'","'+d1[i][3]+'","'+d1[i][4]+'","'+d1[i][5]+'","'+d1[i][6]+'",'+d1[i][7]+',"'+d1[i][8]+'",'+d1[i][9]+',"'+d1[i][10]+'","'+d1[i][11]+'","'+d1[i][12]+'")');
         // tx.executeSql('INSERT INTO CLIENTE (CodCliente) VALUES ('+d1[i][0]+')');
         // var auxiliar=$("#query2").val();
@@ -203,7 +208,7 @@ function populateDB_articulo(tx) {
         var d1=data_db_detalle;
         for (var i = 0; i < d1.length; i++) {
 
-          tx.executeSql('INSERT INTO DETALLE (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades) VALUES ('+d1[i][0]+','+d1[i][1]+','+d1[i][2]+',"'+d1[i][3]+'","'+d1[i][4]+'",'+d1[i][5]+','+d1[i][6]+','+d1[i][7]+','+d1[i][8]+','+d1[i][9]+','+d1[i][10]+','+d1[i][11]+','+d1[i][12]+','+d1[i][13]+','+d1[i][14]+','+d1[i][15]+','+d1[i][16]+','+d1[i][17]+')');
+          tx.executeSql('INSERT INTO DETALLE (TipoDcto,NroDcto,Apu,Fecha,FechaVto,TipoDctoM,NroDctoM,Precio,Tc,CodConcepto,CodCliente,Debe,Haber,CodArt,Dcajas,Hcajas,Dunidades,Hunidades,NumTransaccion,CodClienteVis,CodPersonalVis) VALUES ('+d1[i][0]+','+d1[i][1]+','+d1[i][2]+',"'+d1[i][3]+'","'+d1[i][4]+'",'+d1[i][5]+','+d1[i][6]+','+d1[i][7]+','+d1[i][8]+','+d1[i][9]+','+d1[i][10]+','+d1[i][11]+','+d1[i][12]+','+d1[i][13]+','+d1[i][14]+','+d1[i][15]+','+d1[i][16]+','+d1[i][17]+',null,null,null)');
         };
     // alert("detalle cargado");
     // alert("detalle i:"+i+" lenght:"+d1.length);
@@ -218,7 +223,7 @@ function populateDB_articulo(tx) {
   function insertDB_maestro(tx) {
     var d1=data_db_maestro;
     for (var i = 0; i < d1.length; i++) {
-      tx.executeSql('INSERT INTO MAESTRO (TipoDcto,NroDcto,Fecha,FechaVto,Obs,CodCliente,Conteo) VALUES ('+d1[i][0]+','+d1[i][1]+',"'+d1[i][2]+'","'+d1[i][3]+'","'+d1[i][4]+'",'+d1[i][5]+','+d1[i][6]+')');
+      tx.executeSql('INSERT INTO MAESTRO (TipoDcto,NroDcto,Fecha,FechaVto,Obs,CodCliente,Conteo,NumTransaccion,CodClienteVis,CodPersonalVis) VALUES ('+d1[i][0]+','+d1[i][1]+',"'+d1[i][2]+'","'+d1[i][3]+'","'+d1[i][4]+'",'+d1[i][5]+','+d1[i][6]+',null,null,null)');
     };
     // alert("detalle cargado");
     // alert("detalle i:"+i+" lenght:"+d1.length);

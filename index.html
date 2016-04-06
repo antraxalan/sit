@@ -25,7 +25,7 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
     <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <!-- <link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme.css" /> -->
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile.css" />
@@ -136,7 +136,7 @@
 
                 <div>Red Distribuidor</div>
                 <div class="refresh_icon">
-                  <img src="img/refresh2.png" alt="image" style="width:50px;">
+                  <img src="img/refresh2.png" alt="image" style="width:50px;" class="shadowfilter_img">
                 </div>
               </div>
 
@@ -150,7 +150,7 @@
               </div>
 
               <div class="logo_container" align="center">
-                <img src="img/logo.png" alt="image" style="width:450px;">
+                <img src="img/logo.png" alt="image" style="width:290px;" class="shadowfilter_img" >
               </div>
 
 
@@ -1729,9 +1729,9 @@
   //   verificar_online();
   // });
 
-$('.logo_container').on('tap',function(){
-  $('#cargar_popup').popup( "open" );
-});
+// $('.logo_container').on('tap',function(){
+//   $('#cargar_popup').popup( "open" );
+// });
 
 $('.moni_container').on('tap',function(){
 // alert('moni_container');
@@ -1941,8 +1941,7 @@ $('.finalizar').click(function() {
   $("#cod_usuario").focus();
 }else{
       // alert("Aun en desarrollo.");
-      enviar_detalle();
-      enviar_maestro();
+      enviar_detalle_maestro();
       // window.location.href = "db.html";
     }
 
@@ -2543,10 +2542,11 @@ $('#venta_tabs').on('tab-show', '#tab_2_id', function() {
 $(document).on("pageshow","#home",function(event){ // When entering pagetwo
   verificar_online();
   if(localStorage.g_existe=='1'){
-    $('.moni_icon').html('<img src="img/moni_g.png" alt="image" style="width:70px; ">');
+    $('.moni_icon').html('<img src="img/moni_g.png" alt="image" style="width:70px;" class="shadowfilter_img_g">');
   }else{
-    $('.moni_icon').html('<img src="img/moni.png" alt="image" style="width:70px; ">');
+    $('.moni_icon').html('<img src="img/moni.png" alt="image" style="width:70px;" class="shadowfilter_img">');
   }
+  $('.list_old_venta').trigger('create');
 });
 $(document).on("pageshow","#venta",function(event){ // When entering pagetwo
   steps_clear();

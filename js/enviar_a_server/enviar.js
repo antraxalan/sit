@@ -1,9 +1,16 @@
 
 
 var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
-
+var data_d = '';
+var data_m = '';
+var len_d=0;
+var len_m=0;
         // Query the database
         //
+        function eliminar_tablas() {
+            // alert("queryDB_enviar_detalle");
+            
+        }        
         function queryDB_enviar_detalle(tx) {
             // alert("queryDB_enviar_detalle");
             tx.executeSql('SELECT * FROM DETALLE WHERE Apu<>0', [], querySuccess_enviar_detalle, errorCB_enviar);
@@ -22,12 +29,12 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
         //
         function querySuccess_enviar_detalle(tx, results) {
             // alert("querySuccess_enviar_detalle");
-            var data_d = '';
-            var len = results.rows.length;
-            alert(len);
-            if (len>0){
-            $.mobile.loading("show");
-                for (var i = 0; i < len; i++) {
+            
+            len_d = results.rows.length;
+            // alert(len_d);
+            if (len_d>0){
+                $.mobile.loading("show");
+                for (var i = 0; i < len_d; i++) {
                     data_d=data_d+results.rows.item(i).TipoDcto+'|';
                     data_d=data_d+results.rows.item(i).NroDcto+'|';
                     data_d=data_d+results.rows.item(i).Apu+'|';
@@ -46,35 +53,38 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
                     data_d=data_d+results.rows.item(i).Hcajas+'|';
                     data_d=data_d+results.rows.item(i).Dunidades+'|';
                     data_d=data_d+results.rows.item(i).Hunidades+'|';
+                    data_d=data_d+results.rows.item(i).NumTransaccion+'|';
+                    data_d=data_d+results.rows.item(i).CodClienteVis+'|';
+                    data_d=data_d+results.rows.item(i).CodPersonalVis+'|';
                 }
-                var direccion   =$(".direccion").val();
-                var codigo      =localStorage.g_username;
-                var password    =localStorage.g_password;
-                var info='detalle';
-                $.ajax({
-                    type: 'POST',
-                    dataType: 'json',
-                    url: "http://"+direccion+"/sitrans_server/sitrans_insert.php",
-                    data: "codigo=" + codigo + "&password=" + password + "&info=" + info + "&data=" + data_d,
-                    success: function (resp) {
-                      $.mobile.loading("hide");
-                      alert(resp);
-                  },
-                  error: function (e) {
-                      $.mobile.loading("hide");
-                      alert('error enviar '+e.Message);
-                  }
-              });
-            }
-        }
+              //   var direccion   =$(".direccion").val();
+              //   var codigo      =localStorage.g_username;
+              //   var password    =localStorage.g_password;
+              //   var info='detalle';
+              //   $.ajax({
+              //       type: 'POST',
+              //       dataType: 'json',
+              //       url: "http://"+direccion+"/sitrans_server/sitrans_insert.php",
+              //       data: "codigo=" + codigo + "&password=" + password + "&info=" + info + "&data=" + data_d,
+              //       success: function (resp) {
+              //         $.mobile.loading("hide");
+              //         alert(resp);
+              //     },
+              //     error: function (e) {
+              //         $.mobile.loading("hide");
+              //         alert('error enviar '+e.Message);
+              //     }
+              // });
+}
+}
 
-        function querySuccess_enviar_maestro(tx, results) {
-            var data_m = '';
-            var len = results.rows.length;
-            alert(len);
-            if(len>0){
+function querySuccess_enviar_maestro(tx, results) {
+
+    var len_m = results.rows.length;
+            // alert(len_m);
+            if(len_d>0||len_m>0){
                 $.mobile.loading("show");
-                for (var i = 0; i < len; i++) {
+                for (var i = 0; i < len_m; i++) {
                  data_m=data_m+results.rows.item(i).TipoDcto+'|';
                  data_m=data_m+results.rows.item(i).NroDcto+'|';
                  data_m=data_m+results.rows.item(i).Fecha+'|';
@@ -82,27 +92,35 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
                  data_m=data_m+results.rows.item(i).Obs+'|';
                  data_m=data_m+results.rows.item(i).CodCliente+'|';
                  data_m=data_m+results.rows.item(i).Conteo+'|';
+                 data_m=data_m+results.rows.item(i).NumTransaccion+'|';
+                 data_m=data_m+results.rows.item(i).CodClienteVis+'|';
+                 data_m=data_m+results.rows.item(i).CodPersonalVis+'|';
              }
              var direccion   =$(".direccion").val();
              var codigo      =localStorage.g_username;
              var password    =localStorage.g_password;
-             var info='maestro';
+             var info='detalle_maestro';
              $.ajax({
                 type: 'POST',
                 dataType: 'json',
                 url: "http://"+direccion+"/sitrans_server/sitrans_insert.php",
-                data: "codigo=" + codigo + "&password=" + password + "&info=" + info + "&data=" + data_m,
+                data: "codigo=" + codigo + "&password=" + password + "&info=" + info + "&data_d=" + data_d + "&data_m=" + data_m,
                 success: function (resp) {
                   $.mobile.loading("hide");
-                  alert(resp);
-              },
-              error: function (e) {
-                  $.mobile.loading("hide");
-                  alert('error enviar '+e.Message);
-              }
-          });
-         }
-     }
+                  if(resp=='ok'){
+                    eliminar_tablas();
+                }
+                alert(resp);
+            },
+            error: function (e) {
+              $.mobile.loading("hide");
+              alert('Por favor verifique que este conectado correctamente a su red para Cerrar su Ruta. ');
+          }
+      });
+         }else{
+            alert("Antes de Cerrar su Ruta debe de registrar alguna transaccion.");
+        }
+    }
 
 
 
@@ -132,14 +150,21 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
 
          // Cordova is ready
         //
-        function enviar_detalle() {
+        function get_detalle() {
         	// alert("cargar_info_enviar_articulo");
             // alert("enviar_detalle");
             db.transaction(successCB_enviar_detalle, errorCB_enviar);
         }
-        function enviar_maestro() {
+        function get_maestro() {
+            // alert("cargar_info_enviar_cliente");
+            db.transaction(successCB_enviar_maestro, errorCB_enviar);
+        }
+        
+
+        function enviar_detalle_maestro() {
         	// alert("cargar_info_enviar_cliente");
-        	db.transaction(successCB_enviar_maestro, errorCB_enviar);
+        	get_detalle();
+            get_maestro();
         }
         
 

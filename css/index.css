@@ -306,3 +306,20 @@
     font-size: 20px !important;
     border-color: #EEA96B !important;
 }
+
+.shadowfilter_img {
+    -webkit-filter: drop-shadow(-4px 4px 6px rgba(116, 116, 116,0.6));
+    filter: url(shadow.svg#drop-shadow);
+}
+.shadowfilter_img_g {
+    -webkit-filter: drop-shadow(-4px 4px 6px rgba(116, 199, 42,0.6));
+    filter: url(shadow.svg#drop-shadow);
+}
+.shadowfilter_img:hover {
+    -webkit-filter: drop-shadow(0px 0px 6px rgba(116, 116, 116,0.6));
+    filter: url(shadow.svg#drop-shadow);
+}
+.shadowfilter_img_g:hover {
+    -webkit-filter: drop-shadow(0px 0px 6px rgba(116, 199, 42,0.6));
+    filter: url(shadow.svg#drop-shadow);
+}

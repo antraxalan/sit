@@ -38,7 +38,7 @@ function sin_respuesta_alert(){
   $(".con_index").css("background-image", "none");
   $(".con_index").html('<img src="img/off.png" alt="image" style="width:50px; ">');
   $(".con_index").trigger("create");
-  alert("Por favor verifique que este conectado correctamente su red.");
+  alert("Por favor verifique que este conectado correctamente a su red.");
   // alert('sin_respuesta');
 }
 
