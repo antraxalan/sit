@@ -41,7 +41,7 @@ function querySuccess_deuda_maximos(tx, results_max) {
     max1=results_max.rows.item(i).max_doc1;
     max6=results_max.rows.item(i).max_doc6;
     var maxtransa=results_max.rows.item(i).max_transa;
-
+    alert('maxtransa:'+maxtransa);
     if(max1===null || max1=='0'){
       max1=0;
     }
