@@ -84,7 +84,7 @@
     display: block;
     margin-top: 10px; /* outside Codepen is actually 30px */
   }
-  .btn_win_10 .wide:hover, .btn_win_10 .box:hover{
+  .btn_win_10 .wide:active, .btn_win_10 .box:active{
     -webkit-transform: scale(1.02);
     /*background:#81CE97;*/
   }
@@ -126,7 +126,7 @@
    border-radius:0px;
    background:#81CE97;
  }
- .btn_win_10 .green:hover{
+ .btn_win_10 .green:active{
    -moz-box-shadow: 0px 5px 15px -7px #000000;
    -webkit-box-shadow: 0px 5px 15px -7px #000000;
    border-radius:0px;
@@ -138,7 +138,7 @@
    border-radius:0px;
    background:#e76022;
  }
- .btn_win_10 .orange:hover{
+ .btn_win_10 .orange:active{
    -moz-box-shadow: 0px 5px 15px -7px #000000;
    -webkit-box-shadow: 0px 5px 15px -7px #000000;
    border-radius:0px;
@@ -150,7 +150,7 @@
   border-radius:0px;
   background-color:#3388CC;
 }
-.btn_win_10 .blue:hover{
+.btn_win_10 .blue:active{
   -moz-box-shadow: 0px 5px 15px -7px #000000;
   -webkit-box-shadow: 0px 5px 15px -7px #000000;
   border-radius:0px;
@@ -162,7 +162,7 @@
   border-radius:0px;
   background:#828282;
 }
-.btn_win_10 .gray:hover{
+.btn_win_10 .gray:active{
   -moz-box-shadow: 0px 5px 15px -7px #000000;
   -webkit-box-shadow: 0px 5px 15px -7px #000000;
   border-radius:0px;
@@ -174,7 +174,7 @@
   border-radius:0px;
   background:#DA312E;
 }
-.btn_win_10 .red:hover{
+.btn_win_10 .red:active{
   -moz-box-shadow: 0px 5px 15px -7px #000000;
   -webkit-box-shadow: 0px 5px 15px -7px #000000;
   border-radius:0px;
@@ -186,7 +186,7 @@
   border-radius:0px;
   background:#dbb701;
 }
-.btn_win_10 .yellow:hover{
+.btn_win_10 .yellow:active{
   -moz-box-shadow: 0px 5px 15px -7px #000000;
   -webkit-box-shadow: 0px 5px 15px -7px #000000;
   border-radius:0px;
@@ -198,7 +198,7 @@
   border-radius:0px;
   background:#02b9e3;
 }
-.btn_win_10 .bluefish:hover{
+.btn_win_10 .bluefish:active{
   -moz-box-shadow: 0px 5px 15px -7px #000000;
   -webkit-box-shadow: 0px 5px 15px -7px #000000;
   border-radius:0px;
@@ -210,7 +210,7 @@
   border-radius:0px;
   background:#d22a4e;
 }
-.btn_win_10 .magenta:hover{
+.btn_win_10 .magenta:active{
   -moz-box-shadow: 0px 5px 15px -7px #000000;
   -webkit-box-shadow: 0px 5px 15px -7px #000000;
   border-radius:0px;

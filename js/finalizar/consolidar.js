@@ -530,12 +530,9 @@ function cargar_consolidar_script(cli) {
   db.transaction(queryDB_consolidar, errorCB_consolidar);
 }
 
+
+
 function prag() {
-
-
-
-
-
   var query_p=$('.prueba_query_string').val();
   // tx.executeSql(query_p, [], querySuccess_pragma, errorCB_todos_maximos2_pra);
   db.transaction(function(tx) {
@@ -544,9 +541,6 @@ function prag() {
 
     alert(JSON.stringify(results.rows.item(0)));
   });
-
-
-
  });
 }
 
