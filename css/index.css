@@ -344,19 +344,19 @@
 
 @-moz-keyframes neon_g_b {
   from {
-    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #81CE97, 0 0 70px #81CE97, 0 0 80px #81CE97, 0 0 100px #81CE97, 0 0 150px #81CE97;
+    box-shadow: 0 0 0 #fff, 0 0 0 #fff, 0 0 0 #fff, 0 0 40px #81CE97, 0 0 70px #81CE97, 0 0 80px #81CE97, 0 0 100px #81CE97, 0 0 150px #81CE97;
   }
   to {
-    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #81CE97, 0 0 35px #81CE97, 0 0 40px #81CE97, 0 0 50px #81CE97, 0 0 75px #81CE97;
+    box-shadow: 0 0 0 #fff, 0 0 0 #fff, 0 0 0 #fff, 0 0 20px #81CE97, 0 0 35px #81CE97, 0 0 40px #81CE97, 0 0 50px #81CE97, 0 0 75px #81CE97;
   }
 }
 
 @-webkit-keyframes neon_g_b {
   from {
-    box-shadow: 0 0 5px #fff, 0 0 8px #fff, 0 0 10px #fff, 0 0 15px #81CE97, 0 0 10px #81CE97, 0 0 15px #81CE97, 0 0 20px #81CE97, 0 0 25px #81CE97;
+    box-shadow: 0 0 0 #fff, 0 0 0 #fff, 0 0 0 #fff, 0 0 15px #81CE97, 0 0 10px #81CE97, 0 0 15px #81CE97, 0 0 20px #81CE97, 0 0 25px #81CE97;
   }
   to {
-    box-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 7px #fff, 0 0 15px #3588CE, 0 0 2px #3588CE, 0 0 4px #3588CE, 0 0 6px #3588CE, 0 0 8px #3588CE;
+    box-shadow: 0 0 0 #fff, 0 0 0 #fff, 0 0 0 #fff, 0 0 15px #3588CE, 0 0 2px #3588CE, 0 0 4px #3588CE, 0 0 6px #3588CE, 0 0 8px #3588CE;
   }
 }
 
@@ -375,3 +375,6 @@
   animation: neon_g_b 2.5s ease-in-out infinite alternate;
 }
 
+.btn_next_style{
+    border: none !important;
+} 
