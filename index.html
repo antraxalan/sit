@@ -2688,7 +2688,7 @@ $( document ).on( "pagecreate", "#cobranza", function( event ) {
       // cambio de <a> por <div>
       var auxi= $('.list_cobranza').find('a[nrodctom="'+documenton+'"]').attr('cobrado',cobrar);
      // var auxi= $('.list_cobranza').find('div[nrodctom="'+documenton+'"]').attr('cobrado',cobrar);
-      $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+0+"']").html(cobrar+' Bs.');
+      $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+documenton+"']").html(cobrar+' Bs.');
       var total=0;
       var aux;
     //1. Suma todos los html para el resultado total. 

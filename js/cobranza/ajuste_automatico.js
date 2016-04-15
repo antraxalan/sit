@@ -5,11 +5,13 @@ function list_cobranza_ajuste_automatico() {
   cobro=parseFloat(cobro);
   // var cobro_aux=cobro;
   var credito=0;
-
   var count=1;
-
-  $(".editar_cobranza_class").each(function(index, el) {
-    var aux_nro = $(this).attr("nrodctom");
+  var cli_id=$(".cliente_id").val();
+  if (cobro==0){
+    cargar_cobranza_list(cli_id);
+  }else{
+    $(".editar_cobranza_class").each(function(index, el) {
+      var aux_nro = $(this).attr("nrodctom");
     // var aux_cob = $(this).attr("cobrado");
     var aux_sal = $(this).attr("saldo");
     var aux_fch = $(this).attr("fecha-venc");
@@ -51,5 +53,6 @@ function list_cobranza_ajuste_automatico() {
       }
     }
   });
+}
 
 }
