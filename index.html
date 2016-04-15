@@ -2464,21 +2464,24 @@ $(".list_old_venta").on('click','.btn_confirmar_ventas_vacia', function(event) {
 
 $(".btn_confirmar_ventas_vacia_next").on('click', function(event) {
   var tab_auxiliar=$("#venta_tabs .ui-btn-active").index();
-  alert(tab_auxiliar);
+  // alert(tab_auxiliar);
 if(tab_auxiliar==0){
-  $('#venta_tabs').inlinetabs('show', '1');
+  $('#venta_tabs').inlinetabs('show', '2');
 }else{
-  $("#confirmar_venta_vacia").popup("open");
+  venta_to_cobranza();
+  // $("#confirmar_venta_vacia").popup("open");
 }
 });
 
 $(".btn_confirmar_ventas_cobrar_next").on('click', function(event) {
-  $("#confirmar_venta_fchvto_popup").popup("open");
-  var precio=$('.total_carrito_val').text();
+  // $("#confirmar_venta_fchvto_popup").popup("open");
+  // var precio=$('.total_carrito_val').text();
+   var precio = $('.total_carrito_input').val();
+  precio=parseFloat(precio).toFixed(2);
   alert(precio);
-  $('.precio_total_popup').html('<strong>'+precio+'</strong>');
+  $('.precio_total_popup').html('<strong>'+precio+' Bs.</strong>');
 
-  if(precio=='0.00 Bs.'){
+  if(precio==0){
     alert("No tiene productos agregados para Confirmar este Pedido.");
   }else{
     $("#confirmar_venta_fchvto_popup").popup("open");

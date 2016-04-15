@@ -101,6 +101,17 @@ function exitDeuda() {
         "Si,No"
         ); 
 };
+function venta_to_cobranza() {
+    navigator.notification.vibrate(200);
+    navigator.notification.confirm(
+        "Desea continuar sin adquirir productos?", 
+        function(buttonIndex){
+            Confirm_venta_to_cobranza(buttonIndex);
+        }, 
+        "Ir a Envases", 
+        "Si,No"
+        ); 
+};
 function Cobranza_to_Deuda() {
     navigator.notification.vibrate(200);
     navigator.notification.confirm(
@@ -152,6 +163,20 @@ function ConfirmExitDeuda(stat){
     };
 };
 
+function Confirm_venta_to_cobranza(stat){
+    // alert("Inside ConfirmExit");
+    if(stat == "1"){
+        var cli_id=$(".cliente_id").val();
+        limpiar_temp_v_table();
+        cargar_listas(cli_id);
+        cargar_cobranza_list(cli_id);
+        cargar_deuda_list(cli_id);
+        cargar_info_cliente_html(cli_id);
+        window.location.href = "index.html#cobranza";
+    }else{
+        return;
+    };
+};
 function ConfirmCobranza_to_Deuda(stat){
     // alert("Inside ConfirmExit");
     if(stat == "1"){
