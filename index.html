@@ -2637,7 +2637,7 @@ $( document ).on( "pagecreate", "#cobranza", function( event ) {
   });
 
   $(".precio_input_cob").on('focus', function(event) {
-    if($(this).val()=='0'){
+    if($(this).val()=='0.00'||$(this).val()=='0'){
       $(this).val('');
     }
   });
