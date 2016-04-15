@@ -200,7 +200,7 @@ function queryDB_cobranza_last_sale(tx) {
             // lista_contenido+= '<div class="ui-block-d " align="center" ><p class="html_cobrado" marca-cobranza-html="19999999999" style="margin-top: 4px; font-size: 16px; font-weight: bold;">'+parseFloat(cobro_list).toFixed(2)+' Bs.</p></div>';
             lista_contenido+= '</div>';
             lista_contenido+= '</a>';
-            lista_contenido+= '<a href="#" class="editar_cobranza_class" data-rel="popup" tipodctom="1" nrodctom="19999999999" saldo="'+total_total_total+'" fecha="'+fecha_actual+'" fecha-venc="'+f_vto+'" cobrado="'+parseFloat(cobro_list).toFixed(2)+'">SITRANS</a>';
+            lista_contenido+= '<a href="#" class="editar_cobranza_class" data-rel="popup" tipodctom="1" nrodctom="19999999999" saldo="'+total_total_total+'" fecha="'+fecha_actual+'" fecha-venc="'+f_vto+'" cobrado="'+parseFloat(cobro_list).toFixed(2)+'" style="width:5.6em;">SITRANS</a>';
             lista_contenido+= '</li>';
             lista_contenido +='</ul>';
           }else{

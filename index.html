@@ -1117,7 +1117,8 @@
           <div class="ui-block-d" align="left" style="margin-top: 4px; font-size: 16px;"><strong class="html_cobrado" marca-cobranza-html="19999999999" >32132213 Bs.</strong></div>
         </div>
       </a>
-      <a href="#" class="editar_cobranza_class" data-rel="popup" tipodctom="1" nrodctom="19999999999" saldo="33" fecha="333" fecha-venc="3333" cobrado="">SITRANS</a>
+      <!-- <a href="#" class="editar_cobranza_class" data-rel="popup" tipodctom="1" nrodctom="19999999999" saldo="33" fecha="333" fecha-venc="3333" cobrado="" style="width:5.6em;" >SITRANS</a> -->
+      <a href="#" class="editar_cobranza_class" data-rel="popup" tipodctom="1" nrodctom="19999999999" saldo="11" fecha="12" fecha-venc="13" cobrado="14" style="width:5.6em;">SITRANS</a>
     </li>
 
 
@@ -1234,7 +1235,7 @@
             <div class="ui-block-c red"><strong>50.5 Bs.</strong></div>
           </div>
         </a>
-        <a href="#add_cobranza_popup" class="editar_cobranza_class"  data-rel="popup" codigo-venta="12" >SITRANS</a>
+        <a href="#add_cobranza_popup" class="editar_cobranza_class"  data-rel="popup" codigo-venta="12">SITRANS</a>
       </li>
     </ul>
   </div>
@@ -2156,7 +2157,7 @@ $( document ).on( "pagecreate", "#venta", function( event ) {
     $("#prest_popup").prop("checked",false).checkboxradio("refresh");
 
     if($.inArray( cod, arr_carr )>-1) {
-      alert('Ingrese a la pestaña "Compra Total".\n\nPara modificar o eliminar este producto.');
+      alert('Ingrese a la pestaña "Compra Total".\n\nPara Modificar o Eliminar este producto.');
     }else{
       $("#add_venta_popup").popup( "open" );
     }
@@ -2465,10 +2466,10 @@ $(".list_old_venta").on('click','.btn_confirmar_ventas_vacia', function(event) {
 $(".btn_confirmar_ventas_vacia_next").on('click', function(event) {
   var tab_auxiliar=$("#venta_tabs .ui-btn-active").index();
   // alert(tab_auxiliar);
-if(tab_auxiliar==0){
-  $('#venta_tabs').inlinetabs('show', '2');
-}else{
-  venta_to_cobranza();
+  if(tab_auxiliar==0){
+    $('#venta_tabs').inlinetabs('show', '2');
+  }else{
+    venta_to_cobranza();
   // $("#confirmar_venta_vacia").popup("open");
 }
 });
@@ -2476,9 +2477,9 @@ if(tab_auxiliar==0){
 $(".btn_confirmar_ventas_cobrar_next").on('click', function(event) {
   // $("#confirmar_venta_fchvto_popup").popup("open");
   // var precio=$('.total_carrito_val').text();
-   var precio = $('.total_carrito_input').val();
+  var precio = $('.total_carrito_input').val();
   precio=parseFloat(precio).toFixed(2);
-  alert(precio);
+  // alert(precio);
   $('.precio_total_popup').html('<strong>'+precio+' Bs.</strong>');
 
   if(precio==0){
@@ -2635,6 +2636,12 @@ $( document ).on( "pagecreate", "#cobranza", function( event ) {
     }
   });
 
+  $(".precio_input_cob").on('focus', function(event) {
+    if($(this).val()=='0'){
+      $(this).val('');
+    }
+  });
+
   $("input[name=contado]:radio").bind( "change", function(event, ui) {
     // alert("Change radio ");
     if($(this).val()=='total_popup'){
@@ -2679,8 +2686,8 @@ $( document ).on( "pagecreate", "#cobranza", function( event ) {
       localStorage.total_cobro=0;
     }
       // cambio de <a> por <div>
-      // var auxi= $('.list_cobranza').find('a[nrodctom="'+documenton+'"]').attr('cobrado',cobrar);
-      var auxi= $('.list_cobranza').find('div[nrodctom="'+documenton+'"]').attr('cobrado',cobrar);
+      var auxi= $('.list_cobranza').find('a[nrodctom="'+documenton+'"]').attr('cobrado',cobrar);
+     // var auxi= $('.list_cobranza').find('div[nrodctom="'+documenton+'"]').attr('cobrado',cobrar);
       $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+documenton+"']").html(cobrar+' Bs.');
       var total=0;
       var aux;

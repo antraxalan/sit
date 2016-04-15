@@ -42,8 +42,8 @@ document.addEventListener("backbutton", function(e){
         otroCliente();
         break; 
         case 'cobranza':
-        exitCobranza();
-        // window.location.href = "index.html#venta";
+        // exitCobranza();
+        window.location.href = "index.html#venta";
         break; 
         case 'deuda':
         exitDeuda();
@@ -79,17 +79,17 @@ function otroCliente() {
         "Si,No"
         ); 
 };
-function exitCobranza() {
-    navigator.notification.vibrate(200);
-    navigator.notification.confirm(
-        "Podria perder todos los cambios realizados, desea volver a Venta?", 
-        function(buttonIndex){
-            ConfirmExitCobranza(buttonIndex);
-        }, 
-        "Ir a Venta", 
-        "Si,No"
-        ); 
-};
+// function exitCobranza() {
+//     navigator.notification.vibrate(200);
+//     navigator.notification.confirm(
+//         "Podria perder todos los cambios realizados, desea volver a Venta?", 
+//         function(buttonIndex){
+//             ConfirmExitCobranza(buttonIndex);
+//         }, 
+//         "Ir a Venta", 
+//         "Si,No"
+//         ); 
+// };
 function exitDeuda() {
     navigator.notification.vibrate(200);
     navigator.notification.confirm(
@@ -108,7 +108,7 @@ function venta_to_cobranza() {
         function(buttonIndex){
             Confirm_venta_to_cobranza(buttonIndex);
         }, 
-        "Ir a Envases", 
+        "Ir a Cobros", 
         "Si,No"
         ); 
 };
@@ -143,15 +143,15 @@ function ConfirmCliente(stat){
     };
 };
 
-function ConfirmExitCobranza(stat){
-    // alert("Inside ConfirmExit");
-    if(stat == "1"){
-        // alert("exit app fn");
-        window.location.href = "index.html#venta";
-    }else{
-        return;
-    };
-};
+// function ConfirmExitCobranza(stat){
+//     // alert("Inside ConfirmExit");
+//     if(stat == "1"){
+//         // alert("exit app fn");
+//         window.location.href = "index.html#venta";
+//     }else{
+//         return;
+//     };
+// };
 
 function ConfirmExitDeuda(stat){
     // alert("Inside ConfirmExit");
