@@ -15,7 +15,7 @@ function list_cobranza_ajuste_automatico() {
     var aux_fch = $(this).attr("fecha-venc");
     var aux_dcm = $(this).attr("tipodctom");
     var items = $('.editar_cobranza_class').length;
-    alert(items);
+    // alert(items);
     var sum_aux;
     count=count+1;
     aux_sal=parseFloat(aux_sal);
@@ -52,7 +52,7 @@ function list_cobranza_ajuste_automatico() {
       }
     }
     if(credito==0 && items>1){
-      $('.list_cobranza').find('div[nrodctom="'+aux_nro+'"]').attr('cobrado',(0);
+      $('.list_cobranza').find('div[nrodctom="'+aux_nro+'"]').attr('cobrado',(0));
       $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+aux_nro+"']").html('0.00 Bs.');
     }
   });
