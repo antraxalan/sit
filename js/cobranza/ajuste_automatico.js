@@ -3,7 +3,7 @@ function list_cobranza_ajuste_automatico() {
   //cobro='0.00';
   var cobro=localStorage.total_cobro;
   cobro=parseFloat(cobro);
-  var cobro_aux=cobro;
+  // var cobro_aux=cobro;
   var credito=0;
 
   var count=1;
@@ -15,6 +15,7 @@ function list_cobranza_ajuste_automatico() {
     var aux_fch = $(this).attr("fecha-venc");
     var aux_dcm = $(this).attr("tipodctom");
     var items = $('.editar_cobranza_class').length;
+    alert(items);
     var sum_aux;
     count=count+1;
     aux_sal=parseFloat(aux_sal);
@@ -28,27 +29,31 @@ function list_cobranza_ajuste_automatico() {
       if( aux_sal < 0 || credito <0){
         if(count==items){
           $('.list_cobranza').find('div[nrodctom="'+aux_nro+'"]').attr('cobrado',(credito*(-1)).toFixed(2));
-          $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+aux_nro+"']").html(credito*(-1).toFixed(2)+' Bs.');
+          $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+aux_nro+"']").html(' '+credito*(-1).toFixed(2)+' Bs.');
           credito=0;
         }
         if(count<items){
           if(aux_sal<0){
             $('.list_cobranza').find('div[nrodctom="'+aux_nro+'"]').attr('cobrado',(aux_sal).toFixed(2));
-            $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+aux_nro+"']").html(aux_sal.toFixed(2)+' Bs.');
+            $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+aux_nro+"']").html(' '+aux_sal.toFixed(2)+' Bs.');
             credito=parseFloat(credito)+parseFloat(aux_sal);
           }else{
             if((credito*(-1))<=aux_sal){
               $('.list_cobranza').find('div[nrodctom="'+aux_nro+'"]').attr('cobrado',((credito*(-1))).toFixed(2));
-              $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+aux_nro+"']").html((credito*(-1)).toFixed(2)+' Bs.');
+              $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+aux_nro+"']").html(' '+(credito*(-1)).toFixed(2)+' Bs.');
               credito=0;
             }else{
               $('.list_cobranza').find('div[nrodctom="'+aux_nro+'"]').attr('cobrado',(aux_sal.toFixed(2)));
-              $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+aux_nro+"']").html(aux_sal.toFixed(2)+' Bs.');
+              $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+aux_nro+"']").html(' '+aux_sal.toFixed(2)+' Bs.');
               credito=(parseFloat(credito)+parseFloat(aux_sal)).toFixed(2);
             }
           }
         }
       }
+    }
+    if(credito==0 && items>1){
+      $('.list_cobranza').find('div[nrodctom="'+aux_nro+'"]').attr('cobrado',(0);
+      $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+aux_nro+"']").html('0.00 Bs.');
     }
   });
 
