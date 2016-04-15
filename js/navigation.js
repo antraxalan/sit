@@ -162,7 +162,7 @@ function ConfirmCobranza_to_Deuda(stat){
         return;
     };
 };
-function start_proccess(){
+function start_process(){
 
     var d = new Date();
     var month = d.getMonth()+1;
