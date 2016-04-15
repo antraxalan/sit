@@ -51,7 +51,8 @@ function list_cobranza_ajuste_automatico() {
         }
       }
     }
-    if(credito==0 && items>1){
+    if(cobro==0 && items>1){
+      alert("0");
       $('.list_cobranza').find('div[nrodctom="'+aux_nro+'"]').attr('cobrado',(0));
       $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+aux_nro+"']").html('0.00 Bs.');
     }
