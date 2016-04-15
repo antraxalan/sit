@@ -658,16 +658,16 @@
           </ul>
         </div>
         <!-- <button type="button" class="menu_v_c_d_btn">qwerty</button> -->
-  
+
       </form>
 
     </div>
 
 
   </div><!-- /content -->
-      <div class="asd" align="left">
-                <img src="img/bars.png" alt="image"   >
-              </div>
+  <div class="asd" align="left">
+    <img src="img/bars.png" alt="image"   >
+  </div>
   <footer data-role="footer" data-position="fixed" data-tap-toggle="false" class="new_footer">
     <h3>Copyright &copy; 2016</h3>
     <button type="button" data-icon="home" class="ui-btn-right salir" data-theme="b" style="width:100px; font-size: 15px; background-color: #DD554C; border-color:#DD554C; " onclick="location.href='#home';">Inicio</button>
@@ -728,8 +728,7 @@
     
     <button type="button" data-icon="arrow-l" class="btn_prev_style otro_cliente" data-inline="true">Otro Cliente</button>
     <button type="button" data-icon="arrow-r" class="btn_next_style btn_confirmar_ventas_vacia_next" data-iconpos="right" data-inline="true">Cobros</button>
-    <button type="button" data-icon="arrow-r" class="btn_next_style btn_confirmar_ventas_cobrar_next glowing_g_b" data-iconpos="right" data-inline="true" 
-    style="background-color: #2B9842; color: white; text-shadow:0  1px  0  #2B9842 ;">Cobros</button>
+    <button type="button" data-icon="arrow-r" class="btn_next_style btn_confirmar_ventas_cobrar_next glowing_g_b" data-iconpos="right" data-inline="true" style="background-color: #2B9842; color: white; text-shadow:0  1px  0  #2B9842 ;">Cobros</button>
     
 
 
@@ -1838,7 +1837,6 @@ $(".con_index").css("background-image", "none");
       }else{
         if(localStorage.db_cargada=='1'){
           go_to_otro_usuario();
-          // window.location.href = "index.html#registrar";
         }else{
           alert("No existen datos cargados.");
         }
@@ -2029,7 +2027,7 @@ $('.tabs').click(function() {
     });
 
     $('.registrar_v_c_d').on('click', function() {
-      window.location.href = "index.html#venta";
+      start_process();
     });
     
 
@@ -2158,7 +2156,7 @@ $( document ).on( "pagecreate", "#venta", function( event ) {
     $("#prest_popup").prop("checked",false).checkboxradio("refresh");
 
     if($.inArray( cod, arr_carr )>-1) {
-      alert('Ingrese a la pestaña "Compra Total"\n\n Para modificar o eliminar este producto.');
+      alert('Ingrese a la pestaña "Compra Total".\n\nPara modificar o eliminar este producto.');
     }else{
       $("#add_venta_popup").popup( "open" );
     }
@@ -2340,13 +2338,9 @@ $('.confirmar_venta_popup').click(function() {
 
 
 $(".list_carrito_venta").on('click','.btn_confirmar_ventas_global', function(event) {
+  //sin uso
   var precio=$(this).find('.total_carrito_val').text();
-  var d = new Date();
-  var month = d.getMonth()+1;
-  var day = d.getDate();
-  var fecha_actual =((''+day).length<2 ? '0' : '') + day + '/' +((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
   $('.precio_total_popup').html('<strong>'+precio+'</strong>');
-  $("#fchvto_total_popup").val(fecha_actual);
   if(precio=='0.00 Bs.'){
     alert("No tiene productos agregados para Confirmar este Pedido.");
   }else{
@@ -2469,21 +2463,21 @@ $(".list_old_venta").on('click','.btn_confirmar_ventas_vacia', function(event) {
 });
 
 $(".btn_confirmar_ventas_vacia_next").on('click', function(event) {
+  var tab_auxiliar=$("#venta_tabs .ui-btn-active").index();
+  alert(tab_auxiliar);
+if(tab_auxiliar==0){
+  $('#venta_tabs').inlinetabs('show', '1');
+}else{
   $("#confirmar_venta_vacia").popup("open");
+}
 });
 
 $(".btn_confirmar_ventas_cobrar_next").on('click', function(event) {
   $("#confirmar_venta_fchvto_popup").popup("open");
-  var precio=$(this).find('.total_carrito_val').text();
-  var d = new Date();
-  var month = d.getMonth()+1;
-  var day = d.getDate();
-  // var fecha_actual =((''+day).length<2 ? '0' : '') + day + '/' +((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
-  var fecha_actual =   d.getFullYear() + '-' +((''+month).length<2 ? '0' : '') + month + '-' +  ((''+day).length<2 ? '0' : '') + day;
-  // var fecha_actual = now.getFullYear()+"-"+(month)+"-"+(day) ;
+  var precio=$('.total_carrito_val').text();
+  alert(precio);
   $('.precio_total_popup').html('<strong>'+precio+'</strong>');
-  $("#fchvto_total_popup").val(fecha_actual);
-  // alert("sadsdas");
+
   if(precio=='0.00 Bs.'){
     alert("No tiene productos agregados para Confirmar este Pedido.");
   }else{

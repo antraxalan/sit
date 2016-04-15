@@ -60,7 +60,7 @@ function querySuccess_deuda_maximos(tx, results_max) {
 
 
 function querySuccess_consolidar(tx, results) {
-  alert("querySuccess_consolidar");
+  // alert("querySuccess_consolidar");
 
   glo_cod_per_vis=localStorage.id_transportista;
   var len = results.rows.length;
@@ -216,7 +216,7 @@ function querySuccess_consolidar(tx, results) {
 
 
 
-  alert("insertando cobranza");
+  // alert("insertando cobranza");
 
 
 
@@ -335,7 +335,7 @@ function querySuccess_consolidar(tx, results) {
 
 
   ////////////////////////////////////////////////////////////////////
-  alert("insertando envases");
+  // alert("insertando envases");
   //START ENVASES
   ////////////////////////////////////////////////////////////////////
   var count2=0;

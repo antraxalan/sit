@@ -27,11 +27,11 @@ document.addEventListener("backbutton", function(e){
     }
 
     if ($(".ui-page-active .ui-popup-active").length > 0){
-       history.back();
-   }else{
+     history.back();
+ }else{
 
-       switch (curr) 
-       {
+     switch (curr) 
+     {
         case 'home':
         exitAppPopup();
         break; 
@@ -162,6 +162,17 @@ function ConfirmCobranza_to_Deuda(stat){
         return;
     };
 };
+function start_proccess(){
+
+    var d = new Date();
+    var month = d.getMonth()+1;
+    var day = d.getDate();
+    // var fecha_actual =((''+day).length<2 ? '0' : '') + day + '/' +((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
+    var fecha_actual =   d.getFullYear() + '-' +((''+month).length<2 ? '0' : '') + month + '-' +  ((''+day).length<2 ? '0' : '') + day;
+    // var fecha_actual = now.getFullYear()+"-"+(month)+"-"+(day) ;
+    $("#fchvto_total_popup").val(fecha_actual);
+    window.location.href = "index.html#venta";
+};
 function go_to_otro_usuario(){
     $('#cliente').selectmenu();
     $("#cliente option:eq(0)").prop("selected",true);
@@ -173,7 +184,6 @@ function go_to_otro_usuario(){
     window.location.href = "index.html#registrar";
     limpiar_temp_v_table();
     $('#venta_tabs').removeClass("ui-disabled blured_alan");
-
     // $('.list_old_venta').find('.temp_disabled').removeClass("ui-disabled temp_disabled");
 };
 
@@ -190,5 +200,5 @@ function populateDB_TEMPVENTA(tx) {
 }
 
 function errorCB_cargar(err) {
- alert("errorCB_temp: "+err.message);
+   alert("errorCB_temp: "+err.message);
 }
