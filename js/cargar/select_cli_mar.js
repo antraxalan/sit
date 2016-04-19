@@ -10,8 +10,16 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
         }
         function queryDB_select_cliente(tx) {
           // alert("queryDB_select_cliente");
-          tx.executeSql('SELECT CodCliente, Nombre from CLIENTE ', [], querySuccess_select_cliente, errorCB_select);
+          // tx.executeSql('SELECT CodCliente, Nombre from CLIENTE ', [], querySuccess_select_cliente, errorCB_select);
+          tx.executeSql('SELECT CodCliente,Nombre, CASE WHEN EXISTS (SELECT * FROM   DETALLE as b WHERE  b.CodCliente = a.CodCliente and CodPersonalVis IS NOT NULL) THEN "1" ELSE "0" END AS Visitado FROM   CLIENTE as a', [], querySuccess_select_cliente, errorCB_select_cli);
         }
+
+
+
+
+
+
+
 
         // function searchQueryDB(tx) {
         //  tx.executeSql("SELECT * FROM DEMO where name like ('%"+ document.getElementById("txtName").value + "%')",
@@ -104,8 +112,19 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
           var tblContent2='';
           var len = results.rows.length;
           // alert(len);
+          var vi;
+          var clase;
+          var span;
           for (var i = 0; i < len; i++) {
-          tblContent2 +='<li class="cliente_valido cli_visit" num-cliente="'+results.rows.item(i).CodCliente+'"><div class="image_list"></div><div class="plus_list"></div><label>'+results.rows.item(i).Nombre+'</label><span>'+results.rows.item(i).CodCliente+' - Pendiente</span></li>'; 
+            vi=results.rows.item(i).Visitado;
+            if(vi=="1"){
+              clase="cli_visited";
+              span="Visitado.";
+            }else{
+              clase="cli_visit";
+              span="Pendiente.";
+            }
+            tblContent2 +='<li class="cliente_valido '+clase+'" num-cliente="'+results.rows.item(i).CodCliente+'"><div class="image_list"></div><div class="plus_list"></div><label>'+results.rows.item(i).Nombre+'</label><span>'+results.rows.item(i).CodCliente+' - '+span+'</span></li>'; 
           }
           alert(tblContent2);
 
@@ -122,6 +141,11 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
         //
         function errorCB_select(err) {
           alert("Error processing SQL3: "+err.code);
+        }
+
+
+        function errorCB_select_cli(err) {
+          alert("Error processing SQL cli: "+err.code);
         }
 
 
