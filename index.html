@@ -659,20 +659,229 @@
         </div>
         <!-- <button type="button" class="menu_v_c_d_btn">qwerty</button> -->
 
-      </form>
 
-    </div>
+        <style type="text/css">
+
+          #cliente_page_select{
+            height: 100% ;
+          }
+
+          .circle-list{
+            margin: 10em;
+            margin-top: 0em;
+            border-style: dashed; 
+            border-width: 1px;
+            border-color: #ccc;
+            padding: 0;
+            /*position: relative;*/
+          }
+          .circle-list li{
+            height: 100px;
+            border-bottom: 1px dashed #ccc;
+            list-style-type: none;
+          }
+
+          .cli_visited .image_list {
+           content:url(img/cli.png);
+           position: absolute;
+           margin: 15px;
+           width: 70px;
+           height:70px;
+         }
+         .cli_visit .image_list {
+           content:url(img/cli_gray.png);
+           position: absolute;
+           margin: 15px;
+           width: 70px;
+           height:70px;
+         }
 
 
-  </div><!-- /content -->
-  <div class="asd" align="left">
-    <img src="img/bars.png" alt="image"   >
-  </div>
-  <footer data-role="footer" data-position="fixed" data-tap-toggle="false" class="new_footer">
-    <h3>Copyright &copy; 2016</h3>
-    <button type="button" data-icon="home" class="ui-btn-right salir" data-theme="b" style="width:100px; font-size: 15px; background-color: #DD554C; border-color:#DD554C; " onclick="location.href='#home';">Inicio</button>
-  </footer>
+
+         .cli_visited .plus_list {
+           content:url(img/plus_white.png);
+           position: absolute;
+           margin-top: 70px;
+           width: 20px;
+           height:20px;
+           right:210px;
+         }
+
+         .cli_visit .plus_list {
+           content:url(img/plus_gray.png);
+           position: absolute;
+           margin-top: 70px;
+           width: 20px;
+           height:20px;
+           right:210px;
+         }
+
+         .cli_visit{
+          background-color: #FFFFFF !important;
+          border-right: 8px solid #81CE96 !important;
+        }
+        .cli_visited{
+          background-color: #BCBCBC !important;
+          border-right: 8px solid #FEB47F !important;
+        } 
+
+
+
+        .circle-list label{
+          height: 50px;
+          display: block;
+          font-weight: 900;
+          font-size: 20px;
+          letter-spacing: 1px;
+          margin: 0;
+          padding: 10px 5px 5px 100px;
+        }
+        .circle-list span{
+          height: 25px;
+          display: block;
+          font-weight: 900;
+          font-size: 16px;
+          letter-spacing: 1px;
+          /*color: #bdc3c7;*/
+          padding: 5px 5px 5px 100px;
+        }
+        .cli_visit label{
+          color: #000000;
+        }
+        .cli_visited label{
+          color: #ffffff;
+          text-shadow: none;
+        }
+        .cli_visit span{
+          color: #9B9B9B;
+        }
+        .cli_visited span{
+          color: #ffffff;
+          text-shadow: none;
+        }
+
+
+
+
+        .cabecera_close_clientes {
+         content:url(img/x.png);
+         position: absolute;
+         margin-top: 50px;
+         margin-right: 70px;
+         right:0px;
+         /*bottom:0;*/
+         /*width: 20px;*/
+         /*height:20px;*/
+         /*right:210px;*/
+       }
+     </style>
+
+
+     <!--  <ul class="circle-list" data-filter="true" data-input="#filterBasic-input">
+
+      <input id="filterBasic-input" data-type="search">
+
+        <li style="height:25px; " align="center">↑ Realiza una busqueda. ↑</li>
+
+        <li class="cliente_valido cli_visited"><div class="image_list"></div><div class="plus_list"></div><label>1List item List item List item List item List item List item List item</label><span>Pendiente</span></li>
+        <li class="cliente_valido cli_visited"><div class="image_list"></div><div class="plus_list"></div><label>2List item</label><span>Pendiente</span></li>
+        <li class="cliente_valido cli_visited"><div class="image_list"></div><div class="plus_list"></div><label>3List item</label><span>Pendiente</span></li>
+        <li class="cliente_valido cli_visit"><div class="image_list"></div><div class="plus_list"></div><label>4List item</label><span>Visitado</span></li>
+        <li class="cliente_valido cli_visited"><div class="image_list"></div><div class="plus_list"></div><label>5List item</label><span>Pendiente</span></li>                       
+        <li class="cliente_valido cli_visited"><div class="image_list"></div><div class="plus_list"></div><label>6List item</label><span>Pendiente</span></li>
+      </ul> -->
+
+
+    </form>
+    <!-- <p class="cxzdsaewq" num-cliente="111">dsadsad </p> -->
+    <!-- <div class="cxzdsaewq">
+    <li class="cliente_valido cli_visited" num-cliente="101"><div class="image_list"></div><div class="plus_list"></div><label> ALVAREZ MORALES FELIX</label><span>101 - Visitado</span></li>
+  </div> -->
+</div>
+
+<button  class="open_cli_list">button open</button>
+</div><!-- /content -->
+<div class="asd" align="left">
+  <img src="img/bars.png" alt="image"   >
+</div>
+<footer data-role="footer" data-position="fixed" data-tap-toggle="false" class="new_footer">
+  <h3>Copyright &copy; 2016</h3>
+  <button type="button" data-icon="home" class="ui-btn-right salir" data-theme="b" style="width:100px; font-size: 15px; background-color: #DD554C; border-color:#DD554C; " onclick="location.href='#home';">Inicio</button>
+</footer>
 </div><!-- /Page Home -->
+
+
+<div data-role="page" id="cliente_page_select">
+  <div style="height:140px;" align="right" vertical-align="bottom"><div class="cabecera_close_clientes"></div></div>
+
+  
+  <ul class="circle-list" data-filter="true" data-input="#filterBasic-input">
+
+    <div style="margin: 10px 50px 0px 50px ;" align="center">
+      <h3>Seleccione un Cliente</h3>
+      <input id="filterBasic-input" data-type="search" style="margin: 15px 5px 15px 5px ;">
+    </div>
+    <li style="height:25px; " align="center" num-cliente="none">↑ Realizar una busqueda. ↑</li>
+<!-- 
+      <li class="cliente_valido cli_visit"><div class="image_list"></div><div class="plus_list"></div><label>1List item List item List item List item List item List item List item</label><span>Pendiente</span></li>
+      <li class="cliente_valido cli_visited"><div class="image_list"></div><div class="plus_list"></div><label>2List item</label><span>Visitado</span></li>
+      <li class="cliente_valido cli_visit"><div class="image_list"></div><div class="plus_list"></div><label>3List item</label><span>Pendiente</span></li>
+      <li class="cliente_valido cli_visited"><div class="image_list"></div><div class="plus_list"></div><label>4List item</label><span>Visitado</span></li>
+      <li class="cliente_valido cli_visit"><div class="image_list"></div><div class="plus_list"></div><label>5List item</label><span>Pendiente</span></li>                       
+      <li class="cliente_valido cli_visit"><div class="image_list"></div><div class="plus_list"></div><label>6List item</label><span>Pendiente</span></li>
+      <li class="cliente_valido cli_visit"><div class="image_list"></div><div class="plus_list"></div><label>6List item</label><span>Pendiente</span></li>
+      <li class="cliente_valido cli_visit"><div class="image_list"></div><div class="plus_list"></div><label>6List item</label><span>Pendiente</span></li>
+      <li class="cliente_valido cli_visit"><div class="image_list"></div><div class="plus_list"></div><label>6List item</label><span>Pendiente</span></li>
+      <li class="cliente_valido cli_visit"><div class="image_list"></div><div class="plus_list"></div><label>6List item</label><span>Pendiente</span></li>
+      <li class="cliente_valido cli_visit"><div class="image_list"></div><div class="plus_list"></div><label>6List item</label><span>Pendiente</span></li>
+      <li class="cliente_valido cli_visit"><div class="image_list"></div><div class="plus_list"></div><label>6List item</label><span>Pendiente</span></li>
+      <li class="cliente_valido cli_visit"><div class="image_list"></div><div class="plus_list"></div><label>6List item</label><span>Pendiente</span></li>
+      <li class="cliente_valido cli_visit"><div class="image_list"></div><div class="plus_list"></div><label>6List item</label><span>Pendiente</span></li>
+      <li class="cliente_valido cli_visit"><div class="image_list"></div><div class="plus_list"></div><label>6List item</label><span>Pendiente</span></li>
+      <li class="cliente_valido cli_visit"><div class="image_list"></div><div class="plus_list"></div><label>6List item</label><span>Pendiente</span></li>
+      <li class="cliente_valido cli_visit"><div class="image_list"></div><div class="plus_list"></div><label>6List item</label><span>Pendiente</span></li>
+      <li class="cliente_valido cli_visit"><div class="image_list"></div><div class="plus_list"></div><label>6List item</label><span>Pendiente</span></li>
+      <li class="cliente_valido cli_visit"><div class="image_list"></div><div class="plus_list"></div><label>6List item</label><span>Pendiente</span></li>
+      <li class="cliente_valido cli_visit"><div class="image_list"></div><div class="plus_list"></div><label>6List item</label><span>Pendiente</span></li>
+      <li class="cliente_valido cli_visit"><div class="image_list"></div><div class="plus_list"></div><label>6List item</label><span>Pendiente</span></li>
+    -->
+    <div class"reload_cli">
+    <li class="cliente_valido cli_visit" num-cliente="100"><div class="image_list"></div><div class="plus_list"></div><label> EEEVELIN  MARIA CARDENAS TROCHE</label><span>100 - Pendiente</span></li>
+    <li class="cliente_valido cli_visited" num-cliente="101"><div class="image_list"></div><div class="plus_list"></div><label> ALVAREZ MORALES FELIX</label><span>101 - Visitado</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="102"><div class="image_list"></div><div class="plus_list"></div><label> LOPEZ ERNESTO</label><span>102 - Pendiente</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="103"><div class="image_list"></div><div class="plus_list"></div><label> RENE REMIGIO ESCOBAR CALLISAYA </label><span>103 - Pendiente</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="104"><div class="image_list"></div><div class="plus_list"></div><label> ALACOMA JUSTINA</label><span>104 - Pendiente</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="105"><div class="image_list"></div><div class="plus_list"></div><label> RUTH GALVEZ IBAÑEZ </label><span>105 - Pendiente</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="106"><div class="image_list"></div><div class="plus_list"></div><label> ESCALANT  E VICTOR </label><span>106 - Pendiente</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="107"><div class="image_list"></div><div class="plus_list"></div><label> CUBA CONSUELO</label><span>107 - Pendiente</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="108"><div class="image_list"></div><div class="plus_list"></div><label> FELIX FERNANDEZ</label><span>108 - Pendiente</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="109"><div class="image_list"></div><div class="plus_list"></div><label> JIMENEZ JAQUELIN </label><span>109 - Pendiente</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="110"><div class="image_list"></div><div class="plus_list"></div><label> JACINTA MAMANI DE VARGAS </label><span>110 - Pendiente</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="111"><div class="image_list"></div><div class="plus_list"></div><label> MIRANDA ALCIRA </label><span>111 - Pendiente</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="112"><div class="image_list"></div><div class="plus_list"></div><label> 112 - ARUQUIPA BEATRIS </label><span>Pendiente</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="113"><div class="image_list"></div><div class="plus_list"></div><label> 113 - PASTRANA MARIA </label><span>Pendiente</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="114"><div class="image_list"></div><div class="plus_list"></div><label> 114 - VILLAROEL SENOVIA</label><span>Pendiente</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="115"><div class="image_list"></div><div class="plus_list"></div><label> 115 - ROMERO CINDY </label><span>Pendiente</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="116"><div class="image_list"></div><div class="plus_list"></div><label> 116 - MARIANELA FERNANDEZ</label><span>Pendiente</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="117"><div class="image_list"></div><div class="plus_list"></div><label> 117 - LARA ALDO</label><span>Pendiente</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="118"><div class="image_list"></div><div class="plus_list"></div><label> 118 - QUISPE FLORA </label><span>Pendiente</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="119"><div class="image_list"></div><div class="plus_list"></div><label> 119 - JAIME REQUENA</label><span>Pendiente</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="120"><div class="image_list"></div><div class="plus_list"></div><label> 120 - BEATRIS HUANCA </label><span>Pendiente</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="121"><div class="image_list"></div><div class="plus_list"></div><label> 121 - LUNA CARLOS</label><span>Pendiente</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="122"><div class="image_list"></div><div class="plus_list"></div><label> 122 - MIRIAM LOPEZ </label><span>Pendiente</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="123"><div class="image_list"></div><div class="plus_list"></div><label> 123 - LOURDES CABALLERO LLUSCO </label><span>Pendiente</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="124"><div class="image_list"></div><div class="plus_list"></div><label> 124 - WANG LUQUING </label><span>Pendiente</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="125"><div class="image_list"></div><div class="plus_list"></div><label> 125 - RAMOS LUCY </label><span>Pendiente</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="126"><div class="image_list"></div><div class="plus_list"></div><label> 126 - CALLE TOMAS</label><span>Pendiente</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="127"><div class="image_list"></div><div class="plus_list"></div><label> 127 - GREGORIA GUTIERREZ </label><span>Pendiente</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="128"><div class="image_list"></div><div class="plus_list"></div><label> 128 - JUANA RAMIREZ</label><span>Pendiente</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="129"><div class="image_list"></div><div class="plus_list"></div><label> 129 - RAMIRO ARUQUIPA</label><span>Pendiente</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="130"><div class="image_list"></div><div class="plus_list"></div><label> 130 - PATRICIA ABENDAÐO</label><span>Pendiente</span></li>
+    </div>
+  </ul>
+
+
+</div>
 
 
 
@@ -1984,71 +2193,56 @@ $('.tabs').click(function() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script>
+
 
   $(document).on("pagecreate","#registrar",function(event){
 
-    var d = new Date();
-
-    var month = d.getMonth()+1;
-    var day = d.getDate();
-    var fecha_actual =((''+day).length<2 ? '0' : '') + day + '/' +
-    ((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
-
-    $("#fecha_actual").val(fecha_actual);
-    $("#fecha_cobranza").val(fecha_actual);
-    $("#fecha_deuda").val(fecha_actual);
-
-    $("#cliente-listbox").attr( "style", "background-color:#F6F6F6;" );
-
-
-
-
-    $('.menu_v_c_d_________').hide();
-
-
-
-
-
-
-
-
-    $('.mensaje').hide();
-    $('.articulo').hide();
-    $(".articulo_cobranza").hide();
-
-    $(".vencimiento").hide();
-
-    $('.inicio').click(function() {
-     window.location.href = "index.html";
-   }); 
-
-    $('.otro_cliente').click(function() {
-      otroCliente();
+    $('.open_cli_list').on('click', function() {
+      $('.menu_v_c_d').hide();
+      $('.tablita_info_cliente').hide();
+      $('.cliente_id').val('');
+      window.location.href = "index.html#cliente_page_select";
+      
     });
 
-    $('.registrar_v_c_d').on('click', function() {
-      start_process();
-    });
-    
+    // $('.cxzdsaewq li').on('click', function() {
+    //   var id_cliente=$(this).attr("num-cliente");
+    //   var nom_cliente=$(this).find("label").text();
+    //   alert(id_cliente);
+    // });
 
 
+    $('.circle-list li').on('click', function() {
+      var id_cliente=$(this).attr("num-cliente");
+      var nom_cliente=$(this).find("label").text();
+      // alert(id_cliente);
+      
 
 
-
-
-
-    $("input[name=tipo]:radio").bind( "change", function(event, ui) {
-      if($(this).val()=='cred'){
-        $(".vencimiento").show(200);
-      }else{
-        $(".vencimiento").hide(200);
-      }
-
-    });
-
-
-    $("#cliente").on( "change", function(event, ui) {
       $('.list_old_venta').find('.temp_disabled').removeClass("ui-disabled temp_disabled"); 
       $('.list_old_venta').trigger('create');
 
@@ -2060,24 +2254,129 @@ $('.tabs').click(function() {
       });
 
       limpiar_temp_v_table();
-      $(".cliente_nombre").text($( "#cliente option:selected" ).text());
-      if($(this).val()=="-" || $(this).val()==""){
-       $('.menu_v_c_d').hide();
-       $('.tablita_info_cliente').hide();
-       $.mobile.loading("hide");
-       $('.cliente_id').val('');
-     }else{
-      cargar_listas($(this).val());
-      cargar_cobranza_list($(this).val());
-      cargar_deuda_list($(this).val());
-      cargar_info_cliente_html($(this).val());
-      $('.tablita_info_cliente').show();
-      $('.menu_v_c_d').show();
-      $('.cliente_id').val($("#cliente option:selected").val());
-    }
+      $(".cliente_nombre").text(nom_cliente);
+
+      if(id_cliente=='none'){
+         // $('.menu_v_c_d').hide();
+         // $('.tablita_info_cliente').hide();
+         $.mobile.loading("hide");
+         // $('.cliente_id').val('');
+       }else{
+        // alert("ini");
+        cargar_listas(id_cliente);
+        cargar_cobranza_list(id_cliente);
+        cargar_deuda_list(id_cliente);
+        cargar_info_cliente_html(id_cliente);
+        $('.tablita_info_cliente').show();
+        $('.menu_v_c_d').show();
+        $('.cliente_id').val(id_cliente);
+        window.location.href = "index.html#registrar";
+      }
+
+
+
+
+    });
+
+$('#cliente_page_select').on('click', function() {
+  window.location.href = "index.html#registrar";
+});
+
+$("#cliente_page_select .circle-list").click(function(e) {
+ e.stopPropagation();
+});
+
+
+var d = new Date();
+
+var month = d.getMonth()+1;
+var day = d.getDate();
+var fecha_actual =((''+day).length<2 ? '0' : '') + day + '/' +
+((''+month).length<2 ? '0' : '') + month + '/' +    d.getFullYear() ;
+
+$("#fecha_actual").val(fecha_actual);
+$("#fecha_cobranza").val(fecha_actual);
+$("#fecha_deuda").val(fecha_actual);
+
+$("#cliente-listbox").attr( "style", "background-color:#F6F6F6;" );
+
+
+
+
+$('.menu_v_c_d_________').hide();
+
+
+
+
+
+
+
+
+$('.mensaje').hide();
+$('.articulo').hide();
+$(".articulo_cobranza").hide();
+
+$(".vencimiento").hide();
+
+$('.inicio').click(function() {
+ window.location.href = "index.html";
+}); 
+
+$('.otro_cliente').click(function() {
+  otroCliente();
+});
+
+$('.registrar_v_c_d').on('click', function() {
+  start_process();
+});
+
+
+
+
+
+
+
+
+$("input[name=tipo]:radio").bind( "change", function(event, ui) {
+  if($(this).val()=='cred'){
+    $(".vencimiento").show(200);
+  }else{
+    $(".vencimiento").hide(200);
+  }
+
+});
+
+
+$("#cliente").on( "change", function(event, ui) {
+  $('.list_old_venta').find('.temp_disabled').removeClass("ui-disabled temp_disabled"); 
+  $('.list_old_venta').trigger('create');
+
+  $.mobile.loading("show", {
+    text: "Cargando Información.",
+    textVisible: true,
+    theme: 'b',
+    textonly: false
   });
 
-  });
+  limpiar_temp_v_table();
+  $(".cliente_nombre").text($( "#cliente option:selected" ).text());
+  if($(this).val()=="-" || $(this).val()==""){
+   $('.menu_v_c_d').hide();
+   $('.tablita_info_cliente').hide();
+   $.mobile.loading("hide");
+   $('.cliente_id').val('');
+ }else{
+  cargar_listas($(this).val());
+  cargar_cobranza_list($(this).val());
+  cargar_deuda_list($(this).val());
+  cargar_info_cliente_html($(this).val());
+  $('.tablita_info_cliente').show();
+  $('.menu_v_c_d').show();
+  $('.cliente_id').val($("#cliente option:selected").val());
+}
+});
+
+});
 
 
 
@@ -2688,9 +2987,9 @@ $( document ).on( "pagecreate", "#cobranza", function( event ) {
       // cambio de <a> por <div>
       var auxi= $('.list_cobranza').find('a[nrodctom="'+documenton+'"]').attr('cobrado',cobrar);
      // var auxi= $('.list_cobranza').find('div[nrodctom="'+documenton+'"]').attr('cobrado',cobrar);
-      $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+documenton+"']").html(cobrar+' Bs.');
-      var total=0;
-      var aux;
+     $('.list_cobranza').find(".html_cobrado[marca-cobranza-html='"+documenton+"']").html(cobrar+' Bs.');
+     var total=0;
+     var aux;
     //1. Suma todos los html para el resultado total. 
     $(".html_cobrado").each(function(index, el) {
       aux = $(this).text();

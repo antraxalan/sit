@@ -42,8 +42,8 @@ document.addEventListener("backbutton", function(e){
         otroCliente();
         break; 
         case 'cobranza':
-        // exitCobranza();
-        window.location.href = "index.html#venta";
+        exitCobranza();
+        // window.location.href = "index.html#venta";
         break; 
         case 'deuda':
         exitDeuda();
@@ -79,6 +79,9 @@ function otroCliente() {
         "Si,No"
         ); 
 };
+function exitCobranza() {
+    window.location.href = "index.html#venta";
+}
 // function exitCobranza() {
 //     navigator.notification.vibrate(200);
 //     navigator.notification.confirm(

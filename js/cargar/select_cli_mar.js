@@ -74,7 +74,7 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
 
 
 
-        function querySuccess_select_cliente(tx, results) {
+        function querySuccess_select_cliente_notusedmore(tx, results) {
           // var tblText='<table id="t01"><tr><th>ID</th> <th>Name</th> <th>Number</th></tr>';
           var tblContent2='';
           // alert("asd");
@@ -95,6 +95,19 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
           // $('#cliente_div_id').html(tblContent2);
           // $('#tabla_select').append(tblContent2);
           $("#cliente").trigger("create");
+
+        }
+
+        function querySuccess_select_cliente(tx, results) {
+
+          var tblContent2='';
+          var len = results.rows.length;
+          for (var i = 0; i < len; i++) {
+          tblContent2 +='<li class="cliente_valido cli_visit" num-cliente="'+results.rows.item(i).CodCliente+'"><div class="image_list"></div><div class="plus_list"></div><label>'+results.rows.item(i).Nombre+'</label><span>'+results.rows.item(i).CodCliente+' - Pendiente</span></li>'; 
+          }
+
+          $('.reload_cli').html(tblContent2);
+          $(".reload_cli").trigger("create");
 
         }
 
