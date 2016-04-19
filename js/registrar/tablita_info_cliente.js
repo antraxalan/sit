@@ -34,10 +34,10 @@ function querySuccess_tablita(tx, results) {
 
     var len = results.rows.length;
 
-    var var_SaldoBs;
-    var var_CajaPac;
-    var var_CajaHuari;
-    var var_CajaLitro;
+    var var_SaldoBs='0 Bs.';
+    var var_CajaPac='0';
+    var var_CajaHuari='0';
+    var var_CajaLitro='0';
     for (var i = 0; i < len; i++) {
         var_SaldoBs=results.rows.item(i).SaldoBs.toFixed(2)+' Bs.';
         var_CajaPac=results.rows.item(i).CajaPac.toFixed(2);
@@ -54,8 +54,8 @@ function querySuccess_tablita(tx, results) {
     var mydata = [
     {"Saldo":var_SaldoBs, "Pac":var_CajaPac, "Huari":var_CajaHuari, "Litro":var_CajaLitro}
     ];
-
-    $( '.tablita_info_cliente' ).html( '<table class="tablesaw" data-tablesaw-mode="swipe" id="tablita_registrar"><thead><tr><th colspan="4" style="text-align:center;">DEUDA</th></tr><tr><th scope="col">Saldo</th><th scope="col">Paceña</th><th scope="col">Huari</th><th scope="col">Litro</th></tr></thead><tbody></tbody></table>' );
+    // $( '.tablita_info_cliente' ).html'<label for="textarea" class="cliente_nombre">Id - Nombre del cliente</label>';
+    $( '.tablita_info_cliente' ).html( '<table class="tablesaw" data-tablesaw-mode="swipe" id="tablita_registrar"><thead><tr><th colspan="4" style="text-align:center;">DEUDA</th></tr><tr><th scope="col">Saldo</th><th scope="col">C. Paceña</th><th scope="col">C. Huari</th><th scope="col">C. Litro</th></tr></thead><tbody></tbody></table>' );
 
     var tbody = $( '#tablita_registrar tbody' ), props = ["Saldo","Pac","Huari","Litro"];
 
@@ -72,6 +72,7 @@ function querySuccess_tablita(tx, results) {
     // $('#tablita_registrar').table().data( "table" ).refresh();
 
     // alert("trigger tablita_registrar");
+    $('.cliente_nombre').trigger('create');
     $('#tablita_registrar').trigger('create');
     // alert("trigger tablita_info_cliente");
     $('.tablita_info_cliente').trigger('create');

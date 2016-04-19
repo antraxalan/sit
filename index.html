@@ -28,6 +28,7 @@
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
     <link rel="stylesheet" type="text/css" href="css/best_practices.css" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/select_cliente.css" />
     <!-- <link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme.css" /> -->
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile.css" />
     <!-- <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" /> -->
@@ -367,19 +368,21 @@
 
 
   <div data-role="content">
-    <h3>BIENVENIDO A SITRANS APP</h3>
     <div class="ui-content" role="main">
       <form class="ui">
-        <div data-role="fieldcontain" class="ui-field-contain"data-demo-html="true">               
+        <div align="center">
+        <h3 style="font-size: 40px; margin 150px 0px 80px 0px;">Bienvedi@</h3>
+        </div>
+        <!-- <div data-role="fieldcontain" class="ui-field-contain"data-demo-html="true">               
          <label for="date">Fecha:</label>
          <input name="mydate" id="fecha_actual" disabled="disabled"/>
-       </div>
+       </div> -->
 
-       <p>Por favor seleccione un cliente de la lista para comenzar las transacciones:</p>
-       <div data-role="fieldcontain" class="ui-field-contain">
-        <label for="select-custom-20">Cliente:</label>
+       <!-- <p>Por favor seleccione un cliente de la lista para comenzar las transacciones:</p> -->
+       <!-- <div data-role="fieldcontain" class="ui-field-contain"> -->
+       <!-- <label for="select-custom-20">Cliente:</label> -->
 
-        <select name="select-custom-cliente" id="cliente" class="filterable-select" data-native-menu="false">
+       <!-- <select name="select-custom-cliente" id="cliente" class="filterable-select" data-native-menu="false"> -->
 
                <!--  <option value="-">Seleccione un cliente.</option>
                <option value="100">100 - EEEVELIN  MARIA CARDENAS TROCHE</option>
@@ -592,9 +595,9 @@
                <option value="311">311 - MIUSIC</option>  -->
                
 
-             </select>
-             <!-- </div> -->
-           </div>
+               <!-- </select> -->
+               <!-- </div> -->
+               <!-- </div> -->
           <!--  <div data-role="fieldcontain" class="ui-field-contain">
             <fieldset data-role="controlgroup" data-type="horizontal">
               <legend>Tipo:</legend>
@@ -608,10 +611,73 @@
             <label for="date">Fecha Vto:</label>
             <input name="mydate" id="fecha_vto" type="date" data-role="date" date-format="dd-mm-yyyy"/>
           </div>     -->
-          <br></br>
-          <div  class=" tablita_info_cliente">
+
+          
+
+
+          <div class="container_12">
+
+            <div class="grid_3">&nbsp
+            </div>
+
+            <div class="grid_6 btn_win_10 " >
+
+             <div class="registrar btn_div_cont">
+              <div  class='wide blue open_cli_list'>
+                <!-- <i class="icon-home"></i> -->
+                <div class="img_right"><img src="img/find.png" /></div>
+                <h2>Seleccionar Cliente</h2>
+              </div>
+            </div>
+            <label style="font-size: 24px; margin:20px 10px 50px 10px;" align="center">
+              Pulsa el boton de arriba <strong>Seleccionar Cliente </strong> para encontrar a tu cliente.
+            </label>
+          </div>
+          <div class="grid_3">&nbsp
+          </div>
+        </div>
+        <div class="container_12">
+
+          <div class="grid_3">&nbsp
+          </div>
+
+          <div class="grid_6 " align="center">
+
+            <label for="textarea" class="cliente_nombre cli_nom_registrar">Id - Nombre del cliente</label>
+            <div  class=" tablita_info_cliente">
+              dasdsa
+            </div>
 
           </div>
+          <div class="grid_3">&nbsp
+          </div>
+        </div>
+        <br></br>
+
+        <div class="container_12">
+          <div class="grid_3">&nbsp
+          </div>
+          <div class="grid_6 btn_win_10 menu_v_c_d registrar_v_c_d" >
+           <div class="info btn_div_cont">
+             <div  class='wide green'>
+              <!-- <i class="icon-home"></i> -->
+              <div class="img_right"><img src="img/start2.png"/></div>
+              <h2>Comienza<br><strong>AQUI</strong></h2>
+            </div>
+          </div>
+        </div>
+        <div class="grid_3">&nbsp
+        </div>
+      </div>
+
+<div class="logo_container_registrar" align="center" style="padding-bottom: 100px;">
+                <img src="img/logo.png" alt="image" style="width:290px;" class="shadowfilter_img" >
+              </div>
+
+
+<!--       <div  class=" tablita_info_cliente">
+
+</div> -->
 
 
           <!-- <table class="tablesaw" data-tablesaw-mode="swipe" id="tablita_registrar">
@@ -631,12 +697,9 @@
           </table> -->
 
 
-<!--         <div class="ui-field-contain">
-          <input type="submit" id="submit-1" class="ui-btn ui-corner-all " value="Detalles">
-          <a href="#venta" data-role="button">Detalles</a>
-        </div> -->
-        <div class="menu_v_c_d">
 
+<!-- 
+        <div class="menu_v_c_d">
           <ul data-role="listview" data-inset="true">
             <li class="cobranza_btn" style="display: none---;">
               <a href="#" class="registrar_v_c_d">
@@ -652,145 +715,15 @@
                   <div class="ui-block-c"><p>Realizar transacciones.</p></div>
                 </div>
               </a>
-              <!-- <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">SITRANS</a> -->
             </li>
-
           </ul>
-        </div>
+        </div> -->
+
+
+
+
+
         <!-- <button type="button" class="menu_v_c_d_btn">qwerty</button> -->
-
-
-        <style type="text/css">
-
-          #cliente_page_select{
-            height: 100% ;
-          }
-
-          .circle-list-head{
-            margin: 10em;
-            margin-top: 0em;
-            margin-bottom: 0em;
-            border-style: dashed; 
-            border-width: 1px;
-            border-color: #ccc;
-            padding: 0;
-             border-bottom: 0px dashed #ccc;
-            /*position: relative;*/
-          }
-          .circle-list-head li{
-            height: 100px;
-           /* border-bottom: 1px dashed #ccc;*/
-            list-style-type: none;
-          }
-          .circle-list{
-            margin: 10em;
-            margin-top: 0em;
-            border-style: dashed; 
-            border-width: 1px;
-            border-color: #ccc;
-            padding: 0;
-            /*position: relative;*/
-          }
-          .circle-list li{
-            height: 100px;
-            border-bottom: 1px dashed #ccc;
-            list-style-type: none;
-          }
-
-          .cli_visited .image_list {
-           content:url(img/cli.png);
-           position: absolute;
-           margin: 15px;
-           width: 70px;
-           height:70px;
-         }
-         .cli_visit .image_list {
-           content:url(img/cli_gray.png);
-           position: absolute;
-           margin: 15px;
-           width: 70px;
-           height:70px;
-         }
-
-
-
-         .cli_visited .plus_list {
-           content:url(img/plus_white.png);
-           position: absolute;
-           margin-top: 70px;
-           width: 20px;
-           height:20px;
-           right:210px;
-         }
-
-         .cli_visit .plus_list {
-           content:url(img/plus_gray.png);
-           position: absolute;
-           margin-top: 70px;
-           width: 20px;
-           height:20px;
-           right:210px;
-         }
-
-         .cli_visit{
-          background-color: #FFFFFF !important;
-          border-right: 8px solid #81CE96 !important;
-        }
-        .cli_visited{
-          background-color: #BCBCBC !important;
-          border-right: 8px solid #FEB47F !important;
-        } 
-
-
-
-        .circle-list label{
-          height: 50px;
-          display: block;
-          font-weight: 900;
-          font-size: 20px;
-          letter-spacing: 1px;
-          margin: 0;
-          padding: 10px 5px 5px 100px;
-        }
-        .circle-list span{
-          height: 25px;
-          display: block;
-          font-weight: 900;
-          font-size: 16px;
-          letter-spacing: 1px;
-          /*color: #bdc3c7;*/
-          padding: 5px 5px 5px 100px;
-        }
-        .cli_visit label{
-          color: #000000;
-        }
-        .cli_visited label{
-          color: #ffffff;
-          text-shadow: none;
-        }
-        .cli_visit span{
-          color: #9B9B9B;
-        }
-        .cli_visited span{
-          color: #ffffff;
-          text-shadow: none;
-        }
-
-
-
-
-        .cabecera_close_clientes {
-         content:url(img/x.png);
-         position: absolute;
-         margin-top: 50px;
-         margin-right: 70px;
-         right:0px;
-         /*bottom:0;*/
-         /*width: 20px;*/
-         /*height:20px;*/
-         /*right:210px;*/
-       }
-     </style>
 
 
      <!--  <ul class="circle-list" data-filter="true" data-input="#filterBasic-input">
@@ -815,7 +748,8 @@
   </div> -->
 </div>
 
-<button  class="open_cli_list">button open</button>
+<!-- <button  class="open_cli_list">button open</button> -->
+
 </div><!-- /content -->
 <div class="asd" align="left">
   <img src="img/bars.png" alt="image"   >
@@ -2251,6 +2185,9 @@ $('.tabs').click(function() {
       $('.menu_v_c_d').hide();
       $('.tablita_info_cliente').hide();
       $('.cliente_id').val('');
+      $('.cli_nom_registrar').hide();
+      $('.logo_container_registrar').show();
+
       cargar_select_cliente();
       // var lista='<li class="cliente_valido cli_visit" num-cliente="100"><div class="image_list"></div><div class="plus_list"></div><label> EEEVELIN  MARIA CARDENAS TROCHE</label><span>100 - Pendiente</span></li>';
        // lista+='<li class="cliente_valido cli_visited" num-cliente="101"><div class="image_list"></div><div class="plus_list"></div><label> ALVAREZ MORALES FELIX</label><span>101 - Visitado</span></li>';
@@ -2305,6 +2242,8 @@ $('.circle-list').on('click','li', function() {
         cargar_info_cliente_html(id_cliente);
         $('.tablita_info_cliente').show();
         $('.menu_v_c_d').show();
+        $('.cli_nom_registrar').show();
+        $('.logo_container_registrar').hide();
         $('.cliente_id').val(id_cliente);
         window.location.href = "index.html#registrar";
       }

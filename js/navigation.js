@@ -209,6 +209,8 @@ function go_to_otro_usuario(){
     $('#obs_final').val('');
     $('.tablita_info_cliente').hide();
     $('.menu_v_c_d').hide();
+    $('.cli_nom_registrar').hide();
+    $('.logo_container_registrar').show();
     localStorage.total_cobro=0;
     window.location.href = "index.html#registrar";
     limpiar_temp_v_table();
