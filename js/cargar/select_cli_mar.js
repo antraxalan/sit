@@ -75,7 +75,7 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
 
 
 
-        function querySuccess_select_cliente_notusedmore(tx, results) {
+        function querySuccess_select_cliente_notused(tx, results) {
           // var tblText='<table id="t01"><tr><th>ID</th> <th>Name</th> <th>Number</th></tr>';
           var tblContent2='';
           // alert("asd");
