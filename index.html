@@ -2251,10 +2251,11 @@ $('.tabs').click(function() {
       $('.menu_v_c_d').hide();
       $('.tablita_info_cliente').hide();
       $('.cliente_id').val('');
-      var lista='<li class="cliente_valido cli_visit" num-cliente="100"><div class="image_list"></div><div class="plus_list"></div><label> EEEVELIN  MARIA CARDENAS TROCHE</label><span>100 - Pendiente</span></li>';
-       lista+='<li class="cliente_valido cli_visited" num-cliente="101"><div class="image_list"></div><div class="plus_list"></div><label> ALVAREZ MORALES FELIX</label><span>101 - Visitado</span></li>';
-      $('.circle-list').html(lista);
-      $(".circle-list").trigger("create");
+      cargar_select_cliente();
+      // var lista='<li class="cliente_valido cli_visit" num-cliente="100"><div class="image_list"></div><div class="plus_list"></div><label> EEEVELIN  MARIA CARDENAS TROCHE</label><span>100 - Pendiente</span></li>';
+       // lista+='<li class="cliente_valido cli_visited" num-cliente="101"><div class="image_list"></div><div class="plus_list"></div><label> ALVAREZ MORALES FELIX</label><span>101 - Visitado</span></li>';
+      // $('.circle-list').html(lista);
+      // $(".circle-list").trigger("create");
       // $( ".reload_cli" ).collapsible();
       // $( ".circle-list" ).listview();
       // $( ".reload_cli" ).collapsible().enhanceWithin();
