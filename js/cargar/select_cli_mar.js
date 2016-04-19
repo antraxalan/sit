@@ -9,6 +9,7 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
           tx.executeSql('SELECT CodArt, DesArtReducido, CodMarca from ARTICULO ', [], querySuccess_list_articulo, errorCB_select);
         }
         function queryDB_select_cliente(tx) {
+          alert("queryDB_select_cliente");
           tx.executeSql('SELECT CodCliente, Nombre from CLIENTE ', [], querySuccess_select_cliente, errorCB_select);
         }
 
@@ -102,9 +103,11 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
 
           var tblContent2='';
           var len = results.rows.length;
+          alert(len);
           for (var i = 0; i < len; i++) {
           tblContent2 +='<li class="cliente_valido cli_visit" num-cliente="'+results.rows.item(i).CodCliente+'"><div class="image_list"></div><div class="plus_list"></div><label>'+results.rows.item(i).Nombre+'</label><span>'+results.rows.item(i).CodCliente+' - Pendiente</span></li>'; 
           }
+          alert(tblContent2);
 
           $('.reload_cli').html(tblContent2);
           $(".reload_cli").trigger("create");
@@ -131,7 +134,7 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
           db.transaction(queryDB_select_articulo, errorCB_select);
         }
         function cargar_select_cliente() {
-          // alert("successCB_select_cliente");
+          alert("successCB_select_cliente");
           // var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
           db.transaction(queryDB_select_cliente, errorCB_select);
         }
