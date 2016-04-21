@@ -126,7 +126,7 @@ var db = window.openDatabase("strans_db", "1.0", "Sitrans DB", 500000);
             }
             tblContent2 +='<li class="cliente_valido '+clase+'" num-cliente="'+results.rows.item(i).CodCliente+'"><div class="image_list"></div><div class="plus_list"></div><label>'+results.rows.item(i).Nombre+'</label><span>'+results.rows.item(i).CodCliente+' - '+span+'</span></li>'; 
           }
-          alert(tblContent2);
+          // alert(tblContent2);
 
           $('.circle-list').html(tblContent2);
           $(".circle-list").trigger("create");

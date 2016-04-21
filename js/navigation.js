@@ -202,10 +202,11 @@ function start_process(){
     window.location.href = "index.html#venta";
 };
 function go_to_otro_usuario(){
-    cargar_select_cliente();
-    $('#cliente').selectmenu();
-    $("#cliente option:eq(0)").prop("selected",true);
-    $('#cliente') .selectmenu("refresh");
+    // cargar_select_cliente();
+    
+    // $('#cliente').selectmenu();
+    // $("#cliente option:eq(0)").prop("selected",true);
+    // $('#cliente') .selectmenu("refresh");
     $('#obs_final').val('');
     $('.tablita_info_cliente').hide();
     $('.menu_v_c_d').hide();

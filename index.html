@@ -658,7 +658,7 @@
           <div class="grid_3">&nbsp
           </div>
           <div class="grid_6 btn_win_10 menu_v_c_d registrar_v_c_d" >
-           <div class="info btn_div_cont">
+           <div class="btn_div_cont">
              <div  class='wide green'>
               <!-- <i class="icon-home"></i> -->
               <div class="img_right"><img src="img/start2.png"/></div>
@@ -1940,21 +1940,19 @@ weekday[6]="Sabado";
 $('.mostrar_dia_actual').html(weekday[nom_dia_fecha]);
 $('.mostrar_fecha_actual').html(fecha_actual);
 $(".con_index").css("background-image", "none");
-    // $(document).on("pageinit",function(){
-      carga_db_crear();
-      carga_navigation();
-      // carga_varios_complementos();
-    // carga_exit();
-    $('#pass_usuario').showPassword();
-    $("#cod_usuario").val(localStorage.g_username);
-    if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
+
+carga_db_crear();
+carga_navigation();
+
+$('#pass_usuario').showPassword();
+$("#cod_usuario").val(localStorage.g_username);
+if(localStorage.g_existe=='0'||(typeof localStorage.g_existe === 'undefined')){
       // alert('oculta:'+localStorage.g_existe);
       // debe_completar();
       $('.cerrar_cod_usuario').hide();
     }else{
       if(localStorage.db_cargada=='1'){
-        cargar_select_cliente();
-        // cargar_select_marca();
+        cargar_select_marca();
       }
       // alert('muestra:'+localStorage.g_existe);
     }
@@ -2189,6 +2187,7 @@ $('.tabs').click(function() {
       $('.logo_container_registrar').show();
 
       cargar_select_cliente();
+
       // var lista='<li class="cliente_valido cli_visit" num-cliente="100"><div class="image_list"></div><div class="plus_list"></div><label> EEEVELIN  MARIA CARDENAS TROCHE</label><span>100 - Pendiente</span></li>';
        // lista+='<li class="cliente_valido cli_visited" num-cliente="101"><div class="image_list"></div><div class="plus_list"></div><label> ALVAREZ MORALES FELIX</label><span>101 - Visitado</span></li>';
       // $('.circle-list').html(lista);
