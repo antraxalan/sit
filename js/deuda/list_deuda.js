@@ -102,7 +102,7 @@ function querySuccess_deuda(tx, results) {
     var saldo_u_t=0;
 
     if(tipoarticulo=='C'){
-      img='caja.png';
+      img='caja_d.png';
       titulo='Caja(s) Saldo(s):';
       titulo1='Caja(s) Prestamo(s):';
       titulo2='Caja(s) a Retornar:';
@@ -115,7 +115,7 @@ function querySuccess_deuda(tx, results) {
       saldo_u_t=deuda_t;
     }
     if(tipoarticulo=='B'){
-      img='botellita.png';
+      img='botella_d.png';
       titulo='Botella(s) Saldo(s):';
       titulo1='Botella(s) Prestamo(s):';
       titulo2='Botella(s) a Retornar:';

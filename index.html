@@ -806,7 +806,7 @@
       <li class="cliente_valido cli_visit"><div class="image_list"></div><div class="plus_list"></div><label>6List item</label><span>Pendiente</span></li>
     -->
     
-    <li class="cliente_valido cli_visit" num-cliente="100"><div class="image_list"></div><div class="plus_list"></div><label> EEEVELIN  MARIA CARDENAS TROCHE</label><span>100 - Pendiente</span></li>
+<!--     <li class="cliente_valido cli_visit" num-cliente="100"><div class="image_list"></div><div class="plus_list"></div><label> EEEVELIN  MARIA CARDENAS TROCHE</label><span>100 - Pendiente</span></li>
     <li class="cliente_valido cli_visited" num-cliente="101"><div class="image_list"></div><div class="plus_list"></div><label> ALVAREZ MORALES FELIX</label><span>101 - Visitado</span></li>
     <li class="cliente_valido cli_visit" num-cliente="102"><div class="image_list"></div><div class="plus_list"></div><label> LOPEZ ERNESTO</label><span>102 - Pendiente</span></li>
     <li class="cliente_valido cli_visit" num-cliente="103"><div class="image_list"></div><div class="plus_list"></div><label> RENE REMIGIO ESCOBAR CALLISAYA </label><span>103 - Pendiente</span></li>
@@ -836,7 +836,7 @@
     <li class="cliente_valido cli_visit" num-cliente="127"><div class="image_list"></div><div class="plus_list"></div><label> 127 - GREGORIA GUTIERREZ </label><span>Pendiente</span></li>
     <li class="cliente_valido cli_visit" num-cliente="128"><div class="image_list"></div><div class="plus_list"></div><label> 128 - JUANA RAMIREZ</label><span>Pendiente</span></li>
     <li class="cliente_valido cli_visit" num-cliente="129"><div class="image_list"></div><div class="plus_list"></div><label> 129 - RAMIRO ARUQUIPA</label><span>Pendiente</span></li>
-    <li class="cliente_valido cli_visit" num-cliente="130"><div class="image_list"></div><div class="plus_list"></div><label> 130 - PATRICIA ABENDAÐO</label><span>Pendiente</span></li>
+    <li class="cliente_valido cli_visit" num-cliente="130"><div class="image_list"></div><div class="plus_list"></div><label> 130 - PATRICIA ABENDAÐO</label><span>Pendiente</span></li> -->
     
   </ul>
 </div>
@@ -865,12 +865,13 @@
 
 
  <div data-role="page" id="venta">
-  <header data-role="header" data-position="fixed" data-tap-toggle="false">
+  <!-- <header data-role="header" data-position="fixed" data-tap-toggle="false">
     <h1>CBN</h1>
     <button type="button"  data-icon="user" class="ui-btn-right otro_cliente">Otro Cliente</button>
-  </header> 
+  </header>  -->
 
   <div data-role="content">
+  <div class="cont_vcd"></div>
 <!--     <nav data-role="navbar">
       <ul>
         <li><a href="#venta" class="ui-btn-active ui-state-persist">VENTA</a></li>
@@ -1164,6 +1165,8 @@
     </div>
     <footer data-role="footer" data-position="fixed" data-tap-toggle="false" class="new_footer">
       <h3>Copyright &copy; 2016</h3>
+      <!-- <button type="button" data-icon="user" class="ui-btn-right otro_cliente">Otro Cliente</button> -->
+      <button type="button" data-icon="user" class="ui-btn-right otro_cliente" data-theme="b" style="font-size: 15px; background-color: #DD554C; border-color:#DD554C; ">Otro Cliente</button>
     </footer>
   </div>
 
@@ -1188,17 +1191,14 @@
 
 
 <div data-role="page" id="popup123">
-
   <div data-role="header" data-theme="e">
     <h1>Dialog</h1>
   </div><!-- /header -->
-
   <div data-role="content" data-theme="d">  
     <h2>Popup</h2>
     <p>I have an id of "popup" on my page container and only look like a dialog because the link to me had a <code>data-rel="dialog"</code> attribute which gives me this inset look and a <code>data-transition="pop"</code> attribute to change the transition to pop. Without this, I'd be styled as a normal page.</p>    
     <p><a href="#one" data-rel="back" data-role="button" data-inline="true" data-icon="back">Back to page "one"</a></p> 
   </div><!-- /content -->
-  
   <div data-role="footer">
     <h4>Page Footer</h4>
   </div><!-- /footer -->
@@ -1206,12 +1206,13 @@
 
 
 <div data-role="page" id="cobranza">
-  <header data-role="header" data-position="fixed" data-tap-toggle="false"> 
+  <!-- <header data-role="header" data-position="fixed" data-tap-toggle="false"> 
     <h1>CBN</h1>
     <button type="button"  data-icon="user" class="ui-btn-right otro_cliente">Otro Cliente</button>
-  </header> 
+  </header>  -->
 
   <div data-role="content">
+  <div class="cont_vcd"></div>
 <!--     <nav data-role="navbar">
       <ul>
         <li><a href="#venta">VENTA</a></li>
@@ -1224,7 +1225,7 @@
         <span class="label">1</span>
         <span class="title">&nbsp&nbspVenta</span>
       </div>
-      <span class="bar "></span>
+      <span class="bar"></span>
       <div class="circle ">
         <span class="label">2</span>
         <span class="title">&nbspCobros</span>
@@ -1254,7 +1255,7 @@
 
       <li>
         <a href="#">
-          <img src="img/bs1.png" >
+          <img src="img/money_act.png" >
           <div class="ui-grid-c">
             <div class="ui-block-a" align="center"><p style="margin-top: 3px;">Fecha de Emisión: </p></div>
             <div class="ui-block-b" align="center"><p style="margin-top: 3px;">Fecha de Vencimiento: </p></div>
@@ -1325,7 +1326,7 @@
 
   <li>
     <a href="#" class="total_li">
-      <img src="img/bs1.png" >
+      <img src="img/money_old.png" >
       <div class="ui-grid-c">
         <div class="ui-block-a" align="center"><p style="margin-top: 3px;">Fecha de Emisión: </p></div>
         <div class="ui-block-b" align="center"><p style="margin-top: 3px;">Fecha de Vencimiento: </p></div>
@@ -1466,6 +1467,8 @@
 
 <footer data-role="footer" data-position="fixed" data-tap-toggle="false" class="new_footer">
   <h3>Copyright &copy; 2016</h3>
+  <!-- <button type="button"  data-icon="user" class="ui-btn-right otro_cliente">Otro Cliente</button> -->
+  <button type="button" data-icon="user" class="ui-btn-right otro_cliente" data-theme="b" style="font-size: 15px; background-color: #DD554C; border-color:#DD554C; ">Otro Cliente</button>
 </footer>
 </div>
 
@@ -1487,12 +1490,13 @@
 
 
 <div data-role="page" id="deuda">
-  <header data-role="header" data-position="fixed" data-tap-toggle="false">
+  <!-- <header data-role="header" data-position="fixed" data-tap-toggle="false">
     <h1>CBN</h1>
     <button type="button"  data-icon="user" class="ui-btn-right otro_cliente">Otro Cliente</button>
-  </header> 
+  </header>  -->
 
   <div data-role="content">
+  <div class="cont_vcd"></div>
 <!--     <nav data-role="navbar">
       <ul>
         <li><a href="#venta">VENTA</a></li>
@@ -1540,7 +1544,7 @@
       <ul data-role="listview" data-split-icon="forward" data-inset="true" data-filter="true" data-filter-placeholder="Filtrar Productos...">
         <li>
           <a href="#">
-            <img src="img/caja.png" style="margin-top: 8px;">
+            <img src="img/caja_d.png" style="margin-top: 8px;">
             
             <div class="container_12">
               <!-- <div class="ui-block-a" align="center"><p>Caja(s) Prestada(s): 5</p></div> -->
@@ -1583,7 +1587,7 @@
         </li>
         <li>
           <a href="#">
-            <img src="img/caja.png" >
+            <img src="img/caja_d.png" >
             <h2>4020 - CAJA PLAST.TAQ.12 BOT.</h2>
             <div class="container_12">
               <!-- <div class="ui-block-a" align="center"><p>Caja(s) Prestada(s): 5</p></div> -->
@@ -1599,7 +1603,7 @@
         </li>
         <li>
           <a href="#">
-            <img src="img/botellita.png">
+            <img src="img/botella_d.png">
             <h2>3020 - BOTELLA 620 CC.</h2>
             <div class="ui-grid-c">
               <!-- <div class="ui-block-a" align="center" ><p>Caja(s) Prestada(s): 5</p></div> -->
@@ -1855,6 +1859,8 @@
 
 <footer data-role="footer" data-position="fixed" data-tap-toggle="false" class="new_footer">
   <h3>Copyright &copy; 2016</h3>
+  <!-- <button type="button"  data-icon="user" class="ui-btn-right otro_cliente">Otro Cliente</button> -->
+  <button type="button" data-icon="user" class="ui-btn-right otro_cliente" data-theme="b" style="font-size: 15px; background-color: #DD554C; border-color:#DD554C; ">Otro Cliente</button>
 </footer>
 </div>
 
