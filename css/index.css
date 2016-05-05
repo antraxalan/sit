@@ -1,3 +1,14 @@
+.btn_next_style {
+    background-color: #81CE97!important;
+    color: white !important;
+    text-shadow: 0px 1px #000000 !important;
+}
+.btn_prev_style {
+    background-color: #81CE97!important;
+    color: white !important;
+    text-shadow: 0px 1px #000000 !important;
+}
+
 .banner,.map{
     width:100%;
 }
