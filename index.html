@@ -371,7 +371,7 @@
     <div class="ui-content" role="main">
       <form class="ui">
         <div align="center">
-        <h3 style="font-size: 40px; margin: 20px 0px 40px 0px">Bienvedi@</h3>
+          <h3 style="font-size: 40px; margin: 20px 0px 40px 0px">Bienvedi@</h3>
         </div>
         <!-- <div data-role="fieldcontain" class="ui-field-contain"data-demo-html="true">               
          <label for="date">Fecha:</label>
@@ -670,9 +670,9 @@
         </div>
       </div>
 
-<div class="logo_container_registrar" align="center" style="margin: -50px 0px 50px 0px;">
-                <img src="img/logo.png" alt="image" style="width:290px;" class="shadowfilter_img" >
-              </div>
+      <div class="logo_container_registrar" align="center" style="margin: -50px 0px 50px 0px;">
+        <img src="img/logo.png" alt="image" style="width:290px;" class="shadowfilter_img" >
+      </div>
 
 
 <!--       <div  class=" tablita_info_cliente">
@@ -871,7 +871,7 @@
   </header>  -->
 
   <div data-role="content">
-  <div class="cont_vcd"></div>
+    <div class="cont_vcd"></div>
 <!--     <nav data-role="navbar">
       <ul>
         <li><a href="#venta" class="ui-btn-active ui-state-persist">VENTA</a></li>
@@ -1212,7 +1212,7 @@
   </header>  -->
 
   <div data-role="content">
-  <div class="cont_vcd"></div>
+    <div class="cont_vcd"></div>
 <!--     <nav data-role="navbar">
       <ul>
         <li><a href="#venta">VENTA</a></li>
@@ -1496,7 +1496,13 @@
   </header>  -->
 
   <div data-role="content">
-  <div class="cont_vcd"></div>
+    <div class="cont_vcd">
+      <div align="center">
+        <img src="img/steps/v_a.png" style="margin-right: 10px; margin-left:10px">
+        <img src="img/steps/c_a.png" style="margin-right: 10px; margin-left:10px">
+        <img src="img/steps/e_a.png" style="margin-right: 10px; margin-left:10px">
+      </div>
+    </div>
 <!--     <nav data-role="navbar">
       <ul>
         <li><a href="#venta">VENTA</a></li>
@@ -2832,18 +2838,21 @@ $(document).on("pageshow","#venta",function(event){ // When entering pagetwo
   $('#venta_tabs').inlinetabs('show', '1');
   $('.btn_confirmar_ventas_cobrar_next').hide();
   $('.btn_confirmar_ventas_vacia_next').show();
+  $('.cont_vcd').html('<div align="center"><img src="img/steps/v_a.png" style="margin-right: 10px; margin-left:10px"> <img src="img/steps/c_g.png" style="margin-right: 10px; margin-left:10px"> <img src="img/steps/e_g.png" style="margin-right: 10px; margin-left:10px"> </div>');
 });
 $(document).on("pageshow","#cobranza",function(event){ // When entering pagetwo
   steps_clear();
   steps_next();
   steps_next();
   list_cobranza_ajuste_automatico();
+  $('.cont_vcd').html('<div align="center"><img src="img/steps/v_v.png" style="margin-right: 10px; margin-left:10px"> <img src="img/steps/c_a.png" style="margin-right: 10px; margin-left:10px"> <img src="img/steps/e_g.png" style="margin-right: 10px; margin-left:10px"> </div>');
 });
 $(document).on("pageshow","#deuda",function(event){ // When entering pagetwo
   steps_clear();
   steps_next();
   steps_next();
   steps_next();
+  $('.cont_vcd').html('<div align="center"><img src="img/steps/v_v.png" style="margin-right: 10px; margin-left:10px"> <img src="img/steps/c_v.png" style="margin-right: 10px; margin-left:10px"> <img src="img/steps/e_a.png" style="margin-right: 10px; margin-left:10px"> </div>');
   // $('.next_deuda').hide();
 });
 
